@@ -305,6 +305,7 @@ If not exist %psp%\. md %psp%
 If not exist %videopac%\. md %videopac%
 If not exist %fba%\. md %fba%
 If not exist %mame%\. md %mame%
+If not exist %vb%\. md %vb%
 ::If exist %mame%\. cd %mame%
 ::If not exist %mame%\. md %mame%
 ::If not exist %mame2000%\. md %mame2000%
