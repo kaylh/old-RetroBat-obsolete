@@ -77,6 +77,7 @@ RetroBat is designed to run in Portable Mode. It means that you can either start
 ## Credits
 
 * EmulationStation (c) 2014 Alec Lofquist, contributions from community.
+* RetroBat use EmulationStation FCAMOD by Fabrice Caruso.
 * RetroArch by Libretro Team.
 * game-icons.net/1x1/lorc by Lorc
 * NextFull ES Theme by Lorenzolamas, AlekFull and KOT Production.
