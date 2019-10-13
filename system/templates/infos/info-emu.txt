@@ -1,0 +1,3 @@
+- You have to download this emulator separately.
+- Extract emulator files in current folder.
+- Run game from EmulationStation.

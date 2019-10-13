@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./reboot.cmd</path>
+		<name>Reboot computer</name>
+		<desc>Reboot computer immediately</desc>
+		<image>./_media/windows-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>RetroBat</developer>
+		<publisher>Microsoft</publisher>
+		<genre>System command</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./poweroff.cmd</path>
+		<name>Power off computer</name>
+		<desc>Power off computer immediately</desc>
+		<image>./_media/windows-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>RetroBat</developer>
+		<publisher>Microsoft</publisher>
+		<genre>System command</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./dolphin-emu.cmd</path>
+		<name>Configure Dolphin Emulator (GameCube,Wii)</name>
+		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
+		<image>./_media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./pcsx2.cmd</path>
+		<name>Configure PCSX2 Emulator (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<image>./_media/pcsx2-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./ppsspp.cmd</path>
+		<name>Configure PPSSPP Emulator (PSP)</name>
+		<desc>Configure PPSSPP Emulator (PSP)</desc>
+		<image>./_media/ppsspp-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PPSSPP Team</developer>
+		<publisher>PPSSPP Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./redream.cmd</path>
+		<name>Configure Redream Emulator (Dreamcast)</name>
+		<desc>Configure Redream Emulator (Dreamcast)</desc>
+		<image>./_media/redream-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Redream</developer>
+		<publisher>Redream</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./retrobat-setup.cmd</path>
+		<name>RetroBat Setup</name>
+		<desc>Configure RetroBat</desc>
+		<image>./_media/retrobat-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Kayl</developer>
+		<publisher>RetroBat Team</publisher>
+		<genre>Helper</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
+	<game>
+		<path>./retroarch.cmd</path>
+		<name>Configure RetroArch</name>
+		<desc>Configure RetroArch</desc>
+		<image>./_media/retroarch-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20191010T150123</lastplayed>
+	</game>
+</gameList>
