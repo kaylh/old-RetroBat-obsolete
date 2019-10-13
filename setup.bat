@@ -293,6 +293,7 @@ If not exist %saturn%\. md %saturn%
 If not exist %neogeo%\. md %neogeo%
 If not exist %neogeocd%\. md %neogeocd%
 If not exist %ngp%\. md %ngp%
+If not exist %ngpc%\. md %ngpc%
 If not exist %npg%\. md %npg%
 If not exist %msu1%\. md %msu1%
 If not exist %psx%\. md %psx%
