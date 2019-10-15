@@ -458,8 +458,8 @@ CLS
 CALL %SCRIPTS_PATH%\ShowLogo.cmd
 ECHO  Version: %BuildVersion% by Kayl                                            
 ECHO +-------------------------------------------+
-ECHO    1) -- INSTALL RETROARCH (LITE PACK)
-ECHO    2) -- INSTALL RETROARCH (FULL)
+ECHO    1) -- INSTALL RETROARCH (STABLE)
+ECHO    2) -- INSTALL RETROARCH (NIGHTLY BUILD)
 ECHO    3) -- INSTALL LIBRETRO CORES LITE PACK
 ECHO    4) -- INSTALL DOSBOX EMULATOR
 ECHO    5) -- INSTALL DOLPHIN EMULATOR
