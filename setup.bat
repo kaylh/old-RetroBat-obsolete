@@ -100,7 +100,7 @@ REM specific settings for retroarch override configuration file
 SET savegame_dir=%SetupDir%\saves
 SET shots_dir=%SetupDir%\screenshots
 SET bios_dir=%SetupDir%\bios
-SET games_dir=%SetupDir%\games
+SET games_dir=%SetupDir%\roms
 SET medias_dir=%SetupDir%\medias
 SET libretro_cores_dir=%EMULATOR_PATH%\retroarch\cores
 timeout /t 2 >nul
