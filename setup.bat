@@ -346,7 +346,7 @@ ECHO games_dir=%games_dir%>> %InitSetup%
 ECHO savegame_dir=%savegame_dir%>> %InitSetup%
 ECHO shots_dir=%shots_dir%>> %InitSetup%
 ECHO bios_dir=%bios_dir%>> %InitSetup%
-ECHO shaders_dir=%shaders_dir%>> %InitSetup%
+::ECHO shaders_dir=%shaders_dir%>> %InitSetup%
 ECHO ConfigMenuPath=%ConfigMenuPath%>> %InitSetup%
 ECHO TMP_DIR=%TMP_DIR%>> %InitSetup%
 timeout /t 1 >nul
