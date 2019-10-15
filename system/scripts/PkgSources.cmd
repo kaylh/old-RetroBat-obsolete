@@ -1,7 +1,7 @@
 @Echo off
 Set Dolphin_URL="http://www.retrobat.ovh/repo/dolphin-pkg.zip"
 Set DOSBox_URL="http://www.retrobat.ovh/repo/dosbox-pkg.zip"
-Set EmulationStation_URL="http://www.retrobat.ovh/repo/EmulationStation-Win32.zip"
+Set EmulationStation_URL="https://github.com/fabricecaruso/EmulationStation/releases/download/continuous-master/EmulationStation-Win32.zip"
 Set ES_Profile_URL="http://www.retrobat.ovh/repo/es-config-pkg.zip"
 Set NextFull_Theme_URL="http://www.retrobat.ovh/repo/nextfull-theme-pkg.7z"
 Set Libretro_Cores_Pack_URL="http://www.retrobat.ovh/repo/libretro-cores-pkg.7z"
