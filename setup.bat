@@ -329,7 +329,7 @@ If not exist %com64%\. md %com64%
 ::If not exist %complus4%\. md %complus4%
 If not exist %gamewatch%\. md %gamewatch%
 If not exist %intellivision%\. md %intellivision%
-If not exist %laserdisc%\. md %laserdisc%
+::If not exist %laserdisc%\. md %laserdisc%
 If not exist %msx%\. md %msx%
 If not exist %n3ds%\. md %n3ds%
 If not exist %pcfx%\. md %pcfx%
