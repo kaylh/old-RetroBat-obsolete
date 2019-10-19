@@ -52,13 +52,10 @@ If "%play_splash_video%"=="yes" (
 )
 
 :splashcreen
-If exist %SetupDir%\emulationstation\video\%splashscreen_file% (
-	set RUN_ES=%RUN_ES% --video "video\%splashscreen_file%" --videoduration %splashscreen_length%
-	set RUN_ES_W=%RUN_ES_W% --video "video\%splashscreen_file%" --videoduration %splashscreen_length%
-	goto esRun
-) else (
-	goto esRun
-)
+If not exist %EMULATOR_PATH%\retroarch\retroarch.exe goto error1
+If exist %SetupDir%\Medias\%splashscreen_file% start %EMULATOR_PATH%\retroarch\retroarch.exe -L %LIBRETRO_CORES_DIR%\%MEDIAS_CORE%_libretro.dll --config %RETROARCH_CONFIG_DIR%\retroarch.cfg --appendconfig %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% "%SetupDir%\Medias\%splashscreen_file%" && Timeout /t %splashscreen_length%>nul
+tasklist /FI "IMAGENAME eq retroarch.exe" 2>NUL | find /I /N "retroarch.exe">NUL
+if "%ERRORLEVEL%"=="0" taskkill /F /IM retroarch.exe>nul
 
 :esRun
 If not exist %ES_PATH%\emulationstation.exe goto esFail
