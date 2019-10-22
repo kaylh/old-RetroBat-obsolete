@@ -1,5 +1,7 @@
 ![RetroBat-Logo](https://www.retrobat.ovh/repo/ressources/logo.png)
 
+## Introduction
+
 RetroBat is a set of Batch and Powershell scripts used to easily configure and launch EmulationStation. This frontend software is intended to gather your ROMs collection and run games with compatible emulators such as RetroArch.
 
 RetroBat can download and install all the softwares you need to have a good retrogaming experience on your PC.
