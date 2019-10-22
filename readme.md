@@ -6,6 +6,8 @@ RetroBat can download and install all the softwares you need to have a good retr
 
 RetroBat is designed to run in Portable Mode. It means that you can either start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
+## Video demonstration
+
 [![](http://img.youtube.com/vi/V8ia8AEDM9o/0.jpg)](http://www.youtube.com/watch?v=V8ia8AEDM9o "")
  
 ## System requirements
