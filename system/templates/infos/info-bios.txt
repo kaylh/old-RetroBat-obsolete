@@ -1,14 +1,13 @@
-Atari 800 				BIOS/ATARIXL.ROM (BIOS for Atari XL/XE OS) or BIOS/ATARIBAS.ROM (BIOS for the BASIC interpreter) or /BIOS/ATARIOSA.ROM (BIOS for Atari 400/800 PAL) or /BIOS/ATARIOSB.ROM (BIOS for Atari 400/800 NTSC) or /BIOS/5200.ROM (BIOS for the Atari 5200)
-Atari 7800 				OPTIONAL : BIOS/7800 BIOS (U).rom
-Dreamcast 				BIOS/dc/dc_boot.bin, dc_flash.bin or Emulators/Redream/boot.bin,flash.bin
-Famicom Disk System 	BIOS/disksys.rom
-Gameboy Advance		    BIOS/gba_bios.bin
-PC-Engine 				BIOS/SYSCARD3.PCE
-PlayStation 			BIOS/SCPH1001.BIN, scph5500.bin, scph5501.bin, scph5502.bin
+Atari 800               bios/ATARIXL.ROM (BIOS for Atari XL/XE OS) or bios/ATARIBAS.ROM (BIOS for the BASIC interpreter) or /BIOS/ATARIOSA.ROM (bios for Atari 400/800 PAL) or /BIOS/ATARIOSB.ROM (bios for Atari 400/800 NTSC) or /BIOS/5200.ROM (bios for the Atari 5200)
+Atari 7800              OPTIONAL : BIOS/7800 BIOS (U).rom
+Dreamcast               bios/dc/dc_boot.bin, dc_flash.bin or Emulators/Redream/boot.bin,flash.bin
+Naomi / Atomiswave      bios/dc/naomi.zip
+Famicom Disk System 	bios/disksys.rom
+Gameboy Advance		    bios/gba_bios.bin
+PC-Engine 				bios/SYSCARD3.PCE
+PlayStation 			bios/SCPH1001.BIN, scph5500.bin, scph5501.bin, scph5502.bin
 NEO GEO 				ROMs/neogeo/neogeo.zip and/or ROMs/fba/neogeo.zip
-SEGA CD 				BIOS/us_scd1_9210.bin (or rename to bios_CD_U.bin) or eu_mcd1_9210.bin (or rename to bios_CD_E.bin) or jp_mcd1_9112.bin (or rename to bios_CD_J.bin) for Europe and Japan respectively
-Sega Saturn 			BIOS/saturn_bios.bin and/or BIOS/sega_101.bin and mpr-17933.bin (for Mednafen Saturn)
-Videopac or Odyssey2 	BIOS/o2rom.bin
+SEGA CD 				bios/us_scd1_9210.bin (or rename to bios_CD_U.bin) or eu_mcd1_9210.bin (or rename to bios_CD_E.bin) or jp_mcd1_9112.bin (or rename to bios_CD_J.bin) for Europe and Japan respectively
+Sega Saturn 			bios/saturn_bios.bin and/or bios/sega_101.bin and mpr-17933.bin (for Mednafen Saturn)
+Videopac or Odyssey2 	bios/o2rom.bin
 3DO						panafz10.bin
-
-Source : RetroPie's Wiki (https://github.com/RetroPie/RetroPie-Setup/wiki/BIOS)
