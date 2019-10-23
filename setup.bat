@@ -586,8 +586,8 @@ timeout /t 3 >nul
 goto fetchMenu
 
 :instRAl0
-Set pkgName=RetroArch Lite
-Set pkgFile=retroarch-lite-pkg.7z
+Set pkgName=RetroArch Stable
+Set pkgFile=retroarch-stable-pkg.7z
 CLS
 Cd %SetupDir%
 If exist %TMP_DIR%\%pkgFile% goto instRAl1
