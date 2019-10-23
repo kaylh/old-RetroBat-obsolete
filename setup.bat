@@ -398,9 +398,37 @@ ECHO  - Saves "%savegame_dir%"
 ECHO  - Screenshots "%shots_dir%"
 ECHO.
 ECHO +===========================================+
-ECHO  -- PRESS ANY KEY TO RETURN TO SETUP MENU --
+ECHO    -- PRESS ANY KEY TO GO TO SETUP MENU --
 pause>nul
-GOTO fetchMenu
+GOTO setupMode
+
+:setupMode
+cls
+Call %SCRIPTS_PATH%\PkgSources.cmd
+Call %SCRIPTS_PATH%\ShowLogo.cmd
+ECHO  Version: %BuildVersion% by Kayl                                            
+ECHO +-------------------------------------------+
+ECHO.
+ECHO    1) -- AUTOMATIC INSTALL
+ECHO.
+ECHO    This will install all main softwares needed
+ECHO   (EmulationStation, RetroArch and Cores).
+ECHO.
+ECHO    2) -- MANUAL INSTALL
+ECHO.
+ECHO    This will go to another menu where you can
+ECHO    select the software you want to install.
+ECHO.
+ECHO    Q) -- QUIT
+ECHO.
+ECHO +===========================================+
+Set mkinstall0=1
+Set /p mkinstall0="Please choose one (Number or Q): "
+If "%mkinstall0%"=="1" set autoinst=1 && goto instES0
+If "%mkinstall0%"=="2" goto fetchMenu
+If "%mkinstall0%"=="q" goto cleanexit
+If "%mkinstall0%"=="Q" goto cleanexit
+
 
 :fetchMenu
 Cd %SetupDir%
@@ -413,7 +441,6 @@ REM for /f "delims=" %%x in (sources.cfg) do (set "%%x")
 Call %SCRIPTS_PATH%\ShowLogo.cmd
 If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=1
 If not exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=0
-
 ECHO  Version: %BuildVersion% by Kayl                                            
 ECHO +-------------------------------------------+
 ECHO    1) -- LAUNCH EMULATIONSTATION FRONTEND                                        
@@ -546,6 +573,7 @@ ECHO.
 %ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile2%" -o"%ES_PATH%\.emulationstation" -aoa >nul
 ECHO Done.
 timeout /t 2 >nul
+if %autoinst% EQU 1 goto instRAl0
 goto fetchMenu
 
 :sourcesUpdate
@@ -641,18 +669,28 @@ goto RAcfgMenu
 
 :RAcfgMenu
 CLS
+if %autoinst% EQU 1 Set RAcfg=1
+if %RAcfg% EQU 1 goto mkRAcfg2
 Set RAcfg=K
 ECHO +===========================================+
 ECHO    PLEASE CHOOSE A TEMPLATE FOR RETROARCH'S 
 ECHO                  CONFIG FILE
 ECHO +===========================================+
 ECHO.
-ECHO 0) -- DEFAULT SETTINGS (xmb,windowed,opengl)*
-ECHO 1) -- CUSTOM SETTINGS 1 (rgui,fullscreen,opengl)
-ECHO 2) -- CUSTOM SETTINGS 2 (xmb,fullscreen,directx11)*
-ECHO 3) -- CUSTOM SETTINGS 3 (ozone,fullscreen,vulkan)*
+ECHO 0) -- DEFAULT RETROARCH SETTINGS:
+ECHO       xmb menu, windowed, opengl
 ECHO.
-ECHO     * require assets
+ECHO 1) -- CUSTOM SETTINGS 1:
+ECHO       rgui menu, fullscreen, opengl
+ECHO.
+ECHO 2) -- CUSTOM SETTINGS 2:
+ECHO       xmb menu, fullscreen, directx11
+ECHO.
+ECHO 3) -- CUSTOM SETTINGS 3: 
+ECHO       ozone menu, fullscreen, vulkan
+ECHO.
+ECHO    You can modify this settings later in
+ECHO    RetroArch configuration menu.
 ECHO +===========================================+
 ECHO   CURRENT RETROARCH'S CONFIG FILES WILL BE
 ECHO                  OVERWRITED !           
@@ -732,6 +770,7 @@ ECHO :: Done.
 timeout /t 2 >nul
 If "%RAOF%"=="1" goto fetchEmulators
 If "%SFX%"=="1" goto exit
+if %autoinst% EQU 1 goto installCores0
 Goto fetchEmulators
 
 :installCores0
@@ -757,6 +796,7 @@ ECHO.
 %ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%libretro_cores_dir%" -aoa >nul
 ping 127.0.0.1 -n 4 >nul
 CLS
+if %autoinst% EQU 1 goto autoend
 GOTO fetchEmulators
 
 :instDOSBox0
@@ -859,6 +899,16 @@ Cd %SetupDir%
 Call %LauncherFile%
 Goto exit
 
+:autoend
+ECHO +===========================================+
+ECHO         AUTOMATIC INSTALL FINISHED !
+ECHO.
+ECHO         YOU CAN NOW RUN RETRO.BAT TO 
+ECHO            LAUNCH EMULATIONSTATION           
+ECHO +===========================================+
+timeout /t 5 >nul
+goto exit
+
 :error1
 Echo.
 ECHO  You must gather your party before venturing forth...
@@ -887,6 +937,11 @@ ECHO  RetroBat Launcher Scripts only run on 64 bits system.
 Echo.
 PAUSE>NUL
 GOTO exit
+
+:cleanexit
+cd %SetupDir%
+del setup.ini
+exit
 
 :exit
 EXIT
