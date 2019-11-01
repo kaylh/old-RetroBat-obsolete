@@ -27,17 +27,14 @@ SET SetupDir=%SetupDir:"=%
 SET SetupDir>nul
 SET SFX=0
 TITLE %Name% Setup
-If exist SFX (
-	del/q SFX
-	set SFX=1
-	goto setupMenu
-) else (
-	goto checkIni
-)
+goto checkIni
 
 :checkIni
-If exist %InitSetup% goto fetchMenu
-Goto setupMenu
+If exist %InitSetup% (
+	goto fetchMenu
+) else (
+	goto setupMenu
+)
 
 :setupMenu
 Cls
@@ -370,7 +367,7 @@ ECHO zip_path=%zip_path%>> %InitSetup%
 ECHO SCRAPER_DIR=%SCRAPER_DIR%>> %InitSetup%
 ECHO libretro_cores_dir=%libretro_cores_dir%>> %InitSetup%
 ECHO TemplatesPath=%TemplatesPath%>> %InitSetup%
-goto checkSFX
+goto setupInfo
 
 :checkSFX
 ECHO :: Done.
@@ -424,11 +421,16 @@ ECHO.
 ECHO +===========================================+
 Set mkinstall0=1
 Set /p mkinstall0="Please choose one (Number or Q): "
-If "%mkinstall0%"=="1" set autoinst=1 && goto instES0
+If "%mkinstall0%"=="1" goto autoinstall
 If "%mkinstall0%"=="2" goto fetchMenu
 If "%mkinstall0%"=="q" goto cleanexit
 If "%mkinstall0%"=="Q" goto cleanexit
+set autoinst=1
+goto autoinstall
 
+:autoinstall
+set autoinst=1
+goto instES0
 
 :fetchMenu
 Cd %SetupDir%
@@ -550,17 +552,20 @@ If "%ESfullPkg%"=="3" goto instES1
 If not exist %TMP_DIR%\. md %TMP_DIR%
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%TMP_DIR%\%pkgFile0%""
-powershell -command "Invoke-WebRequest -Uri %es_profile_url% -OutFile "%TMP_DIR%\%pkgFile1%""
-powershell -command "Invoke-WebRequest -Uri %nextfull_theme_url% -OutFile "%TMP_DIR%\%pkgFile2%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%TMP_DIR%\%pkgFile0%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %es_profile_url% -OutFile "%TMP_DIR%\%pkgFile1%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %nextfull_theme_url% -OutFile "%TMP_DIR%\%pkgFile2%""
 ping 127.0.0.1 -n 4 >nul
 timeout /t 2 >nul
 If not exist %TMP_DIR%\%pkgFile0% set/A EScheckPkg=%EScheckPkg%+1
 If not exist %TMP_DIR%\%pkgFile1% set/A EScheckPkg=%EScheckPkg%+1
 If not exist %TMP_DIR%\%pkgFile2% set/A EScheckPkg=%EScheckPkg%+1
-If %EScheckPkg% GEQ 1 goto pkgFail
 ECHO Done.
-If %EScheckPkg% EQU 0 goto instES1
+If %EScheckPkg% GEQ 1 (
+	goto pkgFail
+) else (
+	goto instES1
+)
 
 :instES1
 CLS
@@ -573,8 +578,12 @@ ECHO.
 %ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile2%" -o"%ES_PATH%\.emulationstation" -aoa >nul
 ECHO Done.
 timeout /t 2 >nul
-if %autoinst% EQU 1 goto instRAl0
-goto fetchMenu
+::If "%autoinst%"=="1" goto instRAl0
+If "%autoinst%"=="1" (
+	goto instRAl0
+) else (
+	goto fetchMenu
+)
 
 :sourcesUpdate
 CLS
@@ -582,7 +591,7 @@ Cd %SetupDir%
 If exist %SCRIPTS_PATH%\PkgSources.cmd del/q %SCRIPTS_PATH%\PkgSources.cmd 
 ECHO -- Updating sources --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri "http://www.retrobat.ovh/repo/scripts/PkgSources.cmd" -OutFile "%SCRIPTS_PATH%\PkgSources.cmd""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "http://www.retrobat.ovh/repo/scripts/PkgSources.cmd" -OutFile "%SCRIPTS_PATH%\PkgSources.cmd""
 ping 127.0.0.1 -n 4 >nul
 CLS
 ECHO Please start this script again for change to take effect
@@ -600,7 +609,7 @@ If not exist %SetupDir%\Scraper\Scraper.bat md %SetupDir%\Scraper
 If not exist %TMP_DIR%\. md %TMP_DIR%
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %scraper_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %scraper_url% -OutFile "%TMP_DIR%\%pkgFile%""
 ping 127.0.0.1 -n 4 >nul
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto SCPupdate1
@@ -625,7 +634,7 @@ If not exist %TMP_DIR%\. md %TMP_DIR%
 If exist %TMP_DIR%\%pkgFile% goto instRAl1
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %retroarch_lite_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_lite_url% -OutFile "%TMP_DIR%\%pkgFile%""
 ping 127.0.0.1 -n 4 >nul
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto instRAl1
@@ -638,7 +647,15 @@ ECHO.
 ::del "%TMP_DIR%\%pkgFile%" /q
 ::rmdir %TMP_DIR%
 timeout /t 3 >nul
-goto RAcfgMenu
+goto chkRAauto
+
+:chkRAauto
+If "%autoinst%"=="1" (
+	Set RAcfg=1
+	goto mkRAcfg2
+) else (
+	goto RAcfgMenu
+)
 
 :instRAn0
 Set pkgName=RetroArch
@@ -652,7 +669,7 @@ If not exist %TMP_DIR%\. md %TMP_DIR%
 If exist %TMP_DIR%\%pkgFile% goto instRAn1
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %retroarch_nightly_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_nightly_url% -OutFile "%TMP_DIR%\%pkgFile%""
 ping 127.0.0.1 -n 4 >nul
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto instRAn1
@@ -669,8 +686,9 @@ goto RAcfgMenu
 
 :RAcfgMenu
 CLS
-if %autoinst% EQU 1 Set RAcfg=1
-if %RAcfg% EQU 1 goto mkRAcfg2
+::If "%autoinst%"=="1" Set RAcfg=1
+::If "%RAcfg%"=="1" goto mkRAcfg2
+::if %RAcfg% EQU 1 goto mkRAcfg2
 Set RAcfg=K
 ECHO +===========================================+
 ECHO    PLEASE CHOOSE A TEMPLATE FOR RETROARCH'S 
@@ -768,10 +786,11 @@ If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% (
 )
 ECHO :: Done.
 timeout /t 2 >nul
-If "%RAOF%"=="1" goto fetchEmulators
-If "%SFX%"=="1" goto exit
-if %autoinst% EQU 1 goto installCores0
-Goto fetchEmulators
+If "%autoinst%"=="1" (
+	goto installCores0
+) else (
+	goto fetchEmulators
+)
 
 :installCores0
 Set pkgName=Libretro Cores Pack
@@ -785,7 +804,7 @@ If not exist %libretro_cores_dir%\. md %libretro_cores_dir%
 If not exist %TMP_DIR%\. md %TMP_DIR%
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %libretro_cores_pack_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %libretro_cores_pack_url% -OutFile "%TMP_DIR%\%pkgFile%""
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto installCores1
 
@@ -796,8 +815,11 @@ ECHO.
 %ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%libretro_cores_dir%" -aoa >nul
 ping 127.0.0.1 -n 4 >nul
 CLS
-if %autoinst% EQU 1 goto autoend
-GOTO fetchEmulators
+If "%autoinst%"=="1" (
+	goto autoend
+) else (
+	goto fetchEmulators
+)
 
 :instDOSBox0
 Set pkgName=DOSBox
@@ -810,7 +832,7 @@ If not exist %EMULATOR_PATH%\dosbox\. md %EMULATOR_PATH%\dosbox
 If not exist %TMP_DIR%\. md %TMP_DIR%3
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %dosbox_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %dosbox_url% -OutFile "%TMP_DIR%\%pkgFile%""
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto instDOSBox1
 
@@ -836,7 +858,7 @@ If not exist %EMULATOR_PATH%\dolphin-emu\. md %EMULATOR_PATH%\dolphin-emu
 If not exist %TMP_DIR%\. md %TMP_DIR%
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %dolphin_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %dolphin_url% -OutFile "%TMP_DIR%\%pkgFile%""
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto :instDolphin1
 
@@ -862,7 +884,7 @@ If not exist %EMULATOR_PATH%\pcsx2\. md %EMULATOR_PATH%\pcsx2
 If not exist %TMP_DIR%\. md %TMP_DIR%
 ECHO -- %pkgName% is now downloading --
 ECHO.
-powershell -command "Invoke-WebRequest -Uri %pcsx2_url% -OutFile "%TMP_DIR%\%pkgFile%""
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %pcsx2_url% -OutFile "%TMP_DIR%\%pkgFile%""
 If not exist %TMP_DIR%\%pkgFile% goto pkgFail
 Goto :instPcsx21
 
