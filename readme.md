@@ -1,4 +1,4 @@
-![RetroBat-Logo](https://www.retrobat.ovh/repo/ressources/logo.png)
+![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
 
 ## Introduction
 
