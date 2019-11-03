@@ -6,7 +6,7 @@ Set ES_Profile_URL="http://www.retrobat.ovh/repo/es-config-pkg.zip"
 Set NextFull_Theme_URL="http://www.retrobat.ovh/repo/nextfull-theme-pkg.7z"
 Set Libretro_Cores_Pack_URL="http://www.retrobat.ovh/repo/libretro-cores-pkg.7z"
 Set PCSX2_URL="http://www.retrobat.ovh/repo/pcsx2-pkg.zip"
-Set RetroArch_Lite_URL="https://buildbot.libretro.com/stable/1.7.9/windows/x86_64/RetroArch.7z"
+Set RetroArch_Lite_URL="https://buildbot.libretro.com/stable/1.8.1/windows/x86_64/RetroArch.7z"
 Set RetroArch_Nightly_URL="https://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z"
 Set Scraper_URL="http://www.retrobat.ovh/repo/scraper-pkg.zip"
 Goto:EOF
