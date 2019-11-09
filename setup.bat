@@ -41,22 +41,22 @@ Cls
 If "%SFX%"=="1" goto set_variables1
 Call %CD%\System\Scripts\ShowLogo.cmd
 ECHO       Version: %BuildVersion% by Kayl                                            
-ECHO +-------------------------------------------+
+ECHO +-----------------------------------------------+
 ECHO.                                                               
-ECHO  RetroBat is a set of scripts written to help 
-ECHO  launching and configure EmulationStation.
+ECHO  RetroBat was made to help launching and
+ECHO  configuring EmulationStation on Windows.
 ECHO.
-ECHO  The frontend will be set to use the emulator
-ECHO  RetroArch and many others compatible to run 
-ECHO  games from your collection.
+ECHO  The frontend is going to be configured to run
+ECHO  games from your collection with RetroArch and 
+ECHO  many other compatible emulators.
 ECHO.
-ECHO  WE WILL NOW MAKE A NEW CONFIGURATION IN THE
+ECHO  WE WILL MAKE A NEW CONFIGURATION IN THE
 ECHO  CURRENT RETROBAT'S FOLDER:
 ECHO. 
-ECHO +-------------------------------------------+ 
+ECHO +-----------------------------------------------+ 
 ECHO  Setup directory:
 ECHO  %CD%
-ECHO +===========================================+ 
+ECHO +===============================================+ 
 SET go=C
 SET/P go="- (C)ontinue or (Q)uit: "
 IF "%go%"=="C" GOTO set_variables1
@@ -385,7 +385,7 @@ If "%SFX%"=="1" (
 CLS
 CALL %CD%\System\Scripts\ShowLogo.cmd
 ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-------------------------------------------+
+ECHO +-----------------------------------------------+
 ECHO.                                  
 ECHO  - Setup directory: "%SetupDir%"
 ECHO.
@@ -394,7 +394,7 @@ ECHO  - BIOS "%bios_dir%"
 ECHO  - Saves "%savegame_dir%"
 ECHO  - Screenshots "%shots_dir%"
 ECHO.
-ECHO +===========================================+
+ECHO +===============================================+
 ECHO    -- PRESS ANY KEY TO GO TO SETUP MENU --
 pause>nul
 GOTO setupMode
@@ -404,7 +404,7 @@ cls
 Call %SCRIPTS_PATH%\PkgSources.cmd
 Call %SCRIPTS_PATH%\ShowLogo.cmd
 ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-------------------------------------------+
+ECHO +-----------------------------------------------+
 ECHO.
 ECHO    1) -- AUTOMATIC INSTALL
 ECHO.
@@ -418,7 +418,7 @@ ECHO    select the software you want to install.
 ECHO.
 ECHO    Q) -- QUIT
 ECHO.
-ECHO +===========================================+
+ECHO +===============================================+
 Set mkinstall0=1
 Set /p mkinstall0="Please choose one (Number or Q): "
 If "%mkinstall0%"=="1" goto autoinstall
@@ -444,7 +444,7 @@ Call %SCRIPTS_PATH%\ShowLogo.cmd
 If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=1
 If not exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=0
 ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-------------------------------------------+
+ECHO +-----------------------------------------------+
 ECHO    1) -- LAUNCH EMULATIONSTATION FRONTEND                                        
 ECHO    2) -- INSTALL EMULATIONSTATION
 ::ECHO    3) -- INSTALL EXTRA THEMES
@@ -456,7 +456,7 @@ Echo    6) -- DELETE ALL UNNEEDED PACKAGES
 Echo    7) -- VISIT JOYTOKEY WEB SITE
 Echo    8) -- VISIT RETROBAT WEB SITE
 ECHO    Q) -- QUIT
-ECHO +===========================================+
+ECHO +===============================================+
 Set mkinstall0=1
 Set /p mkinstall0="Please choose one (Number or Q): "
 If "%mkinstall0%"=="1" goto runES
@@ -486,7 +486,7 @@ Goto fetchMenu
 CLS
 CALL %SCRIPTS_PATH%\ShowLogo.cmd
 ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-------------------------------------------+
+ECHO +-----------------------------------------------+
 ECHO    1) -- INSTALL RETROARCH (STABLE)
 ECHO    2) -- INSTALL RETROARCH (NIGHTLY BUILD)
 ECHO    3) -- INSTALL LIBRETRO CORES LITE PACK
@@ -497,7 +497,7 @@ ECHO    7) -- VISIT REDREAM DOWNLOAD PAGE (WEB)
 ECHO    8) -- VISIT PPSSPP DOWNLOAD PAGE (WEB)
 ECHO    M) -- RETURN TO SETUP MENU
 ECHO    Q) -- QUIT
-ECHO +===========================================+
+ECHO +===============================================+
 Set mkinstall0=Q
 Set /p mkinstall1="Please choose one (Number, M or Q): "
 if "%mkinstall1%"=="1" goto instRAl0
@@ -516,16 +516,16 @@ GOTO fetchEmulators
 
 :ESupdate0
 Set warningES0=M
-ECHO +===========================================+
+ECHO +===============================================+
 ECHO                  ATTENTION: 
 ECHO.
-ECHO CHOOSE THIS OPTION ONLY IF YOU HAVE NOT 
-ECHO EMULATIONSTATION ALREADY INSTALLED OR IF YOU  
-ECHO WANT TO MAKE A CLEAN NEW INSTALLATION OF THE 
-ECHO FRONTEND. 
+ECHO ONLY CHOOSE THIS OPTION IF YOU HAVE NOT ALREADY 
+ECHO EMULATIONSTATION INSTALLED, OR IF YOU WANT TO  
+ECHO MAKE A NEW INSTALLATION OF IT. 
+ECHO  
 ECHO THE NEW FILES WILL OVERWRITE THE OLD ONES AND
 ECHO INSTALLED THEMES WILL BE ERASED.
-ECHO +===========================================+
+ECHO +===============================================+
 SET /p warningES0="(I)nstall, return to (M)enu or (Q)uit: "
 if "%warningES0%"=="I" goto instES0
 if "%warningES0%"=="i" goto instES0
@@ -690,10 +690,10 @@ CLS
 ::If "%RAcfg%"=="1" goto mkRAcfg2
 ::if %RAcfg% EQU 1 goto mkRAcfg2
 Set RAcfg=K
-ECHO +===========================================+
+ECHO +===============================================+
 ECHO    PLEASE CHOOSE A TEMPLATE FOR RETROARCH'S 
 ECHO                  CONFIG FILE
-ECHO +===========================================+
+ECHO +===============================================+
 ECHO.
 ECHO 0) -- DEFAULT RETROARCH SETTINGS:
 ECHO       xmb menu, windowed, opengl
@@ -709,10 +709,10 @@ ECHO       ozone menu, fullscreen, vulkan
 ECHO.
 ECHO    You can modify this settings later in
 ECHO    RetroArch configuration menu.
-ECHO +===========================================+
+ECHO +===============================================+
 ECHO   CURRENT RETROARCH'S CONFIG FILES WILL BE
 ECHO                  OVERWRITED !           
-ECHO +===========================================+
+ECHO +===============================================+
 SET /p RAcfg="Type a number or (k)eep current RetroArch config: "
 if "%RAcfg%"=="0" goto mkRAcfg0 
 if "%RAcfg%"=="1" goto mkRAcfg2
@@ -922,12 +922,12 @@ Call %LauncherFile%
 Goto exit
 
 :autoend
-ECHO +===========================================+
-ECHO         AUTOMATIC INSTALL FINISHED !
+ECHO +===============================================+
+ECHO           AUTOMATIC INSTALL COMPLETED !
 ECHO.
-ECHO         YOU CAN NOW RUN RETRO.BAT TO 
-ECHO            LAUNCH EMULATIONSTATION           
-ECHO +===========================================+
+ECHO           YOU CAN NOW RUN RETRO.BAT TO 
+ECHO              LAUNCH EMULATIONSTATION           
+ECHO +===============================================+
 timeout /t 5 >nul
 goto exit
 
