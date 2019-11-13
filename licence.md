@@ -1,6 +1,9 @@
 ## RetroBat Licence:
 
-RetroBat is a set of Batch and PowerShell scripts. They are intended for non-commercial use only. You can modify and distribute modifications (derivative works). Parts of the software are provided under separate licenses, as follows:
+RetroBat is a set of Batch and PowerShell scripts. They are intended for non-commercial use only. You can modify and distribute modifications (derivative works) of the scripts. You cannot distribute or make promotion of RetroBat with another logo than the one used officially.
+
+Parts of the software are provided under separate licenses, as follows:
+
 * EmulationStation frontend is under GNU Public Licence. (c) Alec Lofquist. Programming by Alec Lofquist. Design & UI by Nils Bonenberger, contributions from community. 
 * RetroArch and Libretro Cores are under GNU Public Licence. Credits to Libretro’s dev. Team & contributors.
 * Bat icons by Lorc under Creative Common BY 3.0.
