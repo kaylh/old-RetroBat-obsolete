@@ -9,9 +9,7 @@
     the Free Software Foundation, version 3 of the License.
 	
     The above copyright notice and this permission notice shall be included in all copies
-    or substantial portions of the Software.
-
-    You cannot distribute or make promotion of RetroBat Scripts with another logo than the one used officially.  
+    or substantial portions of the Software. 
     
     RetroBat Script is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
