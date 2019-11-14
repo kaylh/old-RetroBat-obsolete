@@ -8,13 +8,14 @@
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, version 3 of the License.
 	
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included in all copies
+    or substantial portions of the Software.
 
     You cannot distribute or make promotion of RetroBat Scripts with another logo than the one used officially.  
     
     RetroBat Script is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
