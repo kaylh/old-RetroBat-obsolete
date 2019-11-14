@@ -1,17 +1,23 @@
 ## RetroBat Licence:
 
-RetroBat is a set of Batch and PowerShell scripts. They are intended for non-commercial use only. You can modify and distribute modifications (derivative works) of the scripts. You cannot distribute or make promotion of RetroBat with another logo than the one used officially.
+The files provided here with bat and cmd extensions are part of RetroBat Script.
 
-Parts of the software are provided under separate licenses, as follows:
+Copyright (c) 2018 Adrien Chalard "Kayl"
 
-* EmulationStation frontend is under GNU Public Licence. (c) Alec Lofquist. Programming by Alec Lofquist. Design & UI by Nils Bonenberger, contributions from community. 
-* RetroArch and Libretro Cores are under GNU Public Licence. Credits to Libretro’s dev. Team & contributors.
-* Bat icons by Lorc under Creative Common BY 3.0.
+    RetroBat Script is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+	
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Additional terms:
+    You cannot distribute or make promotion of RetroBat Scripts with another logo than the one used officially.  
+    
+    RetroBat Script is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    You should have received a copy of the GNU General Public License
+    along with RetroBat Script.  If not, see <https://www.gnu.org/licenses/>.
 
-DO NOT USE THIS SOFTWARE FOR ILLEGAL PURPOSES, ACCORDING TO THE LAWS IN U.S AND/OR OTHERS COUNTRIES.
-
-More information about : [GNU Public Licence](http://www.gnu.org/licenses/gpl-3.0.en.html) | [Creative Common](https://spdx.org/licenses/CC-BY-3.0.html)
+More information about : [GNU Public Licence](http://www.gnu.org/licenses/gpl-3.0.en.html)
