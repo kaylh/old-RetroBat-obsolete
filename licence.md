@@ -20,4 +20,4 @@
     You should have received a copy of the GNU General Public License
     along with RetroBat Script.  If not, see <https://www.gnu.org/licenses/>.
 
-    More information about : [GNU Public Licence](http://www.gnu.org/licenses/gpl-3.0.en.html)
+More information about : [GNU Public Licence](http://www.gnu.org/licenses/gpl-3.0.en.html)
