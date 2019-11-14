@@ -1,4 +1,4 @@
-## RetroBat Licence:
+## RetroBat Licence
 
     The files provided here with bat and cmd extensions are part of RetroBat Script.
 
