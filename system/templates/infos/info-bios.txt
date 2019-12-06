@@ -1,6 +1,6 @@
-*******************************************
 BIOS Compatibility List (Source: Batocera)
 *******************************************
+Some systems are not yet supported with RetroBat.
 
 3DO:
 f47264dd47fe30f73ab3c010015c155b bios/panafz1.bin
