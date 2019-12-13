@@ -582,12 +582,9 @@ if not exist %retroarch_dir%\. md %retroarch_dir%
 if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
 if not exist %scripts_dir%\lr-arcade.cmd goto pkg_fail
 call %scripts_dir%\lr-arcade.cmd
-if "%fullinstall%"=="1" goto dl_lrconsole 
-cls
-echo.
-echo Reloading Setup...
-echo.
 timeout /t 2 >nul
+if "%go%"=="9" goto setup_menu
+if "%fullinstall%"=="1" goto dl_lrconsole 
 goto setup_menu
 
 :dl_lrconsole
@@ -596,11 +593,8 @@ if not exist %retroarch_dir%\. md %retroarch_dir%
 if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
 if not exist %scripts_dir%\lr-console.cmd goto pkg_fail
 call %scripts_dir%\lr-console.cmd
-cls
-echo.
-echo Reloading Setup...
-echo.
 timeout /t 2 >nul
+if "%go%"=="10" goto setup_menu
 if "%fullinstall%"=="1" goto check_pkg
 goto setup_menu
 
@@ -751,7 +745,7 @@ if "%updatedone%"=="1" (
 cls
 if not exist %temp_dir%\. md %temp_dir%
 set fullinstall=0
-set go=
+set go=0
 call %scripts_dir%\pkgsources.cmd
 call %scripts_dir%\showlogo.cmd
 echo           Version %version% by Kayl
