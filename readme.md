@@ -98,3 +98,7 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 * NextFull ES Theme based on the work of Fagnerpc for AlekFull Themes. Edited by KOT Prod and Lorenzolamas.
 * game-icons.net/1x1/lorc by Lorc.
 * 7-Zip (C) 1999-2019 Igor Pavlov.
+
+## Contact
+
+retrobat@free.fr (answer in french or english)
