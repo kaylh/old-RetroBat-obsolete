@@ -92,6 +92,6 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 * EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 * RetroBat use EmulationStation FCAMOD by Fabrice Caruso.
 * RetroArch by Libretro Team.
-* game-icons.net/1x1/lorc by Lorc.
 * NextFull ES Theme by Lorenzolamas, AlekFull and KOT Production.
+* game-icons.net/1x1/lorc by Lorc.
 * 7-Zip (C) 1999-2019 Igor Pavlov.
