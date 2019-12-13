@@ -2,7 +2,7 @@
 
 ## Introduction
 
-RetroBat is a set of Batch and Powershell scripts used to easily configure and launch EmulationStation. This frontend software is intended to gather your ROMs collection and run games with compatible emulators such as RetroArch.
+RetroBat is a set of Batch and Powershell Scripts allowing to configure automatically EmulationStation frontend to run games from ROMs collection with RetroArch and standalone emulators.
 
 RetroBat can download and install all the softwares you need to have a good retrogaming experience on your PC.
 ![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
@@ -91,29 +91,24 @@ RetroBat is able to run in Portable Mode on Windows PC. It means that you can ei
 * NextFull ES Theme by Lorenzolamas, AlekFull and KOT Production.
 * 7-Zip (C) 1999-2019 Igor Pavlov.
 
-RetroBat is designed to run in Portable Mode. It means that you can either start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
-
-## Video demonstration
-
-[![](http://img.youtube.com/vi/V8ia8AEDM9o/0.jpg)](http://www.youtube.com/watch?v=V8ia8AEDM9o "")
+RetroBat is able to run in Portable Mode on Windows PC. It means that you can either start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
  
 ## System requirements
 
 * OS
-	* Windows 7 64 bits SP3, Windows 8.1/10 64 bits 
+	* Windows 7 SP3 or Windows 8.1 or Windows 10 (64bit) 
 * Processor
     * CPU with SSE2 support.
     * 3 GHz and Dual Core, not older than 2008 is highly recommended.
 * Graphics
     * If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.
 * Software
-    * [Visual C++ Redistributable Packages (both 32 & 64 bits)](https://gist.github.com/mmozeiko/de5d9b756bd11b77db8bf4253bed8b3e)
+    * [Visual C++ Redistributable Packages (32 and 64 bit)](https://gist.github.com/mmozeiko/de5d9b756bd11b77db8bf4253bed8b3e)
     * [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
     * [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
-    * [7-Zip 64 bits](https://www.7-zip.org/download.html)
     * [JoyToKey (optional)](https://joytokey.net/en/)
 
-#### RetroBat can only be installed on x86 64 bit computers. Attempting to install on a 32 bit computer will display an error message.
+#### RetroBat can only be installed on x86 64 bit computers. 
 
 ## Supported machines
 
@@ -162,13 +157,14 @@ RetroBat is designed to run in Portable Mode. It means that you can either start
 
 ## Author
 
-- RetroBat scripts by Kayl
-- Many thanks to Lorenzolamas for testing and community management
+- RetroBat Scripts by Kayl.
+- Thanks to Lorenzolamas for testing and community management.
 
 ## Credits
 
-* EmulationStation (c) 2014 Alec Lofquist, contributions from community.
+* EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 * RetroBat use EmulationStation FCAMOD by Fabrice Caruso.
 * RetroArch by Libretro Team.
-* game-icons.net/1x1/lorc by Lorc
+* game-icons.net/1x1/lorc by Lorc.
 * NextFull ES Theme by Lorenzolamas, AlekFull and KOT Production.
+* 7-Zip (C) 1999-2019 Igor Pavlov.
