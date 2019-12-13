@@ -18,7 +18,7 @@ RetroBat is able to run in Portable Mode on Windows PC. It means that you can ei
 * Graphics
     * If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.
 * Software
-    * [Visual C++ Redistributable Packages (both 32 & 64 bits)](https://gist.github.com/mmozeiko/de5d9b756bd11b77db8bf4253bed8b3e)
+    * [Visual C++ Redistributable Packages (32 and 64 bit)](https://gist.github.com/mmozeiko/de5d9b756bd11b77db8bf4253bed8b3e)
     * [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
     * [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
     * [JoyToKey (optional)](https://joytokey.net/en/)
