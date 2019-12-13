@@ -11,7 +11,7 @@ RetroBat is able to run in Portable Mode on Windows PC. It means that you can ei
 ## System requirements
 
 * OS
-	* Windows 7 64 bits SP3, Windows 8.1/10 64 bits 
+	* Windows 7 SP3 or Windows 8.1 or Windows 10 (64bit) 
 * Processor
     * CPU with SSE2 support.
     * 3 GHz and Dual Core, not older than 2008 is highly recommended.
