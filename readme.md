@@ -84,14 +84,17 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 
 ## Author
 
-- RetroBat Scripts by Kayl.
-- Thanks to Lorenzolamas for testing and community management.
+- RetroBat Scripts (C) 2017-2019 Adrien Chalard (Kayl).
+
+## Special Thank
+
+- Thank to Lorenzolamas for testing and community management.
 
 ## Credits
 
 * EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 * RetroBat use EmulationStation FCAMOD by Fabrice Caruso.
 * RetroArch by Libretro Team.
-* NextFull ES Theme by Lorenzolamas, AlekFull and KOT Production.
+* NextFull ES Theme based on the work of Fagnerpc for AlekFull Themes. Edited by KOT Prod and Lorenzolamas.
 * game-icons.net/1x1/lorc by Lorc.
 * 7-Zip (C) 1999-2019 Igor Pavlov.
