@@ -2,7 +2,7 @@
 
 | [Visit Official Website](https://www.retrobat.ovh) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases) | [Download latest version](https://www.retrobat.ovh/releases/retrobat-latest.zip) |
 
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/AdrienChalard)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/AdrienChalard) Feel free to buy me a coffee if you find RetroBat usefull ;)
 
 ## Introduction
 
