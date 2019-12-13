@@ -81,8 +81,8 @@
 	<game>
 		<path>./retrobat-setup.cmd</path>
 		<name>RetroBat Setup</name>
-		<desc>Configure RetroBat</desc>
-		<image>./_media/retrobat-logo.png</image>
+		<desc>RetroBat Setup Command Script</desc>
+		<image>./_media/config.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Kayl</developer>
@@ -101,7 +101,7 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>6</playcount>
-		<lastplayed>20191010T150123</lastplayed>
+		<playcount>13</playcount>
+		<lastplayed>20191203T025635</lastplayed>
 	</game>
 </gameList>

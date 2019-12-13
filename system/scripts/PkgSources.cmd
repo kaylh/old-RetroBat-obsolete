@@ -1,12 +1,14 @@
-@Echo off
-Set Dolphin_URL="http://www.retrobat.ovh/repo/dolphin-pkg.zip"
-Set DOSBox_URL="http://www.retrobat.ovh/repo/dosbox-pkg.zip"
-Set EmulationStation_URL="https://github.com/fabricecaruso/EmulationStation/releases/download/continuous-master/EmulationStation-Win32.zip"
-Set ES_Profile_URL="http://www.retrobat.ovh/repo/es-config-pkg.zip"
-Set NextFull_Theme_URL="http://www.retrobat.ovh/repo/nextfull-theme-pkg.7z"
-Set Libretro_Cores_Pack_URL="http://www.retrobat.ovh/repo/libretro-cores-pkg.7z"
-Set PCSX2_URL="http://www.retrobat.ovh/repo/pcsx2-pkg.zip"
-Set RetroArch_Lite_URL="https://buildbot.libretro.com/stable/1.7.9/windows/x86_64/RetroArch.7z"
-Set RetroArch_Nightly_URL="https://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z"
-Set Scraper_URL="http://www.retrobat.ovh/repo/scraper-pkg.zip"
-Goto:EOF
+@echo off
+goto:rem
+***************************************
+This file is part of RetroBat Scripts. 
+***************************************
+:rem
+set emulationstation_url="https://github.com/fabricecaruso/emulationstation/releases/download/continuous-master/emulationstation-win32.zip"
+set emulationstation_update_url="https://github.com/fabricecaruso/emulationstation/releases/download/continuous-master/emulationstation-win32-no-deps.zip"
+set default_theme_url="https://github.com/kaylh/es-theme-nextfull/archive/master.zip"
+set retroarch_stable_url="https://buildbot.libretro.com/stable/1.8.1/windows/x86_64/RetroArch.7z"
+set retroarch_stable_update_url="https://buildbot.libretro.com/stable/1.8.1/windows/x86_64/RetroArch_update.zip"
+set retroarch_nightly_url="https://buildbot.libretro.com/nightly/windows/x86_64/retroarch.7z"
+set retroarch_nightly_update_url="https://buildbot.libretro.com/nightly/windows/x86_64/retroarch_update.7z"
+goto:eof

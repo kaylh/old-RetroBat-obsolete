@@ -1,3 +1,35 @@
-- You have to download this emulator separately.
+Standalone emulators instructions:
+**********************************
+
+- You have to download standalone emulator separately.
 - Extract emulator files in current folder.
 - Run game from EmulationStation.
+
+### Links to download emulators ##
+
+# Dolphin (GameCube, Wii):
+https://dolphin-emu.org
+https://buildbot.dolphin-emu.org
+
+Install directory: ..\emulators\dolphin-emu
+
+# PCSX2 (PlayStation 2):
+https://buildbot.orphis.net/pcsx2
+https://pcsx2.net/download/releases/windows/category/40-windows.html
+
+Install directory: ..\emulators\pcsx2
+
+# Redream (Dreamcast):
+https://redream.io
+
+Install directory: ..\emulators\redream
+
+# PPSSPP (PSP):
+http://ppsspp.org
+
+Install directory: ..\emulators\ppsspp
+
+- RCPS3 (PlayStation 3):
+https://rpcs3.net
+
+Install directory: ..\emulators\rcps3

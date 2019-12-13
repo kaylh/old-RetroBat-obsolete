@@ -1,32 +1,34 @@
 @Echo off
-GOTO:REM
-************************************************
+goto:rem
+***************************************
+This file is part of RetroBat Scripts.
+(c) 2017-2019 Adrien Chalard "Kayl" 
+***************************************
+:rem
 
- RETROBAT LAUNCHER BY KAYL
+:load_config
+for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+set appname=retroarch
+set appbin=%appname%.exe
+set apppath=%retroarch_dir%\%appbin%
+set apparg=--config %retroarch_config_dir%\retroarch.cfg --appendconfig %retroarch_config_dir%\retroarch-override.cfg
+goto check_setup
 
-************************************************
-:REM
-:setVar0
-Set emulator_folder=retroarch
-Set emulator_bin=retroarch.exe
-Set run_emu=%RUN_RETROARCH%
-Goto checkInst
-
-:checkInst
-If exist %EMULATOR_PATH%\%emulator_folder%\%emulator_bin% (
-	goto runEmu
+:check_setup
+If exist %apppath% (
+	goto runapp
 ) else (
 	goto notFound
 )
 
-:runEmu
-%run_emu%
-GOTO exit
+:runapp
+%apppath% %apparg%
+goto exit
 
 :notFound
-Echo %emulator_bin% is missing. Aborting.
-timeout /t 4 >nul
-GOTO exit
+Echo %appbin% is missing. Aborting.
+timeout /t 3 >nul
+goto exit
 
 :exit
-EXIT
+exit

@@ -1,262 +1,217 @@
-@ECHO OFF
-If "%CD%"=="C:\Windows\system32" GOTO admin_fail
-If "%CD%"=="C:\Windows" GOTO admin_fail
-If "%CD%"=="C:\WINDOWS\system32" GOTO admin_fail
-If "%CD%"=="C:\WINDOWS" GOTO admin_fail
-Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set OS=32BIT || set OS=64BIT
-If %OS%==32BIT goto wrongArch
-If %OS%==64BIT goto set_variables0
+@echo off
+goto:rem
+***************************************
+This file is part of RetroBat Scripts. 
+***************************************
+:rem
 
-:cleanInstall
-Cd %SetupDir%
-Rem Set "updateESsys="
-If exist %InitSetup% del/Q %InitSetup%
-Goto set_variables0
+:create_config
+echo Please wait...
+set name=RetroBat
+set/p version=<%CD%\System\retrobat.version
+set setup_info=retrobat.setup
+if exist %CD%\System\%setup_info% break>%CD%\System\%setup_info%
+set launcher_file=retro.bat
+set setup_file=setup.bat
+set setup_dir="%cd:~3%">nul
+set setup_dir=%setup_dir:"=%
+set setup_dir=\%setup_dir%
+echo setup_dir=%setup_dir%>> %CD%\System\%setup_info%
+echo name=%name%>> %CD%\System\%setup_info%
+echo version=%version%>> %CD%\System\%setup_info%
+echo system_dir=%setup_dir%\system>> %CD%\System\%setup_info%
+echo scripts_dir=%setup_dir%\system\scripts>> %CD%\System\%setup_info%
+echo config_dir=%setup_dir%\configs>> %CD%\System\%setup_info%
+echo templates_dir=%setup_dir%\system\templates>> %CD%\System\%setup_info%
+echo rbmenu_dir=%setup_dir%\system\configmenu>> %CD%\System\%setup_info%
+echo temp_dir=%setup_dir%\system\downloads>> %CD%\System\%setup_info%
+echo emulators_dir=%setup_dir%\emulators>> %CD%\System\%setup_info%
+echo retroarch_dir=%setup_dir%\emulators\retroarch>> %CD%\System\%setup_info%
+echo retroarch_config_dir=%setup_dir%\emulators\retroarch\config>> %CD%\System\%setup_info%
+echo es_dir=%setup_dir%\emulationstation>> %CD%\System\%setup_info%
+echo es_config_dir=%setup_dir%\emulationstation\.emulationstation>> %CD%\System\%setup_info%
+echo saves_dir=%setup_dir%\saves>> %CD%\System\%setup_info%
+echo shots_dir=%setup_dir%\screenshots>> %CD%\System\%setup_info%
+echo bios_dir=%setup_dir%\bios>> %CD%\System\%setup_info%
+echo games_dir=%setup_dir%\roms>> %CD%\System\%setup_info%
+echo medias_dir=%setup_dir%\medias>> %CD%\System\%setup_info%
+title %name% Setup
+goto load_config
 
-:set_variables0
-SET name=RetroBat
-SET/p BuildVersion=<%CD%\System\retrobat.version
-SET InitSetup=setup.ini
-::SET InitProfile=Profile.ini
-SET LauncherFile=retro.bat
-SET SetupFile=setup.bat
-REM SET ScraperFile=scraper.bat
-SET SetupDir="%cd:~3%">nul
-SET SetupDir>nul
-SET SetupDir=%SetupDir:"=%
-SET SetupDir>nul
-SET SFX=0
-TITLE %Name% Setup
-goto checkIni
+:load_config
+for /f "delims=" %%x in (%CD%\System\%setup_info%) do (set "%%x")
+cd %setup_dir%
+goto check_proc
 
-:checkIni
-If exist %InitSetup% (
-	goto fetchMenu
+:check_proc
+Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set PROCARCH=32 || set PROCARCH=64
+If %PROCARCH%==32 goto proc_fail
+If %PROCARCH%==64 goto check_admin
+
+:check_admin
+net session >nul 2>&1
+if %ERRORLEVEL% == 0 (
+    goto admin_fail
 ) else (
-	goto setupMenu
+    goto check_winver
 )
 
-:setupMenu
-Cls
-If "%SFX%"=="1" goto set_variables1
-Call %CD%\System\Scripts\ShowLogo.cmd
-ECHO       Version: %BuildVersion% by Kayl                                            
-ECHO +-----------------------------------------------+
-ECHO.                                                               
-ECHO  RetroBat was made to help launching and
-ECHO  configuring EmulationStation on Windows.
-ECHO.
-ECHO  The frontend is going to be configured to run
-ECHO  games from your collection with RetroArch and 
-ECHO  many other compatible emulators.
-ECHO.
-ECHO  WE WILL MAKE A NEW CONFIGURATION IN THE
-ECHO  CURRENT RETROBAT'S FOLDER:
-ECHO. 
-ECHO +-----------------------------------------------+ 
-ECHO  Setup directory:
-ECHO  %CD%
-ECHO +===============================================+ 
-SET go=C
-SET/P go="- (C)ontinue or (Q)uit: "
-IF "%go%"=="C" GOTO set_variables1
-IF "%go%"=="c" GOTO set_variables1
-IF "%go%"=="Q" GOTO exit
-IF "%go%"=="q" GOTO exit
-
-:set_variables1
-ECHO SetupDir=\%SetupDir%>> %InitSetup%
-ECHO NAME=%Name%>> %InitSetup%
-ECHO VERSION=%BuildVersion%>> %InitSetup%
-REM ECHO SCRIPTS_PATH=\%SetupDir%\System\MainData>> %InitSetup%
-ECHO SCRIPTS_PATH=\%SetupDir%\system\scripts>> %InitSetup%
-ECHO CONFIG_PATH=\%SetupDir%\configs>> %InitSetup%
+:check_winver
+cls
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set WINVER=%%i.%%j
+echo.
+if "%winver%" == "6.0" echo :: Running %name% %version% on Windows Vista %PROCARCH% bit
+if "%winver%" == "6.1" echo :: Running %name% %version% on Windows 7 %PROCARCH% bit
+if "%winver%" == "6.2" echo :: Running %name% %version% on Windows 8 %PROCARCH% bit
+if "%winver%" == "6.3" echo :: Running %name% %version% on Windows 8.1 %PROCARCH% bit
+if "%winver%" == "10.0" echo :: Running %name% %version% on Windows 10 %PROCARCH% bit
+echo.
 timeout /t 1 >nul
-FOR /f "delims=" %%x IN (%InitSetup%) DO (set "%%x")
-::CD %CONFIG_PATH%\Profiles
-::FOR /f "delims=" %%x IN (%InitProfile%) DO (set "%%x")
-::SET PROFILE_PATH=%CONFIG_PATH%\Profiles\%profile_name%
-SET HOME=%CONFIG_PATH%
-Set zip_path="%ProgramFiles%"\7-Zip
-REM SET HOMEPATH=%HOME%
-SET emulator_path=%SetupDir%\emulators
-SET RETROARCH_CONFIG_DIR=%emulator_path%\retroarch\config
-SET RETROARCH_OVERRIDE_DIR=%emulator_path%\retroarch\config
-SET RETROARCH_OVERRIDE_FILE=retroarch-override.cfg
-SET DOLPHIN_CONFIG_DIR=%emulator_path%\dolphin-emu\config
-SET PCSX2_CONFIG_DIR=%emulator_path%\pcsx2\config
-SET ES_PATH=%SetupDir%\emulationstation
-SET ES_CONFIG_DIR=%ES_PATH%\.emulationstation
-SET SCRIPTS_PATH=%SetupDir%\system\scripts
-SET TemplatesPath=%SetupDir%\system\templates
-SET ESTemplates=%TemplatesPath%\emulationstation
-SET ConfigMenuPath=%SetupDir%\system\configmenu
-Set TMP_DIR=%SetupDir%\system\!packages
-::Set SCRAPER_DIR=%SetupDir%\scraper
-REM specific settings for retroarch override configuration file
-SET savegame_dir=%SetupDir%\saves
-SET shots_dir=%SetupDir%\screenshots
-SET bios_dir=%SetupDir%\bios
-SET games_dir=%SetupDir%\roms
-SET medias_dir=%SetupDir%\medias
-SET libretro_cores_dir=%EMULATOR_PATH%\retroarch\cores
-timeout /t 2 >nul
-GOTO check7zip
+goto check_config
 
-:check7zip
-If exist %zip_path%\%zip_bin% (
-	goto mkFolders
+:check_config
+if not exist %temp_dir%\. md %temp_dir%
+if not exist %config_dir%\. md %config_dir%
+if "%updatedone%"=="1" copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
+if not exist %config_dir%\emulationstation.cfg copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
+call %scripts_dir%\pkgsources.cmd
+goto check_pkg
+
+:check_pkg
+echo *** Checking required softwares
+echo.
+timeout /t 1 >nul
+goto check_7zip
+
+:check_7zip
+set inst7z=0
+set portable7z=0
+set local7z=0
+
+If exist %system_dir%\7zip\7zG.exe set/A inst7z=inst7z+1 & set/A portable7z=portable7z+1
+::If exist %system_dir%\7zip\7zG.exe set/A portable7z=portable7z+1
+
+If exist "%ProgramFiles%"\7-Zip\7zG.exe set/A inst7z=inst7z+1 & set/A local7z=local7z+1
+::If exist "%ProgramFiles%"\7-Zip\7zG.exe set/A local7z=local7z+1
+
+if "%portable7z%"=="1" set zip_dir=%system_dir%\7zip
+if "%local7z%"=="1" set zip_dir="%ProgramFiles%"\7-Zip
+
+if "%inst7z%"=="0" (
+	echo [ 7-Zip ] -- not found
+	timeout /t 1 >nul
+	goto dl_7zip
 ) else (
-	goto error1
+	echo [ 7-Zip ] -- found
+	timeout /t 1 >nul
+	goto check_required
 )
+goto check_required
 
-:: Create RetroBat tree
-:mkFolders
-CLS
-ECHO.
-ECHO -- Checking if RetroBat's User Folders exist --
-ECHO.
-GOTO checkGameDir
+:dl_7zip
+cls
+echo -- 7-Zip is downloading --
+echo.
+set current_url=http://www.retrobat.ovh/repo/tools/7z64-pkg.zip
+set output_dir=%temp_dir%\7z64-pkg.zip
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
+ping 127.0.0.1 -n 4 >nul
+timeout /t 1 >nul
+goto install_7zip
 
-:chkDefaultProfileDir
-::Set PROFILE_NAME=Default
-::Cd %SetupDir%
-::If not exist %PROFILE_PATH%\. md %PROFILE_PATH%
-::GOTO checkGameDir
+:install_7zip
+cls
+echo.
+echo -- 7-Zip is installing --
+echo.
+if not exist %system_dir%\7zip\. md %system_dir%\7zip
+powershell -command "Expand-Archive -Force -LiteralPath "%temp_dir%\7z64-pkg.zip" -DestinationPath %system_dir%\7zip"
+del/q "%temp_dir%\7z64-pkg.zip"
+echo Done.
+timeout /t 1 >nul
+cls
+goto check_pkg
 
-:checkGameDir
-Cd %SetupDir%
-If exist %games_dir%\. (
-    echo :: Directory "%games_dir%" already exist. Skipping.
-    goto checkSavesDir
-) else (
-    Md %games_dir%
-	echo :: Directory "%games_dir%%" created !
-    goto checkSavesDir
-)
+:check_required
+echo.
+set mainpkg=0
+set esbin=0
+if exist %es_dir%\emulationstation.exe set/A esbin=esbin+1 & set/A mainpkg=mainpkg+1
+if "%esbin%"=="1" echo [ EmulationStation ] -- found
+if "%esbin%"=="0" echo [ EmulationStation ] -- not found
+timeout /t 1 >nul
+echo.
+set rabin=0
+if exist %emulators_dir%\retroarch\retroarch.exe set/A rabin=rabin+1 & set/A mainpkg=mainpkg+1
+if "%rabin%"=="1" echo [ RetroArch ] -- found
+if "%rabin%"=="0" echo [ RetroArch ] -- not found
+timeout /t 1 >nul
+echo.
+set libretrocores=0
+if exist %emulators_dir%\retroarch\cores\*_libretro.dll set/A libretrocores=libretrocores+1 & set/A mainpkg=mainpkg+1
+if "%libretrocores%"=="1" echo [ Libretro Cores ] -- found
+if "%libretrocores%"=="0" echo [ Libretro Cores ] -- not found
+timeout /t 1 >nul
+echo.
+set fullinstall=0
+if "%updatedone%"=="1" set updatedone=0 && goto create_folders
+if %mainpkg% GTR 0 goto welcome_menu
+if "%mainpkg%"=="0" set/p mainpkg="- Do you want to install them now ? (y)es, (n)o, (q)uit: "
+if "%mainpkg%"=="Y" set/A fullinstall=fullinstall+1
+if "%mainpkg%"=="Y" goto create_folders
+if "%mainpkg%"=="y" set/A fullinstall=fullinstall+1
+if "%mainpkg%"=="y" goto create_folders
+if "%mainpkg%"=="N" goto create_folders
+if "%mainpkg%"=="n" goto create_folders
+if "%mainpkg%"=="Q" goto exit
+if "%mainpkg%"=="q" goto exit
+goto check_required
 
-:checkSavesDir
-If exist %savegame_dir%\. (
-    echo :: Directory "%savegame_dir%" already exist. Skipping.
-    goto checkShotsDir
-) else (
-    Md %savegame_dir%
-	echo :: Directory "%savegame_dir%" created !
-    goto checkShotsDir
-)
+:create_folders
+cls
+set go=0
+echo.
+echo -- Creating some folders if they not exist --
+echo.
 
-:checkShotsDir
-If exist %shots_dir%\. (
-    echo :: Directory "%shots_dir%" already exist. Skipping.
-    goto checkBiosDir
-) else (
-    Md %shots_dir%
-	echo :: Directory "%shots_dir%" created !
-    goto checkBiosDir
-)
+if not exist %games_dir%\. md %games_dir%
+if not exist %saves_dir%\. md %saves_dir%
+if not exist %shots_dir%\. md %shots_dir%
+if not exist %bios_dir%\. md %bios_dir%
+if not exist %medias_dir%\. md %medias_dir%
 
-:checkBiosDir
-If exist %bios_dir%\. (
-    echo :: Directory "%bios_dir%" already exist. Skipping.
-    goto checkMediasDir
-) else (
-    Md %bios_dir%
-	echo :: Directory "%bios_dir%" created !
-    goto checkMediasDir
-)
+if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
+if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
 
-:checkMediasDir
-If exist %medias_dir%\. (
-    echo :: Directory "%medias_dir%" already exist. Skipping.
-    goto checkDolphinDir
-) else (
-    Md %medias_dir%
-	echo :: Directory "%medias_dir%" created !
-    goto checkDolphinDir
-)
+if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
+if not exist %emulators_dir%\pcsx2\config\. md %emulators_dir%\pcsx2\config
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
 
-:checkDolphinDir
-If exist %DOLPHIN_CONFIG_DIR%\. (
-    echo :: Directory "%emulator_path%\dolphin-emu" already exist. Skipping.
-    goto checkPcsx2Dir
-) else (
-    Md %DOLPHIN_CONFIG_DIR%
-	If exist %TemplatesPath%\Infos\info-emu.txt copy/Y %TemplatesPath%\Infos\info-emu.txt %emulator_path%\dolphin-emu\info.txt
-	echo :: Directory "%DOLPHIN_CONFIG_DIR%" created !
-    goto checkPcsx2Dir
-)
+if not exist %emulators_dir%\ppsspp\. md %emulators_dir%\ppsspp
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\ppsspp\info.txt>nul
 
-:checkPcsx2Dir
-If exist %emulator_path%\pcsx2\. (
-    echo :: Directory "%emulator_path%\pcsx2" already exist. Skipping.
-    goto checkPcsx2CfgDir
-) else (
-    Md %emulator_path%\pcsx2
-	If exist %TemplatesPath%\Infos\info-emu.txt copy/Y %TemplatesPath%\Infos\info-emu.txt %emulator_path%\pcsx2\info.txt
-	echo :: Directory "%emulator_path%\pcsx2" created !
-    goto checkPcsx2CfgDir
-)
+if not exist %emulators_dir%\redream\. md %emulators_dir%\redream
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\redream\info.txt>nul
 
-:checkPcsx2CfgDir
-If exist %PCSX2_CONFIG_DIR%\. (
-    echo :: Directory "%PCSX2_CONFIG_DIR%" already exist. Skipping.
-    goto checkPpssppDir
-) else (
-    Md %PCSX2_CONFIG_DIR%
-	echo :: Directory "%PCSX2_CONFIG_DIR%" created !
-    goto checkPpssppDir
-)
+if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
 
-:checkPpssppDir
-If exist %emulator_path%\ppsspp\. (
-    echo :: Directory "%emulator_path%\ppsspp" already exist. Skipping.
-    goto checkRedreamDir
-) else (
-    Md %emulator_path%\ppsspp
-	If exist %TemplatesPath%\Infos\info-emu.txt copy/Y %TemplatesPath%\Infos\info-emu.txt %emulator_path%\ppsspp\info.txt
-	echo :: Directory "%emulator_path%\ppsspp" created !
-    goto checkRedreamDir
-)
+if not exist %emulators_dir%\retroarch\. md %emulators_dir%\retroarch
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\retroarch\info.txt>nul
 
-:checkRedreamDir
-If exist %emulator_path%\redream\. (
-    echo :: Directory "%emulator_path%\redream" already exist. Skipping.
-    goto checkDosboxDir
-) else (
-    Md %emulator_path%\redream
-	If exist %TemplatesPath%\Infos\info-emu.txt copy/Y %TemplatesPath%\Infos\info-emu.txt %emulator_path%\redream\info.txt
-	echo :: Directory "%emulator_path%\redream" created !
-    goto checkDosboxDir
-)
+if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
 
-:checkDosboxDir
-If exist %emulator_path%\dosbox\. (
-    echo :: Directory "%emulator_path%\dosbox" already exist. Skipping.
-    goto mkConfig
-) else (
-    Md %emulator_path%\dosbox
-	If exist %TemplatesPath%\Infos\info-emu.txt copy/Y %TemplatesPath%\Infos\info-emu.txt %emulator_path%\dosbox\info.txt
-	echo :: Directory "%emulator_path%\dosbox" created !
-    goto checkRADir
-)
+if not exist %emulators_dir%\rcps3\. md %emulators_dir%\rcps3
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rcps3\info.txt>nul
 
-:checkRADir
-If exist %emulator_path%\retroarch\. (
-    echo :: Directory "%emulator_path%\retroarch" already exist. Skipping.
-    goto mkConfig
-) else (
-    Md %emulator_path%\retroarch
-	echo :: Directory "%emulator_path%\retroarch" created !
-    goto mkConfig
-)
-
-:mkConfig
-If exist %TemplatesPath%\Infos\info-bios.txt copy/Y %TemplatesPath%\Infos\info-bios.txt %bios_dir%\BIOS.txt>nul
-If exist %SCRIPTS_PATH%\%LauncherFile% copy/Y %SCRIPTS_PATH%\%LauncherFile% %SetupDir%\%LauncherFile%>nul
-REM If exist %SCRIPTS_PATH%\%ScraperFile% copy/Y %SCRIPTS_PATH%\%ScraperFile% %SetupDir%\%ScraperFile%>nul
-:: Create roms folders
-Cd %games_dir%
-Call %SCRIPTS_PATH%\SystemsNames.cmd
+if exist %templates_dir%\infos\info-bios.txt copy/y %templates_dir%\infos\info-bios.txt %bios_dir%\bios.txt>nul
+if exist %scripts_dir%\%launcher_file% copy/y %scripts_dir%\%launcher_file% %setup_dir%\%launcher_file%>nul
+timeout /t 1 >nul
+cd %games_dir%
+call %scripts_dir%\systemsnames.cmd
 If not exist %threedo%\. md "%threedo%"
 If not exist %atari2600%\. md %atari2600%
 If not exist %atari5200%\. md %atari5200%
@@ -286,7 +241,6 @@ If not exist %mastersystem%\. md %mastersystem%
 If not exist %megacd%\. md %megacd%
 If not exist %megadrive%\. md %megadrive%
 If not exist %saturn%\. md %saturn%
-::If not exist %model2%\. md %model2%
 If not exist %neogeo%\. md %neogeo%
 If not exist %neogeocd%\. md %neogeocd%
 If not exist %ngp%\. md %ngp%
@@ -303,14 +257,6 @@ If not exist %videopac%\. md %videopac%
 If not exist %fba%\. md %fba%
 If not exist %mame%\. md %mame%
 If not exist %vb%\. md %vb%
-::If exist %mame%\. cd %mame%
-::If not exist %mame%\. md %mame%
-::If not exist %mame2000%\. md %mame2000%
-::If not exist %mame2003%\. md %mame2003%
-::If not exist %mame2010%\. md %mame2010%
-::If not exist %mame2014%\. md %mame2014%
-::If not exist %mame2016%\. md %mame2016%
-::If exist %mame2000%\. cd ..
 If not exist %cps1%\. md %cps1%
 If not exist %cps2%\. md %cps2%
 If not exist %cps3%\. md %cps3%
@@ -321,12 +267,8 @@ If not exist %amiga%\. md %amiga%
 If not exist %amstradcpc%\. md %amstradcpc%
 If not exist %colecov%\. md %colecov%
 If not exist %com64%\. md %com64%
-::If not exist %com128%\. md %com128%
-::If not exist %comvic20%\. md %comvic20%
-::If not exist %complus4%\. md %complus4%
 If not exist %gamewatch%\. md %gamewatch%
 If not exist %intellivision%\. md %intellivision%
-::If not exist %laserdisc%\. md %laserdisc%
 If not exist %msx%\. md %msx%
 If not exist %n3ds%\. md %n3ds%
 If not exist %pcfx%\. md %pcfx%
@@ -336,634 +278,624 @@ If not exist %zxspectrum%\. md %zxspectrum%
 If not exist %atomiswave%\. md %atomiswave%
 If not exist %naomi%\. md %naomi%
 If not exist %pcgames%\. md %pcgames%
-timeout /t 2 >nul
-:: Save path in Setup.ini
-Cd %SetupDir%
-ECHO games_dir=%games_dir%>> %InitSetup%
-ECHO savegame_dir=%savegame_dir%>> %InitSetup%
-ECHO shots_dir=%shots_dir%>> %InitSetup%
-ECHO bios_dir=%bios_dir%>> %InitSetup%
-::ECHO shaders_dir=%shaders_dir%>> %InitSetup%
-ECHO ConfigMenuPath=%ConfigMenuPath%>> %InitSetup%
-ECHO TMP_DIR=%TMP_DIR%>> %InitSetup%
+If not exist %mugen%\. md %mugen%
+cd ..
 timeout /t 1 >nul
-GOTO mkConfig1
+if "%go%"=="7" goto debug_menu
+if "%fullinstall%"=="1" goto dl_ES
+goto welcome_menu
 
-:: Post installation export variables in setup.ini
-:mkConfig1
-ECHO.
-ECHO -- Saving Modifications --
-ECHO.
-ECHO PROFILE_PATH=%PROFILE_PATH%>> %InitSetup%
-ECHO EMULATOR_PATH=%EMULATOR_PATH%>> %InitSetup%
-ECHO RETROARCH_CONFIG_DIR=%RETROARCH_CONFIG_DIR%>> %InitSetup%
-ECHO RETROARCH_OVERRIDE_DIR=%RETROARCH_OVERRIDE_DIR%>> %InitSetup%
-ECHO RETROARCH_OVERRIDE_FILE=%RETROARCH_OVERRIDE_FILE%>> %InitSetup%
-ECHO DOLPHIN_CONFIG_DIR=%DOLPHIN_CONFIG_DIR%>> %InitSetup%
-ECHO PCSX2_CONFIG_DIR=%PCSX2_CONFIG_DIR%>> %InitSetup%
-ECHO ES_PATH=%ES_PATH%>> %InitSetup%
-ECHO ES_CONFIG_DIR=%ES_CONFIG_DIR%>> %InitSetup%
-ECHO zip_path=%zip_path%>> %InitSetup%
-ECHO SCRAPER_DIR=%SCRAPER_DIR%>> %InitSetup%
-ECHO libretro_cores_dir=%libretro_cores_dir%>> %InitSetup%
-ECHO TemplatesPath=%TemplatesPath%>> %InitSetup%
-goto setupInfo
-
-:checkSFX
-ECHO :: Done.
-timeout /t 2 >nul
-If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=1
-If not exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=0
-If "%RAOF%"=="1" goto mkRAcfg3
-If "%SFX%"=="1" (
-	goto mkRAcfg2b
-) else (
-	goto setupInfo
-)
-
-:setupInfo
-CLS
-CALL %CD%\System\Scripts\ShowLogo.cmd
-ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-----------------------------------------------+
-ECHO.                                  
-ECHO  - Setup directory: "%SetupDir%"
-ECHO.
-ECHO  - ROMS "%games_dir%"
-ECHO  - BIOS "%bios_dir%"
-ECHO  - Saves "%savegame_dir%"
-ECHO  - Screenshots "%shots_dir%"
-ECHO.
-ECHO +===============================================+
-ECHO    -- PRESS ANY KEY TO GO TO SETUP MENU --
-pause>nul
-GOTO setupMode
-
-:setupMode
+:dl_ES
 cls
-Call %SCRIPTS_PATH%\PkgSources.cmd
-Call %SCRIPTS_PATH%\ShowLogo.cmd
-ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-----------------------------------------------+
-ECHO.
-ECHO    1) -- AUTOMATIC INSTALL
-ECHO.
-ECHO    This will install all main softwares needed
-ECHO   (EmulationStation, RetroArch and Cores).
-ECHO.
-ECHO    2) -- MANUAL INSTALL
-ECHO.
-ECHO    This will go to another menu where you can
-ECHO    select the software you want to install.
-ECHO.
-ECHO    Q) -- QUIT
-ECHO.
-ECHO +===============================================+
-Set mkinstall0=1
-Set /p mkinstall0="Please choose one (Number or Q): "
-If "%mkinstall0%"=="1" goto autoinstall
-If "%mkinstall0%"=="2" goto fetchMenu
-If "%mkinstall0%"=="q" goto cleanexit
-If "%mkinstall0%"=="Q" goto cleanexit
-set autoinst=1
-goto autoinstall
-
-:autoinstall
-set autoinst=1
-goto instES0
-
-:fetchMenu
-Cd %SetupDir%
-Cls
-for /f "delims=" %%x in (%InitSetup%) do (set "%%x")
-::Cd %CONFIG_PATH%\Profiles
-::for /f "delims=" %%x in (%InitProfile%) do (set "%%x")
-Call %SCRIPTS_PATH%\PkgSources.cmd
-REM for /f "delims=" %%x in (sources.cfg) do (set "%%x")
-Call %SCRIPTS_PATH%\ShowLogo.cmd
-If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=1
-If not exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% set RAOF=0
-ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-----------------------------------------------+
-ECHO    1) -- LAUNCH EMULATIONSTATION FRONTEND                                        
-ECHO    2) -- INSTALL EMULATIONSTATION
-::ECHO    3) -- INSTALL EXTRA THEMES
-ECHO    3) -- INSTALL EMULATORS
-::ECHO    4) -- INSTALL COMMAND LINE SCRAPER ENGINE
-ECHO    4) -- RESET RETROBAT CONFIGURATION
-ECHO    5) -- UPDATE SOURCES
-Echo    6) -- DELETE ALL UNNEEDED PACKAGES
-Echo    7) -- VISIT JOYTOKEY WEB SITE
-Echo    8) -- VISIT RETROBAT WEB SITE
-ECHO    Q) -- QUIT
-ECHO +===============================================+
-Set mkinstall0=1
-Set /p mkinstall0="Please choose one (Number or Q): "
-If "%mkinstall0%"=="1" goto runES
-If "%mkinstall0%"=="2" goto ESupdate0
-If "%mkinstall0%"=="3" goto fetchEmulators
-::If "%mkinstall0%"=="4" goto SCPupdate0
-If "%mkinstall0%"=="4" goto cleanInstall
-If "%mkinstall0%"=="5" goto sourcesUpdate
-If "%mkinstall0%"=="6" goto cleanTMP
-If "%mkinstall0%"=="7" goto visitJ2K
-If "%mkinstall0%"=="8" goto visitRetroBat
-If "%mkinstall0%"=="q" goto exit
-If "%mkinstall0%"=="Q" goto exit
-Goto fetchMenu
-
-:cleanTMP
-Echo Deleting unneeded packages...
-If exist %TMP_DIR%\*-pkg.7z del %TMP_DIR%\*-pkg.7z>nul
-If exist %TMP_DIR%\*-pkg.zip del %TMP_DIR%\*-pkg.zip>nul
-:: If exist %TMP_DIR%\. rmdir %TMP_DIR%>nul
-timeout /t 2 >nul
-Echo Done.
-timeout /t 2 >nul
-Goto fetchMenu
-
-:fetchEmulators
-CLS
-CALL %SCRIPTS_PATH%\ShowLogo.cmd
-ECHO  Version: %BuildVersion% by Kayl                                            
-ECHO +-----------------------------------------------+
-ECHO    1) -- INSTALL RETROARCH (STABLE)
-ECHO    2) -- INSTALL RETROARCH (NIGHTLY BUILD)
-ECHO    3) -- INSTALL LIBRETRO CORES LITE PACK
-ECHO    4) -- INSTALL DOSBOX EMULATOR
-ECHO    5) -- INSTALL DOLPHIN EMULATOR
-ECHO    6) -- INSTALL PCSX2 EMULATOR
-ECHO    7) -- VISIT REDREAM DOWNLOAD PAGE (WEB)
-ECHO    8) -- VISIT PPSSPP DOWNLOAD PAGE (WEB)
-ECHO    M) -- RETURN TO SETUP MENU
-ECHO    Q) -- QUIT
-ECHO +===============================================+
-Set mkinstall0=Q
-Set /p mkinstall1="Please choose one (Number, M or Q): "
-if "%mkinstall1%"=="1" goto instRAl0
-if "%mkinstall1%"=="2" goto instRAn0
-if "%mkinstall1%"=="3" goto installCores0
-if "%mkinstall1%"=="4" goto instDOSBox0
-if "%mkinstall1%"=="5" goto instDolphin0
-if "%mkinstall1%"=="6" goto instPcsx20
-if "%mkinstall1%"=="7" goto visitRedream
-if "%mkinstall1%"=="8" goto visitPpsspp
-if "%mkinstall1%"=="m" goto fetchMenu
-if "%mkinstall1%"=="M" goto fetchMenu
-if "%mkinstall1%"=="Q" goto exit
-if "%mkinstall1%"=="q" goto exit
-GOTO fetchEmulators
-
-:ESupdate0
-Set warningES0=M
-ECHO +===============================================+
-ECHO                  ATTENTION: 
-ECHO.
-ECHO ONLY CHOOSE THIS OPTION IF YOU HAVE NOT ALREADY 
-ECHO EMULATIONSTATION INSTALLED, OR IF YOU WANT TO  
-ECHO MAKE A NEW INSTALLATION OF IT. 
-ECHO  
-ECHO THE NEW FILES WILL OVERWRITE THE OLD ONES AND
-ECHO INSTALLED THEMES WILL BE ERASED.
-ECHO +===============================================+
-SET /p warningES0="(I)nstall, return to (M)enu or (Q)uit: "
-if "%warningES0%"=="I" goto instES0
-if "%warningES0%"=="i" goto instES0
-if "%warningES0%"=="M" goto fetchMenu
-if "%warningES0%"=="m" goto fetchMenu
-if "%warningES0%"=="Q" goto exit
-if "%warningES0%"=="q" goto exit
-
-:instES0
-Set pkgName=EmulationStation
-Set pkgFile0=es-core-pkg.zip
-Set pkgFile1=es-config-pkg.zip
-Set pkgFile2=nextfull-theme-pkg.7z
-Set/A ESfullPkg=0
-Set/A EScheckPkg=0
-CLS
-REM Set updateESsys=1
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile0% set/A ESfullPkg=%ESfullPkg%+1
-If exist %TMP_DIR%\%pkgFile1% set/A ESfullPkg=%ESfullPkg%+1
-If exist %TMP_DIR%\%pkgFile2% set/A ESfullPkg=%ESfullPkg%+1
-:: Set/A ESfullPkg=(%EScorePkg%+%ESassetsPkg%)>nul
-If "%ESfullPkg%"=="3" goto instES1
-If not exist %TMP_DIR%\. md %TMP_DIR%
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%TMP_DIR%\%pkgFile0%""
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %es_profile_url% -OutFile "%TMP_DIR%\%pkgFile1%""
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %nextfull_theme_url% -OutFile "%TMP_DIR%\%pkgFile2%""
+set current_url=%emulationstation_url%
+set output_dir=%temp_dir%\es-bin-pkg.zip
+if exist %output_dir% goto install_ES
+echo -- EmulationStation is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
-timeout /t 2 >nul
-If not exist %TMP_DIR%\%pkgFile0% set/A EScheckPkg=%EScheckPkg%+1
-If not exist %TMP_DIR%\%pkgFile1% set/A EScheckPkg=%EScheckPkg%+1
-If not exist %TMP_DIR%\%pkgFile2% set/A EScheckPkg=%EScheckPkg%+1
-ECHO Done.
-If %EScheckPkg% GEQ 1 (
-	goto pkgFail
-) else (
-	goto instES1
-)
+timeout /t 1 >nul
+echo Done.
+goto install_ES
 
-:instES1
-CLS
-If exist %ES_PATH%\emulationstation.exe rmdir /s /q %ES_PATH%
-If not exist %ES_PATH%\. md %ES_PATH%
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile0%" -o"%ES_PATH%" -aoa >nul
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile1%" -o"%ES_PATH%" -aoa >nul
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile2%" -o"%ES_PATH%\.emulationstation" -aoa >nul
-ECHO Done.
-timeout /t 2 >nul
-::If "%autoinst%"=="1" goto instRAl0
-If "%autoinst%"=="1" (
-	goto instRAl0
-) else (
-	goto fetchMenu
-)
-
-:sourcesUpdate
-CLS
-Cd %SetupDir%
-If exist %SCRIPTS_PATH%\PkgSources.cmd del/q %SCRIPTS_PATH%\PkgSources.cmd 
-ECHO -- Updating sources --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "http://www.retrobat.ovh/repo/scripts/PkgSources.cmd" -OutFile "%SCRIPTS_PATH%\PkgSources.cmd""
+:update_ES
+cls
+set current_url=%emulationstation_update_url%
+set output_dir=%temp_dir%\es-bin-update-pkg.zip
+if exist %output_dir% goto install_ES
+echo -- EmulationStation is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
-CLS
-ECHO Please start this script again for change to take effect
-ECHO ---
-timeout /t 5 >nul
-GOTO exit
+timeout /t 1 >nul
+echo Done.
+goto install_ES
 
-:SCPupdate0
-Set pkgName=Scraper Engine
-Set pkgFile=scraper-pkg.zip
+:install_ES
 CLS
-Cd %SetupDir%
-If exist %SetupDir%\Scraper\Scraper.bat rmdir /s /q %SetupDir%\Scraper
-If not exist %SetupDir%\Scraper\Scraper.bat md %SetupDir%\Scraper
-If not exist %TMP_DIR%\. md %TMP_DIR%
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %scraper_url% -OutFile "%TMP_DIR%\%pkgFile%""
+echo.
+echo -- EmulationStation is installing --
+echo.
+if not exist %es_dir%\. md %es_dir%
+if exist %output_dir% %zip_dir%\7zg.exe -y x "%output_dir%" -o"%es_dir%" -aoa>nul
+if not exist %es_config_dir%\. md %es_config_dir%>nul
+if not exist %es_config_dir%\scripts\. md %es_config_dir%\scripts>nul
+if not exist %es_config_dir%\themes\. md %es_config_dir%\themes>nul
+if not exist %es_config_dir%\music\. md %es_config_dir%\music>nul
+if not exist %es_config_dir%\video\. md %es_config_dir%\video>nul
+xcopy/Y /e /i "%templates_dir%\emulationstation\scripts" "%es_config_dir%\scripts" 2>&1
+set bgmusic=0
+if not exist %es_config_dir%\music\*.ogg set/A bgmusic=bgmusic+1
+if not exist %es_config_dir%\music\*.mp3 set/A bgmusic=bgmusic+1
+if "%bgmusic%"=="0" if exist %templates_dir%\emulationstation\music.ogg copy/Y %templates_dir%\emulationstation\music.ogg %es_config_dir%\music\music.ogg>nul
+goto config_es
+
+:config_es
+set esconf=0
+if exist %es_config_dir%\es_input.cfg set/A esconf=esconf+1
+if %esconf% EQU 0 copy/Y %templates_dir%\emulationstation\es_input.cfg %es_config_dir%\es_input.cfg>nul
+if %esconf% EQU 1 copy/Y %templates_dir%\emulationstation\es_input.cfg %es_config_dir%\es_input.cfg.new>nul
+set esconf=0
+if exist %es_config_dir%\es_settings.cfg set/A esconf=esconf+2
+if %esconf% EQU 0 copy/Y %templates_dir%\emulationstation\es_settings.cfg %es_config_dir%\es_settings.cfg>nul
+if %esconf% EQU 2 copy/Y %templates_dir%\emulationstation\es_settings.cfg %es_config_dir%\es_settings.cfg.new>nul
+set esconf=0
+if exist %es_config_dir%\es_systems.cfg set/A esconf=esconf+3
+if %esconf% EQU 0 copy/Y %templates_dir%\emulationstation\es_systems.cfg %es_config_dir%\es_systems.cfg>nul
+if %esconf% EQU 3 copy/Y %templates_dir%\emulationstation\es_systems.cfg %es_config_dir%\es_systems.cfg.new>nul
+if %esconf% EQU 3 copy/Y %es_config_dir%\es_systems.cfg %es_config_dir%\es_systems.cfg.old>nul
+if exist %es_config_dir%\es_systems.cfg.new copy/Y %es_config_dir%\es_systems.cfg.new %es_config_dir%\es_systems.cfg>nul
+if exist %es_config_dir%\es_systems.cfg.new del/Q %es_config_dir%\es_systems.cfg.new>nul
+timeout /t 1 >nul
+if exist %es_config_dir%\*.new goto update_ES_confirm
+if "%fullinstall%"=="1" goto dl_default_theme
+if "%singledl%"=="1" goto setup_menu
+
+:update_ES_confirm
+cls
+if "%fullinstall%"=="1" goto update_ES_config
+echo +===========================================================+
+echo   SETUP HAS DETECTED EXISTING SETTINGS FOR EMULATIONSTATION
+echo +===========================================================+
+echo  ( 1 ) Keep current settings:
+echo        If you want to keep your ES settings like controller
+echo        configuration and others options choosen in ES, this 
+echo        is generally a good choice.
+echo +-----------------------------------------------------------+
+echo  ( 2 ) Override settings:
+echo        If you want to reset ES settings to default, choose
+echo        this.
+echo +===========================================================+
+set updateESconf=1
+set/p updateESconf="- Please choose one (1-2): "
+if "%updateESconf%"=="1" del/q %es_config_dir%\*.new && goto setup_menu
+if "%updateESconf%"=="2" goto update_ES_config
+goto update_ES_confirm
+
+:update_ES_config
+cls
+echo.
+echo -- Override EmulationStation settings --
+echo.
+copy/Y %es_config_dir%\es_settings.cfg.new %es_config_dir%\es_settings.cfg>nul
+copy/Y %es_config_dir%\es_input.cfg.new %es_config_dir%\es_input.cfg>nul
+if exist %es_config_dir%\*.new del/Q %es_config_dir%\*.new
+timeout /t 1 >nul
+if "%singledl%"=="1" goto setup_menu
+if "%fullinstall%"=="1" goto dl_default_theme
+if "%go%"=="2" goto debug_menu
+if "%go%"=="3" goto debug_menu
+goto setup_menu
+
+:dl_default_theme
+cls
+set themename=nextfull
+set current_url=%default_theme_url%
+set output_dir=%temp_dir%\default-theme-pkg.zip
+if exist %output_dir% goto install_default_theme
+echo -- Default Theme for EmulationStation is now downloading ( %themename% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
 ping 127.0.0.1 -n 4 >nul
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto SCPupdate1
+timeout /t 1 >nul
+echo Done.
+goto install_default_theme
 
-:SCPupdate1
-CLS
-ECHO -- %pkgName% is installing --
+:install_default_theme
+cls
+If not exist %temp_dir%\. md %temp_dir%
+if not exist %es_config_dir%\. md %es_config_dir%
+if not exist %es_config_dir%\themes\. md %es_config_dir%\themes
+echo.
+ECHO -- Default Theme for EmulationStation is installing ( %themename% ) --
 ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%SetupDir%\Scraper" -aoa >nul
-timeout /t 3 >nul
-goto fetchMenu
+%zip_dir%\7zg.exe -y x "%output_dir%" -o"%es_config_dir%\themes" -aoa>nul
+echo Done.
+timeout /t 1 >nul
+if "%singledl%"=="1" goto setup_menu
+if "%fullinstall%"=="1" goto dl_retroarch_stable
+goto setup_menu
 
-:instRAl0
-Set pkgName=RetroArch Stable
-Set pkgFile=retroarch-stable-pkg.7z
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto instRAl1
-If exist %EMULATOR_PATH%\retroarch\retroarch.exe rmdir /s /q %EMULATOR_PATH%\retroarch
-If not exist %EMULATOR_PATH%\retroarch\. md %EMULATOR_PATH%\retroarch
-If not exist %TMP_DIR%\. md %TMP_DIR%
-If exist %TMP_DIR%\%pkgFile% goto instRAl1
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_lite_url% -OutFile "%TMP_DIR%\%pkgFile%""
+:dl_retroarch_stable
+cls
+set current_url=%retroarch_stable_url%
+set output_dir=%temp_dir%\retroarch-stable-pkg.7z
+if exist %output_dir% goto install_retroarch
+echo -- RetroArch Stable is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
 ping 127.0.0.1 -n 4 >nul
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto instRAl1
+timeout /t 1 >nul
+echo Done.
+goto install_retroarch
 
-:instRAl1
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%EMULATOR_PATH%\retroarch" -aoa >nul
-::del "%TMP_DIR%\%pkgFile%" /q
-::rmdir %TMP_DIR%
-timeout /t 3 >nul
-goto chkRAauto
-
-:chkRAauto
-If "%autoinst%"=="1" (
-	Set RAcfg=1
-	goto mkRAcfg2
-) else (
-	goto RAcfgMenu
-)
-
-:instRAn0
-Set pkgName=RetroArch
-Set pkgFile=retroarch-pkg.7z
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto instRAn1
-If exist %EMULATOR_PATH%\retroarch\retroarch.exe rmdir /s /q %EMULATOR_PATH%\retroarch
-If not exist %EMULATOR_PATH%\retroarch\. md %EMULATOR_PATH%\retroarch
-If not exist %TMP_DIR%\. md %TMP_DIR%
-If exist %TMP_DIR%\%pkgFile% goto instRAn1
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_nightly_url% -OutFile "%TMP_DIR%\%pkgFile%""
+:update_retroarch_stable
+cls
+set current_url=%retroarch_stable_update_url%
+set output_dir=%temp_dir%\retroarch-stable-update-pkg.zip
+if exist %output_dir% goto install_retroarch
+echo -- RetroArch Stable is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
 ping 127.0.0.1 -n 4 >nul
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto instRAn1
+timeout /t 1 >nul
+echo Done.
+goto install_retroarch
 
-:instRAn1
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%EMULATOR_PATH%\retroarch" -aoa >nul
-::del "%TMP_DIR%\%pkgFile%" /q
-::rmdir %TMP_DIR%
-timeout /t 3 >nul
-goto RAcfgMenu
+:dl_retroarch_nightly
+cls
+set current_url=%retroarch_nightly_url%
+set output_dir=%temp_dir%\retroarch-nightly-pkg.7z
+if exist %output_dir% goto install_retroarch
+echo -- RetroArch Nightly is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
+ping 127.0.0.1 -n 4 >nul
+timeout /t 1 >nul
+echo Done.
+goto install_retroarch
 
-:RAcfgMenu
-CLS
-::If "%autoinst%"=="1" Set RAcfg=1
-::If "%RAcfg%"=="1" goto mkRAcfg2
-::if %RAcfg% EQU 1 goto mkRAcfg2
-Set RAcfg=K
-ECHO +===============================================+
-ECHO    PLEASE CHOOSE A TEMPLATE FOR RETROARCH'S 
-ECHO                  CONFIG FILE
-ECHO +===============================================+
-ECHO.
-ECHO 0) -- DEFAULT RETROARCH SETTINGS:
-ECHO       xmb menu, windowed, opengl
-ECHO.
-ECHO 1) -- CUSTOM SETTINGS 1:
-ECHO       rgui menu, fullscreen, opengl
-ECHO.
-ECHO 2) -- CUSTOM SETTINGS 2:
-ECHO       xmb menu, fullscreen, directx11
-ECHO.
-ECHO 3) -- CUSTOM SETTINGS 3: 
-ECHO       ozone menu, fullscreen, vulkan
-ECHO.
-ECHO    You can modify this settings later in
-ECHO    RetroArch configuration menu.
-ECHO +===============================================+
-ECHO   CURRENT RETROARCH'S CONFIG FILES WILL BE
-ECHO                  OVERWRITED !           
-ECHO +===============================================+
-SET /p RAcfg="Type a number or (k)eep current RetroArch config: "
-if "%RAcfg%"=="0" goto mkRAcfg0 
-if "%RAcfg%"=="1" goto mkRAcfg2
-if "%RAcfg%"=="2" goto mkRAcfg2
-if "%RAcfg%"=="3" goto mkRAcfg2
-if "%RAcfg%"=="K" goto mkRAcfg3
-if "%RAcfg%"=="k" goto mkRAcfg3
-Goto mkRAcfg3
+:update_retroarch_nightly
+cls
+set current_url=%retroarch_nightly_update_url%
+set output_dir=%temp_dir%\retroarch-nightly-update-pkg.zip
+if exist %output_dir% goto install_retroarch
+echo -- RetroArch Nightly is now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
+ping 127.0.0.1 -n 4 >nul
+timeout /t 1 >nul
+echo Done.
+goto install_retroarch
 
-:mkRAcfg0
-CLS
-ECHO.
-ECHO -- Setting up %pkgName% configuration files --
-ECHO.
-if "%RAcfg%"=="0" set RAcfgName=default
-Goto mkRAcfg1
+:install_retroarch
+cls
+If not exist %temp_dir%\. md %temp_dir%
+if not exist %retroarch_dir%\. md %retroarch_dir%
+if not exist %retroarch_config_dir%\. md %retroarch_config_dir%
+echo.
+echo -- RetroArch is installing --
+echo.
+%zip_dir%\7zg.exe -y x "%output_dir%" -o"%retroarch_dir%" -aoa>nul
+echo Done.
+timeout /t 1 >nul
+if exist %retroarch_config_dir%\*.cfg goto update_retroarch_confirm
+goto update_retroarch_config_menu
 
-:mkRAcfg1
-If exist %emulator_path%\retroarch\config\retroarch.cfg (
-	copy/Y %emulator_path%\retroarch\config\retroarch.cfg %emulator_path%\retroarch\config\retroarch.cfg.backup
-	del/q %emulator_path%\retroarch\config\retroarch.cfg
-	copy/Y %emulator_path%\retroarch\retroarch.%RAcfgName%.cfg %emulator_path%\retroarch\config\retroarch.cfg
+
+:update_retroarch_confirm
+cls
+if "%fullinstall%"=="1" goto update_retroarch_config_menu
+echo +===========================================================+
+echo      SETUP HAS DETECTED EXISTING SETTINGS FOR RETROARCH
+echo +===========================================================+
+echo  ( 1 ) Keep current settings:
+echo        If you want to keep your RetroArch settings, this is
+echo        generally a good choice.
+echo +-----------------------------------------------------------+
+echo  ( 2 ) Override settings:
+echo        If you want to reset RetroArch settings to default, 
+echo        choose this.
+echo +===========================================================+
+set updateRAconf=2
+set/p updateRAconf="- Please choose one (1-2): "
+if "%updateRAconf%"=="1" goto setup_menu
+if "%updateRAconf%"=="2" goto update_retroarch_config_menu
+goto update_retroarch_confirm
+
+:update_retroarch_config_menu
+cls
+set racfg=2
+if "%fullinstall%"=="1" set racfgname=custom1
+if "%fullinstall%"=="1" goto update_retroarch_config1
+echo +===========================================================+
+echo     PLEASE CHOOSE A TEMPLATE FOR RETROARCH'S CONFIG FILE                 
+echo +===========================================================+
+echo  ( 1 )  Default RetroArch's settings:
+echo         xmb menu, windowed, opengl
+echo +-----------------------------------------------------------+
+echo  ( 2 )  custom RetroArch's settings 1:
+echo         rgui menu, fullscreen, opengl
+echo +-----------------------------------------------------------+
+echo  ( 3 )  custom RetroArch's settings 2:
+echo         xmb menu, fullscreen, directx11
+echo +-----------------------------------------------------------+
+echo  ( 4 )  custom RetroArch's settings 3: 
+echo         ozone menu, fullscreen, vulkan
+echo +===========================================================+
+echo   You can modify this settings later in retroarch's menu. 
+echo +===========================================================+
+set /p racfg="- Please choose one (0-4): "
+if "%racfg%"=="1" set racfgname=default
+if "%racfg%"=="2" set racfgname=custom1
+if "%racfg%"=="3" set racfgname=custom2
+if "%racfg%"=="4" set racfgname=custom3
+goto update_retroarch_config1
+
+:update_retroarch_config1
+cls
+echo.
+echo -- Setting up RetroArch's configuration files --
+echo.
+If not exist %retroarch_dir%\. md %retroarch_dir%
+If not exist %retroarch_config_dir%\. md %retroarch_config_dir%
+if exist %retroarch_config_dir%\retroarch.cfg (
+	copy/y %retroarch_config_dir%\retroarch.cfg %retroarch_config_dir%\retroarch.cfg.old
+	del/q %retroarch_config_dir%\retroarch.cfg
+	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg
+	timeout /t 1 >nul
+	goto update_retroarch_config2
 	) else (
-	copy/Y %emulator_path%\retroarch\retroarch.%RAcfgName%.cfg %emulator_path%\retroarch\config\retroarch.cfg
+	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg
+	timeout /t 1 >nul
+	goto update_retroarch_config2
 )
-timeout /t 2 >nul
-Goto mkRAcfg3
 
-:mkRAcfg2
-If not exist %emulator_path%\retroarch\. md %emulator_path%\retroarch
-If not exist %emulator_path%\retroarch\config\. md %emulator_path%\retroarch\config
-if "%RAcfg%"=="1" set RAcfgName=custom1
-if "%RAcfg%"=="2" set RAcfgName=custom2
-if "%RAcfg%"=="3" set RAcfgName=custom3
-If exist %emulator_path%\retroarch\config\retroarch.cfg (
-	copy/Y %emulator_path%\retroarch\config\retroarch.cfg %emulators_path%\retroarch\config\retroarch.cfg.backup
-	del/q %emulator_path%\retroarch\config\retroarch.cfg
-	copy/Y %TemplatesPath%\retroarch\retroarch-%RAcfgName%.cfg %emulator_path%\retroarch\config\retroarch.cfg
-	) else (
-	copy/Y %TemplatesPath%\retroarch\retroarch-%RAcfgName%.cfg %emulator_path%\retroarch\config\retroarch.cfg
-)
-timeout /t 2 >nul
-Goto mkRAcfg3
-
-:mkRAcfg2b
-CLS
-ECHO.
-ECHO -- Setting up %pkgName% configuration files --
-ECHO.
-Set RAcfgName=custom1
-If not exist %emulator_path%\retroarch\. md %emulator_path%\retroarch
-If not exist %emulator_path%\retroarch\config\. md %emulator_path%\retroarch\config
-copy/Y %TemplatesPath%\retroarch\retroarch-%RAcfgName%.cfg %emulator_path%\retroarch\config\retroarch.cfg
-Echo :: Done.
-timeout /t 2 >nul
-Goto mkRAcfg3
-
-:mkRAcfg3
-CLS
-ECHO.
-ECHO -- Setting up %pkgName% configuration files --
-ECHO.
-:: Create RetroArch override configuration file
-
-If exist %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% (
-    del %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE%
-    (echo screenshot_directory = "%shots_dir%" && echo system_directory = "%bios_dir%" && echo savefile_directory = "%savegame_dir%" && echo savestate_directory = "%savegame_dir%" && echo libretro_directory = "%libretro_cores_dir%")>> %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE%
+:update_retroarch_config2
+cls
+echo.
+echo -- Setting up RetroArch's configuration files --
+echo.
+if exist %retroarch_config_dir%\retroarch-override.cfg (
+    break>%retroarch_config_dir%\retroarch-override.cfg
+    (echo screenshot_directory = "%shots_dir%" && echo system_directory = "%bios_dir%" && echo savefile_directory = "%saves_dir%" && echo savestate_directory = "%saves_dir%" && echo libretro_directory = "%retroarch_dir%\cores")>> %retroarch_config_dir%\retroarch-override.cfg
 ) else (
-	md %RETROARCH_OVERRIDE_DIR%
-    (echo screenshot_directory = "%shots_dir%" && echo system_directory = "%bios_dir%" && echo savefile_directory = "%savegame_dir%" && echo savestate_directory = "%savegame_dir%" && echo libretro_directory = "%libretro_cores_dir%")>> %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE%
+	if not exist %retroarch_config_dir%\. md %retroarch_config_dir%
+    (echo screenshot_directory = "%shots_dir%" && echo system_directory = "%bios_dir%" && echo savefile_directory = "%saves_dir%" && echo savestate_directory = "%saves_dir%" && echo libretro_directory = "%retroarch_dir%\cores")>> %retroarch_config_dir%\retroarch-override.cfg
 )
-ECHO :: Done.
+echo Done.
+timeout /t 1 >nul
+if "%singledl%"=="1" goto setup_menu
+if "%fullinstall%"=="1" goto dl_lrarcade
+goto setup_menu
+
+:dl_lrarcade 
+cls
+if not exist %retroarch_dir%\. md %retroarch_dir%
+if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
+if not exist %scripts_dir%\lr-arcade.cmd goto pkg_fail
+call %scripts_dir%\lr-arcade.cmd
+if "%fullinstall%"=="1" goto dl_lrconsole 
+cls
+echo.
+echo Reloading Setup...
+echo.
 timeout /t 2 >nul
-If "%autoinst%"=="1" (
-	goto installCores0
-) else (
-	goto fetchEmulators
-)
+goto setup_menu
 
-:installCores0
-Set pkgName=Libretro Cores Pack
-Set pkgFile=libretro-cores-pkg.7z
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto installCores1
-If not exist %emulator_path%\retroarch\. md %emulator_path%\retroarch
-If not exist %emulator_path%\retroarch\cores\. md %emulator_path%\retroarch\cores
-If not exist %libretro_cores_dir%\. md %libretro_cores_dir%
-If not exist %TMP_DIR%\. md %TMP_DIR%
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %libretro_cores_pack_url% -OutFile "%TMP_DIR%\%pkgFile%""
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto installCores1
+:dl_lrconsole
+cls
+if not exist %retroarch_dir%\. md %retroarch_dir%
+if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
+if not exist %scripts_dir%\lr-console.cmd goto pkg_fail
+call %scripts_dir%\lr-console.cmd
+cls
+echo.
+echo Reloading Setup...
+echo.
+timeout /t 2 >nul
+if "%fullinstall%"=="1" goto check_pkg
+goto setup_menu
 
-:installCores1
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%libretro_cores_dir%" -aoa >nul
+:update_sources
+cls
+set current_url=http://www.retrobat.ovh/repo/rbs/scripts/pkgsources.cmd
+set output_dir=%scripts_dir%\pkgsources.cmd
+if exist %scripts_dir%\pkgsources.cmd copy/y %scripts_dir%\pkgsources.cmd %scripts_dir%\pkgsources.cmd.old>nul
+if exist %scripts_dir%\pkgsources.cmd break>%scripts_dir%\pkgsources.cmd
+echo -- Updating softwares sources --
+echo.
+call %scripts_dir%\powershelldl.cmd
 ping 127.0.0.1 -n 4 >nul
-CLS
-If "%autoinst%"=="1" (
-	goto autoend
-) else (
-	goto fetchEmulators
-)
+timeout /t 1 >nul
+cls
+echo.
+echo -- Reloading softwares sources --
+echo.
+timeout /t 1 >nul
+if not exist %scripts_dir%\pkgsources.cmd goto pkg_fail
+goto welcome_menu
 
-:instDOSBox0
-Set pkgName=DOSBox
-Set pkgFile=dosbox-pkg.zip
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto instDOSBox1
-If exist %EMULATOR_PATH%\dosbox\dosbox.exe rmdir /s /q %EMULATOR_PATH%\dosbox
-If not exist %EMULATOR_PATH%\dosbox\. md %EMULATOR_PATH%\dosbox
-If not exist %TMP_DIR%\. md %TMP_DIR%3
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %dosbox_url% -OutFile "%TMP_DIR%\%pkgFile%""
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto instDOSBox1
-
-:instDOSBox1
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%EMULATOR_PATH%\dosbox" -aoa >nul
+:update_lrlist_arcade
+cls
+set current_url=http://www.retrobat.ovh/repo/rbs/scripts/lr-arcade.cmd
+set output_dir=%scripts_dir%\lr-arcade.cmd
+if exist %scripts_dir%\lr-arcade.cmd copy/y %scripts_dir%\lr-arcade.cmd %scripts_dir%\lr-arcade.cmd.old>nul
+if exist %scripts_dir%\lr-arcade.cmd break>%scripts_dir%\lr-arcade.cmd
+echo -- Updating Libretro Cores List (Arcade) --
+echo.
+call %scripts_dir%\powershelldl.cmd
 ping 127.0.0.1 -n 4 >nul
-::del "%TMP_DIR%\%pkgFile%" /q
-::rmdir %TMP_DIR%
-CLS
-GOTO fetchEmulators
+timeout /t 1 >nul
+cls
+echo -- Reloading Libretro Cores List (Arcade) --
+echo.
+timeout /t 1 >nul
+if not exist %scripts_dir%\lr-arcade.cmd goto pkg_fail
+goto debug_menu
 
-:instDolphin0
-Set pkgName=Dolphin
-Set pkgFile=dolphin-pkg.zip
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto instDolphin1
-If exist %EMULATOR_PATH%\dolphin-emu\dolphin.exe rmdir /s /q %EMULATOR_PATH%\dolphin-emu
-If not exist %EMULATOR_PATH%\dolphin-emu\. md %EMULATOR_PATH%\dolphin-emu
-If not exist %TMP_DIR%\. md %TMP_DIR%
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %dolphin_url% -OutFile "%TMP_DIR%\%pkgFile%""
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto :instDolphin1
-
-:instDolphin1
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%EMULATOR_PATH%\dolphin-emu" -aoa >nul
+:update_lrlist_console
+cls
+set current_url=http://www.retrobat.ovh/repo/rbs/scripts/lr-console.cmd
+set output_dir=%scripts_dir%\lr-console.cmd
+if exist %scripts_dir%\lr-console.cmd copy/y %scripts_dir%\lr-console.cmd %scripts_dir%\lr-console.cmd.old>nul
+if exist %scripts_dir%\lr-console.cmd break>%scripts_dir%\lr-console.cmd
+echo -- Updating Libretro Cores List (Console) --
+echo.
+call %scripts_dir%\powershelldl.cmd
 ping 127.0.0.1 -n 4 >nul
-::del "%TMP_DIR%\%pkgFile%" /q
-::rmdir %TMP_DIR%
-CLS
-GOTO fetchEmulators
+timeout /t 1 >nul
+cls
+echo -- Reloading Libretro Cores List (Console) --
+echo.
+timeout /t 1 >nul
+if not exist %scripts_dir%\lr-console.cmd goto pkg_fail
+goto debug_menu
 
-:instPcsx20
-Set pkgName=PCSX2
-Set pkgFile=pcsx2-pkg.zip
-CLS
-Cd %SetupDir%
-If exist %TMP_DIR%\%pkgFile% goto instPcsx21
-If exist %EMULATOR_PATH%\pcsx2\pcsx2.exe rmdir /s /q %EMULATOR_PATH%\pcsx2
-If not exist %EMULATOR_PATH%\pcsx2\. md %EMULATOR_PATH%\pcsx2
-If not exist %TMP_DIR%\. md %TMP_DIR%
-ECHO -- %pkgName% is now downloading --
-ECHO.
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %pcsx2_url% -OutFile "%TMP_DIR%\%pkgFile%""
-If not exist %TMP_DIR%\%pkgFile% goto pkgFail
-Goto :instPcsx21
-
-:instPcsx21
-CLS
-ECHO -- %pkgName% is installing --
-ECHO.
-%ZIP_PATH%\7zg.exe -y x "%TMP_DIR%\%pkgFile%" -o"%EMULATOR_PATH%\pcsx2" -aoa >nul
+:update_es_systems
+cls
+set current_url=http://www.retrobat.ovh/repo/rbs/es/es_systems.cfg
+set output_dir=%templates_dir%\emulationstation\es_systems.cfg
+if exist %templates_dir%\emulationstation\es_systems.cfg copy/y %templates_dir%\emulationstation\es_systems.cfg %es_config_dir%\es_systems.cfg>nul
+echo -- Updating ES systems list --
+echo.
+call %scripts_dir%\powershelldl.cmd
 ping 127.0.0.1 -n 4 >nul
-::del "%TMP_DIR%\%pkgFile%" /q
-::rmdir %TMP_DIR%
-CLS
-GOTO fetchEmulators
+if not exist %es_config_dir%\es_systems.cfg goto pkg_fail
+echo Done.
+timeout /t 1 >nul
+goto debug_menu
 
-:visitRedream
-START https://redream.io/download
-GOTO fetchEmulators
+:restore_es_systems
+cls
+if not exist %es_config_dir%\es_systems.cfg.old echo.
+if not exist %es_config_dir%\es_systems.cfg.old echo There is no backup of ES systems list available. Aborting...
+if not exist %es_config_dir%\es_systems.cfg.old timeout /t 3 >nul
+if not exist %es_config_dir%\es_systems.cfg.old goto debug_menu
+echo.
+echo -- Restore previous ES systems list --
+echo.
+copy/Y %es_config_dir%\es_systems.cfg %es_config_dir%\es_systems.cfg.bak>nul
+copy/Y %es_config_dir%\es_systems.cfg.old %es_config_dir%\es_systems.cfg>nul
+copy/Y %es_config_dir%\es_systems.cfg.bak %es_config_dir%\es_systems.cfg.old>nul
+if exist %es_config_dir%\*.bak del/Q %es_config_dir%\*.bak
+echo Done.
+timeout /t 1 >nul
+goto debug_menu
 
-:visitPpsspp
-START https://www.ppsspp.org/downloads.html
-GOTO fetchEmulators
-
-:visitJ2K
-START https://joytokey.net/en/
-GOTO fetchMenu
-
-:visitRetroBat
-START https://www.retrobat.ovh
-GOTO fetchMenu
-
-:runES
-Cls
-Cd %SetupDir%
-Call %LauncherFile%
-Goto exit
-
-:autoend
-ECHO +===============================================+
-ECHO           AUTOMATIC INSTALL COMPLETED !
-ECHO.
-ECHO           YOU CAN NOW RUN RETRO.BAT TO 
-ECHO              LAUNCH EMULATIONSTATION           
-ECHO +===============================================+
-timeout /t 5 >nul
+:launch_ES
+cls
+if not exist %setup_dir%\retro.bat goto pkg_fail
+call %setup_dir%\retro.bat
 goto exit
 
-:error1
-Echo.
-ECHO  You must gather your party before venturing forth...
-Echo.
-timeout /t 5 >nul
-GOTO exit
+:update_retrobat_menu
+cls
+set current_url=http://www.retrobat.ovh/releases/retrobat.latest
+set output_dir=%setup_dir%\system\retrobat.latest
+echo -- Checking for available RetroBat Scripts update --
+echo.
+call %scripts_dir%\powershelldl.cmd
+ping 127.0.0.1 -n 4 >nul
+set/p rbonlinever=<%setup_dir%\system\retrobat.latest
+set rbonlinever=%rbonlinever%
+del/q %output_dir%
+timeout /t 1 >nul
+cls
+echo +===========================================================+
+echo                    UPDATE RETROBAT SCRIPTS
+echo +===========================================================+
+echo  -local version: %version%
+echo  -online version: %rbonlinever%
+echo +===========================================================+
+echo  ( U ) -- Update RetroBat Scripts
+echo +-----------------------------------------------------------+
+echo  ( R ) -- Return to previous menu
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please chose one (U,R,Q): "
+if "%go%"=="R" goto welcome_menu
+if "%go%"=="r" goto welcome_menu
+if "%go%"=="Q" goto exit 
+if "%go%"=="q" goto exit
+
+:dl_rbs_updater
+cls
+set current_url=http://www.retrobat.ovh/repo/rbs/scripts/rbsupdater.cmd
+set output_dir=%scripts_dir%\rbsupdater.cmd
+if exist %scripts_dir%\rbsupdater.cmd copy/y %scripts_dir%\rbsupdater.cmd %scripts_dir%\rbsupdater.cmd.old>nul
+if exist %scripts_dir%\rbsupdater.cmd break>%scripts_dir%\rbsupdater.cmd
+echo -- Fetching RetroBat Updater --
+echo.
+call %scripts_dir%\powershelldl.cmd
+ping 127.0.0.1 -n 4 >nul
+if not exist %scripts_dir%\rbsupdater.cmd goto pkg_fail
+timeout /t 1 >nul
+cls
+call %scripts_dir%\rbsupdater.cmd
+if "%updatedone%"=="1" (
+	goto create_config
+) else (
+		goto pkg_fail
+)
+
+:welcome_menu
+cls
+if not exist %temp_dir%\. md %temp_dir%
+set fullinstall=0
+set go=
+call %scripts_dir%\pkgsources.cmd
+call %scripts_dir%\showlogo.cmd
+echo           Version %version% by Kayl
+echo +===========================================================+
+echo  ( 1 ) -- Launch EmulationStation
+echo +-----------------------------------------------------------+
+echo  ( 2 ) -- Setup softwares
+echo +-----------------------------------------------------------+
+echo  ( 3 ) -- Debug options
+echo +-----------------------------------------------------------+
+echo  ( 4 ) -- Update sources
+echo +-----------------------------------------------------------+
+echo  ( 5 ) -- Update RetroBat Scripts
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please chose one (1-5, Q): "
+echo.
+if "%go%"=="1" goto launch_ES
+if "%go%"=="2" goto setup_menu
+if "%go%"=="3" goto debug_menu
+if "%go%"=="4" goto update_sources
+if "%go%"=="5" goto update_retrobat_menu
+if "%go%"=="Q" goto exit
+if "%go%"=="q" goto exit
+goto welcome_menu
+
+:setup_menu
+cls
+if not exist %temp_dir%\. md %temp_dir%
+set singledl=0
+set fullinstall=0
+set go=0
+echo +===========================================================+
+echo                       SETUP SOFTWARES
+echo +===========================================================+
+echo  ( 1 ) -- Restart Setup
+echo +-----------------------------------------------------------+
+echo  ( 2 ) -- Install EmulationStation
+echo +-----------------------------------------------------------+
+echo  ( 3 ) -- Update EmulationStation
+echo +-----------------------------------------------------------+
+echo  ( 4 ) -- Install ES default theme
+echo +-----------------------------------------------------------+
+echo  ( 5 ) -- Install RetroArch Stable
+echo +-----------------------------------------------------------+
+echo  ( 6 ) -- Update RetroArch Stable
+echo +-----------------------------------------------------------+
+echo  ( 7 ) -- Install RetroArch Nightly
+echo +-----------------------------------------------------------+
+echo  ( 8 ) -- Update RetroArch Nightly
+echo +-----------------------------------------------------------+
+echo  ( 9 ) -- Install Libretro Cores (Arcade)
+echo +-----------------------------------------------------------+
+echo  ( 10 ) -- Install Libretro Cores (Console)
+echo +-----------------------------------------------------------+
+echo  ( R ) -- Return to previous menu
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please chose one (1-5,R,Q): "
+echo.
+if "%go%"=="1" goto create_config
+if "%go%"=="2" set/A singledl=singledl+1 && goto dl_ES
+if "%go%"=="3" goto update_ES
+if "%go%"=="4" set/A singledl=singledl+1 && goto dl_default_theme
+if "%go%"=="5" set/A singledl=singledl+1 && goto dl_retroarch_stable
+if "%go%"=="6" goto update_retroarch_stable
+if "%go%"=="7" set/A singledl=singledl+1 && goto dl_retroarch_nightly
+if "%go%"=="8" goto update_retroarch_nightly
+if "%go%"=="9" set/A fullinstall=fullinstall+1 && goto dl_lrarcade
+if "%go%"=="10" set/A fullinstall=fullinstall+1 && goto dl_lrconsole
+if "%go%"=="R" goto welcome_menu
+if "%go%"=="r" goto welcome_menu
+if "%go%"=="Q" goto exit
+if "%go%"=="q" goto exit
+goto setup_menu
+
+:debug_menu
+cls
+if not exist %temp_dir%\. md %temp_dir%
+set go=0
+set fullinstall=0
+echo +===========================================================+
+echo                       DEBUG OPTIONS
+echo +===========================================================+
+echo  ( 1 ) -- Update EmulationStation systems list
+echo +-----------------------------------------------------------+
+echo  ( 2 ) -- Restore EmulationStation systems list
+echo +-----------------------------------------------------------+
+echo  ( 3 ) -- Reset EmulationStation settings
+echo +-----------------------------------------------------------+
+echo  ( 4 ) -- Update Libretro Cores list (Arcade)
+echo +-----------------------------------------------------------+
+echo  ( 5 ) -- Update Libretro Cores list (Console)
+echo +-----------------------------------------------------------+
+echo  ( 6 ) -- Set right path in RetroArch override settings
+echo +-----------------------------------------------------------+
+echo  ( 7 ) -- Create folders for emulators and roms
+echo +-----------------------------------------------------------+
+echo  ( R ) -- Return to previous menu
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please chose one (1-7,R,Q): "
+echo.
+if "%go%"=="1" goto update_es_systems
+if "%go%"=="2" goto restore_es_systems
+if "%go%"=="3" goto config_es
+if "%go%"=="4" goto update_lrlist_arcade
+if "%go%"=="5" goto update_lrlist_console
+if "%go%"=="6" goto update_retroarch_config2
+if "%go%"=="7" goto create_folders
+if "%go%"=="R" goto welcome_menu
+if "%go%"=="r" goto welcome_menu
+if "%go%"=="Q" goto exit
+if "%go%"=="q" goto exit
+goto debug_menu
 
 :admin_fail
+cls
 Echo.
 ECHO  Please run this script not as administrator.
 Echo.
-timeout /t 5 >nul
-GOTO exit
+timeout /t 4 >nul
+goto exit
 
-:pkgFail
+:proc_fail
+cls
 Echo.
-Echo  An error occured and package files could not be found. Please try
-Echo  update sources in setup main menu.
+ECHO  RetroBat Scripts only run on 64 bits system.
 Echo.
-PAUSE
-Goto fetchMenu 
+timeout /t 4 >nul
+goto exit
 
-:wrongArch
+:pkg_fail
+cls
 Echo.
-ECHO  RetroBat Launcher Scripts only run on 64 bits system.
+Echo  An error occured and file cannot be found.
 Echo.
-PAUSE>NUL
-GOTO exit
-
-:cleanexit
-cd %SetupDir%
-del setup.ini
-exit
+timeout /t 4 >nul
+goto exit 
 
 :exit
-EXIT
+exit
+
+

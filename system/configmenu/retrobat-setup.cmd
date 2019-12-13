@@ -1,27 +1,36 @@
-@Echo off
-taskkill /F /IM emulationstation.exe>nul
-GOTO:REM
-************************************************
+@echo off
+goto:rem
+***************************************
+This file is part of RetroBat Scripts.
+(c) 2017-2019 Adrien Chalard "Kayl" 
+***************************************
+:rem
 
- RETROBAT LAUNCHER BY KAYL
+taskkill /f /im emulationstation.exe>nul
 
-************************************************
-:REM
-:checkInst
-If exist %SETUPDIR%\Setup.bat (
-	goto runSetup
+:load_config
+for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+set appname=setup-new
+set appbin=%appname%.bat
+set apppath=%setup_dir%\%appbin%
+:: set apparg=
+goto check_setup
+
+:check_setup
+if exist %setup_dir%\%appbin% (
+	goto runapp
 ) else (
-	goto notFound
+	goto notfound
 )
 
-:runSetup
-cd %SetupDir%
-Start %SETUPDIR%\Setup.bat && exit
+:runapp
+cd %setup_dir%
+%appbin% && exit
 
-:notFound
-Echo Setup.bat is missing. Aborting.
-timeout /t 4 >nul
-GOTO exit
+:notfound
+echo %appbin% is missing. aborting.
+timeout /t 3 >nul
+goto exit
 
 :exit
-EXIT
+exit

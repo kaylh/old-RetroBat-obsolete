@@ -1,96 +1,100 @@
-@Echo off
-Title RetroBat Launcher
-Goto:rem
+@ECHO OFF
+goto:rem
+***************************************
+This file is part of RetroBat Scripts. 
+***************************************
 :rem
-If "%CD%"=="C:\Windows\system32" goto adminFail
-If "%CD%"=="C:\Windows" goto adminFail
-If "%CD%"=="C:\WINDOWS\system32" goto adminFail
-If "%CD%"=="C:\WINDOWS" goto adminFail
-Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > NUL && set OS=32BIT || set OS=64BIT
-If %OS%==32BIT goto archFail
-If %OS%==64BIT goto checkInst
 
-:checkInst
-Set InitSetup=Setup.ini
-If exist %InitSetup% (
-	goto setVariables0
+:load_config
+for /f "delims=" %%x in (%CD%\System\retrobat.setup) do (set "%%x")
+For /f "delims=" %%x in (%config_dir%\emulationstation.cfg) do (set "%%x")
+cd %es_dir%
+goto check_proc
+
+:check_proc
+Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set PROCARCH=32 || set PROCARCH=64
+If %PROCARCH%==32 goto proc_fail
+If %PROCARCH%==64 goto check_admin
+
+:check_admin
+net session >nul 2>&1
+if %ERRORLEVEL% == 0 (
+    goto admin_fail
 ) else (
-	goto error1
+    goto check_splash
 )
 
-:setVariables0
-:: Read variables from different source files
-For /f "delims=" %%x in (%InitSetup%) do (set "%%x")
-::Cd %CONFIG_PATH%\Profiles
-::For /f "delims=" %%x in (Profile.ini) do (set "%%x")
-Cd %CONFIG_PATH%
-For /f "delims=" %%x in (emulationstation.cfg) do (set "%%x")
-::For /f "delims=" %%x in (libretro-cores.cfg) do (set "%%x")
-Cd %SetupDir%
-Rem Call %SetupDir%\System\MainData\Scripts\ShowLogo.cmd                                           
-Rem Echo                    v.%Version%                                          
-Echo.               
-Echo -- EmulationStation is running --
-Echo.
-Set RUN_DEMUL=%EMULATOR_PATH%\demul\demul.exe -run=dc -image=
-Set RUN_DOLPHIN=%EMULATOR_PATH%\dolphin-emu\Dolphin.exe --batch --user="%DOLPHIN_CONFIG_DIR%" 
-Set RUN_PCSX2=%EMULATOR_PATH%\pcsx2\pcsx2.exe --portable --cfgpath="%PCSX2_CONFIG_DIR%"
-Set RUN_PPSSPP=%EMULATOR_PATH%\ppsspp\ppssppwindows64.exe
-Set RUN_REDREAM=%EMULATOR_PATH%\redream\redream.exe
-Set RUN_RETROARCH=%EMULATOR_PATH%\retroarch\retroarch.exe --config %RETROARCH_CONFIG_DIR%\retroarch.cfg --appendconfig %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE%
-Cd %ES_PATH%
-Set HOME=%CD%
-Set RUN_ES=emulationstation.exe --resolution %es_resolution_width% %es_resolution_height%
-Set RUN_ES_W=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
-Goto checksplash
+:check_winver
+cls
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set WINVER=%%i.%%j
+echo.
+if "%winver%" == "6.0" echo :: Running %name% %version% on Windows Vista %PROCARCH% bit
+if "%winver%" == "6.1" echo :: Running %name% %version% on Windows 7 %PROCARCH% bit
+if "%winver%" == "6.2" echo :: Running %name% %version% on Windows 8 %PROCARCH% bit
+if "%winver%" == "6.3" echo :: Running %name% %version% on Windows 8.1 %PROCARCH% bit
+if "%winver%" == "10.0" echo :: Running %name% %version% on Windows 10 %PROCARCH% bit
+echo.
+timeout /t 2 >nul
+goto check_splash
 
-:checksplash
+:check_splash
 If "%play_splash_video%"=="yes" (
-	goto splashcreen
+	goto run_splash
 ) else (
-	goto esRun
+	goto run_es
 )
 
-:splashcreen
-If not exist %EMULATOR_PATH%\retroarch\retroarch.exe goto error1
-If exist %SetupDir%\Medias\%splashscreen_file% start %EMULATOR_PATH%\retroarch\retroarch.exe -L %LIBRETRO_CORES_DIR%\%MEDIAS_CORE%_libretro.dll --config %RETROARCH_CONFIG_DIR%\retroarch.cfg --appendconfig %RETROARCH_OVERRIDE_DIR%\%RETROARCH_OVERRIDE_FILE% "%SetupDir%\Medias\%splashscreen_file%" && Timeout /t %splashscreen_length%>nul
-tasklist /FI "IMAGENAME eq retroarch.exe" 2>NUL | find /I /N "retroarch.exe">NUL
-if "%ERRORLEVEL%"=="0" taskkill /F /IM retroarch.exe>nul
+:run_splash
+If not exist %es_dir%\emulationstation.exe goto esfail
+If exist %es_config_dir%\video\%splashscreen_file% emulationstation.exe --video ".emulationstation\video\%splashscreen_file%"
+goto run_es
 
-:esRun
-If not exist %ES_PATH%\emulationstation.exe goto esFail
-If exist %ES_PATH%\menu.mp3 call %SCRIPTS_PATH%\BGMusic.cmd
-If "%es_is_fullscreen%"=="yes" (
-	%RUN_ES%
+:run_es
+set run_es=emulationstation.exe --fullscreen --resolution %es_resolution_width% %es_resolution_height%
+set run_es_w=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
+if not exist %es_dir%\emulationstation.exe goto esfail
+if "%es_is_fullscreen%"=="yes" (
+	%run_es%
 ) else (
-	%RUN_ES_W%
+	%run_es_w%
 )
-Goto cleanJunkFiles
+goto delete_junkfiles
 
-:cleanJunkFiles
-Cd %SetupDir%
-Cd ..
-If exist *.fs del *.fs
-Goto exit
-
-:adminFail
-Echo Please run this script not as administrator.
-Echo -----
-Timeout /t 5 >nul
-Goto exit
+:delete_junkfiles
+cd %setup_dir%
+cd ..
+if exist *.fs del *.fs
+goto exit
 
 :esFail
-Echo EmulationStation files are missing. Run %InitSetup% to download software.
-Echo -----
-Timeout /t 5 >nul
-Goto exit
+Echo EmulationStation files are missing. Run %setup_info% to download software.
+echo -----
+timeout /t 3 >nul
+goto exit
 
-:error1
+:admin_fail
 cls
-Echo You must gather your party before venturing forth...
-Echo ---
-Timeout /t 5 >nul
-Goto exit
+Echo.
+ECHO  Please run this script not as administrator.
+Echo.
+timeout /t 5 >nul
+GOTO exit
+
+:proc_fail
+cls
+Echo.
+ECHO  RetroBat Scripts only run on 64 bits system.
+Echo.
+PAUSE>NUL
+GOTO exit
+
+:pkg_fail
+cls
+Echo.
+Echo  An error occured and package files can not be found.
+Echo.
+pause
+goto exit 
 
 :exit
 exit

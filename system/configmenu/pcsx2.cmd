@@ -1,23 +1,36 @@
-@Echo off
-taskkill /F /IM emulationstation.exe>nul
-:setVar0
-Set emulator_folder=pcsx2
-Set emulator_bin=pcsx2.exe
-Set run_emu=%RUN_PCSX2%
-Goto checkInst
+@echo off
+goto:rem
+***************************************
+This file is part of RetroBat Scripts.
+(c) 2017-2019 Adrien Chalard "Kayl" 
+***************************************
+:rem
 
-:checkInst
-If exist %EMULATOR_PATH%\%emulator_folder%\%emulator_bin% (
-	goto runEmu
+taskkill /f /im emulationstation.exe>nul
+
+:load_config
+for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+set appname=pcsx2
+set appbin=%appname%.exe
+set apppath=%emulators_dir%\%appname%\%appbin%
+set apparg=--portable --cfgpath="%emulators_dir%\pcsx2\config"
+goto check_setup
+
+:check_setup
+if exist %apppath% (
+	goto runapp
 ) else (
-	goto notFound
+	goto notfound
 )
 
-:runEmu
-START "" %run_emu%
-Goto :eof
+:runapp
+%apppath% %apparg%
+goto exit
 
-:notFound
-Echo %emulator_bin% is missing. Aborting.
-timeout /t 4 >nul
-Goto :eof
+:notfound
+echo %appbin% is missing. aborting.
+timeout /t 3 >nul
+goto exit
+
+:exit
+exit
