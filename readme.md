@@ -1,5 +1,7 @@
 ![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
 
+[Visit Official Website](http://www.retrobat.ovh]) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases)
+
 ## Introduction
 
 RetroBat is a set of Batch and Powershell Scripts allowing to configure automatically EmulationStation frontend to run games from ROMs collection with RetroArch and standalone emulators.
