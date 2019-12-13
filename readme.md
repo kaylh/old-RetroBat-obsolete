@@ -1,6 +1,8 @@
 ![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
 
-[Visit Official Website](https://www.retrobat.ovh) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases)
+| [Visit Official Website](https://www.retrobat.ovh) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases) | 
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/AdrienChalard)
 
 ## Introduction
 
