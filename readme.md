@@ -86,7 +86,7 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 
 - RetroBat Scripts (C) 2017-2019 Adrien Chalard (Kayl).
 
-## Special Thank
+## Special thank
 
 - Thank to Lorenzolamas for testing and community management.
 
