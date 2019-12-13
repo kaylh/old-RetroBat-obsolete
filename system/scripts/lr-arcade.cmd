@@ -129,8 +129,12 @@ cls
 Echo.
 Echo  An error occured and package files can not be found. Try to update Libretro Cores list.
 Echo.
+if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 timeout /t 3 >nul
-goto exit 
+goto exit
+
+:exit
+exit 
 
 :install_libretrocores
 cls
@@ -138,5 +142,7 @@ echo -- Libretro Cores are installing --
 echo.
 %zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
 timeout /t 1 >nul
+if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 echo Done.
+cls
 goto:eof
