@@ -73,7 +73,7 @@ RetroBat is able to run in Portable Mode on Windows PC. It means that you can ei
 ## Author
 
 - RetroBat Scripts by Kayl.
-- Many thanks to Lorenzolamas for testing and community management.
+- Thanks to Lorenzolamas for testing and community management.
 
 ## Credits
 
