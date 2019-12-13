@@ -65,23 +65,6 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
-	goto dl_bsnes
-) else (
-	goto install_libretrocores
-)
-
-:dl_bsnes
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_libretro.dll.zip
-set output_dir=%temp_dir%\bsnes_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
 	goto dl_bsnes_mercury_accuracy
 ) else (
 	goto install_libretrocores
@@ -90,42 +73,7 @@ if "%fullinstall%"=="1" (
 :dl_bsnes_mercury_accuracy
 cls
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_mercury_accuracy_libretro.dll.zip
-set output_dir=%temp_dir%\bsnes_accuracy_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-echo %fullinstall%
-if "%fullinstall%"=="1" (
-	goto dl_bsnes_mercury_balanced
-) else (
-	goto install_libretrocores
-)
-
-:dl_bsnes_mercury_balanced
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_mercury_balanced_libretro.dll.zip
-set output_dir=%temp_dir%\bsnes_balanced_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto dl_bsnes_mercury_performance
-) else (
-	goto install_libretrocores
-)
-
-:dl_bsnes_mercury_performance
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/bsnes_mercury_performance_libretro.dll.zip
-set output_dir=%temp_dir%\bsnes_mercury_performance_libretro.dll.zip
+set output_dir=%temp_dir%\bsnes_mercury_accuracy_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading --
 echo.
@@ -184,8 +132,7 @@ call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
-echo %fullinstall%
-if "%fullinstall%"==1 (
+if "%fullinstall%"=="1" (
 	goto dl_desmume
 ) else (
 	goto install_libretrocores
@@ -229,91 +176,6 @@ if "%fullinstall%"=="1" (
 cls
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/dosbox_svn_libretro.dll.zip
 set output_dir=%temp_dir%\dosbox_svn_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto dl_fbalpha2012_cps1
-) else (
-	goto install_libretrocores
-)
-
-:dl_fbalpha2012_cps1
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_cps1_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_cps1_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto dl_fbalpha2012_cps2
-) else (
-	goto install_libretrocores
-)
-
-:dl_fbalpha2012_cps2
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_cps2_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_cps2_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto install_fbalpha2012
-) else (
-	goto install_libretrocores
-)
-
-:dl_fbalpha2012
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto dl_fbalpha2012_neogeo
-) else (
-	goto install_libretrocores
-)
-
-:dl_fbalpha2012_neogeo
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_neogeo_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
-	goto dl_fbneo
-) else (
-	goto install_libretrocores
-)
-
-:dl_fbneo
-cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbneo_libretro.dll.zip
-set output_dir=%temp_dir%\fbneo_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading --
 echo.
@@ -764,7 +626,7 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
-	goto dl_mednafen_ngp
+	goto install_libretrocores
 ) else (
 	goto install_libretrocores
 )
@@ -774,8 +636,12 @@ cls
 Echo.
 Echo  An error occured and package files can not be found. Try to update Libretro Cores list.
 Echo.
+if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 timeout /t 3 >nul
 goto exit 
+
+:exit
+exit 
 
 :install_libretrocores
 cls
@@ -783,5 +649,7 @@ echo -- Libretro Cores are installing --
 echo.
 %zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
 timeout /t 1 >nul
+if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 echo Done.
+cls
 goto:eof
