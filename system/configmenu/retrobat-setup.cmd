@@ -10,7 +10,7 @@ taskkill /f /im emulationstation.exe>nul
 
 :load_config
 for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
-set appname=setup-new
+set appname=setup
 set appbin=%appname%.bat
 set apppath=%setup_dir%\%appbin%
 :: set apparg=
