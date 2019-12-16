@@ -7,6 +7,10 @@ Standalone emulators instructions:
 
 ### Links to download emulators ##
 
+# AppleWin (Apple II, Apple II+)
+
+https://github.com/AppleWin/AppleWin/releases
+
 # Dolphin (GameCube, Wii):
 https://dolphin-emu.org
 https://buildbot.dolphin-emu.org
