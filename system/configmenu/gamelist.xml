@@ -26,6 +26,19 @@
 		<playcount>1</playcount>
 		<players>1</players>
 	</game>
+		<game>
+		<path>./applewin.cmd</path>
+		<name>Configure AppleWin (Apple II)</name>
+		<desc>Configure AppleWin Emulator (Apple II)</desc>
+		<image>./_media/applewin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>AppleWin Team</developer>
+		<publisher>AppleWin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<players>1</players>
+	</game>
 	<game>
 		<path>./dolphin-emu.cmd</path>
 		<name>Configure Dolphin Emulator (GameCube,Wii)</name>
