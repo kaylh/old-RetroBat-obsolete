@@ -8,32 +8,31 @@ Standalone emulators instructions:
 ### Links to download emulators ##
 
 # AppleWin (Apple II, Apple II+)
-
 https://github.com/AppleWin/AppleWin/releases
+Install directory: ..\emulators\applewin
 
 # Dolphin (GameCube, Wii):
 https://dolphin-emu.org
 https://buildbot.dolphin-emu.org
-
 Install directory: ..\emulators\dolphin-emu
 
 # PCSX2 (PlayStation 2):
 https://buildbot.orphis.net/pcsx2
 https://pcsx2.net/download/releases/windows/category/40-windows.html
-
 Install directory: ..\emulators\pcsx2
-
-# Redream (Dreamcast):
-https://redream.io
-
-Install directory: ..\emulators\redream
 
 # PPSSPP (PSP):
 http://ppsspp.org
-
 Install directory: ..\emulators\ppsspp
+
+# OpenBOR (2D BTA Engine)
+https://github.com/DCurrent/openbor/releases
+Install directory: ..\emulators\openbor
+
+# Redream (Dreamcast):
+https://redream.io
+Install directory: ..\emulators\redream
 
 - RCPS3 (PlayStation 3):
 https://rpcs3.net
-
 Install directory: ..\emulators\rcps3
