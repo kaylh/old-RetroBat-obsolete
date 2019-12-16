@@ -74,8 +74,19 @@ if not exist %temp_dir%\. md %temp_dir%
 if not exist %config_dir%\. md %config_dir%
 if "%updatedone%"=="1" copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
 if not exist %config_dir%\emulationstation.cfg copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
+if not exist %setup_dir%\%launcher_file% if exist %scripts_dir%\%launcher_file% copy/y %scripts_dir%\%launcher_file% %setup_dir%\%launcher_file%>nul
 call %scripts_dir%\pkgsources.cmd
-goto check_pkg
+goto check_sfx
+
+:check_sfx
+set SFX=0
+if exist %setup_dir%\SFX (
+	set/A SFX=SFX+1
+	del/Q %setup_dir%\SFX
+	goto check_pkg
+) else (
+	goto check_pkg
+)
 
 :check_pkg
 echo *** Checking required softwares
@@ -156,6 +167,7 @@ timeout /t 1 >nul
 echo.
 set fullinstall=0
 if "%updatedone%"=="1" set updatedone=0 && goto create_folders
+if "%SFX%"=="1" goto update_retroarch_config1
 if %mainpkg% GTR 0 goto welcome_menu
 if "%mainpkg%"=="0" set/p mainpkg="- Do you want to install them now ? (y)es, (n)o, (q)uit: "
 if "%mainpkg%"=="Y" set/A fullinstall=fullinstall+1
@@ -216,7 +228,6 @@ if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
 if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
 
 if exist %templates_dir%\infos\info-bios.txt copy/y %templates_dir%\infos\info-bios.txt %bios_dir%\bios.txt>nul
-if exist %scripts_dir%\%launcher_file% copy/y %scripts_dir%\%launcher_file% %setup_dir%\%launcher_file%>nul
 timeout /t 1 >nul
 cd %games_dir%
 call %scripts_dir%\systemsnames.cmd
@@ -554,6 +565,7 @@ cls
 echo.
 echo -- Setting up RetroArch's configuration files --
 echo.
+if "%SFX%"=="1" set racfgname=custom1
 If not exist %retroarch_dir%\. md %retroarch_dir%
 If not exist %retroarch_config_dir%\. md %retroarch_config_dir%
 if exist %retroarch_config_dir%\retroarch.cfg (
@@ -582,6 +594,7 @@ if exist %retroarch_config_dir%\retroarch-override.cfg (
 )
 echo Done.
 timeout /t 1 >nul
+if "%SFX%"=="1" goto exit
 if "%singledl%"=="1" goto setup_menu
 if "%fullinstall%"=="1" goto dl_lrarcade
 goto setup_menu
