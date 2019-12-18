@@ -50,7 +50,7 @@ If exist %es_config_dir%\video\%splashscreen_file% emulationstation.exe --video 
 goto run_es
 
 :run_es
-set run_es=emulationstation.exe --fullscreen --resolution %es_resolution_width% %es_resolution_height%
+set run_es=emulationstation.exe
 set run_es_w=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
 if not exist %es_dir%\emulationstation.exe goto esfail
 if "%es_is_fullscreen%"=="yes" (
