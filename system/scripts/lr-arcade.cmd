@@ -134,11 +134,11 @@ if "%fullinstall%"=="1" (
 :pkg_fail
 cls
 Echo.
-Echo  An error occured and package files can not be found. Try to update Libretro Cores list.
+Echo  An error occured and package files can not be found.
 Echo.
-if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 timeout /t 3 >nul
-goto exit
+if exist %temp_dir%\*.dll.zip goto install_libretrocores
+goto exit 
 
 :exit
 exit 
@@ -147,7 +147,7 @@ exit
 cls
 echo -- Libretro Cores are installing --
 echo.
-%zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
+if exist %temp_dir%\*.dll.zip %zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
 timeout /t 1 >nul
 if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 echo Done.
