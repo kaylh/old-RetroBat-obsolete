@@ -602,7 +602,7 @@ if "%fullinstall%"=="1" (
 
 :dl_mednafen_supergrafx
 cls
-set core_name=supergrafx
+set core_name=mednafen_supergrafx
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
@@ -981,10 +981,10 @@ if "%fullinstall%"=="1" (
 :pkg_fail
 cls
 Echo.
-Echo  An error occured and package files can not be found. Try to update Libretro Cores list.
+Echo  An error occured and package files can not be found.
 Echo.
-if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 timeout /t 3 >nul
+if exist %temp_dir%\*.dll.zip goto install_libretrocores
 goto exit 
 
 :exit
@@ -994,7 +994,7 @@ exit
 cls
 echo -- Libretro Cores are installing --
 echo.
-%zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
+if exist %temp_dir%\*.dll.zip %zip_dir%\7zg.exe -y x "%temp_dir%\*.dll.zip" -o"%retroarch_dir%\cores" -aoa
 timeout /t 1 >nul
 if exist %temp_dir%\*.dll.zip del/Q %temp_dir%\*.dll.zip>nul
 echo Done.
