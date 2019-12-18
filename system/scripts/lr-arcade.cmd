@@ -7,10 +7,11 @@ This file is part of RetroBat Scripts.
 
 :dl_fbalpha2012
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_libretro.dll.zip
+set core_name=fbalpha2012
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -24,10 +25,11 @@ if "%fullinstall%"=="1" (
 
 :dl_fbalpha2012_neogeo
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_neogeo_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_neogeo_libretro.dll.zip
+set core_name=fbalpha2012_neogeo
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -41,10 +43,11 @@ if "%fullinstall%"=="1" (
 
 :dl_fbalpha2012_cps1
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_cps1_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_cps1_libretro.dll.zip
+set core_name=fbalpha2012_cps1
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -58,10 +61,11 @@ if "%fullinstall%"=="1" (
 
 :dl_fbalpha2012_cps2
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbalpha2012_cps2_libretro.dll.zip
-set output_dir=%temp_dir%\fbalpha2012_cps2_libretro.dll.zip
+set core_name=fbalpha2012_cps2
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -75,10 +79,11 @@ if "%fullinstall%"=="1" (
 
 :dl_fbneo
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/fbneo_libretro.dll.zip
-set output_dir=%temp_dir%\fbneo_libretro.dll.zip
+set core_name=fbneo
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -92,10 +97,11 @@ if "%fullinstall%"=="1" (
 
 :dl_mame2003_plus
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/mame2003_plus_libretro.dll.zip
-set output_dir=%temp_dir%\mame2003_plus_libretro.dll.zip
+set core_name=mame2003_plus
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
@@ -109,10 +115,11 @@ if "%fullinstall%"=="1" (
 
 :dl_mame2016
 cls
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/mame2016_libretro.dll.zip
-set output_dir=%temp_dir%\mame2016_libretro.dll.zip
+set core_name=mame2016
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading --
+echo -- Libretro Core is now downloading ( %core_name% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkg_fail
