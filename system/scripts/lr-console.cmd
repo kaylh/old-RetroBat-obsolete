@@ -620,7 +620,7 @@ if "%fullinstall%"=="1" (
 
 :dl_mednafen_vb
 cls
-set core_name=vb
+set core_name=mednafen_vb
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
