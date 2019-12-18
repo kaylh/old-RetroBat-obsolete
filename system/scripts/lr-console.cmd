@@ -4,6 +4,7 @@ goto:rem
 This file is part of RetroBat Scripts. 
 ***************************************
 :rem
+
 :dl_4do
 cls
 set core_name=4do
@@ -594,24 +595,6 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
-	goto dl_mednafen_snes
-) else (
-	goto install_libretrocores
-)
-
-:dl_mednafen_snes
-cls
-set core_name=mednafen_snes
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
-set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
-if exist %output_dir% goto install_libretrocores
-echo -- Libretro Core is now downloading ( %core_name% ) --
-echo.
-call %scripts_dir%\powershelldl.cmd
-if %ERRORLEVEL% == 1 goto pkg_fail
-ping 127.0.0.1 -n 4 >nul
-echo Done.
-if "%fullinstall%"=="1" (
 	goto dl_mednafen_supergrafx
 ) else (
 	goto install_libretrocores
@@ -655,7 +638,97 @@ if "%fullinstall%"=="1" (
 
 :dl_mednafen_wswan
 cls
-set core_name=wswan
+set core_name=mednafen_wswan
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_mgba
+) else (
+	goto install_libretrocores
+)
+
+:dl_mgba
+cls
+set core_name=mgba
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_mupen64plus_next
+) else (
+	goto install_libretrocores
+)
+
+:dl_mupen64plus_next
+cls
+set core_name=mupen64plus_next
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_nestopia
+) else (
+	goto install_libretrocores
+)
+
+:dl_nestopia
+cls
+set core_name=nestopia
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_nxengine
+) else (
+	goto install_libretrocores
+)
+
+:dl_nxengine
+cls
+set core_name=nxengine
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_o2em
+) else (
+	goto install_libretrocores
+)
+
+:dl_o2em
+cls
+set core_name=o2em
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
@@ -684,6 +757,78 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
+	goto dl_play
+) else (
+	goto install_libretrocores
+)
+
+:dl_play
+cls
+set core_name=play
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_ppsspp
+) else (
+	goto install_libretrocores
+)
+
+:dl_ppsspp
+cls
+set core_name=ppsspp
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_prosystem
+) else (
+	goto install_libretrocores
+)
+
+:dl_prosystem
+cls
+set core_name=prosystem
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_puae
+) else (
+	goto install_libretrocores
+)
+
+:dl_puae
+cls
+set core_name=puae
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
 	goto dl_quicknes
 ) else (
 	goto install_libretrocores
@@ -702,6 +847,24 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
+	goto dl_scummvm
+) else (
+	goto install_libretrocores
+)
+
+:dl_scummvm
+cls
+set core_name=scummvm
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
 	goto dl_snes9x
 ) else (
 	goto install_libretrocores
@@ -710,6 +873,96 @@ if "%fullinstall%"=="1" (
 :dl_snes9x
 cls
 set core_name=snes9x
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_stella
+) else (
+	goto install_libretrocores
+)
+
+:dl_stella
+cls
+set core_name=stella
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_tgbdual
+) else (
+	goto install_libretrocores
+)
+
+:dl_tgbdual
+cls
+set core_name=tgbdual
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_vecx
+) else (
+	goto install_libretrocores
+)
+
+:dl_vecx
+cls
+set core_name=vecx
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_vice_x64
+) else (
+	goto install_libretrocores
+)
+
+:dl_vice_x64
+cls
+set core_name=vice_x64
+set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
+	goto dl_virtualjaguar
+) else (
+	goto install_libretrocores
+)
+
+:dl_virtualjaguar
+cls
+set core_name=virtualjaguar
 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
