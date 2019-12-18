@@ -351,6 +351,8 @@ set bgmusic=0
 if not exist %es_config_dir%\music\*.ogg set/A bgmusic=bgmusic+1
 if not exist %es_config_dir%\music\*.mp3 set/A bgmusic=bgmusic+1
 if "%bgmusic%"=="0" if exist %templates_dir%\emulationstation\music.ogg copy/Y %templates_dir%\emulationstation\music.ogg %es_config_dir%\music\music.ogg>nul
+if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
+if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 goto config_es
 
 :config_es
@@ -434,6 +436,8 @@ echo.
 ECHO -- Default Theme for EmulationStation is installing ( %themename% ) --
 ECHO.
 %zip_dir%\7zg.exe -y x "%output_dir%" -o"%es_config_dir%\themes" -aoa>nul
+if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
+if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 echo Done.
 timeout /t 1 >nul
 if "%singledl%"=="1" goto setup_menu
@@ -505,6 +509,8 @@ echo.
 echo -- RetroArch is installing --
 echo.
 %zip_dir%\7zg.exe -y x "%output_dir%" -o"%retroarch_dir%" -aoa>nul
+if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
+if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 echo Done.
 timeout /t 1 >nul
 if exist %retroarch_config_dir%\*.cfg goto update_retroarch_confirm
@@ -823,7 +829,7 @@ echo  ( 8 ) -- Update RetroArch Nightly
 echo +-----------------------------------------------------------+
 echo  ( 9 ) -- Install Libretro Cores (Arcade)
 echo +-----------------------------------------------------------+
-echo  ( 10 ) -- Install Libretro Cores (Console)
+echo  ( 10 ) -- Install Libretro Cores (Consoles and others)
 echo +-----------------------------------------------------------+
 echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
@@ -863,7 +869,7 @@ echo  ( 3 ) -- Reset EmulationStation settings
 echo +-----------------------------------------------------------+
 echo  ( 4 ) -- Update Libretro Cores list (Arcade)
 echo +-----------------------------------------------------------+
-echo  ( 5 ) -- Update Libretro Cores list (Console)
+echo  ( 5 ) -- Update Libretro Cores list (Console and others)
 echo +-----------------------------------------------------------+
 echo  ( 6 ) -- Set right path in RetroArch override settings
 echo +-----------------------------------------------------------+
