@@ -16,6 +16,10 @@ https://dolphin-emu.org
 https://buildbot.dolphin-emu.org
 Install directory: ..\emulators\dolphin-emu
 
+# DOSBox (DOS, Windows)
+https://www.dosbox.com
+http://www.emucr.com/search/label/DOSBox
+
 # PCSX2 (PlayStation 2):
 https://buildbot.orphis.net/pcsx2
 https://pcsx2.net/download/releases/windows/category/40-windows.html
