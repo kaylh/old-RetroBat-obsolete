@@ -98,12 +98,14 @@ goto check_7zip
 set inst7z=0
 set portable7z=0
 set local7z=0
+set forcearch=0
 
 If exist %system_dir%\7zip\7zG.exe set/A inst7z=inst7z+1 & set/A portable7z=portable7z+1
-::If exist %system_dir%\7zip\7zG.exe set/A portable7z=portable7z+1
 
-If exist "%ProgramFiles%"\7-Zip\7zG.exe set/A inst7z=inst7z+1 & set/A local7z=local7z+1
-::If exist "%ProgramFiles%"\7-Zip\7zG.exe set/A local7z=local7z+1
+if "%ProgramFiles%"=="%ProgramFiles(x86)%" set/A forcearch=forcearch+1
+
+if "%forcearch%"=="0" if exist "%ProgramFiles%"\7-Zip\7zG.exe set/A inst7z=inst7z+1 & set/A local7z=local7z+1
+if "%forcearch%"=="1" if exist "%ProgramW6432%"\7-Zip\7zG.exe set/A inst7z=inst7z+1 & set/A local7z=local7z+1
 
 if "%portable7z%"=="1" set zip_dir=%system_dir%\7zip
 if "%local7z%"=="1" set zip_dir="%ProgramFiles%"\7-Zip
