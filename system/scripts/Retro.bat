@@ -7,10 +7,26 @@ This file is part of RetroBat Scripts.
 
 :load_config
 for /f "delims=" %%x in (%CD%\System\retrobat.setup) do (set "%%x")
-For /f "delims=" %%x in (%config_dir%\emulationstation.cfg) do (set "%%x")
+For /f "delims=" %%x in (%CD%\configs\emulationstation.cfg) do (set "%%x")
 title RetroBat Launcher
-cd %es_dir%
-goto check_proc
+goto check_path
+
+:check_path
+set current_dir=%cd:~3%>nul
+set current_dir=%current_dir:"=%
+set current_dir=\%current_dir%
+if "%current_dir%"=="%setup_dir%" (
+	cd %es_dir%
+	goto check_proc	
+) else (
+	set current_dir=1
+	echo.
+	echo Setup directory has changed. Loading setup to fix it...
+	echo.
+	timeout /t 2 >nul
+	call %current_dir%\setup.bat
+	goto exit
+)
 
 :check_proc
 Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set PROCARCH=32 || set PROCARCH=64
@@ -88,7 +104,7 @@ cls
 Echo.
 ECHO  RetroBat Scripts only run on 64 bits system.
 Echo.
-PAUSE>NUL
+timeout /t 5 >nul
 GOTO exit
 
 :pkg_fail
@@ -96,8 +112,8 @@ cls
 Echo.
 Echo  An error occured and package files can not be found.
 Echo.
-pause
-goto exit 
+timeout /t 5 >nul
+GOTO exit
 
 :exit
 exit
