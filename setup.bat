@@ -13,7 +13,7 @@ set setup_info=retrobat.setup
 if exist %CD%\System\%setup_info% break>%CD%\System\%setup_info%
 set launcher_file=retro.bat
 set setup_file=setup.bat
-set setup_dir="%cd:~3%">nul
+set setup_dir=%cd:~3%>nul
 set setup_dir=%setup_dir:"=%
 set setup_dir=\%setup_dir%
 echo setup_dir=%setup_dir%>> %CD%\System\%setup_info%
@@ -373,6 +373,7 @@ if exist %es_config_dir%\es_systems.cfg.new copy/Y %es_config_dir%\es_systems.cf
 if exist %es_config_dir%\es_systems.cfg.new del/Q %es_config_dir%\es_systems.cfg.new>nul
 timeout /t 1 >nul
 if exist %es_config_dir%\*.new goto update_ES_confirm
+if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%singledl%"=="1" goto setup_menu
 
@@ -407,6 +408,7 @@ copy/Y %es_config_dir%\es_input.cfg.new %es_config_dir%\es_input.cfg>nul
 if exist %es_config_dir%\*.new del/Q %es_config_dir%\*.new
 timeout /t 1 >nul
 if "%singledl%"=="1" goto setup_menu
+if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%go%"=="2" goto debug_menu
 if "%go%"=="3" goto debug_menu
@@ -414,11 +416,12 @@ goto setup_menu
 
 :dl_default_theme
 cls
-set themename=nextfull
-set current_url=%default_theme_url%
-set output_dir=%temp_dir%\default-theme-pkg.zip
+set current_url=https://github.com/kaylh/es-theme-%themename%/archive/master.zip
+echo https://github.com/kaylh/es-theme-%themename%/archive/master.zip
+pause
+set output_dir=%temp_dir%\%themename%-theme-pkg.zip
 if exist %output_dir% goto install_default_theme
-echo -- Default Theme for EmulationStation is now downloading ( %themename% ) --
+echo -- Theme for EmulationStation is now downloading ( %themename% ) --
 echo.
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkgFail
@@ -433,7 +436,7 @@ If not exist %temp_dir%\. md %temp_dir%
 if not exist %es_config_dir%\. md %es_config_dir%
 if not exist %es_config_dir%\themes\. md %es_config_dir%\themes
 echo.
-ECHO -- Default Theme for EmulationStation is installing ( %themename% ) --
+ECHO -- Theme for EmulationStation is installing ( %themename% ) --
 ECHO.
 %zip_dir%\7zg.exe -y x "%output_dir%" -o"%es_config_dir%\themes" -aoa>nul
 if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
@@ -716,6 +719,7 @@ goto debug_menu
 :launch_ES
 cls
 if not exist %setup_dir%\retro.bat goto pkg_fail
+cd %setup_dir%
 call %setup_dir%\retro.bat
 goto exit
 
@@ -817,7 +821,7 @@ echo  ( 2 ) -- Install EmulationStation
 echo +-----------------------------------------------------------+
 echo  ( 3 ) -- Update EmulationStation
 echo +-----------------------------------------------------------+
-echo  ( 4 ) -- Install ES default theme
+echo  ( 4 ) -- Install EmulationStation Themes
 echo +-----------------------------------------------------------+
 echo  ( 5 ) -- Install RetroArch Stable
 echo +-----------------------------------------------------------+
@@ -840,7 +844,7 @@ echo.
 if "%go%"=="1" goto create_config
 if "%go%"=="2" set/A singledl=singledl+1 && goto dl_ES
 if "%go%"=="3" goto update_ES
-if "%go%"=="4" set/A singledl=singledl+1 && goto dl_default_theme
+if "%go%"=="4" goto themes_menu
 if "%go%"=="5" set/A singledl=singledl+1 && goto dl_retroarch_stable
 if "%go%"=="6" goto update_retroarch_stable
 if "%go%"=="7" set/A singledl=singledl+1 && goto dl_retroarch_nightly
@@ -852,6 +856,35 @@ if "%go%"=="r" goto welcome_menu
 if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
 goto setup_menu
+
+:themes_menu
+cls
+if not exist %temp_dir%\. md %temp_dir%
+set singledl=0
+set fullinstall=0
+set themename=carbon
+set go=0
+echo +===========================================================+
+echo                  SETUP EMULATIONSTATION THEMES
+echo +===========================================================+
+echo  ( 1 ) -- Install Carbon Theme
+echo +-----------------------------------------------------------+
+echo  ( 2 ) -- Install NextFull Theme
+echo +-----------------------------------------------------------+
+echo  ( R ) -- Return to previous menu
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please chose one (1-5,R,Q): "
+echo.
+if "%go%"=="1" set themename=carbon
+if "%go%"=="1" set/A singledl=singledl+1 goto dl_default_theme
+if "%go%"=="2" set themename=nextfull
+if "%go%"=="2" set/A singledl=singledl+1 goto dl_default_theme
+if "%go%"=="R" goto setup_menu
+if "%go%"=="r" goto setup_menu
+if "%go%"=="Q" goto exit
+if "%go%"=="q" goto exit
 
 :debug_menu
 cls
@@ -920,5 +953,3 @@ goto exit
 
 :exit
 exit
-
-
