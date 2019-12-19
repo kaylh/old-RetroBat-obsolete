@@ -417,6 +417,8 @@ goto setup_menu
 :dl_default_theme
 cls
 set current_url=https://github.com/kaylh/es-theme-%themename%/archive/master.zip
+echo https://github.com/kaylh/es-theme-%themename%/archive/master.zip
+pause
 set output_dir=%temp_dir%\%themename%-theme-pkg.zip
 if exist %output_dir% goto install_default_theme
 echo -- Theme for EmulationStation is now downloading ( %themename% ) --
@@ -573,6 +575,7 @@ echo.
 echo -- Setting up RetroArch's configuration files --
 echo.
 if "%SFX%"=="1" set racfgname=custom1
+if "%current_dir%"=="1" set racfgname=custom1
 If not exist %retroarch_dir%\. md %retroarch_dir%
 If not exist %retroarch_config_dir%\. md %retroarch_config_dir%
 if exist %retroarch_config_dir%\retroarch.cfg (
@@ -602,6 +605,7 @@ if exist %retroarch_config_dir%\retroarch-override.cfg (
 echo Done.
 timeout /t 1 >nul
 if "%SFX%"=="1" goto exit
+if "%current_dir%"=="1" goto launch_ES
 if "%singledl%"=="1" goto setup_menu
 if "%fullinstall%"=="1" goto dl_lrarcade
 goto setup_menu
@@ -775,6 +779,7 @@ if "%updatedone%"=="1" (
 :welcome_menu
 cls
 if not exist %temp_dir%\. md %temp_dir%
+if "%current_dir%"=="1" goto update_retroarch_config1
 set fullinstall=0
 set go=0
 call %scripts_dir%\pkgsources.cmd
