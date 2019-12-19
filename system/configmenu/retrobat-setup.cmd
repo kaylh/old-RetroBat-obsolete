@@ -23,8 +23,9 @@ if exist %setup_dir%\%appbin% (
 )
 
 :runapp
-cd %setup_dir%
-%appbin% && exit
+cd ..
+call %setup_dir%\%appbin%
+goto exit
 
 :notfound
 echo %appbin% is missing. aborting.
