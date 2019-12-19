@@ -8,6 +8,7 @@ This file is part of RetroBat Scripts.
 :load_config
 for /f "delims=" %%x in (%CD%\System\retrobat.setup) do (set "%%x")
 For /f "delims=" %%x in (%config_dir%\emulationstation.cfg) do (set "%%x")
+title RetroBat Launcher
 cd %es_dir%
 goto check_proc
 
@@ -54,9 +55,11 @@ set run_es=emulationstation.exe
 set run_es_w=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
 if not exist %es_dir%\emulationstation.exe goto esfail
 if "%es_is_fullscreen%"=="yes" (
-	%run_es%
+	start %run_es%
+	call %scripts_dir%\focus.cmd
 ) else (
-	%run_es_w%
+	start %run_es_w%
+	call %scripts_dir%\focus.cmd
 )
 goto delete_junkfiles
 
