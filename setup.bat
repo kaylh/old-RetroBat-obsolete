@@ -881,9 +881,9 @@ echo +===========================================================+
 set/p go="  - Please chose one (1-5,R,Q): "
 echo.
 if "%go%"=="1" set themename=carbon
-if "%go%"=="1" set/A singledl=singledl+1 goto dl_default_theme
+if "%go%"=="1" set/A singledl=singledl+1 && goto dl_default_theme
 if "%go%"=="2" set themename=nextfull
-if "%go%"=="2" set/A singledl=singledl+1 goto dl_default_theme
+if "%go%"=="2" set/A singledl=singledl+1 && goto dl_default_theme
 if "%go%"=="R" goto setup_menu
 if "%go%"=="r" goto setup_menu
 if "%go%"=="Q" goto exit
