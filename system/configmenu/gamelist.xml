@@ -26,7 +26,7 @@
 		<playcount>1</playcount>
 		<players>1</players>
 	</game>
-		<game>
+	<game>
 		<path>./applewin.cmd</path>
 		<name>Configure AppleWin (Apple II)</name>
 		<desc>Configure AppleWin Emulator (Apple II)</desc>
@@ -114,7 +114,7 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>14</playcount>
-		<lastplayed>20191203T124133</lastplayed>
+		<playcount>16</playcount>
+		<lastplayed>20191219T155225</lastplayed>
 	</game>
 </gameList>
