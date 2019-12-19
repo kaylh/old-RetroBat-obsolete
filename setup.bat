@@ -218,11 +218,11 @@ if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-em
 
 if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
-if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe
+if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe>nul
 
 if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
-if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe
+if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
 
 if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
 if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
@@ -578,13 +578,13 @@ if "%SFX%"=="1" set racfgname=custom1
 If not exist %retroarch_dir%\. md %retroarch_dir%
 If not exist %retroarch_config_dir%\. md %retroarch_config_dir%
 if exist %retroarch_config_dir%\retroarch.cfg (
-	copy/y %retroarch_config_dir%\retroarch.cfg %retroarch_config_dir%\retroarch.cfg.old
+	copy/y %retroarch_config_dir%\retroarch.cfg %retroarch_config_dir%\retroarch.cfg.old>nul
 	del/q %retroarch_config_dir%\retroarch.cfg
-	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg
+	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg>nul
 	timeout /t 1 >nul
 	goto update_retroarch_config2
 	) else (
-	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg
+	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg>nul
 	timeout /t 1 >nul
 	goto update_retroarch_config2
 )
