@@ -9,10 +9,11 @@ taskkill /f /im emulationstation.exe>nul
 
 :load_config
 for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+set applongname=Redream
 set appname=redream
 set appbin=%appname%.exe
 set apppath=%emulators_dir%\%appname%\%appbin%
-:: set apparg=--portable --cfgpath="%emulators_dir%\pcsx2\config"
+:: set apparg=
 goto check_setup
 
 :check_setup
