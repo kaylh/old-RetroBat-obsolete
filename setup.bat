@@ -417,8 +417,6 @@ goto setup_menu
 :dl_default_theme
 cls
 set current_url=https://github.com/kaylh/es-theme-%themename%/archive/master.zip
-echo https://github.com/kaylh/es-theme-%themename%/archive/master.zip
-pause
 set output_dir=%temp_dir%\%themename%-theme-pkg.zip
 if exist %output_dir% goto install_default_theme
 echo -- Theme for EmulationStation is now downloading ( %themename% ) --
