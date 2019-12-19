@@ -7,6 +7,7 @@ This file is part of RetroBat Scripts.
 
 :load_config
 for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+set applongname=RetroArch
 set appname=retroarch
 set appbin=%appname%.exe
 set apppath=%retroarch_dir%\%appbin%
@@ -22,6 +23,7 @@ If exist %apppath% (
 
 :runapp
 %apppath% %apparg%
+call %scripts_dir%\focus.cmd
 goto exit
 
 :notFound
