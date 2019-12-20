@@ -375,7 +375,7 @@ if exist %es_config_dir%\es_systems.cfg.new copy/Y %es_config_dir%\es_systems.cf
 if exist %es_config_dir%\es_systems.cfg.new del/Q %es_config_dir%\es_systems.cfg.new>nul
 timeout /t 1 >nul
 if exist %es_config_dir%\*.new goto update_ES_confirm
-if "%fullinstall%"=="1" set themename=nextfull
+if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%singledl%"=="1" goto setup_menu
 
@@ -410,7 +410,7 @@ copy/Y %es_config_dir%\es_input.cfg.new %es_config_dir%\es_input.cfg>nul
 if exist %es_config_dir%\*.new del/Q %es_config_dir%\*.new
 timeout /t 1 >nul
 if "%singledl%"=="1" goto setup_menu
-if "%fullinstall%"=="1" set themename=nextfull
+if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%go%"=="2" goto debug_menu
 if "%go%"=="3" goto debug_menu
@@ -865,7 +865,7 @@ cls
 if not exist %temp_dir%\. md %temp_dir%
 set singledl=0
 set fullinstall=0
-set themename=nextfull
+set themename=carbon
 set go=0
 echo +===========================================================+
 echo                  SETUP EMULATIONSTATION THEMES
