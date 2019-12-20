@@ -74,6 +74,12 @@ if not exist %temp_dir%\. md %temp_dir%
 if not exist %config_dir%\. md %config_dir%
 if "%updatedone%"=="1" copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
 if not exist %config_dir%\emulationstation.cfg copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
+FOR /F "tokens=* USEBACKQ" %%F IN (`powershell -noninteractive -command "Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width"`) DO (
+    call %scripts_dir%\ini.bat %config_dir%\emulationstation.cfg /i es_resolution_width /v %%F >NUL
+)
+FOR /F "tokens=* USEBACKQ" %%F IN (`powershell -noninteractive -command "Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height"`) DO (
+    call %scripts_dir%\ini.bat %config_dir%\emulationstation.cfg /i es_resolution_height /v %%F >NUL
+)
 if not exist %setup_dir%\%launcher_file% if exist %scripts_dir%\%launcher_file% copy/y %scripts_dir%\%launcher_file% %setup_dir%\%launcher_file%>nul
 call %scripts_dir%\pkgsources.cmd
 goto check_sfx
