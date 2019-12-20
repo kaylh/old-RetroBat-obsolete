@@ -605,7 +605,7 @@ if exist %retroarch_config_dir%\retroarch-override.cfg (
 echo Done.
 timeout /t 1 >nul
 if "%SFX%"=="1" goto exit
-if "%current_dir%"=="1" goto launch_ES
+if "%current_dir%"=="1" goto run_es
 if "%singledl%"=="1" goto setup_menu
 if "%fullinstall%"=="1" goto dl_lrarcade
 goto setup_menu
@@ -718,10 +718,11 @@ echo Done.
 timeout /t 1 >nul
 goto debug_menu
 
-:launch_ES
+:run_es
 cls
 if not exist %setup_dir%\retro.bat goto pkg_fail
-cd %setup_dir%
+echo %setup_dir%
+pause
 call %setup_dir%\retro.bat
 goto exit
 
@@ -781,7 +782,7 @@ cls
 if not exist %temp_dir%\. md %temp_dir%
 if "%current_dir%"=="1" goto update_retroarch_config1
 set fullinstall=0
-set go=0
+set go=
 call %scripts_dir%\pkgsources.cmd
 call %scripts_dir%\showlogo.cmd
 echo           Version %version% by Kayl
@@ -800,7 +801,7 @@ echo  ( Q ) -- Quit
 echo +===========================================================+
 set/p go="  - Please chose one (1-5, Q): "
 echo.
-if "%go%"=="1" goto launch_ES
+if "%go%"=="1" goto run_es
 if "%go%"=="2" goto setup_menu
 if "%go%"=="3" goto debug_menu
 if "%go%"=="4" goto update_sources
