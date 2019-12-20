@@ -552,13 +552,13 @@ echo  ( 1 )  Default RetroArch's settings:
 echo         xmb menu, windowed, opengl
 echo +-----------------------------------------------------------+
 echo  ( 2 )  custom RetroArch's settings 1:
-echo         rgui menu, fullscreen, opengl
+echo         ozone menu, fullscreen, opengl
 echo +-----------------------------------------------------------+
 echo  ( 3 )  custom RetroArch's settings 2:
 echo         xmb menu, fullscreen, directx11
 echo +-----------------------------------------------------------+
 echo  ( 4 )  custom RetroArch's settings 3: 
-echo         ozone menu, fullscreen, vulkan
+echo         rgui menu, fullscreen, vulkan
 echo +===========================================================+
 echo   You can modify this settings later in retroarch's menu. 
 echo +===========================================================+
