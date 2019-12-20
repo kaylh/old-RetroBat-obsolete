@@ -721,8 +721,6 @@ goto debug_menu
 :run_es
 cls
 if not exist %setup_dir%\retro.bat goto pkg_fail
-echo %setup_dir%
-pause
 call %setup_dir%\retro.bat
 goto exit
 
