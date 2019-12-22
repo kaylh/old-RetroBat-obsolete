@@ -297,7 +297,7 @@ if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\sy
 if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
 if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
-if not exist %games_dir%\ps3\*.m3u if exist %templates_dir%\roms\ps3\example-to-edit.m3u.txt copy/y %templates_dir%\roms\ps3\example-to-edit.m3u.txt %templates_dir%\roms\ps3\example-to-edit.m3u.txt>nul
+if not exist %games_dir%\ps3\*.m3u if exist %templates_dir%\roms\ps3\example-to-edit.m3u.txt copy/y %templates_dir%\roms\ps3\example-to-edit.m3u.txt %games_dir%\roms\ps3\example-to-edit.m3u.txt>nul
 
 if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
 if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
