@@ -195,42 +195,6 @@ if not exist %shots_dir%\. md %shots_dir%
 if not exist %bios_dir%\. md %bios_dir%
 if not exist %medias_dir%\. md %medias_dir%
 
-if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
-
-if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
-if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
-
-if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
-if not exist %emulators_dir%\pcsx2\config\. md %emulators_dir%\pcsx2\config
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
-
-if not exist %emulators_dir%\ppsspp\. md %emulators_dir%\ppsspp
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\ppsspp\info.txt>nul
-
-if not exist %emulators_dir%\redream\. md %emulators_dir%\redream
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\redream\info.txt>nul
-
-if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
-
-if not exist %emulators_dir%\retroarch\. md %emulators_dir%\retroarch
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\retroarch\info.txt>nul
-
-if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
-if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe>nul
-
-if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
-if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
-
-if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
-if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
-
-if exist %templates_dir%\infos\info-bios.txt copy/y %templates_dir%\infos\info-bios.txt %bios_dir%\bios.txt>nul
-timeout /t 1 >nul
 cd %games_dir%
 call %scripts_dir%\systemsnames.cmd
 If not exist %threedo%\. md %threedo%
@@ -302,6 +266,43 @@ If not exist %naomi%\. md %naomi%
 If not exist %pcgames%\. md %pcgames%
 If not exist %mugen%\. md %mugen%
 cd ..
+timeout /t 1 >nul
+if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
+
+if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
+if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
+
+if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
+if not exist %emulators_dir%\pcsx2\config\. md %emulators_dir%\pcsx2\config
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
+
+if not exist %emulators_dir%\ppsspp\. md %emulators_dir%\ppsspp
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\ppsspp\info.txt>nul
+
+if not exist %emulators_dir%\redream\. md %emulators_dir%\redream
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\redream\info.txt>nul
+
+if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
+
+if not exist %emulators_dir%\retroarch\. md %emulators_dir%\retroarch
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\retroarch\info.txt>nul
+
+if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
+if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe>nul
+
+if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
+if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
+if not exist %games_dir%\ps3\*.m3u if exist %templates_dir%\roms\ps3\example-to-edit.m3u.txt copy/y %templates_dir%\roms\ps3\example-to-edit.m3u.txt %templates_dir%\roms\ps3\example-to-edit.m3u.txt>nul
+
+if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
+if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
+
+if exist %templates_dir%\infos\info-bios.txt copy/y %templates_dir%\infos\info-bios.txt %bios_dir%\bios.txt>nul
 timeout /t 1 >nul
 if "%go%"=="7" goto debug_menu
 if "%fullinstall%"=="1" goto dl_ES
