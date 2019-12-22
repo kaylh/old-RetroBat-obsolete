@@ -272,9 +272,8 @@ If not exist %npg%\. md %npg%
 If not exist %msu1%\. md %msu1%
 If not exist %psx%\. md %psx%
 If not exist %ps2%\. md %ps2%
+If not exist %ps3%\. md %ps3%
 If not exist %msu1%\. md %msu1%
-If not exist %psx%\. md %psx%
-If not exist %ps2%\. md %ps2%
 If not exist %psp%\. md %psp%
 If not exist %videopac%\. md %videopac%
 If not exist %fba%\. md %fba%
