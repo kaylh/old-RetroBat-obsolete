@@ -751,7 +751,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please chose one (U,R,Q): "
+set/p go="  - Please choose one (U,R,Q): "
 if "%go%"=="R" goto welcome_menu
 if "%go%"=="r" goto welcome_menu
 if "%go%"=="Q" goto exit 
@@ -799,7 +799,7 @@ echo  ( 5 ) -- Update RetroBat Scripts
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please chose one (1-5, Q): "
+set/p go="  - Please choose one (1-5, Q): "
 echo.
 if "%go%"=="1" goto run_es
 if "%go%"=="2" goto setup_menu
@@ -843,7 +843,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please chose one (1-5,R,Q): "
+set/p go="  - Please choose one (1-5,R,Q): "
 echo.
 if "%go%"=="1" goto create_config
 if "%go%"=="2" set/A singledl=singledl+1 && goto dl_ES
@@ -879,7 +879,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please chose one (1-5,R,Q): "
+set/p go="  - Please choose one (1-5,R,Q): "
 echo.
 if "%go%"=="1" set themename=carbon
 if "%go%"=="1" set/A singledl=singledl+1 && goto dl_default_theme
@@ -916,7 +916,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please chose one (1-7,R,Q): "
+set/p go="  - Please choose one (1-7,R,Q): "
 echo.
 if "%go%"=="1" goto update_es_systems
 if "%go%"=="2" goto restore_es_systems
