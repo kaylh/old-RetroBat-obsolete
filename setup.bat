@@ -564,7 +564,7 @@ echo         rgui menu, fullscreen, vulkan
 echo +===========================================================+
 echo   You can modify this settings later in retroarch's menu. 
 echo +===========================================================+
-set /p racfg="- Please choose one (0-4): "
+set /p racfg="- Please choose one (1-4): "
 if "%racfg%"=="1" set racfgname=default
 if "%racfg%"=="2" set racfgname=custom1
 if "%racfg%"=="3" set racfgname=custom2
@@ -843,7 +843,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please choose one (1-5,R,Q): "
+set/p go="  - Please choose one (1-10,R,Q): "
 echo.
 if "%go%"=="1" goto create_config
 if "%go%"=="2" set/A singledl=singledl+1 && goto dl_ES
@@ -879,7 +879,7 @@ echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please choose one (1-5,R,Q): "
+set/p go="  - Please choose one (1-2,R,Q): "
 echo.
 if "%go%"=="1" set themename=carbon
 if "%go%"=="1" set/A singledl=singledl+1 && goto dl_default_theme
