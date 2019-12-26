@@ -12,7 +12,7 @@ for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
 set appname=dolphin-emu
 set appbin=dolphin.exe
 set apppath=%emulators_dir%\%appname%\%appbin%
-set apparg=--batch --user="%emulators_dir%\dolphin-emu\config"
+set apparg=--user="%emulators_dir%\dolphin-emu\config"
 goto check_setup
 
 :check_setup
