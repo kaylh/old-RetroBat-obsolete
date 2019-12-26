@@ -39,8 +39,8 @@ Atari ST:
 b2a8570de2e850c5acf81cb80512d9f6 bios/tos.img
 
 Dreamcast:
-e10c53c2f8b90bab96ead2d368858623 bios/dc_boot.bin
-0a93f7940c455905bea6e392dfde92a4 bios/dc_flash.bin
+e10c53c2f8b90bab96ead2d368858623 bios/dc/dc_boot.bin
+0a93f7940c455905bea6e392dfde92a4 bios/dc/dc_flash.bin
 
 Nintendo Family Computer Disk System:
 7bfe8c0540ed4bd6a0f1e2a0f0118ced bios/NstDatabase.xml
@@ -93,8 +93,8 @@ Nintendo 64:
 8d3d9f294b6e174bc7b1d2fd1c727530 bios/64DD_IPL.bin
 
 Naomi:
-3bffafac42a7767d8dcecf771f5552ba bios/naomi.bin
-e63d892cdb8b532351dc7020bb60b6f4 bios/naomi.zip
+3bffafac42a7767d8dcecf771f5552ba bios/dc/naomi.bin
+e63d892cdb8b532351dc7020bb60b6f4 bios/dc/naomi.zip
 
 Nintendo DS:
 145eaef5bd3037cbc247c213bb3da1b3 bios/firmware.bin
