@@ -71,6 +71,7 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 >PC-ENGINE CD
 >PLAYSTATION
 >PLAYSTATION 2 
+>PLAYSTATION 3
 >PSP
 >SATURN 
 >SEGA 32X
