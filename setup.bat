@@ -267,6 +267,8 @@ If not exist %wswan%\. md %wswan%
 If not exist %wswanc%\. md %wswanc%
 If not exist %zxspectrum%\. md %zxspectrum%
 if not exist %apple2%\. md %apple2%
+if not exist %fpinball%\. md %fpinball%
+if not exist %vpinball%\. md %vpinball%
 cd ..
 timeout /t 1 >nul
 if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
@@ -288,6 +290,14 @@ if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-em
 
 if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
+
+if not exist %emulators_dir%\vpinball\. md %emulators_dir%\vpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\vpinball\info.txt>nul
+if not exist %emulators_dir%\vpinball\vpinballlauncher.exe if exist %setup_dir%\system\tools\vpinballlauncher.exe copy/y %setup_dir%\system\tools\vpinballlauncher.exe %emulators_dir%\vpinball\vpinballlauncher.exe>nul
+
+if not exist %emulators_dir%\fpinball\. md %emulators_dir%\fpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\fpinball\info.txt>nul
+if not exist %emulators_dir%\fpinball\fpinballlauncher.exe if exist %setup_dir%\system\tools\fpinballlauncher.exe copy/y %setup_dir%\system\tools\fpinballlauncher.exe %emulators_dir%\fpinball\fpinballlauncher.exe>nul
 
 if not exist %emulators_dir%\retroarch\. md %emulators_dir%\retroarch
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\retroarch\info.txt>nul
