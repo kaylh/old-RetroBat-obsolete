@@ -274,6 +274,9 @@ timeout /t 1 >nul
 if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
 
+if not exist %emulators_dir%\citra\. md %emulators_dir%\citra
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\citra\info.txt>nul
+
 if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
 if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
