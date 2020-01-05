@@ -11,6 +11,11 @@ Standalone emulators instructions:
 https://github.com/AppleWin/AppleWin/releases
 Install directory: ..\emulators\applewin
 
+# Citra (3DS):
+https://github.com/citra-emu/citra-nightly/releases (choose a 7z archive named citra-windows-*)
+https://citra-emu.org
+Install directory: ..\emulators\citra
+
 # Dolphin (GameCube, Wii):
 https://dolphin-emu.org
 https://buildbot.dolphin-emu.org
