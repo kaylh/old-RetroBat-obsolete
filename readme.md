@@ -1,4 +1,4 @@
-![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
+![RetroBat-Logo](https://www.retrobat.ovh/repo/ressources/baniere_small.png)
 
 | [Visit Official Website](https://www.retrobat.ovh) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases) |
 
