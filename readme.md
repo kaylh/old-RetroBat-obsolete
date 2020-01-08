@@ -25,6 +25,8 @@ RetroBat is able to run in Portable Mode. It means that you can either start it 
 
 #### Software
 
+- [Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)
+
 - [Visual C++ 2015 Redistributable Packages (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
 
 - [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
