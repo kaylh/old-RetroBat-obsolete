@@ -4,13 +4,14 @@
 
 ## Introduction
 
-RetroBat is a set of Batch and Powershell Scripts designed to configure automatically EmulationStation frontend to run games from a ROMs collection with RetroArch and standalone emulators. 
+RetroBat is a set of Batch and Powershell Scripts designed to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
 
-With it you'll save a lot of time you can keep to play !
+With it you will be quickly able to run games from a ROMs collection and save a lot of time you can keep to play !
 
-RetroBat can download and install all the softwares you need to have a good retrogaming experience on your Windows PC.
+RetroBat can download and install all software you need to have a good retro gaming experience on your Windows PC.
 
-RetroBat is able to run in Portable Mode. It means that you can either start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+
  
 ## System requirements
 
