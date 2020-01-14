@@ -17,23 +17,15 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 #### OS
 - Windows 7 SP3 or Windows 8.1 or Windows 10 (64bit)
-
 #### Processor
  - CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
-
 #### Graphics
 - If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.
-
 #### Software
-
 - [Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)
-
 - [Visual C++ 2015 Redistributable Packages (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
-
 - [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
-
 - [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
-
 - [JoyToKey (optional)](https://joytokey.net/en/)
 
 #### RetroBat can only be installed on x86 64 bit computers. 
