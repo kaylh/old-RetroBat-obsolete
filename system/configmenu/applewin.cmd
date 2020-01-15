@@ -6,7 +6,7 @@ This file is part of RetroBat Scripts.
 :rem
 
 :load_config
-for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+for /f "delims=" %%x in (..\..\system\retrobat.setup) do (set "%%x")
 set appname=applewin
 set appbin=%appname%.exe
 set apppath=%emulators_dir%\%appname%\%appbin%
