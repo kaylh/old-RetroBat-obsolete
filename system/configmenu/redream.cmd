@@ -8,7 +8,7 @@ This file is part of RetroBat Scripts.
 taskkill /f /im emulationstation.exe>nul
 
 :load_config
-for /f "delims=" %%x in (..\system\retrobat.setup) do (set "%%x")
+for /f "delims=" %%x in (..\..\system\retrobat.setup) do (set "%%x")
 set applongname=Redream
 set appname=redream
 set appbin=%appname%.exe
