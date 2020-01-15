@@ -1,38 +1,31 @@
-![RetroBat-Logo](https://www.retrobat.ovh/img/baniere.png)
+![RetroBat-Logo](https://www.retrobat.ovh/repo/ressources/baniere_small.png)
 
-| [Visit Official Website](https://www.retrobat.ovh) | [Check Releases on Github](https://github.com/kaylh/retrobat/releases) |
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/AdrienChalard) Feel free to buy me a coffee if you find RetroBat usefull =)
+| [Visit Official Website](https://www.retrobat.ovh) | 
 
 ## Introduction
 
-RetroBat is a set of Batch and Powershell Scripts designed to configure automatically EmulationStation frontend to run games from a ROMs collection with RetroArch and standalone emulators. 
+RetroBat is a set of Batch and Powershell Scripts designed to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
 
-With it you'll save a lot of time you can keep to play !
+With it you will be quickly able to run games from a ROMs collection. You can save a lot of time you can keep to play !
 
-RetroBat can download and install all the softwares you need to have a good retrogaming experience on your Windows PC.
+RetroBat can download and install all software you need to have a good retro gaming experience on your Windows PC.
 
-RetroBat is able to run in Portable Mode. It means that you can either start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+
  
 ## System requirements
 
 #### OS
 - Windows 7 SP3 or Windows 8.1 or Windows 10 (64bit)
-
 #### Processor
  - CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
-
 #### Graphics
 - If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.
-
 #### Software
-
+- [Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)
 - [Visual C++ 2015 Redistributable Packages (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
-
 - [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
-
 - [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
-
 - [JoyToKey (optional)](https://joytokey.net/en/)
 
 #### RetroBat can only be installed on x86 64 bit computers. 
