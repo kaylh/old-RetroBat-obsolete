@@ -1,7 +1,11 @@
 @echo off
 goto:rem
 ***************************************
-This file is part of RetroBat Scripts. 
+This file is part of RetroBat Scripts.
+---------------------------------------
+file name: setup.bat
+language: batch, powershell
+author: Adrien Chalard (Kayl) 
 ***************************************
 :rem
 
@@ -45,8 +49,9 @@ goto check_proc
 
 :check_proc
 Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set PROCARCH=32 || set PROCARCH=64
-If %PROCARCH%==32 goto proc_fail
-If %PROCARCH%==64 goto check_admin
+::If %PROCARCH%==32 goto proc_fail
+::If %PROCARCH%==64 goto check_admin
+goto check_admin
 
 :check_admin
 net session >nul 2>&1
@@ -125,7 +130,8 @@ goto check_required
 cls
 echo -- 7-Zip is downloading --
 echo.
-set current_url=http://www.retrobat.ovh/repo/tools/7z64-pkg.zip
+If %PROCARCH%==32 set current_url=http://www.retrobat.ovh/repo/tools/7z32-pkg.zip
+If %PROCARCH%==64 set current_url=http://www.retrobat.ovh/repo/tools/7z64-pkg.zip
 set output_dir=%temp_dir%\7z64-pkg.zip
 call %scripts_dir%\powershelldl.cmd
 if %ERRORLEVEL% == 1 goto pkgFail
@@ -267,12 +273,13 @@ If not exist %wswan%\. md %wswan%
 If not exist %wswanc%\. md %wswanc%
 If not exist %zxspectrum%\. md %zxspectrum%
 if not exist %apple2%\. md %apple2%
-if not exist %fpinball%\. md %fpinball%
-if not exist %vpinball%\. md %vpinball%
 cd ..
 timeout /t 1 >nul
 if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
+
+if not exist %emulators_dir%\cemu\. md %emulators_dir%\cemu
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\cemu\info.txt>nul
 
 if not exist %emulators_dir%\citra\. md %emulators_dir%\citra
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\citra\info.txt>nul
@@ -294,20 +301,18 @@ if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-em
 if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
 
-if not exist %emulators_dir%\vpinball\. md %emulators_dir%\vpinball
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\vpinball\info.txt>nul
-if not exist %emulators_dir%\vpinball\vpinballlauncher.exe if exist %setup_dir%\system\tools\vpinballlauncher.exe copy/y %setup_dir%\system\tools\vpinballlauncher.exe %emulators_dir%\vpinball\vpinballlauncher.exe>nul
-
-if not exist %emulators_dir%\fpinball\. md %emulators_dir%\fpinball
-if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\fpinball\info.txt>nul
-if not exist %emulators_dir%\fpinball\fpinballlauncher.exe if exist %setup_dir%\system\tools\fpinballlauncher.exe copy/y %setup_dir%\system\tools\fpinballlauncher.exe %emulators_dir%\fpinball\fpinballlauncher.exe>nul
-
 if not exist %emulators_dir%\retroarch\. md %emulators_dir%\retroarch
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\retroarch\info.txt>nul
+
+if not exist %emulators_dir%\m2emulator\. md %emulators_dir%\m2emulator
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\m2emulator\info.txt>nul
 
 if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
 if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe>nul
+
+if not exist %emulators_dir%\raine\. md %emulators_dir%\raine
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\raine\info.txt>nul
 
 if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
@@ -368,6 +373,31 @@ set bgmusic=0
 if not exist %es_config_dir%\music\*.ogg set/A bgmusic=bgmusic+1
 if not exist %es_config_dir%\music\*.mp3 set/A bgmusic=bgmusic+1
 if "%bgmusic%"=="0" if exist %templates_dir%\emulationstation\music.ogg copy/Y %templates_dir%\emulationstation\music.ogg %es_config_dir%\music\music.ogg>nul
+if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
+if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
+goto dl_vcredistdll
+
+:dl_vcredistdll
+cls
+set current_url=https://www.retrobat.ovh/repo/tools/vcredist-dll-pkg.zip
+set output_dir=%temp_dir%\vcredist-dll-pkg.zip
+if exist %output_dir% goto install_vcredistdll
+echo -- Required VisualC++ DLLs are now downloading --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+timeout /t 1 >nul
+echo Done.
+goto install_vcredistdll
+
+:install_vcredistdll
+CLS
+echo.
+echo -- Required VisualC++ DLLs are installing --
+echo.
+if not exist %es_dir%\. md %es_dir%
+if exist %output_dir% %zip_dir%\7zg.exe -y x "%output_dir%" -o"%es_dir%" -aoa>nul
 if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
 if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 goto config_es
@@ -445,6 +475,19 @@ timeout /t 1 >nul
 echo Done.
 goto install_default_theme
 
+:dl_extra_theme
+cls
+set output_dir=%temp_dir%\%themename%-theme-pkg.zip
+if exist %output_dir% goto install_default_theme
+echo -- Theme for EmulationStation is now downloading ( %themename% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkgFail
+ping 127.0.0.1 -n 4 >nul
+timeout /t 1 >nul
+echo Done.
+goto install_default_theme
+
 :install_default_theme
 cls
 If not exist %temp_dir%\. md %temp_dir%
@@ -464,7 +507,8 @@ goto setup_menu
 
 :dl_retroarch_stable
 cls
-set current_url=%retroarch_stable_url%
+If %PROCARCH%==32 set current_url=%retroarch_stable_32bit_url%
+If %PROCARCH%==64 set current_url=%retroarch_stable_url%
 set output_dir=%temp_dir%\retroarch-stable-pkg.7z
 if exist %output_dir% goto install_retroarch
 echo -- RetroArch Stable is now downloading --
@@ -478,7 +522,8 @@ goto install_retroarch
 
 :update_retroarch_stable
 cls
-set current_url=%retroarch_stable_update_url%
+If %PROCARCH%==32 set current_url=%retroarch_stable_update_32bit_url%
+If %PROCARCH%==64 set current_url=%retroarch_stable_update_url%
 set output_dir=%temp_dir%\retroarch-stable-update-pkg.zip
 if exist %output_dir% goto install_retroarch
 echo -- RetroArch Stable is now downloading --
@@ -492,7 +537,8 @@ goto install_retroarch
 
 :dl_retroarch_nightly
 cls
-set current_url=%retroarch_nightly_url%
+If %PROCARCH%==32 set current_url=%retroarch_nightly_32bit_url%
+If %PROCARCH%==64 set current_url=%retroarch_nightly_url%
 set output_dir=%temp_dir%\retroarch-nightly-pkg.7z
 if exist %output_dir% goto install_retroarch
 echo -- RetroArch Nightly is now downloading --
@@ -506,7 +552,8 @@ goto install_retroarch
 
 :update_retroarch_nightly
 cls
-set current_url=%retroarch_nightly_update_url%
+If %PROCARCH%==32 set current_url=%retroarch_nightly_update_32bit_url%
+If %PROCARCH%==64 set current_url=%retroarch_nightly_update_url%
 set output_dir=%temp_dir%\retroarch-nightly-update-pkg.zip
 if exist %output_dir% goto install_retroarch
 echo -- RetroArch Nightly is now downloading --
@@ -888,16 +935,20 @@ echo  ( 1 ) -- Install Carbon Theme
 echo +-----------------------------------------------------------+
 echo  ( 2 ) -- Install NextFull Theme
 echo +-----------------------------------------------------------+
+echo  ( 3 ) -- Install Retro Arts Theme
+echo +-----------------------------------------------------------+
 echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please choose one (1-2,R,Q): "
+set/p go="  - Please choose one (1-3,R,Q): "
 echo.
 if "%go%"=="1" set themename=carbon
 if "%go%"=="1" set/A singledl=singledl+1 && goto dl_default_theme
 if "%go%"=="2" set themename=nextfull
 if "%go%"=="2" set/A singledl=singledl+1 && goto dl_default_theme
+if "%go%"=="3" set themename=retroarts
+if "%go%"=="3" set/A singledl=singledl+1 && set current_url=https://github.com/lehcimcramtrebor/retroarts/archive/master.zip && goto dl_extra_theme
 if "%go%"=="R" goto setup_menu
 if "%go%"=="r" goto setup_menu
 if "%go%"=="Q" goto exit
