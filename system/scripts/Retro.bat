@@ -1,7 +1,11 @@
 @ECHO OFF
 goto:rem
 ***************************************
-This file is part of RetroBat Scripts. 
+This file is part of RetroBat Scripts.
+---------------------------------------
+file name: retro.bat
+language: batch, powershell
+author: Kayl 
 ***************************************
 :rem
 
@@ -30,8 +34,9 @@ if "%current_dir%"=="%setup_dir%" (
 
 :check_proc
 Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set PROCARCH=32 || set PROCARCH=64
-If %PROCARCH%==32 goto proc_fail
-If %PROCARCH%==64 goto check_admin
+::If %PROCARCH%==32 goto proc_fail
+::If %PROCARCH%==64 goto check_admin
+goto check_admin
 
 :check_admin
 net session >nul 2>&1
@@ -67,15 +72,13 @@ If exist %es_config_dir%\video\%splashscreen_file% emulationstation.exe --video 
 goto run_es
 
 :run_es
-set run_es=emulationstation.exe --fullscreen
+set run_es=emulationstation.exe
 set run_es_w=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
 if not exist %es_dir%\emulationstation.exe goto esfail
 if "%es_is_fullscreen%"=="yes" (
 	start %run_es%
-	call %scripts_dir%\focus.cmd
 ) else (
 	start %run_es_w%
-	call %scripts_dir%\focus.cmd
 )
 goto delete_junkfiles
 
