@@ -4,7 +4,7 @@ goto:rem
 This file is part of RetroBat Scripts.
 ---------------------------------------
 file name: retro.bat
-language: batch, powershell
+language: batch, powershell, javascript
 author: Kayl 
 ***************************************
 :rem

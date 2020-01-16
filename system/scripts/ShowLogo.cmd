@@ -1,7 +1,11 @@
 @echo off
 goto:rem
 ***************************************
-This file is part of RetroBat Scripts. 
+This file is part of RetroBat Scripts.
+---------------------------------------
+file name: showlogo.cmd
+language: batch, ascii art
+author: Kayl 
 ***************************************
 :rem
 :::+===========================================================+

@@ -1,7 +1,11 @@
 @echo off
 goto:rem
 ***************************************
-This file is part of RetroBat Scripts. 
+This file is part of RetroBat Scripts.
+---------------------------------------
+file name: systemsnames.cmd
+language: batch
+author: Kayl 
 ***************************************
 :rem
 set amiga="amiga"
@@ -24,7 +28,6 @@ set cps3="cps3"
 set dreamcast="dreamcast"
 set fba="fba"
 set fds="fds"
-set fpinball="fpinball"
 set gamecube="gamecube"
 set gamegear="gamegear"
 set gamewatch="gameandwatch"
@@ -73,7 +76,6 @@ set threedo="3do"
 set vectrex="vectrex"
 set vb="vb"
 set videopac="o2em"
-set vpinball="vpinball"
 set wii="wii"
 set wswan="wswan"
 set wswanc="wswanc"

@@ -1,14 +1,19 @@
 @echo off
 goto:rem
 ***************************************
-This file is part of RetroBat Scripts. 
+This file is part of RetroBat Scripts.
+---------------------------------------
+file name: lr-arcade.cmd
+language: batch
+author: Kayl 
 ***************************************
 :rem
 
 :dl_fbalpha2012
 cls
 set core_name=fbalpha2012
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -26,7 +31,8 @@ if "%fullinstall%"=="1" (
 :dl_fbalpha2012_neogeo
 cls
 set core_name=fbalpha2012_neogeo
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -44,7 +50,8 @@ if "%fullinstall%"=="1" (
 :dl_fbalpha2012_cps1
 cls
 set core_name=fbalpha2012_cps1
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -62,7 +69,8 @@ if "%fullinstall%"=="1" (
 :dl_fbalpha2012_cps2
 cls
 set core_name=fbalpha2012_cps2
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -80,7 +88,8 @@ if "%fullinstall%"=="1" (
 :dl_fbneo
 cls
 set core_name=fbneo
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -98,7 +107,8 @@ if "%fullinstall%"=="1" (
 :dl_mame2003_plus
 cls
 set core_name=mame2003_plus
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
@@ -116,7 +126,8 @@ if "%fullinstall%"=="1" (
 :dl_mame2016
 cls
 set core_name=mame2016
-set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
 set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
 if exist %output_dir% goto install_libretrocores
 echo -- Libretro Core is now downloading ( %core_name% ) --
