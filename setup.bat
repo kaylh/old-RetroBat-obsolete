@@ -5,7 +5,7 @@ This file is part of RetroBat Scripts.
 ---------------------------------------
 file name: setup.bat
 language: batch, powershell
-author: Adrien Chalard (Kayl) 
+author: Kayl
 ***************************************
 :rem
 
@@ -20,6 +20,7 @@ set setup_file=setup.bat
 set setup_dir=%cd:~3%>nul
 set setup_dir=%setup_dir:"=%
 set setup_dir=\%setup_dir%
+if "%setup_dir%"=="\" goto exit
 echo setup_dir=%setup_dir%>> %CD%\System\%setup_info%
 echo name=%name%>> %CD%\System\%setup_info%
 echo version=%version%>> %CD%\System\%setup_info%
