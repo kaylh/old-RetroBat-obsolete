@@ -83,6 +83,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 ## Special thank
 
 - Thank to Lorenzolamas for testing and community management.
+- Hel Mic for his generous support.
 
 ## Credits
 
