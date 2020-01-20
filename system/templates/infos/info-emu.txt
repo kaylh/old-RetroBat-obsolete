@@ -11,9 +11,12 @@ Standalone emulators instructions:
 https://github.com/AppleWin/AppleWin/releases
 Install directory: ..\emulators\applewin
 
-# Citra (3DS):
-https://github.com/citra-emu/citra-nightly/releases (choose a 7z archive named citra-windows-*)
-https://citra-emu.org
+# Cemu (Wii U)
+https://cemu.info
+Install directory: ..\emulators\cemu
+
+# Citra (3DS)
+https://citra-emu.org/download
 Install directory: ..\emulators\citra
 
 # Dolphin (GameCube, Wii):
@@ -24,6 +27,15 @@ Install directory: ..\emulators\dolphin-emu
 # DOSBox (DOS, Windows)
 https://www.dosbox.com
 http://www.emucr.com/search/label/DOSBox
+
+# Future Pinball (Pinball Simulator):
+http://www.mediafire.com/file/2zrr7xkn28aolkg/fpinball.7z
+https://futurepinball.com
+Install directory: ..\emulators\fpinball
+
+# Mednafen (Multi System):
+https://mednafen.github.io/releases
+Install directory: ..\emulators\mednafen
 
 # PCSX2 (PlayStation 2):
 https://buildbot.orphis.net/pcsx2
@@ -38,10 +50,23 @@ Install directory: ..\emulators\ppsspp
 https://github.com/DCurrent/openbor/releases
 Install directory: ..\emulators\openbor
 
+# Raine (Neo Geo CD):
+http://raine.1emulation.com/download/latest.html
+Install directory: ..\emulators\raine
+
+# RCPS3 (PlayStation 3):
+https://rpcs3.net
+Install directory: ..\emulators\rcps3
+
 # Redream (Dreamcast):
 https://redream.io
 Install directory: ..\emulators\redream
 
-- RCPS3 (PlayStation 3):
-https://rpcs3.net
-Install directory: ..\emulators\rcps3
+# SNES9X (Super NES):
+http://www.snes9x.com/downloads.php
+Install directory: ..\emulators\snes9x
+
+# Visual Pinball (Pinball Simulator):
+http://www.mediafire.com/file/13ndp34co019wbi/vpinball.7z
+https://vpinball.com
+Install directory: ..\emulators\vpinball
