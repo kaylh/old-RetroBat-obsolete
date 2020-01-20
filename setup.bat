@@ -223,6 +223,7 @@ If not exist %cps3%\. md %cps3%
 If not exist %dreamcast%\. md %dreamcast%
 If not exist %fba%\. md %fba%
 If not exist %fds%\. md %fds%
+If not exist %fpinball%\. md %fpinball%
 If not exist %gamecube%\. md %gamecube%
 If not exist %gamegear%\. md %gamegear%
 If not exist %gamewatch%\. md %gamewatch%
@@ -236,6 +237,7 @@ If not exist %mame%\. md %mame%
 If not exist %mastersystem%\. md %mastersystem%
 If not exist %megacd%\. md %megacd%
 If not exist %megadrive%\. md %megadrive%
+If not exist %model2%\. md %model2%
 If not exist %msdos%\. md %msdos%
 If not exist %msu1%\. md %msu1%
 If not exist %msx%\. md %msx%
@@ -266,9 +268,11 @@ If not exist %sg1000%\. md %sg1000%
 If not exist %snes%\. md %snes%
 If not exist %supergrafx%\. md %supergrafx%
 If not exist %threedo%\. md %threedo%
+If not exist %thomson%\. md %thomson%
 If not exist %vb%\. md %vb%
 If not exist %vectrex%\. md %vectrex%
 If not exist %videopac%\. md %videopac%
+If not exist %vpinball%\. md %vpinball%
 If not exist %wii%\. md %wii%
 If not exist %wswan%\. md %wswan%
 If not exist %wswanc%\. md %wswanc%
@@ -289,6 +293,15 @@ if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
 if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
 
+if not exist %emulators_dir%\mgba\. md %emulators_dir%\mgba
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\mgba\info.txt>nul
+
+if not exist %emulators_dir%\snes9x\. md %emulators_dir%\snes9x
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\snes9x\info.txt>nul
+
+if not exist %emulators_dir%\mednafen\. md %emulators_dir%\mednafen
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\mednafen\info.txt>nul
+
 if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
 if not exist %emulators_dir%\pcsx2\config\. md %emulators_dir%\pcsx2\config
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
@@ -308,6 +321,9 @@ if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-em
 if not exist %emulators_dir%\m2emulator\. md %emulators_dir%\m2emulator
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\m2emulator\info.txt>nul
 
+if not exist %emulators_dir%\mednafen\. md %emulators_dir%\mednafen
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\mednafen\info.txt>nul
+
 if not exist %emulators_dir%\openbor\. md %emulators_dir%\openbor
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\openbor\info.txt>nul
 if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\system\tools\openborlauncher.exe copy/y %setup_dir%\system\tools\openborlauncher.exe %emulators_dir%\openbor\openborlauncher.exe>nul
@@ -315,9 +331,17 @@ if not exist %emulators_dir%\openbor\openborlauncher.exe if exist %setup_dir%\sy
 if not exist %emulators_dir%\raine\. md %emulators_dir%\raine
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\raine\info.txt>nul
 
+if not exist %emulators_dir%\fpinball\. md %emulators_dir%\fpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\fpinball\info.txt>nul
+if not exist %emulators_dir%\fpinball\FPinballLauncher.exe if exist %setup_dir%\system\tools\FPinballLauncher.exe copy/y %setup_dir%\system\tools\FPinballLauncher.exe %emulators_dir%\fpinball\FPinballLauncher.exe>nul
+
+if not exist %emulators_dir%\vpinball\. md %emulators_dir%\vpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\vpinball\info.txt>nul
+if not exist %emulators_dir%\vpinball\VPinballLauncher.exe if exist %setup_dir%\system\tools\VPinballLauncher.exe copy/y %setup_dir%\system\tools\VPinballLauncher.exe %emulators_dir%\vpinball\VPinballLauncher.exe>nul
+
 if not exist %emulators_dir%\rpcs3\. md %emulators_dir%\rpcs3
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\rpcs3\info.txt>nul
-if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
+::if not exist %emulators_dir%\rpcs3\rpcs3launcher.exe if exist %setup_dir%\system\tools\rpcs3launcher.exe copy/y %setup_dir%\system\tools\rpcs3launcher.exe %emulators_dir%\rpcs3\rpcs3launcher.exe>nul
 if not exist %games_dir%\ps3\*.m3u if exist %templates_dir%\roms\ps3\example-to-edit.m3u.txt copy/y %templates_dir%\roms\ps3\example-to-edit.m3u.txt %games_dir%\ps3\example-to-edit.m3u.txt>nul
 
 if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
@@ -577,6 +601,7 @@ echo.
 %zip_dir%\7zg.exe -y x "%output_dir%" -o"%retroarch_dir%" -aoa>nul
 if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
 if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
+if exist %templates_dir%\retroarch\dolphin-emu\. xcopy/Y /e /i  "%templates_dir%\retroarch\dolphin-emu" "%retroarch_config_dir%\dolphin-emu" 2>&1
 echo Done.
 timeout /t 1 >nul
 if exist %retroarch_config_dir%\*.cfg goto update_retroarch_confirm
