@@ -1,34 +1,8 @@
 <?xml version="1.0"?>
 <gameList>
 	<game>
-		<path>./reboot.cmd</path>
-		<name>Reboot computer</name>
-		<desc>Reboot computer immediately</desc>
-		<image>./_media/windows-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>RetroBat</developer>
-		<publisher>Microsoft</publisher>
-		<genre>System command</genre>
-		<playcount>1</playcount>
-		<players>1</players>
-	</game>
-	<game>
-		<path>./poweroff.cmd</path>
-		<name>Power off computer</name>
-		<desc>Power off computer immediately</desc>
-		<image>./_media/windows-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>RetroBat</developer>
-		<publisher>Microsoft</publisher>
-		<genre>System command</genre>
-		<playcount>1</playcount>
-		<players>1</players>
-	</game>
-	<game>
-		<path>./applewin.cmd</path>
-		<name>Configure AppleWin (Apple II)</name>
+		<path>./AppleWinConfigure.menu</path>
+		<name>AppleWin (Apple II)</name>
 		<desc>Configure AppleWin Emulator (Apple II)</desc>
 		<image>./_media/applewin-logo.png</image>
 		<rating>0</rating>
@@ -37,50 +11,61 @@
 		<publisher>AppleWin Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
-		<players>1</players>
 	</game>
 	<game>
-		<path>./dolphin-emu.cmd</path>
-		<name>Configure Dolphin Emulator (GameCube,Wii)</name>
-		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
-		<image>./_media/dolphin-logo.png</image>
+		<path>./mGBAConfigure.menu</path>
+		<name>mGBA (GameBoy Advance)</name>
+		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
+		<image>./_media/mgba-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
+		<developer>mGBA Team</developer>
+		<publisher>mGBA Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
-		<players>1</players>
 	</game>
 	<game>
-		<path>./pcsx2.cmd</path>
-		<name>Configure PCSX2 Emulator (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
-		<image>./_media/pcsx2-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>PCSX2 Team</developer>
-		<publisher>PCSX2 Team</publisher>
-		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<players>1</players>
-	</game>
-	<game>
-		<path>./ppsspp.cmd</path>
-		<name>Configure PPSSPP Emulator (PSP)</name>
-		<desc>Configure PPSSPP Emulator (PSP)</desc>
+		<path>./PPSSPPConfigure.menu</path>
+		<name>PPSSPP (PSP) - 64 bit</name>
+		<desc>Configure PPSSPP Emulator (PSP) - 64 bit</desc>
 		<image>./_media/ppsspp-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>PPSSPP Team</developer>
 		<publisher>PPSSPP Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<players>1</players>
+		<playcount>5</playcount>
+		<lastplayed>20200118T152157</lastplayed>
 	</game>
 	<game>
-		<path>./redream.cmd</path>
-		<name>Configure Redream Emulator (Dreamcast)</name>
+		<path>./PPSSPPConfigure-32bit.menu</path>
+		<name>PPSSPP (PSP) - 32 bit</name>
+		<desc>Configure PPSSPP Emulator (PSP) - 32 bit</desc>
+		<image>./_media/ppsspp-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PPSSPP Team</developer>
+		<publisher>PPSSPP Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200118T152157</lastplayed>
+	</game>
+	<game>
+		<path>./RaineConfigure.menu</path>
+		<name>Raine (Neo Geo CD)</name>
+		<desc>Configure Raine Emulator (Neo Geo CD)</desc>
+		<image>./_media/raine-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200118T152157</lastplayed>
+	</game>
+	<game>
+		<path>./RedreamConfigure.menu</path>
+		<name>Redream (Dreamcast)</name>
 		<desc>Configure Redream Emulator (Dreamcast)</desc>
 		<image>./_media/redream-logo.png</image>
 		<rating>0</rating>
@@ -88,33 +73,120 @@
 		<developer>Redream</developer>
 		<publisher>Redream</publisher>
 		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<players>1</players>
+		<playcount>3</playcount>
+		<lastplayed>20200118T152202</lastplayed>
 	</game>
 	<game>
-		<path>./retrobat-setup.cmd</path>
-		<name>RetroBat Setup</name>
-		<desc>RetroBat Setup Command Script</desc>
-		<image>./_media/config.png</image>
+		<path>./CemuConfigure.menu</path>
+		<name>Cemu (Wii U)</name>
+		<desc>Configure Cemu Emulator (Wii U)</desc>
+		<image>./_media/cemu-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Kayl</developer>
-		<publisher>RetroBat Team</publisher>
-		<genre>Helper</genre>
-		<playcount>1</playcount>
-		<players>1</players>
+		<developer>Cemu Team</developer>
+		<publisher>Cemu Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20200118T190028</lastplayed>
 	</game>
 	<game>
-		<path>./retroarch.cmd</path>
-		<name>Configure RetroArch</name>
-		<desc>Configure RetroArch</desc>
+		<path>./CitraConfigure.menu</path>
+		<name>Citra (3DS)</name>
+		<desc>Configure Citra Emulator (3DS)</desc>
+		<image>./_media/citra-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Citra Team</developer>
+		<publisher>Citra Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200118T190048</lastplayed>
+	</game>
+	<game>
+		<path>./M2EmulatorConfigure.menu</path>
+		<name>SEGA Model 2 Emulator (MULTI CPU)</name>
+		<desc>Configure SEGA Model 2 Emulator (MULTI CPU)</desc>
+		<image>./_media/m2emulator-logo.png</image>
+		<developer>Nebula Team</developer>
+		<publisher>Nebula Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20200118T200525</lastplayed>
+	</game>
+		<game>
+		<path>./M2EmulatorSingleCPUConfigure.menu</path>
+		<name>SEGA Model 2 Emulator (SINGLE CPU)</name>
+		<desc>Configure SEGA Model 2 Emulator (SINGLE CPU)</desc>
+		<image>./_media/m2emulator-logo.png</image>
+		<developer>Nebula Team</developer>
+		<publisher>Nebula Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20200118T200525</lastplayed>
+	</game>
+	<game>
+		<path>./DolphinConfigure.menu</path>
+		<name>Dolphin (GameCube,Wii)</name>
+		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
+		<image>./_media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200118T201309</lastplayed>
+	</game>
+	<game>
+		<path>./PCSX2Configure.menu</path>
+		<name>PCSX2 (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<image>./_media/pcsx2-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200118T201300</lastplayed>
+	</game>
+	<game>
+		<path>./SNES9XConfigure-32bit.menu</path>
+		<name>SNES9X (Super NES) - 32 bit</name>
+		<desc>Configure SNES9X (Super NES) - 32 bit</desc>
+		<image>./_media/snes9x-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>SNES9X Team</developer>
+		<publisher>SNES9X Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200120T092518</lastplayed>
+	</game>
+	<game>
+		<path>./SNES9XConfigure.menu</path>
+		<name>SNES9X (Super NES) - 64 bit</name>
+		<desc>Configure SNES9X (Super NES) - 64 bit</desc>
+		<image>./_media/snes9x-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>SNES9X Team</developer>
+		<publisher>SNES9X Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200120T092513</lastplayed>
+	</game>
+	<game>
+		<path>./RetroArchConfigure.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
 		<image>./_media/retroarch-logo.png</image>
 		<rating>0</rating>
 		<releasedate></releasedate>
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>16</playcount>
-		<lastplayed>20191219T155225</lastplayed>
+		<playcount>39</playcount>
+		<lastplayed>20200120T133113</lastplayed>
 	</game>
 </gameList>
