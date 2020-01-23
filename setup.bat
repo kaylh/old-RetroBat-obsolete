@@ -78,7 +78,7 @@ goto check_config
 :check_config
 if not exist %temp_dir%\. md %temp_dir%
 if not exist %config_dir%\. md %config_dir%
-if "%updatedone%"=="1" copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
+if exist %setup_dir%\system\retrobat.update copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
 if not exist %config_dir%\emulationstation.cfg copy/Y %templates_dir%\configs\emulationstation.cfg %config_dir%\emulationstation.cfg>nul
 if not exist %setup_dir%\%launcher_file% if exist %scripts_dir%\%launcher_file% copy/y %scripts_dir%\%launcher_file% %setup_dir%\%launcher_file%>nul
 call %scripts_dir%\pkgsources.cmd
@@ -175,7 +175,7 @@ if "%libretrocores%"=="0" echo [ Libretro Cores ] -- not found
 timeout /t 1 >nul
 echo.
 set fullinstall=0
-if "%updatedone%"=="1" set updatedone=0 && goto create_folders
+if exist %setup_dir%\system\retrobat.update goto create_folders
 if "%SFX%"=="1" goto update_retroarch_config1
 if %mainpkg% GTR 0 goto welcome_menu
 if "%mainpkg%"=="0" set/p mainpkg="- Do you want to install them now ? (y)es, (n)o, (q)uit: "
@@ -238,6 +238,7 @@ If not exist %mastersystem%\. md %mastersystem%
 If not exist %megacd%\. md %megacd%
 If not exist %megadrive%\. md %megadrive%
 If not exist %model2%\. md %model2%
+if not exist "%model2%\roms\." md "%model2%\roms"
 If not exist %msdos%\. md %msdos%
 If not exist %msu1%\. md %msu1%
 If not exist %msx%\. md %msx%
@@ -274,12 +275,18 @@ If not exist %vectrex%\. md %vectrex%
 If not exist %videopac%\. md %videopac%
 If not exist %vpinball%\. md %vpinball%
 If not exist %wii%\. md %wii%
+if not exist %wiiu%\. md %wiiu%
 If not exist %wswan%\. md %wswan%
 If not exist %wswanc%\. md %wswanc%
 If not exist %zxspectrum%\. md %zxspectrum%
 if not exist %apple2%\. md %apple2%
 cd ..
 timeout /t 1 >nul
+
+if not exist %setup_dir%\kodi\. md  %setup_dir%\kodi
+if exist %templates_dir%\kodi\gamelist.xml copy/y %templates_dir%\kodi\gamelist.xml %setup_dir%\kodi\gamelist.xml>nul
+if exist %templates_dir%\kodi\_media\kodi-logo.png xcopy/Y /e /i "%templates_dir%\kodi\_media" "%setup_dir%\kodi\_media" 2>nul
+
 if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
 
@@ -287,6 +294,7 @@ if not exist %emulators_dir%\cemu\. md %emulators_dir%\cemu
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\cemu\info.txt>nul
 
 if not exist %emulators_dir%\citra\. md %emulators_dir%\citra
+if not exist %emulators_dir%\citra\user\. md %emulators_dir%\citra\user
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\citra\info.txt>nul
 
 if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
@@ -303,7 +311,7 @@ if not exist %emulators_dir%\mednafen\. md %emulators_dir%\mednafen
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\mednafen\info.txt>nul
 
 if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
-if not exist %emulators_dir%\pcsx2\config\. md %emulators_dir%\pcsx2\config
+if not exist %emulators_dir%\pcsx2\bios\. md %emulators_dir%\pcsx2\bios
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
 
 if not exist %emulators_dir%\ppsspp\. md %emulators_dir%\ppsspp
@@ -320,6 +328,7 @@ if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-em
 
 if not exist %emulators_dir%\m2emulator\. md %emulators_dir%\m2emulator
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\m2emulator\info.txt>nul
+if exist %templates_dir%\m2emulator\emulator.ini copy/y %templates_dir%\m2emulator\emulator.ini  %games_dir%\%model2%\emulator.ini>nul
 
 if not exist %emulators_dir%\mednafen\. md %emulators_dir%\mednafen
 if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\mednafen\info.txt>nul
@@ -349,6 +358,7 @@ if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\in
 
 if exist %templates_dir%\infos\info-bios.txt copy/y %templates_dir%\infos\info-bios.txt %bios_dir%\bios.txt>nul
 timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto dl_ES
 if "%go%"=="7" goto debug_menu
 if "%fullinstall%"=="1" goto dl_ES
 goto welcome_menu
@@ -393,7 +403,7 @@ if not exist %es_config_dir%\scripts\. md %es_config_dir%\scripts>nul
 if not exist %es_config_dir%\themes\. md %es_config_dir%\themes>nul
 if not exist %es_config_dir%\music\. md %es_config_dir%\music>nul
 if not exist %es_config_dir%\video\. md %es_config_dir%\video>nul
-xcopy/Y /e /i "%templates_dir%\emulationstation\scripts" "%es_config_dir%\scripts" 2>&1
+xcopy/Y /e /i "%templates_dir%\emulationstation\scripts" "%es_config_dir%\scripts" 2>nul
 set bgmusic=0
 if not exist %es_config_dir%\music\*.ogg set/A bgmusic=bgmusic+1
 if not exist %es_config_dir%\music\*.mp3 set/A bgmusic=bgmusic+1
@@ -451,6 +461,7 @@ if "%singledl%"=="1" goto setup_menu
 
 :update_ES_confirm
 cls
+if exist %setup_dir%\system\retrobat.update goto update_ES_config
 if "%fullinstall%"=="1" goto update_ES_config
 echo +===========================================================+
 echo   SETUP HAS DETECTED EXISTING SETTINGS FOR EMULATIONSTATION
@@ -480,6 +491,8 @@ copy/Y %es_config_dir%\es_input.cfg.new %es_config_dir%\es_input.cfg>nul
 if exist %es_config_dir%\*.new del/Q %es_config_dir%\*.new
 timeout /t 1 >nul
 if "%singledl%"=="1" goto setup_menu
+if exist %setup_dir%\system\retrobat.update set themename=carbon
+if exist %setup_dir%\system\retrobat.update goto dl_default_theme
 if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%go%"=="2" goto debug_menu
@@ -488,6 +501,7 @@ goto setup_menu
 
 :dl_default_theme
 cls
+if exist %setup_dir%\system\retrobat.update rmdir /s /q %setup_dir%\emulationstation\.emulationstation\themes\es-theme-carbon-master\.
 set current_url=https://github.com/kaylh/es-theme-%themename%/archive/master.zip
 set output_dir=%temp_dir%\%themename%-theme-pkg.zip
 if exist %output_dir% goto install_default_theme
@@ -526,6 +540,7 @@ if exist %temp_dir%\*-pkg.zip del/Q %temp_dir%\*-pkg.zip>nul
 if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 echo Done.
 timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto dl_retroarch_stable
 if "%singledl%"=="1" goto setup_menu
 if "%fullinstall%"=="1" goto dl_retroarch_stable
 goto setup_menu
@@ -604,6 +619,7 @@ if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 if exist %templates_dir%\retroarch\dolphin-emu\. xcopy/Y /e /i  "%templates_dir%\retroarch\dolphin-emu" "%retroarch_config_dir%\dolphin-emu" 2>&1
 echo Done.
 timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto update_retroarch_config_menu
 if exist %retroarch_config_dir%\*.cfg goto update_retroarch_confirm
 goto update_retroarch_config_menu
 
@@ -631,6 +647,8 @@ goto update_retroarch_confirm
 :update_retroarch_config_menu
 cls
 set racfg=2
+if exist %setup_dir%\system\retrobat.update set racfgname=custom1
+if exist %setup_dir%\system\retrobat.update goto update_retroarch_config1
 if "%fullinstall%"=="1" set racfgname=custom1
 if "%fullinstall%"=="1" goto update_retroarch_config1
 echo +===========================================================+
@@ -692,6 +710,7 @@ if exist %retroarch_config_dir%\retroarch-override.cfg (
 )
 echo Done.
 timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto update_es_systems
 if "%SFX%"=="1" goto exit
 if "%current_dir%"=="1" goto run_es
 if "%singledl%"=="1" goto setup_menu
@@ -787,6 +806,7 @@ ping 127.0.0.1 -n 4 >nul
 if not exist %es_config_dir%\es_systems.cfg goto pkg_fail
 echo Done.
 timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto update_complete
 goto debug_menu
 
 :restore_es_systems
@@ -826,12 +846,12 @@ del/q %output_dir%
 timeout /t 1 >nul
 cls
 echo +===========================================================+
-echo                    UPDATE RETROBAT SCRIPTS
+echo                        UPDATE RETROBAT
 echo +===========================================================+
 echo  -local version: %version%
 echo  -online version: %rbonlinever%
 echo +===========================================================+
-echo  ( U ) -- Update RetroBat Scripts
+echo  ( U ) -- Update RetroBat
 echo +-----------------------------------------------------------+
 echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
@@ -853,11 +873,10 @@ echo -- Fetching RetroBat Updater --
 echo.
 call %scripts_dir%\powershelldl.cmd
 ping 127.0.0.1 -n 4 >nul
-if not exist %scripts_dir%\rbsupdater.cmd goto pkg_fail
 timeout /t 1 >nul
-cls
+if not exist %scripts_dir%\rbsupdater.cmd goto pkg_fail
 call %scripts_dir%\rbsupdater.cmd
-if "%updatedone%"=="1" (
+if exist %setup_dir%\system\retrobat.update (
 	goto create_config
 ) else (
 		goto pkg_fail
@@ -881,7 +900,7 @@ echo  ( 3 ) -- Debug options
 echo +-----------------------------------------------------------+
 echo  ( 4 ) -- Update sources
 echo +-----------------------------------------------------------+
-echo  ( 5 ) -- Update RetroBat Scripts
+echo  ( 5 ) -- Update RetroBat
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
@@ -1020,6 +1039,15 @@ if "%go%"=="r" goto welcome_menu
 if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
 goto debug_menu
+
+:update_complete
+if exist %setup_dir%\system\retrobat.update del/Q %setup_dir%\system\retrobat.update
+cls
+echo +===========================================================+
+echo                   RETROBAT UPDATE IS DONE !
+echo +===========================================================+
+timeout /t 3 >nul
+goto welcome_menu
 
 :admin_fail
 cls

@@ -9,6 +9,21 @@
 		<releasedate />
 		<developer>AppleWin Team</developer>
 		<publisher>AppleWin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+	</game>
+	<game>
+		<path>./RaineConfigure.menu</path>
+		<name>Raine (Neo Geo CD)</name>
+		<desc>Configure Raine Emulator (Neo Geo CD)</desc>
+		<image>./_media/raine-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200118T152157</lastplayed>
 	</game>
 	<game>
 		<path>./RedreamConfigure.menu</path>
@@ -20,6 +35,8 @@
 		<developer>Redream</developer>
 		<publisher>Redream</publisher>
 		<genre>Emulator</genre>
+		<playcount>3</playcount>
+		<lastplayed>20200118T152202</lastplayed>
 	</game>
 	<game>
 		<path>./CemuConfigure.menu</path>
@@ -31,6 +48,8 @@
 		<developer>Cemu Team</developer>
 		<publisher>Cemu Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20200118T190028</lastplayed>
 	</game>
 	<game>
 		<path>./M2EmulatorConfigure.menu</path>
@@ -40,6 +59,8 @@
 		<developer>Nebula Team</developer>
 		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20200118T200525</lastplayed>
 	</game>
 	<game>
 		<path>./M2EmulatorSingleCPUConfigure.menu</path>
@@ -49,6 +70,8 @@
 		<developer>Nebula Team</developer>
 		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20200118T200525</lastplayed>
 	</game>
 	<game>
 		<path>./SNES9XConfigure-32bit.menu</path>
@@ -60,6 +83,8 @@
 		<developer>SNES9X Team</developer>
 		<publisher>SNES9X Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200120T092518</lastplayed>
 	</game>
 	<game>
 		<path>./SNES9XConfigure.menu</path>
@@ -71,6 +96,34 @@
 		<developer>SNES9X Team</developer>
 		<publisher>SNES9X Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200120T092513</lastplayed>
+	</game>
+	<game>
+		<path>./DolphinConfigure.menu</path>
+		<name>Dolphin (GameCube,Wii)</name>
+		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
+		<image>./_media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>7</playcount>
+		<lastplayed>20200121T012801</lastplayed>
+	</game>
+	<game>
+		<path>./mGBAConfigure.menu</path>
+		<name>mGBA (GameBoy Advance)</name>
+		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
+		<image>./_media/mgba-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>mGBA Team</developer>
+		<publisher>mGBA Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>3</playcount>
+		<lastplayed>20200121T012805</lastplayed>
 	</game>
 	<game>
 		<path>./CitraConfigure.menu</path>
@@ -82,6 +135,8 @@
 		<developer>Citra Team</developer>
 		<publisher>Citra Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>7</playcount>
+		<lastplayed>20200121T014328</lastplayed>
 	</game>
 	<game>
 		<path>./PPSSPPConfigure-32bit.menu</path>
@@ -93,6 +148,8 @@
 		<developer>PPSSPP Team</developer>
 		<publisher>PPSSPP Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>13</playcount>
+		<lastplayed>20200121T014703</lastplayed>
 	</game>
 	<game>
 		<path>./PPSSPPConfigure.menu</path>
@@ -104,39 +161,8 @@
 		<developer>PPSSPP Team</developer>
 		<publisher>PPSSPP Team</publisher>
 		<genre>Emulator</genre>
-	</game>
-	<game>
-		<path>./RetroArchConfigure.menu</path>
-		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
-		<image>./_media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
-		<genre>Emulator</genre>
-	</game>
-	<game>
-		<path>./DolphinConfigure.menu</path>
-		<name>Dolphin (GameCube,Wii)</name>
-		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
-		<image>./_media/dolphin-logo.png</image>
-		<rating>0</rating>
-		<releasedate></releasedate>
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
-		<genre>Emulator</genre>
-	</game>
-	<game>
-		<path>./mGBAConfigure.menu</path>
-		<name>mGBA (GameBoy Advance)</name>
-		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
-		<image>./_media/mgba-logo.png</image>
-		<rating>0</rating>
-		<releasedate></releasedate>
-		<developer>mGBA Team</developer>
-		<publisher>mGBA Team</publisher>
-		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20200121T014547</lastplayed>
 	</game>
 	<game>
 		<path>./PCSX2Configure.menu</path>
@@ -144,31 +170,24 @@
 		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
 		<image>./_media/pcsx2-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>PCSX2 Team</developer>
 		<publisher>PCSX2 Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>10</playcount>
+		<lastplayed>20200121T024821</lastplayed>
 	</game>
 	<game>
-		<path>./RaineConfigure.menu</path>
-		<name>Raine (Neo Geo CD)</name>
-		<desc>Configure Raine Emulator (Neo Geo CD)</desc>
-		<image>./_media/raine-logo.png</image>
+		<path>./RetroArchConfigure.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<image>./_media/retroarch-logo.png</image>
 		<rating>0</rating>
 		<releasedate></releasedate>
-		<developer>Raine</developer>
-		<publisher>Raine</publisher>
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-	</game>
-		<game>
-		<path>./RPCS3Configure.menu</path>
-		<name>RPCS3 (PlayStation 3)</name>
-		<desc>Configure RPCS3 (PlayStation 3)</desc>
-		<image>./_media/rpcs3-logo.png</image>
-		<rating>0</rating>
-		<releasedate></releasedate>
-		<developer>RPCS3 Team</developer>
-		<publisher>RPCS3 Team</publisher>
-		<genre>Emulator</genre>
+		<playcount>45</playcount>
+		<lastplayed>20200121T203506</lastplayed>
 	</game>
 </gameList>

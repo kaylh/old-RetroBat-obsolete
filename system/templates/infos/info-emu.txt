@@ -29,7 +29,7 @@ https://www.dosbox.com
 http://www.emucr.com/search/label/DOSBox
 
 # Future Pinball (Pinball Simulator):
-http://www.mediafire.com/file/2zrr7xkn28aolkg/fpinball.7z
+http://www.mediafire.com/file/0a4gpgcsc8icac1/fpinball.rar
 https://futurepinball.com
 Install directory: ..\emulators\fpinball
 
@@ -67,6 +67,6 @@ http://www.snes9x.com/downloads.php
 Install directory: ..\emulators\snes9x
 
 # Visual Pinball (Pinball Simulator):
-http://www.mediafire.com/file/13ndp34co019wbi/vpinball.7z
+http://www.mediafire.com/file/rfemv8g3wupt5h5/vpinball.rar
 https://vpinball.com
 Install directory: ..\emulators\vpinball

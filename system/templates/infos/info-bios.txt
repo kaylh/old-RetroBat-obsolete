@@ -1,6 +1,11 @@
-BIOS Compatibility List (Source: Batocera)
-*******************************************
-Some systems are not yet supported with RetroBat.
+	********************************************
+	 BIOS Compatibility List (Source: Batocera)
+	********************************************
+
+-- Some systems are not yet supported with RetroBat --
+
+Find files here: https://emulation.gametechwiki.com/index.php/Emulator_Files
+Rename BIOS files if needed.
 
 3DO:
 f47264dd47fe30f73ab3c010015c155b bios/panafz1.bin

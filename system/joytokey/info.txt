@@ -1,0 +1,6 @@
+- Download JoyToKey in zip format here: https://joytokey.net/en/download
+- Extract files in your RetroBat setup folder in \system\joytokey\.
+- Enable JoyToKey to run automatically when launching games by editing emulationstation.cfg and changing the value from
+"enable_joytokey=no" to "enable_joytokey=yes", then save the modification.
+- Run a game from EmulationStation. Press Windows key, you should return to desktop. Open joytokey from the taskbar icon to configure it.
+  Use alt+tab and select RetroArch to return to your game. 
