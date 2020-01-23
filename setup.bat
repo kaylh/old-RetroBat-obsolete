@@ -501,7 +501,7 @@ goto setup_menu
 
 :dl_default_theme
 cls
-if exist %setup_dir%\system\retrobat.update rmdir /s /q %setup_dir%\emulationstation\.emulationstation\themes\es-theme-carbon-master\.
+if exist %setup_dir%\system\retrobat.update if exist %setup_dir%\emulationstation\.emulationstation\themes\es-theme-carbon-master\. rmdir /s /q %setup_dir%\emulationstation\.emulationstation\themes\es-theme-carbon-master\.
 set current_url=https://github.com/kaylh/es-theme-%themename%/archive/master.zip
 set output_dir=%temp_dir%\%themename%-theme-pkg.zip
 if exist %output_dir% goto install_default_theme
