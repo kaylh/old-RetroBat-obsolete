@@ -71,6 +71,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 >SUPER NES
 >SUPER NES MSU-1
 >WII
+>WII U
 >WINDOWS
 >WONDERSWAN 
 >WONDERSWAN COLOR
