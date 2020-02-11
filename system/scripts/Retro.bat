@@ -76,10 +76,10 @@ set run_es=emulationstation.exe
 set run_es_w=emulationstation.exe --windowed --resolution %es_resolution_width% %es_resolution_height%
 if not exist %es_dir%\emulationstation.exe goto esfail
 if "%es_is_fullscreen%"=="yes" (
-	start %run_es%
+	%run_es%
 	call %scripts_dir%\focus.cmd
 ) else (
-	start %run_es_w%
+	%run_es_w%
 	call %scripts_dir%\focus.cmd
 )
 goto delete_junkfiles
