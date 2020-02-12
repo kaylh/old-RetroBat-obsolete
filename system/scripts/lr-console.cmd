@@ -974,6 +974,25 @@ if %ERRORLEVEL% == 1 goto pkg_fail
 ping 127.0.0.1 -n 4 >nul
 echo Done.
 if "%fullinstall%"=="1" (
+	goto dl_theodore
+) else (
+	goto install_libretrocores
+)
+
+:dl_theodore
+cls
+set core_name=theodore
+If %PROCARCH%==32 set current_url=http://buildbot.libretro.com/nightly/windows/x86/latest/%core_name%_libretro.dll.zip
+If %PROCARCH%==64 set current_url=http://buildbot.libretro.com/nightly/windows/x86_64/latest/%core_name%_libretro.dll.zip
+set output_dir=%temp_dir%\%core_name%_libretro.dll.zip
+if exist %output_dir% goto install_libretrocores
+echo -- Libretro Core is now downloading ( %core_name% ) --
+echo.
+call %scripts_dir%\powershelldl.cmd
+if %ERRORLEVEL% == 1 goto pkg_fail
+ping 127.0.0.1 -n 4 >nul
+echo Done.
+if "%fullinstall%"=="1" (
 	goto dl_vecx
 ) else (
 	goto install_libretrocores
