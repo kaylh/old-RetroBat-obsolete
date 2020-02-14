@@ -95,4 +95,5 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Contact
 
-retrobat@free.fr (answer in french or english) Please don't use it to ask for support. Use the issues section of the github for that.
+retrobat@free.fr (answer in french or english). 
+Not to ask for support. Please use the issues section of the github for that.
