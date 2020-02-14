@@ -80,7 +80,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Author
 
-- RetroBat Scripts (C) 2017-2019 Adrien Chalard (Kayl).
+- RetroBat Scripts (C) 2017-2020 Adrien Chalard (Kayl).
 
 ## Special thank
 
