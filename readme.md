@@ -12,23 +12,18 @@ RetroBat can download and install all software you need to have a good retro gam
 
 RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
- 
-## System requirements
+|   | System requirements |
+|---|---|
+|**OS supported:**|Windows 7 SP3, Windows 8.1, Windows 10|
+|**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
+|**Graphics:**|If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.| 
+|**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)|
+|   |[Visual C++ 2015 Redistributable Packages (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=48145)|
+|   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
+|   |[Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)|
+|**Optional softwares:**|[JoyToKey](https://joytokey.net/en/)|
 
-***RetroBat is compatible with 32 bit and 64 bit Windows computers.*** 
-
-#### OS
-- Windows 7 SP3 or Windows 8.1 or Windows 10.
-#### Processor
- - CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
-#### Graphics
-- If you want to use emulators such as Dolphin or PCSX2, you need modern graphics card (Direct3D 11.1 / OpenGL 3.3) that supports Direct3D 11.1 / OpenGL 4.4.
-#### Software
-- [Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)
-- [Visual C++ 2015 Redistributable Packages (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=48145)
-- [DirectX](https://www.microsoft.com/download/details.aspx?id=35)
-- [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
-- [JoyToKey (optional)](https://joytokey.net/en/)
+***RetroBat is compatible with 32 bit and 64 bit Windows computers.***
 
 
 ## Supported machines
