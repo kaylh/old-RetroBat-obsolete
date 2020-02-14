@@ -73,7 +73,8 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 >WINDOWS -
 >WONDERSWAN - 
 >WONDERSWAN COLOR -
->and more...
+
+![Supported Machines](https://www.retrobat.ovh/img/systems3.png)
 
 ## Author
 
