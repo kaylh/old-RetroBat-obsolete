@@ -15,8 +15,10 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
  
 ## System requirements
 
+***RetroBat is compatible with 32 bit and 64 bit Windows computers.*** 
+
 #### OS
-- Windows 7 SP3 or Windows 8.1 or Windows 10 (64bit)
+- Windows 7 SP3 or Windows 8.1 or Windows 10.
 #### Processor
  - CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
 #### Graphics
@@ -28,7 +30,6 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 - [Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)
 - [JoyToKey (optional)](https://joytokey.net/en/)
 
-#### RetroBat can only be installed on x86 64 bit computers. 
 
 ## Supported machines
 
