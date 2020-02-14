@@ -25,7 +25,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 |   |[Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)|
 |**Optional softwares:**|[JoyToKey](https://joytokey.net/en/)|
 
-***RetroBat is compatible with 32 bit and 64 bit Windows computers.***
+**RetroBat is compatible with 32 bit and 64 bit Windows computers.**
 
 
 ## Supported machines
