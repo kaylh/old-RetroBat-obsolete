@@ -12,7 +12,9 @@ RetroBat can download and install all software you need to have a good retro gam
 
 RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
-|   | System requirements |
+## System requirements
+
+|   |   |
 |---|---|
 |**OS supported:**|Windows 7 SP3, Windows 8.1, Windows 10|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
