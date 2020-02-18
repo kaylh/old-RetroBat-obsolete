@@ -47,14 +47,14 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 >LYNX -
 >MASTER SYSTEM - 
 >MEGA-CD -
->MEGADRIVE - 
+>MEGADRIVE (GENESIS) - 
 >DOS -
 >NAOMI -
 >NEO-GEO -
 >NEO-GEO CD -
 >NEO-GEO POCKET - 
 >NEO-GEO POCKET COLOR -
->NES -
+>FAMICOM (NES) -
 >NINTENDO 64 -
 >NINTENDO DS -
 >ODYSSEY² (VIDEOPAC) -
@@ -66,7 +66,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 >PSP -
 >SATURN - 
 >SEGA 32X -
->SUPER NES -
+>SUPER FAMICOM (SUPER NES) -
 >SUPER NES MSU-1 -
 >WII -
 >WII U -
