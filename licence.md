@@ -20,3 +20,5 @@
     along with RetroBat Scripts.  If not, see <https://www.gnu.org/licenses/>.
 
 More information about : [GNU Public Licence](http://www.gnu.org/licenses/gpl-3.0.en.html)
+
+Other software used with RetroBat Scripts are under their own separate licence. All additional rights belong to their respective owners.
