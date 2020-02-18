@@ -76,7 +76,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ![Supported Machines](https://www.retrobat.ovh/img/retrobat-system-list.png)
 
-**RetroBat will never provide ROMs or BIOS files, you will need to make your own dump or download them separately.**
+**RetroBat will never provide ROMs or BIOS files.**
 
 ## Author
 
