@@ -1,6 +1,6 @@
-![RetroBat-Logo](https://www.retrobat.ovh/repo/ressources/baniere_small.png)
+ <img src="https://www.retrobat.ovh/repo/ressources/baniere_small.png" alt="RetroBat-Logo" class="center"> 
 
-[RetroBat's Official Website](https://www.retrobat.ovh) | [RetroBat's Facebook Group](https://www.facebook.com/groups/retrobat)
+[Official Website](https://www.retrobat.ovh) | [Facebook Group](https://www.facebook.com/groups/retrobat)
 
 ## Introduction
 
