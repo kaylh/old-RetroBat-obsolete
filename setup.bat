@@ -297,7 +297,7 @@ timeout /t 1 >nul
 if exist %es_config_dir%\*.new goto update_ES_confirm
 if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
-if "%singledl%"=="1" goto setup_menu
+if "%singledl%"=="1" goto welcome_menu
 
 :update_ES_confirm
 cls
@@ -317,7 +317,7 @@ echo        this.
 echo +===========================================================+
 set updateESconf=1
 set/p updateESconf="- Please choose one (1-2): "
-if "%updateESconf%"=="1" del/q %es_config_dir%\*.new && goto setup_menu
+if "%updateESconf%"=="1" del/q %es_config_dir%\*.new && goto emulationstation_menu
 if "%updateESconf%"=="2" goto update_ES_config
 goto update_ES_confirm
 
@@ -330,14 +330,14 @@ copy/Y %es_config_dir%\es_settings.cfg.new %es_config_dir%\es_settings.cfg>nul
 copy/Y %es_config_dir%\es_input.cfg.new %es_config_dir%\es_input.cfg>nul
 if exist %es_config_dir%\*.new del/Q %es_config_dir%\*.new
 timeout /t 1 >nul
-if "%singledl%"=="1" goto setup_menu
+if "%singledl%"=="1" goto welcome_menu
 if exist %setup_dir%\system\retrobat.update set themename=carbon
 if exist %setup_dir%\system\retrobat.update goto dl_default_theme
 if "%fullinstall%"=="1" set themename=carbon
 if "%fullinstall%"=="1" goto dl_default_theme
 if "%go%"=="2" goto debug_menu
 if "%go%"=="3" goto debug_menu
-goto setup_menu
+goto welcome_menu
 
 :dl_default_theme
 cls
@@ -381,9 +381,9 @@ if exist %temp_dir%\*-pkg.7z del/Q %temp_dir%\*-pkg.7z>nul
 echo Done.
 timeout /t 1 >nul
 if exist %setup_dir%\system\retrobat.update goto dl_retroarch_stable
-if "%singledl%"=="1" goto setup_menu
+if "%singledl%"=="1" goto welcome_menu
 if "%fullinstall%"=="1" goto dl_retroarch_stable
-goto setup_menu
+goto welcome_menu
 
 :dl_retroarch_stable
 cls
@@ -480,7 +480,7 @@ echo        choose this.
 echo +===========================================================+
 set updateRAconf=2
 set/p updateRAconf="- Please choose one (1-2): "
-if "%updateRAconf%"=="1" goto setup_menu
+if "%updateRAconf%"=="1" goto welcome_menu
 if "%updateRAconf%"=="2" goto update_retroarch_config_menu
 goto update_retroarch_confirm
 
@@ -553,9 +553,9 @@ timeout /t 1 >nul
 if exist %setup_dir%\system\retrobat.update goto update_es_systems
 if "%SFX%"=="1" goto exit
 if "%current_dir%"=="1" goto run_es
-if "%singledl%"=="1" goto setup_menu
+if "%singledl%"=="1" goto welcome_menu
 if "%fullinstall%"=="1" goto dl_lrarcade
-goto setup_menu
+goto welcome_menu
 
 :dl_lrarcade 
 cls
@@ -564,9 +564,9 @@ if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
 if not exist %scripts_dir%\lr-arcade.cmd goto pkg_fail
 call %scripts_dir%\lr-arcade.cmd
 timeout /t 2 >nul
-if "%go%"=="9" goto setup_menu
+if "%go%"=="9" goto welcome_menu
 if "%fullinstall%"=="1" goto dl_lrconsole 
-goto setup_menu
+goto welcome_menu
 
 :dl_lrconsole
 cls
@@ -575,9 +575,9 @@ if not exist %retroarch_dir%\cores\. md %retroarch_dir%\cores
 if not exist %scripts_dir%\lr-console.cmd goto pkg_fail
 call %scripts_dir%\lr-console.cmd
 timeout /t 2 >nul
-if "%go%"=="10" goto setup_menu
+if "%go%"=="10" goto welcome_menu
 if "%fullinstall%"=="1" goto check_pkg
-goto setup_menu
+goto welcome_menu
 
 :update_sources
 cls
@@ -722,39 +722,6 @@ if exist %setup_dir%\system\retrobat.update (
 		goto pkg_fail
 )
 
-:welcome_menu_old
-cls
-if not exist %temp_dir%\. md %temp_dir%
-if "%current_dir%"=="1" goto update_retroarch_config1
-set fullinstall=0
-set go=
-call %scripts_dir%\pkgsources.cmd
-call %scripts_dir%\showlogo.cmd
-echo           Version %version% by Kayl
-echo +===========================================================+
-echo  ( 1 ) -- Launch EmulationStation
-echo +-----------------------------------------------------------+
-echo  ( 2 ) -- Setup softwares
-echo +-----------------------------------------------------------+
-echo  ( 3 ) -- Debug options
-echo +-----------------------------------------------------------+
-echo  ( 4 ) -- Update sources
-echo +-----------------------------------------------------------+
-echo  ( 5 ) -- Update RetroBat
-echo +-----------------------------------------------------------+
-echo  ( Q ) -- Quit
-echo +===========================================================+
-set/p go="  - Please choose one (1-5, Q): "
-echo.
-if "%go%"=="1" goto run_es
-if "%go%"=="2" goto setup_menu
-if "%go%"=="3" goto debug_menu
-if "%go%"=="4" goto update_sources
-if "%go%"=="5" goto update_retrobat_menu
-if "%go%"=="Q" goto exit
-if "%go%"=="q" goto exit
-goto welcome_menu
-
 :welcome_menu
 cls
 if not exist %temp_dir%\. md %temp_dir%
@@ -782,7 +749,8 @@ echo +===========================================================+
 set/p go="  - Please choose one (1-5, Q): "
 echo.
 if "%go%"=="1" goto run_es
-if "%go%"=="2" goto setup_menu
+if "%go%"=="2" goto emulationstation_menu
+if "%go%"=="3" goto retroarch_menu
 if "%go%"=="4" goto debug_menu
 if "%go%"=="5" goto update_sources
 if "%go%"=="6" goto update_retrobat_menu
@@ -790,56 +758,83 @@ if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
 goto welcome_menu
 
-:setup_menu
+:emulationstation_menu
 cls
 if not exist %temp_dir%\. md %temp_dir%
-set singledl=0
 set fullinstall=0
-set go=0
+set go=
+call %scripts_dir%\pkgsources.cmd
+call %scripts_dir%\showlogo.cmd
+echo           Version %version% by Kayl
 echo +===========================================================+
-echo                       SETUP SOFTWARES
-echo +===========================================================+
-echo  ( 1 ) -- Restart Setup
+echo  ( 1 ) -- Install EmulationStation
 echo +-----------------------------------------------------------+
-echo  ( 2 ) -- Install EmulationStation
+echo  ( 2 ) -- Update EmulationStation
 echo +-----------------------------------------------------------+
-echo  ( 3 ) -- Update EmulationStation
+echo  ( 3 ) -- Install EmulationStation Themes
 echo +-----------------------------------------------------------+
-echo  ( 4 ) -- Install EmulationStation Themes
+echo  ( 4 ) -- Update EmulationStation systems list
 echo +-----------------------------------------------------------+
-echo  ( 5 ) -- Install RetroArch Stable
+echo  ( 5 ) -- Restore EmulationStation systems list
 echo +-----------------------------------------------------------+
-echo  ( 6 ) -- Update RetroArch Stable
-echo +-----------------------------------------------------------+
-echo  ( 7 ) -- Install RetroArch Nightly
-echo +-----------------------------------------------------------+
-echo  ( 8 ) -- Update RetroArch Nightly
-echo +-----------------------------------------------------------+
-echo  ( 9 ) -- Install Libretro Cores (Arcade)
-echo +-----------------------------------------------------------+
-echo  ( 10 ) -- Install Libretro Cores (Consoles and others)
+echo  ( 6 ) -- Reset EmulationStation settings
 echo +-----------------------------------------------------------+
 echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
 echo  ( Q ) -- Quit
 echo +===========================================================+
-set/p go="  - Please choose one (1-10,R,Q): "
+set/p go="  - Please choose one (1-5, Q): "
 echo.
-if "%go%"=="1" goto create_config
-if "%go%"=="2" set/A singledl=singledl+1 && goto dl_ES
-if "%go%"=="3" goto update_ES
-if "%go%"=="4" goto themes_menu
-if "%go%"=="5" set/A singledl=singledl+1 && goto dl_retroarch_stable
-if "%go%"=="6" goto update_retroarch_stable
-if "%go%"=="7" set/A singledl=singledl+1 && goto dl_retroarch_nightly
-if "%go%"=="8" goto update_retroarch_nightly
-if "%go%"=="9" set/A fullinstall=fullinstall+1 && goto dl_lrarcade
-if "%go%"=="10" set/A fullinstall=fullinstall+1 && goto dl_lrconsole
+if "%go%"=="1" set/A singledl=singledl+1 && goto dl_ES
+if "%go%"=="2" goto update_ES
+if "%go%"=="3" goto themes_menu
+if "%go%"=="4" goto update_es_systems
+if "%go%"=="5" goto restore_es_systems
+if "%go%"=="6" goto config_es
 if "%go%"=="R" goto welcome_menu
 if "%go%"=="r" goto welcome_menu
 if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
-goto setup_menu
+goto emulationstation_menu
+
+:retroarch_menu
+cls
+if not exist %temp_dir%\. md %temp_dir%
+set fullinstall=0
+set go=
+call %scripts_dir%\pkgsources.cmd
+call %scripts_dir%\showlogo.cmd
+echo           Version %version% by Kayl
+echo +===========================================================+
+echo  ( 1 ) -- Install RetroArch Stable
+echo +-----------------------------------------------------------+
+echo  ( 2 ) -- Update RetroArch Stable
+echo +-----------------------------------------------------------+
+echo  ( 3 ) -- Install RetroArch Nightly
+echo +-----------------------------------------------------------+
+echo  ( 4 ) -- Update RetroArch Nightly
+echo +-----------------------------------------------------------+
+echo  ( 5 ) -- Install Libretro Cores (Arcade)
+echo +-----------------------------------------------------------+
+echo  ( 6 ) -- Install Libretro Cores (Consoles and others)
+echo +-----------------------------------------------------------+
+echo  ( R ) -- Return to previous menu
+echo +-----------------------------------------------------------+
+echo  ( Q ) -- Quit
+echo +===========================================================+
+set/p go="  - Please choose one (1-5, Q): "
+echo.
+if "%go%"=="1" set/A singledl=singledl+1 && goto dl_retroarch_stable
+if "%go%"=="2" goto update_retroarch_stable
+if "%go%"=="3" set/A singledl=singledl+1 && goto dl_retroarch_nightly
+if "%go%"=="4" goto update_retroarch_nightly
+if "%go%"=="5" set/A fullinstall=fullinstall+1 && goto dl_lrarcade
+if "%go%"=="6" set/A fullinstall=fullinstall+1 && goto dl_lrconsole
+if "%go%"=="R" goto welcome_menu
+if "%go%"=="r" goto welcome_menu
+if "%go%"=="Q" goto exit
+if "%go%"=="q" goto exit
+goto retroarch_menu
 
 :themes_menu
 cls
@@ -868,10 +863,11 @@ if "%go%"=="1" set/A singledl=singledl+1 && goto dl_default_theme
 if "%go%"=="2" set themename=nextfull
 if "%go%"=="2" set/A singledl=singledl+1 && goto dl_default_theme
 if "%go%"=="3" goto themes_retroarts_menu
-if "%go%"=="R" goto setup_menu
-if "%go%"=="r" goto setup_menu
+if "%go%"=="R" goto themes_menu
+if "%go%"=="r" goto themes_menu
 if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
+goto themes_menu
 
 :themes_retroarts_menu
 cls
@@ -909,6 +905,7 @@ if "%go%"=="R" goto themes_menu
 if "%go%"=="r" goto themes_menu
 if "%go%"=="Q" goto exit
 if "%go%"=="q" goto exit
+goto themes_retroarts_menu
 
 :debug_menu
 cls
@@ -918,21 +915,15 @@ set fullinstall=0
 echo +===========================================================+
 echo                       DEBUG OPTIONS
 echo +===========================================================+
-echo  ( 1 ) -- Update EmulationStation systems list
+echo  ( 1 ) -- Update Libretro Cores list (Arcade)
 echo +-----------------------------------------------------------+
-echo  ( 2 ) -- Restore EmulationStation systems list
+echo  ( 2 ) -- Update Libretro Cores list (Console and others)
 echo +-----------------------------------------------------------+
-echo  ( 3 ) -- Reset EmulationStation settings
+echo  ( 3 ) -- Set right path in RetroArch override settings
 echo +-----------------------------------------------------------+
-echo  ( 4 ) -- Update Libretro Cores list (Arcade)
+echo  ( 4 ) -- Create folders for emulators and roms
 echo +-----------------------------------------------------------+
-echo  ( 5 ) -- Update Libretro Cores list (Console and others)
-echo +-----------------------------------------------------------+
-echo  ( 6 ) -- Set right path in RetroArch override settings
-echo +-----------------------------------------------------------+
-echo  ( 7 ) -- Create folders for emulators and roms
-echo +-----------------------------------------------------------+
-echo  ( 8 ) -- Restart Setup
+echo  ( 5 ) -- Restart Setup
 echo +-----------------------------------------------------------+
 echo  ( R ) -- Return to previous menu
 echo +-----------------------------------------------------------+
@@ -940,14 +931,11 @@ echo  ( Q ) -- Quit
 echo +===========================================================+
 set/p go="  - Please choose one (1-7,R,Q): "
 echo.
-if "%go%"=="1" goto update_es_systems
-if "%go%"=="2" goto restore_es_systems
-if "%go%"=="3" goto config_es
-if "%go%"=="4" goto update_lrlist_arcade
-if "%go%"=="5" goto update_lrlist_console
-if "%go%"=="6" goto update_retroarch_config2
-if "%go%"=="7" goto create_folders
-if "%go%"=="8" goto create_config
+if "%go%"=="1" goto update_lrlist_arcade
+if "%go%"=="2" goto update_lrlist_console
+if "%go%"=="3" goto update_retroarch_config2
+if "%go%"=="4" goto create_folders
+if "%go%"=="5" goto create_config
 if "%go%"=="R" goto welcome_menu
 if "%go%"=="r" goto welcome_menu
 if "%go%"=="Q" goto exit
