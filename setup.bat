@@ -22,6 +22,7 @@ set setup_dir=%setup_dir:"=%
 set setup_dir=\%setup_dir%
 if "%setup_dir%"=="\" goto exit
 echo setup_dir=%setup_dir%>> %CD%\System\%setup_info%
+echo batocera_dir=\batocera>> %CD%\System\%setup_info%
 echo name=%name%>> %CD%\System\%setup_info%
 echo version=%version%>> %CD%\System\%setup_info%
 echo system_dir=%setup_dir%\system>> %CD%\System\%setup_info%
@@ -35,10 +36,14 @@ echo retroarch_dir=%setup_dir%\emulators\retroarch>> %CD%\System\%setup_info%
 echo retroarch_config_dir=%setup_dir%\emulators\retroarch\config>> %CD%\System\%setup_info%
 echo es_dir=%setup_dir%\emulationstation>> %CD%\System\%setup_info%
 echo es_config_dir=%setup_dir%\emulationstation\.emulationstation>> %CD%\System\%setup_info%
-echo saves_dir=%setup_dir%\saves>> %CD%\System\%setup_info%
-echo shots_dir=%setup_dir%\screenshots>> %CD%\System\%setup_info%
-echo bios_dir=%setup_dir%\bios>> %CD%\System\%setup_info%
-echo games_dir=%setup_dir%\roms>> %CD%\System\%setup_info%
+if not exist %CD%\batocera.txt echo saves_dir=%setup_dir%\saves>> %CD%\System\%setup_info%
+if not exist %CD%\batocera.txt echo shots_dir=%setup_dir%\screenshots>> %CD%\System\%setup_info%
+if not exist %CD%\batocera.txt echo bios_dir=%setup_dir%\bios>> %CD%\System\%setup_info%
+if not exist %CD%\batocera.txt echo games_dir=%setup_dir%\roms>> %CD%\System\%setup_info%
+if exist %CD%\batocera.txt echo saves_dir=%batocera_dir%\saves>> %CD%\System\%setup_info%
+if exist %CD%\batocera.txt echo shots_dir=%batocera_dir%\screenshots>> %CD%\System\%setup_info%
+if exist %CD%\batocera.txt echo bios_dir=%batocera_dir%\bios>> %CD%\System\%setup_info%
+if exist %CD%\batocera.txt echo games_dir=%batocera_dir%\roms>> %CD%\System\%setup_info%
 echo medias_dir=%setup_dir%\medias>> %CD%\System\%setup_info%
 title %name% Setup
 goto load_config
@@ -198,6 +203,52 @@ echo.
 
 call %scripts_dir%\mkfolders.cmd
 
+timeout /t 1 >nul
+if exist %setup_dir%\system\retrobat.update goto dl_ES
+if "%go%"=="7" goto debug_menu
+if "%fullinstall%"=="1" goto dl_ES
+goto welcome_menu
+
+:create_folders_batocera
+if not exist %emulators_dir%\applewin\. md %emulators_dir%\applewin
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\applewin\info.txt>nul
+
+if not exist %setup_dir%\kodi\. md  %setup_dir%\kodi
+if exist %templates_dir%\kodi\gamelist.xml copy/y %templates_dir%\kodi\gamelist.xml %setup_dir%\kodi\gamelist.xml>nul
+if exist %templates_dir%\kodi\_media\kodi-logo.png xcopy/Y /e /i "%templates_dir%\kodi\_media" "%setup_dir%\kodi\_media" 2>nul
+
+if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
+if not exist %emulators_dir%\dolphin-emu\config\. md %emulators_dir%\dolphin-emu\config
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dolphin-emu\info.txt>nul
+
+if not exist %emulators_dir%\pcsx2\. md %emulators_dir%\pcsx2
+if not exist %emulators_dir%\pcsx2\bios\. md %emulators_dir%\pcsx2\bios
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\pcsx2\info.txt>nul
+
+if not exist %emulators_dir%\dosbox\. md %emulators_dir%\dosbox
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\dosbox\info.txt>nul
+
+if not exist %emulators_dir%\redream\. md %emulators_dir%\redream
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\redream\info.txt>nul
+
+if not exist %emulators_dir%\ppsspp\. md %emulators_dir%\ppsspp
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\ppsspp\info.txt>nul
+
+if not exist %emulators_dir%\redream\. md %emulators_dir%\redream
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\redream\info.txt>nul
+
+if not exist %emulators_dir%\fpinball\. md %emulators_dir%\fpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\fpinball\info.txt>nul
+if not exist %emulators_dir%\fpinball\FPinballLauncher.exe if exist %setup_dir%\system\tools\FPinballLauncher.exe copy/y %setup_dir%\system\tools\FPinballLauncher.exe %emulators_dir%\fpinball\FPinballLauncher.exe>nul
+
+if not exist %emulators_dir%\vpinball\. md %emulators_dir%\vpinball
+if exist %templates_dir%\infos\info-emu.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\vpinball\info.txt>nul
+if not exist %emulators_dir%\vpinball\VPinballLauncher.exe if exist %setup_dir%\system\tools\VPinballLauncher.exe copy/y %setup_dir%\system\tools\VPinballLauncher.exe %emulators_dir%\vpinball\VPinballLauncher.exe>nul
+
+if not exist %setup_dir%\system\joytokey\. md %setup_dir%\system\joytokey
+if exist %templates_dir%\infos\info-joytokey.txt copy/y %templates_dir%\infos\info-joytokey.txt %setup_dir%\system\joytokey\info.txt>nul
+
+timeout /t 1 >nul
 if exist %setup_dir%\system\retrobat.update goto dl_ES
 if "%go%"=="7" goto debug_menu
 if "%fullinstall%"=="1" goto dl_ES
@@ -531,7 +582,7 @@ if exist %retroarch_dir%\retroarch.cfg (
 	timeout /t 1 >nul
 	goto update_retroarch_config2
 	) else (
-	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_dir%\retroarch.cfg>nul
+	copy/y %templates_dir%\retroarch\retroarch-%racfgname%.cfg %retroarch_config_dir%\retroarch.cfg>nul
 	timeout /t 1 >nul
 	goto update_retroarch_config2
 )
