@@ -78,23 +78,23 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 **RetroBat will never provide ROMs or BIOS files.**
 
-## Author
+## RetroBat Team
 
-- RetroBat Scripts (C) 2017-2020 Adrien Chalard (Kayl).
+- Adrien Chalard "Kayl" - creator of the project, coder, testing
+- Lorenzolamas - community management, assets, testing
+- Fabrice Caruso - EmulationStation programmer
 
-## Special thank
+## Special Thanks
 
-- Lorenzolamas for testing and community management.
-- Hel Mic for his generous support.
+- Hel Mic - for his generous support.
+- Batocera Community - to make it better together.
 
 ## Credits
 
-* EmulationStation (C) 2014 Alec Lofquist, contributions from community.
-* RetroBat use EmulationStation FCAMOD by Fabrice Caruso.
-* RetroArch by Libretro Team.
-* NextFull ES Theme based on the work of Fagnerpc for AlekFull Themes. Edited by KOT Prod and Lorenzolamas.
-* game-icons.net/1x1/lorc by Lorc.
-* 7-Zip (C) 1999-2019 Igor Pavlov.
+- EmulationStation (C) 2014 Alec Lofquist, contributions from community.
+- EmulationStation FCAMOD by Fabrice Caruso, Batocera ES by Batocera Community as well as RetroBat ES for RetroBat.
+- RetroArch by Libretro Team.
+- game-icons.net/1x1/lorc by Lorc.
 
 ## Contact
 
