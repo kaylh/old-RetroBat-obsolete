@@ -1,0 +1,6 @@
+KODI Instructions:
+******************
+
+-Download Kodi at https://kodi.tv/download
+-Install it in ..\kodi
+-Run Kodi in EmulationStation

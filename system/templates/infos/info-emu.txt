@@ -1,11 +1,12 @@
 Standalone emulators instructions:
 **********************************
 
-- You have to download standalone emulator separately.
+- You will need to download standalone emulators separately.
 - Extract emulator files in current folder.
-- Run game from EmulationStation.
+- Run games from EmulationStation.
 
-### Links to download emulators ##
+Links to download emulators:
+****************************
 
 # AppleWin (Apple II, Apple II+)
 https://github.com/AppleWin/AppleWin/releases
@@ -19,10 +20,23 @@ Install directory: ..\emulators\cemu
 https://citra-emu.org/download
 Install directory: ..\emulators\citra
 
-# Dolphin (GameCube, Wii):
+# CxBx-Reloaded (Xbox, Chihiro)
+https://github.com/cxbx-reloaded/cxbx-reloaded/releases
+Install directory: ..\emulators\cxbx-reloaded
+
+# Demul (Dreamcast, Naomi, Naomi 2, Atomiswave, Hikaru, Gaelco)
+http://demul.emulation64.com/downloads
+Install directory: ..\emulators\demul
+
+# Dolphin (GameCube, Wii, Triforce):
 https://dolphin-emu.org
 https://buildbot.dolphin-emu.org
 Install directory: ..\emulators\dolphin-emu
+
+# Dolphin WX (Triforce, GameCube, Wii):
+https://en.dolphin-emu.org/download/list/Triforce
+https://github.com/eightfinite/dolphin-triforce/releases
+Install directory: ..\emulators\dolphin-triforce
 
 # DOSBox (DOS, Windows)
 https://www.dosbox.com
@@ -36,6 +50,10 @@ Install directory: ..\emulators\fpinball
 # Mednafen (Multi System):
 https://mednafen.github.io/releases
 Install directory: ..\emulators\mednafen
+
+# M2 Emulator (Model 2):
+http://nebula.emulatronia.com/descargas.php
+Install directory: ..\emulators\m2emulator
 
 # PCSX2 (PlayStation 2):
 https://buildbot.orphis.net/pcsx2
@@ -66,7 +84,23 @@ Install directory: ..\emulators\redream
 http://www.snes9x.com/downloads.php
 Install directory: ..\emulators\snes9x
 
+# Supermodel (Model 3)
+https://www.supermodel3.com/Download.html
+Install directory: ..\emulators\supermodel
+
 # Visual Pinball (Pinball Simulator):
 http://www.mediafire.com/file/rfemv8g3wupt5h5/vpinball.rar
 https://vpinball.com
 Install directory: ..\emulators\vpinball
+
+# Xenia (Xbox 360)
+https://xenia.jp/download
+Install directory: ..\emulators\xenia
+
+# Xenia Canary (Xbox 360)
+https://github.com/xenia-canary/xenia-canary/releases
+Install directory: ..\emulators\xenia-canary
+
+# Yuzu (Switch)
+https://yuzu-emu.org
+Install directory: ..\emulators\yuzu

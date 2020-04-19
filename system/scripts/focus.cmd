@@ -8,6 +8,7 @@ language: batch, javascript
 author: Kayl 
 ***************************************
 :rem
+for /f "delims=" %%x in (%setup_dir%\system\setup.info) do (set "%%x")
 cd %scripts_dir%
 echo (new ActiveXObject("WScript.Shell")).AppActivate("EmulationStation"); > %scripts_dir%\focus.js
 cscript //nologo focus.js

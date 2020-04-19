@@ -1,3 +1,3 @@
 @echo off
-if "%enable_joytokey%"=="yes" tasklist | find /i "joytokey.exe" && taskkill /im joytokey.exe /f
+if "%enable_joytokey%"=="1" tasklist | find /i "joytokey.exe" && taskkill /im joytokey.exe /f
 exit
