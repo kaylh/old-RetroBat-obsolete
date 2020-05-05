@@ -95,8 +95,3 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 - EmulationStation FCAMOD by Fabrice Caruso, Batocera ES by Batocera as well as RetroBat ES for RetroBat.
 - RetroArch by Libretro Team.
 - game-icons.net/1x1/lorc by Lorc.
-
-## Contact
-
-retrobat@free.fr (answer in french or english). 
-Not to ask for support. Please use the issues section of the github for that.
