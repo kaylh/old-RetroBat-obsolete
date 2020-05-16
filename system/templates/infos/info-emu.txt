@@ -24,6 +24,10 @@ Install directory: ..\emulators\citra
 https://github.com/cxbx-reloaded/cxbx-reloaded/releases
 Install directory: ..\emulators\cxbx-reloaded
 
+# Daphne (Laserdisc)
+http://www.daphne-emu.com/site3/index_hi.php
+Install directory: ..\emulators\daphne
+
 # Demul (Dreamcast, Naomi, Naomi 2, Atomiswave, Hikaru, Gaelco)
 http://demul.emulation64.com/downloads
 Install directory: ..\emulators\demul

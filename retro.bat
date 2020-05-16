@@ -154,11 +154,11 @@ if "%es_menu_noexit%"=="1" (
 ) else (
   set esArg1=
 )
-if "%play_splash_video%"=="1" if exist %es_config_dir%\video\%splashscreen_file% (
-start "EmulationStation" %CD%\emulationstation\emulationstation.exe --video "%CD%\emulationstation\.emulationstation\video\%splashscreen_file%"
-)
+
+if "%play_splash_video%"=="1" if exist %es_config_dir%\video\%splashscreen_file% %CD%\emulationstation\emulationstation.exe --video "%CD%\emulationstation\.emulationstation\video\%splashscreen_file%"
+
 if "%es_is_fullscreen%"=="1" (
-  set "es_screen_settings=--fullscreen-borderless"
+  set "es_screen_settings="
 ) else (
   set "es_screen_settings=--windowed --resolution %es_window_size_x% %es_window_size_y%"
 )

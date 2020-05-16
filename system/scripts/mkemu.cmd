@@ -49,6 +49,9 @@ if exist %templates_dir%\infos\info-emu.txt if not exist %emulators_dir%\citra\_
 if not exist %emulators_dir%\cxbx-reloaded\. md %emulators_dir%\cxbx-reloaded
 if exist %templates_dir%\infos\info-emu.txt if not exist %emulators_dir%\cxbx-reloaded\_infos.txt copy/y %templates_dir%\infos\info-emu.txt %emulators_dir%\cxbx-reloaded\_infos.txt>nul
 
+if not exist %emulators_dir%\daphne\. md %emulators_dir%\daphne
+if exist %templates_dir%\infos\info-emu.txt if not exist %emulators_dir%\daphne\_infos.txt copy/y %templates_dir%\daphne\info-emu.txt %emulators_dir%\daphne\_infos.txt>nul
+
 if not exist %emulators_dir%\dolphin-emu\. md %emulators_dir%\dolphin-emu
 if not exist %emulators_dir%\dolphin-emu\portable.txt echo.>> %emulators_dir%\dolphin-emu\portable.txt
 if not exist %emulators_dir%\dolphin-triforce\. md %emulators_dir%\dolphin-triforce
