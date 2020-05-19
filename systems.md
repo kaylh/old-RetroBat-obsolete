@@ -1,5 +1,3 @@
-### Supported Systems (WIP)
-
 |System|ROMs Folder|Emulators|Extensions|BIOS|Wikipedia|
 | :---:| :---:| :---:| :---:| :---:| :---:|
 |![3DO](https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/fae2ec0255e508d3ed6293c3ac1d982fdff3a06a/art/logos/3do.svg)|<sub>3do</sub>|<sub>opera_libretro</sub>|<sub>.cue .iso</sub>|<sub>panafz1.bin, panafz10.bin, goldstar.bin, sanyotry.bin, 3do_arcade_saot.bin</sub>|[![wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/3DO-FZ1-Console-Set.png/160px-3DO-FZ1-Console-Set.png)](https://en.wikipedia.org/wiki/3DO_Interactive_Multiplayer)
