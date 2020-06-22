@@ -1,0 +1,110 @@
+Standalone emulators instructions:
+**********************************
+
+- You will need to download standalone emulators separately.
+- Extract emulator files in current folder.
+- Run games from EmulationStation.
+
+Links to download emulators:
+****************************
+
+# AppleWin (Apple II, Apple II+)
+https://github.com/AppleWin/AppleWin/releases
+Install directory: ..\emulators\applewin
+
+# Cemu (Wii U)
+https://cemu.info
+Install directory: ..\emulators\cemu
+
+# Citra (3DS)
+https://citra-emu.org/download
+Install directory: ..\emulators\citra
+
+# CxBx-Reloaded (Xbox, Chihiro)
+https://github.com/cxbx-reloaded/cxbx-reloaded/releases
+Install directory: ..\emulators\cxbx-reloaded
+
+# Daphne (Laserdisc)
+http://www.daphne-emu.com/site3/index_hi.php
+Install directory: ..\emulators\daphne
+
+# Demul (Dreamcast, Naomi, Naomi 2, Atomiswave, Hikaru, Gaelco)
+http://demul.emulation64.com/downloads
+Install directory: ..\emulators\demul
+
+# Dolphin (GameCube, Wii, Triforce):
+https://dolphin-emu.org
+https://buildbot.dolphin-emu.org
+Install directory: ..\emulators\dolphin-emu
+
+# Dolphin WX (Triforce, GameCube, Wii):
+https://en.dolphin-emu.org/download/list/Triforce
+https://github.com/eightfinite/dolphin-triforce/releases
+Install directory: ..\emulators\dolphin-triforce
+
+# DOSBox (DOS, Windows)
+https://www.dosbox.com
+http://www.emucr.com/search/label/DOSBox
+
+# Future Pinball (Pinball Simulator):
+http://www.mediafire.com/file/0a4gpgcsc8icac1/fpinball.rar
+https://futurepinball.com
+Install directory: ..\emulators\fpinball
+
+# Mednafen (Multi System):
+https://mednafen.github.io/releases
+Install directory: ..\emulators\mednafen
+
+# M2 Emulator (Model 2):
+http://nebula.emulatronia.com/descargas.php
+Install directory: ..\emulators\m2emulator
+
+# PCSX2 (PlayStation 2):
+https://buildbot.orphis.net/pcsx2
+https://pcsx2.net/download/releases/windows/category/40-windows.html
+Install directory: ..\emulators\pcsx2
+
+# PPSSPP (PSP):
+http://ppsspp.org
+Install directory: ..\emulators\ppsspp
+
+# OpenBOR (2D BTA Engine)
+https://github.com/DCurrent/openbor/releases
+Install directory: ..\emulators\openbor
+
+# Raine (Neo Geo CD):
+http://raine.1emulation.com/download/latest.html
+Install directory: ..\emulators\raine
+
+# RCPS3 (PlayStation 3):
+https://rpcs3.net
+Install directory: ..\emulators\rcps3
+
+# Redream (Dreamcast):
+https://redream.io
+Install directory: ..\emulators\redream
+
+# SNES9X (Super NES):
+http://www.snes9x.com/downloads.php
+Install directory: ..\emulators\snes9x
+
+# Supermodel (Model 3)
+https://www.supermodel3.com/Download.html
+Install directory: ..\emulators\supermodel
+
+# Visual Pinball (Pinball Simulator):
+http://www.mediafire.com/file/rfemv8g3wupt5h5/vpinball.rar
+https://vpinball.com
+Install directory: ..\emulators\vpinball
+
+# Xenia (Xbox 360)
+https://xenia.jp/download
+Install directory: ..\emulators\xenia
+
+# Xenia Canary (Xbox 360)
+https://github.com/xenia-canary/xenia-canary/releases
+Install directory: ..\emulators\xenia-canary
+
+# Yuzu (Switch)
+https://yuzu-emu.org
+Install directory: ..\emulators\yuzu
