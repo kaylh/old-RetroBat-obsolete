@@ -1,0 +1,124 @@
+## ENHANCED
+default:
+  # shader affects retroarch shaders
+  shader: hqx/hq2x
+  # scanline affect fba2x
+  scanline: false
+snes:
+  shader: hqx/hq2x
+snes-msu:
+  shader: hqx/hq2x
+nes:
+  shader: hqx/hq2x
+n64:
+  shader: anti-aliasing/smaa
+gba:
+  shader: handheld/psp-color
+gb:
+  shader: handheld/psp-color
+gbc:
+  shader: handheld/psp-color
+3ds:
+  shader: anti-aliasing/smaa
+nds:
+  shader: anti-aliasing/smaa
+fds:
+  shader: handheld/psp-color
+virtualboy:
+  shader: handheld/psp-color
+gc:
+  shader: anti-aliasing/smaa
+wii:
+  shader: anti-aliasing/smaa
+# Sega
+sg1000:
+  shader: hqx/hq2x
+mastersystem:
+  shader: hqx/hq2x
+megadrive:
+  shader: hqx/hq2x
+gamegear:
+  shader: handheld/psp-color
+sega32x:
+  shader: hqx/hq2x
+segacd:
+  shader: hqx/hq2x
+dreamcast:
+  shader: anti-aliasing/smaa
+# Arcade
+neogeo:
+  shader: scalehq/2xScaleHQ
+neogeocd:
+  shader: scalehq/2xScaleHQ
+mame:
+  shader: scalehq/2xScaleHQ
+fba:
+  shader: scalehq/2xScaleHQ
+naomi:
+  shader: anti-aliasing/smaa
+atomiswave:
+  shader: anti-aliasing/smaa
+#
+ngp:
+  shader: handheld/psp-color
+ngpc:
+  shader: handheld/psp-color
+gw:
+  shader: hqx/hq2x
+vectrex:
+  shader: handheld/psp-color
+lynx:
+  shader: handheld/psp-color
+lutro:
+  shader: hqx/hq2x
+wswan:
+  shader: handheld/psp-color
+wswanc:
+  shader: handheld/psp-color
+pcengine:
+  shader: hqx/hq2x
+pcenginecd:
+  shader: hqx/hq2x
+supergrafx:
+  shader: hqx/hq2x
+atari800:
+  shader: hqx/hq2x
+atari2600:
+  shader: hqx/hq2x
+atari5200:
+  shader: hqx/hq2x
+atari7800:
+  shader: hqx/hq2x
+prboom:
+  shader: hqx/hq2x
+psp:
+  shader: anti-aliasing/smaa
+psx:
+  shader: anti-aliasing/smaa
+ps2:
+  shader: anti-aliasing/smaa
+colecovision:
+  shader: hqx/hq2x
+# Computers
+msx:
+  shader: hqx/hq2x
+msx1:
+  shader: hqx/hq2x
+msx2:
+  shader: hqx/hq2x
+amiga:
+  shader: hqx/hq2x
+amstradcpc:
+  shader: hqx/hq2x
+atarist:
+  shader: hqx/hq2x
+zxspectrum:
+  shader: hqx/hq2x
+odyssey2:
+  shader: hqx/hq2x
+zx81:
+  shader: hqx/hq2x
+pcfx:
+  shader: hqx/hq2x
+x68000:
+  shader: hqx/hq2x

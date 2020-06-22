@@ -1,0 +1,108 @@
+## RETRO
+default:
+  # shader affects retroarch shaders
+  shader: interpolation/sharp-bilinear-simple
+  # scanline affect fba2x
+  scanline: false
+snes:
+  shader: interpolation/sharp-bilinear-simple
+nes:
+  shader: interpolation/sharp-bilinear-simple
+n64:
+  shader: interpolation/sharp-bilinear-simple
+gba:
+  shader: handheld/bevel
+gb:
+  shader: handheld/bevel
+gbc:
+  shader: handheld/bevel
+fds:
+  shader: interpolation/sharp-bilinear-simple
+virtualboy:
+  shader: interpolation/sharp-bilinear-simple
+# Sega
+sg1000:
+  shader: interpolation/sharp-bilinear-simple
+mastersystem:
+  shader: interpolation/sharp-bilinear-simple
+megadrive:
+  shader: interpolation/sharp-bilinear-simple
+gamegear:
+  shader: interpolation/sharp-bilinear-simple
+sega32x:
+  shader: interpolation/sharp-bilinear-simple
+segacd:
+  shader: interpolation/sharp-bilinear-simple
+# Arcade
+neogeo:
+  shader: interpolation/sharp-bilinear-simple
+neogeocd:
+  shader: interpolation/sharp-bilinear-simple
+mame:
+  shader: interpolation/sharp-bilinear-simple
+fba:
+  shader: interpolation/sharp-bilinear-simple
+naomi:
+  shader: interpolation/sharp-bilinear-simple
+atomiswave:
+  shader: interpolation/sharp-bilinear-simple
+#
+ngp:
+  shader: handheld/bevel
+ngpc:
+  shader: handheld/bevel
+gw:
+  shader: interpolation/sharp-bilinear-simple
+vectrex:
+  shader: handheld/bevel
+lynx:
+  shader: handheld/bevel
+lutro:
+  shader: interpolation/sharp-bilinear-simple
+wswan:
+  shader: handheld/bevel
+wswanc:
+  shader: handheld/bevel
+pcengine:
+  shader: interpolation/sharp-bilinear-simple
+pcenginecd:
+  shader: interpolation/sharp-bilinear-simple
+supergrafx:
+  shader: interpolation/sharp-bilinear-simple
+atari800:
+  shader: interpolation/sharp-bilinear-simple
+atari2600:
+  shader: interpolation/sharp-bilinear-simple
+atari5200:
+  shader: interpolation/sharp-bilinear-simple
+atari7800:
+  shader: interpolation/sharp-bilinear-simple
+prboom:
+  shader: interpolation/sharp-bilinear-simple
+psx:
+  shader: interpolation/sharp-bilinear-simple
+colecovision:
+  shader: interpolation/sharp-bilinear-simple
+# Computers
+msx:
+  shader: interpolation/sharp-bilinear-simple
+msx1:
+  shader: interpolation/sharp-bilinear-simple
+msx2:
+  shader: interpolation/sharp-bilinear-simple
+amiga:
+  shader: interpolation/sharp-bilinear-simple
+amstradcpc:
+  shader: interpolation/sharp-bilinear-simple
+atarist:
+  shader: interpolation/sharp-bilinear-simple
+zxspectrum:
+  shader: interpolation/sharp-bilinear-simple
+odyssey2:
+  shader: interpolation/sharp-bilinear-simple
+zx81:
+  shader: interpolation/sharp-bilinear-simple
+pcfx:
+  shader: interpolation/sharp-bilinear-simple
+x68000:
+  shader: interpolation/sharp-bilinear-simple
