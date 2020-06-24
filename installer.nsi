@@ -15,8 +15,8 @@
   !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
   
   !define BASE_DIR "..\RetroBat"
-  !define BASE_INSTALL_DIR "C:\$(^Name)"
-; !define BASE_INSTALL_DIR "$EXEDIR"
+; !define BASE_INSTALL_DIR "C:\$(^Name)"
+  !define BASE_INSTALL_DIR "$EXEDIR"
   !define DOWNLOAD_DIR "$INSTDIR\system\download"
 
   SetCompressor /SOLID lzma
@@ -42,7 +42,7 @@
 ; !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE ".\licence.txt"
   !insertmacro MUI_PAGE_COMPONENTS
-  !insertmacro MUI_PAGE_DIRECTORY
+; !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_PAGE_FINISH
   !insertmacro MUI_LANGUAGE "English"
@@ -57,6 +57,7 @@
   RequestExecutionLevel user 
   ShowInstDetails "nevershow"
   BrandingText "${PRODUCT} v${VERSION}"
+  SpaceTexts none
 
 Function InstFilesShow
   GetDlgItem $0 $HWNDPARENT 2
@@ -220,7 +221,6 @@ SectionGroup "RetroBat"
 	DetailPrint "Extracting: $PKGNAME"
 	SetDetailsPrint none
 	nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR"
-	
 	Delete "${DOWNLOAD_DIR}\$PKGNAME"
 	
 	StrCpy $PKGNAME "bios-base.zip"
@@ -231,7 +231,6 @@ SectionGroup "RetroBat"
 	DetailPrint "Extracting: $PKGNAME"
 	SetDetailsPrint none
 	nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\bios"
-	
 	Delete "${DOWNLOAD_DIR}\$PKGNAME"
 
 	SectionEnd
@@ -285,108 +284,121 @@ SectionGroup "RetroBat"
   SectionEnd
  
 
-	SectionGroup "EmulationStation"
+SectionGroup "EmulationStation"
 
-		Section "-Binaries"
-		
-		SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
-				
+	Section "-Binaries"		
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
+	
 		AddSize 120000
 		
-		StrCpy $PKG_DIR "emulationstation"
-		StrCpy $PKGNAME "emulationstation.zip"
+		SetOutPath "${DOWNLOAD_DIR}"
+		
+		StrCpy $PKGNAME "emulationstation.zip"	
+		
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
 
-		SetOutPath "$INSTDIR\$PKG_DIR"		
-		inetc::get "https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master/EmulationStation-Win32.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-		nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-		Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
-
-		SectionEnd
+	SectionEnd
 		
-		Section "VC++ Libraries"
+	Section "VC++ Libraries"		
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
 		
-		SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
-		
-				AddSize 2000
-	
-				StrCpy $PKG_DIR "emulationstation"
-				StrCpy $PKGNAME "vcredist-dll.zip"
+		AddSize 2000
 				
-				SetOutPath "$INSTDIR\$PKG_DIR"		
-				inetc::get "http://www.retrobat.ovh/repo/tools/vcredist-dll-pkg.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-				nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-				Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
+		SetOutPath "${DOWNLOAD_DIR}"
+	
+		StrCpy $PKGNAME "vcredist-dll.zip"
+				
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "http://www.retrobat.ovh/repo/tools/vcredist-dll-pkg.zip" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
 
-		SectionEnd
+	SectionEnd
 		
-		Section "7za Libraries"
-		
-		SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
+	Section "7za Libraries"		
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
 		
 		AddSize 200
+		
+		SetOutPath "${DOWNLOAD_DIR}"
 	
-		StrCpy $PKG_DIR "emulationstation"
 		StrCpy $PKGNAME "7za.zip"
 				
-		SetOutPath "$INSTDIR\$PKG_DIR"		
-		inetc::get "http://www.retrobat.ovh/repo/v3/7za.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-		nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-		Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
-
-		SectionEnd
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "http://www.retrobat.ovh/repo/tools/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
+	
+	SectionEnd
 		
-		Section "Batocera Ports"
-				
-		SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
+	Section "Batocera Ports"		
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
 		
 		AddSize 500
+		
+		SetOutPath "${DOWNLOAD_DIR}"
 	
-		StrCpy $PKG_DIR "emulationstation"
 		StrCpy $PKGNAME "batocera-ports.zip"
-
-		SetOutPath "$INSTDIR\$PKG_DIR"		
-		inetc::get "https://github.com/fabricecaruso/batocera-ports/releases/download/continuous/batocera-ports.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-		nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-		Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
-
-		SectionEnd
-		
-		Section "RetroBat Intro Video"
 				
-		SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "http://www.retrobat.ovh/repo/v3/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
+	
+	SectionEnd
+		
+	Section "RetroBat Intro Video"				
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04} ${IT_REQUIRED_05} ${IT_REQUIRED_06}
 		
 		AddSize 500
 	
-		StrCpy $PKG_DIR "emulationstation\.emulationstation\video"
 		StrCpy $PKGNAME "retrobat-intro.zip"
-
-		SetOutPath "$INSTDIR\$PKG_DIR"		
-		inetc::get "https://www.retrobat.ovh/repo/v3/RetroBat-intro.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-		nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-		Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
-
-		SectionEnd
-
-	SectionGroupEnd
 	
-	SectionGroup "Themes"
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "https://www.retrobat.ovh/repo/v3/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\video"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
+
+	SectionEnd
+
+SectionGroupEnd
 	
-			Section "Carbon"
+SectionGroup "Themes"
+	
+	Section "Carbon"
+	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_06}
 			
-			SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_06}
-			
-				AddSize 32000
-				
-				StrCpy $PKG_DIR "emulationstation\.emulationstation\themes"
-				StrCpy $PKGNAME "es-theme-carbon.zip"
+		AddSize 32000
 		
+		StrCpy $PKGNAME "es-theme-carbon.zip"
+	
+		ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+		inetc::get "https://www.retrobat.ovh/repo/v3/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+		SetDetailsPrint textonly
+			DetailPrint "Extracting: $PKGNAME"
+		SetDetailsPrint none
+		nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes\es-theme-carbon"
+		Delete "${DOWNLOAD_DIR}\$PKGNAME"
 
-				SetOutPath "$INSTDIR\$PKG_DIR"		
-				inetc::get "https://github.com/kaylh/es-theme-carbon/archive/master.zip" "$INSTDIR\$PKG_DIR\$PKGNAME" /END
-				nsisunz::UnzipToLog "$INSTDIR\$PKG_DIR\$PKGNAME" "$INSTDIR\$PKG_DIR"
-				Delete "$INSTDIR\$PKG_DIR\$PKGNAME"
-
-			SectionEnd
+	SectionEnd
 			
 			Section "Forever"
 			
