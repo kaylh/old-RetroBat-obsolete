@@ -210,12 +210,28 @@ SectionGroup "RetroBat"
 						
 	AddSize 4000
 		
-	;StrCpy $PKG_DIR ""
+	SetOutPath "${DOWNLOAD_DIR}"
+
 	StrCpy $PKGNAME "retrobat-v${VERSION}.zip"
 	
-	SetOutPath "${DOWNLOAD_DIR}"		
+	ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
 	inetc::get "https://www.retrobat.ovh/repo/v3/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR"
+	SetDetailsPrint textonly
+	DetailPrint "Extracting: $PKGNAME"
+	SetDetailsPrint none
+	nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR"
+	
+	Delete "${DOWNLOAD_DIR}\$PKGNAME"
+	
+	StrCpy $PKGNAME "bios-base.zip"
+	
+	ifFileExists ${DOWNLOAD_DIR}\$PKGNAME +3 0
+	inetc::get "https://www.retrobat.ovh/repo/v3/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+	SetDetailsPrint textonly
+	DetailPrint "Extracting: $PKGNAME"
+	SetDetailsPrint none
+	nsisunz::Unzip "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\bios"
+	
 	Delete "${DOWNLOAD_DIR}\$PKGNAME"
 
 	SectionEnd
