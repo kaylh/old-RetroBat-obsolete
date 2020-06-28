@@ -43,7 +43,7 @@
   CompletedText $CompletedText
   
   !define MUI_ICON ".\system\resources\retrobat-icon-purple.ico"
-;  !define MUI_COMPONENTSPAGE_SMALLDESC  
+  !define MUI_COMPONENTSPAGE_SMALLDESC  
   !define MUI_HEADERIMAGE
   !define MUI_HEADERIMAGE_BITMAP ".\system\resources\header.bmp"
   !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
@@ -209,6 +209,7 @@ Function InstFilesPre
   StrCpy $CurrentPage "InstFiles"
   StrCpy $UserAborted "no"
   
+  
 FunctionEnd
 
 Function InstFilesShow
@@ -222,10 +223,10 @@ InstType "Full integration (RetroArch ANGLE)" IT_REQUIRED_03
 InstType "Partial integration (RetroArch OPENGL)" IT_REQUIRED_02
 InstType "Batocera USB" IT_REQUIRED_04
 InstType "Legacy ES systems list (No launcher commands)" IT_REQUIRED_01
-	
+ 
 SectionGroup "RetroBat"
 
-Section "Main Files"
+Section "Main Files" SectionRetroBat
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}				
 	${CheckUserAborted}
 	SetOutPath "${DOWNLOAD_DIR}"	
@@ -270,24 +271,28 @@ SetOutPath $INSTDIR
 	${EndUserAborted}	
 SectionEnd
 
-Section "EmulationStation"		
+Section "EmulationStation" SectionES		
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	${CheckUserAborted} 
 	SetOutPath "${DOWNLOAD_DIR}"
 
 	ifFileExists "${DOWNLOAD_DIR}\emulationstation.zip" +2 0
 	inetc::get "https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip" "${DOWNLOAD_DIR}\emulationstation.zip" /END
+	${CheckUserAborted} 
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\emulationstation.zip" "$INSTDIR\emulationstation"
 	
 	ifFileExists "${DOWNLOAD_DIR}\batocera-ports.zip" +2 0
 	inetc::get "http://www.retrobat.ovh/repo/v3/batocera-ports.zip" "${DOWNLOAD_DIR}\batocera-ports.zip" /END 
+	${CheckUserAborted} 
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\batocera-ports.zip" "$INSTDIR\emulationstation"
 	
 	ifFileExists "${DOWNLOAD_DIR}\retrobat-intro.zip" +2 0
 	inetc::get "http://www.retrobat.ovh/repo/v3/retrobat-intro.zip" "${DOWNLOAD_DIR}\retrobat-intro.zip" /END 
+	${CheckUserAborted} 
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retrobat-intro.zip" "$INSTDIR\emulationstation\.emulationstation\video"
 	
 	ifFileExists "${DOWNLOAD_DIR}\es-theme-carbon.zip" +2 0
+	${CheckUserAborted} 
 	inetc::get "http://www.retrobat.ovh/repo/v3/es-theme-carbon.zip" "${DOWNLOAD_DIR}\es-theme-carbon.zip" /END
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\es-theme-carbon.zip" "$INSTDIR\emulationstation\.emulationstation\themes\es-theme-carbon"
 
@@ -299,9 +304,9 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 	${EndUserAborted}
 SectionEnd
 	
-SectionGroup "Optional Themes"
+SectionGroup "Optional Themes" SectionThemes
 			
-			Section "Forever"
+			Section "Forever" 
 				${CheckUserAborted}
 				SetDetailsPrint textonly
 					DetailPrint "Installing Forever Theme"
@@ -411,7 +416,7 @@ SectionGroup "Optional Themes"
 			
 	SectionGroupEnd
 
-	Section "RetroArch"
+	Section "RetroArch" SectionRetroArch
 	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 		${CheckUserAborted}
 	
@@ -469,7 +474,7 @@ SectionGroup "Optional Themes"
 */		${EndUserAborted}	
 	SectionEnd
 
-Section "Libretro Cores Pack"
+Section "Libretro Cores Pack" SectionLR
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	${CheckUserAborted}
 	
@@ -923,12 +928,12 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" +2 0
 	inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
-	
+	${CheckUserAborted}
 ;	Delete "${DOWNLOAD_DIR}\*.zip"
 	${EndUserAborted}
 SectionEnd
 
-Section "DOSBox"
+Section "DOSBox" SectionEmulators
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	${CheckUserAborted}
 	
@@ -1145,6 +1150,15 @@ Section -"Post"
   
 SectionEnd
 
+!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Batocera EmulationStation build for Windows."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Selection of standalone emulators."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionLR} "Selection of Libretro cores."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION} custom build."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and configuration files needed."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionThemes} "EmulationStation Theme created by the community."
+!insertmacro MUI_FUNCTION_DESCRIPTION_END
+
 Function InstFilesLeave
 
     StrCpy $CurrentPage ""
@@ -1157,11 +1171,11 @@ Function onUserAbort
   ${If} ${Cmd} `MessageBox MB_YESNO|MB_DEFBUTTON2 "${MUI_ABORTWARNING_TEXT}" IDYES`
     ${If} $CurrentPage == "InstFiles"
       StrCpy $UserAborted "yes"
-      MessageBox MB_OK "Your RetroBat's installation could be incomplete."
+      MessageBox MB_OK "Your RetroBat's installation may be incomplete."
       StrCpy $UserIsMakingAbortDecision "no"
       Abort
     ${Else}
-      MessageBox MB_OK "Your RetroBat's installation could be incomplete."
+;      MessageBox MB_OK "See you next time."
       StrCpy $UserIsMakingAbortDecision "no"
     ${EndIf}
   ${Else}
@@ -1169,5 +1183,5 @@ Function onUserAbort
     Abort
   ${EndIf}
 FunctionEnd
-
+ 
 !insertmacro MUI_LANGUAGE "English"
