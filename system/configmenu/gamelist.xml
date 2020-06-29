@@ -268,7 +268,7 @@
 	</game>
 	<game>
 		<path>./RaineConfigure.menu</path>
-		<name>Raine (Neo Geo CD)</name>
+		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
 		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
 		<image>./_media/raine-logo.png</image>
 		<rating>0</rating>
