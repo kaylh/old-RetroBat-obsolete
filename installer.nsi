@@ -54,7 +54,7 @@
   !define MUI_TEXTCOLOR "FFFFFF"
   !define MUI_WELCOMEFINISHPAGE_BITMAP ".\system\resources\wizard.bmp"
 
-  !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation. All the types will install all the components needed, these are four different configuration profiles for EmulationStation and RetroArch."
+  !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation. All the types will install all the components needed, there are three different configuration profiles for EmulationStation and RetroArch."
   !define MUI_COMPONENTSPAGE_TEXT_COMPLIST " "
 
   !insertmacro MUI_PAGE_WELCOME
