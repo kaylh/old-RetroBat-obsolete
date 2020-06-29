@@ -31,7 +31,7 @@
   InstallDir "${BASE_INSTALL_DIR}"
   RequestExecutionLevel user
   ShowInstDetails "nevershow"
-  BrandingText "Copyright (c) 2020 RetroBat Team"
+  BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
   SpaceTexts none
 
 ;  !define MUI_ABORTWARNING
@@ -62,7 +62,7 @@
   !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
 
-  !define MUI_FINISHPAGE_NOAUTOCLOSE
+;  !define MUI_FINISHPAGE_NOAUTOCLOSE
   !define MUI_PAGE_CUSTOMFUNCTION_PRE InstFilesPre
   !define MUI_PAGE_CUSTOMFUNCTION_SHOW InstFilesShow
   !define MUI_PAGE_CUSTOMFUNCTION_LEAVE InstFilesLeave
