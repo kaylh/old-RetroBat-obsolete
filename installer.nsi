@@ -237,7 +237,7 @@ FunctionEnd
 SectionGroup "-RetroBat"
 
 Section /o "Main Files" SectionRetroBat
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 
 	SetOutPath "${DOWNLOAD_DIR}"
@@ -280,7 +280,7 @@ Call SetInfoDirs
 SectionEnd
 
 Section /o "EmulationStation" SectionES
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	SetOutPath "${DOWNLOAD_DIR}"
 
@@ -312,7 +312,7 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 SectionEnd
 
 	Section /o "RetroArch" SectionRetroArch
-	SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+	SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	${CheckUserAborted}
 	CreateDirectory "$INSTDIR\emulators\retroarch"
@@ -370,7 +370,7 @@ SectionEnd
 	SectionEnd
 
 Section /o "Libretro Cores Pack" SectionLR
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	SetOutPath "$INSTDIR\emulators\retroarch\cores"
 
@@ -1051,7 +1051,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 SectionEnd
 
 Section /o "Standalone Emulators Pack" SectionEmulators
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 
 	SetOutPath "$INSTDIR\emulators\applewin"
@@ -1257,7 +1257,7 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 SectionEnd
 
 Section /o "-PostInstallTasks" !Required
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	
 ;SectionIn RO
 
@@ -1563,7 +1563,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 	SectionGroupEnd
 
 /* Section /o "Desktop Shortcut" SectionS
-SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	${CheckUserAborted}
 	SetShellVarContext current
