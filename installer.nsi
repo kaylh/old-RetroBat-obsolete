@@ -1,7 +1,7 @@
 /*
 ********************************
 
-	RetroBat Setup NSIS Script
+  RetroBat Setup NSIS Script
 
 ********************************
 */
