@@ -168,8 +168,6 @@ Function SetInfoDirs
   FileWrite $4 "installed"
   FileClose $4
 
-  DetailPrint "Done."
-
 FunctionEnd
 
 Var CurrentPage
@@ -228,7 +226,7 @@ InstType /COMPONENTSONLYONCUSTOM
 InstType "Full integration (RetroArch ANGLE)" IT_REQUIRED_03
 InstType "Partial integration (RetroArch OPENGL)" IT_REQUIRED_02
 InstType "Batocera USB" IT_REQUIRED_04
-InstType "Legacy ES systems list (No launcher commands)" IT_REQUIRED_01
+;InstType "Legacy ES systems list (No launcher commands)" IT_REQUIRED_01
 
 Function .onInit
 
@@ -241,18 +239,20 @@ SectionGroup "-RetroBat"
 Section /o "Main Files" SectionRetroBat
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
-	${CheckUserAborted}
+
 	SetOutPath "${DOWNLOAD_DIR}"
-	${CheckUserAborted}
+
 	ifFileExists "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" +2 0
 	inetc::get "https://www.retrobat.ovh/repo/v3/retrobat-v${VERSION}.zip" "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" /END
+	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" "$INSTDIR"
 	${CheckUserAborted}
 	ifFileExists "${DOWNLOAD_DIR}\bios-base.zip" +2 0
 	inetc::get "https://www.retrobat.ovh/repo/v3/bios-base.zip" "${DOWNLOAD_DIR}\bios-base.zip" /END
-	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\bios-base.zip" "$INSTDIR\bios"
-
 	${CheckUserAborted}
+	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\bios-base.zip" "$INSTDIR\bios"
+	${CheckUserAborted}
+	
 
 StrCpy $0 "$INSTDIR"
 StrCpy $0 $0 3
@@ -260,18 +260,20 @@ ${StrStrip} "$0" "$INSTDIR" $R0
 
 Call SetInfoDirs
 
-SetOutPath $INSTDIR
+	SetOutPath $INSTDIR
 
 	SetDetailsPrint textonly
 		DetailPrint "Creating RetroBat folders"
 	SetDetailsPrint none
 
 	ifFileExists "$INSTDIR\retrobat.exe" 0 +2
+	${CheckUserAborted}
 	ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
 
-SetOutPath $INSTDIR
+	SetOutPath $INSTDIR
 
 	ifFileExists "$INSTDIR\system\install.done" 0 +2
+	${CheckUserAborted}
 	Delete "$INSTDIR\system\install.done"
 	${EndUserAborted}
 
@@ -305,13 +307,8 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 	inetc::get "http://www.retrobat.ovh/repo/v3/es-theme-carbon.zip" "${DOWNLOAD_DIR}\es-theme-carbon.zip" /END
 	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\es-theme-carbon.zip" "$INSTDIR\emulationstation\.emulationstation\themes\es-theme-carbon"
-
-/*	Delete "${DOWNLOAD_DIR}\emulationstation.zip"
-	Delete "${DOWNLOAD_DIR}\batocera-ports.zip"
-	Delete "${DOWNLOAD_DIR}\retrobat-intro.zip"
-	Delete "${DOWNLOAD_DIR}\es-theme-carbon.zip"
-*/
-	 ${EndUserAborted}
+	${EndUserAborted}
+	 
 SectionEnd
 
 	Section /o "RetroArch" SectionRetroArch
@@ -1260,9 +1257,8 @@ SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUI
 SectionEnd
 
 Section /o "-PostInstallTasks" !Required
-
 SectionInstType ${IT_REQUIRED_01} ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
-	${CheckUserAborted}
+	
 ;SectionIn RO
 
 	SetDetailsPrint textonly
@@ -1279,14 +1275,15 @@ SetOutPath $INSTDIR
 	SetDetailsPrint none
 
 	ifFileExists "$INSTDIR\retrobat.exe" 0 +2
-	ExecWait "$INSTDIR\retrobat.exe /NOF #CopyConfig"
-
-SetOutPath $INSTDIR
+	${CheckUserAborted}
+	ExecWait "$INSTDIR\retrobat.exe /NOF #CopyConfig"	
 	${EndUserAborted}
-
+	
+SetOutPath $INSTDIR
+	
 SectionEnd
 
-Section /o "-ConfigMode1"
+/* Section /o "-ConfigMode1"
 SectionInstType ${IT_REQUIRED_01}
 
 	${CheckUserAborted}
@@ -1323,11 +1320,12 @@ SectionInstType ${IT_REQUIRED_01}
   FileClose $4
 	${EndUserAborted}
 SectionEnd
+*/
 
 Section /o "-ConfigMode2"
 SectionInstType ${IT_REQUIRED_02}
 
-	${CheckUserAborted}
+  ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
@@ -1359,13 +1357,14 @@ SectionInstType ${IT_REQUIRED_02}
   FileWrite $4 "$\r$\n"
   FileWrite $4 'DefaultVideoDriver="gl"'
   FileClose $4
-	${EndUserAborted}
+  ${EndUserAborted}
+  
 SectionEnd
 
 Section /o "-ConfigMode3"
 SectionInstType ${IT_REQUIRED_03}
-	${CheckUserAborted}
-
+	
+  ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
@@ -1397,13 +1396,14 @@ SectionInstType ${IT_REQUIRED_03}
   FileWrite $4 "$\r$\n"
   FileWrite $4 'DefaultVideoDriver="d3d11"'
   FileClose $4
-	${EndUserAborted}
+  ${EndUserAborted}
+  
 SectionEnd
 
 Section /o "-ConfigMode4"
 SectionInstType ${IT_REQUIRED_04}
-	${CheckUserAborted}
-
+	
+  ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
@@ -1435,8 +1435,8 @@ SectionInstType ${IT_REQUIRED_04}
   FileWrite $4 "$\r$\n"
   FileWrite $4 'DefaultVideoDriver="gl"'
   FileClose $4
-
-	${EndUserAborted}
+  ${EndUserAborted}
+	
 SectionEnd
 
 SectionGroupEnd
@@ -1456,6 +1456,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			Section /o "NextFull"
@@ -1472,6 +1473,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			SectionGroup "Retro'Arts"
@@ -1489,6 +1491,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			Section /o "Retro'Arts WQHD 1440p"
@@ -1504,6 +1507,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			Section /o "Retro'Arts FULL HD 1080p"
@@ -1519,6 +1523,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			Section /o "Retro'Arts HD Ready 720p"
@@ -1534,6 +1539,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 			SectionGroupEnd
@@ -1551,6 +1557,7 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$PKGNAME" "$INSTDIR\emulationstation\.emulationstation\themes"
 				Delete "${DOWNLOAD_DIR}\$PKGNAME"
 				${EndUserAborted}
+				
 			SectionEnd
 
 	SectionGroupEnd
