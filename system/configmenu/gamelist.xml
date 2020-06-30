@@ -267,7 +267,7 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RaineConfigure.menu</path>
+		<path>./Raine32bitConfigure.menu</path>
 		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
 		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
 		<image>./_media/raine-logo.png</image>
@@ -279,8 +279,20 @@
 		<lang>en</lang>
 	</game>
 	<game>
+		<path>./RaineConfigure.menu</path>
+		<name>Raine (Arcade, Neo Geo, Neo Geo CD) - 64 bit</name>
+		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
+		<image>./_media/raine-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
+		<genre>Emulator</genre>
+		<lang>en</lang>
+	</game>
+	<game>
 		<path>./RedreamConfigure.menu</path>
-		<name>Redream (Dreamcast)</name>
+		<name>Redream (Dreamcast) - 64 bit</name>
 		<desc>Configure Redream Emulator (Dreamcast)</desc>
 		<image>./_media/redream-logo.png</image>
 		<rating>0</rating>
