@@ -1216,6 +1216,15 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	${CheckUserAborted}
 	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
+	SetOutPath "$INSTDIR\emulators\simcoupe"
+	
+	StrCpy $PKGNAME "simcoupe.7z"
+	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" +4 0
+	${CheckUserAborted}
+	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+	${CheckUserAborted}
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	
 	SetOutPath "$INSTDIR\emulators\snes9x"
 	
 	StrCpy $PKGNAME "snes9x.7z"
