@@ -118,6 +118,8 @@ FunctionEnd
 
 !macroend
 
+  
+  
   !define StrStrip '!insertmacro StrStrip'
 
 Function SetInfoDirs
@@ -974,12 +976,13 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
-	StrCpy $LRCORE "tic80"
+/*	StrCpy $LRCORE "tic80"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" +4 0
 	${CheckUserAborted}
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
+*/
 	StrCpy $LRCORE "vba_next"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" +4 0
 	${CheckUserAborted}
