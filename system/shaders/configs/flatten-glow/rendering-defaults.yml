@@ -1,14 +1,20 @@
-## FLATTEN-GLOW
 default:
   # shader affects retroarch shaders
   shader: blurs/kawase_glow
   # scanline affect fba2x
-  scanline: false
+  scanline: true
+# Nintendo
 snes:
+  shader: blurs/kawase_glow
+snes-msu:
   shader: blurs/kawase_glow
 nes:
   shader: blurs/kawase_glow
 n64:
+  shader: blurs/kawase_glow
+satellaview:
+  shader: blurs/kawase_glow
+sufami:
   shader: blurs/kawase_glow
 gba:
   shader: handheld/simpletex_lcd+gba-color
@@ -23,8 +29,14 @@ nds:
 fds:
   shader: blurs/kawase_glow
 virtualboy:
+  shader: retro/sharp-bilinear-scanlines
+gc:
+  shader: blurs/kawase_glow
+wii:
   shader: blurs/kawase_glow
 # Sega
+dreamcast:
+  shader: anti-aliasing/smaa
 sg1000:
   shader: blurs/kawase_glow
 mastersystem:
@@ -36,6 +48,8 @@ gamegear:
 sega32x:
   shader: blurs/kawase_glow
 segacd:
+  shader: blurs/kawase_glow
+saturn:
   shader: blurs/kawase_glow
 # Arcade
 neogeo:
@@ -51,6 +65,8 @@ naomi:
 atomiswave:
   shader: blurs/kawase_glow
 #
+3do:
+  shader: blurs/kawase_glow
 ngp:
   shader: handheld/simpletex_lcd
 ngpc:
@@ -85,9 +101,19 @@ prboom:
   shader: blurs/kawase_glow
 psx:
   shader: blurs/kawase_glow
+ps2:
+  shader: blurs/kawase_glow
+psp:
+  shader: handheld/lcd-grid-v2-psp-color
 colecovision:
   shader: blurs/kawase_glow
+jaguar:
+  shader: blurs/kawase_glow
+lightgun:
+  shader: blurs/kawase_glow
 # Computers
+lutro:
+  shader: blurs/kawase_glow
 msx:
   shader: blurs/kawase_glow
 msx1:
@@ -96,9 +122,33 @@ msx2:
   shader: blurs/kawase_glow
 amiga:
   shader: blurs/kawase_glow
+amiga1200:
+  shader: blurs/kawase_glow
+amiga500:
+  shader: blurs/kawase_glow
+amigacd32:
+  shader: blurs/kawase_glow
+amigacdtv:
+  shader: blurs/kawase_glow
+c20:
+  shader: blurs/kawase_glow
+c64:
+  shader: blurs/kawase_glow
+c128:
+  shader: blurs/kawase_glow
+cave:
+  shader: blurs/kawase_glow
+cps1:
+  shader: blurs/kawase_glow
+cps3:
+  shader: blurs/kawase_glow
+dos:
+  shader: blurs/kawase_glow
 amstradcpc:
   shader: blurs/kawase_glow
 atarist:
+  shader: blurs/kawase_glow
+zx81:
   shader: blurs/kawase_glow
 zxspectrum:
   shader: blurs/kawase_glow
@@ -109,4 +159,14 @@ zx81:
 pcfx:
   shader: blurs/kawase_glow
 x68000:
+  shader: blurs/kawase_glow
+o2em:
+  shader: blurs/kawase_glow
+scummvm:
+  shader: blurs/kawase_glow
+pc98:
+  shader: blurs/kawase_glow
+pcfx:
+  shader: blurs/kawase_glow
+thomson:
   shader: blurs/kawase_glow
