@@ -26,8 +26,8 @@
   Unicode true
 
   Name "${PRODUCT}"
-  OutFile "setup-retrobat-v${VERSION}.exe"
-; OutFile "setup.exe"
+;  OutFile "setup-retrobat-v${VERSION}.exe"
+  OutFile "setup.exe"
   InstallDir "${BASE_INSTALL_DIR}"
   RequestExecutionLevel user
   ShowInstDetails "nevershow"
@@ -240,6 +240,7 @@ FunctionEnd
 !macroend
 !define EndUserAborted `!insertmacro EndUserAborted`
 
+
 Function InstFilesPre
 
   StrCpy $CurrentPage "InstFiles"
@@ -327,29 +328,29 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\emulationstation.zip" installES 0
 	${CheckUserAborted}
 	inetc::get "https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip" "${DOWNLOAD_DIR}\emulationstation.zip" /END
-	${CheckUserAborted}
 	installES:
+	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\emulationstation.zip" "$INSTDIR\emulationstation"
 
 	ifFileExists "${DOWNLOAD_DIR}\batocera-ports.zip" installBP 0
 	${CheckUserAborted}
 	inetc::get "http://www.retrobat.ovh/repo/v3/batocera-ports.zip" "${DOWNLOAD_DIR}\batocera-ports.zip" /END
-	${CheckUserAborted}
 	installBP:
+	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\batocera-ports.zip" "$INSTDIR\emulationstation"
 
 	ifFileExists "${DOWNLOAD_DIR}\retrobat-intro.zip" installIntro 0
 	${CheckUserAborted}
 	inetc::get "http://www.retrobat.ovh/repo/v3/retrobat-intro.zip" "${DOWNLOAD_DIR}\retrobat-intro.zip" /END
-	${CheckUserAborted}
 	installIntro:
+	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retrobat-intro.zip" "$INSTDIR\emulationstation\.emulationstation\video"
 
 	ifFileExists "${DOWNLOAD_DIR}\es-theme-carbon.zip" installCT 0
 	${CheckUserAborted}
 	inetc::get "http://www.retrobat.ovh/repo/v3/es-theme-carbon.zip" "${DOWNLOAD_DIR}\es-theme-carbon.zip" /END
-	${CheckUserAborted}
 	installCT:
+	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\es-theme-carbon.zip" "$INSTDIR\emulationstation\.emulationstation\themes\es-theme-carbon"
 	${EndUserAborted}
 	 
@@ -368,54 +369,62 @@ SectionEnd
 	CreateDirectory "$INSTDIR\emulators\retroarch\shaders"
 	CreateDirectory "$INSTDIR\decorations"
 
-		${CheckUserAborted}
 		SetOutPath "$INSTDIR\emulators\retroarch"
+		
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-${OS_ARCHITECTURE}.7z" installRA01 0
+		${CheckUserAborted}
 		inetc::get "http://www.retrobat.ovh/repo/emulators/retroarch-${OS_ARCHITECTURE}.7z" "${DOWNLOAD_DIR}\retroarch-${OS_ARCHITECTURE}.7z" /END
-		${CheckUserAborted}
 		installRA01:
+		${CheckUserAborted}
 		Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\retroarch-${OS_ARCHITECTURE}.7z" "Extracting %s"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-assets.zip" installRA02 0
+		${CheckUserAborted}
 		inetc::get "https://buildbot.libretro.com/assets/frontend/assets.zip" "${DOWNLOAD_DIR}\retroarch-assets.zip" /END
-		${CheckUserAborted}
 		installRA02:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-assets.zip" "$INSTDIR\emulators\retroarch\assets"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-autoconfig.zip" installRA03 0
+		${CheckUserAborted}
 		inetc::get "https://buildbot.libretro.com/assets/frontend/autoconfig.zip" "${DOWNLOAD_DIR}\retroarch-autoconfig.zip" /END
-		${CheckUserAborted}
 		installRA03:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-autoconfig.zip" "$INSTDIR\emulators\retroarch\autoconfig"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-database-cursors.zip" installRA04 0
+		${CheckUserAborted}
 		inetc::get "https://buildbot.libretro.com/assets/frontend/database-cursors.zip" "${DOWNLOAD_DIR}\retroarch-database-cursors.zip" /END
-		${CheckUserAborted}
 		installRA04:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-database-cursors.zip" "$INSTDIR\emulators\retroarch\database\cursors"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-database-rdb.zip" installRA05 0
+		${CheckUserAborted}
 		inetc::get "https://buildbot.libretro.com/assets/frontend/database-rdb.zip" "${DOWNLOAD_DIR}\retroarch-database-rdb.zip" /END
-		${CheckUserAborted}
 		installRA05:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-database-rdb.zip" "$INSTDIR\emulators\retroarch\database\rdb"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\retroarch-info.zip" installRA06 0
+		${CheckUserAborted}
 		inetc::get "https://buildbot.libretro.com/assets/frontend/info.zip" "${DOWNLOAD_DIR}\retroarch-info.zip" /END
-		${CheckUserAborted}
 		installRA06:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-info.zip" "$INSTDIR\emulators\retroarch\info"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installRA07 0
+		${CheckUserAborted}
 		inetc::get "http://www.retrobat.ovh/repo/v3/shaders.zip" "${DOWNLOAD_DIR}\retroarch-shaders.zip" /END
-		${CheckUserAborted}
 		installRA07:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-shaders.zip" "$INSTDIR\emulators\retroarch\shaders"
-		${CheckUserAborted}
+
 		ifFileExists "${DOWNLOAD_DIR}\decorations.zip" installRA08 0
-		inetc::get "https://github.com/kaylh/RetroArch-Bezels/releases/download/1.0/retroarch-bezels.zip" "${DOWNLOAD_DIR}\decorations.zip" /END
 		${CheckUserAborted}
+		inetc::get "https://github.com/kaylh/RetroArch-Bezels/releases/download/1.0/retroarch-bezels.zip" "${DOWNLOAD_DIR}\decorations.zip" /END
 		installRA08:
+		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\decorations.zip" "$INSTDIR\decorations"
 		${EndUserAborted}
 
@@ -431,6 +440,7 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	${CheckUserAborted}
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 LRCORE01:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "81"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE02 0
@@ -438,6 +448,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE02:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "atari800"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE03 0
@@ -445,6 +456,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE03:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "blastem"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE04 0
@@ -452,6 +464,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE04:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bluemsx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE05 0
@@ -459,6 +472,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE05:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE06 0
@@ -466,6 +480,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE06:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes_hd_beta"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE07 0
@@ -473,6 +488,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE07:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes_mercury_balanced"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE08 0
@@ -480,6 +496,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE08:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes_mercury_accuracy"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE09 0
@@ -487,6 +504,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE09:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes_mercury_performance"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE10 0
@@ -494,6 +512,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE10:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes2014_accuracy"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE11 0
@@ -501,6 +520,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE11:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes2014_balanced"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE12 0
@@ -508,6 +528,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE12:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "bsnes2014_performance"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE13 0
@@ -515,6 +536,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE13:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "cap32"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE14 0
@@ -522,6 +544,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE14:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "citra_canary"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE15 0
@@ -529,6 +552,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE15:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "citra"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE16 0
@@ -536,6 +560,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE16:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "craft"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE17 0
@@ -543,6 +568,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE17:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "crocods"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE18 0
@@ -550,6 +576,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE18:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "desmume"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE19 0
@@ -557,6 +584,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE19:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "desmume2015"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE20 0
@@ -564,6 +592,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE20:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "dolphin"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE21 0
@@ -571,6 +600,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE21:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "dosbox_core"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE22 0
@@ -578,6 +608,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE22:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "dosbox_svn_ce"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE23 0
@@ -585,6 +616,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE23:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "dosbox_svn"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE24 0
@@ -592,6 +624,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE24:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fbalpha2012_cps1"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE25 0
@@ -599,6 +632,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE25:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fbalpha2012_cps2"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE26 0
@@ -606,6 +640,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE26:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fbalpha2012"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE27 0
@@ -613,6 +648,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE27:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fbalpha2012_neogeo"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE28 0
@@ -620,6 +656,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE28:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fbneo"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE29 0
@@ -627,6 +664,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE29:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fceumm"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE30 0
@@ -634,6 +672,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE30:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "ffmpeg"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE31 0
@@ -641,6 +680,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE31:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "flycast_gles2"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE32 0
@@ -648,6 +688,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE32:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "flycast"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE33 0
@@ -655,6 +696,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE33:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fmsx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE34 0
@@ -662,6 +704,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE34:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "freeintv"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE35 0
@@ -669,6 +712,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE35:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "frodo"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE36 0
@@ -676,6 +720,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE36:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "fuse"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE37 0
@@ -683,6 +728,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE37:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "gambatte"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE38 0
@@ -690,6 +736,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE38:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "gearboy"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE39 0
@@ -697,6 +744,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE39:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "gearsystem"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE40 0
@@ -704,6 +752,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE40:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "genesis_plus_gx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE41 0
@@ -711,6 +760,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE41:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "gpsp"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE42 0
@@ -718,6 +768,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE42:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "gw"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE43 0
@@ -725,6 +776,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE43:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "handy"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE44 0
@@ -732,6 +784,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE44:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "hatari"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE45 0
@@ -739,6 +792,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE45:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "higan_sfc_balanced"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE46 0
@@ -746,6 +800,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE46:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "higan_sfc"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE47 0
@@ -753,6 +808,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE47:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "imageviewer"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE48 0
@@ -760,6 +816,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE48:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "kronos"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE49 0
@@ -767,6 +824,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE49:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "lutro"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE50 0
@@ -774,6 +832,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE50:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mame2003_plus"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE51 0
@@ -781,6 +840,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE51:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mame2016"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE52 0
@@ -788,6 +848,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE52:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_gba"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE53 0
@@ -795,6 +856,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE53:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_lynx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE54 0
@@ -802,6 +864,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE54:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_ngp"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE55 0
@@ -809,6 +872,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE55:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_pce_fast"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE56 0
@@ -816,6 +880,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE56:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_pce"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE57 0
@@ -823,6 +888,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE57:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_pcfx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE58 0
@@ -830,6 +896,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE58:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_psx_hw"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE59 0
@@ -837,6 +904,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE59:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_psx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE60 0
@@ -844,6 +912,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE60:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_saturn"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE61 0
@@ -851,6 +920,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE61:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_snes"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE62 0
@@ -858,6 +928,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE62:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_supergrafx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE63 0
@@ -865,6 +936,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE63:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_vb"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE64 0
@@ -872,6 +944,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE64:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mednafen_wswan"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE65 0
@@ -879,6 +952,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE65:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "melonds"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE66 0
@@ -886,6 +960,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE66:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mesen"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE67 0
@@ -893,6 +968,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE67:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mesen-s"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE68 0
@@ -900,6 +976,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE68:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mgba"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE69 0
@@ -907,6 +984,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE69:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mrboom"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE70 0
@@ -914,6 +992,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE70:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mupen64plus_next_gles3"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE71 0
@@ -921,6 +1000,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE71:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "mupen64plus_next"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE72 0
@@ -928,6 +1008,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE72:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "nekop2"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE73 0
@@ -935,6 +1016,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE73:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "neocd"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE74 0
@@ -942,6 +1024,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE74:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "nestopia"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE75 0
@@ -949,6 +1032,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE75:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "np2kai"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE76 0
@@ -956,6 +1040,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE76:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "nxengine"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE77 0
@@ -963,6 +1048,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE77:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "o2em"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE78 0
@@ -970,6 +1056,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE78:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "opera"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE79 0
@@ -977,6 +1064,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE79:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "parallel_n64"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE80 0
@@ -984,6 +1072,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE80:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "pcsx_rearmed"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE81 0
@@ -991,6 +1080,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE81:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "picodrive"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE82 0
@@ -998,6 +1088,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE82:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "play"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE83 0
@@ -1005,6 +1096,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE83:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "pokemini"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE84 0
@@ -1012,6 +1104,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE84:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "ppsspp"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE85 0
@@ -1019,6 +1112,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE85:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "prboom"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE86 0
@@ -1026,6 +1120,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE86:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "prosystem"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE87 0
@@ -1033,6 +1128,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE87:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "puae"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE88 0
@@ -1040,6 +1136,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE88:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "px68k"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE89 0
@@ -1047,6 +1144,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE89:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "quasi88"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE90 0
@@ -1054,6 +1152,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE90:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "quicknes"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE91 0
@@ -1061,6 +1160,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE91:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "race"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE92 0
@@ -1068,6 +1168,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE92:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "sameboy"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE93 0
@@ -1075,6 +1176,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE93:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "scummvm"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE94 0
@@ -1082,6 +1184,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE94:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "smsplus"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE95 0
@@ -1089,6 +1192,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE95:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "snes9x"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE96 0
@@ -1096,6 +1200,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE96:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "stella"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE97 0
@@ -1103,6 +1208,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE97:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "stella2014"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE98 0
@@ -1110,6 +1216,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE98:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "tgbdual"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE99 0
@@ -1117,6 +1224,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE99:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "theodore"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE100 0
@@ -1124,6 +1232,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE100:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 /*	StrCpy $LRCORE "tic80"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE00 0
@@ -1131,6 +1240,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE00:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 */
 	StrCpy $LRCORE "vba_next"
@@ -1139,6 +1249,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE101:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vbam"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE102 0
@@ -1146,6 +1257,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE102:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vecx"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE103 0
@@ -1153,6 +1265,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE103:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vice_x64"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE104 0
@@ -1160,6 +1273,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE104:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vice_x128"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE00 0
@@ -1167,6 +1281,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE00:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vice_xpet"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE105 0
@@ -1174,6 +1289,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE105:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vice_xplus4"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE106 0
@@ -1181,6 +1297,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE106:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "vice_xvic"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE107 0
@@ -1188,6 +1305,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE107:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "virtualjaguar"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE108 0
@@ -1195,6 +1313,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE108:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "yabasanshiro"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE109 0
@@ -1202,6 +1321,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE109:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	StrCpy $LRCORE "yabause"
 	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE110 0
@@ -1209,6 +1329,7 @@ nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulato
 inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
 	${CheckUserAborted}
 LRCORE110:
+${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	${EndUserAborted}
 	
@@ -1224,9 +1345,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installAppleWin 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installAppleWin:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\cemu"
 	
@@ -1234,9 +1356,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installCemu 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installCemu:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\cxbx-reloaded"
 	
@@ -1244,9 +1367,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installCXBX 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installCXBX:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\daphne"
 	
@@ -1254,9 +1378,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDaphne 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDaphne:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\demul"
 	
@@ -1264,9 +1389,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDemul 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDemul:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\demul-old"
 	
@@ -1274,19 +1400,20 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDemulOld 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDemulOld:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dolphin-emu"
 	
 	StrCpy $PKGNAME "dolphin-emu.7z"
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDolphin 0
 	${CheckUserAborted}
-	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDolphin:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dolphin-triforce"
 	
@@ -1294,9 +1421,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDolphinWX 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDolphinWX:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dosbox"
 	
@@ -1304,9 +1432,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDOSBox 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installDOSBox:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\fpinball"
 	
@@ -1314,9 +1443,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installFpinball 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installFpinball:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\m2emulator"
 	
@@ -1324,9 +1454,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installM2Emu 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installM2Emu:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\mednafen"
 	
@@ -1334,9 +1465,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installMednafen 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installMednafen:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\mgba"
 	
@@ -1344,9 +1476,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installMGBA 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installMGBA:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\openbor"
 	
@@ -1354,9 +1487,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installOpenbor 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installOpenbor:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\pcsx2"
 	
@@ -1364,9 +1498,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installPcsx2 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installPcsx2:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\ppsspp"
 	
@@ -1374,9 +1509,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installPpsspp 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installPpsspp:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\raine"
 	
@@ -1384,9 +1520,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installRaine 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installRaine:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\rpcs3"
 	
@@ -1394,9 +1531,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installRpcs3 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installRpcs3:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\simcoupe"
 	
@@ -1404,9 +1542,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installSimcoupe 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installSimcoupe:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\snes9x"
 	
@@ -1414,9 +1553,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installSnes9x 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installSnes9x:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\supermodel"
 	
@@ -1424,9 +1564,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installSupermodel 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installSupermodel:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\vpinball"
 	
@@ -1434,9 +1575,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installVpinball 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installVpinball:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\xenia-canary"
 	
@@ -1444,10 +1586,10 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installXenia 0
 	${CheckUserAborted}
 	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
-	${CheckUserAborted}
+
 	installXenia:
-	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
-	
+	${CheckUserAborted}
+Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	${EndUserAborted}
 
 SectionEnd
