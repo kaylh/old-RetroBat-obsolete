@@ -12,7 +12,7 @@ snes-msu:
 nes:
   shader: hqx/hq2x
 n64:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 satellaview:
   shader: hqx/hq2x
 sufami:
@@ -32,12 +32,12 @@ fds:
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 wii:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 # Sega
 dreamcast:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 sg1000:
   shader: hqx/hq2x
 mastersystem:
@@ -51,7 +51,7 @@ sega32x:
 segacd:
   shader: hqx/hq2x
 saturn:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 # Arcade
 neogeo:
   shader: hqx/hq2x
@@ -101,9 +101,9 @@ atari7800:
 prboom:
   shader: hqx/hq2x
 psx:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 ps2:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 psp:
   shader: handheld/lcd-grid-v2-psp-color
 colecovision:
