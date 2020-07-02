@@ -283,13 +283,15 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	SetOutPath "${DOWNLOAD_DIR}"
 
-	ifFileExists "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" +3 0
+	ifFileExists "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" installRetroBat 0
 	inetc::get "https://www.retrobat.ovh/repo/v3/retrobat-v${VERSION}.zip" "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" /END
+	installRetroBat:
 	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retrobat-v${VERSION}.zip" "$INSTDIR"
 	${CheckUserAborted}
-	ifFileExists "${DOWNLOAD_DIR}\bios-base.zip" +3 0
+	ifFileExists "${DOWNLOAD_DIR}\bios-base.zip" installBios 0
 	inetc::get "https://www.retrobat.ovh/repo/v3/bios-base.zip" "${DOWNLOAD_DIR}\bios-base.zip" /END
+	installBios:
 	${CheckUserAborted}
 	nsisunz::UnzipToLog "${DOWNLOAD_DIR}\bios-base.zip" "$INSTDIR\bios"
 	${CheckUserAborted}
