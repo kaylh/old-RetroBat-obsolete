@@ -4,6 +4,7 @@ default:
   shader: crt/crt-geom
   # scanline affect fba2x
   scanline: true
+# Nintendo
 snes:
   shader: crt/crt-geom
 snes-msu:
@@ -12,12 +13,16 @@ nes:
   shader: crt/crt-geom
 n64:
   shader: crt/crt-geom
+satellaview:
+  shader: crt/crt-geom
+sufami:
+  shader: crt/crt-geom
 gba:
-  shader: handheld/zfast-lcd
+  shader: handheld/lcd-grid-v2-gba-color
 gb:
-  shader: handheld/zfast-lcd
+  shader: handheld/gameboy
 gbc:
-  shader: handheld/zfast-lcd
+  shader: handheld/lcd-grid-v2-gbc-color
 nds:
   shader: handheld/lcd-grid-v2-nds-color
 3ds:
@@ -26,6 +31,10 @@ fds:
   shader: crt/crt-geom
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
+gc:
+  shader: crt/crt-geom
+wii:
+  shader: crt/crt-geom
 # Sega
 dreamcast:
   shader: crt/crt-geom-deinterlaced
@@ -36,10 +45,12 @@ mastersystem:
 megadrive:
   shader: crt/crt-geom
 gamegear:
-  shader: handheld/zfast-lcd
+  shader: crt-guest-dr-venom-fast
 sega32x:
   shader: crt/crt-geom
 segacd:
+  shader: crt/crt-geom
+saturn:
   shader: crt/crt-geom
 # Arcade
 neogeo:
@@ -51,10 +62,12 @@ mame:
 fba:
   shader: crt/crt-geom
 naomi:
-  shader: crt/crt-geom-deinterlaced
+  shader: crt/crt-geom-atomiswave
 atomiswave:
   shader: crt/crt-geom-atomiswave
 #
+3do:
+  shader: crt/crt-geom
 ngp:
   shader: handheld/zfast-lcd
 ngpc:
@@ -64,7 +77,7 @@ gw:
 vectrex:
   shader: retro/sharp-bilinear-scanlines
 lynx:
-  shader: handheld/zfast-lcd
+  shader: crt-guest-dr-venom-fast
 lutro:
   shader: crt/crt-geom
 wswan:
@@ -89,9 +102,19 @@ prboom:
   shader: crt/crt-geom
 psx:
   shader: crt/crt-geom
+ps2:
+  shader: crt/crt-geom
+psp:
+  shader: handheld/lcd-grid-v2-psp-color
 colecovision:
   shader: crt/crt-geom
+jaguar:
+  shader: crt/crt-geom
+lightgun:
+  shader: crt/crt-geom
 # Computers
+lutro:
+  shader: crt/crt-geom
 msx:
   shader: crt/crt-geom
 msx1:
@@ -100,9 +123,33 @@ msx2:
   shader: crt/crt-geom
 amiga:
   shader: crt/crt-geom
+amiga1200:
+  shader: crt/crt-geom
+amiga500:
+  shader: crt/crt-geom
+amigacd32:
+  shader: crt/crt-geom
+amigacdtv:
+  shader: crt/crt-geom
+c20:
+  shader: crt/crt-geom
+c64:
+  shader: crt/crt-geom
+c128:
+  shader: crt/crt-geom
+cave:
+  shader: crt/crt-geom
+cps1:
+  shader: crt/crt-geom
+cps3:
+  shader: crt/crt-geom
+dos:
+  shader: crt/crt-geom
 amstradcpc:
   shader: crt/crt-geom
 atarist:
+  shader: crt/crt-geom
+zx81:
   shader: crt/crt-geom
 zxspectrum:
   shader: crt/crt-geom
@@ -113,4 +160,14 @@ zx81:
 pcfx:
   shader: crt/crt-geom
 x68000:
+  shader: crt/crt-geom
+o2em:
+  shader: crt/crt-geom
+scummvm:
+  shader: crt/crt-geom
+pc98:
+  shader: crt/crt-geom
+pcfx:
+  shader: crt/crt-geom
+thomson:
   shader: crt/crt-geom
