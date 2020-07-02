@@ -60,9 +60,9 @@
   !define MUI_FINISHPAGE_SHOWREADME
   !define MUI_FINISHPAGE_SHOWREADME_TEXT "Create Desktop Shortcut"
   !define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortCut
-  !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
+;  !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
  
-  !define MUI_FINISHPAGE_LINK "www.retrobat.ovh"
+  !define MUI_FINISHPAGE_LINK "Visit official RetroBat website: www.retrobat.ovh"
   !define MUI_FINISHPAGE_LINK_LOCATION "https://www.retrobat.ovh/"
 
   !insertmacro MUI_PAGE_WELCOME
@@ -270,7 +270,7 @@ FunctionEnd
 
 Function CreateDesktopShortCut
  
-CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat.ico"
+CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat-icon-purple.ico"
  
 FunctionEnd
 
