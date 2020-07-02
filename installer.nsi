@@ -413,7 +413,7 @@ SectionEnd
 		${CheckUserAborted}
 		nsisunz::UnzipToLog "${DOWNLOAD_DIR}\retroarch-info.zip" "$INSTDIR\emulators\retroarch\info"
 
-		ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installRA07 0
+		ifFileExists "${DOWNLOAD_DIR}\retroarch-shaders.zip" installRA07 0
 		${CheckUserAborted}
 		inetc::get "http://www.retrobat.ovh/repo/v3/shaders.zip" "${DOWNLOAD_DIR}\retroarch-shaders.zip" /END
 		installRA07:
