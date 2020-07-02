@@ -3,12 +3,19 @@ default:
   # shader affects retroarch shaders
   shader: interpolation/sharp-bilinear-simple
   # scanline affect fba2x
-  scanline: false
+  scanline: true
+# Nintendo
 snes:
+  shader: interpolation/sharp-bilinear-simple
+snes-msu:
   shader: interpolation/sharp-bilinear-simple
 nes:
   shader: interpolation/sharp-bilinear-simple
 n64:
+  shader: interpolation/sharp-bilinear-simple
+satellaview:
+  shader: interpolation/sharp-bilinear-simple
+sufami:
   shader: interpolation/sharp-bilinear-simple
 gba:
   shader: handheld/bevel
@@ -23,8 +30,14 @@ nds:
 fds:
   shader: interpolation/sharp-bilinear-simple
 virtualboy:
-  shader: interpolation/sharp-bilinear-simple
+  shader: retro/sharp-bilinear-scanlines
+gc:
+  shader: anti-aliasing/smaa
+wii:
+  shader: anti-aliasing/smaa
 # Sega
+dreamcast:
+  shader: anti-aliasing/smaa
 sg1000:
   shader: interpolation/sharp-bilinear-simple
 mastersystem:
@@ -32,10 +45,12 @@ mastersystem:
 megadrive:
   shader: interpolation/sharp-bilinear-simple
 gamegear:
-  shader: interpolation/sharp-bilinear-simple
+  shader: handheld/simpletex_lcd+gbc-color
 sega32x:
   shader: interpolation/sharp-bilinear-simple
 segacd:
+  shader: interpolation/sharp-bilinear-simple
+saturn:
   shader: interpolation/sharp-bilinear-simple
 # Arcade
 neogeo:
@@ -51,6 +66,8 @@ naomi:
 atomiswave:
   shader: interpolation/sharp-bilinear-simple
 #
+3do:
+  shader: interpolation/sharp-bilinear-simple
 ngp:
   shader: handheld/bevel
 ngpc:
@@ -58,7 +75,7 @@ ngpc:
 gw:
   shader: interpolation/sharp-bilinear-simple
 vectrex:
-  shader: handheld/bevel
+  shader: interpolation/sharp-bilinear-simple
 lynx:
   shader: handheld/bevel
 lutro:
@@ -85,9 +102,19 @@ prboom:
   shader: interpolation/sharp-bilinear-simple
 psx:
   shader: interpolation/sharp-bilinear-simple
+ps2:
+  shader: interpolation/sharp-bilinear-simple
+psp:
+  shader: handheld/bevel
 colecovision:
   shader: interpolation/sharp-bilinear-simple
+jaguar:
+  shader: interpolation/sharp-bilinear-simple
+lightgun:
+  shader: interpolation/sharp-bilinear-simple
 # Computers
+lutro:
+  shader: interpolation/sharp-bilinear-simple
 msx:
   shader: interpolation/sharp-bilinear-simple
 msx1:
@@ -96,9 +123,33 @@ msx2:
   shader: interpolation/sharp-bilinear-simple
 amiga:
   shader: interpolation/sharp-bilinear-simple
+amiga1200:
+  shader: interpolation/sharp-bilinear-simple
+amiga500:
+  shader: interpolation/sharp-bilinear-simple
+amigacd32:
+  shader: interpolation/sharp-bilinear-simple
+amigacdtv:
+  shader: interpolation/sharp-bilinear-simple
+c20:
+  shader: interpolation/sharp-bilinear-simple
+c64:
+  shader: interpolation/sharp-bilinear-simple
+c128:
+  shader: interpolation/sharp-bilinear-simple
+cave:
+  shader: interpolation/sharp-bilinear-simple
+cps1:
+  shader: interpolation/sharp-bilinear-simple
+cps3:
+  shader: interpolation/sharp-bilinear-simple
+dos:
+  shader: interpolation/sharp-bilinear-simple
 amstradcpc:
   shader: interpolation/sharp-bilinear-simple
 atarist:
+  shader: interpolation/sharp-bilinear-simple
+zx81:
   shader: interpolation/sharp-bilinear-simple
 zxspectrum:
   shader: interpolation/sharp-bilinear-simple
@@ -109,4 +160,14 @@ zx81:
 pcfx:
   shader: interpolation/sharp-bilinear-simple
 x68000:
+  shader: interpolation/sharp-bilinear-simple
+o2em:
+  shader: interpolation/sharp-bilinear-simple
+scummvm:
+  shader: interpolation/sharp-bilinear-simple
+pc98:
+  shader: interpolation/sharp-bilinear-simple
+pcfx:
+  shader: interpolation/sharp-bilinear-simple
+thomson:
   shader: interpolation/sharp-bilinear-simple
