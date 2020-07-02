@@ -56,6 +56,14 @@
 
   !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation. All the types will install all the components needed, there are three different configuration profiles for EmulationStation and RetroArch."
   !define MUI_COMPONENTSPAGE_TEXT_COMPLIST " "
+  
+  !define MUI_FINISHPAGE_SHOWREADME
+  !define MUI_FINISHPAGE_SHOWREADME_TEXT "Create Desktop Shortcut"
+  !define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortCut
+  !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
+ 
+  !define MUI_FINISHPAGE_LINK "www.retrobat.ovh"
+  !define MUI_FINISHPAGE_LINK_LOCATION "https://www.retrobat.ovh/"
 
   !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE ".\licence.txt"
@@ -75,7 +83,6 @@
 
 ;  !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_FINISH
-
 
 Function StrStrip
 
@@ -118,8 +125,6 @@ FunctionEnd
 
 !macroend
 
-  
-  
   !define StrStrip '!insertmacro StrStrip'
 
 Function SetInfoDirs
@@ -186,6 +191,32 @@ Function PauseIfUserIsMakingAbortDecision
 FunctionEnd
 !define PauseIfUserIsMakingAbortDecision `Call PauseIfUserIsMakingAbortDecision`
 
+!macro MUI_FINISHPAGE_SHORTCUT
+ 
+  !ifndef MUI_FINISHPAGE_NOREBOOTSUPPORT
+    !define MUI_FINISHPAGE_NOREBOOTSUPPORT
+    !ifdef MUI_FINISHPAGE_RUN
+      !undef MUI_FINISHPAGE_RUN
+    !endif
+  !endif
+  !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableCancelButton
+  !insertmacro MUI_PAGE_FINISH
+  !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableBackButton
+ 
+  Function DisableCancelButton
+ 
+    EnableWindow $mui.Button.Cancel 0
+ 
+  FunctionEnd
+ 
+  Function DisableBackButton
+ 
+    EnableWindow $mui.Button.Back 0
+ 
+  FunctionEnd
+ 
+!macroend
+
 !macro CheckUserAborted
   ${PauseIfUserIsMakingAbortDecision}
   ${If} $UserAborted == "yes"
@@ -230,10 +261,17 @@ InstType "Partial integration (RetroArch OPENGL)" IT_REQUIRED_02
 InstType "Batocera USB" IT_REQUIRED_04
 ;InstType "Legacy ES systems list (No launcher commands)" IT_REQUIRED_01
 
+
 Function .onInit
 
  SetCurInstType 1
 
+FunctionEnd
+
+Function CreateDesktopShortCut
+ 
+CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat.ico"
+ 
 FunctionEnd
 
 SectionGroup "-RetroBat"
