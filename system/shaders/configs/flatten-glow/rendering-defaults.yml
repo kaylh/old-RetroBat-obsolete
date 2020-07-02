@@ -1,3 +1,4 @@
+## FLATTEN GLOW
 default:
   # shader affects retroarch shaders
   shader: blurs/kawase_glow
