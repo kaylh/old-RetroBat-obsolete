@@ -19,8 +19,8 @@
   !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
   !define BASE_DIR "..\RetroBat"
-; !define BASE_INSTALL_DIR "C:\$(^Name)"
-  !define BASE_INSTALL_DIR "$EXEDIR"
+ !define BASE_INSTALL_DIR "C:\$(^Name)"
+;  !define BASE_INSTALL_DIR "$EXEDIR"
   !define DOWNLOAD_DIR "$INSTDIR\system\download"
 
   Unicode true
@@ -1596,33 +1596,6 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 SectionEnd
 
-Section /o "-PostInstallTasks" !Required
-SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
-	
-;SectionIn RO
-
-	SetDetailsPrint textonly
-		DetailPrint "Cleaning download folder"
-	SetDetailsPrint none
-
-;	Delete "${DOWNLOAD_DIR}\*.7z"
-;	Delete "${DOWNLOAD_DIR}\*.zip"
-
-SetOutPath $INSTDIR
-
-	SetDetailsPrint textonly
-		DetailPrint "Setting up configuration files"
-	SetDetailsPrint none
-
-	ifFileExists "$INSTDIR\retrobat.exe" 0 +2
-	${CheckUserAborted}
-	ExecWait "$INSTDIR\retrobat.exe /NOF #CopyConfig"	
-	${EndUserAborted}
-	
-SetOutPath $INSTDIR
-	
-SectionEnd
-
 /* Section /o "-ConfigMode1"
 SectionInstType ${IT_REQUIRED_01}
 
@@ -1899,6 +1872,33 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				${EndUserAborted}
 				
 			SectionEnd
+			
+Section /o "-PostInstallTasks" !Required
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+	
+;SectionIn RO
+
+	SetDetailsPrint textonly
+		DetailPrint "Cleaning download folder"
+	SetDetailsPrint none
+
+	Delete "${DOWNLOAD_DIR}\*.7z"
+	Delete "${DOWNLOAD_DIR}\*.zip"
+
+SetOutPath $INSTDIR
+
+	SetDetailsPrint textonly
+		DetailPrint "Setting up configuration files"
+	SetDetailsPrint none
+
+	ifFileExists "$INSTDIR\retrobat.exe" 0 +2
+	${CheckUserAborted}
+	ExecWait "$INSTDIR\retrobat.exe /NOF #CopyConfig"	
+	${EndUserAborted}
+	
+SetOutPath $INSTDIR
+	
+SectionEnd
 
 	SectionGroupEnd
 
