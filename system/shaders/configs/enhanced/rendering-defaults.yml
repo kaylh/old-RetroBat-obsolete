@@ -4,6 +4,7 @@ default:
   shader: hqx/hq2x
   # scanline affect fba2x
   scanline: false
+# Nintendo
 snes:
   shader: hqx/hq2x
 snes-msu:
@@ -12,25 +13,31 @@ nes:
   shader: hqx/hq2x
 n64:
   shader: anti-aliasing/smaa
+satellaview:
+  shader: hqx/hq2x
+sufami:
+  shader: hqx/hq2x
 gba:
-  shader: handheld/psp-color
+  shader: handheld/lcd-grid-v2-gba-color
 gb:
-  shader: handheld/psp-color
+  shader: handheld/gameboy
 gbc:
-  shader: handheld/psp-color
-3ds:
-  shader: anti-aliasing/smaa
+  shader: handheld/lcd-grid-v2-gbc-color
 nds:
-  shader: anti-aliasing/smaa
+  shader: handheld/lcd-grid-v2-nds-color
+3ds:
+  shader: handheld/lcd-shader
 fds:
-  shader: handheld/psp-color
+  shader: hqx/hq2x
 virtualboy:
-  shader: handheld/psp-color
+  shader: retro/sharp-bilinear-scanlines
 gc:
   shader: anti-aliasing/smaa
 wii:
   shader: anti-aliasing/smaa
 # Sega
+dreamcast:
+  shader: anti-aliasing/smaa
 sg1000:
   shader: hqx/hq2x
 mastersystem:
@@ -38,43 +45,45 @@ mastersystem:
 megadrive:
   shader: hqx/hq2x
 gamegear:
-  shader: handheld/psp-color
+  shader: crt-guest-dr-venom-fast
 sega32x:
   shader: hqx/hq2x
 segacd:
   shader: hqx/hq2x
-dreamcast:
+saturn:
   shader: anti-aliasing/smaa
 # Arcade
 neogeo:
-  shader: scalehq/2xScaleHQ
-neogeocd:
-  shader: scalehq/2xScaleHQ
-mame:
-  shader: scalehq/2xScaleHQ
-fba:
-  shader: scalehq/2xScaleHQ
-naomi:
-  shader: anti-aliasing/smaa
-atomiswave:
-  shader: anti-aliasing/smaa
-#
-ngp:
-  shader: handheld/psp-color
-ngpc:
-  shader: handheld/psp-color
-gw:
   shader: hqx/hq2x
+neogeocd:
+  shader: hqx/hq2x
+mame:
+  shader: hqx/hq2x
+fba:
+  shader: hqx/hq2x
+naomi:
+  shader: hqx/hq2x
+atomiswave:
+  shader: hqx/hq2x
+#
+3do:
+  shader: hqx/hq2x
+ngp:
+  shader: handheld/gameboy
+ngpc:
+  shader: handheld/lcd-grid-v2-gbc-color
+gw:
+  shader: handheld/gameboy
 vectrex:
-  shader: handheld/psp-color
+  shader: hqx/hq2x
 lynx:
-  shader: handheld/psp-color
+  shader: crt-guest-dr-venom-fast
 lutro:
   shader: hqx/hq2x
 wswan:
-  shader: handheld/psp-color
+  shader: handheld/gameboy
 wswanc:
-  shader: handheld/psp-color
+  shader: handheld/lcd-grid-v2-gbc-color
 pcengine:
   shader: hqx/hq2x
 pcenginecd:
@@ -91,15 +100,21 @@ atari7800:
   shader: hqx/hq2x
 prboom:
   shader: hqx/hq2x
-psp:
-  shader: anti-aliasing/smaa
 psx:
   shader: anti-aliasing/smaa
 ps2:
   shader: anti-aliasing/smaa
+psp:
+  shader: handheld/lcd-grid-v2-psp-color
 colecovision:
   shader: hqx/hq2x
+jaguar:
+  shader: hqx/hq2x
+lightgun:
+  shader: hqx/hq2x
 # Computers
+lutro:
+  shader: hqx/hq2x
 msx:
   shader: hqx/hq2x
 msx1:
@@ -108,9 +123,33 @@ msx2:
   shader: hqx/hq2x
 amiga:
   shader: hqx/hq2x
+amiga1200:
+  shader: hqx/hq2x
+amiga500:
+  shader: hqx/hq2x
+amigacd32:
+  shader: hqx/hq2x
+amigacdtv:
+  shader: hqx/hq2x
+c20:
+  shader: hqx/hq2x
+c64:
+  shader: hqx/hq2x
+c128:
+  shader: hqx/hq2x
+cave:
+  shader: hqx/hq2x
+cps1:
+  shader: hqx/hq2x
+cps3:
+  shader: hqx/hq2x
+dos:
+  shader: hqx/hq2x
 amstradcpc:
   shader: hqx/hq2x
 atarist:
+  shader: hqx/hq2x
+zx81:
   shader: hqx/hq2x
 zxspectrum:
   shader: hqx/hq2x
@@ -121,4 +160,14 @@ zx81:
 pcfx:
   shader: hqx/hq2x
 x68000:
+  shader: hqx/hq2x
+o2em:
+  shader: hqx/hq2x
+scummvm:
+  shader: hqx/hq2x
+pc98:
+  shader: hqx/hq2x
+pcfx:
+  shader: hqx/hq2x
+thomson:
   shader: hqx/hq2x
