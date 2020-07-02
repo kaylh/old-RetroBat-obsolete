@@ -1,15 +1,21 @@
-## SCANLINES
 default:
   # shader affects retroarch shaders
   shader: crt/crt-easymode-nomask
   # scanline affect fba2x
   scanline: true
+# Nintendo
 snes:
+  shader: crt/crt-easymode-nomask
+snes-msu:
   shader: crt/crt-easymode-nomask
 nes:
   shader: crt/crt-easymode-nomask
 n64:
   shader: interpolation/sharp-bilinear-scanlines
+satellaview:
+  shader: crt/crt-easymode-nomask
+sufami:
+  shader: crt/crt-easymode-nomask
 gba:
   shader: handheld/lcd-grid-v2
 gb:
@@ -23,10 +29,16 @@ nds:
 fds:
   shader: crt/crt-easymode-nomask
 virtualboy:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: retro/sharp-bilinear-scanlines
+gc:
+  shader: anti-aliasing/smaa
+wii:
+  shader: anti-aliasing/smaa
 # Sega
+dreamcast:
+  shader: anti-aliasing/smaa
 sg1000:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
 mastersystem:
   shader: crt/crt-easymode-nomask
 megadrive:
@@ -36,6 +48,8 @@ gamegear:
 sega32x:
   shader: crt/crt-easymode-nomask
 segacd:
+  shader: crt/crt-easymode-nomask
+saturn:
   shader: crt/crt-easymode-nomask
 # Arcade
 neogeo:
@@ -51,12 +65,14 @@ naomi:
 atomiswave:
   shader: crt/crt-easymode-nomask
 #
+3do:
+  shader: crt/crt-easymode-nomask
 ngp:
   shader: handheld/lcd-grid-v2
 ngpc:
   shader: handheld/lcd-grid-v2
 gw:
-  shader: crt/crt-easymode-nomask
+  shader: handheld/lcd-grid-v2
 vectrex:
   shader: crt/crt-easymode-nomask
 lynx:
@@ -74,20 +90,30 @@ pcenginecd:
 supergrafx:
   shader: crt/crt-easymode-nomask
 atari800:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
 atari2600:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
 atari5200:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
 atari7800:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
 prboom:
   shader: crt/crt-easymode-nomask
 psx:
   shader: crt/crt-easymode-nomask
+ps2:
+  shader: crt/crt-easymode-nomask
+psp:
+  shader: handheld/lcd-grid-v2
 colecovision:
   shader: crt/crt-easymode-nomask
+jaguar:
+  shader: crt/crt-easymode-nomask
+lightgun:
+  shader: crt/crt-easymode-nomask
 # Computers
+lutro:
+  shader: crt/crt-easymode-nomask
 msx:
   shader: crt/crt-easymode-nomask
 msx1:
@@ -96,17 +122,51 @@ msx2:
   shader: crt/crt-easymode-nomask
 amiga:
   shader: crt/crt-easymode-nomask
+amiga1200:
+  shader: crt/crt-easymode-nomask
+amiga500:
+  shader: crt/crt-easymode-nomask
+amigacd32:
+  shader: crt/crt-easymode-nomask
+amigacdtv:
+  shader: crt/crt-easymode-nomask
+c20:
+  shader: crt/crt-easymode-nomask
+c64:
+  shader: crt/crt-easymode-nomask
+c128:
+  shader: crt/crt-easymode-nomask
+cave:
+  shader: crt/crt-easymode-nomask
+cps1:
+  shader: crt/crt-easymode-nomask
+cps3:
+  shader: crt/crt-easymode-nomask
+dos:
+  shader: crt/crt-easymode-nomask
 amstradcpc:
   shader: crt/crt-easymode-nomask
 atarist:
   shader: crt/crt-easymode-nomask
-zxspectrum:
-  shader: interpolation/sharp-bilinear-scanlines
-odyssey2:
-  shader: interpolation/sharp-bilinear-scanlines
 zx81:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
+zxspectrum:
+  shader: crt/crt-easymode-nomask
+odyssey2:
+  shader: crt/crt-easymode-nomask
+zx81:
+  shader: crt/crt-easymode-nomask
 pcfx:
   shader: crt/crt-easymode-nomask
 x68000:
-  shader: interpolation/sharp-bilinear-scanlines
+  shader: crt/crt-easymode-nomask
+o2em:
+  shader: crt/crt-easymode-nomask
+scummvm:
+  shader: crt/crt-easymode-nomask
+pc98:
+  shader: crt/crt-easymode-nomask
+pcfx:
+  shader: crt/crt-easymode-nomask
+thomson:
+  shader: crt/crt-easymode-nomask
