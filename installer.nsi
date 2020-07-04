@@ -1412,7 +1412,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	StrCpy $PKGNAME "dolphin-emu.7z"
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDolphin 0
 	${CheckUserAborted}
-
+inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
 	installDolphin:
 	${CheckUserAborted}
 Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
