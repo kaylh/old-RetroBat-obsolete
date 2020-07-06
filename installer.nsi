@@ -19,7 +19,7 @@
   !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
   !define BASE_DIR "..\RetroBat"
- !define BASE_INSTALL_DIR "C:\$(^Name)"
+ !define BASE_INSTALL_DIR "C:\$(^Name)\"
 ;  !define BASE_INSTALL_DIR "$EXEDIR"
   !define DOWNLOAD_DIR "$INSTDIR\system\download"
 
