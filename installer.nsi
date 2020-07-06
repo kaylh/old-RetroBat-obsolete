@@ -1873,10 +1873,25 @@ SectionGroup "Optional EmulationStation Themes" SectionThemes
 				
 			SectionEnd
 			
+
+
+	SectionGroupEnd
+
+/* Section /o "Desktop Shortcut" SectionS
+SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
+
+	${CheckUserAborted}
+	SetShellVarContext current
+	SetOutPath "$INSTDIR"
+	CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat.ico"
+
+	${EndUserAborted}
+SectionEnd
+*/
+
 Section /o "-PostInstallTasks" !Required
 SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
-	
-;SectionIn RO
+SectionIn RO
 
 	SetDetailsPrint textonly
 		DetailPrint "Cleaning download folder"
@@ -1899,20 +1914,6 @@ SetOutPath $INSTDIR
 SetOutPath $INSTDIR
 	
 SectionEnd
-
-	SectionGroupEnd
-
-/* Section /o "Desktop Shortcut" SectionS
-SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
-
-	${CheckUserAborted}
-	SetShellVarContext current
-	SetOutPath "$INSTDIR"
-	CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat.ico"
-
-	${EndUserAborted}
-SectionEnd
-*/
 
 Section -"Post"
 
