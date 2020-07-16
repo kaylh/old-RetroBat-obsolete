@@ -1333,6 +1333,15 @@ inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/lat
 LRCORE110:
 ${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
+	${CheckUserAborted}
+	StrCpy $LRCORE "duckstation"
+	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE111 0
+	${CheckUserAborted}
+inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
+	${CheckUserAborted}
+LRCORE111:
+${CheckUserAborted}
+nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	${EndUserAborted}
 	
 SectionEnd
