@@ -257,8 +257,8 @@ Function InstFilesShow
 FunctionEnd
 
 InstType /COMPONENTSONLYONCUSTOM
-InstType "Full integration (RetroArch ANGLE)" IT_REQUIRED_03
-InstType "Partial integration (RetroArch OPENGL)" IT_REQUIRED_02
+InstType "Full integration (ANGLE,D3D)" IT_REQUIRED_03
+InstType "Compatibility integration (LIBRETRO,OPENGL)" IT_REQUIRED_02
 InstType "Batocera USB" IT_REQUIRED_04
 ;InstType "Legacy ES systems list (No launcher commands)" IT_REQUIRED_01
 
@@ -1359,7 +1359,7 @@ SectionInstType ${IT_REQUIRED_02} ${IT_REQUIRED_03} ${IT_REQUIRED_04}
 
 	installAppleWin:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\cemu"
 	
@@ -1370,7 +1370,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installCemu:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\cxbx-reloaded"
 	
@@ -1381,7 +1381,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installCXBX:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\daphne"
 	
@@ -1392,7 +1392,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installDaphne:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\demul"
 	
@@ -1403,7 +1403,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installDemul:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\demul-old"
 	
@@ -1414,17 +1414,17 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installDemulOld:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dolphin-emu"
 	
 	StrCpy $PKGNAME "dolphin-emu.7z"
 	ifFileExists "${DOWNLOAD_DIR}\$PKGNAME" installDolphin 0
 	${CheckUserAborted}
-inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
+	inetc::get "https://www.retrobat.ovh/repo/emulators/$PKGNAME" "${DOWNLOAD_DIR}\$PKGNAME" /END
 	installDolphin:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dolphin-triforce"
 	
@@ -1435,7 +1435,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installDolphinWX:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\dosbox"
 	
@@ -1446,7 +1446,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installDOSBox:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\fpinball"
 	
@@ -1457,7 +1457,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installFpinball:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\m2emulator"
 	
@@ -1468,7 +1468,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installM2Emu:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\mednafen"
 	
@@ -1479,7 +1479,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installMednafen:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\mgba"
 	
@@ -1490,7 +1490,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installMGBA:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\openbor"
 	
@@ -1501,7 +1501,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installOpenbor:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\pcsx2"
 	
@@ -1512,7 +1512,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installPcsx2:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\ppsspp"
 	
@@ -1523,7 +1523,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installPpsspp:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\raine"
 	
@@ -1534,7 +1534,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installRaine:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\rpcs3"
 	
@@ -1545,7 +1545,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installRpcs3:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\simcoupe"
 	
@@ -1556,7 +1556,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installSimcoupe:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\snes9x"
 	
@@ -1567,7 +1567,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installSnes9x:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\supermodel"
 	
@@ -1578,7 +1578,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installSupermodel:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\vpinball"
 	
@@ -1589,7 +1589,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installVpinball:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	
 	SetOutPath "$INSTDIR\emulators\xenia-canary"
 	
@@ -1600,7 +1600,7 @@ Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 
 	installXenia:
 	${CheckUserAborted}
-Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
+	Nsis7z::ExtractWithDetails "${DOWNLOAD_DIR}\$PKGNAME" "Extracting %s"
 	${EndUserAborted}
 
 SectionEnd
@@ -1647,6 +1647,8 @@ SectionEnd
 Section /o "-ConfigMode2"
 SectionInstType ${IT_REQUIRED_02}
 
+  ifFileExists "$INSTDIR\retrobat.ini" end 0
+
   ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
@@ -1680,11 +1682,14 @@ SectionInstType ${IT_REQUIRED_02}
   FileWrite $4 'DefaultVideoDriver="gl"'
   FileClose $4
   ${EndUserAborted}
+  end:
   
 SectionEnd
 
 Section /o "-ConfigMode3"
 SectionInstType ${IT_REQUIRED_03}
+
+  ifFileExists "$INSTDIR\retrobat.ini" end 0
 	
   ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
@@ -1719,11 +1724,14 @@ SectionInstType ${IT_REQUIRED_03}
   FileWrite $4 'DefaultVideoDriver="d3d11"'
   FileClose $4
   ${EndUserAborted}
+  end:
   
 SectionEnd
 
 Section /o "-ConfigMode4"
 SectionInstType ${IT_REQUIRED_04}
+
+  ifFileExists "$INSTDIR\retrobat.ini" end 0
 	
   ${CheckUserAborted}
   FileOpen $4 "$INSTDIR\retrobat.ini" w
@@ -1758,6 +1766,7 @@ SectionInstType ${IT_REQUIRED_04}
   FileWrite $4 'DefaultVideoDriver="gl"'
   FileClose $4
   ${EndUserAborted}
+  end:
 	
 SectionEnd
 
