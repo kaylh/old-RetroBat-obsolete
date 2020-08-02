@@ -1342,6 +1342,33 @@ inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/lat
 LRCORE111:
 ${CheckUserAborted}
 nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
+	${CheckUserAborted}
+	StrCpy $LRCORE "tyrquake"
+	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE112 0
+	${CheckUserAborted}
+inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
+	${CheckUserAborted}
+LRCORE112:
+${CheckUserAborted}
+nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
+	${CheckUserAborted}
+	StrCpy $LRCORE "vitaquake2"
+	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE113 0
+	${CheckUserAborted}
+inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
+	${CheckUserAborted}
+LRCORE113:
+${CheckUserAborted}
+nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
+	${CheckUserAborted}
+	StrCpy $LRCORE "vitaquake3"
+	ifFileExists "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" LRCORE114 0
+	${CheckUserAborted}
+inetc::get "https://buildbot.libretro.com/nightly/windows/${OS_ARCHITECTURE}/latest/$LRCORE_libretro.dll.zip" "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" /END
+	${CheckUserAborted}
+LRCORE114:
+${CheckUserAborted}
+nsisunz::UnzipToLog "${DOWNLOAD_DIR}\$LRCORE_libretro.dll.zip" "$INSTDIR\emulators\retroarch\cores"
 	${EndUserAborted}
 	
 SectionEnd
