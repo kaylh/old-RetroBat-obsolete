@@ -74,6 +74,13 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 **RetroBat will never provide ROMs or BIOS files.**
 
+## Core Softwares
+
+- RetroBat Launcher and Setup (this github)
+- Batocera EmulationStation https://github.com/fabricecaruso/batocera-emulationstation
+- Batocera-Ports / emulatorLauncher  https://github.com/fabricecaruso/batocera-ports 
+- RetroArch https://github.com/libretro/RetroArch
+
 ## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
