@@ -83,7 +83,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## RetroBat Team
 
-- Adrien Chalard "Kayl" - creator of the project, coder, testing
+- Adrien Chalard "Kayl" - creator of the project, packages manager, coder, testing
 - Lorenzolamas - community management, assets, testing
 - Fabrice Caruso - EmulationStation programmer
 
