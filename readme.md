@@ -23,6 +23,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)](https://aka.ms/vs/16/release/vc_redist.x86.exe)|
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
+|   |[Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)|
 
 ## Supported machines
 
@@ -74,16 +75,9 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 **RetroBat will never provide ROMs or BIOS files.**
 
-## Core Softwares
-
-- RetroBat Launcher and Setup (this github)
-- Batocera EmulationStation https://github.com/fabricecaruso/batocera-emulationstation
-- Batocera-Ports / emulatorLauncher  https://github.com/fabricecaruso/batocera-ports 
-- RetroArch https://github.com/libretro/RetroArch
-
 ## RetroBat Team
 
-- Adrien Chalard "Kayl" - creator of the project, packages manager, coder, testing
+- Adrien Chalard "Kayl" - creator of the project, coder, testing
 - Lorenzolamas - community management, assets, testing
 - Fabrice Caruso - EmulationStation programmer
 
@@ -95,5 +89,6 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 ## Credits
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
+- EmulationStation FCAMOD by Fabrice Caruso, Batocera ES by Batocera as well as RetroBat ES for RetroBat.
 - RetroArch by Libretro Team.
 - game-icons.net/1x1/lorc by Lorc.
