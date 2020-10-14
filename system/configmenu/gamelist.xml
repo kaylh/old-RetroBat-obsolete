@@ -71,30 +71,6 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./DemulOldConfigure.menu</path>
-		<name>Demul Old DX11 Plugin (Gaelco)</name>
-		<desc>Configure Demul Old DX11 Plugin (Gaelco)</desc>
-		<image>./_media/demulold-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Demul Team</developer>
-		<publisher>Demul Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./DolphinConfigure.menu</path>
-		<name>Dolphin (GameCube,Wii)</name>
-		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
-		<image>./_media/dolphin-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
 		<path>./DolphinWXConfigure.menu</path>
 		<name>DolphinWX (Triforce)</name>
 		<desc>Configure DolphinWX Emulator (Triforce)</desc>
@@ -107,33 +83,9 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RPCS3Configure.menu</path>
-		<name>RPCS3 (PlayStation 3)</name>
-		<desc>Configure RPCS3 (PlayStation 3)</desc>
-		<image>./_media/rpcs3-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>RPCS3 Team</developer>
-		<publisher>RPCS3 Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
 		<path>./SNES9X32bitConfigure.menu</path>
 		<name>SNES9X (Super NES) - 32 bit</name>
 		<desc>Configure SNES9X (Super NES) - 32 bit</desc>
-		<image>./_media/snes9x-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>SNES9X Team</developer>
-		<publisher>SNES9X Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./SNES9XConfigure.menu</path>
-		<name>SNES9X (Super NES) - 64 bit</name>
-		<desc>Configure SNES9X (Super NES) - 64 bit</desc>
 		<image>./_media/snes9x-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
@@ -279,18 +231,6 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RaineConfigure.menu</path>
-		<name>Raine (Arcade, Neo Geo, Neo Geo CD) - 64 bit</name>
-		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
-		<image>./_media/raine-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Raine</developer>
-		<publisher>Raine</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
 		<path>./RedreamConfigure.menu</path>
 		<name>Redream (Dreamcast) - 64 bit</name>
 		<desc>Configure Redream Emulator (Dreamcast)</desc>
@@ -315,18 +255,48 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RetroArchAngleConfigure.menu</path>
-		<name>RetroArch Angle (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
-		<image>./_media/retroarch-logo.png</image>
+		<path>./RaineConfigure.menu</path>
+		<name>Raine (Arcade, Neo Geo, Neo Geo CD) - 64 bit</name>
+		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
+		<image>./_media/raine-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
 		<genre>Emulator</genre>
-		<playcount>7</playcount>
-		<lastplayed>20200618T163251</lastplayed>
-		<gametime>256</gametime>
+		<playcount>1</playcount>
+		<lastplayed>20200809T123635</lastplayed>
+		<gametime>63</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./RPCS3Configure.menu</path>
+		<name>RPCS3 (PlayStation 3)</name>
+		<desc>Configure RPCS3 (PlayStation 3)</desc>
+		<image>./_media/rpcs3-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>RPCS3 Team</developer>
+		<publisher>RPCS3 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>3</playcount>
+		<lastplayed>20200826T112741</lastplayed>
+		<gametime>287</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./DemulOldConfigure.menu</path>
+		<name>Demul Old DX11 Plugin (Gaelco)</name>
+		<desc>Configure Demul Old DX11 Plugin (Gaelco)</desc>
+		<image>./_media/demulold-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Demul Team</developer>
+		<publisher>Demul Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>4</playcount>
+		<lastplayed>20200906T005810</lastplayed>
+		<gametime>628</gametime>
 		<lang>en</lang>
 	</game>
 	<game>
@@ -335,13 +305,73 @@
 		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
 		<image>./_media/retroarch-logo.png</image>
 		<rating>0</rating>
+		<releasedate />
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>82</playcount>
+		<lastplayed>20200908T194340</lastplayed>
+		<gametime>5472</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./DuckstationConfigure.menu</path>
+		<name>Duckstation (PlayStation)</name>
+		<desc>Configure Duckstation Emulator (Triforce)</desc>
+		<image>./_media/duckstation-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Duckstation Team</developer>
+		<publisher>Duckstation Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>3</playcount>
+		<lastplayed>20200917T181103</lastplayed>
+		<gametime>38</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./SNES9XConfigure.menu</path>
+		<name>SNES9X (Super NES) - 64 bit</name>
+		<desc>Configure SNES9X (Super NES) - 64 bit</desc>
+		<image>./_media/snes9x-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>SNES9X Team</developer>
+		<publisher>SNES9X Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20200923T105138</lastplayed>
+		<gametime>28</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./DolphinConfigure.menu</path>
+		<name>Dolphin (GameCube,Wii)</name>
+		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
+		<image>./_media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20200924T160028</lastplayed>
+		<gametime>1293</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./RetroArchAngleConfigure.menu</path>
+		<name>RetroArch Angle (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
+		<image>./_media/retroarch-logo.png</image>
+		<rating>0</rating>
 		<releasedate></releasedate>
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>75</playcount>
-		<lastplayed>20200619T111746</lastplayed>
-		<gametime>4694</gametime>
+		<playcount>39</playcount>
+		<lastplayed>20201010T190329</lastplayed>
+		<gametime>2074</gametime>
 		<lang>en</lang>
 	</game>
 </gameList>
