@@ -32,12 +32,12 @@ fds:
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 wii:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 # Sega
 dreamcast:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 sg1000:
   shader: interpolation/sharp-bilinear-simple
 mastersystem:

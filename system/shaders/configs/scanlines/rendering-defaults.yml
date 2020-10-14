@@ -1,22 +1,22 @@
 ## SCANLINES
 default:
   # shader affects retroarch shaders
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
   # scanline affect fba2x
   scanline: true
 # Nintendo
 snes:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 snes-msu:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 nes:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 n64:
   shader: interpolation/sharp-bilinear-scanlines
 satellaview:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 sufami:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 gba:
   shader: handheld/lcd-grid-v2
 gb:
@@ -28,46 +28,54 @@ nds:
 3ds:
   shader: handheld/lcd-shader
 fds:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 wii:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 # Sega
 dreamcast:
-  shader: anti-aliasing/smaa
+  shader: anti-aliasing/fxaa
 sg1000:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 mastersystem:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 megadrive:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 gamegear:
   shader: handheld/lcd-grid-v2
 sega32x:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 segacd:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 saturn:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 # Arcade
+arcade:
+  shader: scanlines/scanlines-enhanced
+cps1:
+  shader: scanlines/scanlines-enhanced
+cps2:
+  shader: scanlines/scanlines-enhanced
+cps3:
+  shader: scanlines/scanlines-enhanced
 neogeo:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 neogeocd:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 mame:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 fba:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 naomi:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atomiswave:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 #
 3do:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 ngp:
   shader: handheld/lcd-grid-v2
 ngpc:
@@ -75,99 +83,99 @@ ngpc:
 gw:
   shader: handheld/lcd-grid-v2
 vectrex:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 lynx:
   shader: handheld/lcd-grid-v2
 lutro:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 wswan:
   shader: handheld/lcd-grid-v2
 wswanc:
   shader: handheld/lcd-grid-v2
 pcengine:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 pcenginecd:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 supergrafx:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atari800:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atari2600:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atari5200:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atari7800:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 prboom:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 psx:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 ps2:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 psp:
   shader: handheld/lcd-grid-v2
 colecovision:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 jaguar:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 lightgun:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 # Computers
 lutro:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 msx:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 msx1:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 msx2:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amiga:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amiga1200:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amiga500:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amigacd32:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amigacdtv:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 c20:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 c64:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 c128:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 cave:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 cps1:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 cps3:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 dos:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 amstradcpc:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 atarist:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 zx81:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 zxspectrum:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 odyssey2:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 zx81:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 pcfx:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 x68000:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 o2em:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 scummvm:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 pc98:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 pcfx:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced
 thomson:
-  shader: crt/crt-easymode-nomask
+  shader: scanlines/scanlines-enhanced

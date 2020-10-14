@@ -1,0 +1,10 @@
+{
+   "PCSX2_ui.ini":[
+      {
+         "Bios":".\\..\\..\\bios",
+         "DefaultToFullscreen":"disabled",
+         "AlwaysHideMouse":"enabled",
+         "IsFullscreen":"enabled"
+      }
+   ]
+}

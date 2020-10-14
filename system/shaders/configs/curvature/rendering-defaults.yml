@@ -53,6 +53,14 @@ segacd:
 saturn:
   shader: crt/crt-geom
 # Arcade
+arcade:
+  shader: crt/crt-geom
+cps1:
+  shader: crt/crt-geom
+cps2:
+  shader: crt/crt-geom
+cps3:
+  shader: crt/crt-geom
 neogeo:
   shader: crt/crt-geom
 neogeocd:
@@ -138,10 +146,6 @@ c64:
 c128:
   shader: crt/crt-geom
 cave:
-  shader: crt/crt-geom
-cps1:
-  shader: crt/crt-geom
-cps3:
   shader: crt/crt-geom
 dos:
   shader: crt/crt-geom

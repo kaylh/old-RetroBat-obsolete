@@ -1,0 +1,25 @@
+{
+	"FoldersTree":[
+      {
+		 "Bios":"\\bios",
+		 "EmulationStation":"\\emulationstation",
+		 "Games":"\\roms",
+		 "Medias":"\\medias",
+		 "Menu":"\\configmenu",
+		 "Resources":"\\resources",
+		 "Saves":"\\saves",
+		 "Screenshots":"\\screenshots",
+		 "Settings":"\\settings",
+		 "ShadersConfig":"\\shaders",
+		 "System":"\\system",
+		 "Templates":"\\templates"    
+      }
+   ],
+    "Splashscreen":[
+      {
+		"ImagePath":"\\..\\system\\resources\\splash.png"
+		"ImgScaleFactor":100,
+		"BackgroundRGBColor":"15,4,42"
+      }
+   ]
+}
