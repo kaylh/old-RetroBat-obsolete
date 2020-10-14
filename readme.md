@@ -24,6 +24,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
 |   |[Powershell 2.0 or newer version (installed on Windows 8.1/10, you need manual install on Windows 7)](https://github.com/PowerShell/PowerShell/releases)|
+|**Optional softwares:**|[JoyToKey](https://joytokey.net/en/)|
 
 ## Supported machines
 
@@ -71,7 +72,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 >WONDERSWAN - 
 >WONDERSWAN COLOR -
 
-![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
+![Supported Machines](https://www.retrobat.ovh/img/retrobat-system-list.png)
 
 **RetroBat will never provide ROMs or BIOS files.**
 
