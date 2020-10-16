@@ -16,7 +16,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 |   |   |
 |---|---|
-|**OS supported:**|Windows 10, Windows 8.1, Windows 7 SP3|
+|**OS supported:**|Windows 10, Windows 8.1, Windows 7 SP3 -- 64 bit|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
 |**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)|
@@ -27,51 +27,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Supported machines
 
->3DO -
->ARCADE (MAME, FBA) -
->ATARI 2600 -
->ATARI 5200 -
->ATARI 7800 PRO SYSTEM -
->ATARI ST -
->ATOMISWAVE -
->DREAMCAST - 
->GAMEBOY -
->GAMEBOY ADVANCE -
->GAMEBOY COLOR -
->GAMECUBE -
->GAMEGEAR -
->JAGUAR -
->LYNX -
->MASTER SYSTEM - 
->MEGA-CD -
->MEGADRIVE (GENESIS) - 
->DOS -
->NAOMI -
->NEO-GEO -
->NEO-GEO CD -
->NEO-GEO POCKET - 
->NEO-GEO POCKET COLOR -
->FAMICOM (NES) -
->NINTENDO 64 -
->NINTENDO DS -
->ODYSSEY² (VIDEOPAC) -
->PC-ENGINE -
->PC-ENGINE CD -
->PLAYSTATION -
->PLAYSTATION 2 - 
->PLAYSTATION 3 -
->PSP -
->SATURN - 
->SEGA 32X -
->SUPER FAMICOM (SUPER NES) -
->SUPER NES MSU-1 -
->WII -
->WII U -
->WINDOWS -
->WONDERSWAN - 
->WONDERSWAN COLOR -
-
-![Supported Machines](https://www.retrobat.ovh/img/retrobat-system-list.png)
+![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
 **RetroBat will never provide ROMs or BIOS files.**
 
