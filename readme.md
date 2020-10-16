@@ -1,4 +1,4 @@
- <img src="https://www.retrobat.ovh/repo/ressources/baniere_small.png" alt="RetroBat-Logo" class="center"> 
+ <img src="https://www.retrobat.ovh/img/retrobat_logo.svg" alt="RetroBat-Logo" class="center"> 
 
 [Official Website](https://www.retrobat.ovh) | [Facebook Group](https://www.facebook.com/groups/retrobat)
 
