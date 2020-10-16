@@ -1,7 +1,0 @@
- local f = io.open("es_systems_editable.cfg", "r")
- local content = f:read("*all")
- f:close()
- content = string.gsub(content, "$SETROMSPATH", "~\..")
- local f = io.open("es_systems_batocera.cfg", "w")
- f:write(content)
- f:close()
