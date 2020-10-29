@@ -1,0 +1,7 @@
+\emulationstation\emulatorLauncher.cfg|emulatorlauncher.json|0S0Q
+\emulators\dolphin-emu\User\Config\Dolphin.ini|dolphin-emu.json|1S0Q
+\emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini|ppsspp.json|1S0Q
+\emulators\raine\config\raine32_sdl.cfg|raine.json|1S0Q
+\emulators\redream\redream.cfg|redream.json|0S0Q
+\emulators\retroarch\retroarch-core-options.cfg|retroarch.json|1S1Q
+\emulators\retroarch\retroarch.cfg|retroarch.json|1S1Q
