@@ -1,32 +1,10 @@
 <?xml version="1.0"?>
 <gameList>
 	<game>
-		<path>./DolphinAXConfigure.menu</path>
-		<name>Dolphin (Triforce)</name>
-		<desc>Configure Dolphin Emulator (Triforce)</desc>
-		<image>./_media/dolphin-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
-		<genre>Emulator</genre>
-	</game>
-	<game>
-		<path>./AppleWinConfigure.menu</path>
-		<name>AppleWin (Apple II)</name>
-		<desc>Configure AppleWin Emulator (Apple II)</desc>
-		<image>./_media/applewin-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>AppleWin Team</developer>
-		<publisher>AppleWin Team</publisher>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./CemuConfigure.menu</path>
+		<path>./cemu.menu</path>
 		<name>Cemu (Wii U)</name>
 		<desc>Configure Cemu Emulator (Wii U)</desc>
-		<image>./_media/cemu-logo.png</image>
+		<image>./media/cemu-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Cemu Team</developer>
@@ -35,10 +13,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./CitraConfigure.menu</path>
+		<path>./citra.menu</path>
 		<name>Citra (3DS)</name>
 		<desc>Configure Citra Emulator (Nintendo 3DS)</desc>
-		<image>./_media/citra-logo.png</image>
+		<image>./media/citra-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Citra Team</developer>
@@ -47,10 +25,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./CXBXReloadedConfigure.menu</path>
+		<path>./cxbx-reloaded.menu</path>
 		<name>CxBx Reloaded (XBOX, Chihiro)</name>
 		<desc>Configure CxBx Reloaded Emulator (XBOX, Chihiro)</desc>
-		<image>./_media/cxbxr-logo.png</image>
+		<image>./media/cxbxr-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Citra Team</developer>
@@ -59,10 +37,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./DemulConfigure.menu</path>
+		<path>./demul.menu</path>
 		<name>Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</name>
 		<desc>Configure Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</desc>
-		<image>./_media/demul-logo.png</image>
+		<image>./media/demul-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Demul Team</developer>
@@ -71,10 +49,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./DolphinWXConfigure.menu</path>
+		<path>./dolphin-triforce.menu</path>
 		<name>DolphinWX (Triforce)</name>
 		<desc>Configure DolphinWX Emulator (Triforce)</desc>
-		<image>./_media/dolphin-logo.png</image>
+		<image>./media/dolphin-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Dolphin Community</developer>
@@ -83,10 +61,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./SNES9X32bitConfigure.menu</path>
-		<name>SNES9X (Super NES) - 32 bit</name>
-		<desc>Configure SNES9X (Super NES) - 32 bit</desc>
-		<image>./_media/snes9x-logo.png</image>
+		<path>./snes9x.menu</path>
+		<name>SNES9X (Super NES)</name>
+		<desc>Configure SNES9X (Super NES)</desc>
+		<image>./media/snes9x-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>SNES9X Team</developer>
@@ -95,18 +73,18 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./SupermodelConfigure.menu</path>
+		<path>./supermodel.menu</path>
 		<name>Supermodel (MODEL 3)</name>
 		<desc>Configure Supermodel (MODEL 3)</desc>
-		<image>./_media/supermodel-logo.png</image>
+		<image>./media/supermodel-logo.png</image>
 		<rating>0</rating>
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./XeniaCanaryConfigure.menu</path>
+		<path>./xenia.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Configure Xenia Canary (XBOX 360)</desc>
-		<image>./_media/xenia-logo.png</image>
+		<image>./media/xenia-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Xenia Team</developer>
@@ -115,22 +93,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./XeniaConfigure.menu</path>
-		<name>Xenia (XBOX 360)</name>
-		<desc>Configure Xenia (XBOX 360)</desc>
-		<image>./_media/xenia-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Xenia Team</developer>
-		<publisher>Xenia Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./DOSBoxConfigure.menu</path>
+		<path>./dosbox.menu</path>
 		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
 		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
-		<image>./_media/dosbox-logo.png</image>
+		<image>./media/dosbox-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>DOSBox Team</developer>
@@ -139,30 +105,20 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./M2EmulatorConfigure.menu</path>
+		<path>./m2emulator.menu</path>
 		<name>M2Emulator - Multi CPU (SEGA MODEL 2)</name>
 		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
-		<image>./_media/m2emulator-logo.png</image>
+		<image>./media/m2emulator-logo.png</image>
 		<developer>Nebula Team</developer>
 		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./M2EmulatorSingleCPUConfigure.menu</path>
-		<name>M2Emulator - Single CPU (SEGA MODEL 2)</name>
-		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
-		<image>./_media/m2emulator-logo.png</image>
-		<developer>Nebula Team</developer>
-		<publisher>Nebula Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./mGBAConfigure.menu</path>
+		<path>./mgba.menu</path>
 		<name>mGBA (GameBoy Advance)</name>
 		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
-		<image>./_media/mgba-logo.png</image>
+		<image>./media/mgba-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>mGBA Team</developer>
@@ -171,10 +127,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./PCSX2Configure.menu</path>
+		<path>./pcsx2.menu</path>
 		<name>PCSX2 (PlayStation 2)</name>
 		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
-		<image>./_media/pcsx2-logo.png</image>
+		<image>./media/pcsx2-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>PCSX2 Team</developer>
@@ -183,34 +139,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./PPSSPP32bitConfigure.menu</path>
-		<name>PPSSPP (PSP) - 32 bit</name>
-		<desc>Configure PPSSPP Emulator (PSP) - 32 bit</desc>
-		<image>./_media/ppsspp-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>PPSSPP Team</developer>
-		<publisher>PPSSPP Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./PPSSPPConfigure.menu</path>
-		<name>PPSSPP (PSP) - 64 bit</name>
-		<desc>Configure PPSSPP Emulator (PSP) - 64 bit</desc>
-		<image>./_media/ppsspp-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>PPSSPP Team</developer>
-		<publisher>PPSSPP Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./Project64Configure.menu</path>
+		<path>./project64.menu</path>
 		<name>Project 64 (Nintendo 64)</name>
 		<desc>Configure Project 64 (Nintendo 64)</desc>
-		<image>./_media/project64-logo.png</image>
+		<image>./media/project64-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Project 64</developer>
@@ -219,34 +151,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./Raine32bitConfigure.menu</path>
-		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
-		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
-		<image>./_media/raine-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Raine</developer>
-		<publisher>Raine</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./RedreamConfigure.menu</path>
-		<name>Redream (Dreamcast) - 64 bit</name>
-		<desc>Configure Redream Emulator (Dreamcast)</desc>
-		<image>./_media/redream-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Redream</developer>
-		<publisher>Redream</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./YuzuConfigure.menu</path>
+		<path>./yuzu.menu</path>
 		<name>Yuzu (Switch)</name>
 		<desc>Configure Yuzu (Switch)</desc>
-		<image>./_media/yuzu-logo.png</image>
+		<image>./media/yuzu-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Yuzu Team</developer>
@@ -255,25 +163,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RaineConfigure.menu</path>
-		<name>Raine (Arcade, Neo Geo, Neo Geo CD) - 64 bit</name>
-		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
-		<image>./_media/raine-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Raine</developer>
-		<publisher>Raine</publisher>
-		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<lastplayed>20200809T123635</lastplayed>
-		<gametime>63</gametime>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./RPCS3Configure.menu</path>
+		<path>./rpcs3.menu</path>
 		<name>RPCS3 (PlayStation 3)</name>
 		<desc>Configure RPCS3 (PlayStation 3)</desc>
-		<image>./_media/rpcs3-logo.png</image>
+		<image>./media/rpcs3-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>RPCS3 Team</developer>
@@ -285,10 +178,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./DemulOldConfigure.menu</path>
+		<path>./demul-old.menu</path>
 		<name>Demul Old DX11 Plugin (Gaelco)</name>
 		<desc>Configure Demul Old DX11 Plugin (Gaelco)</desc>
-		<image>./_media/demulold-logo.png</image>
+		<image>./media/demulold-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Demul Team</developer>
@@ -300,25 +193,10 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RetroArchConfigure.menu</path>
-		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
-		<image>./_media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
-		<genre>Emulator</genre>
-		<playcount>82</playcount>
-		<lastplayed>20200908T194340</lastplayed>
-		<gametime>5472</gametime>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./DuckstationConfigure.menu</path>
+		<path>./duckstation.menu</path>
 		<name>Duckstation (PlayStation)</name>
 		<desc>Configure Duckstation Emulator (Triforce)</desc>
-		<image>./_media/duckstation-logo.png</image>
+		<image>./media/duckstation-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Duckstation Team</developer>
@@ -330,48 +208,104 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./SNES9XConfigure.menu</path>
-		<name>SNES9X (Super NES) - 64 bit</name>
-		<desc>Configure SNES9X (Super NES) - 64 bit</desc>
-		<image>./_media/snes9x-logo.png</image>
+		<path>./applewin.menu</path>
+		<name>AppleWin (Apple II)</name>
+		<desc>Configure AppleWin Emulator (Apple II)</desc>
+		<image>./media/applewin-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>SNES9X Team</developer>
-		<publisher>SNES9X Team</publisher>
-		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<lastplayed>20200923T105138</lastplayed>
-		<gametime>28</gametime>
+		<developer>AppleWin Team</developer>
+		<publisher>AppleWin Team</publisher>
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./DolphinConfigure.menu</path>
-		<name>Dolphin (GameCube,Wii)</name>
-		<desc>Configure Dolphin Emulator (GameCube,Wii)</desc>
-		<image>./_media/dolphin-logo.png</image>
+		<path>./redream.menu</path>
+		<name>Redream (Dreamcast)</name>
+		<desc>Configure Redream Emulator (Dreamcast)</desc>
+		<image>./media/redream-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Redream</developer>
+		<publisher>Redream</publisher>
+		<genre>Emulator</genre>
+		<playcount>9</playcount>
+		<lastplayed>20201028T155533</lastplayed>
+		<gametime>160</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./retroarch.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>84</playcount>
+		<lastplayed>20201028T173325</lastplayed>
+		<gametime>5472</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./dolphin-emu.menu</path>
+		<name>Dolphin (GameCube,Wii,WAD)</name>
+		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
+		<image>./media/dolphin-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Dolphin Team</developer>
 		<publisher>Dolphin Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>5</playcount>
-		<lastplayed>20200924T160028</lastplayed>
-		<gametime>1293</gametime>
+		<playcount>12</playcount>
+		<lastplayed>20201028T173526</lastplayed>
+		<gametime>898</gametime>
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./RetroArchAngleConfigure.menu</path>
+		<path>./raine.menu</path>
+		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
+		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
+		<image>./media/raine-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201028T184514</lastplayed>
+		<gametime>26</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./ppsspp.menu</path>
+		<name>PPSSPP (PSP, Homebrews)</name>
+		<desc>Configure PPSSPP Emulator (PSP, Homebrews)</desc>
+		<image>./media/ppsspp-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PPSSPP Team</developer>
+		<publisher>PPSSPP Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20201028T193901</lastplayed>
+		<gametime>68</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./retroarch_angle.menu</path>
 		<name>RetroArch Angle (Multi Cores Emulator)</name>
 		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
-		<image>./_media/retroarch-logo.png</image>
+		<image>./media/retroarch-logo.png</image>
 		<rating>0</rating>
 		<releasedate></releasedate>
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>40</playcount>
-		<lastplayed>20201016T111659</lastplayed>
-		<gametime>2074</gametime>
+		<playcount>56</playcount>
+		<lastplayed>20201029T104337</lastplayed>
+		<gametime>2187</gametime>
 		<lang>en</lang>
 	</game>
 </gameList>
