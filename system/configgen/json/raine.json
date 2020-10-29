@@ -1,0 +1,18 @@
+{
+   "raine32_sdl.cfg_configmode_1":[
+      {
+         "ScreenShots":"..\\..\\..\\screenshots\\",
+         "rom_dir_0":"..\\..\\..\\bios\\",
+         "rom_dir_1":"..\\..\\..\\roms\\neogeo\\",
+         "neocd_bios":"..\\..\\..\\bios\\neocdz.zip"
+      }
+   ],
+   "raine32_sdl.cfg_configmode_2":[
+      {
+         "ScreenShots":"..\\..\\screenshots\\",
+         "rom_dir_0":"..\\..\\bios\\",
+         "rom_dir_1":"..\\..\\roms\\neogeo\\",
+         "neocd_bios":"..\\..\\bios\\neocdz.zip"
+      }
+   ]
+}
