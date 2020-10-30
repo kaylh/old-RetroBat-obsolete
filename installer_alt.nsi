@@ -47,12 +47,12 @@
 ;  !define MUI_DIRECTORYPAGE_BGCOLOR "1C4E75"
 ;  !define MUI_DIRECTORYPAGE_TEXTCOLOR "FFFFFF"
   !define MUI_HEADERIMAGE
-  !define MUI_HEADERIMAGE_BITMAP ".\system\resources\header.bmp"
+  !define MUI_HEADERIMAGE_BITMAP ".\system\resources\retrobat_header.bmp"
   !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
   !define MUI_HEADER_TRANSPARENT_TEXT
   !define MUI_ICON ".\system\resources\retrobat-icon-white.ico"
 ;  !define MUI_TEXTCOLOR "FFFFFF"
-  !define MUI_WELCOMEFINISHPAGE_BITMAP ".\system\resources\wizard.bmp"
+  !define MUI_WELCOMEFINISHPAGE_BITMAP ".\system\resources\retrobat_wizard.bmp"
 
   !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation. All the types will install all the components needed, there are three different configuration profiles for EmulationStation and RetroArch."
   !define MUI_COMPONENTSPAGE_TEXT_COMPLIST " "
