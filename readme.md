@@ -24,12 +24,19 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
 
-
 ## Supported machines
 
 ![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
 **RetroBat will never provide ROMs or BIOS files.**
+
+## Compiling
+
+To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
+
+To build .nsi files you need the NullSoft Scriptable Install System.
+
+I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/waukftnznp1q3py/nsis.zip?dl=1)|. Use at your own risk! 
 
 ## RetroBat Team
 
