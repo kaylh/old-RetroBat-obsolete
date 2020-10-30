@@ -36,7 +36,7 @@ To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 
 
 To build .nsi files you need the NullSoft Scriptable Install System.
 
-I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/waukftnznp1q3py/nsis.zip?dl=1). Use at your own risk! 
+I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=1). Use at your own risk! 
 
 ## RetroBat Team
 
