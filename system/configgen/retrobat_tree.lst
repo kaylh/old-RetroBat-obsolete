@@ -39,6 +39,7 @@ emulators\pcsx2
 emulators\pcsx2\inis
 emulators\ppsspp
 emulators\project64
+emulators\project64\Config
 emulators\raine
 emulators\redream
 emulators\retroarch
