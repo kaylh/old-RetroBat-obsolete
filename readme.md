@@ -49,6 +49,23 @@ I've written a script to facilitate retrobat packaging and compilation. Download
 - Hel Mic - for his generous support.
 - Batocera - for their wonderful retrogaming dedicated OS.
 
+## Licence
+
+RetroBat is free and open source project. It should not be used for commercial purposes.
+It is done by a team of enthusiasts in their free time mainly for fun.
+
+All the code written by RetroBat Team, unless covered by a licence from an upstream project, is given under the [LGPL v3 licence](
+http://www.gnu.org/licenses/lgpl-3.0.html).
+
+It is not allowed to sell RetroBat on a pre-installed machine or on any storage devices. RetroBat includes softwares which cannot be associated with any commercial activities.
+
+Shipping RetroBat with additional proprietary and copyrighted content is illegal, strictly forbidden and strongly discouraged by the RetroBat Team.
+
+Otherwise, you can start a new project off RetroBat sources if you follow the same conditions.
+
+Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0).
+
+
 ## Credits
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
