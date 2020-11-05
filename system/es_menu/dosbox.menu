@@ -1,2 +1,2 @@
 \dosbox\dosbox.exe
--exit -conf .\..\..\emulators\dosbox\run.dosbox
+-fullscreen -noconsole -exit -conf .\..\..\emulators\dosbox\run.dosbox

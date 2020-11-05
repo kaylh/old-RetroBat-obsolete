@@ -73,14 +73,6 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./supermodel.menu</path>
-		<name>Supermodel (MODEL 3)</name>
-		<desc>Configure Supermodel (MODEL 3)</desc>
-		<image>./media/supermodel-logo.png</image>
-		<rating>0</rating>
-		<lang>en</lang>
-	</game>
-	<game>
 		<path>./xenia.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Configure Xenia Canary (XBOX 360)</desc>
@@ -89,52 +81,6 @@
 		<releasedate />
 		<developer>Xenia Team</developer>
 		<publisher>Xenia Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./dosbox.menu</path>
-		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
-		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
-		<image>./media/dosbox-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>DOSBox Team</developer>
-		<publisher>DOSBox Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./m2emulator.menu</path>
-		<name>M2Emulator - Multi CPU (SEGA MODEL 2)</name>
-		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
-		<image>./media/m2emulator-logo.png</image>
-		<developer>Nebula Team</developer>
-		<publisher>Nebula Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./mgba.menu</path>
-		<name>mGBA (GameBoy Advance)</name>
-		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
-		<image>./media/mgba-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>mGBA Team</developer>
-		<publisher>mGBA Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./pcsx2.menu</path>
-		<name>PCSX2 (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
-		<image>./media/pcsx2-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>PCSX2 Team</developer>
-		<publisher>PCSX2 Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
 	</game>
@@ -193,21 +139,6 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./duckstation.menu</path>
-		<name>Duckstation (PlayStation)</name>
-		<desc>Configure Duckstation Emulator (Triforce)</desc>
-		<image>./media/duckstation-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Duckstation Team</developer>
-		<publisher>Duckstation Team</publisher>
-		<genre>Emulator</genre>
-		<playcount>3</playcount>
-		<lastplayed>20200917T181103</lastplayed>
-		<gametime>38</gametime>
-		<lang>en</lang>
-	</game>
-	<game>
 		<path>./applewin.menu</path>
 		<name>AppleWin (Apple II)</name>
 		<desc>Configure AppleWin Emulator (Apple II)</desc>
@@ -216,21 +147,6 @@
 		<releasedate />
 		<developer>AppleWin Team</developer>
 		<publisher>AppleWin Team</publisher>
-		<lang>en</lang>
-	</game>
-	<game>
-		<path>./redream.menu</path>
-		<name>Redream (Dreamcast)</name>
-		<desc>Configure Redream Emulator (Dreamcast)</desc>
-		<image>./media/redream-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Redream</developer>
-		<publisher>Redream</publisher>
-		<genre>Emulator</genre>
-		<playcount>9</playcount>
-		<lastplayed>20201028T155533</lastplayed>
-		<gametime>160</gametime>
 		<lang>en</lang>
 	</game>
 	<game>
@@ -249,33 +165,40 @@
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./dolphin-emu.menu</path>
-		<name>Dolphin (GameCube,Wii,WAD)</name>
-		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
-		<image>./media/dolphin-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
+		<path>./m2emulator.menu</path>
+		<name>M2Emulator - Multi CPU (SEGA MODEL 2)</name>
+		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
+		<image>./media/m2emulator-logo.png</image>
+		<developer>Nebula Team</developer>
+		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>12</playcount>
-		<lastplayed>20201028T173526</lastplayed>
-		<gametime>898</gametime>
+		<playcount>1</playcount>
+		<lastplayed>20201031T113628</lastplayed>
 		<lang>en</lang>
 	</game>
 	<game>
-		<path>./raine.menu</path>
-		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
-		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
-		<image>./media/raine-logo.png</image>
+		<path>./supermodel.menu</path>
+		<name>Supermodel (MODEL 3)</name>
+		<desc>Configure Supermodel (MODEL 3)</desc>
+		<image>./media/supermodel-logo.png</image>
+		<rating>0</rating>
+		<playcount>1</playcount>
+		<lastplayed>20201031T114607</lastplayed>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./mgba.menu</path>
+		<name>mGBA (GameBoy Advance)</name>
+		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
+		<image>./media/mgba-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Raine</developer>
-		<publisher>Raine</publisher>
+		<developer>mGBA Team</developer>
+		<publisher>mGBA Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<lastplayed>20201028T184514</lastplayed>
-		<gametime>26</gametime>
+		<playcount>2</playcount>
+		<lastplayed>20201031T114853</lastplayed>
+		<gametime>32</gametime>
 		<lang>en</lang>
 	</game>
 	<game>
@@ -288,9 +211,98 @@
 		<developer>PPSSPP Team</developer>
 		<publisher>PPSSPP Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>5</playcount>
-		<lastplayed>20201028T193901</lastplayed>
+		<playcount>7</playcount>
+		<lastplayed>20201105T120840</lastplayed>
 		<gametime>68</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./raine.menu</path>
+		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
+		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
+		<image>./media/raine-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Raine</developer>
+		<publisher>Raine</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20201105T120826</lastplayed>
+		<gametime>26</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./redream.menu</path>
+		<name>Redream (Dreamcast)</name>
+		<desc>Configure Redream Emulator (Dreamcast)</desc>
+		<image>./media/redream-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Redream</developer>
+		<publisher>Redream</publisher>
+		<genre>Emulator</genre>
+		<playcount>10</playcount>
+		<lastplayed>20201105T120817</lastplayed>
+		<gametime>171</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./dolphin-emu.menu</path>
+		<name>Dolphin (GameCube,Wii,WAD)</name>
+		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
+		<image>./media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>17</playcount>
+		<lastplayed>20201105T121447</lastplayed>
+		<gametime>1246</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./dosbox.menu</path>
+		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
+		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
+		<image>./media/dosbox-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>DOSBox Team</developer>
+		<publisher>DOSBox Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>5</playcount>
+		<lastplayed>20201105T121434</lastplayed>
+		<gametime>58</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./duckstation.menu</path>
+		<name>Duckstation (PlayStation)</name>
+		<desc>Configure Duckstation Emulator (Triforce)</desc>
+		<image>./media/duckstation-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Duckstation Team</developer>
+		<publisher>Duckstation Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20201105T121420</lastplayed>
+		<gametime>79</gametime>
+		<lang>en</lang>
+	</game>
+	<game>
+		<path>./pcsx2.menu</path>
+		<name>PCSX2 (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20201105T121404</lastplayed>
 		<lang>en</lang>
 	</game>
 	<game>
@@ -303,9 +315,9 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>56</playcount>
-		<lastplayed>20201029T104337</lastplayed>
-		<gametime>2187</gametime>
+		<playcount>89</playcount>
+		<lastplayed>20201105T121349</lastplayed>
+		<gametime>2308</gametime>
 		<lang>en</lang>
 	</game>
 </gameList>
