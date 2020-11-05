@@ -1,5 +1,5 @@
 {
-   "settings.ini":[
+   "settings.ini_configmode_1":[
       {
          "ConfirmPowerOff":"false",
          "ApplyGameSettings":"true",
@@ -7,6 +7,17 @@
          "StartFullscreen":"true",
 		 "Path":"../../bios/scph1001.bin",
 		 "RecursivePaths":"../../roms/psx",
+		 "CheckAtStartup":"false"
+      }
+   ],
+   "settings.ini_configmode_2":[
+      {
+         "ConfirmPowerOff":"false",
+         "ApplyGameSettings":"true",
+         "RenderToMainWindow":"true",
+         "StartFullscreen":"true",
+		 "Path":"../../../batocera/bios/scph1001.bin",
+		 "RecursivePaths":"../../../batocera/roms/psx",
 		 "CheckAtStartup":"false"
       }
    ]
