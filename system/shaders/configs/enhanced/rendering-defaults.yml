@@ -37,7 +37,7 @@ wii:
   shader: anti-aliasing/fxaa
 # Sega
 dreamcast:
-  shader: anti-aliasing/fxaa
+  shader: anti-aliasing/enhanced-fxaa-tvout
 sg1000:
   shader: hqx/hq2x
 mastersystem:
@@ -62,7 +62,7 @@ mame:
 fba:
   shader: hqx/hq2x
 naomi:
-  shader: hqx/hq2x
+  shader: anti-aliasing/fxaa
 atomiswave:
   shader: hqx/hq2x
 #
