@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg366"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="retrobat_icon.svg">
+  <defs
+     id="defs360">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter6656"
+       x="-0.010288066"
+       width="1.0205761"
+       y="-0.010288066"
+       height="1.0205761">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.4079218"
+         id="feGaussianBlur6658" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter4892-2"
+       x="-0.0025035006"
+       width="1.005007"
+       y="-0.0084643271"
+       height="1.0169287">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood4882-4" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite4884-0" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="4.5252686"
+         result="blur"
+         id="feGaussianBlur4886-4" />
+      <feOffset
+         dx="6"
+         dy="6"
+         result="offset"
+         id="feOffset4888-1" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite4890-3" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5153"
+       x="-0.0012822407"
+       width="1.0025645"
+       y="-0.021129293"
+       height="1.0422586">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.6576966"
+         id="feGaussianBlur5155" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter4892-2-8"
+       x="-0.0027164719"
+       width="1.0054328"
+       y="-0.0091843829"
+       height="1.0183688">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood4882-4-5" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite4884-0-8" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="4.9102306"
+         result="blur"
+         id="feGaussianBlur4886-4-2" />
+      <feOffset
+         dx="6"
+         dy="6"
+         result="offset"
+         id="feOffset4888-1-8" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite4890-3-4" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="64.285713"
+     inkscape:cy="371.23995"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata363">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583"
+       d="m 121.94612,39.547721 c -0.84899,0.0238 -3.58955,0.85941 -5.58054,1.7539 -6.42937,2.91347 -12.14427,8.51047 -15.50448,15.25746 l -1.084685,2.14664 1.216985,1.35444 c 2.2225,2.453457 2.8575,5.571279 1.71979,8.484758 -2.725211,7.002566 -11.694897,7.411601 -15.134481,0.715719 -0.740833,-1.482299 -0.84646,-1.942486 -0.84646,-3.629237 0.02646,-2.351228 0.714375,-4.088896 2.248958,-5.52008 0.582084,-0.53669 1.058334,-1.12438 1.058334,-1.30328 0,-0.17889 -0.423437,-1.1502 -0.899687,-2.17247 -3.148541,-6.61922 -9.868958,-13.05944 -16.271875,-15.66623 -2.301875,-0.9456 -4.709274,-1.58445 -4.973857,-1.35444 -0.07937,0.10223 0.264583,0.74089 0.79375,1.43092 3.677708,4.83024 4.33896,11.52634 1.64021,16.30546 -0.529167,0.89449 -0.926042,1.73774 -0.926042,1.86552 0,0.10223 0.423231,0.28122 0.952397,0.38344 2.645834,0.48558 4.921457,2.376556 5.900415,4.90668 0.714375,1.788979 0.952191,5.239331 0.608232,7.948354 -0.132292,1.047827 -0.158544,1.917005 -0.05271,1.993676 0.07937,0.05111 0.793956,-0.128151 1.53479,-0.409276 1.74625,-0.638922 4.047815,-0.638922 5.503024,0 0.838726,0.355674 2.480153,1.610304 3.195669,2.351278 h -7.360272 v 5.29e-4 a 12.350667,12.143961 0 0 0 -0.05168,-5.29e-4 12.350667,12.143961 0 0 0 -0.01447,0 12.350667,12.143961 0 0 0 -12.336201,12.143959 12.350667,12.143961 0 0 0 12.350667,12.143958 12.350667,12.143961 0 0 0 10.587469,-5.89111 h 9.46919 a 12.350667,12.143961 0 0 0 10.58747,5.89111 12.350667,12.143961 0 0 0 12.35066,-12.143958 12.350667,12.143961 0 0 0 -12.11812,-12.141377 v -0.0026 h -7.39747 l 0.71313,-0.664559 c 2.48708,-2.274557 5.42417,-2.759877 8.14937,-1.430922 0.60855,0.306681 1.16407,0.511034 1.21698,0.459919 0.0794,-0.05111 0,-1.252373 -0.13229,-2.683555 -0.50271,-4.983575 0.34406,-8.331568 2.61948,-10.376112 1.11125,-1.022275 3.62469,-2.197795 4.65656,-2.197795 0.52917,0 0.50271,-0.12757 -0.52916,-1.7632 -1.40229,-2.19789 -1.82583,-4.19127 -1.66708,-7.69256 0.1852,-3.85908 1.05854,-6.31269 3.25458,-9.07283 0.52916,-0.66448 0.87312,-1.27805 0.79375,-1.38028 -0.0364,-0.0319 -0.11901,-0.0447 -0.2403,-0.0413 z"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="opacity:0.354167;fill:#303030;fill-opacity:1;stroke:#808080;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter6656)"
+       id="path1018"
+       cx="2579.9851"
+       cy="1981.8864"
+       r="397.5"
+       transform="matrix(0.02645833,0,0,0.02645833,42.220489,35.959893)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#3ca9fd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path938"
+       cx="110.3507"
+       cy="83.717186"
+       r="2.1166666"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#3ca9fd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path938-9"
+       cx="110.3507"
+       cy="92.9776"
+       inkscape:transform-center-x="5"
+       inkscape:transform-center-y="5"
+       r="2.1166666"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#3ca9fd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path938-7"
+       cx="114.98091"
+       cy="88.347389"
+       r="2.1166666"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#3ca9fd;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path938-7-9"
+       cx="105.72049"
+       cy="88.347389"
+       r="2.1166666"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect1318-0-7"
+       style="fill:#ffffff;fill-opacity:1;stroke:#4d4d4d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 77.89118,82.878991 v 3.648356 h -3.648356 v 3.648358 h 3.648356 v 3.647839 h 3.648355 v -3.647839 h 3.64784 v -3.648358 h -3.64784 v -3.648356 z"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path4547"
+       style="opacity:1;fill:#303030;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 79.725176,81.005204 a 7.2760417,7.2760417 0 0 0 -7.276041,7.276042 7.2760417,7.2760417 0 0 0 7.276041,7.276042 7.2760417,7.2760417 0 0 0 7.276042,-7.276042 7.2760417,7.2760417 0 0 0 -7.276042,-7.276042 z m -0.04238,0.409279 a 6.9018647,6.9018647 0 0 1 0.04651,0 6.9018647,6.9018647 0 0 1 6.901389,6.901386 6.9018647,6.9018647 0 0 1 -6.901389,6.901905 6.9018647,6.9018647 0 0 1 -6.901902,-6.901905 6.9018647,6.9018647 0 0 1 6.855394,-6.901386 z"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="opacity:1;fill:#202020;fill-opacity:1;stroke:#202020;stroke-width:0.936786;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4479"
+       width="3.7894642"
+       height="0.0055667879"
+       x="13.11784"
+       y="-128.08162"
+       transform="matrix(0.78108927,-0.62441937,-0.62441937,-0.78108927,0,0)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="opacity:1;fill:#202020;fill-opacity:1;stroke:#202020;stroke-width:0.936786;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4479-1"
+       width="3.7894642"
+       height="0.0055667879"
+       x="16.889442"
+       y="-131.09113"
+       transform="matrix(0.78108927,-0.62441937,-0.62441937,-0.78108927,0,0)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       aria-label="EMULATION STATION POWERED"
+       transform="matrix(0.03489367,0,0,0.02018503,50.578204,39.258442)"
+       id="text4498"
+       style="font-style:normal;font-weight:normal;font-size:331.262px;line-height:1.25;font-family:sans-serif;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:8.28156"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         d="m 1100.208,2171.2007 h 8.3894 l -0.6038,3.4938 h -4.6584 l -1.7469,9.7697 h 4.6368 l -0.647,3.4506 h -4.6153 l -1.9194,10.7617 h 4.5721 l -0.6254,3.4507 h -8.3894 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4500" />
+      <path
+         d="m 1112.7813,2182.5879 -3.4722,19.5393 h -3.731 l 5.6289,-30.9265 h 4.6799 l -0.4744,22.2783 7.462,-22.2783 h 5.1329 l -5.6073,30.9265 h -3.7311 l 3.4291,-19.3021 -6.2759,19.3021 h -3.2781 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4502" />
+      <path
+         d="m 1128.8053,2197.6413 v 0.1079 q 0,0.3666 0.2373,0.647 0.2803,0.2803 0.647,0.2803 h 1.9841 q 1.0568,0 1.3156,-1.0783 l 4.7877,-26.3975 h 3.6664 l -5.1545,28.1444 q -0.2372,1.1862 -1.1861,1.9841 -0.9705,0.798 -2.2214,0.798 h -5.1975 q -1.0999,0 -1.8979,-0.8195 -0.798,-0.8196 -0.798,-1.9626 v -0.5392 l 4.9819,-27.6052 h 3.5801 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4504" />
+      <path
+         d="m 1143.3197,2198.6765 h 4.5721 l -0.6255,3.4507 h -8.3894 l 5.6073,-30.9265 h 3.7526 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4506" />
+      <path
+         d="m 1159.1064,2193.5437 1.3587,-13.6948 -4.7231,13.6948 z m -4.5721,3.4938 -1.7469,5.0897 h -3.9467 l 11.646,-30.9265 h 3.7094 l -2.4154,30.9265 h -3.5154 l 0.496,-5.0897 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4508" />
+      <path
+         d="m 1177.1145,2174.6945 h -2.5664 l -4.9603,27.4327 h -3.7742 l 5.0035,-27.4327 h -2.6527 l 0.6254,-3.4938 h 8.9933 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4510" />
+      <path
+         d="m 1177.7831,2202.1272 h -3.731 l 5.6288,-30.9265 h 3.7095 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4512" />
+      <path
+         d="m 1184.1668,2197.7492 q 0,0.3666 0.2588,0.647 0.2588,0.2803 0.647,0.2803 h 1.9841 q 1.0568,0 1.3156,-1.0783 l 3.9467,-21.8901 v -0.1294 q 0,-0.3882 -0.2588,-0.647 -0.2588,-0.2372 -0.647,-0.2372 h -2.0057 q -0.4529,0 -0.8411,0.3019 -0.3667,0.2804 -0.4529,0.7117 l -3.9467,21.9332 z m 9.2521,-26.5485 q 1.1214,0 1.9194,0.8195 0.8195,0.8196 0.8195,1.9841 0,0.3235 -0.043,0.4961 l -4.4427,24.8447 q -0.2373,1.1862 -1.2078,1.9841 -0.9705,0.798 -2.1998,0.798 h -5.1544 q -1.143,0 -1.941,-0.8195 -0.7979,-0.8196 -0.7979,-1.9626 v -0.5392 l 4.4427,-24.8016 q 0.2372,-1.2077 1.1862,-2.0056 0.9705,-0.798 2.1782,-0.798 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4514" />
+      <path
+         d="m 1194.26,2202.1272 5.6073,-30.9265 h 3.731 q 1.6175,16.7357 1.6822,23.6154 0.2157,-6.0818 3.3644,-23.6154 h 3.731 l -5.6073,30.9265 h -3.731 q -1.596,-16.671 -1.6607,-23.0547 -0.2156,5.3485 -3.3643,23.0547 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4516" />
+      <path
+         d="m 1223.8709,2183.0839 q 3.5585,6.1033 3.8604,6.815 0.5608,1.0352 0.5608,2.243 0,0.6038 -0.1294,1.2293 l -1.0999,5.9739 q -0.2588,1.1862 -1.1862,1.9841 -0.9705,0.798 -2.2214,0.798 h -5.1544 q -1.143,0 -1.9194,-0.8195 -0.7548,-0.798 -0.7548,-1.9626 v -0.496 l 1.3587,-7.8503 h 3.58 l -1.1646,6.6425 v 0.1079 q 0,0.3666 0.2588,0.647 0.2588,0.2803 0.6254,0.2803 h 1.9842 q 0.4744,0 0.8626,-0.3019 0.3882,-0.3235 0.4961,-0.7764 l 0.7764,-4.3564 q 0.043,-0.1941 0.043,-0.4098 0,-0.8842 -0.7548,-2.2214 -0.3451,-0.6254 -1.8548,-3.4506 -1.6822,-3.1703 -1.941,-3.6663 -0.8195,-1.6175 -0.8195,-3.1919 0,-0.4745 0.065,-0.9489 l 0.9274,-5.3486 q 0.2372,-1.2077 1.2077,-2.0056 0.9489,-0.798 2.1782,-0.798 h 5.176 q 1.1215,0 1.941,0.8195 0.8411,0.8196 0.8411,1.9841 0,0.3235 -0.043,0.4961 l -1.3587,7.613 h -3.6232 l 1.143,-6.4053 q 0.043,-0.065 0.043,-0.1294 0,-0.3666 -0.2804,-0.647 -0.2804,-0.2372 -0.647,-0.2372 h -1.9841 q -0.4745,0 -0.8411,0.3019 -0.3667,0.2804 -0.4529,0.7117 l -0.6255,3.4291 q -0.065,0.3882 -0.065,0.798 0,1.5528 0.9921,3.1487 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4518" />
+      <path
+         d="m 1242.8926,2174.6945 h -2.5664 l -4.9603,27.4327 h -3.7742 l 5.0035,-27.4327 h -2.6527 l 0.6254,-3.4938 h 8.9933 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4520" />
+      <path
+         d="m 1249.0823,2193.5437 1.3587,-13.6948 -4.7231,13.6948 z m -4.5722,3.4938 -1.7468,5.0897 h -3.9467 l 11.6459,-30.9265 h 3.7095 l -2.4155,30.9265 h -3.5153 l 0.496,-5.0897 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4522" />
+      <path
+         d="m 1267.0904,2174.6945 h -2.5664 l -4.9604,27.4327 h -3.7741 l 5.0034,-27.4327 h -2.6527 l 0.6255,-3.4938 h 8.9932 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4524" />
+      <path
+         d="m 1267.7589,2202.1272 h -3.731 l 5.6289,-30.9265 h 3.7095 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4526" />
+      <path
+         d="m 1274.1427,2197.7492 q 0,0.3666 0.2588,0.647 0.2588,0.2803 0.647,0.2803 h 1.9841 q 1.0567,0 1.3155,-1.0783 l 3.9467,-21.8901 v -0.1294 q 0,-0.3882 -0.2588,-0.647 -0.2588,-0.2372 -0.647,-0.2372 h -2.0057 q -0.4529,0 -0.8411,0.3019 -0.3666,0.2804 -0.4529,0.7117 l -3.9466,21.9332 z m 9.252,-26.5485 q 1.1215,0 1.9195,0.8195 0.8195,0.8196 0.8195,1.9841 0,0.3235 -0.043,0.4961 l -4.4428,24.8447 q -0.2372,1.1862 -1.2077,1.9841 -0.9705,0.798 -2.1998,0.798 h -5.1544 q -1.143,0 -1.941,-0.8195 -0.798,-0.8196 -0.798,-1.9626 v -0.5392 l 4.4428,-24.8016 q 0.2372,-1.2077 1.1861,-2.0056 0.9705,-0.798 2.1782,-0.798 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4528" />
+      <path
+         d="m 1284.2358,2202.1272 5.6073,-30.9265 h 3.7311 q 1.6175,16.7357 1.6822,23.6154 0.2156,-6.0818 3.3643,-23.6154 h 3.7311 l -5.6074,30.9265 h -3.731 q -1.5959,-16.671 -1.6606,-23.0547 -0.2157,5.3485 -3.3644,23.0547 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4530" />
+      <path
+         d="m 1315.6584,2184.7876 q 0.4744,0 0.8411,-0.3019 0.3666,-0.2803 0.4313,-0.7332 l 1.5312,-8.0444 v -0.1294 q 0,-0.3882 -0.2588,-0.647 -0.2588,-0.2372 -0.6254,-0.2372 h -3.084 l -1.8763,10.0931 z m -9.856,17.3396 5.6073,-30.9265 h 8.1306 q 1.1431,0 1.941,0.8195 0.8196,0.8196 0.8196,1.9841 0,0.151 -0.065,0.4961 l -1.9842,10.9558 q -0.2156,1.2077 -1.1646,2.0057 -0.9489,0.798 -2.1782,0.798 h -4.8525 l -2.5233,13.8673 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4532" />
+      <path
+         d="m 1323.5949,2197.7492 q 0,0.3666 0.2588,0.647 0.2588,0.2803 0.647,0.2803 h 1.9841 q 1.0568,0 1.3156,-1.0783 l 3.9466,-21.8901 v -0.1294 q 0,-0.3882 -0.2588,-0.647 -0.2588,-0.2372 -0.647,-0.2372 h -2.0057 q -0.4529,0 -0.841,0.3019 -0.3667,0.2804 -0.4529,0.7117 l -3.9467,21.9332 z m 9.252,-26.5485 q 1.1215,0 1.9195,0.8195 0.8195,0.8196 0.8195,1.9841 0,0.3235 -0.043,0.4961 l -4.4428,24.8447 q -0.2372,1.1862 -1.2077,1.9841 -0.9705,0.798 -2.1998,0.798 h -5.1544 q -1.143,0 -1.941,-0.8195 -0.798,-0.8196 -0.798,-1.9626 v -0.5392 l 4.4428,-24.8016 q 0.2372,-1.2077 1.1861,-2.0056 0.9705,-0.798 2.1783,-0.798 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4534" />
+      <path
+         d="m 1350.4669,2171.2007 -1.7685,20.1216 7.2464,-20.1216 h 3.9467 l -11.646,30.9265 h -3.7095 l 1.7254,-18.6335 -6.6425,18.6335 h -3.7095 l 2.4155,-30.9265 h 3.5153 l -1.7684,20.1216 7.2463,-20.1216 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4536" />
+      <path
+         d="m 1361.9403,2171.2007 h 8.3894 l -0.6039,3.4938 h -4.6584 l -1.7469,9.7697 h 4.6369 l -0.647,3.4506 h -4.6153 l -1.9194,10.7617 h 4.5721 l -0.6254,3.4507 h -8.3894 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4538" />
+      <path
+         d="m 1377.1663,2184.7876 q 0.4745,0 0.8411,-0.3234 0.3666,-0.302 0.4313,-0.7549 l 1.4666,-8.0012 v -0.1294 q 0,-0.3882 -0.2588,-0.647 -0.2804,-0.2372 -0.6686,-0.2372 h -2.9762 l -1.8332,10.0931 z m 0.2157,4.5722 q 0,-0.3667 -0.2588,-0.6255 -0.2588,-0.2588 -0.6255,-0.2588 H 1373.5 l -2.4155,13.6517 h -3.7741 l 5.5426,-30.9265 h 8.3031 q 1.1215,0 1.941,0.8195 0.8195,0.798 0.8627,1.9626 0,0.1078 -0.086,0.5176 l -1.7253,9.7481 q -0.4098,2.0272 -2.3939,2.588 0.7548,0.2803 1.143,0.992 0.3019,0.5608 0.3019,1.2509 0,0.151 -0.022,0.3235 0,0.3235 -0.022,0.496 l -2.2429,12.2283 h -3.7957 l 2.2645,-12.6596 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4540" />
+      <path
+         d="m 1387.1085,2171.2007 h 8.3894 l -0.6039,3.4938 h -4.6583 l -1.7469,9.7697 h 4.6368 l -0.647,3.4506 h -4.6153 l -1.9194,10.7617 h 4.5721 l -0.6254,3.4507 h -8.3894 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4542" />
+      <path
+         d="m 1400.1132,2198.6765 q 0.4744,0 0.8411,-0.3019 0.3666,-0.3019 0.4313,-0.7764 l 3.9898,-21.8901 q 0.022,-0.065 0.022,-0.1294 0,-0.3882 -0.2588,-0.647 -0.2588,-0.2372 -0.647,-0.2372 h -3.3428 l -4.378,23.982 z m 6.3621,-27.4758 q 1.1431,0 1.9626,0.8195 0.8195,0.8196 0.8195,1.9841 0,0.1294 -0.086,0.4961 l -4.4642,24.8447 q -0.2157,1.1862 -1.1646,1.9841 -0.949,0.798 -2.1783,0.798 h -8.8854 l 5.6073,-30.9265 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.1684px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:8.28156"
+         id="path4544" />
+    </g>
+    <g
+       aria-label="RETROBAT"
+       transform="matrix(0.01402425,-2.9625337e-5,0.00309743,0.01020759,26.748542,98.60985)"
+       id="text848-3"
+       style="font-style:normal;font-weight:normal;font-size:1832.5px;line-height:1.25;font-family:sans-serif;fill:#3ca9fd;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter4892-2)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         d="m 2867.749,1102.7069 q 19.6851,0 34.8963,-13.4216 15.2111,-12.5269 17.8955,-31.3172 l 60.8447,-331.96163 v -5.36865 q 0,-16.10596 -10.7373,-26.84326 -11.6321,-9.84253 -27.738,-9.84253 h -123.479 l -76.056,418.75487 z m 8.9478,189.6924 q 0,-15.2112 -10.7373,-25.9485 -10.7373,-10.7373 -25.9485,-10.7373 h -124.3738 l -100.2148,566.3928 H 2458.8367 L 2688.7939,538.99841 h 344.4886 q 46.5283,0 80.5298,34.00147 34.0014,33.10669 35.791,81.42456 0,4.47388 -3.5791,21.47461 l -71.5821,404.43845 q -17.0007,84.1089 -99.32,107.3731 31.3171,11.6321 47.4231,41.1596 12.5268,23.2642 12.5268,51.897 0,6.2634 -0.8948,13.4216 0,13.4217 -0.8947,20.5799 l -93.0567,507.3376 h -157.4804 l 93.9514,-525.2331 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4398-6" />
+      <path
+         d="m 3280.2405,538.99841 h 348.0676 l -25.0537,144.95362 h -193.2715 l -72.4768,405.33327 h 192.3767 l -26.8432,143.164 h -191.482 l -79.635,446.493 h 189.6924 l -25.9485,143.164 h -348.0676 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4400-9" />
+      <path
+         d="M 4052.4316,683.95203 H 3945.9534 L 3740.155,1822.1063 H 3583.5693 L 3791.1572,683.95203 h -110.0573 l 25.9484,-144.95362 h 373.1214 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4402-0" />
+      <path
+         d="m 4334.2859,1102.7069 q 19.685,0 34.8962,-13.4216 15.2112,-12.5269 17.8955,-31.3172 l 60.8448,-331.96163 v -5.36865 q 0,-16.10596 -10.7373,-26.84326 -11.6321,-9.84253 -27.7381,-9.84253 h -123.479 l -76.0559,418.75487 z m 8.9477,189.6924 q 0,-15.2112 -10.7373,-25.9485 -10.7373,-10.7373 -25.9484,-10.7373 h -124.3738 l -100.2149,566.3928 H 3925.3735 L 4155.3308,538.99841 h 344.4885 q 46.5284,0 80.5298,34.00147 34.0015,33.10669 35.791,81.42456 0,4.47388 -3.5791,21.47461 l -71.582,404.43845 q -17.0007,84.1089 -99.3201,107.3731 31.3172,11.6321 47.4231,41.1596 12.5269,23.2642 12.5269,51.897 0,6.2634 -0.8948,13.4216 0,13.4217 -0.8948,20.5799 l -93.0566,507.3376 h -157.4805 l 93.9514,-525.2331 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4404-1" />
+      <path
+         d="m 4671.6162,1640.4669 q 0,15.2112 10.7373,26.8433 10.7373,11.6321 26.8433,11.6321 h 82.3193 q 43.844,0 54.5813,-44.7388 l 163.7439,-908.19703 v -5.36865 q 0,-16.10596 -10.7373,-26.84326 -10.7373,-9.84253 -26.8433,-9.84253 h -83.2141 q -18.7903,0 -34.8962,12.52685 -15.2112,11.63208 -18.7903,29.52759 L 4671.6162,1635.993 Z M 5055.4749,538.99841 q 46.5283,0 79.635,34.00147 34.0014,34.00146 34.0014,82.31933 0,13.42163 -1.7895,20.57984 L 4982.998,1706.6803 q -9.8425,49.2126 -50.1074,82.3193 -40.2649,33.1067 -91.2671,33.1067 h -213.8513 q -47.4231,0 -80.5298,-34.0014 -33.1067,-34.0015 -33.1067,-81.4246 v -22.3694 L 4698.4595,655.31921 q 9.8425,-50.10742 49.2126,-83.21411 40.2649,-33.10669 90.3723,-33.10669 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4406-0" />
+      <path
+         d="m 5585.1819,1705.7855 q -8.9478,50.1074 -48.3179,83.2141 -39.3701,33.1067 -90.3723,33.1067 H 5090.3711 L 5323.0127,538.99841 h 337.3303 q 47.4231,0 80.5298,34.00147 34.0015,34.00146 34.0015,82.31933 0,6.26343 -2.6844,20.57984 l -75.1611,404.43845 q -17.0007,84.1089 -99.3201,107.3731 31.3172,11.6321 47.4231,41.1596 12.5269,23.2642 12.5269,51.897 0,6.2634 -0.8948,13.4216 0,13.4217 -0.8948,20.5799 z m 30.4223,-979.77903 v -5.36865 q 0,-16.10596 -10.7373,-26.84326 -10.7373,-9.84253 -25.9484,-9.84253 h -127.9529 l -76.0559,418.75487 h 124.3737 q 19.6851,0 34.8963,-13.4216 15.2112,-12.5269 17.8955,-31.3172 z m -268.4326,529.70703 -76.0559,422.334 h 123.479 q 19.6851,0 34.8963,-12.5269 15.2111,-11.6321 17.8955,-30.4223 l 60.8447,-338.2251 v -4.4739 q 0,-15.2112 -10.7373,-25.9485 -10.7373,-10.7373 -25.9485,-10.7373 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4408-5" />
+      <path
+         d="m 6056.7285,1465.9857 56.3709,-568.18236 -195.9558,568.18236 z m -189.6924,144.9536 -72.4768,211.167 H 5630.8154 L 6113.9941,538.99841 h 153.9014 L 6167.6807,1822.1063 h -145.8484 l 20.5798,-211.167 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4410-6" />
+      <path
+         d="M 6803.866,683.95203 H 6697.3877 L 6491.5894,1822.1063 H 6335.0037 L 6542.5916,683.95203 h -110.0574 l 25.9485,-144.95362 h 373.1213 z"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1832.5px;font-family:SNES;-inkscape-font-specification:'SNES, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3ca9fd;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path4412-8" />
+    </g>
+    <rect
+       style="fill:#3ca9fd;fill-opacity:1;fill-rule:nonzero;stroke-width:13.2939;filter:url(#filter5153)"
+       id="rect851-8"
+       width="4881.7896"
+       height="301.87814"
+       x="2773.3823"
+       y="1823.9081"
+       transform="matrix(0.01176691,0,6.7470556e-4,0.00836072,32.939619,104.25227)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
