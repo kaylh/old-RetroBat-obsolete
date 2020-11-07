@@ -38,9 +38,13 @@ emulators\openbor
 emulators\pcsx2
 emulators\pcsx2\inis
 emulators\ppsspp
+emulators\ppsspp\memstick
+emulators\ppsspp\memstick\PSP
+emulators\ppsspp\memstick\PSP\SYSTEM
 emulators\project64
 emulators\project64\Config
 emulators\raine
+emulators\raine\config
 emulators\redream
 emulators\retroarch
 emulators\retroarch\shaders
