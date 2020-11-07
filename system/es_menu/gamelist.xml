@@ -11,6 +11,7 @@
 		<publisher>Cemu Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./citra.menu</path>
@@ -23,6 +24,7 @@
 		<publisher>Citra Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./cxbx-reloaded.menu</path>
@@ -35,6 +37,7 @@
 		<publisher>Citra Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./demul.menu</path>
@@ -47,6 +50,7 @@
 		<publisher>Demul Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./dolphin-triforce.menu</path>
@@ -59,6 +63,7 @@
 		<publisher>Dolphin Community</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./snes9x.menu</path>
@@ -71,6 +76,7 @@
 		<publisher>SNES9X Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./xenia.menu</path>
@@ -83,6 +89,7 @@
 		<publisher>Xenia Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./project64.menu</path>
@@ -95,6 +102,7 @@
 		<publisher>Project 64</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./yuzu.menu</path>
@@ -107,6 +115,7 @@
 		<publisher>Yuzu Team</publisher>
 		<genre>Emulator</genre>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./rpcs3.menu</path>
@@ -122,6 +131,7 @@
 		<lastplayed>20200826T112741</lastplayed>
 		<gametime>287</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./demul-old.menu</path>
@@ -137,6 +147,7 @@
 		<lastplayed>20200906T005810</lastplayed>
 		<gametime>628</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./applewin.menu</path>
@@ -148,6 +159,7 @@
 		<developer>AppleWin Team</developer>
 		<publisher>AppleWin Team</publisher>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./retroarch.menu</path>
@@ -163,6 +175,7 @@
 		<lastplayed>20201028T173325</lastplayed>
 		<gametime>5472</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./m2emulator.menu</path>
@@ -175,6 +188,7 @@
 		<playcount>1</playcount>
 		<lastplayed>20201031T113628</lastplayed>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./supermodel.menu</path>
@@ -185,6 +199,7 @@
 		<playcount>1</playcount>
 		<lastplayed>20201031T114607</lastplayed>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./mgba.menu</path>
@@ -200,6 +215,7 @@
 		<lastplayed>20201031T114853</lastplayed>
 		<gametime>32</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./ppsspp.menu</path>
@@ -215,6 +231,7 @@
 		<lastplayed>20201105T120840</lastplayed>
 		<gametime>68</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./raine.menu</path>
@@ -230,6 +247,7 @@
 		<lastplayed>20201105T120826</lastplayed>
 		<gametime>26</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./redream.menu</path>
@@ -245,6 +263,7 @@
 		<lastplayed>20201105T120817</lastplayed>
 		<gametime>171</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./dolphin-emu.menu</path>
@@ -252,7 +271,7 @@
 		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
 		<image>./media/dolphin-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Dolphin Team</developer>
 		<publisher>Dolphin Team</publisher>
 		<genre>Emulator</genre>
@@ -260,6 +279,7 @@
 		<lastplayed>20201105T121447</lastplayed>
 		<gametime>1246</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./dosbox.menu</path>
@@ -267,7 +287,7 @@
 		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
 		<image>./media/dosbox-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>DOSBox Team</developer>
 		<publisher>DOSBox Team</publisher>
 		<genre>Emulator</genre>
@@ -275,6 +295,7 @@
 		<lastplayed>20201105T121434</lastplayed>
 		<gametime>58</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./duckstation.menu</path>
@@ -282,7 +303,7 @@
 		<desc>Configure Duckstation Emulator (Triforce)</desc>
 		<image>./media/duckstation-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Duckstation Team</developer>
 		<publisher>Duckstation Team</publisher>
 		<genre>Emulator</genre>
@@ -290,6 +311,7 @@
 		<lastplayed>20201105T121420</lastplayed>
 		<gametime>79</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./pcsx2.menu</path>
@@ -297,13 +319,14 @@
 		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
 		<image>./media/pcsx2-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>PCSX2 Team</developer>
 		<publisher>PCSX2 Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>2</playcount>
 		<lastplayed>20201105T121404</lastplayed>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./retroarch_angle.menu</path>
@@ -315,9 +338,10 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>89</playcount>
-		<lastplayed>20201105T121349</lastplayed>
+		<playcount>90</playcount>
+		<lastplayed>20201105T124933</lastplayed>
 		<gametime>2308</gametime>
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 </gameList>
