@@ -1,0 +1,1392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>0.4.0</Version>
+  <Video>
+    <VideoScale>1.7594501718213058</VideoScale>
+    <CustomAspectRatio>1</CustomAspectRatio>
+    <VideoFilter>NTSC</VideoFilter>
+    <AspectRatio>Auto</AspectRatio>
+    <UseBilinearInterpolation>true</UseBilinearInterpolation>
+    <BlendHighResolutionModes>false</BlendHighResolutionModes>
+    <VerticalSync>true</VerticalSync>
+    <IntegerFpsMode>false</IntegerFpsMode>
+    <HideBgLayer0>false</HideBgLayer0>
+    <HideBgLayer1>false</HideBgLayer1>
+    <HideBgLayer2>false</HideBgLayer2>
+    <HideBgLayer3>false</HideBgLayer3>
+    <HideSprites>false</HideSprites>
+    <DisableFrameSkipping>false</DisableFrameSkipping>
+    <Brightness>0</Brightness>
+    <Contrast>0</Contrast>
+    <Hue>0</Hue>
+    <Saturation>0</Saturation>
+    <ScanlineIntensity>0.15</ScanlineIntensity>
+    <NtscArtifacts>-1</NtscArtifacts>
+    <NtscBleed>-1</NtscBleed>
+    <NtscFringing>-1</NtscFringing>
+    <NtscGamma>0</NtscGamma>
+    <NtscResolution>0.7</NtscResolution>
+    <NtscSharpness>0.2</NtscSharpness>
+    <NtscMergeFields>false</NtscMergeFields>
+    <OverscanLeft>0</OverscanLeft>
+    <OverscanRight>0</OverscanRight>
+    <OverscanTop>0</OverscanTop>
+    <OverscanBottom>0</OverscanBottom>
+    <FullscreenForceIntegerScale>true</FullscreenForceIntegerScale>
+    <UseExclusiveFullscreen>false</UseExclusiveFullscreen>
+    <ExclusiveFullscreenRefreshRate>60</ExclusiveFullscreenRefreshRate>
+    <FullscreenResWidth>0</FullscreenResWidth>
+    <FullscreenResHeight>0</FullscreenResHeight>
+  </Video>
+  <Audio>
+    <AudioDevice />
+    <EnableAudio>true</EnableAudio>
+    <DisableDynamicSampleRate>false</DisableDynamicSampleRate>
+    <MasterVolume>100</MasterVolume>
+    <SampleRate>48000</SampleRate>
+    <AudioLatency>60</AudioLatency>
+    <MuteSoundInBackground>false</MuteSoundInBackground>
+    <ReduceSoundInBackground>true</ReduceSoundInBackground>
+    <ReduceSoundInFastForward>false</ReduceSoundInFastForward>
+    <VolumeReduction>75</VolumeReduction>
+    <EnableEqualizer>false</EnableEqualizer>
+    <Band1Gain>0</Band1Gain>
+    <Band2Gain>0</Band2Gain>
+    <Band3Gain>0</Band3Gain>
+    <Band4Gain>0</Band4Gain>
+    <Band5Gain>0</Band5Gain>
+    <Band6Gain>0</Band6Gain>
+    <Band7Gain>0</Band7Gain>
+    <Band8Gain>0</Band8Gain>
+    <Band9Gain>0</Band9Gain>
+    <Band10Gain>0</Band10Gain>
+    <Band11Gain>0</Band11Gain>
+    <Band12Gain>0</Band12Gain>
+    <Band13Gain>0</Band13Gain>
+    <Band14Gain>0</Band14Gain>
+    <Band15Gain>0</Band15Gain>
+    <Band16Gain>0</Band16Gain>
+    <Band17Gain>0</Band17Gain>
+    <Band18Gain>0</Band18Gain>
+    <Band19Gain>0</Band19Gain>
+    <Band20Gain>0</Band20Gain>
+  </Audio>
+  <Input>
+    <Controllers>
+      <ControllerConfig>
+        <Keys>
+          <Mapping1>
+            <A>65549</A>
+            <B>65548</B>
+            <X>65551</X>
+            <Y>65550</Y>
+            <L>65544</L>
+            <R>65545</R>
+            <Up>65536</Up>
+            <Down>65537</Down>
+            <Left>65538</Left>
+            <Right>65539</Right>
+            <Start>65540</Start>
+            <Select>65541</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping1>
+          <Mapping2>
+            <A>83</A>
+            <B>65</B>
+            <X>88</X>
+            <Y>90</Y>
+            <L>81</L>
+            <R>87</R>
+            <Up>294</Up>
+            <Down>296</Down>
+            <Left>293</Left>
+            <Right>295</Right>
+            <Start>68</Start>
+            <Select>69</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping2>
+          <Mapping3>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping3>
+          <Mapping4>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping4>
+          <TurboSpeed>2</TurboSpeed>
+        </Keys>
+        <Type>SnesController</Type>
+      </ControllerConfig>
+      <ControllerConfig>
+        <Keys>
+          <Mapping1>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping1>
+          <Mapping2>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping2>
+          <Mapping3>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping3>
+          <Mapping4>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping4>
+          <TurboSpeed>0</TurboSpeed>
+        </Keys>
+        <Type>None</Type>
+      </ControllerConfig>
+      <ControllerConfig>
+        <Keys>
+          <Mapping1>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping1>
+          <Mapping2>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping2>
+          <Mapping3>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping3>
+          <Mapping4>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping4>
+          <TurboSpeed>0</TurboSpeed>
+        </Keys>
+        <Type>None</Type>
+      </ControllerConfig>
+      <ControllerConfig>
+        <Keys>
+          <Mapping1>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping1>
+          <Mapping2>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping2>
+          <Mapping3>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping3>
+          <Mapping4>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping4>
+          <TurboSpeed>0</TurboSpeed>
+        </Keys>
+        <Type>None</Type>
+      </ControllerConfig>
+      <ControllerConfig>
+        <Keys>
+          <Mapping1>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping1>
+          <Mapping2>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping2>
+          <Mapping3>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping3>
+          <Mapping4>
+            <A>0</A>
+            <B>0</B>
+            <X>0</X>
+            <Y>0</Y>
+            <L>0</L>
+            <R>0</R>
+            <Up>0</Up>
+            <Down>0</Down>
+            <Left>0</Left>
+            <Right>0</Right>
+            <Start>0</Start>
+            <Select>0</Select>
+            <TurboA>0</TurboA>
+            <TurboB>0</TurboB>
+            <TurboX>0</TurboX>
+            <TurboY>0</TurboY>
+            <TurboL>0</TurboL>
+            <TurboR>0</TurboR>
+            <TurboSelect>0</TurboSelect>
+            <TurboStart>0</TurboStart>
+          </Mapping4>
+          <TurboSpeed>0</TurboSpeed>
+        </Keys>
+        <Type>None</Type>
+      </ControllerConfig>
+    </Controllers>
+    <ControllerDeadzoneSize>2</ControllerDeadzoneSize>
+    <MouseSensitivity>1</MouseSensitivity>
+    <DisplayInputPosition>BottomRight</DisplayInputPosition>
+    <DisplayInputPort1>false</DisplayInputPort1>
+    <DisplayInputPort2>false</DisplayInputPort2>
+    <DisplayInputPort3>false</DisplayInputPort3>
+    <DisplayInputPort4>false</DisplayInputPort4>
+    <DisplayInputPort5>false</DisplayInputPort5>
+    <DisplayInputHorizontally>true</DisplayInputHorizontally>
+  </Input>
+  <Emulation>
+    <EmulationSpeed>100</EmulationSpeed>
+    <TurboSpeed>300</TurboSpeed>
+    <RewindSpeed>100</RewindSpeed>
+    <Region>Auto</Region>
+    <RunAheadFrames>0</RunAheadFrames>
+    <EnableRandomPowerOnState>false</EnableRandomPowerOnState>
+    <EnableStrictBoardMappings>false</EnableStrictBoardMappings>
+    <PpuExtraScanlinesBeforeNmi>0</PpuExtraScanlinesBeforeNmi>
+    <PpuExtraScanlinesAfterNmi>0</PpuExtraScanlinesAfterNmi>
+    <GsuClockSpeed>100</GsuClockSpeed>
+    <RamPowerOnState>Random</RamPowerOnState>
+    <BsxCustomDate>-1</BsxCustomDate>
+  </Emulation>
+  <Preferences>
+    <DisplayLanguage>English</DisplayLanguage>
+    <AutomaticallyCheckForUpdates>false</AutomaticallyCheckForUpdates>
+    <SingleInstance>true</SingleInstance>
+    <AutoLoadPatches>true</AutoLoadPatches>
+    <PauseWhenInBackground>false</PauseWhenInBackground>
+    <PauseWhenInMenusAndConfig>false</PauseWhenInMenusAndConfig>
+    <PauseWhenInDebuggingTools>false</PauseWhenInDebuggingTools>
+    <AllowBackgroundInput>false</AllowBackgroundInput>
+    <PauseOnMovieEnd>true</PauseOnMovieEnd>
+    <AssociateRomFiles>false</AssociateRomFiles>
+    <AssociateSpcFiles>false</AssociateSpcFiles>
+    <AssociateBsFiles>false</AssociateBsFiles>
+    <AssociateMsmFiles>false</AssociateMsmFiles>
+    <AssociateMssFiles>false</AssociateMssFiles>
+    <RewindBufferSize>30</RewindBufferSize>
+    <AlwaysOnTop>false</AlwaysOnTop>
+    <AutoHideMenu>false</AutoHideMenu>
+    <ShowFps>false</ShowFps>
+    <ShowFrameCounter>false</ShowFrameCounter>
+    <ShowGameTimer>false</ShowGameTimer>
+    <ShowTitleBarInfo>false</ShowTitleBarInfo>
+    <ShowDebugInfo>false</ShowDebugInfo>
+    <DisableOsd>false</DisableOsd>
+    <DisableGameSelectionScreen>false</DisableGameSelectionScreen>
+    <ShortcutKeys1>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateFromFile</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>76</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot7</Shortcut>
+        <KeyCombination>
+          <Key1>118</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot6</Shortcut>
+        <KeyCombination>
+          <Key1>117</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot5</Shortcut>
+        <KeyCombination>
+          <Key1>116</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot4</Shortcut>
+        <KeyCombination>
+          <Key1>115</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot3</Shortcut>
+        <KeyCombination>
+          <Key1>114</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot2</Shortcut>
+        <KeyCombination>
+          <Key1>113</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>LoadStateSlot1</Shortcut>
+        <KeyCombination>
+          <Key1>112</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateToFile</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>83</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot7</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>118</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot6</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>117</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot5</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>116</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot4</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>115</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot3</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>114</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot2</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>113</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SaveStateSlot1</Shortcut>
+        <KeyCombination>
+          <Key1>16</Key1>
+          <Key2>112</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>OpenFile</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>79</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>DecreaseSpeed</Shortcut>
+        <KeyCombination>
+          <Key1>189</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>IncreaseSpeed</Shortcut>
+        <KeyCombination>
+          <Key1>187</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>MaxSpeed</Shortcut>
+        <KeyCombination>
+          <Key1>120</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>DecreaseVolume</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>189</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>IncreaseVolume</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>187</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>ToggleFps</Shortcut>
+        <KeyCombination>
+          <Key1>121</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>ToggleFullscreen</Shortcut>
+        <KeyCombination>
+          <Key1>122</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale6x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>54</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale5x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>53</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale4x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>52</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale3x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>51</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale2x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>50</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>SetScale1x</Shortcut>
+        <KeyCombination>
+          <Key1>18</Key1>
+          <Key2>49</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>TakeScreenshot</Shortcut>
+        <KeyCombination>
+          <Key1>123</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>PowerCycle</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>84</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>Reset</Shortcut>
+        <KeyCombination>
+          <Key1>17</Key1>
+          <Key2>82</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>Pause</Shortcut>
+        <KeyCombination>
+          <Key1>27</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>Rewind</Shortcut>
+        <KeyCombination>
+          <Key1>8</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>FastForward</Shortcut>
+        <KeyCombination>
+          <Key1>9</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+    </ShortcutKeys1>
+    <ShortcutKeys2>
+      <ShortcutKeyInfo>
+        <Shortcut>Rewind</Shortcut>
+        <KeyCombination>
+          <Key1>65552</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+      <ShortcutKeyInfo>
+        <Shortcut>FastForward</Shortcut>
+        <KeyCombination>
+          <Key1>65553</Key1>
+          <Key2>0</Key2>
+          <Key3>0</Key3>
+        </KeyCombination>
+      </ShortcutKeyInfo>
+    </ShortcutKeys2>
+    <OverrideGameFolder>true</OverrideGameFolder>
+    <OverrideAviFolder>false</OverrideAviFolder>
+    <OverrideMovieFolder>false</OverrideMovieFolder>
+    <OverrideSaveDataFolder>true</OverrideSaveDataFolder>
+    <OverrideSaveStateFolder>true</OverrideSaveStateFolder>
+    <OverrideScreenshotFolder>true</OverrideScreenshotFolder>
+    <OverrideWaveFolder>false</OverrideWaveFolder>
+    <GameFolder>.\..\..\roms\snes</GameFolder>
+    <AviFolder />
+    <MovieFolder />
+    <SaveDataFolder>.\..\..\saves\snes\mesen-s</SaveDataFolder>
+    <SaveStateFolder>.\..\..\saves\snes\mesen-s</SaveStateFolder>
+    <ScreenshotFolder>.\..\..\screenshots</ScreenshotFolder>
+    <WaveFolder />
+  </Preferences>
+  <Debug>
+    <Shortcuts>
+      <IncreaseFontSize Value="Oemplus, Control" />
+      <DecreaseFontSize Value="OemMinus, Control" />
+      <ResetFontSize Value="D0, Control" />
+      <GoTo Value="G, Control" />
+      <Find Value="F, Control" />
+      <FindNext Value="F3" />
+      <FindPrev Value="F3, Shift" />
+      <Undo Value="Z, Control" />
+      <Copy Value="C, Control" />
+      <Cut Value="X, Control" />
+      <Paste Value="V, Control" />
+      <SelectAll Value="A, Control" />
+      <Refresh Value="F5" />
+      <MarkAsCode Value="D1, Control" />
+      <MarkAsData Value="D2, Control" />
+      <MarkAsUnidentified Value="D3, Control" />
+      <GoToAll Value="Oemcomma, Control" />
+      <ZoomIn Value="Oemplus, Control" />
+      <ZoomOut Value="OemMinus, Control" />
+      <SaveAsPng Value="S, Control" />
+      <CodeWindow_EditInMemoryViewer Value="F1" />
+      <MemoryViewer_ViewInDisassembly Value="None" />
+      <OpenAssembler Value="U, Control" />
+      <OpenDebugger Value="D, Control" />
+      <OpenSpcDebugger Value="F, Control" />
+      <OpenSa1Debugger Value="None" />
+      <OpenGsuDebugger Value="None" />
+      <OpenNecDspDebugger Value="None" />
+      <OpenCx4Debugger Value="None" />
+      <OpenEventViewer Value="E, Control" />
+      <OpenMemoryTools Value="M, Control" />
+      <OpenProfiler Value="Y, Control" />
+      <OpenScriptWindow Value="N, Control" />
+      <OpenTraceLogger Value="J, Control" />
+      <OpenRegisterViewer Value="K, Control" />
+      <OpenTextHooker Value="H, Control" />
+      <OpenWatchWindow Value="W, Control" />
+      <OpenTilemapViewer Value="D1, Control" />
+      <OpenTileViewer Value="D2, Control" />
+      <OpenSpriteViewer Value="D3, Control" />
+      <OpenPaletteViewer Value="D4, Control" />
+      <Reset Value="R, Control" />
+      <PowerCycle Value="T, Control" />
+      <ReloadRom Value="None" />
+      <Continue Value="F5" />
+      <Break Value="Cancel, Control, Alt" />
+      <ToggleBreakContinue Value="Escape" />
+      <StepInto Value="F11" />
+      <StepOver Value="F10" />
+      <StepOut Value="F11, Shift" />
+      <StepBack Value="F10, Shift" />
+      <RunCpuCycle Value="None" />
+      <RunPpuCycle Value="F6" />
+      <RunPpuScanline Value="F7" />
+      <RunPpuFrame Value="F8" />
+      <BreakIn Value="B, Control" />
+      <BreakOn Value="B, Alt" />
+      <FindOccurrences Value="F, Shift, Control" />
+      <GoToProgramCounter Value="Multiply, Alt" />
+      <ToggleVerifiedData Value="D1, Alt" />
+      <ToggleUnidentifiedCodeData Value="D2, Alt" />
+      <CodeWindow_SetNextStatement Value="F10, Shift, Control" />
+      <CodeWindow_EditSubroutine Value="F4" />
+      <CodeWindow_EditSelectedCode Value="None" />
+      <CodeWindow_EditSourceFile Value="F4" />
+      <CodeWindow_EditLabel Value="F2" />
+      <CodeWindow_NavigateBack Value="Left, Alt" />
+      <CodeWindow_NavigateForward Value="Right, Alt" />
+      <CodeWindow_ToggleBreakpoint Value="F9" />
+      <CodeWindow_DisableEnableBreakpoint Value="F9, Control" />
+      <CodeWindow_SwitchView Value="Q, Control" />
+      <FunctionList_EditLabel Value="F2" />
+      <FunctionList_AddBreakpoint Value="None" />
+      <FunctionList_FindOccurrences Value="None" />
+      <LabelList_Add Value="Insert" />
+      <LabelList_Edit Value="F2" />
+      <LabelList_Delete Value="Delete" />
+      <LabelList_AddBreakpoint Value="None" />
+      <LabelList_AddToWatch Value="None" />
+      <LabelList_FindOccurrences Value="None" />
+      <LabelList_ViewInCpuMemory Value="None" />
+      <LabelList_ViewInMemoryType Value="None" />
+      <BreakpointList_Add Value="Insert" />
+      <BreakpointList_Edit Value="F2" />
+      <BreakpointList_GoToLocation Value="None" />
+      <BreakpointList_Delete Value="Delete" />
+      <WatchList_Delete Value="Delete" />
+      <WatchList_MoveUp Value="Up, Control" />
+      <WatchList_MoveDown Value="Down, Control" />
+      <SaveRom Value="S, Control" />
+      <SaveRomAs Value="None" />
+      <SaveEditAsIps Value="None" />
+      <RevertPrgChrChanges Value="None" />
+      <MemoryViewer_Freeze Value="Q, Control" />
+      <MemoryViewer_Unfreeze Value="W, Control" />
+      <MemoryViewer_AddToWatch Value="None" />
+      <MemoryViewer_EditBreakpoint Value="None" />
+      <MemoryViewer_EditLabel Value="None" />
+      <MemoryViewer_Import Value="O, Control" />
+      <MemoryViewer_Export Value="S, Control" />
+      <MemoryViewer_ViewInCpuMemory Value="None" />
+      <MemoryViewer_ViewInMemoryType Value="None" />
+      <ScriptWindow_OpenScript Value="N, Control" />
+      <ScriptWindow_SaveScript Value="S, Control" />
+      <ScriptWindow_RunScript Value="F5" />
+      <ScriptWindow_StopScript Value="Escape" />
+    </Shortcuts>
+    <TraceLogger>
+      <LogOptions>
+        <LogCpu>true</LogCpu>
+        <LogSpc>false</LogSpc>
+        <LogNecDsp>false</LogNecDsp>
+        <LogSa1>false</LogSa1>
+        <LogGsu>false</LogGsu>
+        <LogCx4>false</LogCx4>
+        <ShowByteCode>true</ShowByteCode>
+        <ShowRegisters>true</ShowRegisters>
+        <ShowCpuCycles>false</ShowCpuCycles>
+        <ShowPpuCycles>true</ShowPpuCycles>
+        <ShowPpuScanline>true</ShowPpuScanline>
+        <ShowPpuFrames>false</ShowPpuFrames>
+        <ShowExtraInfo>false</ShowExtraInfo>
+        <IndentCode>false</IndentCode>
+        <ShowEffectiveAddresses>true</ShowEffectiveAddresses>
+        <ShowMemoryValues>false</ShowMemoryValues>
+        <UseLabels>false</UseLabels>
+        <ExtendZeroPage>false</ExtendZeroPage>
+        <UseWindowsEol>true</UseWindowsEol>
+        <StatusFormat>Text</StatusFormat>
+        <OverrideFormat>false</OverrideFormat>
+      </LogOptions>
+      <AutoRefresh>true</AutoRefresh>
+      <LineCount>1000</LineCount>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <FontFamily>Consolas</FontFamily>
+      <FontStyle>Regular</FontStyle>
+      <FontSize>12</FontSize>
+      <TextZoom>100</TextZoom>
+    </TraceLogger>
+    <HexEditor>
+      <HighDensityTextMode>false</HighDensityTextMode>
+      <EnablePerByteNavigation>true</EnablePerByteNavigation>
+      <ByteEditingMode>true</ByteEditingMode>
+      <AutoRefresh>true</AutoRefresh>
+      <AutoRefreshSpeed>Normal</AutoRefreshSpeed>
+      <IgnoreRedundantWrites>false</IgnoreRedundantWrites>
+      <HighlightCurrentRowColumn>true</HighlightCurrentRowColumn>
+      <ColumnCount>2</ColumnCount>
+      <FontFamily>Consolas</FontFamily>
+      <FontStyle>Regular</FontStyle>
+      <FontSize>12</FontSize>
+      <TextZoom>100</TextZoom>
+      <ShowCharacters>true</ShowCharacters>
+      <ShowLabelInfo>true</ShowLabelInfo>
+      <HighlightExecution>true</HighlightExecution>
+      <HighlightWrites>true</HighlightWrites>
+      <HighlightReads>true</HighlightReads>
+      <FadeSpeed>300</FadeSpeed>
+      <HideUnusedBytes>false</HideUnusedBytes>
+      <HideReadBytes>false</HideReadBytes>
+      <HideWrittenBytes>false</HideWrittenBytes>
+      <HideExecutedBytes>false</HideExecutedBytes>
+      <HighlightBreakpoints>false</HighlightBreakpoints>
+      <HighlightLabelledBytes>false</HighlightLabelledBytes>
+      <HighlightCodeBytes>false</HighlightCodeBytes>
+      <HighlightDataBytes>false</HighlightDataBytes>
+      <ReadColor ColorString="Blue" />
+      <WriteColor ColorString="Red" />
+      <ExecColor ColorString="Green" />
+      <LabelledByteColor ColorString="LightPink" />
+      <CodeByteColor ColorString="DarkSeaGreen" />
+      <DataByteColor ColorString="LightSteelBlue" />
+      <MemoryType>CpuMemory</MemoryType>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+    </HexEditor>
+    <EventViewer>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <ImageScale>1</ImageScale>
+      <RefreshOnBreakPause>true</RefreshOnBreakPause>
+      <AutoRefresh>true</AutoRefresh>
+      <AutoRefreshSpeed>Normal</AutoRefreshSpeed>
+      <ShowPpuRegisterCgramWrites>true</ShowPpuRegisterCgramWrites>
+      <ShowPpuRegisterVramWrites>true</ShowPpuRegisterVramWrites>
+      <ShowPpuRegisterOamWrites>true</ShowPpuRegisterOamWrites>
+      <ShowPpuRegisterMode7Writes>true</ShowPpuRegisterMode7Writes>
+      <ShowPpuRegisterBgOptionWrites>true</ShowPpuRegisterBgOptionWrites>
+      <ShowPpuRegisterBgScrollWrites>true</ShowPpuRegisterBgScrollWrites>
+      <ShowPpuRegisterWindowWrites>true</ShowPpuRegisterWindowWrites>
+      <ShowPpuRegisterOtherWrites>true</ShowPpuRegisterOtherWrites>
+      <ShowPpuRegisterReads>true</ShowPpuRegisterReads>
+      <ShowCpuRegisterWrites>true</ShowCpuRegisterWrites>
+      <ShowCpuRegisterReads>true</ShowCpuRegisterReads>
+      <ShowApuRegisterWrites>false</ShowApuRegisterWrites>
+      <ShowApuRegisterReads>false</ShowApuRegisterReads>
+      <ShowWorkRamRegisterWrites>false</ShowWorkRamRegisterWrites>
+      <ShowWorkRamRegisterReads>false</ShowWorkRamRegisterReads>
+      <ShowNmi>true</ShowNmi>
+      <ShowIrq>true</ShowIrq>
+      <ShowMarkedBreakpoints>true</ShowMarkedBreakpoints>
+      <ShowPreviousFrameEvents>true</ShowPreviousFrameEvents>
+      <ShowDmaChannel0>true</ShowDmaChannel0>
+      <ShowDmaChannel1>true</ShowDmaChannel1>
+      <ShowDmaChannel2>true</ShowDmaChannel2>
+      <ShowDmaChannel3>true</ShowDmaChannel3>
+      <ShowDmaChannel4>true</ShowDmaChannel4>
+      <ShowDmaChannel5>true</ShowDmaChannel5>
+      <ShowDmaChannel6>true</ShowDmaChannel6>
+      <ShowDmaChannel7>true</ShowDmaChannel7>
+      <IrqColor ColorString="#FFADAC" />
+      <NmiColor ColorString="#FFADAC" />
+      <BreakpointColor ColorString="#AFFFAF" />
+      <ApuRegisterReadColor ColorString="#F9FEAC" />
+      <ApuRegisterWriteColor ColorString="#9F93C6" />
+      <CpuRegisterReadColor ColorString="#1898E4" />
+      <CpuRegisterWriteColor ColorString="#FF5E5E" />
+      <WorkRamRegisterReadColor ColorString="#8E33FF" />
+      <WorkRamRegisterWriteColor ColorString="#2EFF28" />
+      <PpuRegisterReadColor ColorString="#007597" />
+      <PpuRegisterWriteCgramColor ColorString="#C92929" />
+      <PpuRegisterWriteVramColor ColorString="#B47ADA" />
+      <PpuRegisterWriteOamColor ColorString="#53D744" />
+      <PpuRegisterWriteBgOptionColor ColorString="#BF8020" />
+      <PpuRegisterWriteBgScrollColor ColorString="#4A7CD9" />
+      <PpuRegisterWriteMode7Color ColorString="#FE787B" />
+      <PpuRegisterWriteWindowColor ColorString="#E251F7" />
+      <PpuRegisterWriteOtherColor ColorString="#D1DD42" />
+    </EventViewer>
+    <Debugger>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <SplitterDistance xsi:nil="true" />
+      <ShowByteCode>false</ShowByteCode>
+      <UseLowerCaseDisassembly>false</UseLowerCaseDisassembly>
+      <BreakOnBrk>false</BreakOnBrk>
+      <BreakOnCop>false</BreakOnCop>
+      <BreakOnWdm>false</BreakOnWdm>
+      <BreakOnStp>false</BreakOnStp>
+      <BreakOnUninitRead>false</BreakOnUninitRead>
+      <BreakOnOpen>true</BreakOnOpen>
+      <BreakOnPowerCycleReset>true</BreakOnPowerCycleReset>
+      <AutoResetCdl>true</AutoResetCdl>
+      <BringToFrontOnBreak>true</BringToFrontOnBreak>
+      <BringToFrontOnPause>false</BringToFrontOnPause>
+      <UnidentifiedBlockDisplay>Hide</UnidentifiedBlockDisplay>
+      <VerifiedDataDisplay>Hide</VerifiedDataDisplay>
+      <UseAltSpcOpNames>false</UseAltSpcOpNames>
+      <BreakOnValue>0</BreakOnValue>
+      <BreakInCount>1</BreakInCount>
+      <BreakInMetric>CpuInstructions</BreakInMetric>
+      <FontFamily>Consolas</FontFamily>
+      <FontStyle>Regular</FontStyle>
+      <FontSize>12</FontSize>
+      <TextZoom>100</TextZoom>
+      <ShowSelectionLength>false</ShowSelectionLength>
+      <WatchFormat>Hex</WatchFormat>
+      <ShowCommentsInLabelList>true</ShowCommentsInLabelList>
+      <CodeOpcodeColor ColorString="#162525" />
+      <CodeLabelDefinitionColor ColorString="Blue" />
+      <CodeImmediateColor ColorString="Chocolate" />
+      <CodeAddressColor ColorString="DarkRed" />
+      <CodeCommentColor ColorString="Green" />
+      <CodeEffectiveAddressColor ColorString="SteelBlue" />
+      <CodeVerifiedDataColor ColorString="#FFFCEC" />
+      <CodeUnidentifiedDataColor ColorString="#FFF2F2" />
+      <CodeUnexecutedCodeColor ColorString="#E1F4E4" />
+      <CodeExecBreakpointColor ColorString="#8C2828" />
+      <CodeWriteBreakpointColor ColorString="#287850" />
+      <CodeReadBreakpointColor ColorString="#2828C8" />
+      <CodeActiveStatementColor ColorString="Yellow" />
+    </Debugger>
+    <TilemapViewer>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <ImageScale>1</ImageScale>
+      <ShowScrollOverlay>false</ShowScrollOverlay>
+      <ShowTileGrid>false</ShowTileGrid>
+      <AutoRefreshSpeed>Low</AutoRefreshSpeed>
+      <AutoRefresh>true</AutoRefresh>
+      <RefreshScanline>240</RefreshScanline>
+      <RefreshCycle>0</RefreshCycle>
+    </TilemapViewer>
+    <TileViewer>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <ImageScale>3</ImageScale>
+      <ShowTileGrid>false</ShowTileGrid>
+      <Source>VideoRam</Source>
+      <Format>Bpp4</Format>
+      <Layout>Normal</Layout>
+      <ColumnCount>16</ColumnCount>
+      <Address>0</Address>
+      <PageSize>65536</PageSize>
+      <SelectedPalette>0</SelectedPalette>
+      <AutoRefresh>true</AutoRefresh>
+      <AutoRefreshSpeed>Low</AutoRefreshSpeed>
+      <RefreshScanline>240</RefreshScanline>
+      <RefreshCycle>0</RefreshCycle>
+    </TileViewer>
+    <RegisterViewer>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <AutoRefresh>true</AutoRefresh>
+      <RefreshScanline>240</RefreshScanline>
+      <RefreshCycle>0</RefreshCycle>
+    </RegisterViewer>
+    <SpriteViewer>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <ImageScale>2</ImageScale>
+      <SplitterDistance>514</SplitterDistance>
+      <AutoRefresh>true</AutoRefresh>
+      <HideOffscreenSprites>false</HideOffscreenSprites>
+      <RefreshScanline>240</RefreshScanline>
+      <RefreshCycle>0</RefreshCycle>
+      <AutoRefreshSpeed>Low</AutoRefreshSpeed>
+    </SpriteViewer>
+    <DbgIntegration>
+      <AutoImport>true</AutoImport>
+      <ResetLabelsOnImport>true</ResetLabelsOnImport>
+      <ImportCpuPrgRomLabels>true</ImportCpuPrgRomLabels>
+      <ImportCpuWorkRamLabels>true</ImportCpuWorkRamLabels>
+      <ImportCpuSaveRamLabels>true</ImportCpuSaveRamLabels>
+      <ImportCpuComments>true</ImportCpuComments>
+      <ImportSpcRamLabels>true</ImportSpcRamLabels>
+      <ImportSpcComments>true</ImportSpcComments>
+    </DbgIntegration>
+    <ScriptWindow>
+      <RecentScripts />
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <FontFamily>Consolas</FontFamily>
+      <FontStyle>Regular</FontStyle>
+      <FontSize>12</FontSize>
+      <Zoom>100</Zoom>
+      <CodeWindowHeight>0</CodeWindowHeight>
+      <ScriptStartupBehavior>ShowTutorial</ScriptStartupBehavior>
+      <SaveScriptBeforeRun>true</SaveScriptBeforeRun>
+      <AutoLoadLastScript>true</AutoLoadLastScript>
+      <ScriptTimeout>1000</ScriptTimeout>
+    </ScriptWindow>
+    <Profiler>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+    </Profiler>
+    <Assembler>
+      <WindowSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </WindowSize>
+      <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+      </WindowLocation>
+      <FontFamily>Consolas</FontFamily>
+      <FontStyle>Regular</FontStyle>
+      <FontSize>12</FontSize>
+      <Zoom>100</Zoom>
+    </Assembler>
+  </Debug>
+  <RecentFiles>
+    <Items>
+      <RecentItem>
+        <RomFile>
+          <Path />
+          <InnerFile />
+          <InnerFileIndex>0</InnerFileIndex>
+        </RomFile>
+        <PatchFile xsi:nil="true" />
+      </RecentItem>
+    </Items>
+  </RecentFiles>
+  <AviRecord>
+    <Codec>CSCD</Codec>
+    <CompressionLevel>6</CompressionLevel>
+  </AviRecord>
+  <MovieRecord>
+    <RecordFrom>StartWithoutSaveData</RecordFrom>
+  </MovieRecord>
+  <Cheats>
+    <WindowSize>
+      <Width>0</Width>
+      <Height>0</Height>
+    </WindowSize>
+    <WindowLocation>
+      <X>0</X>
+      <Y>0</Y>
+    </WindowLocation>
+    <DisableAllCheats>false</DisableAllCheats>
+  </Cheats>
+  <Netplay>
+    <Host>localhost</Host>
+    <Port>8888</Port>
+    <Password />
+    <PlayerName>PlayerName</PlayerName>
+    <ServerName>Default</ServerName>
+    <ServerPort>8888</ServerPort>
+    <ServerPassword />
+  </Netplay>
+  <WindowLocation>
+    <X>962</X>
+    <Y>225</Y>
+  </WindowLocation>
+  <WindowSize>
+    <Width>528</Width>
+    <Height>541</Height>
+  </WindowSize>
+  <NeedInputReinit2>false</NeedInputReinit2>
+  <DefaultKeyMappings>Xbox ArrowKeys</DefaultKeyMappings>
+</Configuration>
