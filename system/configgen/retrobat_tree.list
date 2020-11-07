@@ -43,6 +43,7 @@ emulators\project64\Config
 emulators\raine
 emulators\redream
 emulators\retroarch
+emulators\retroarch\shaders
 emulators\rpcs3
 emulators\simcoupe
 emulators\snes9x
