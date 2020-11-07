@@ -24,7 +24,7 @@
       <origin>0.5 0.5</origin>
 	  <linearSmooth>true</linearSmooth>
       <maxSize>0.5 0.5</maxSize>
-      <path>./retrobat_logo.png</path>
+      <path>./splash_retrobat.svg</path>
     </image>
     <text name="label">
       <color>FFFFFFFF</color>
