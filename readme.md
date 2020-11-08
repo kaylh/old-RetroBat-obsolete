@@ -36,7 +36,13 @@ To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 
 
 To build .nsi files you need the NullSoft Scriptable Install System.
 
-I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=0). Use at your own risk! 
+Why use proprietary development software like Clickteam Fusion 2.5? 
+
+*Until version 2.1, retrobat consisted mainly of a collection of batch and powershell scripts to facilitate the use and configuration of EmulationStation with RetroArch. I didn't originally have any training in software development, I used my few batch skills to start writing these scripts and learned to do it at the same time. As I don't know any other programming language, using Fusion 2.5 allowed me to quickly provide solutions to the evolutionary needs of RetroBat. I'm aware that using commercial software to read and compile the sources prevents those who don't own the software from accessing the sources of retrobat.mfa file. I specify that this constraint exists only for retrobat.mfa file, all other source files are editable with at least a good text editor such as notepad++* - Kayl
+
+You can download [here](https://www.dropbox.com/sh/wp6ed3wlro9x7th/AADQFQCZNQlmhLeo1EqmHoI3a?dl=0) the sources of retrobat.mfa in pdf format to preview the Fusion code.
+
+I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=0). (WIP)
 
 ## RetroBat Team
 
