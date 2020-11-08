@@ -13,7 +13,7 @@
       {
          "home":".\\.emulationstation",
          "bios":".\\..\\bios",
-		 "saves":".\\..\\bloublou",
+		 "saves":".\\..\\saves",
 		 "screenshots":".\\..\\screenshots",
 		 "shaders":".\\..\\system\\shaders",
 		 "decorations":".\\..\\decorations"
