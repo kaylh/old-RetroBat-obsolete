@@ -76,3 +76,7 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 - RetroArch by Libretro Team.
+
+## Support
+
+You need support ? You found a bug ? Please go on RetroBat Forum: https://retrobat.forumgaming.fr/
