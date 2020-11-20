@@ -23,6 +23,8 @@ SetCompressor lzma
 
 !define BASE_DIR ".."
 !define BASE_INSTALL_DIR "C:\$(^Name)\"
+!define DECORATIONS_DIR "$INSTDIR\decorations"
+!define DECORATIONS_BASE "${BASE_DIR}\decorations"
 !define EMULATIONSTATION_DIR "$INSTDIR\emulationstation"
 !define EMULATIONSTATION_BASE "${BASE_DIR}\emulationstation"
 !define EMULATORS_DIR "$INSTDIR\emulators"
@@ -62,7 +64,7 @@ CompletedText $CompletedText
 !define MUI_TEXTCOLOR "FFFFFF"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "..\system\resources\retrobat_wizard.bmp"
 
-!define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation. All the types will install all the components needed, there are three different configuration profiles for EmulationStation and RetroArch."
+!define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation."
 !define MUI_COMPONENTSPAGE_TEXT_COMPLIST " "
   
 !define MUI_FINISHPAGE_SHOWREADME
@@ -210,7 +212,7 @@ FunctionEnd
 InstType /COMPONENTSONLYONCUSTOM
 InstType "Standard installation" SEC01
 InstType "Batocera USB installation" SEC02
-InstType "Update existing installation" SEC03
+;InstType "Update existing installation" SEC03
 ;InstType "Install DirectX Runtime" SEC04
 ;InstType "Install Visual C++" SEC05
 
@@ -259,10 +261,7 @@ SectionInstType ${SEC01} ${SEC02}
  ifFileExists "$INSTDIR\retrobat.exe" 0 +3
  ${CheckUserAborted}
  ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
-
- ifFileExists "$INSTDIR\system\install.done" 0 +3
- ${CheckUserAborted}
- Delete "$INSTDIR\system\install.done"
+ SetDetailsPrint textonly
  ${EndUserAborted}
 
 ;  SetOutPath "$TEMP"
@@ -284,25 +283,37 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${EMULATIONSTATION_DIR}\*.lib"
  Delete "${EMULATIONSTATION_DIR}\*.info"
  Delete "${EMULATIONSTATION_DIR}\*.cfg"
- Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_features.cfg"
- Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_padtokey.cfg"
- Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_systems.cfg"
- Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_log.txt"
- Delete "${EMULATIONSTATION_DIR}\.emulationstation\*.bak"
+
  RMDir /r "${EMULATIONSTATION_DIR}\plugins"
  RMDir /r "${EMULATIONSTATION_DIR}\resources"
- RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
  
  File "${EMULATIONSTATION_BASE}\*.exe"
  File "${EMULATIONSTATION_BASE}\*.dll"
  File "${EMULATIONSTATION_BASE}\*.lib"
  File "${EMULATIONSTATION_BASE}\*.info"
  File "${EMULATIONSTATION_BASE}\*.cfg"
+ 
+ File /r "${EMULATIONSTATION_BASE}\plugins"
+ File /r "${EMULATIONSTATION_BASE}\resources"
+ 
+ SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation"
+ SetOverwrite ifnewer
+ 
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_features.cfg"
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_padtokey.cfg"
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_systems.cfg"
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_log.txt"
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\*.bak"
+ 
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_features.cfg"
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_padtokey.cfg"
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_systems.cfg"
- File /r "${EMULATIONSTATION_BASE}\plugins"
- File /r "${EMULATIONSTATION_BASE}\resources"
+ 
+ SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\themes"
+ SetOverwrite ifnewer
+ 
+ RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
+
  File /r "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
  
 SectionEnd
@@ -313,9 +324,19 @@ SectionInstType ${SEC01} ${SEC02}
  SetOutPath "${EMULATORS_DIR}\retroarch"
  SetOverwrite ifnewer
  
- RMDir /r "${EMULATORS_DIR}\retroarch"
+; RMDir /r "${EMULATORS_DIR}\retroarch"
  
  File /r "${EMULATORS_BASE}\retroarch"
+ 
+SectionEnd
+
+Section /o "Decorations" SectionDecorations
+SectionInstType ${SEC01} ${SEC02}
+
+ SetOutPath "${DECORATIONS_DIR}"
+ SetOverwrite ifnewer
+ 
+ File /r "${DECORATIONS_BASE}"
  
 SectionEnd
 
@@ -362,10 +383,11 @@ Section -"Post"
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionDecorations} "Bezels selection for RetroArch."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Batocera EmulationStation build for Windows."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Selection of standalone emulators."
-!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION} custom build."
-!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and configuration files needed."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and needed configuration files."
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 Function InstFilesLeave
