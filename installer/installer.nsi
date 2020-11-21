@@ -16,8 +16,7 @@ SetCompressor lzma
 !define PRODUCT_VERSION "4.0"
 !define VERSION "${PRODUCT_VERSION}"
 !define /date TIMESTAMP "%Y%m%d-%H%M%S"
-;!define RETROARCH_VERSION "1.9.0"
-;!define OS_ARCHITECTURE "x86_64"
+!define /date TIMESTAMP2 "%Y/%m/%d-%H:%M:%S"
 !define PRODUCT_PUBLISHER "RetroBat Team"
 !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
@@ -29,33 +28,26 @@ SetCompressor lzma
 !define EMULATIONSTATION_BASE "${BASE_DIR}\emulationstation"
 !define EMULATORS_DIR "$INSTDIR\emulators"
 !define EMULATORS_BASE "${BASE_DIR}\emulators"
-;!define BASE_INSTALL_DIR "$EXEDIR"
 !define DOWNLOAD_DIR "$INSTDIR\system\download"
 
 Unicode true
 
 Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
-;OutFile "setup.exe"
 InstallDir "${BASE_INSTALL_DIR}"
 RequestExecutionLevel user
-ShowInstDetails "nevershow"
+ShowInstDetails "hide"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
 BrandingText "${PRODUCT} v${VERSION}"
 SpaceTexts none
 
-;!define MUI_ABORTWARNING
+!define MUI_ABORTWARNING
 !define MUI_ABORTWARNING_TEXT "Are you sure you wish to abort installation?"
 
-;Var PKGNAME
-;Var LRCORE
 Var CompletedText
 CompletedText $CompletedText
 
-;!define MUI_BGCOLOR "1C4E75"
 !define MUI_COMPONENTSPAGE_NODESC
-;!define MUI_DIRECTORYPAGE_BGCOLOR "1C4E75"
-;!define MUI_DIRECTORYPAGE_TEXTCOLOR "FFFFFF"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_BITMAP "..\system\resources\retrobat_header.bmp"
 !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
@@ -70,7 +62,6 @@ CompletedText $CompletedText
 !define MUI_FINISHPAGE_SHOWREADME
 !define MUI_FINISHPAGE_SHOWREADME_TEXT "Create Desktop Shortcut"
 !define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortCut
-;!define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
  
 !define MUI_FINISHPAGE_LINK "Visit official RetroBat website: www.retrobat.ovh"
 !define MUI_FINISHPAGE_LINK_LOCATION "https://www.retrobat.ovh/"
@@ -90,54 +81,12 @@ Var MUI_HeaderSubText
 !define MUI_INSTFILESPAGE_FINISHHEADER_SUBTEXT "$MUI_HeaderSubText"
 
 !insertmacro MUI_PAGE_INSTFILES
-;!insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_FINISH
 
-Function StrStrip
- Exch $R0 #string
- Exch
- Exch $R1 #in string
- Push $R2
- Push $R3
- Push $R4
- Push $R5
- StrLen $R5 $R0
- StrCpy $R2 -1
- IntOp $R2 $R2 + 1
- StrCpy $R3 $R1 $R5 $R2
- StrCmp $R3 "" +9
- StrCmp $R3 $R0 0 -3
- StrCpy $R3 $R1 $R2
- IntOp $R2 $R2 + $R5
- StrCpy $R4 $R1 "" $R2
- StrCpy $R1 $R3$R4
- IntOp $R2 $R2 - $R5
- IntOp $R2 $R2 - 1
- Goto -10
- StrCpy $R0 $R1
- Pop $R5
- Pop $R4
- Pop $R3
- Pop $R2
- Pop $R1
- Exch $R0
-FunctionEnd
-
-!macro StrStrip Str InStr OutVar
-
-Push '${InStr}'
-Push '${Str}'
-Call StrStrip
-Pop '${OutVar}'
-
-!macroend
-
-!define StrStrip '!insertmacro StrStrip'
-
 Function CreateVersionFile
- FileOpen $4 "$INSTDIR\system\version.info" w
- FileWrite $4 "${VERSION}-${TIMESTAMP}"
- FileClose $4
+ FileOpen $0 "$INSTDIR\system\version.info" w
+ FileWrite $0 "${VERSION}-${TIMESTAMP2}"
+ FileClose $0
 FunctionEnd
 
 Var CurrentPage
@@ -233,36 +182,36 @@ SectionInstType ${SEC01} ${SEC02}
  SetOutPath "$INSTDIR"
  SetOverwrite ifnewer
  
+ SetDetailsPrint textonly
+	DetailPrint "Copying RetroBat main files..."
+ SetDetailsPrint none
+ 
  Delete "$INSTDIR\retrobat.exe"
  Delete "$INSTDIR\retrobat.ini"
  Delete "$INSTDIR\license.txt"
  Delete "$INSTDIR\*.dll"
- RMDir /r "$INSTDIR\system"
- ${CheckUserAborted}
+ RMDir /r "$INSTDIR\system\configmenu"
+ RMDir /r "$INSTDIR\system\resources"
+ RMDir /r "$INSTDIR\system\shaders"
+ RMDir /r "$INSTDIR\system\templates"
+
  
  File "${BASE_DIR}\retrobat.exe"
  File "${BASE_DIR}\retrobat.ini"
  File "${BASE_DIR}\license.txt"
-; File "${BASE_DIR}\*.dll" 
+ File /nonfatal "${BASE_DIR}\*.dll" 
  File /r "${BASE_DIR}\system"
- ${CheckUserAborted}
- 
- StrCpy $0 "$INSTDIR"
- StrCpy $0 $0 3
- ${StrStrip} "$0" "$INSTDIR" $R0
-
- Call CreateVersionFile
- ${CheckUserAborted}
 
  SetDetailsPrint textonly
 	DetailPrint "Creating RetroBat folders"
  SetDetailsPrint none
 
  ifFileExists "$INSTDIR\retrobat.exe" 0 +3
- ${CheckUserAborted}
+
  ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
  SetDetailsPrint textonly
- ${EndUserAborted}
+ 
+ Call CreateVersionFile
 
 ;  SetOutPath "$TEMP"
 ;  SetOverwrite on
@@ -276,6 +225,10 @@ SectionInstType ${SEC01} ${SEC02}
  SetOutPath "${EMULATIONSTATION_DIR}"
  SetOverwrite ifnewer
  
+ SetDetailsPrint textonly
+	DetailPrint "Copying EmulationStation files..."
+ SetDetailsPrint none
+
  Delete "${EMULATIONSTATION_DIR}\*.exe"
  Delete "${EMULATIONSTATION_DIR}\*.log"
  Delete "${EMULATIONSTATION_DIR}\*.dll"
@@ -286,45 +239,55 @@ SectionInstType ${SEC01} ${SEC02}
 
  RMDir /r "${EMULATIONSTATION_DIR}\plugins"
  RMDir /r "${EMULATIONSTATION_DIR}\resources"
- 
+
  File "${EMULATIONSTATION_BASE}\*.exe"
  File "${EMULATIONSTATION_BASE}\*.dll"
- File "${EMULATIONSTATION_BASE}\*.lib"
+ File /nonfatal "${EMULATIONSTATION_BASE}\*.lib"
  File "${EMULATIONSTATION_BASE}\*.info"
  File "${EMULATIONSTATION_BASE}\*.cfg"
- 
+
  File /r "${EMULATIONSTATION_BASE}\plugins"
  File /r "${EMULATIONSTATION_BASE}\resources"
- 
+
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation"
  SetOverwrite ifnewer
- 
+
+ IfFileExists "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" 0 +2
+ CopyFiles "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg.old"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_features.cfg"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_padtokey.cfg"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_systems.cfg"
+ Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_settings.cfg"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_log.txt"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\*.bak"
- 
+
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_features.cfg"
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_padtokey.cfg"
  File "${EMULATIONSTATION_BASE}\.emulationstation\es_systems.cfg"
+ File "${EMULATIONSTATION_BASE}\.emulationstation\es_settings.cfg"
  
+ SetOverwrite off
+ 
+ File "${EMULATIONSTATION_BASE}\.emulationstation\es_input.cfg"
+
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\themes"
  SetOverwrite ifnewer
- 
- RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
 
+ RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
  File /r "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
+
  
 SectionEnd
 
-Section /o "RetroArch" SectionRetroArch
+Section /o "Emulators" SectionEmulators
 SectionInstType ${SEC01} ${SEC02}
 
- SetOutPath "${EMULATORS_DIR}\retroarch"
+ SetOutPath "${EMULATORS_DIR}"
  SetOverwrite ifnewer
  
-; RMDir /r "${EMULATORS_DIR}\retroarch"
+ SetDetailsPrint textonly
+	DetailPrint "Copying emulators files..."
+ SetDetailsPrint none
  
  File /r "${EMULATORS_BASE}\retroarch"
  
@@ -333,8 +296,12 @@ SectionEnd
 Section /o "Decorations" SectionDecorations
 SectionInstType ${SEC01} ${SEC02}
 
- SetOutPath "${DECORATIONS_DIR}"
+ SetOutPath "$INSTDIR"
  SetOverwrite ifnewer
+ 
+ SetDetailsPrint textonly
+	DetailPrint "Copying decorations files..."
+ SetDetailsPrint none
  
  File /r "${DECORATIONS_BASE}"
  
@@ -365,6 +332,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  Delete "${DOWNLOAD_DIR}\*.7z"
  Delete "${DOWNLOAD_DIR}\*.zip"
+ Delete "${DOWNLOAD_DIR}\*.*"
 	
 SectionEnd
 
@@ -385,8 +353,8 @@ SectionEnd
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionDecorations} "Bezels selection for RetroArch."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Batocera EmulationStation build for Windows."
-!insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Selection of standalone emulators."
-!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Compatible emulators."
+;!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and needed configuration files."
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
