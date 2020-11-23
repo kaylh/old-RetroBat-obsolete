@@ -2,12 +2,6 @@
    "redream.cfg_configmode_1":[
       {
          "fullmode":"borderless fullscreen",
-         "gamedir":"./../../../batocera/roms/dreamcast"
-      }
-   ],
-   "redream.cfg_configmode_2":[
-      {
-         "fullmode":"borderless fullscreen",
          "gamedir":"./../../roms/dreamcast"
       }
    ]

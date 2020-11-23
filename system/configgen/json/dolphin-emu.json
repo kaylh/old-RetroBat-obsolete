@@ -3,15 +3,6 @@
       {
 		 "ConfirmStop":"False",
 		 "ISOPaths":"2",
-         "ISOPath0":"..\\..\\..\\batocera\\roms\\gamecube",
-		 "ISOPath1":"..\\..\\batocera\\roms\\wii",
-         "Fullscreen":"True"
-      }
-   ],
-   "Dolphin.ini_configmode_2":[
-      {
-		 "ConfirmStop":"False",
-		 "ISOPaths":"2",
          "ISOPath0":".\\..\\..\\roms\\gamecube",
 		 "ISOPath1":".\\..\\..\\roms\\wii",
          "Fullscreen":"True"

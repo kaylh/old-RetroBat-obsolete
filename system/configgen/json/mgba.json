@@ -1,18 +1,6 @@
 {
    "config.ini_configmode_1":[
       {
-         "gb.bios":"./../../../batocera/bios/gb_bios.bin",
-         "gbc.bios":"./../../../batocera/bios/gbc_bios.bin",
-         "sgb.bios":"./../../../batocera/bios/sgb2_boot.bin",
-		 "gba.bios":"./../../../batocera/bios/gba_bios.bin",
-         "savestatePath":"./../../../batocera/saves/gba/mgba",
-         "screenshotPath":"./../../../batocera/screenshots",
-		 "savegamePath":"./../../../batocera/saves/gba/mgba",		 		 
-		 "fullscreen":"1"
-      }
-   ],
-   "config.ini_configmode_2":[
-      {
 		 "gb.bios":"./../../bios/gb_bios.bin",
          "gbc.bios":"./../../bios/gbc_bios.bin",
          "sgb.bios":"./../../bios/sgb2_boot.bin",

@@ -2,13 +2,6 @@
    "ppsspp.ini_configmode_1":[
       {
          "FirstRun":"False",
-		 "CurrentDirectory":"../../../batocera/roms/psp/",
-         "Path0":"../../../batocera/roms/psp"
-      }
-   ],
-   "ppsspp.ini_configmode_2":[
-      {
-         "FirstRun":"False",
 		 "CurrentDirectory":"../../roms/psp/",
          "Path0":"../../roms/psp"
       }

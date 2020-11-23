@@ -2,16 +2,6 @@
    "emulatorLauncher.cfg_configmode_1":[
       {
          "home":".\\.emulationstation",
-         "bios":".\\..\\..\\bios",
-		 "saves":".\\..\\..\\saves",
-		 "screenshots":".\\..\\..\\screenshots",
-		 "shaders":".\\..\\system\\shaders",
-		 "decorations":".\\..\\decorations"
-      }
-   ],
-   "emulatorLauncher.cfg_configmode_2":[
-      {
-         "home":".\\.emulationstation",
          "bios":".\\..\\bios",
 		 "saves":".\\..\\saves",
 		 "screenshots":".\\..\\screenshots",

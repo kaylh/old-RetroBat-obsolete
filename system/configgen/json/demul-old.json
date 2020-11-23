@@ -11,26 +11,6 @@
 		 "net":"netDemul.dll",
 		 "nvram":"..\\..\\emulators\\demul\\nvram\\",
 		 "roms0":"..\\..\\roms\\hikaru\\",
-		 "roms1":"..\\..\\..\\batocera\\roms\\naomi\\",
-		 "roms2":"..\\..\\roms\\naomi2\\",
-		 "roms3":"..\\..\\..\\batocera\\roms\\atomiswave\\",
-		 "roms4":"..\\..\\..\\batocera\\roms\\dreamcast\\",
-		 "roms5":"..\\..\\roms\\gaelco\\",
-		 "romsPathsCount":"6"
-      }
-   ],
-   "Demul.ini_configmode_2":[
-      {
-		 "VMSA0":"..\\..\\emulators\\demul\\memsaves\\vms00.bin",
-         "VMSB0":"..\\..\\emulators\\demul\\memsaves\\vms10.bin",
-		 "directory":"..\\..\\emulators\\demul\\plugins\\",
-         "gdr":"gdrCHD.dll",
-		 "gpu":"gpuDX11.dll",
-		 "spu":"spuDemul.dll",
-		 "pad":"padDemul.dll",
-		 "net":"netDemul.dll",
-		 "nvram":"..\\..\\emulators\\demul\\nvram\\",
-		 "roms0":"..\\..\\roms\\hikaru\\",
 		 "roms1":"..\\..\\roms\\naomi\\",
 		 "roms2":"..\\..\\roms\\naomi2\\",
 		 "roms3":"..\\..\\roms\\atomiswave\\",
