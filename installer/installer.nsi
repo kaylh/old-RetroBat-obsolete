@@ -8,15 +8,15 @@
 
 SetCompressor lzma
 
-!include "MUI2.nsh"
-!include "FileFunc.nsh"
-!include "LogicLib.nsh"
+RequestExecutionLevel user
+
+Unicode true
 
 !define PRODUCT "RetroBat"
-!define PRODUCT_VERSION "4.0"
+!define PRODUCT_VERSION "4.0.0"
 !define VERSION "${PRODUCT_VERSION}"
 !define /date TIMESTAMP "%Y%m%d-%H%M%S"
-!define /date TIMESTAMP2 "%Y/%m/%d-%H:%M:%S"
+!define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
 !define PRODUCT_PUBLISHER "RetroBat Team"
 !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
@@ -30,12 +30,13 @@ SetCompressor lzma
 !define EMULATORS_BASE "${BASE_DIR}\emulators"
 !define DOWNLOAD_DIR "$INSTDIR\system\download"
 
-Unicode true
+!include "MUI2.nsh"
+!include "FileFunc.nsh"
+!include "LogicLib.nsh"
 
 Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
 InstallDir "${BASE_INSTALL_DIR}"
-RequestExecutionLevel user
 ShowInstDetails "hide"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
 BrandingText "${PRODUCT} v${VERSION}"
@@ -44,8 +45,8 @@ SpaceTexts none
 !define MUI_ABORTWARNING
 !define MUI_ABORTWARNING_TEXT "Are you sure you wish to abort installation?"
 
-Var CompletedText
-CompletedText $CompletedText
+;Var CompletedText
+;CompletedText $CompletedText
 
 !define MUI_COMPONENTSPAGE_NODESC
 !define MUI_HEADERIMAGE
@@ -53,7 +54,7 @@ CompletedText $CompletedText
 !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
 !define MUI_HEADER_TRANSPARENT_TEXT
 !define MUI_ICON "..\system\resources\retrobat-icon-white.ico"
-!define MUI_TEXTCOLOR "FFFFFF"
+;!define MUI_TEXTCOLOR "FFFFFF"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "..\system\resources\retrobat_wizard.bmp"
 
 !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation."
@@ -72,16 +73,11 @@ CompletedText $CompletedText
 !insertmacro MUI_PAGE_DIRECTORY
 
 ;!define MUI_FINISHPAGE_NOAUTOCLOSE
-!define MUI_PAGE_CUSTOMFUNCTION_PRE InstFilesPre
-!define MUI_PAGE_CUSTOMFUNCTION_SHOW InstFilesShow
-!define MUI_PAGE_CUSTOMFUNCTION_LEAVE InstFilesLeave
-Var MUI_HeaderText
-Var MUI_HeaderSubText
-!define MUI_INSTFILESPAGE_FINISHHEADER_TEXT "$MUI_HeaderText"
-!define MUI_INSTFILESPAGE_FINISHHEADER_SUBTEXT "$MUI_HeaderSubText"
 
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
+
+!insertmacro MUI_LANGUAGE "English"
 
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
@@ -89,75 +85,33 @@ Function CreateVersionFile
  FileClose $0
 FunctionEnd
 
-Var CurrentPage
-Var UserIsMakingAbortDecision
-Var UserAborted
-Var SectionAborted
-
-Function PauseIfUserIsMakingAbortDecision
- ${DoWhile} $UserIsMakingAbortDecision == "yes"
- Sleep 500
- ${Loop}
-FunctionEnd
-
-!define PauseIfUserIsMakingAbortDecision `Call PauseIfUserIsMakingAbortDecision`
 
 !macro MUI_FINISHPAGE_SHORTCUT
  
-!ifndef MUI_FINISHPAGE_NOREBOOTSUPPORT
- !define MUI_FINISHPAGE_NOREBOOTSUPPORT
-!ifdef MUI_FINISHPAGE_RUN
- !undef MUI_FINISHPAGE_RUN
-!endif
- !endif
- !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableCancelButton
- !insertmacro MUI_PAGE_FINISH
- !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableBackButton
+  !ifndef MUI_FINISHPAGE_NOREBOOTSUPPORT
+    !define MUI_FINISHPAGE_NOREBOOTSUPPORT
+    !ifdef MUI_FINISHPAGE_RUN
+      !undef MUI_FINISHPAGE_RUN
+    !endif
+  !endif
+  !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableCancelButton
+  !insertmacro MUI_PAGE_FINISH
+  !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableBackButton
  
-Function DisableCancelButton
- EnableWindow $mui.Button.Cancel 0
-FunctionEnd
+  Function DisableCancelButton
  
-Function DisableBackButton 
- EnableWindow $mui.Button.Back 0 
-FunctionEnd
+    EnableWindow $mui.Button.Cancel 0
+ 
+  FunctionEnd
+ 
+  Function DisableBackButton
+ 
+    EnableWindow $mui.Button.Back 0
+ 
+  FunctionEnd
  
 !macroend
-
-!macro CheckUserAborted
- ${PauseIfUserIsMakingAbortDecision}
- ${If} $UserAborted == "yes"
- goto _userabort_aborted
- ${EndIf}
-!macroend
-
-!define CheckUserAborted `!insertmacro CheckUserAborted`
-
-!macro EndUserAborted
- ${CheckUserAborted}
- goto _useraborted_end
- _userabort_aborted:
- ${If} $SectionAborted == ""
- StrCpy $SectionAborted "${__SECTION__}"
- DetailPrint "${__SECTION__} installation interrupted."
- ${ElseIf} $SectionAborted != "${__SECTION__}"
- DetailPrint "  ${__SECTION__} installation skipped."
- ${EndIf}
- _useraborted_end:
-!macroend
-
-!define EndUserAborted `!insertmacro EndUserAborted`
-
-Function InstFilesPre
- StrCpy $CurrentPage "InstFiles"
- StrCpy $UserAborted "no"
-FunctionEnd
-
-Function InstFilesShow
- GetDlgItem $0 $HWNDPARENT 2
- EnableWindow $0 1
-FunctionEnd
-
+ 
 InstType /COMPONENTSONLYONCUSTOM
 InstType "Standard installation" SEC01
 InstType "Batocera USB installation" SEC02
@@ -325,6 +279,17 @@ Section /o "-PostInstallTasks" !Required
 SectionInstType ${SEC01} ${SEC02}
 
  SectionIn RO
+ 
+  SetDetailsPrint textonly
+	DetailPrint "Configure settings..."
+ SetDetailsPrint none
+
+ ifFileExists "$INSTDIR\retrobat.exe" 0 +4
+
+ ExecWait "$INSTDIR\retrobat.exe /NOF #GetConfigFiles"
+ ExecWait "$INSTDIR\retrobat.exe /NOF #SetEmulationStationSettings"
+ ExecWait "$INSTDIR\retrobat.exe /NOF #SetEmulatorsSettings"
+ SetDetailsPrint textonly
 
  SetDetailsPrint textonly
 	DetailPrint "Cleaning download folder"
@@ -336,20 +301,6 @@ SectionInstType ${SEC01} ${SEC02}
 	
 SectionEnd
 
-Section -"Post"
-
- ${If} $UserAborted == "yes"
-	StrCpy $CompletedText "Installation aborted."
-	StrCpy $MUI_HeaderText "Installation Failed"
-    StrCpy $MUI_HeaderSubText "Setup was aborted."
- ${Else}
-    StrCpy $CompletedText "Completed"
-    StrCpy $MUI_HeaderText "Installation Complete"
-    StrCpy $MUI_HeaderSubText "Setup was completed successfully."
- ${EndIf}
-
-SectionEnd
-
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionDecorations} "Bezels selection for RetroArch."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Batocera EmulationStation build for Windows."
@@ -357,29 +308,3 @@ SectionEnd
 ;!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and needed configuration files."
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
-
-Function InstFilesLeave
- StrCpy $CurrentPage ""
-FunctionEnd
-
-!define MUI_CUSTOMFUNCTION_ABORT onUserAbort
-
-Function onUserAbort
-  StrCpy $UserIsMakingAbortDecision "yes"
-  ${If} ${Cmd} `MessageBox MB_YESNO|MB_DEFBUTTON2 "${MUI_ABORTWARNING_TEXT}" IDYES`
-    ${If} $CurrentPage == "InstFiles"
-      StrCpy $UserAborted "yes"
-      MessageBox MB_OK "Your RetroBat's installation may be incomplete."
-      StrCpy $UserIsMakingAbortDecision "no"
-      Abort
-    ${Else}
-;      MessageBox MB_OK "See you next time."
-      StrCpy $UserIsMakingAbortDecision "no"
-    ${EndIf}
-  ${Else}
-    StrCpy $UserIsMakingAbortDecision "no"
-    Abort
-  ${EndIf}
-FunctionEnd
-
-!insertmacro MUI_LANGUAGE "English"
