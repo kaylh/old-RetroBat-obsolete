@@ -155,6 +155,7 @@ SectionInstType ${SEC01} ${SEC02}
  File "${BASE_DIR}\license.txt"
  File /nonfatal "${BASE_DIR}\*.dll" 
  File /r "${BASE_DIR}\system"
+ File /r "${BASE_DIR}\bios"
 
  SetDetailsPrint textonly
 	DetailPrint "Creating RetroBat folders"
