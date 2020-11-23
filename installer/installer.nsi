@@ -198,7 +198,7 @@ SectionInstType ${SEC01} ${SEC02}
  File "${EMULATIONSTATION_BASE}\*.dll"
  File /nonfatal "${EMULATIONSTATION_BASE}\*.lib"
  File "${EMULATIONSTATION_BASE}\*.info"
- File "${EMULATIONSTATION_BASE}\*.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\*.cfg"
 
  File /r "${EMULATIONSTATION_BASE}\plugins"
  File /r "${EMULATIONSTATION_BASE}\resources"
