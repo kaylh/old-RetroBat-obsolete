@@ -42,7 +42,16 @@ Why use proprietary development software like Clickteam Fusion 2.5?
 
 You can download [here](https://www.dropbox.com/sh/wp6ed3wlro9x7th/AADQFQCZNQlmhLeo1EqmHoI3a?dl=0) the sources of retrobat.mfa in pdf format to preview the Fusion code.
 
-I've written a script to facilitate retrobat packaging and compilation. Download retro.bat [here](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=0). (WIP)
+I've written a script to facilitate retrobat packaging and compilation (WIP):
+- [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
+- [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
+- [Download and run retro.bat script to launch the build routine.](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=0)
+
+The batch script retro.bat must be in the same folder than the build tools one. Example file structure:
+
+ D:\retrobat-builder\retrobat-buildtools>
+ 
+ D:\retrobat-builder\retro.bat>
 
 ## RetroBat Team
 
