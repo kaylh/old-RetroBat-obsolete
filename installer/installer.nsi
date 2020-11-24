@@ -48,7 +48,8 @@ SpaceTexts none
 ;Var CompletedText
 ;CompletedText $CompletedText
 
-!define MUI_COMPONENTSPAGE_NODESC
+;!define MUI_COMPONENTSPAGE_NODESC
+!define MUI_COMPONENTSPAGE_SMALLDESC
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_BITMAP "..\system\resources\retrobat_header.bmp"
 !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
@@ -81,7 +82,7 @@ SpaceTexts none
 
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
- FileWrite $0 "${VERSION}-${TIMESTAMP2}"
+ FileWrite $0 "${VERSION} ${TIMESTAMP2}"
  FileClose $0
 FunctionEnd
 
@@ -113,8 +114,8 @@ FunctionEnd
 !macroend
  
 InstType /COMPONENTSONLYONCUSTOM
-InstType "Standard installation" SEC01
-InstType "Batocera USB installation" SEC02
+InstType "Full installation" SEC01
+InstType "Lite installation" SEC02
 ;InstType "Update existing installation" SEC03
 ;InstType "Install DirectX Runtime" SEC04
 ;InstType "Install Visual C++" SEC05
@@ -138,10 +139,9 @@ SectionInstType ${SEC01} ${SEC02}
  
  SetDetailsPrint textonly
 	DetailPrint "Copying RetroBat main files..."
- SetDetailsPrint none
+ SetDetailsPrint listonly
  
  Delete "$INSTDIR\retrobat.exe"
- Delete "$INSTDIR\retrobat.ini"
  Delete "$INSTDIR\license.txt"
  Delete "$INSTDIR\*.dll"
  RMDir /r "$INSTDIR\system\configmenu"
@@ -159,12 +159,12 @@ SectionInstType ${SEC01} ${SEC02}
 
  SetDetailsPrint textonly
 	DetailPrint "Creating RetroBat folders"
- SetDetailsPrint none
+ SetDetailsPrint listonly
 
  ifFileExists "$INSTDIR\retrobat.exe" 0 +3
 
  ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
- SetDetailsPrint textonly
+ SetDetailsPrint listonly
  
  Call CreateVersionFile
 
@@ -182,7 +182,7 @@ SectionInstType ${SEC01} ${SEC02}
  
  SetDetailsPrint textonly
 	DetailPrint "Copying EmulationStation files..."
- SetDetailsPrint none
+ SetDetailsPrint listonly
 
  Delete "${EMULATIONSTATION_DIR}\*.exe"
  Delete "${EMULATIONSTATION_DIR}\*.log"
@@ -231,6 +231,12 @@ SectionInstType ${SEC01} ${SEC02}
  RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
  File /r "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
 
+ SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\video"
+ SetOverwrite ifnewer
+
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.mp4"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.m4v"
+
  
 SectionEnd
 
@@ -242,7 +248,7 @@ SectionInstType ${SEC01} ${SEC02}
  
  SetDetailsPrint textonly
 	DetailPrint "Copying emulators files..."
- SetDetailsPrint none
+ SetDetailsPrint listonly
  
  File /r "${EMULATORS_BASE}\retroarch"
  
@@ -256,7 +262,7 @@ SectionInstType ${SEC01} ${SEC02}
  
  SetDetailsPrint textonly
 	DetailPrint "Copying decorations files..."
- SetDetailsPrint none
+ SetDetailsPrint listonly
  
  File /r "${DECORATIONS_BASE}"
  
@@ -283,7 +289,7 @@ SectionInstType ${SEC01} ${SEC02}
  
   SetDetailsPrint textonly
 	DetailPrint "Configure settings..."
- SetDetailsPrint none
+ SetDetailsPrint listonly
 
  ifFileExists "$INSTDIR\retrobat.exe" 0 +4
 
@@ -294,7 +300,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  SetDetailsPrint textonly
 	DetailPrint "Cleaning download folder"
- SetDetailsPrint none
+ SetDetailsPrint listonly
 
  Delete "${DOWNLOAD_DIR}\*.7z"
  Delete "${DOWNLOAD_DIR}\*.zip"
@@ -304,7 +310,7 @@ SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionDecorations} "Bezels selection for RetroArch."
-!insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Batocera EmulationStation build for Windows."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "EmulationStation build for Windows."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Compatible emulators."
 ;!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Main softwares and needed configuration files."
