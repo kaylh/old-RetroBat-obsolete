@@ -45,13 +45,13 @@ You can download [here](https://www.dropbox.com/sh/wp6ed3wlro9x7th/AADQFQCZNQlmh
 I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
-- [Download and run retro.bat script to launch the build routine.](https://www.dropbox.com/s/mj9mmq225bm797k/retro.bat?dl=0)
+- Download as zip or clone this github
 
 The batch script retro.bat must be in the same folder than the build tools one. Example file structure:
 
- D:\retrobat-builder\retrobat-buildtools>
+ D:\retrobat-sources\retrobat-buildtools>
  
- D:\retrobat-builder\retro.bat>
+ D:\retrobat-sources\retro.bat>
 
 ## RetroBat Team
 
