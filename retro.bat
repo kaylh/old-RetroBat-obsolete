@@ -185,7 +185,7 @@ if %nsis_bin% EQU 0 if %wget_bin% EQU 0 if %strip_bin% EQU 0 (
 	echo.
 	echo :: DOWNLOADING RETROBAT BUILDTOOLS ::
 	echo.
-	powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://www.dropbox.com/s/n9ds50w8mihyp93/retrobat-buildtools.zip?dl=1" -OutFile "%current_path%\retrobat-buildtools.zip""
+	powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://www.retrobat.ovh/repo/tools/retrobat-buildtools.zip" -OutFile "%current_path%\retrobat-buildtools.zip""
 	ping 127.0.0.1 -n 4 >nul
 	timeout /t 1 >nul
 	cls
@@ -197,6 +197,9 @@ if %nsis_bin% EQU 0 if %wget_bin% EQU 0 if %strip_bin% EQU 0 (
 	timeout /t 1 >nul
 	goto set_variables
 )
+
+if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
+if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
 
 timeout /t 1 >nul
 goto menu_welcome
