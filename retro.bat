@@ -33,7 +33,7 @@ set retrobat_git="https://github.com/kaylh/RetroBat.git"
 set decorations_git="https://github.com/kaylh/batocera-bezel.git"
 set theme_branch=master
 set theme_git="https://github.com/fabricecaruso/es-theme-carbon.git"
-set "buildtools_dir=%current_path%\buildtools"
+set "buildtools_dir=%current_path%\retrobat-buildtools"
 set installer_source=installer.nsi
 set "installer_dir=%current_path%\installer"
 set sevenzip_loglevel=0
@@ -50,7 +50,7 @@ if not "%CD%"=="%cd: =%" (
 )
 
 timeout /t 1 >nul
-
+cls
 echo *******************************
 echo  Running RetroBat Build Script
 echo *******************************
@@ -182,6 +182,7 @@ timeout /t 1 >nul
 REM -- IF DEPENDANCIES NOT EXIST THEN THIS WILL DOWNLOAD AND EXTRACT IT --
 
 if %nsis_bin% EQU 0 if %wget_bin% EQU 0 if %strip_bin% EQU 0 (
+	cls
 	echo.
 	echo :: DOWNLOADING RETROBAT BUILDTOOLS ::
 	echo.
