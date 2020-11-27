@@ -5,7 +5,7 @@
          "VMSB0":"..\\..\\emulators\\demul\\memsaves\\vms10.bin",
 		 "directory":"..\\..\\emulators\\demul\\plugins\\",
          "gdr":"gdrCHD.dll",
-		 "gpu":"gpuDX11.dll",
+		 "gpu":"gpuDX11old.dll",
 		 "spu":"spuDemul.dll",
 		 "pad":"padDemul.dll",
 		 "net":"netDemul.dll",

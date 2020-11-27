@@ -1,0 +1,10 @@
+{
+   "PCSX2_ui.ini_configmode_1":[
+      {
+		"AskOnBoot":"disabled",
+		"Bios":".\\..\\..\\bios",
+		"IsFullscreen":"enabled",
+		"IsToggleFullscreenOnDoubleClick":"disabled"
+      }
+   ]
+}
