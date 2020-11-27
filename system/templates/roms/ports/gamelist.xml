@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+<game>
+<path>./2048.libretro</path>
+<name>2048</name>
+<desc>2048 clone.</desc>
+<image>./images/2048.png</image>
+</game>
+<game>
+<path>./craft.libretro</path>
+<name>craft</name>
+<desc>Minecraft clone.</desc>
+<image>./images/craft.png</image>
+</game>
+<game>
+<path>./mrboom.libretro</path>
+<name>Mr Boom</name>
+<desc>Bomberman clone.</desc>
+<image>./images/mrboom.png</image>
+</game>
+</gameList>
