@@ -267,7 +267,7 @@ echo.
 
 if exist "%current_path%\decorations\" (
 	cd "%current_path%\decorations"
-	git pull origin
+	git pull origin --branch "%retrobat-branch%"
 	cd "%current_path%"
 ) else (
 	git clone %decorations_git% "%current_path%\decorations"
@@ -504,9 +504,9 @@ if exist "%current_path%\emulators\retroarch\retroarch_debug.exe" del/q "%curren
 if exist "%current_path%\*.log" del/q "%current_path%\*.log"
 if exist "%current_path%\emulators\retroarch\shaders\shaders_cg\" rd /s /q "%current_path%\emulators\retroarch\shaders\shaders_cg"
 
-if exist "%current_path%\.git\" rmdir /s /q "%current_path%\.git"
-if exist "%current_path%\decorations\.git\" rmdir /s /q "%current_path%\decorations\.git"  
-if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
+::if exist "%current_path%\.git\" rmdir /s /q "%current_path%\.git"
+::if exist "%current_path%\decorations\.git\" rmdir /s /q "%current_path%\decorations\.git"  
+::if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
 
 if exist "%strip_path%\strip.exe" (
  cd "%strip_path%"
