@@ -73,7 +73,13 @@
    "retroarch-core-options.cfg_configmode_1":[
       {
         "dolphin_shader_compilation_mode":"sync",
-		"dolphin_texture_cache_accuracy":"Safe"
+		"dolphin_texture_cache_accuracy":"Safe",
+		"mupen64plus-enabletexturecache":"True",
+		"mupen64plus-txhiresenable":"True",
+		"mupen64plus-txcachecompression":"True",
+		"mupen64plus-txhiresfullalphachannel":"False",
+		"mupen64plus-enableenhancedtexturestorage":"False",
+		"mupen64plus-enableenhancedhighresstorage":"False"
       }
    ]
 }

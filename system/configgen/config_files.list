@@ -1,8 +1,10 @@
 \emulationstation\emulatorLauncher.cfg|emulatorlauncher.json|0S0Q
+\emulators\cxbx-reloaded\settings.ini|cxbx-reloaded.json|1S0Q
 \emulators\demul-old\Demul.ini|demul-old.json|1S0Q
 \emulators\demul\Demul.ini|demul.json|1S0Q
 \emulators\dolphin-emu\User\Config\Dolphin.ini|dolphin-emu.json|1S0Q
 \emulators\duckstation\settings.ini|duckstation.json|1S0Q
+\emulators\kronos\kronos.ini|kronos.json|0S0Q
 \emulators\mgba\config.ini|mgba.json|0S0Q
 \emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini|ppsspp.json|1S0Q
 \emulators\raine\config\raine32_sdl.cfg|raine.json|1S0Q

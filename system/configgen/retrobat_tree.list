@@ -15,7 +15,9 @@ emulators
 emulators\applewin
 emulators\cemu
 emulators\citra
+emulators\citra\user
 emulators\cxbx-reloaded
+emulators\cxbx-reloaded\EmuDisk
 emulators\daphne
 emulators\demul
 emulators\demul-old
@@ -35,6 +37,7 @@ emulators\mesen
 emulators\mesen-s
 emulators\mgba
 emulators\openbor
+emulators\oricutron
 emulators\pcsx2
 emulators\pcsx2\inis
 emulators\ppsspp
@@ -57,6 +60,7 @@ emulators\vpinball
 emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
+emulators\yuzu\user
 medias
 medias\records
 medias\records\config

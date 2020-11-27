@@ -1,0 +1,11 @@
+{
+   "kronos.ini_configmode_1":[
+      {
+		 "General\\EnableVSync":"true",
+         "General\\Bios":"./../../bios/sega_101.bin",
+         "General\\SaveStates":"./../../saves/saturn/kronos",
+		 "Video\\Fullscreen":"true",
+		 "Memory\\Path":"./bkram.bin"
+      }
+   ]
+}
