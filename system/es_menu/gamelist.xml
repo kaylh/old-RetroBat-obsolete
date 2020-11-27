@@ -1,6 +1,37 @@
 <?xml version="1.0"?>
 <gameList>
 	<game>
+		<path>./retroarch_angle.menu</path>
+		<name>RetroArch Angle (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>90</playcount>
+		<lastplayed>20201105T124933</lastplayed>
+		<gametime>2308</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./applewin.menu</path>
+		<name>AppleWin (Apple II)</name>
+		<desc>Configure AppleWin Emulator (Apple II)</desc>
+		<image>./media/applewin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>AppleWin Team</developer>
+		<publisher>AppleWin Team</publisher>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195335</lastplayed>
+		<gametime>16</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./cemu.menu</path>
 		<name>Cemu (Wii U)</name>
 		<desc>Configure Cemu Emulator (Wii U)</desc>
@@ -10,6 +41,9 @@
 		<developer>Cemu Team</developer>
 		<publisher>Cemu Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195315</lastplayed>
+		<gametime>14</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -23,6 +57,9 @@
 		<developer>Citra Team</developer>
 		<publisher>Citra Team</publisher>
 		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195257</lastplayed>
+		<gametime>10</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -36,100 +73,8 @@
 		<developer>Citra Team</developer>
 		<publisher>Citra Team</publisher>
 		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./demul.menu</path>
-		<name>Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</name>
-		<desc>Configure Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</desc>
-		<image>./media/demul-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Demul Team</developer>
-		<publisher>Demul Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./dolphin-triforce.menu</path>
-		<name>DolphinWX (Triforce)</name>
-		<desc>Configure DolphinWX Emulator (Triforce)</desc>
-		<image>./media/dolphin-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Dolphin Community</developer>
-		<publisher>Dolphin Community</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./snes9x.menu</path>
-		<name>SNES9X (Super NES)</name>
-		<desc>Configure SNES9X (Super NES)</desc>
-		<image>./media/snes9x-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>SNES9X Team</developer>
-		<publisher>SNES9X Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./xenia.menu</path>
-		<name>Xenia Canary (XBOX 360)</name>
-		<desc>Configure Xenia Canary (XBOX 360)</desc>
-		<image>./media/xenia-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Xenia Team</developer>
-		<publisher>Xenia Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./project64.menu</path>
-		<name>Project 64 (Nintendo 64)</name>
-		<desc>Configure Project 64 (Nintendo 64)</desc>
-		<image>./media/project64-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Project 64</developer>
-		<publisher>Project 64</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./yuzu.menu</path>
-		<name>Yuzu (Switch)</name>
-		<desc>Configure Yuzu (Switch)</desc>
-		<image>./media/yuzu-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Yuzu Team</developer>
-		<publisher>Yuzu Team</publisher>
-		<genre>Emulator</genre>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./rpcs3.menu</path>
-		<name>RPCS3 (PlayStation 3)</name>
-		<desc>Configure RPCS3 (PlayStation 3)</desc>
-		<image>./media/rpcs3-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>RPCS3 Team</developer>
-		<publisher>RPCS3 Team</publisher>
-		<genre>Emulator</genre>
-		<playcount>3</playcount>
-		<lastplayed>20200826T112741</lastplayed>
-		<gametime>287</gametime>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195344</lastplayed>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -143,37 +88,72 @@
 		<developer>Demul Team</developer>
 		<publisher>Demul Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>4</playcount>
-		<lastplayed>20200906T005810</lastplayed>
-		<gametime>628</gametime>
+		<playcount>5</playcount>
+		<lastplayed>20201127T195416</lastplayed>
+		<gametime>643</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./applewin.menu</path>
-		<name>AppleWin (Apple II)</name>
-		<desc>Configure AppleWin Emulator (Apple II)</desc>
-		<image>./media/applewin-logo.png</image>
+		<path>./demul.menu</path>
+		<name>Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</name>
+		<desc>Configure Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</desc>
+		<image>./media/demul-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>AppleWin Team</developer>
-		<publisher>AppleWin Team</publisher>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./retroarch.menu</path>
-		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
+		<developer>Demul Team</developer>
+		<publisher>Demul Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>84</playcount>
-		<lastplayed>20201028T173325</lastplayed>
-		<gametime>5472</gametime>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195358</lastplayed>
+		<gametime>10</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./dolphin-emu.menu</path>
+		<name>Dolphin (GameCube,Wii,WAD)</name>
+		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
+		<image>./media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Team</developer>
+		<publisher>Dolphin Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>18</playcount>
+		<lastplayed>20201127T195425</lastplayed>
+		<gametime>1246</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./dolphin-triforce.menu</path>
+		<name>DolphinWX (Triforce)</name>
+		<desc>Configure DolphinWX Emulator (Triforce)</desc>
+		<image>./media/dolphin-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Dolphin Community</developer>
+		<publisher>Dolphin Community</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195432</lastplayed>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./dosbox.menu</path>
+		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
+		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
+		<image>./media/dosbox-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>DOSBox Team</developer>
+		<publisher>DOSBox Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>6</playcount>
+		<lastplayed>20201127T195441</lastplayed>
+		<gametime>58</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -185,19 +165,8 @@
 		<developer>Nebula Team</developer>
 		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<lastplayed>20201031T113628</lastplayed>
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./supermodel.menu</path>
-		<name>Supermodel (MODEL 3)</name>
-		<desc>Configure Supermodel (MODEL 3)</desc>
-		<image>./media/supermodel-logo.png</image>
-		<rating>0</rating>
-		<playcount>1</playcount>
-		<lastplayed>20201031T114607</lastplayed>
+		<playcount>2</playcount>
+		<lastplayed>20201127T195507</lastplayed>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -211,9 +180,24 @@
 		<developer>mGBA Team</developer>
 		<publisher>mGBA Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>2</playcount>
-		<lastplayed>20201031T114853</lastplayed>
+		<playcount>3</playcount>
+		<lastplayed>20201127T195516</lastplayed>
 		<gametime>32</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./pcsx2.menu</path>
+		<name>PCSX2 (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>3</playcount>
+		<lastplayed>20201127T195529</lastplayed>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -227,9 +211,24 @@
 		<developer>PPSSPP Team</developer>
 		<publisher>PPSSPP Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>7</playcount>
-		<lastplayed>20201105T120840</lastplayed>
-		<gametime>68</gametime>
+		<playcount>8</playcount>
+		<lastplayed>20201127T195554</lastplayed>
+		<gametime>90</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./project64.menu</path>
+		<name>Project 64 (Nintendo 64)</name>
+		<desc>Configure Project 64 (Nintendo 64)</desc>
+		<image>./media/project64-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Project 64</developer>
+		<publisher>Project 64</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195604</lastplayed>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -243,8 +242,8 @@
 		<developer>Raine</developer>
 		<publisher>Raine</publisher>
 		<genre>Emulator</genre>
-		<playcount>2</playcount>
-		<lastplayed>20201105T120826</lastplayed>
+		<playcount>3</playcount>
+		<lastplayed>20201127T195616</lastplayed>
 		<gametime>26</gametime>
 		<lang>en</lang>
 		<region>wr</region>
@@ -259,41 +258,103 @@
 		<developer>Redream</developer>
 		<publisher>Redream</publisher>
 		<genre>Emulator</genre>
-		<playcount>10</playcount>
-		<lastplayed>20201105T120817</lastplayed>
-		<gametime>171</gametime>
+		<playcount>11</playcount>
+		<lastplayed>20201127T195630</lastplayed>
+		<gametime>181</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./dolphin-emu.menu</path>
-		<name>Dolphin (GameCube,Wii,WAD)</name>
-		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
-		<image>./media/dolphin-logo.png</image>
+		<path>./retroarch.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Dolphin Team</developer>
-		<publisher>Dolphin Team</publisher>
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>17</playcount>
-		<lastplayed>20201105T121447</lastplayed>
-		<gametime>1246</gametime>
+		<playcount>85</playcount>
+		<lastplayed>20201127T195639</lastplayed>
+		<gametime>5472</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./dosbox.menu</path>
-		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
-		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
-		<image>./media/dosbox-logo.png</image>
+		<path>./rpcs3.menu</path>
+		<name>RPCS3 (PlayStation 3)</name>
+		<desc>Configure RPCS3 (PlayStation 3)</desc>
+		<image>./media/rpcs3-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>DOSBox Team</developer>
-		<publisher>DOSBox Team</publisher>
+		<developer>RPCS3 Team</developer>
+		<publisher>RPCS3 Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>5</playcount>
-		<lastplayed>20201105T121434</lastplayed>
-		<gametime>58</gametime>
+		<playcount>4</playcount>
+		<lastplayed>20201127T195700</lastplayed>
+		<gametime>304</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./snes9x.menu</path>
+		<name>SNES9X (Super NES)</name>
+		<desc>Configure SNES9X (Super NES)</desc>
+		<image>./media/snes9x-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>SNES9X Team</developer>
+		<publisher>SNES9X Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195709</lastplayed>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./xenia.menu</path>
+		<name>Xenia Canary (XBOX 360)</name>
+		<desc>Configure Xenia Canary (XBOX 360)</desc>
+		<image>./media/xenia-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Xenia Team</developer>
+		<publisher>Xenia Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195720</lastplayed>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./yuzu.menu</path>
+		<name>Yuzu (Switch)</name>
+		<desc>Configure Yuzu (Switch)</desc>
+		<image>./media/yuzu-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Yuzu Team</developer>
+		<publisher>Yuzu Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20201127T195739</lastplayed>
+		<gametime>12</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./daphne.menu</path>
+		<name>Daphne Loader (Laserdisc)</name>
+		<desc>Configure Daphne Loader (Laserdisc)</desc>
+		<image>./media/daphne-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Unknown</developer>
+		<publisher>Unknown</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20201127T200407</lastplayed>
+		<gametime>15</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -307,40 +368,53 @@
 		<developer>Duckstation Team</developer>
 		<publisher>Duckstation Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>6</playcount>
-		<lastplayed>20201105T121420</lastplayed>
-		<gametime>79</gametime>
+		<playcount>8</playcount>
+		<lastplayed>20201127T200500</lastplayed>
+		<gametime>106</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./pcsx2.menu</path>
-		<name>PCSX2 (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
-		<image>./media/pcsx2-logo.png</image>
+		<path>./fpinball.menu</path>
+		<name>Future Pinball</name>
+		<desc>Configure Future Pinball</desc>
+		<image>./media/fpinball-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>PCSX2 Team</developer>
-		<publisher>PCSX2 Team</publisher>
+		<developer>Unknown</developer>
+		<publisher>Unknown</publisher>
 		<genre>Emulator</genre>
-		<playcount>2</playcount>
-		<lastplayed>20201105T121404</lastplayed>
+		<playcount>7</playcount>
+		<lastplayed>20201127T201950</lastplayed>
+		<gametime>72</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./retroarch_angle.menu</path>
-		<name>RetroArch Angle (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
+		<path>./vpinball.menu</path>
+		<name>Visual Pinball</name>
+		<desc>Configure Visual Pinball</desc>
+		<image>./media/vpinball-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
+		<releasedate />
+		<developer>Unknown</developer>
+		<publisher>Unknown</publisher>
 		<genre>Emulator</genre>
-		<playcount>90</playcount>
-		<lastplayed>20201105T124933</lastplayed>
-		<gametime>2308</gametime>
+		<playcount>7</playcount>
+		<lastplayed>20201127T202018</lastplayed>
+		<gametime>78</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./supermodel.menu</path>
+		<name>Supermodel (MODEL 3)</name>
+		<desc>Configure Supermodel (MODEL 3)</desc>
+		<image>./media/supermodel-logo.png</image>
+		<rating>0</rating>
+		<playcount>3</playcount>
+		<lastplayed>20201127T202337</lastplayed>
+		<gametime>13</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
