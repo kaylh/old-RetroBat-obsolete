@@ -216,20 +216,20 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_log.txt"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\*.bak"
 
- File "${EMULATIONSTATION_BASE}\.emulationstation\es_features.cfg"
- File "${EMULATIONSTATION_BASE}\.emulationstation\es_padtokey.cfg"
- File "${EMULATIONSTATION_BASE}\.emulationstation\es_systems.cfg"
- File "${EMULATIONSTATION_BASE}\.emulationstation\es_settings.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_features.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_padtokey.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_systems.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_settings.cfg"
  
  SetOverwrite off
  
- File "${EMULATIONSTATION_BASE}\.emulationstation\es_input.cfg"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_input.cfg"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\themes"
  SetOverwrite ifnewer
 
  RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
- File /r "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
+ File /r /x "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon\.git\*.*" "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\video"
  SetOverwrite ifnewer
@@ -311,7 +311,7 @@ SectionInstType ${SEC01} ${SEC02}
 	DetailPrint "Copying decorations files..."
  SetDetailsPrint listonly
  
- File /r "${DECORATIONS_BASE}"
+ File /r /x "${DECORATIONS_BASE}\.git\*.*" "${DECORATIONS_BASE}"
  
 SectionEnd
 
