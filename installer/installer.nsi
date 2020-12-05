@@ -80,6 +80,49 @@ SpaceTexts none
 
 !insertmacro MUI_LANGUAGE "English"
 
+Function StrStrip
+
+Exch $R0 #string
+Exch
+Exch $R1 #in string
+Push $R2
+Push $R3
+Push $R4
+Push $R5
+	StrLen $R5 $R0
+	StrCpy $R2 -1
+	IntOp $R2 $R2 + 1
+	StrCpy $R3 $R1 $R5 $R2
+	StrCmp $R3 "" +9
+	StrCmp $R3 $R0 0 -3
+	StrCpy $R3 $R1 $R2
+	IntOp $R2 $R2 + $R5
+	StrCpy $R4 $R1 "" $R2
+	StrCpy $R1 $R3$R4
+	IntOp $R2 $R2 - $R5
+	IntOp $R2 $R2 - 1
+	Goto -10
+	StrCpy $R0 $R1
+Pop $R5
+Pop $R4
+Pop $R3
+Pop $R2
+Pop $R1
+Exch $R0
+
+FunctionEnd
+
+!macro StrStrip Str InStr OutVar
+
+  Push '${InStr}'
+  Push '${Str}'
+  Call StrStrip
+  Pop '${OutVar}'
+
+!macroend
+
+  !define StrStrip '!insertmacro StrStrip'
+
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
  FileWrite $0 "${VERSION} ${TIMESTAMP2}"
@@ -352,6 +395,53 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${DOWNLOAD_DIR}\*.7z"
  Delete "${DOWNLOAD_DIR}\*.zip"
  Delete "${DOWNLOAD_DIR}\*.*"
+ 
+ ection /o "-ConfigMode4"
+SectionInstType ${IT_REQUIRED_04}
+
+  ifFileExists "$INSTDIR\retrobat.ini" 0 +2
+  Delete "$INSTDIR\retrobat.ini"
+
+  FileOpen $4 "$INSTDIR\retrobat.ini" w
+  FileWrite $4 "[RetroBat]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "CheckForUpdate=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "ConfigMode=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[SplashScreen]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "EnableIntro=1"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "RandomVideo=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "VideoDuration=6500"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'FilePath="default"'
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'FileName="retrobat-intro.mp4"'
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[EmulationStation]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "InterfaceMode=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "Fullscreen=1"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "WindowXSize=1280"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "WindowYSize=720"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "NoExitMenu=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[RetroArch]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'DefaultVideoDriver="vulkan"'
+  FileClose $4
+	
+SectionEnd
 	
 SectionEnd
 
