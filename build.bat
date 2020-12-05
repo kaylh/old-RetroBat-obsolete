@@ -254,7 +254,7 @@ if exist "%current_path%\" (
 	git pull origin
 	cd "%current_path%"
 ) else (
-	git clone --branch "%retrobat_branch%" %retrobat_git% "%current_path%"
+	git clone --depth 1 --branch "%retrobat_branch%" %retrobat_git% "%current_path%"
 )
 
 goto clone_decorations
@@ -270,7 +270,7 @@ if exist "%current_path%\decorations\" (
 	git pull origin --branch "%retrobat-branch%"
 	cd "%current_path%"
 ) else (
-	git clone %decorations_git% "%current_path%\decorations"
+	git clone --depth 1 %decorations_git% "%current_path%\decorations"
 )
 
 goto download
@@ -326,7 +326,13 @@ REM Libretro cores download loop
 ::::atari800_libretro.dll
 ::::blastem_libretro.dll
 ::::bluemsx_libretro.dll
+::::bsnes2014_accuracy_libretro.dll
+::::bsnes2014_balanced_libretro.dll
+::::bsnes2014_performance_libretro.dll
 ::::bsnes_libretro.dll
+::::bsnes_mercury_accuracy_libretro.dll
+::::bsnes_mercury_balanced_libretro.dll
+::::bsnes_mercury_performance_libretro.dll
 ::::cap32_libretro.dll
 ::::citra_canary_libretro.dll
 ::::citra_libretro.dll
@@ -335,8 +341,10 @@ REM Libretro cores download loop
 ::::desmume2015_libretro.dll
 ::::desmume_libretro.dll
 ::::dosbox_core_libretro.dll
+::::duckstation_libretro.dll
 ::::fbalpha2012_cps1_libretro.dll
-::::fbalpha2012_cps2_libretro.dll
+::::balpha2012_cps2_libretro.dll
+::::fbalpha2012_cps3_libretro.dll
 ::::fbalpha2012_libretro.dll
 ::::fbalpha2012_neogeo_libretro.dll
 ::::fbneo_libretro.dll
@@ -355,11 +363,12 @@ REM Libretro cores download loop
 ::::gw_libretro.dll
 ::::handy_libretro.dll
 ::::hatari_libretro.dll
-::::imageviewer_libretro.dll
+::::higan_sfc_libretro.dll
 ::::kronos_libretro.dll
 ::::lutro_libretro.dll
 ::::mame2003_plus_libretro.dll
 ::::mame2016_libretro.dll
+::::mame_libretro.dll
 ::::mednafen_gba_libretro.dll
 ::::mednafen_lynx_libretro.dll
 ::::mednafen_ngp_libretro.dll
@@ -369,7 +378,7 @@ REM Libretro cores download loop
 ::::mednafen_psx_hw_libretro.dll
 ::::mednafen_psx_libretro.dll
 ::::mednafen_saturn_libretro.dll
-::::mednafen_snes_libretro.dll
+::::mednafen_supafaust_libretro.dll
 ::::mednafen_supergrafx_libretro.dll
 ::::mednafen_vb_libretro.dll
 ::::mednafen_wswan_libretro.dll
@@ -421,6 +430,7 @@ REM Libretro cores download loop
 ::::vitaquake3_libretro.dll
 ::::yabasanshiro_libretro.dll
 ::::yabause_libretro.dll
+
 echo.
 echo :: DOWNLOADING LIBRETRO CORES ::
 echo.
@@ -428,7 +438,8 @@ echo.
 for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
 :: echo %%a
  cd "%wget_path%"
- wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+:: wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
 :: powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
  cd "%current_path%"
  timeout /t 1 >nul
@@ -472,7 +483,7 @@ if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carb
 	git pull origin
 	cd %current_path%
 ) else (
-	git clone --branch "%theme_branch%" %theme_git% "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon"
+	git clone --depth 1 --branch "%theme_branch%" %theme_git% "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon"
 )
 
 goto clean
@@ -497,6 +508,7 @@ echo.
 echo :: CLEANING STEP ::
 echo.
 
+if exist "%current_path%\retrobat.ini" del/q "%current_path%\retrobat.ini"
 if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
 if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
 
