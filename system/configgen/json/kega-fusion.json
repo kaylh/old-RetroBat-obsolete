@@ -1,0 +1,39 @@
+{
+   "Fusion.ini_configmode_1":[
+      {
+		"SMSUSABIOS"=".\\..\\..\\bios\\bios_U.sms",
+		"SMSJAPBIOS"=".\\..\\..\\bios\\bios_J.sms",
+		"SMSEURBIOS"=".\\..\\..\\bios\\bios_E.sms",
+		"GGBIOS":".\\..\\..\\bios\\bios.gg",
+		"SF7000IPL":".\\..\\..\\bios\\SF-7000 Initial Program Loader ROM (SF-7000).bin",
+		"SxMFiles":".\\..\\..\\emulators\\kega-fusion",
+		"SMSStateFiles":".\\..\\..\\saves\\mastersystem\\kega-fusion",
+		"SMSPatchFiles":".\\..\\..\\roms\\mastersystem",
+		"GGPatchFiles":".\\..\\..\\roms\\gamegear",
+        "SRMFiles":".\\..\\..\\emulators\\kega-fusion",
+        "StateFiles":".\\..\\..\\saves\\megadrive\\kega-fusion",
+		"PatchFiles":".\\..\\..\\roms\\megadrive",
+		"GenesisBIOS":".\\..\\..\\bios",
+		"SCDUSABIOS":".\\..\\..\\bios\\us_scd1_9210.bin",
+		"SCDJAPBIOS":".\\..\\..\\bios\\jp_mcd1_9111.bin",
+		"SCDEURBIOS":".\\..\\..\\bios\\eu_mcd1_9210.bin",
+		"SCDStateFiles":".\\..\\..\\saves\\segacd\\kega-fusion",
+		"BRMFiles":".\\..\\..\\emulators\\kega-fusion",
+		"32XM68KBIOS":".\\..\\..\\bios\\32X_G_BIOS.BIN",
+		"32XMSH2BIOS":".\\..\\..\\bios\\32X_M_BIOS.bin",
+		"32XSSH2BIOS":".\\..\\..\\bios\\32X_S_BIOS.bin",
+		"WAVFilesPath":".\\..\\..\\emulators\\kega-fusion\\*.wav",
+		"VGMFilesPath":".\\..\\..\\emulators\\kega-fusion\\*.vgm",
+		"AVIFilesPath":".\\..\\..\\emulators\\kega-fusion\\*.avi",
+		"ScreenshotPath":".\\..\\..\\screenshots",
+		"SoundOverdrive":"1",
+		"SoundSuperHQ":"1",
+		"SoundFilter":"1",
+		"FullScreen":"1",
+		"VSyncEnabled":"1",
+		"Player1Buttons":"50,51,48,49,0,1,5,7,2,3,4,6,8,9,10,11",
+		"Joystick1Type":"2"
+		
+      }
+   ]
+}

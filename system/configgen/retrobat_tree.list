@@ -1,4 +1,6 @@
 bios
+bios\dc
+bios\quasi88
 decorations
 emulationstation
 emulationstation\.emulationstation
@@ -27,16 +29,14 @@ emulators\dolphin-emu\User\Config
 emulators\dolphin-triforce
 emulators\dolphin-triforce\User
 emulators\dolphin-triforce\User\Config
+emulators\dolphin-triforce\User\GameSettings
 emulators\dosbox
 emulators\duckstation
 emulators\fpinball
-emulators\gemrb
 emulators\kega-fusion
-emulators\kronos
 emulators\m2emulator
 emulators\mednafen
 emulators\mesen
-emulators\mesen-s
 emulators\mgba
 emulators\openbor
 emulators\oricutron
@@ -54,12 +54,12 @@ emulators\redream
 emulators\retroarch
 emulators\retroarch\shaders
 emulators\rpcs3
+emulators\ryujin
 emulators\simcoupe
 emulators\snes9x
 emulators\solarus
 emulators\supermodel
 emulators\vpinball
-emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
@@ -70,6 +70,7 @@ medias\records\output
 roms
 saves
 screenshots
+screenshots\winuae
 system
 system\configgen
 system\download

@@ -1,14 +1,14 @@
 {
    "config.ini_configmode_1":[
       {
-		 "gb.bios":"./../../bios/gb_bios.bin",
+         "gb.bios":"./../../bios/gb_bios.bin",
          "gbc.bios":"./../../bios/gbc_bios.bin",
          "sgb.bios":"./../../bios/sgb2_boot.bin",
-		 "gba.bios":"./../../bios/gba_bios.bin",
+         "gba.bios":"./../../bios/gba_bios.bin",
          "savestatePath":"./../../saves/gba/mgba",
          "screenshotPath":"./../../screenshots",
-		 "savegamePath":"./../../saves/gba/mgba",		 		 
-		 "fullscreen":"1"
+         "savegamePath":"./../../saves/gba/mgba",
+         "fullscreen":"1"
       }
    ]
 }

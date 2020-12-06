@@ -41,6 +41,7 @@ gbc
 gbc2players
 gemrb
 gx4000
+hbmame
 hikaru
 intellivision
 jaguar
@@ -70,10 +71,12 @@ ngp
 ngpc
 o2em
 openbor
+pc88
 pc98
 pcengine
 pcenginecd
 pcfx
+pico8
 pokemini
 ports
 prboom
@@ -81,6 +84,7 @@ ps2
 ps3
 psp
 psx
+pygame
 samcoupe
 satellaview
 saturn
@@ -91,12 +95,15 @@ sg1000
 snes
 snes-msu
 solarus
+spectravideo
 sufami
 supergrafx
 switch
 thomson
+tic80
 triforce
-vb
+tyrquake
+virtualboy
 vectrex
 vpinball
 wii
