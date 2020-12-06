@@ -39,7 +39,7 @@ OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
 InstallDir "${BASE_INSTALL_DIR}"
 ShowInstDetails "hide"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
-BrandingText "${PRODUCT} v${VERSION}"
+BrandingText "${PRODUCT_PUBLISHER}"
 SpaceTexts none
 
 !define MUI_ABORTWARNING
@@ -112,6 +112,7 @@ Exch $R0
 
 FunctionEnd
 
+
 !macro StrStrip Str InStr OutVar
 
   Push '${InStr}'
@@ -127,6 +128,49 @@ Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
  FileWrite $0 "${VERSION} ${TIMESTAMP2}"
  FileClose $0
+FunctionEnd
+
+Function CreateIni
+
+FileOpen $4 "$INSTDIR\retrobat.ini" w
+  FileWrite $4 "[RetroBat]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "CheckForUpdate=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "ConfigMode=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[SplashScreen]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "EnableIntro=1"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "RandomVideo=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "VideoDuration=6500"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'FilePath="default"'
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'FileName="retrobat-intro.mp4"'
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[EmulationStation]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "InterfaceMode=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "Fullscreen=1"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "WindowXSize=1280"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "WindowYSize=720"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "NoExitMenu=0"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 "[RetroArch]"
+  FileWrite $4 "$\r$\n"
+  FileWrite $4 'DefaultVideoDriver="vulkan"'
+  FileClose $4
+
 FunctionEnd
 
 
@@ -164,7 +208,7 @@ InstType "Lite installation" SEC02
 ;InstType "Install Visual C++" SEC05
 
 Function .onInit
- SetCurInstType 1
+ SetCurInstType 0
 FunctionEnd
 
 Function CreateDesktopShortCut
@@ -307,7 +351,7 @@ SectionInstType ${SEC01}
 	DetailPrint "Copying emulators files..."
  SetDetailsPrint listonly
  
- File /r  /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
+ File /r /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
  File /r "${EMULATORS_BASE}\applewin"
  File /r "${EMULATORS_BASE}\citra"
  File /r "${EMULATORS_BASE}\daphne"
@@ -317,13 +361,13 @@ SectionInstType ${SEC01}
  File /r "${EMULATORS_BASE}\rpcs3"
  File /r "${EMULATORS_BASE}\simcoupe"
  File /r "${EMULATORS_BASE}\solarus"
- File /r /nonfatal "${EMULATORS_BASE}\fpinball"
- File /r /nonfatal "${EMULATORS_BASE}\mame"
- File /r /nonfatal "${EMULATORS_BASE}\pico-8" 
- File /r /nonfatal "${EMULATORS_BASE}\ryujin"
- File /r /nonfatal "${EMULATORS_BASE}\vpinball"
- File /r /nonfatal "${EMULATORS_BASE}\winuae"
- File /r /nonfatal "${EMULATORS_BASE}\yuzu"
+ File /r "${EMULATORS_BASE}\fpinball"
+; File /r "${EMULATORS_BASE}\mame"
+; File /r "${EMULATORS_BASE}\pico-8" 
+; File /r "${EMULATORS_BASE}\ryujin"
+ File /r "${EMULATORS_BASE}\vpinball"
+ File /r "${EMULATORS_BASE}\winuae"
+; File /r "${EMULATORS_BASE}\yuzu"
  File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
  File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
  File /r /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
@@ -342,8 +386,8 @@ SectionInstType ${SEC01}
  File /r /x "${EMULATORS_BASE}\snes9x\snes9x.conf" "${EMULATORS_BASE}\snes9x" 
  File /r /x "${EMULATORS_BASE}\supermodel\Supermodel.ini" "${EMULATORS_BASE}\supermodel" 
  File /r /x "${EMULATORS_BASE}\xenia-canary\xenia-canary.config.toml" "${EMULATORS_BASE}\xenia-canary" 
- File /r /x /nonfatal "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
- File /r /x /nonfatal "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
+; File /r /x "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
+ File /r /x "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
 
 SectionEnd
 
@@ -384,7 +428,7 @@ SectionInstType ${SEC01} ${SEC02}
 	DetailPrint "Applying settings..."
  SetDetailsPrint listonly
 
- ifFileExists "$INSTDIR\retrobat.exe" 0 +4
+ ifFileExists "$INSTDIR\retrobat.exe" 0 +5
 
  ExecWait "$INSTDIR\retrobat.exe /NOF #GetConfigFiles"
  ExecWait "$INSTDIR\retrobat.exe /NOF #SetEmulationStationSettings"
@@ -399,51 +443,10 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${DOWNLOAD_DIR}\*.zip"
  Delete "${DOWNLOAD_DIR}\*.*"
  
-Section /o "-CopyIni"
-SectionInstType ${IT_REQUIRED_04}
-
-  ifFileExists "$INSTDIR\retrobat.ini" 0 +2
-  Delete "$INSTDIR\retrobat.ini"
-
-  FileOpen $4 "$INSTDIR\retrobat.ini" w
-  FileWrite $4 "[RetroBat]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "CheckForUpdate=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "ConfigMode=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[SplashScreen]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "EnableIntro=1"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "RandomVideo=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "VideoDuration=6500"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'FilePath="default"'
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'FileName="retrobat-intro.mp4"'
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[EmulationStation]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "InterfaceMode=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "Fullscreen=1"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "WindowXSize=1280"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "WindowYSize=720"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "NoExitMenu=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[RetroArch]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'DefaultVideoDriver="vulkan"'
-  FileClose $4
-	
+ ifFileExists "$INSTDIR\retrobat.ini" 0 +2
+ Delete "$INSTDIR\retrobat.ini"
+ Call CreateIni
+ 
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
