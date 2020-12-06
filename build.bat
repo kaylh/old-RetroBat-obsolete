@@ -326,9 +326,6 @@ REM Libretro cores download loop
 ::::atari800_libretro.dll
 ::::blastem_libretro.dll
 ::::bluemsx_libretro.dll
-::::bsnes2014_accuracy_libretro.dll
-::::bsnes2014_balanced_libretro.dll
-::::bsnes2014_performance_libretro.dll
 ::::bsnes_libretro.dll
 ::::bsnes_mercury_accuracy_libretro.dll
 ::::bsnes_mercury_balanced_libretro.dll
@@ -343,7 +340,7 @@ REM Libretro cores download loop
 ::::dosbox_core_libretro.dll
 ::::duckstation_libretro.dll
 ::::fbalpha2012_cps1_libretro.dll
-::::balpha2012_cps2_libretro.dll
+::::fbalpha2012_cps2_libretro.dll
 ::::fbalpha2012_cps3_libretro.dll
 ::::fbalpha2012_libretro.dll
 ::::fbalpha2012_neogeo_libretro.dll
@@ -383,7 +380,7 @@ REM Libretro cores download loop
 ::::mednafen_vb_libretro.dll
 ::::mednafen_wswan_libretro.dll
 ::::melonds_libretro.dll
-::::mesens_libretro.dll
+::::mesen-s_libretro.dll
 ::::mesen_libretro.dll
 ::::mgba_libretro.dll
 ::::mrboom_libretro.dll
