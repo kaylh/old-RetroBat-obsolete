@@ -168,7 +168,7 @@ Function .onInit
 FunctionEnd
 
 Function CreateDesktopShortCut
- CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat-icon.ico"
+ CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat-icon-purple.ico"
 FunctionEnd
 
 SectionGroup "-RetroBat"
@@ -194,7 +194,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  
  File "${BASE_DIR}\retrobat.exe"
- File "${BASE_DIR}\retrobat.ini"
+; File "${BASE_DIR}\retrobat.ini"
  File "${BASE_DIR}\license.txt"
  File /nonfatal "${BASE_DIR}\*.dll" 
  File /r "${BASE_DIR}\system"
@@ -307,40 +307,43 @@ SectionInstType ${SEC01}
 	DetailPrint "Copying emulators files..."
  SetDetailsPrint listonly
  
- File /r "${EMULATORS_BASE}\applewin"
- File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
- File /r "${EMULATORS_BASE}\citra"
- File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
- File /r "${EMULATORS_BASE}\daphne"
- File /r /x "${EMULATORS_BASE}\demul\Demul.ini" "${EMULATORS_BASE}\demul" 
- File /r /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
  File /r  /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
- File /r /x "${EMULATORS_BASE}\dolphin-triforce\Dolphin.ini" "${EMULATORS_BASE}\dolphin-triforce" 
+ File /r "${EMULATORS_BASE}\applewin"
+ File /r "${EMULATORS_BASE}\citra"
+ File /r "${EMULATORS_BASE}\daphne"
  File /r "${EMULATORS_BASE}\dosbox"
- File /r /x "${EMULATORS_BASE}\duckstation\settings.ini" "${EMULATORS_BASE}\duckstation" 
- File /r "${EMULATORS_BASE}\fpinball"
- File /r /x "${EMULATORS_BASE}\kega-fusion\Fusion.ini" "${EMULATORS_BASE}\kega-fusion" 
- File /r /x "${EMULATORS_BASE}\kronos\kronos.ini" "${EMULATORS_BASE}\kronos" 
- File /r /x "${EMULATORS_BASE}\m2emulator\Emulator.ini" "${EMULATORS_BASE}\m2emulator" 
  File /r "${EMULATORS_BASE}\mednafen"
- File /r /x "${EMULATORS_BASE}\mesen\settings.xml" "${EMULATORS_BASE}\mesen" 
- File /r /x "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
- File /r /x "${EMULATORS_BASE}\mgba\config.ini" "${EMULATORS_BASE}\mgba" 
  File /r "${EMULATORS_BASE}\openbor"
+ File /r "${EMULATORS_BASE}\rpcs3"
+ File /r "${EMULATORS_BASE}\simcoupe"
+ File /r "${EMULATORS_BASE}\solarus"
+ File /r /nonfatal "${EMULATORS_BASE}\fpinball"
+ File /r /nonfatal "${EMULATORS_BASE}\mame"
+ File /r /nonfatal "${EMULATORS_BASE}\pico-8" 
+ File /r /nonfatal "${EMULATORS_BASE}\ryujin"
+ File /r /nonfatal "${EMULATORS_BASE}\vpinball"
+ File /r /nonfatal "${EMULATORS_BASE}\winuae"
+ File /r /nonfatal "${EMULATORS_BASE}\yuzu"
+ File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
+ File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
+ File /r /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
+ File /r /x "${EMULATORS_BASE}\demul\Demul.ini" "${EMULATORS_BASE}\demul" 
+ File /r /x "${EMULATORS_BASE}\dolphin-triforce\Dolphin.ini" "${EMULATORS_BASE}\dolphin-triforce" 
+ File /r /x "${EMULATORS_BASE}\duckstation\settings.ini" "${EMULATORS_BASE}\duckstation" 
+ File /r /x "${EMULATORS_BASE}\kega-fusion\Fusion.ini" "${EMULATORS_BASE}\kega-fusion"
+ File /r /x "${EMULATORS_BASE}\m2emulator\Emulator.ini" "${EMULATORS_BASE}\m2emulator" 
+ File /r /x "${EMULATORS_BASE}\mesen\settings.xml" "${EMULATORS_BASE}\mesen" 
+ File /r /x "${EMULATORS_BASE}\mgba\config.ini" "${EMULATORS_BASE}\mgba" 
  File /r /x "${EMULATORS_BASE}\oricutron\oricutron.cfg" "${EMULATORS_BASE}\oricutron" 
  File /r /x "${EMULATORS_BASE}\pcsx2\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2" 
  File /r /x "${EMULATORS_BASE}\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini" "${EMULATORS_BASE}\ppsspp" 
  File /r /x "${EMULATORS_BASE}\project64\Config\Project64.cfg" "${EMULATORS_BASE}\project64" 
  File /r /x "${EMULATORS_BASE}\raine\config\raine32_sdl.cfg" "${EMULATORS_BASE}\raine" 
- File /r /x "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
- File /r "${EMULATORS_BASE}\rpcs3"
- File /r "${EMULATORS_BASE}\simcoupe"
  File /r /x "${EMULATORS_BASE}\snes9x\snes9x.conf" "${EMULATORS_BASE}\snes9x" 
- File /r "${EMULATORS_BASE}\solarus"
  File /r /x "${EMULATORS_BASE}\supermodel\Supermodel.ini" "${EMULATORS_BASE}\supermodel" 
- File /r "${EMULATORS_BASE}\vpinball"
  File /r /x "${EMULATORS_BASE}\xenia-canary\xenia-canary.config.toml" "${EMULATORS_BASE}\xenia-canary" 
- File /r "${EMULATORS_BASE}\yuzu"
+ File /r /x /nonfatal "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
+ File /r /x /nonfatal "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
 
 SectionEnd
 
@@ -396,7 +399,7 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${DOWNLOAD_DIR}\*.zip"
  Delete "${DOWNLOAD_DIR}\*.*"
  
- ection /o "-ConfigMode4"
+Section /o "-CopyIni"
 SectionInstType ${IT_REQUIRED_04}
 
   ifFileExists "$INSTDIR\retrobat.ini" 0 +2
@@ -440,8 +443,6 @@ SectionInstType ${IT_REQUIRED_04}
   FileWrite $4 "$\r$\n"
   FileWrite $4 'DefaultVideoDriver="vulkan"'
   FileClose $4
-	
-SectionEnd
 	
 SectionEnd
 
