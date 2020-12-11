@@ -47,8 +47,6 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
 - Clone this github then run build.bat to launch the RetroBat's installer build routine.
 
-The retrobat-buildtools need to be in the same folder than RetroBat files.
-
 ## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
