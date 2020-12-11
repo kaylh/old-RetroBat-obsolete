@@ -37,7 +37,7 @@ Unicode true
 Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
 InstallDir "${BASE_INSTALL_DIR}"
-ShowInstDetails "hide"
+ShowInstDetails "show"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
 BrandingText "${PRODUCT_PUBLISHER}"
 SpaceTexts none
@@ -238,7 +238,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  
  File "${BASE_DIR}\retrobat.exe"
-; File "${BASE_DIR}\retrobat.ini"
+ File "${BASE_DIR}\retrobat.ini"
  File "${BASE_DIR}\license.txt"
  File /nonfatal "${BASE_DIR}\*.dll" 
  File /r "${BASE_DIR}\system"
@@ -248,8 +248,7 @@ SectionInstType ${SEC01} ${SEC02}
 	DetailPrint "Creating RetroBat folders"
  SetDetailsPrint listonly
 
- ifFileExists "$INSTDIR\retrobat.exe" 0 +3
-
+ ifFileExists "$INSTDIR\retrobat.exe" 0 +2
  ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
  SetDetailsPrint listonly
  
