@@ -1,0 +1,2 @@
+\dosbox\dosbox.exe
+-fullscreen -noconsole -exit -conf .\..\..\emulators\dosbox\zsnes.dosbox
