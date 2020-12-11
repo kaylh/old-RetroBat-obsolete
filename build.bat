@@ -33,7 +33,7 @@ set retrobat_git="https://github.com/kaylh/RetroBat.git"
 set decorations_git="https://github.com/kaylh/batocera-bezel.git"
 set theme_branch=master
 set theme_git="https://github.com/fabricecaruso/es-theme-carbon.git"
-set "buildtools_dir=%current_path%\retrobat-buildtools"
+set "buildtools_dir=%current_path%\..\retrobat-buildtools"
 set installer_source=installer.nsi
 set "installer_dir=%current_path%\installer"
 set sevenzip_loglevel=0
@@ -191,7 +191,7 @@ if %nsis_bin% EQU 0 if %wget_bin% EQU 0 if %strip_bin% EQU 0 (
 	cls
 	echo :: EXTRACTING RETROBAT BUILDTOOLS ::
 	echo.
-::	"%sevenzip_path%"\7zg.exe -y x "%current_path%\nsis.zip" -o"%current_path%\tools\nsis" -aoa>nul
+rem %sevenzip_path%"\7zg.exe -y x "%current_path%\nsis.zip" -o"%current_path%\tools\nsis" -aoa>nul
 	powershell -command "Expand-Archive -Force -LiteralPath "%current_path%\retrobat-buildtools.zip" -DestinationPath "%current_path%""
 	echo Done.
 	timeout /t 1 >nul
@@ -288,7 +288,7 @@ echo.
 cd "%wget_path%"
 wget --no-check-certificate -P "%current_path%\system\download" %emulationstation_url% -q --show-progress
 cd "%current_path%"
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%current_path%\system\download\emulationstation.zip""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%current_path%\system\download\emulationstation.zip""
 ping 127.0.0.1 -n 4 >nul
 timeout /t 1 >nul
 echo.
@@ -301,11 +301,11 @@ wget --no-check-certificate -P "%current_path%\emulationstation" https://github.
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll -q --show-progress
 cd "%current_path%"
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %launcher_url% -OutFile "%current_path%\system\download\batocera-ports.zip""
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe" -OutFile "%current_path%\emulationstation\ILMerge.exe""
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.DirectInput.dll""
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll" -OutFile "%current_path%\emulationstation\SharpDX.dll""
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.XInput.dll""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %launcher_url% -OutFile "%current_path%\system\download\batocera-ports.zip""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe" -OutFile "%current_path%\emulationstation\ILMerge.exe""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.DirectInput.dll""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll" -OutFile "%current_path%\emulationstation\SharpDX.dll""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.XInput.dll""
 timeout /t 1 >nul
 
 if exist "%current_path%\system\download\retroarch.7z" goto extract
@@ -315,7 +315,7 @@ echo.
 cd "%wget_path%"
 wget --no-check-certificate -P "%current_path%\system\download" %retroarch_url% -q --show-progress
 cd "%current_path%"
-::powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%current_path%\system\download\retroarch.7z""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%current_path%\system\download\retroarch.7z""
 timeout /t 1 >nul
 
 
@@ -433,11 +433,11 @@ echo :: DOWNLOADING LIBRETRO CORES ::
 echo.
 
 for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
-:: echo %%a
+rem echo %%a
  cd "%wget_path%"
-:: wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+rem wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
 wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
-:: powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
  cd "%current_path%"
  timeout /t 1 >nul
 )
@@ -505,7 +505,7 @@ echo.
 echo :: CLEANING STEP ::
 echo.
 
-if exist "%current_path%\retrobat.ini" del/q "%current_path%\retrobat.ini"
+rem if exist "%current_path%\retrobat.ini" del/q "%current_path%\retrobat.ini"
 if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
 if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
 
