@@ -1,0 +1,20 @@
+{
+   "winuae.ini_configmode_1":[
+      {
+         "ConfigurationPath":".\\Configurations\\",
+		 "InputPath":".\\Inputrecordings\\",
+		 "KickstartPath":"..\\..\\bios\\",
+		 "LuaPath":".\\lua\\",
+		 "PathMode":"WinUAE",
+		 "QuickStartCompatibility":"1",
+		 "RecursiveROMScan":"2",
+		 "RelativePaths":"1",
+		 "RipperPath":".\\Rips\\",
+		 "SaveImageOriginalPath":"0",
+		 "SaveimagePath":".\\Saveimages\\",
+		 "ScreenshotPath":"..\\..\\screenshots\\",
+		 "StatefilePat"h:"..\\..\\saves\\amiga\\winuae\\",
+		 "VideoPath":"..\\..\\medias\\"
+      }
+   ]
+}
