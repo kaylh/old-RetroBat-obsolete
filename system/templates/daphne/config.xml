@@ -1,0 +1,4197 @@
+<daphneloaderinfo>
+  <config_ver_2>
+	
+	<gamelist>
+		<!-- GAME NOTE : Games should be grouped by name except
+		when the game name is totally different (Star Blazer / Galaxy Ranger). -->
+		<game name="Astron Belt" image="astron.jpg" id="G_ASTRON">
+			<version name="Astron Belt (Hitachi)" driver="astron" cfg="astron" disc="D_ASTRON" id="V_ASTRONH"/>
+			<version name="Astron Belt (Pioneer)" driver="astronp" cfg="astron" disc="D_ASTRON" id="V_ASTRONP"/>
+		</game>
+		<game name="Badlands" image="badlands.jpg" id="G_BADLANDS">
+			<version name="Standard" driver="badlands" cfg="badlands" disc="D_BADLANDS" id="V_BADLANDS"/>
+			<version name="Prototype" driver="badlandp" cfg="badlandp" disc="D_BADLANDS" id="V_BADLANDP"/>
+		</game>
+		<game name="Bega's Battle" image="bega.jpg" id="G_BEGA">
+			<version name="Revision 3" driver="bega" cfg="bega" disc="D_BEGA" id="V_BEGA" />
+			<version name="Revision 1" driver="begar1" cfg="bega" disc="D_BEGA" id="V_BEGA1" />
+		</game>
+		<game name="Cliff Hanger" image="cliff.jpg" id="G_CLIFF">
+			<version name="Standard" driver="cliff" cfg="cliff" disc="D_CLIFF" id="V_CLIFF"/>
+			<version name="Alternate #1" driver="cliffalt" cfg="cliff" disc="D_CLIFF" id="V_CLIFFALT"/>
+		<!--	<version name="Alternate #2" driver="cliffalt2" cfg="cliff" disc="D_CLIFF" id="V_CLIFFALT2"/>  -->
+		</game>
+		<game name="Cobra Command" image="cobra.jpg" id="G_COBRA">
+			<version name="Astron Belt Hardware" driver="cobraab" cfg="cobraab" disc="D_COBRA" id="V_COBRAAB"/>
+			<version name="MACH 3 Hardware" driver="cobram3" cfg="cobram3" disc="D_COBRA" id="V_COBRAM3"/>
+			<version name="Dedicated / Bega's Battle Hardware" driver="cobra" cfg="cobra" disc="D_COBRA" id="V_COBRADED"/>
+			<version name="Cliff Hanger / Interstellar / Dragon's Lair Conversion" driver="cobraconv" cfg="cobraconv" disc="D_COBRA" id="V_COBRACONV"/>
+		</game>
+		<game name="Dragon's Lair" image="lair.jpg" id="G_LAIR">
+			<version name="Rev F2" driver="lair" cfg="lair_f" disc="D_LAIR83" id="V_LAIR_F2"/>
+			<version name="Enhancement v2.1" driver="dle21" cfg="dle2" disc="D_LAIR83" id="V_DLE21" />
+			<version name="Enhancement v2.1 - prototype mode" driver="dle21" cfg="dle2" disc="D_LAIR_LE" id="V_DLE21P" >
+				<!-- bank value turns prototype mode on -->
+				<set bank="1" val="128" />
+			</version>
+		<!--	<version name="Enhancement v2.0" driver="dle20" cfg="dle2" disc="D_LAIR83" id="V_DLE20" />
+			<version name="Enhancement v2.0 - prototype mode" driver="dle20" cfg="dle2" disc="D_LAIR_LE" id="V_DLE20P" >
+				bank value turns prototype mode on
+				<set bank="1" val="128" />
+			</version>
+		-->
+			<version name="Enhancement v1.1" driver="dle11" cfg="dle11" disc="D_LAIR83" id="V_DLE11"/>
+		<!--	<version name="Enhancement v1.0" driver="dle" cfg="dle11" disc="D_LAIR83" id="V_DLE" />   -->
+			<version name="European" driver="laireuro" cfg="laireuro" disc="D_DL_PAL" id="V_LAIREURO"/>
+			<version name="Italian" driver="lair_ita" cfg="lairita" disc="D_DL_PAL" id="V_LAIR_ITA"/>
+			<version name="Rev F" driver="lair_f" cfg="lair_f" disc="D_LAIR83" id="V_LAIR_F"/>
+			<version name="Rev E" driver="lair_e" cfg="lair_f" disc="D_LAIR83" id="V_LAIR_E"/>	
+			<version name="Rev D" driver="lair_d" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_D"/>
+			<version name="Rev C" driver="lair_c" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_C"/>
+			<version name="Rev B" driver="lair_b" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_B"/>
+			<version name="Rev A" driver="lair_a" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_A"/>
+			<version name="Beta 2" driver="lair_x" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_X"/>
+			<version name="Beta 1 (serial #1)" driver="lair_n1" cfg="lairalt" disc="D_LAIR83" id="V_LAIR_N1"/>
+		</game>
+		<game name="Dragon's Lair 2" image="lair2.jpg" id="G_LAIR2">
+			<version name="Version 3.19" driver="lair2" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_319"/>
+			<version name="Version 3.19 (European)" driver="lair2_319_euro" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_319_EURO"/>
+			<version name="Version 3.19 (Spanish)" driver="lair2_319_span" cfg="dl2" disc="D_LAIR2_SPAN" id="V_LAIR2_319_SPAN"/>
+			<version name="Version 3.18" driver="lair2_318" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_318"/>
+			<version name="Version 3.16 (European)" driver="lair2_316_euro" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_316_EURO"/>
+			<version name="Version 3.15" driver="lair2_315" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_315"/>
+			<version name="Version 3.14" driver="lair2_314" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_314"/>
+			<version name="Version 3.00" driver="lair2_300" cfg="dl2" disc="D_LAIR2" id="V_LAIR2_300"/>
+			<version name="Version 2.11" driver="lair2_211" cfg="dl2" disc="D_LAIR2_1ST" id="V_LAIR2_211"/>
+		</game>
+		<game name="Esh's Aurunmilla" image="esh.jpg" id="G_ESH">
+			<version name="Standard" driver="esh" cfg="esh" id="V_ESH"/>
+			<version name="Alternate #1" driver="eshalt" cfg="esh" disc="D_ESH" id="V_ESHALT"/>
+			<version name="Alternate #2" driver="eshalt2" cfg="esh" disc="D_ESH" id="V_ESHALT2"/>
+		</game>
+		<game name="Galaxy Ranger" image="galaxy.jpg" id="G_GALAXY">
+			<version name="Hitachi" driver="galaxy" cfg="astron" disc="D_GALAXY" id="V_GALAXY_H"/>
+			<version name="Pioneer" driver="galaxyp" cfg="astron" disc="D_GALAXY" id="V_GALAXY_P"/>
+
+		<!-- uncomment the next line to have Star Blazer listed under Galaxy Ranger 
+			<version name="Star Blazer" driver="blazer" cfg="astron" disc="D_GALAXY" id="V_BLAZER" />
+        	-->
+		</game>
+        	<game name="GP World" image="gpworld.jpg" id="G_GPWORLD">
+            	<version name="Standard" driver="gpworld" cfg="gpworld" disc="D_GPWORLD" id="V_GPWORLD"/>
+        	</game>
+		<game name="Interstellar" image="interstellar.jpg" id="G_INTERSTELLAR">
+			<version name="Standard" driver="interstellar" cfg="interstellar" disc="D_INTERSTELLAR" id="V_INTERSTELLAR"/>
+		</game>
+		<game name="M.A.C.H. 3" image="mach3.jpg" id="G_MACH3">
+			<version name="Standard" driver="mach3" cfg="mach3" disc="D_MACH3" id="V_MACH3"/>
+		</game>
+		<game name="Road Blaster" image="rb.jpg" id="G_ROADBLASTER">
+			<version name="Standard" driver="roadblaster" cfg="roadblaster" disc="D_ROADBLASTER" id="V_ROADBLASTER"/>
+		</game>
+		<game name="Space Ace" image="ace.jpg" id="G_ACE">
+			<version name="Rev A3" driver="ace" cfg="ace" disc="D_ACE_83" id="V_ACE_A3"/>
+			<version name="Enhanced v1.0" driver="sae" cfg="sae" disc="D_ACE_83" id="V_ACE_SAE"/>
+			<version name="European" driver="aceeuro" cfg="laireuro" disc="D_ACE_PAL" id="V_ACE_EURO"/>
+			<version name="Remake (1991)" driver="ace91" cfg="dl2" disc="D_ACE91" id="V_ACE91"/>
+			<version name="Rev A2" driver="ace_a2" cfg="ace" disc="D_ACE_83" id="V_ACE_A2"/>
+			<version name="Rev A" driver="ace_a" cfg="ace" disc="D_ACE_83" id="V_ACE_A"/>
+		</game>
+		<!-- comment out this section to have Star Blazer listed under Galaxy Ranger -->
+		<game name="Star Blazer" image="galaxy.jpg" id="G_BLAZER">
+			<version name="Standard" driver="blazer" cfg="astron" disc="D_GALAXY" id="V_BLAZER"/>
+		</game>
+		<game name="Super Don Quix-ote" image="superdon.jpg" id="G_SDQ">
+			<version name="Standard" driver="sdq" cfg="sdq" disc="D_SDQ" id="V_SDQ"/>
+			<version name="Shortened Scenes" driver="sdqshort" cfg="sdq" disc="D_SDQ" id="V_SDQSHORT"/>
+			<version name="Shortened Scenes, Alternate" driver="sdqshortalt" cfg="sdq" disc="D_SDQ" id="V_SDQSHORTALT"/>
+		</game>
+		<game name="Thayer's Quest" image="thayers.jpg" id="G_TQ">
+			<version name="Standard" driver="tq" cfg="tq" disc="D_TQ" id="V_TQ"/>
+			<version name="Alternate" driver="tq_alt" cfg="tq" disc="D_TQ" id="V_TQALT"/>
+			<version name="'Swearing' ROM Hack" driver="tq_swear" cfg="tq" disc="D_TQ" id="V_TQSWEAR"/>
+		</game>
+		<game name="Us vs Them" image="uvt.jpg" id="G_UVT">
+			<version name="Standard" driver="uvt" cfg="uvt" disc="D_UVT" id="V_UVT"/>
+		</game>
+	</gamelist>
+	
+	<!-- config section is separate so that games can share configurations
+	(for example, different ROM revs of Dragon's Lair).
+	
+	NOTE #1: the first item in a listbox is default!
+	NOTE #2: every listbox item must have an ID in order to have its selection saved
+	NOTE #3: listbox item ID's must be unique to the <cfg> section they are in
+	-->
+	<gamecfg>
+		<cfg name="astron">
+			<listbox title="Coins per credit" id="LB_COIN">
+				<item name="1 coin / 1 credit" id="COIN_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COIN_12">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COIN_13">
+					<or bank="0" val="34"/>
+				</item>
+				<item name="1 coin / 4 credit" id="COIN_14">
+					<or bank="0" val="51"/>
+				</item>
+				<item name="1 coin / 5 credits" id="COIN_15">
+					<or bank="0" val="68"/>
+				</item>
+				<item name="1 coin / 6 credits" id="COIN_16">
+					<or bank="0" val="85"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COIN_21">
+					<or bank="0" val="102"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COIN_31">
+					<or bank="0" val="119"/>
+				</item>
+				<item name="4 coins / 1 credit" id="COIN_41">
+					<or bank="0" val="136"/>
+				</item>
+				<item name="2 coins / 3 credits" id="COIN_23">
+					<or bank="0" val="153"/>
+				</item>
+			</listbox>
+			<listbox title="Play Timer" id="LB_TIME">
+				<item name="60 Seconds" id="TIME_60">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="50 Seconds" id="TIME_50">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="40 Seconds" id="TIME_40">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="Infinite" id="TIME_INF">
+					<or bank="1" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty" id="LB_DIFF">
+				<item name="Normal" id="DIFF_N">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			<listbox title="Reserve Ships Score" id="LB_RESSHIP">
+				<item name="5k, 10k, 20k" id="RESSHIP_512">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5k, 20k, 40k" id="RESSHIP_524">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="10k, 20k, 30k" id="RESSHIP_123">
+					<or bank="1" val="32"/>
+				</item>
+				<item name="10k, 20k, 40k" id="RESSHIP_124">
+					<or bank="1" val="48"/>
+				</item>
+			</listbox>
+			<listbox title="Game Type" id="LB_TYPE">
+				<item name="Continue Game" id="TYPE_CON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Select Game" id="TYPE_SEL">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="badlands">
+			<listbox title="Shoot Lamp Emulation" id="LB_SHOOT">
+				<item name="None" id="SHOOT_NONE"/>
+				<item name="Text Overlay" id="SHOOT_TEXT">
+					<arg>-preset</arg><arg>1</arg>
+				</item>
+				<item name="Keyboard NumLock LED" id="SHOOT_LED">
+					<arg>-preset</arg><arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Sound" id="LB_SOUND">
+				<item name="Enabled" id="SOUND_ON">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Disabled" id="SOUND_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Left coins per credit" id="LB_COINL">
+				<item name="1 coin / 1 play" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 plays" id="COINL_12">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="1 coin / 3 plays" id="COINL_13">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="1 coin / 4 plays" id="COINL_14">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="1 coin / 5 plays" id="COINL_15">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="1 coin / 6 plays" id="COINL_16">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="1 coin / 7 plays" id="COINL_17">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="2 coins / 1 play" id="COINL_21">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="2 coins / 3 plays" id="COINL_23">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="2 coins / 5 plays" id="COINL_25">
+					<or bank="0" val="9"/>
+				</item>
+				<item name="3 coins / 1 play" id="COINL_31">
+					<or bank="0" val="10"/>
+				</item>
+				<item name="3 coins / 2 plays" id="COINL_32">
+					<or bank="0" val="11"/>
+				</item>
+				<item name="3 coins / 4 plays" id="COINL_34">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="4 coins / 1 play" id="COINL_41">
+					<or bank="0" val="13"/>
+				</item>
+				<item name="4 coins / 3 plays" id="COINL_43">
+					<or bank="0" val="14"/>
+				</item>
+				<item name="Free Play" id="COINL_FP">
+					<or bank="0" val="15"/>
+				</item>
+			</listbox>
+			<listbox title="Right coins per credit" id="LB_COINR">
+				<item name="1 coin / 1 play" id="COINR_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 plays" id="COINR_12">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="1 coin / 3 plays" id="COINR_13">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="1 coin / 4 plays" id="COINR_14">
+					<or bank="0" val="48"/>
+				</item>
+				<item name="1 coin / 5 plays" id="COINR_15">
+					<or bank="0" val="64"/>
+				</item>
+				<item name="1 coin / 6 plays" id="COINR_16">
+					<or bank="0" val="80"/>
+				</item>
+				<item name="1 coin / 7 plays" id="COINR_17">
+					<or bank="0" val="96"/>
+				</item>
+				<item name="2 coins / 1 play" id="COINR_21">
+					<or bank="0" val="112"/>
+				</item>
+				<item name="2 coins / 3 plays" id="COINR_23">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="2 coins / 5 plays" id="COINR_25">
+					<or bank="0" val="144"/>
+				</item>
+				<item name="3 coins / 1 play" id="COINR_31">
+					<or bank="0" val="160"/>
+				</item>
+				<item name="3 coins / 2 plays" id="COINR_32">
+					<or bank="0" val="176"/>
+				</item>
+				<item name="3 coins / 4 plays" id="COINR_34">
+					<or bank="0" val="192"/>
+				</item>
+				<item name="4 coins / 1 play" id="COINR_41">
+					<or bank="0" val="208"/>
+				</item>
+				<item name="4 coins / 3 plays" id="COINR_43">
+					<or bank="0" val="224"/>
+				</item>
+				<item name="Free Play" id="COINR_FP">
+					<or bank="0" val="240"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Lives" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="2 Lives" id="LIVES_2">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="7 Lives" id="LIVES_7">
+					<or bank="1" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Bonus Life" id="LB_BONUSLIFE">
+				<item name="20,000 / 60,000" id="BONUS_26">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="20,000 / 70,000" id="BONUS_27">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="badlandp">
+			<listbox title="Shoot Lamp Emulation" id="LB_SHOOT">
+				<item name="None" id="SHOOT_NONE"/>
+				<item name="Text Overlay" id="SHOOT_TEXT">
+					<arg>-preset</arg><arg>1</arg>
+				</item>
+				<item name="Keyboard NumLock LED" id="SHOOT_LED">
+					<arg>-preset</arg><arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Left coins per credit" id="LB_COINL">
+				<item name="1 coin / 1 play" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 plays" id="COINL_12">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="1 coin / 3 plays" id="COINL_13">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="1 coin / 4 plays" id="COINL_14">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="1 coin / 5 plays" id="COINL_15">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="1 coin / 6 plays" id="COINL_16">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="1 coin / 7 plays" id="COINL_17">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="2 coins / 1 play" id="COINL_21">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="2 coins / 3 plays" id="COINL_23">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="2 coins / 5 plays" id="COINL_25">
+					<or bank="0" val="9"/>
+				</item>
+				<item name="3 coins / 1 play" id="COINL_31">
+					<or bank="0" val="10"/>
+				</item>
+				<item name="3 coins / 2 plays" id="COINL_32">
+					<or bank="0" val="11"/>
+				</item>
+				<item name="3 coins / 4 plays" id="COINL_34">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="4 coins / 1 play" id="COINL_41">
+					<or bank="0" val="13"/>
+				</item>
+				<item name="4 coins / 3 plays" id="COINL_43">
+					<or bank="0" val="14"/>
+				</item>
+				<item name="Free Play" id="COINL_FP">
+					<or bank="0" val="15"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Lives" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="4 Lives" id="LIVES_4">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="99 Lives" id="LIVES_99">
+					<or bank="0" val="48"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="bega">
+			<listbox title="Continuous Play Mode" id="LB_CONTINUE">
+				<item name="Enabled" id="CONTINUE_ON">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="Disabled" id="CONTINUE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Left coins per credit" id="LB_COINL">
+				<item name="1 coin / 1 play" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 plays" id="COINL_12">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="3 coins / 1 play" id="COINL_31">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="2 coins / 1 play" id="COINL_21">
+					<or bank="0" val="c"/>
+				</item>
+			</listbox>
+			<listbox title="Right coins per credit" id="LB_COINR">
+				<item name="1 coin / 1 play" id="COINR_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 plays" id="COINR_12">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="3 coins / 1 play" id="COINR_31">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="2 coins / 1 play" id="COINR_21">
+					<or bank="0" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Begas per credit" id="LB_BEGAS">
+				<item name="3 Begas" id="BEGAS_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="4 Begas" id="BEGAS_4">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="5 Begas" id="BEGAS_5">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="6 Begas" id="BEGAS_6">
+					<or bank="1" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Bouns Bega Gained At" id="LB_BONUS">
+				<item name="20,000" id="BONUS_20">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="30,000" id="BONUS_30">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="50,000" id="BONUS_50">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="No Bonus" id="BONUS_NB">
+					<or bank="1" val="24"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty" id="LB_DIFF">
+				<item name="Easy" id="DIFF_E">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Difficult" id="DIFF_D">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Cabinet Type" id="LB_CAB">
+				<item name="Cockpit" id="CAB_COC">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Upright" id="CAB_UP">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Diagnostics" id="LB_DIAG">
+				<item name="Play" id="DIAG_PLAY">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Factory Diagnostics" id="DIAG_FACT">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="User Diagnostics" id="DIAG_USER">
+					<or bank="1" val="192"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="cliff">
+			<listbox title="Infinite Lives Cheat" id="LB_CHEAT">
+				<item name="Off" id="CHEAT_OFF"/>
+				<item name="On" id="CHEAT_ON">
+					<arg>-cheat</arg>
+				</item>
+			</listbox>
+			<listbox title="Fast Boot" id="LB_FB" tooltip="This makes the game start faster.">
+				<item name="Disabled" id="FB_OFF"/>
+				<item name="Enabled" id="FB_ON">
+					<arg>-fastboot</arg>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="1 (easiest)" id="DIFF_1">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="2" id="DIFF_2">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="3" id="DIFF_3">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="4" id="DIFF_4">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="5" id="DIFF_5">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="6" id="DIFF_6">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="7" id="DIFF_7">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="8" id="DIFF_8">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="9" id="DIFF_9">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="10" id="DIFF_10">
+					<or bank="0" val="9"/>
+				</item>
+				<item name="11" id="DIFF_11">
+					<or bank="0" val="10"/>
+				</item>
+				<item name="12" id="DIFF_12">
+					<or bank="0" val="11"/>
+				</item>
+				<item name="13" id="DIFF_13">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="14" id="DIFF_14">
+					<or bank="0" val="13"/>
+				</item>
+				<item name="15" id="DIFF_15">
+					<or bank="0" val="14"/>
+				</item>
+				<item name="16 (hardest)" id="DIFF_16">
+					<or bank="0" val="15"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Lives" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="3" val="0"/>
+				</item>
+				<item name="4 Lives" id="LIVES_4">
+					<or bank="3" val="1"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="3" val="2"/>
+				</item>
+				<item name="6 Lives" id="LIVES_6">
+					<or bank="3" val="3"/>
+				</item>
+				<item name="Player Immortality (plays itself)" id="LIVES_PI">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			<listbox title="Left Coin Switch Setting" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="2" val="0"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="2" val="1"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINL_31">
+					<or bank="2" val="2"/>
+				</item>
+				<item name="4 coins / 1 credit" id="COINL_41">
+					<or bank="2" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Right Coin Switch Setting" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINR_11">
+					<or bank="2" val="0"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="2" val="16"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINR_31">
+					<or bank="2" val="32"/>
+				</item>
+				<item name="4 coins / 1 credit" id="COINR_41">
+					<or bank="2" val="48"/>
+				</item>
+			</listbox>
+			<listbox title="Buy In Feature" id="LB_BUYIN">
+				<item name="Off" id="BUYIN_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="BUYIN_ON">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			<listbox title="Show (should have) Hints" id="LB_HINTS">
+				<item name="First time player fails" id="HINTS_1">
+					<or bank="3" val="64"/>
+				</item>
+				<item name="Second time player fails" id="HINTS_2">
+					<or bank="3" val="128"/>
+				</item>
+				<item name="Third time player fails" id="HINTS_3">
+					<or bank="3" val="192"/>
+				</item>
+				<item name="Never" id="HINTS_OFF">
+					<or bank="3" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Diagnostics" id="LB_DIAG">
+				<item name="Off" id="DIAG_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Service Mode" id="DIAG_SM">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="Switch Test" id="DIAG_ST">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Disc Test" id="DIAG_DT">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+			<listbox title="Free Play" id="LB_FREE">
+				<item name="Off" id="FREE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="FREE_ON">
+					<or bank="1" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Show Score/Lives" id="LB_SL">
+				<item name="On" id="SL_ON">
+					<or bank="3" val="16"/>
+				</item>
+				<item name="Off" id="SL_OFF">
+					<or bank="3" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Show Action/Stick Hints" id="LB_AH">
+				<item name="On" id="AH_ON">
+					<or bank="3" val="32"/>
+				</item>
+				<item name="Off" id="AH_OFF">
+					<or bank="3" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Skip Scene Intros/Endings" id="LB_SKIP">
+				<item name="Off" id="SKIP_OFF">
+					<or bank="1" val="64"/>
+				</item>
+				<item name="On" id="SKIP_ON">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Skip Hanging Scene" id="LB_HANG">
+				<item name="Off" id="HANG_OFF">
+					<or bank="3" val="0"/>
+				</item>
+				<item name="On" id="HANG_ON">
+					<or bank="3" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Short Scenes" id="LB_SHORT">
+				<item name="Off" id="SHORT_OFF">
+					<or bank="3" val="8"/>
+				</item>
+				<item name="On" id="SHORT_ON">
+					<or bank="3" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Remove Borders" id="RM_BORD">
+				<item name="Off" id="RMBORD_OFF"/>
+				<item name="On" id="RMBORD_ON">
+					<arg>-vertical_stretch</arg><arg>24</arg>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="cobra">
+			<listbox title="Left coins per credit" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINL_12">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINL_31">
+					<or bank="0" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Right coins per credit" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINR_12">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINR_31">
+					<or bank="0" val="1"/>
+				</item>
+			</listbox>	
+			<listbox title="Number of Lives" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Bonus Helicopter Every" id="LB_BHELI">
+				<item name="20,000 Points" id="BHELI_20">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="20,000 Then every 40,000" id="BHELI_24">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="15,000 Then every 30,000" id="BHELI_13">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="30,000 Then every 50,000" id="BHELI_35">
+					<or bank="1" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty ?" id="LB_DIFF1">
+				<item name="Normal ?" id="DIFF1_N">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard ?" id="DIFF1_H">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty ?" id="LB_DIFF2">
+				<item name="Normal ?" id="DIFF2_N">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard ?" id="DIFF2_H">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Random Scenes" id="LB_RSCENE">
+				<item name="Off" id="RSCENE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="RSCENE_ON">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Self Test" id="LB_TEST">
+				<item name="Off" id="TEST_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="TEST_ON">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="cobraab">
+			<listbox title="Infinite Lives Cheat" id="LB_CHEAT">
+				<item name="Off" id="CHEAT_OFF"/>
+				<item name="On" id="CHEAT_ON">
+					<arg>-cheat</arg>
+				</item>
+			</listbox>
+
+			<listbox title="Coins per credit" id="LB_COIN">
+				<item name="1 coin / 1 credit" id="COIN_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COIN_12">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COIN_13">
+					<or bank="0" val="34"/>
+				</item>
+				<item name="1 coin / 4 credits" id="COIN_14">
+					<or bank="0" val="51"/>
+				</item>
+				<item name="1 coin / 5 credits" id="COIN_15">
+					<or bank="0" val="68"/>
+				</item>
+				<item name="1 coin / 6 credits" id="COIN_16">
+					<or bank="0" val="85"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COIN_21">
+					<or bank="0" val="102"/>
+				</item>
+			</listbox>			
+			<listbox title="Number of Players" id="LB_PLAYS">
+				<item name="1 Player" id="PLAYS_1">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="2 Players" id="PLAYS_2">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Ships" id="LB_SHIPS">
+				<item name="3 Ships" id="SHIPS_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5 Ships" id="SHIPS_5">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			<listbox title="Extra Ship Every" id="LB_ESHIP">
+				<item name="20,000 Points" id="ESHIP_20">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="15,000 Then every 20,000" id="ESHIP_12">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="20,000 Then every 40,000" id="ESHIP_24">
+					<or bank="1" val="32"/>
+				</item>
+				<item name="30,000 Then every 50,000" id="ESHIP_35">
+					<or bank="1" val="48"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="Normal" id="DIFF_N">
+					<or bank="1" val="64"/>
+				</item>
+				<item name="Easy" id="DIFF_E">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Hardest" id="DIFF_HX">
+					<or bank="1" val="192"/>
+				</item>
+			</listbox>
+			<listbox title="Stage Order" id="LB_STAGE">
+				<item name="Sequential" id="STAGE_S">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Random" id="STAGE_R">
+					<or bank="1" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="2"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="cobram3">
+			<listbox title="Infinite Lives Cheat" id="LB_CHEAT">
+				<item name="Off" id="CHEAT_OFF"/>
+				<item name="On" id="CHEAT_ON">
+					<arg>-cheat</arg>
+				</item>
+			</listbox>
+
+			<listbox title="Lives Per Credit" id="LB_LIVES">
+				<item name="1 Coin / 5 Lives" id="LIVES_15">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="1 Coin / 3 Lives" id="LIVES_13">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="2 Coins / 3 Lives" id="LIVES_23">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="2 Coins / 5 Lives" id="LIVES_25">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="First Bonus / Next Bonus / Difficulty" id="LB_BONUS">
+				<item name="20k / None / Easy" id="BONUS_2NE">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="15k / 30k / Easy" id="BONUS_13E">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="20k / 40k / Regular" id="BONUS_24R">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="30k / 50k / Regular" id="BONUS_35R">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="20k / None / Difficult" id="BONUS_2ND">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="15k / 30k / Difficult" id="BONUS_13D">
+					<or bank="0" val="20"/>
+				</item>
+				<item name="20k / 40k / Very Difficult" id="BONUS_24V">
+					<or bank="0" val="24"/>
+				</item>
+				<item name="30k / 50k / Very Difficult" id="BONUS_35V">
+					<or bank="0" val="28"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Random First Level" id="LB_RAND">
+				<item name="Off" id="RAND_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="RAND_ON">
+					<or bank="0" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Self Test" id="LB_TEST">
+				<item name="Off" id="RAND_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="RAND_ON">
+					<or bank="0" val="128"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="cobraconv">
+			<listbox title="Left Coin Switch Setting" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINL_12">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINL_13">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="0" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Right Coin Switch Setting" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINR_12">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINR_13">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="0" val="12"/>
+				</item>
+			</listbox>	
+			<listbox title="Number of Ships" id="LB_SHIPS">
+				<item name="3 Ships" id="SHIPS_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5 Ships" id="SHIPS_5">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Extra Ship" id="LB_ESHIP">
+				<item name="20,000 Points" id="ESHIP_20">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="15,000 Then every 20,000" id="ESHIP_12">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="20,000 Then every 40,000" id="ESHIP_24">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="30,000 Then every 50,000" id="ESHIP_35">
+					<or bank="1" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="Normal" id="DIFF_N">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="Easy" id="DIFF_E">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="Hardest" id="DIFF_VH">
+					<or bank="1" val="24"/>
+				</item>
+			</listbox>
+			<listbox title="Stage Order" id="LB_STAGE">
+				<item name="Sequential" id="STAGE_S">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Random" id="STAGE_R">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Country" id="LB_VER">
+				<item name="USA" id="VER_U">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="Japan" id="VER_J">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Self Test" id="LB_TEST">
+				<item name="Off" id="TEST_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="TEST_ON">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			<listbox title="Disply Frame #s" id="LB_FRAME">
+				<item name="Off" id="FRAME_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="FRAME_ON">
+					<or bank="0" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Pioneer Interface" id="LB_LDP">
+				<item name="Off" id="LDP_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="LDP_ON">
+					<or bank="0" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Hit Check" id="LB_HIT">
+				<item name="Off" id="HIT_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="HIT_ON">
+					<or bank="0" val="128"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="lair_f">
+			<!-- bank value turns engineering mode and diagnostic mode off  -->
+			<set bank="0" val="136"/>			
+			<listbox title="Scoreboard Mode" id="LB_SB" tooltip="Dragon's Lair had an LED scoreboard.">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Strobe Timing" id="LB_ST" tooltip="Accurate is preferred. Instantaneous is for backward compatibility.">
+				<item name="Accurate" id="ST_ACC"/>
+				<item name="Instantaneous (shorten scenes)" id="ST_INT">
+					<arg>-preset</arg>
+					<arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Fast Boot" id="LB_FB" tooltip="This makes the game start faster.">
+				<item name="Disabled" id="FB_OFF"/>
+				<item name="Enabled" id="FB_ON">
+					<arg>-fastboot</arg>
+				</item>
+			</listbox>
+			<listbox title="Coins per credit" id="LB_CPC">
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="3 coins / credit" id="CPC_3">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_FP">
+				</item>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="32"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="Unlimited lives" id="LPC_U">
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIF">
+				<item name="Easy" id="DIF_E"/>
+				<item name="Easy, hard after 9 scenes" id="DIF_H9">
+					<or bank="0" val="4"/>
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Easy, hard after 5 scenes" id="DIF_H5">
+					<or bank="0" val="4"/>
+					<or bank="1" val="144"/>
+				</item>
+				<item name="Easy, very hard after 9 scenes" id="DIF_VH9">
+					<or bank="0" val="6"/>
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Easy, very hard after 5 scenes" id="DIF_VH5">
+					<or bank="0" val="6"/>
+					<or bank="1" val="144"/>
+				</item>
+				<item name="Hard" id="DIF_H">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Very Hard" id="DIF_VH">
+					<or bank="0" val="2"/>
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			<listbox title="Pay As You Go Options" id="LB_PAYG">
+				<item name="Off, game ends when won" id="PAYG_OE">
+					<or bank="0" val="64"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="Off, game restarts when won" id="PAYG_OR">
+					<or bank="0" val="64"/>
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, 1 extra" id="PAYG_11">
+					<or bank="0" val="0"/>
+					<or bank="1" val="96"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, no extra" id="PAYG_1N">
+					<or bank="0" val="0"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="3 stops, game restarts, 1 extra" id="PAYG_31">
+					<or bank="0" val="0"/>
+					<or bank="1" val="64"/>
+				</item>
+				<item name="3 stops, game restarts, no extra" id="PAYG_3N">
+					<or bank="0" val="0"/>
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On" id="AMA_ON">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="On every eighth time" id="AMA_8">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF"/>
+			</listbox>
+			<!--  engineering and diagnostic modes are not supported, but listed for completeness
+     				note that bank0 is initialized to 136 above to compensate for the lack of these options.
+				for diagnostics to work, A7 must be turned off after 2 beeps.  Currently, there is no way to do this in daphne
+			<listbox title="Playtest for engineering use" tooltip="not supported. Choose off" id="LB_ENG">>
+				<item name="Off" id="ENG_OFF">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="On" id="ENG_ON"/>
+			</listbox>
+			<listbox title="Diagnostics" tooltip="not supported. Choose off" id="LB_DIA">
+				<item name="Off" id="DIA_OFF">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="On" id="DIA_ON"/>
+			</listbox>
+			-->
+			<!-- disc player model selection is not supported, but listed for dipswitch reference completeness.  
+        		     Uncomment this only if you *know* what you're doing
+			<listbox title="Disc Player Model Selection" id="LB_DPMS">
+				<item name="Pioneer LD-V1000" id="V1000_ON"/>
+				<item name="Pioneer PR-7820" id="7820_ON">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			-->
+		</cfg>
+		<cfg name="lairalt">
+			<!-- bank value turns engineering mode and diagnostic mode off  -->
+			<set bank="0" val="136"/>
+			<listbox title="Scoreboard Mode" id="LB_SB">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Coins per credit" id="LB_CPC">
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="19"/>
+				</item>
+				<item name="3 coins / credit" id="CPC_3">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_U"/>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="32"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="unlimited lives" id="LPC_U"/>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIF">
+				<item name="Easy" id="DIF_E"/>
+				<item name="Easy, hard after 9 scenes" id="DIF_H9">
+					<or bank="0" val="4"/>
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Easy, hard after 5 scenes" id="DIF_H5">
+					<or bank="0" val="4"/>
+					<or bank="1" val="144"/>
+				</item>
+				<item name="Hard" id="DIF_H">
+					<or bank="0" val="0"/>
+					<or bank="1" val="144"/>
+				</item>
+			</listbox>
+			<listbox title="Pay As You Go Options" id="LB_PAYG">
+				<item name="Off, game ends when won" id="PAYG_OE">
+					<or bank="0" val="64"/>
+					<or bank="1" val="96"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, 1 extra" id="PAYG_11">
+					<or bank="0" val="3"/>
+					<or bank="1" val="96"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, no extra" id="PAYG_1N">
+					<or bank="0" val="3"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="3 stops, pay to restart, 1 extra" id="PAYG_31">
+					<or bank="0" val="3"/>
+					<or bank="1" val="64"/>
+				</item>
+				<item name="3 stops, pay to restart, no extra" id="PAYG_3N">
+					<or bank="0" val="3"/>
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On" id="AMA_ON">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="On every eighth time" id="AMA_8">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Joystick Feedback Sound" id="LB_JOY">
+				<item name="On" id="JOY_ON"/>
+				<item name="Off" id="JOY_OFF">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			<!--  engineering and diagnostic modes are not supported, but listed for completeness
+     				note that bank0 is initialized to 136 above to compensate for the lack of these options.
+				for diagnostics to work, A7 must be turned off after 2 beeps.  Currently, there is no way to do this in daphne
+			<listbox title="Playtest for engineering use" tooltip="not supported. Choose off" id="LB_ENG">>
+				<item name="Off" id="ENG_OFF">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="On" id="ENG_ON"/>
+			</listbox>
+			<listbox title="Diagnostics" tooltip="not supported. Choose off" id="LB_DIA">
+				<item name="Off" id="DIA_OFF">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="On" id="DIA_ON"/>
+			</listbox>
+			-->
+		</cfg>
+		<cfg name="laireuro">
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="On" id="AMA_ON">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="Off" id="AMA_OFF"/>
+			</listbox>
+			<listbox title="Left Slot Coins" id="LB_COINL">
+				<item name="1 Coin" id="COINL_1">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="2 Coins" id="COINL_2">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="3 Coins" id="COINL_3">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="4 Coins" id="COINL_4">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="5 Coins" id="COINL_5">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="6 Coins" id="COINL_6">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="7 Coins" id="COINL_7">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="Freeplay" id="COINL_FP">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Left Slot Credits" id="LB_CREDITL">
+				<item name="1 Credit" id="CREDITL_1">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="2 Credits" id="CREDITL_2">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="3 Credits" id="CREDITL_3">
+					<or bank="0" val="24"/>
+				</item>
+				<item name="Slot Disabled" id="CREDITL_SD">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Right Slot Coins" id="LB_COINR">
+				<item name="1 Coin" id="COINR_1">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="2 Coins" id="COINR_2">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="3 Coins" id="COINR_3">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="4 Coins" id="COINR_4">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 Coins" id="COINR_5">
+					<or bank="1" val="5"/>
+				</item>
+				<item name="6 Coins" id="COINR_6">
+					<or bank="1" val="6"/>
+				</item>
+				<item name="7 Coins" id="COINR_7">
+					<or bank="1" val="7"/>
+				</item>
+				<item name="Freeplay" id="COINR_FP">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Right Slot Credits" id="LB_CREDITR">
+				<item name="1 Credit" id="CREDITR_1">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="2 Credits" id="CREDITR_2">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="3 Credits" id="CREDITR_3">
+					<or bank="1" val="24"/>
+				</item>
+				<item name="4 Credits" id="CREDITR_4">
+					<or bank="1" val="32"/>
+				</item>
+				<item name="5 Credits" id="CREDITR_5">
+					<or bank="1" val="40"/>
+				</item>
+				<item name="6 Credits" id="CREDITR_6">
+					<or bank="1" val="48"/>
+				</item>
+				<item name="7 Credits" id="CREDITR_7">
+					<or bank="1" val="56"/>
+				</item>
+				<item name="Slot Disabled" id="CREDITL_SD">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="Easy" id="DIFF_E">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="Intermediate" id="DIFF_I">
+					<or bank="0" val="64"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="Very Hard" id="DIFF_VH">
+					<or bank="0" val="192"/>
+				</item>
+			</listbox>
+			<listbox title="Lives Per Game" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Watchdog Timer" id="LB_WDOG">
+				<item name="On" id="WDOG_ON">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Off" id="WDOG_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="lairita">
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="On" id="AMA_ON">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="Off" id="AMA_OFF"/>
+			</listbox>
+			<listbox title="Left Slot Coins" id="LB_COINL">
+				<item name="1 Coin" id="COINL_1" />
+				<item name="2 Coins" id="COINL_2">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="3 Coins" id="COINL_3">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="4 Coins" id="COINL_4">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="5 Coins" id="COINL_5">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="6 Coins" id="COINL_6">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="7 Coins" id="COINL_7">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="8 Coins" id="COINL_8">
+					<or bank="0" val="7"/>
+				</item>
+			</listbox>
+			<listbox title="Left Slot Credits" id="LB_CREDITL">
+				<item name="1 Credit" id="CREDITL_1"/>
+				<item name="2 Credits" id="CREDITL_2">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="3 Credits" id="CREDITL_3">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="4 Credits" id="CREDITL_4">
+					<or bank="0" val="24"/>
+				</item>
+			</listbox>
+			<listbox title="Right Slot Coins" id="LB_COINR">
+				<item name="1 Coin" id="COINR_1"/>
+				<item name="2 Coins" id="COINR_2">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="3 Coins" id="COINR_3">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="4 Coins" id="COINR_4">
+					<or bank="1" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Right Slot Credits" id="LB_CREDITR">
+				<item name="1 Credit" id="CREDITR_1"/>
+				<item name="2 Credits" id="CREDITR_2">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="3 Credits" id="CREDITR_3">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="4 Credits" id="CREDITR_4">
+					<or bank="1" val="12"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="Easy" id="DIFF_E"/>
+				<item name="Intermediate" id="DIFF_I">
+					<or bank="0" val="64"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="Very Hard" id="DIFF_VH">
+					<or bank="0" val="192"/>
+				</item>
+			</listbox>
+			<listbox title="Lives Per Game" id="LB_LIVES">
+				<item name="2 Lives" id="LIVES_2"/>
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="1" val="16"/>
+				</item>
+				<item name="4 Lives" id="LIVES_3">
+					<or bank="1" val="32"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="1" val="48"/>
+				</item>
+			</listbox>
+		<!--	NOTE from Matteo Marioni:
+			"Dip 7 - Must be always ON = 1"
+			This is what the manual says. I've tried the italian version and it
+			doesn't work in Daphne if you leave dip 7 = 1 in bank 1, very strange.
+			Maybe there are some problems with the emulation driver....who knows.
+			Dip 7 in bank 1 was used to enable watchdog timer in the European
+			version, I'm not sure if it does the same in the Sidam version or not.
+			If I leave dip 7 OFF the game works, otherwise it gets stuck when trying
+			to boot the LDP.
+ 
+			Therefore, this is commented out for now.  
+			<listbox title="Dipswitch 7 - manual says 'must always be ON'" id="LB_WDOG">
+				<item name="On" id="WDOG_ON">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Off" id="WDOG_OFF"/>
+			</listbox>
+		-->
+		</cfg>
+		<cfg name="dle2">
+			<!-- bank value turns engineering mode and diagnostic mode off  -->
+			<set bank="0" val="136"/>
+			<listbox title="Scoreboard Mode" tooltip="Dragon's Lair had an LED scoreboard.">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Strobe Timing" tooltip="Accurate is preferred. Instantaneous is for backward compatibility.">
+				<item name="Accurate" id="ST_ACC"/>
+				<item name="Instantaneous (shorten scenes)" id="ST_INT">
+					<arg>-preset</arg>
+					<arg>2</arg>
+				</item>
+			</listbox>
+           		<listbox title="Coins per credit" id="LB_CPC">
+				<item name="1 coin / credit" id="CPC_1">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="19"/>
+				</item>
+				<item name="3 coins / credit" id="CPC_3">
+					<or bank="0" val="18"/>
+				</item>
+				<item name="4 coins / credit" id="CPC_4">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_FP"/>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="32"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="unlimited lives" id="LPC_U">
+				</item>
+			</listbox>
+			<listbox title="Pay As You Go Options" id="LB_PAYG">
+				<item name="Off, game ends when won" id="PAYG_OE">
+					<or bank="0" val="64"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="Off, game restarts when won" id="PAYG_OR">
+					<or bank="0" val="64"/>
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, 1 extra" id="PAYG_11">
+					<or bank="0" val="16"/>
+					<or bank="1" val="96"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, no extra" id="PAYG_1N">
+					<or bank="0" val="16"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="2 stops, pay to restart, 1 extra" id="PAYG_31">
+					<or bank="0" val="16"/>
+					<or bank="1" val="64"/>
+				</item>
+				<item name="2 stops, pay to restart, no extra" id="PAYG_3N">
+					<or bank="0" val="16"/>
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="If pay-as-you-go is on..." id="LB_CONT">
+				<item name="1 coin to continue" id="CONT_1"/>
+				<item name="2 coins to continue" id="CONT_2">
+					<or bank="0" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On, Narrator On" id="AMA_ON">
+					<or bank="1" val="19"/>
+				</item>
+				<item name="Always On, Narrator muted (default for prototype)" id="AMA_ON_NONAR">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="On every eighth time, Narrator On" id="AMA_8">
+					<or bank="1" val="18"/>
+				</item>
+				<item name="On every eighth time, Narrator muted" id="AMA_8_NONAR">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF"/>
+			</listbox>
+			<!--  engineering and diagnostic modes are not supported, but listed for completeness
+     				note that bank0 is initialized to 136 above to compensate for the lack of these options.
+				for diagnostics to work, A7 must be turned off after 2 beeps.  Currently, there is no way to do this in daphne
+			<listbox title="Playtest for engineering use" tooltip="not supported. Choose off" id="LB_ENG">>
+				<item name="Off" id="ENG_OFF">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="On" id="ENG_ON"/>
+			</listbox>
+			<listbox title="Diagnostics" tooltip="not supported. Choose off" id="LB_DIA">
+				<item name="Off" id="DIA_OFF">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="On" id="DIA_ON"/>
+			</listbox>
+			-->
+			<!-- disc player model selection is not supported, but listed for dipswitch reference completeness
+			<listbox title="Disc Player Model Selection" id="LB_DPMS">
+				<item name="Pioneer LD-V1000" id="DPMS_1000"/>
+				<item name="Pioneer PR-7820" id="DPMS_7820">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			-->
+		</cfg>
+
+		<!-- same as lair_f2 with the difficulty section removed -->
+		<cfg name="dle11">
+			<!-- bank value turns engineering mode and diagnostic mode off  -->
+			<set bank="0" val="136"/>
+			<listbox title="Scoreboard Mode" id="LB_SB" tooltip="Dragon's Lair had an LED scoreboard.">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Strobe Timing" id="LB_ST" tooltip="Accurate is preferred. Instantaneous is for backward compatibility.">
+				<item name="Accurate" id="ST_ACC"/>
+				<item name="Instantaneous (shorten scenes)" id="ST_INT">
+					<arg>-preset</arg>
+					<arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Fast Boot" id="LB_FB" tooltip="This makes the game start faster.">
+				<item name="Disabled" id="FB_OFF"/>
+				<item name="Enabled" id="FB_ON">
+					<arg>-fastboot</arg>
+				</item>
+			</listbox>
+            			<listbox title="Coins per credit" id="LB_CPC">
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="3 coins / credit" id="CPC_3">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_FP">
+				</item>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="32"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="Unlimited lives" id="LPC_U">
+				</item>
+			</listbox>
+			<listbox title="Pay As You Go Options" id="LB_PAYG">
+				<item name="Off, game ends when won" id="PAYG_OE">
+					<or bank="0" val="64"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="Off, game restarts when won" id="PAYG_OR">
+					<or bank="0" val="64"/>
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, 1 extra" id="PAYG_11">
+					<or bank="0" val="0"/>
+					<or bank="1" val="96"/>
+				</item>
+				<item name="1 stop at 2/3 complete, ends, no extra" id="PAYG_1N">
+					<or bank="0" val="0"/>
+					<or bank="1" val="32"/>
+				</item>
+				<item name="3 stops, game restarts, 1 extra" id="PAYG_31">
+					<or bank="0" val="0"/>
+					<or bank="1" val="64"/>
+				</item>
+				<item name="3 stops, game restarts, no extra" id="PAYG_3N">
+					<or bank="0" val="0"/>
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On" id="AMA_ON">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="On every eighth time" id="AMA_8">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF"/>
+			</listbox>
+			<!--  engineering and diagnostic modes are not supported, but listed for completeness
+     				note that bank0 is initialized to 136 above to compensate for the lack of these options.
+				for diagnostics to work, A7 must be turned off after 2 beeps.  Currently, there is no way to do this in daphne
+			<listbox title="Playtest for engineering use" tooltip="not supported. Choose off" id="LB_ENG">>
+				<item name="Off" id="ENG_OFF">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="On" id="ENG_ON"/>
+			</listbox>
+			<listbox title="Diagnostics" tooltip="not supported. Choose off" id="LB_DIA">
+				<item name="Off" id="DIA_OFF">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="On" id="DIA_ON"/>
+			</listbox>
+			-->
+			<!-- disc player model selection is not supported, but listed for dipswitch reference completeness
+       			 uncomment this only if you *know* what you're doing
+			<listbox title="Disc Player Model Selection" id="LB_DPMS">
+				<item name="Pioneer LD-V1000" id="DPMS_1000"/>
+				<item name="Pioneer PR-7820" id="DPMS_7820">
+					<or bank="1" val="8"/>
+				</item>
+			</listbox>
+			-->
+		</cfg>
+		<cfg name="dl2">
+			<label text="To change game options, hold down the service switch and press the player 1 button while the game is running" id="DL2_TEXT"/>
+		</cfg>
+		<cfg name="esh">
+			<listbox title="Infinite Lives Cheat" id="LB_CHEAT">
+				<item name="Off" id="CHEAT_OFF"/>
+				<item name="On" id="CHEAT_ON">
+					<arg>-cheat</arg>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="gtg">
+			<listbox title="Disc Side" id="LB_DISC">
+				<item name="Side 1" id="DISC_1"/>
+				<item name="Side 2" id="DISC_2">
+					<arg>-preset</arg><arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="1 (easiest)" id="DIFF_1">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="2" id="DIFF_2">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="3" id="DIFF_3">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="4" id="DIFF_4">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="5" id="DIFF_5">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="6" id="DIFF_6">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="7" id="DIFF_7">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="8" id="DIFF_8">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="9" id="DIFF_9">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="10" id="DIFF_10">
+					<or bank="0" val="9"/>
+				</item>
+				<item name="11" id="DIFF_11">
+					<or bank="0" val="10"/>
+				</item>
+				<item name="12" id="DIFF_12">
+					<or bank="0" val="11"/>
+				</item>
+				<item name="13" id="DIFF_13">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="14" id="DIFF_14">
+					<or bank="0" val="13"/>
+				</item>
+				<item name="15" id="DIFF_15">
+					<or bank="0" val="14"/>
+				</item>
+				<item name="16 (hardest)" id="DIFF_16">
+					<or bank="0" val="15"/>
+				</item>
+			</listbox>
+			<listbox title="Left Coin Switch Setting" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="2" val="0"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="2" val="1"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINL_31">
+					<or bank="2" val="2"/>
+				</item>
+				<item name="4 coins / 1 credit" id="COINL_41">
+					<or bank="2" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Right Coin Switch Setting" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINR_11">
+					<or bank="2" val="0"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="2" val="16"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COINR_31">
+					<or bank="2" val="32"/>
+				</item>
+				<item name="4 coins / 1 credit" id="COINR_41">
+					<or bank="2" val="48"/>
+				</item>
+			</listbox>
+			<listbox title="Buy In Feature" id="LB_BUYIN">
+				<item name="Off" id="BUYIN_OFF">
+					<or bank="3" val="0"/>
+				</item>
+				<item name="On" id="BUYIN_ON">
+					<or bank="3" val="1"/>
+				</item>
+				<item name="Single-Coin Buy In" id="BUYIN_SC">
+					<or bank="3" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Diagnostics" id="LB_DIAG">
+				<item name="Off" id="DIAG_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Service Mode" id="DIAG_SM">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="Switch Test" id="DIAG_ST">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Disc Test" id="DIAG_DT">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+			<listbox title="Free Play" id="LB_FREE">
+				<item name="Off" id="FREE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="FREE_ON">
+					<or bank="1" val="4"/>
+				</item>
+			</listbox>
+			<listbox title="Unlimited Downs" id="LB_DOWNS">
+				<item name="On" id="DOWNS_ON">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="Off" id="DOWNS_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="8-Minute Game Limit" id="LB_8MIN">
+				<item name="On" id="8MIN_ON">
+					<or bank="4" val="64"/>
+				</item>
+				<item name="Off" id="8MIN_OFF">
+					<or bank="4" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="32"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Display Score Over Gameplay" id="LB_SCORE">
+				<item name="On" id="SCORE_ON">
+					<or bank="1" val="64"/>
+				</item>
+				<item name="Off" id="SCORE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Show Play Diagrams" id="LB_PLAY">
+				<item name="On" id="PLAY_ON">
+					<or bank="1" val="128"/>
+				</item>
+				<item name="Off" id="PLAY_OFF">
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Show Hints" id="LB_HINTS">
+				<item name="On" id="HINTS_ON">
+					<or bank="4" val="128"/>
+				</item>
+				<item name="Off" id="HINTS_OFF">
+					<or bank="4" val="0"/>
+				</item>
+			</listbox>
+		</cfg>
+        <cfg name="gpworld">
+        </cfg>
+        <cfg name="interstellar">
+			<listbox title="Demo Sound From PC Board" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Coins Per Credit (left chute)" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINL_12">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINL_13">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="1 coin / 6 credits" id="COINL_16">
+					<or bank="0" val="12"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="2 coins / 3 credits" id="COINL_23">
+					<or bank="0" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Coins Per Credit (right chute)" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINR_11">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINR_12">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINR_13">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="1 coin / 6 credits" id="COINR_16">
+					<or bank="1" val="12"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="2 coins / 3 credits" id="COINR_23">
+					<or bank="1" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Flights" id="LB_FLIGHTS">
+				<item name="3 Flights" id="FLIGHTS_3">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="4 Flights" id="FLIGHTS_4">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="5 Flights" id="FLIGHTS_5">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="10 Flights" id="FLIGHTS_10">
+					<or bank="0" val="48"/>
+				</item>
+			</listbox>
+			<listbox title="Barrier UFO" id="LB_UFO">
+				<item name="On" id="UFO_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="UFO_OFF">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="mach3">
+			<listbox title="Lives Per Credit" id="LB_LIVES">
+				<item name="3 Lives / 2 Credits" id="LIVES_32">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="3 Lives / 3 Credits" id="LIVES_33">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="3 Lives / 4 Credits" id="LIVES_34">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="5 Lives / 2 Credits" id="LIVES_52">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="5 Lives / 3 Credits" id="LIVES_53">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="5 Lives / 4 Credits" id="LIVES_54">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="5 Lives / 5 Credits" id="LIVES_55">
+					<or bank="0" val="7"/>
+				</item>
+				<item name="3 Lives / Free Play" id="LIVES_3F">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="First Bonus / Next Bonus / Difficulty" id="LB_BONUS">
+				<item name="10k / 10k / Normal" id="BONUS_11N">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="10k / 20k / Normal" id="BONUS_12N">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="10k / 40k / Normal" id="BONUS_14N">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="20k / 60k / Normal" id="BONUS_26N">
+					<or bank="0" val="24"/>
+				</item>
+				<item name="10k / 10k / Hard" id="BONUS_11H">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="10k / 20k / Hard" id="BONUS_12H">
+					<or bank="0" val="40"/>
+				</item>
+				<item name="10k / 40k / Hard" id="BONUS_14H">
+					<or bank="0" val="48"/>
+				</item>
+				<item name="20k / 60k / Hard" id="BONUS_26H">
+					<or bank="0" val="56"/>
+				</item>
+			</listbox>
+			<listbox title="Sound in Attract Mode" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="0" val="64"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Demo Mode (Infinite lives)" id="LB_DEMO">
+				<item name="Off" id="DEMO_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="DEMO_ON">
+					<or bank="0" val="128"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="roadblaster">
+			<listbox title="Infinite Lives Cheat" id="LB_CHEAT">
+				<item name="Off" id="CHEAT_OFF"/>
+				<item name="On" id="CHEAT_ON">
+					<arg>-cheat</arg>
+				</item>
+			</listbox>			
+			<listbox title="Test Mode" id="LB_TEST">
+				<item name="Off" id="TEST_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="TEST_ON">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			<listbox title="Random Scenes" id="LB_SCENE">
+				<item name="Off" id="SCENE_OFF">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="On" id="SCENE_ON">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Sound" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Bonus Car At" id="LB_BONUS">
+				<item name="20,000 Points" id="BONUS_20">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="20k then every 40k" id="BONUS_24">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="15k then every 30k" id="BONUS_13">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="30k then every 50k" id="BONUS_35">
+					<or bank="1" val="6"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Cars" id="LB_CARS">
+				<item name="2 Cars" id="CARS_2">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="4 Cars" id="CARS_4">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Coins Per Credit" id="LB_COIN">
+				<item name="1 coin / 1 credit" id="COIN_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="3 coins / 1 credit" id="COIN_31">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COIN_12">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COIN_21">
+					<or bank="0" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty" id="LB_DIFF">
+				<item name="Normal" id="DIFF_N">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="ace">
+			<!-- bank value chooses LD-V1000 rather than PR-7820  -->
+			<set bank="1" val="1"/>
+			<listbox title="Scoreboard Mode" id="LB_SB">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Strobe Timing" id="LB_ST" tooltip="Accurate is preferred. Instantaneous is for backward compatibility.">
+				<item name="Accurate" id="ST_ACC"/>
+				<item name="Instantaneous (shorten scenes)" id="ST_INT">
+					<arg>-preset</arg>
+					<arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Keyboard LEDs show skill" id="LB_LED">
+				<item name="Disabled" id="LED_OFF"/>
+				<item name="Enabled" id="LED_ON">
+					<arg>-enable_leds</arg>
+				</item>
+			</listbox>
+			<listbox title="Fast Boot" id="LB_FB" tooltip="This makes the game start faster.">
+				<item name="Disabled" id="FB_OFF"/>
+				<item name="Enabled" id="FB_ON">
+					<arg>-fastboot</arg>
+				</item>
+			</listbox>
+			<listbox title="Coins per credit" id="LB_CPC">
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="3 coins / credit" id="CPC_3">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_FP">
+					<or bank="1" val="16"/>
+				</item>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="Unlimited lives" id="LPC_U">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level Increases Every" id="LB_DIF">
+				<item name="5 episodes, slow increase (easiest)" id="DIF_5S">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="5 episodes, fast increase" id="DIF_5F">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="3 episodes, slow increase" id="DIF_3S">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="3 episodes, fast increase (hardest)" id="DIF_3F">
+					<or bank="0" val="12"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On" id="AMA_ON">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On every eighth time" id="AMA_8">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF">
+					<or bank="0" val="16"/>
+				</item>
+			</listbox>
+			<!-- even though I can't find anything in writing that says this diagnostic mode needs
+		 		to be "on" during boot and then switched "off" to activate (like for DL and SAE),
+				It doesn't seem to work anyway, so I'm commenting it out
+			<listbox title="Diagnostic Mode" id="LB_DIA">>
+				<item name="Off" id="DIA_OFF"/>
+				<item name="On" id="DIA_ON">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			-->
+			<!-- enable frame display is only for original LDPs, but seems to break things when used with VLDP
+				I don't have an original player here to test with, so commenting it out for now.
+			<listbox title="Enable Frame Display" id="LB_EFD">>
+				<item name="Off" id="EFD_OFF"/>
+				<item name="On" id="EFD_ON">
+					<or bank="1" val="64"/>
+				</item>
+			</listbox>
+			-->
+			<!-- disc player model selection is not supported, but listed for dipswitch reference completeness.
+				To compensate, The LD-V1000 is enabled by default in the bank initialization above.  
+			<listbox title="Disc Player Model Selection" id="LB_DPMS">
+				<item name="Pioneer LD-V1000" id="DPMS_1000">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="Pioneer PR-7820" id="DPMS_7820" />
+			</listbox>
+			-->
+		</cfg>
+		<cfg name="sae">
+			<!-- bank value turns engineering mode and diagnostic mode off  -->
+			<set bank="0" val="136"/>
+			<listbox title="Scoreboard Mode" id="LB_SB">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Strobe Timing" id="LB_ST" tooltip="Accurate is preferred. Instantaneous is for backward compatibility.">
+				<item name="Accurate" id="ST_ACC"/>
+				<item name="Instantaneous (shorten scenes)" id="ST_INT">
+					<arg>-preset</arg>
+					<arg>2</arg>
+				</item>
+			</listbox>
+			<listbox title="Keyboard LEDs show skill" id="LB_LED">
+				<item name="Disabled" id="LED_OFF"/>
+				<item name="Enabled" id="LED_ON">
+					<arg>-enable_leds</arg>
+				</item>
+			</listbox>
+			<listbox title="Coins per credit" id="LB_CPC">
+				<item name="2 coins / credit" id="CPC_2">
+					<or bank="0" val="17"/>
+				</item>
+				<item name="1 coins / credit" id="CPC_3">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="Free Play (2 credits at all times)" id="CPC_FP">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Lives per credit" id="LB_LPC">
+				<item name="3 lives / credit" id="LPC_3">
+					<or bank="0" val="32"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="5 lives / credit" id="LPC_5">
+					<or bank="0" val="0"/>
+					<or bank="1" val="4"/>
+				</item>
+				<item name="Unlimited lives" id="LPC_U">
+					<or bank="0" val="0"/>
+					<or bank="1" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIF">
+				<item name="Normal" id="DIF_N">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Hard" id="DIF_H">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_AMA">
+				<item name="Always On" id="AMA_ON">
+					<or bank="1" val="3"/>
+				</item>
+				<item name="On every eighth time" id="AMA_8">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="Always Off" id="AMA_OFF">
+					<or bank="1" val="1"/>
+				</item>
+			</listbox>
+			<listbox title="Skill Level Selection" id="LB_SKILL">
+				<item name="Normal (Panel buttons enabled)" id="SKILL_NORM">
+					<or bank="1" val="96"/>
+				</item>
+				<item name="Always CADET" id="SKILL_CAD">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Always CAPTAIN" id="SKILL_CAP">
+					<or bank="1" val="64"/>
+				</item>
+				<item name="Always SPACE ACE" id="SKILL_ACE">
+					<or bank="1" val="32"/>
+				</item>
+			</listbox>
+			<!--  engineering and diagnostic modes are not supported, but listed for completeness
+     				note that bank0 is initialized to 136 above to compensate for the lack of these options.
+				for diagnostics to work, A7 must be turned off after 2 beeps.  Currently, there is no way to do this in daphne
+			<listbox title="Playtest for engineering use" tooltip="not supported. Choose off" id="LB_ENG">>
+				<item name="Off" id="ENG_OFF">
+					<or bank="0" val="8"/>
+				</item>
+				<item name="On" id="ENG_ON"/>
+			</listbox>
+			<listbox title="Diagnostics" tooltip="not supported. Choose off" id="LB_DIA">
+				<item name="Off" id="DIA_OFF">
+					<or bank="0" val="128"/>
+				</item>
+				<item name="On" id="DIA_ON"/>
+			</listbox>
+			-->
+		</cfg>
+		<cfg name="sdq">
+			<listbox title="Attract Mode Sound" id="LB_SOUND">
+				<item name="On" id="SOUND_ON">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="0" val="4"/>
+				</item>
+			</listbox>		
+			<listbox title="Free Play" id="LB_FREE">
+				<item name="Off" id="FREE_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="FREE_ON">
+					<or bank="0" val="128"/>
+				</item>
+			</listbox>		
+			<listbox title="Reserved Switches B4-B8" id="LB_SWITCH">
+				<item name="Off" id="SWITCH_OFF">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="On" id="SWITCH_ON">
+					<or bank="0" val="240"/>
+				</item>
+			</listbox>
+			<listbox title="Number of Lives" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="4 Lives" id="LIVES_4">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="5 Lives" id="LIVES_5">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="2 Lives" id="LIVES_2">
+					<or bank="0" val="48"/>
+				</item>
+				<item name="Unlimited Lives" id="LIVES_UL">
+					<or bank="0" val="64"/>
+				</item>
+			</listbox>
+			<listbox title="Extra Life" id="LB_EXTRA">
+				<item name="At 100,000 Points" id="EXTRA_ON">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="None" id="EXTRA_OFF">
+					<or bank="0" val="8"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty Level" id="LB_DIFF">
+				<item name="Normal" id="DIFF_N">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="Easy" id="DIFF_E">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="Hardest" id="DIFF_HX">
+					<or bank="0" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Left Coin Switch Setting" id="LB_COINL">
+				<item name="1 coin / 1 credit" id="COINL_11">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINL_12">
+					<or bank="1" val="4"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINL_13">
+					<or bank="1" val="8"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINL_21">
+					<or bank="1" val="10"/>
+				</item>
+			</listbox>
+			<listbox title="Right Coin Switch Setting" id="LB_COINR">
+				<item name="1 coin / 1 credit" id="COINR_11">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="1 coin / 2 credits" id="COINR_12">
+					<or bank="1" val="1"/>
+				</item>
+				<item name="1 coin / 3 credits" id="COINR_13">
+					<or bank="1" val="2"/>
+				</item>
+				<item name="2 coins / 1 credit" id="COINR_21">
+					<or bank="1" val="3"/>
+				</item>
+			</listbox>
+			<listbox title="Hint Arrows" id="HINTS">
+				<item name="On" id="HINTS_ON">
+					<or bank="1" val="0"/>
+				</item>
+				<item name="Off" id="HINTS_OFF">
+					<or bank="1" val="128"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="tq">
+			<listbox title="Scoreboard Mode" id="LB_SB">
+				<item name="No Scoreboard" id="SB_NO"/>
+				<item name="VLDP Text Overlay #1" id="SB_T1">
+					<arg>-useoverlaysb</arg>
+					<arg>1</arg>
+				</item>
+				<item name="VLDP Text Overlay #2" id="SB_T2">
+					<arg>-useoverlaysb</arg>
+					<arg>2</arg>
+				</item>
+				<item name="External LPT1" id="SB_L1">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>0</arg>
+				</item>
+				<item name="External LPT2" id="SB_L2">
+					<arg>-scoreboard</arg>
+					<arg>-scoreport</arg>
+					<arg>1</arg>
+				</item>				
+			</listbox>
+			<listbox title="Synthesized Speech" id="LB_HAL">
+				<item name="Enabled" id="HAL_ON"/>
+				<item name="Disabled" id="HAL_OFF">
+					<arg>-nospeech</arg>
+				</item>
+			</listbox>
+			<listbox title="Time Per Credit" id="LB_TIME">
+				<item name="110 Seconds" id="TIME_110">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="95 Seconds" id="TIME_95">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="80 Seconds" id="TIME_80">
+					<or bank="0" val="2"/>
+				</item>
+				<item name="70 Seconds" id="TIME_70">
+					<or bank="0" val="3"/>
+				</item>
+				<item name="60 Seconds" id="TIME_60">
+					<or bank="0" val="4"/>
+				</item>
+				<item name="45 Seconds" id="TIME_45">
+					<or bank="0" val="5"/>
+				</item>
+				<item name="30 Seconds" id="TIME_30">
+					<or bank="0" val="6"/>
+				</item>
+				<item name="Unlimited (Free Play)" id="TIME_FREE">
+					<or bank="0" val="7"/>
+				</item>
+			</listbox>
+			<listbox title="Lives Per Game" id="LB_LIVES">
+				<item name="3 Lives" id="LIVES_3">
+					<or bank="0" val="16"/>
+				</item>
+				<item name="2 Lives" id="LIVES_2">
+					<or bank="0" val="0"/>
+				</item>
+			</listbox>
+			<listbox title="Attract Mode Audio" id="LB_SOUND">
+				<item name="On" id="SOUND_AON">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="Off" id="SOUND_OFF">
+					<or bank="0" val="32"/>
+				</item>
+				<item name="1 out of 8 times" id="SOUND_1O8">
+					<or bank="0" val="64"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="uvt">
+			<listbox title="Coins Per Credit" id="LB_COINS">
+				<item name="1 Coin / 1 Credit" id="COINS_11">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="2 Coins / 1 Credit" id="COINS_21">
+					<or bank="0" val="1"/>
+				</item>
+				<item name="Free Play" id="COINS_FP">
+					<or bank="0" val="2"/>
+				</item>
+			</listbox>
+			<listbox title="Difficulty" id="LB_DIFF">
+				<item name="Normal" id="DIFF_H">
+					<or bank="0" val="0"/>
+				</item>
+				<item name="Hard" id="DIFF_H">
+					<or bank="0" val="8"/>
+				</item>
+			</listbox>
+		</cfg>
+		<cfg name="test">
+			<listbox title="I rule!">
+				<item name="No, No I do! ;)" ID="YES"/>
+			</listbox>
+		</cfg>
+	</gamecfg>
+
+	<!-- disc section is separate so that multiple games and romsets can share discs
+	(for example, Space Ace (US) roms can use any of the NTSC, PAL, Software Corner, or SA '91 discs). -->
+
+	<disclist>
+
+ 		<disc name="Astron Belt" type="astron" id="D_ASTRON">
+   			<version id="V_ASTRONH"/>
+   			<version id="V_ASTRONP"/>
+ 		</disc>
+
+ 		<disc name="Badlands" type="badlands" id="D_BADLANDS">
+   			<version id="V_BADLANDS"/>
+   			<version id="V_BADLANDP"/>
+ 		</disc>
+
+ 		<disc name="Bega's Battle" type="bega" id="D_BEGA">
+   			<version id="V_BEGA"/>
+			<version id="V_BEGA1"/>
+ 		</disc>
+
+ 		<disc name="USA (NTSC 1983)" type="cliff" id="D_CLIFF">
+   			<version id="V_CLIFF"/>
+   			<version id="V_CLIFFALT"/>
+   			<version id="V_CLIFFALT2"/>
+ 		</disc>
+
+ 	<!--	cliff non-LD versions commented out for now (not-distributed)
+		<disc name="Remastered (Nic Andrews)" type="cliffnic" id="D_CLIFFNIC">
+   			<version id="V_CLIFF" />
+   			<version id="V_CLIFFALT" />
+   			<version id="V_CLIFFALT2" />
+ 		</disc>
+
+ 		<disc name="Restored Edition (Borf)" type="chborf" id="D_CLIFFBORF">
+   			<version id="V_CLIFF" />
+   			<version id="V_CLIFFALT" />
+   			<version id="V_CLIFFALT2" />
+ 		</disc>
+
+ 		<disc name="Lupin III: Cliff Hanger (Vera Lanpher)" type="chvera" id="D_CLIFFVERA">
+   			<version id="V_CLIFF" />
+   			<version id="V_CLIFFALT" />
+   			<version id="V_CLIFFALT2" />
+ 		</disc>
+
+ 		<disc name="Lupin III: Cliff Hanger - Classic Version (Vera Lanpher)" type="chverac"  id="D_CLIFFVERAC">
+   			<version id="V_CLIFF" />
+   			<version id="V_CLIFFALT" />
+   			<version id="V_CLIFFALT2" />
+ 		</disc>
+				 end cliff non-disc versions -->
+
+ 		<disc name="Cobra Command" type="cobra" id="D_COBRA">
+   			<version id="V_COBRAAB"/>
+   			<version id="V_COBRAM3"/>
+   			<version id="V_COBRADED"/>
+   			<version id="V_COBRACONV"/>
+ 		</disc>
+
+ 		<disc name="USA (NTSC 1983)" type="lair" id="D_LAIR83">
+   			<version id="V_LAIR_F2"/>
+   			<version id="V_DLE21"/>
+   		<!--  <version id="V_DLE20" />  -->
+   			<version id="V_DLE11"/>
+   		<!--  <version id="V_DLE" />  -->
+   			<version id="V_LAIR_F"/>
+   			<version id="V_LAIR_E"/>
+   			<version id="V_LAIR_D"/>
+   			<version id="V_LAIR_C"/>
+   			<version id="V_LAIR_B"/>
+   			<version id="V_LAIR_A"/>
+   			<version id="V_LAIR_X"/>
+   			<version id="V_LAIR_N1"/>
+ 		</disc>
+
+ 		<disc name="European Philips (PAL 1983)" type="laireuro" id="D_DL_PAL">
+   			<version id="V_LAIREURO"/>
+   			<version id="V_LAIR_ITA"/>
+   			<version id="V_LAIR_F2">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_DLE21">
+      			<arg>-pal_dl</arg>
+   			</version>
+   		<!--	<version id="V_DLE20" >
+     				<arg>-pal_dl</arg>
+   			</version>  
+	 	 -->
+   			<version id="V_DLE11">
+      			<arg>-pal_dl</arg>
+   			</version>
+   		<!-- 	<version id="V_DLE" >
+      			<arg>-pal_dl</arg>
+   			</version>  
+		  -->
+   			<version id="V_LAIR_F">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_E">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_D">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_C">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_B">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_A">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_X">
+      			<arg>-pal_dl</arg>
+   			</version>
+   			<version id="V_LAIR_N1">
+      			<arg>-pal_dl</arg>
+   			</version>
+ 		</disc>
+
+		<disc name="European Software Corner (PAL 1991)" type="lairsc" id="D_DL_PAL_SC">
+   			<version id="V_LAIR_F2">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_DLE21">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+  		<!--	 <version id="V_DLE20" >
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+		  -->
+   			<version id="V_DLE11">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   		<!--	<version id="V_DLE" >
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+		  -->
+   			<version id="V_LAIR_F">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_E">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_D">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_C">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_B">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_A">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_X">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+   			<version id="V_LAIR_N1">
+      			<arg>-pal_dl_sc</arg>
+   			</version>
+ 		</disc>
+
+ 		<disc name="DLP Limited Edition (NTSC 2002)" type="lairle" id="D_LAIR_LE">
+   			<version id="V_DLE21"/>
+			<version id="V_DLE21P"/>
+   		<!--	<version id="V_DLE20" />  
+   			<version id="V_DLE20P" /> -->
+			<version id="V_DLE11"/>
+   		<!--	<version id="V_DLE" />  -->
+   			<version id="V_LAIR_F2"/>
+   			<version id="V_LAIR_F"/>
+   			<version id="V_LAIR_E"/>
+   			<version id="V_LAIR_D"/>
+   			<version id="V_LAIR_C"/>
+   			<version id="V_LAIR_B"/>
+   			<version id="V_LAIR_A"/>
+   			<version id="V_LAIR_X"/>
+   			<version id="V_LAIR_N1"/>
+ 		</disc>
+
+ 		<disc name="English 2nd pressing" type="lair2" id="D_LAIR2">
+   			<version id="V_LAIR2_319"/>
+   			<version id="V_LAIR2_319_EURO"/>
+   			<version id="V_LAIR2_319_SPAN"/>
+   			<version id="V_LAIR2_318"/>
+   			<version id="V_LAIR2_317"/>
+   			<version id="V_LAIR2_316_EURO"/>
+   			<version id="V_LAIR2_315"/>
+   			<version id="V_LAIR2_314"/>
+   			<version id="V_LAIR2_300"/>
+ 		</disc>
+
+ 		<disc name="English 1st pressing" type="lair2_1stpress" id="D_LAIR2_1ST">
+   			<version id="V_LAIR2_211"/>
+ 		</disc>
+
+ 	<!--	<disc name="Unfinished Cinematronics 1983" type="lair2_pencil" id="D_LAIR2_P">
+   			<version id="V_LAIR2_211" />
+ 		</disc>
+ 	 -->
+
+ 		<disc name="Spanish 2nd pressing" type="lair2_span" id="D_LAIR2_SPAN">
+   			<version id="V_LAIR2_319_SPAN"/>
+   			<version id="V_LAIR2_319"/>
+   			<version id="V_LAIR2_319_EURO"/>
+   			<version id="V_LAIR2_318"/>
+   			<version id="V_LAIR2_317"/>
+   			<version id="V_LAIR2_316_EURO"/>
+   			<version id="V_LAIR2_315"/>
+   			<version id="V_LAIR2_314"/>
+   			<version id="V_LAIR2_300"/>
+ 		</disc>
+
+ 		<disc name="English" type="esh" id="D_ESH">
+   			<version id="V_ESH"/>
+            <version id="V_ESHALT"/>
+            <version id="V_ESHALT2"/>
+  		</disc>
+
+ 		<disc name="Japanese" type="eshjap" id="D_ESHJAP">
+   			<version id="V_ESH"/>
+            <version id="V_ESHALT"/>
+            <version id="V_ESHALT2"/>
+        </disc>
+
+ 		<disc name="Galaxy Ranger / Star Blazer" type="galaxy" id="D_GALAXY">
+   			<version id="V_GALAXY_H"/>
+   			<version id="V_GALAXY_P"/>
+   			<version id="V_BLAZER"/>
+ 		</disc>
+
+ 		<disc name="GP World" type="gpworld" id="D_GPWORLD">
+   			<version id="V_GPWORLD"/>
+  		</disc>
+
+ 		<disc name="Interstellar" type="interstellar" id="D_INTERSTELLAR">
+   			<version id="V_INTERSTELLAR"/>
+  		</disc>
+
+ 		<disc name="M.A.C.H. 3" type="mach3" id="D_MACH3">
+   			<version id="V_MACH3"/>
+  		</disc>
+
+ 		<disc name="Road Blaster" type="roadblaster" id="D_ROADBLASTER">
+   			<version id="V_ROADBLASTER"/>
+  		</disc>
+
+ 		<disc name="USA (NTSC 1983)" type="ace" id="D_ACE83">
+   			<version id="V_ACE_A3"/>
+   			<version id="V_ACE_SAE"/>
+   			<version id="V_ACE_A2"/>
+   			<version id="V_ACE_A"/>
+ 		</disc>
+
+ 		<disc name="European Philips (PAL 1983)" type="aceeuro" id="D_ACE_PAL">
+   			<version id="V_ACE_EURO"/>
+   			<version id="V_ACE_A3">
+      			<arg>-pal_sa</arg>
+   			</version>
+   			<version id="V_ACE_SAE">
+      			<arg>-pal_sa</arg>
+   			</version>
+   			<version id="V_ACE_A2">
+      			<arg>-pal_sa</arg>
+   			</version>
+   			<version id="V_ACE_A">
+      			<arg>-pal_sa</arg>
+   			</version>
+ 		</disc>
+
+ 		<disc name="European Software Corner (PAL 1991)" type="acesc" id="D_ACE_PAL_SC">
+   			<version id="V_ACE_A3">
+      			<arg>-pal_sa_sc</arg>
+   			</version>
+   			<version id="V_ACE_SAE">
+      			<arg>-pal_sa_sc</arg>
+   			</version>
+   			<version id="V_ACE_A2">
+      			<arg>-pal_sa_sc</arg>
+   			</version>
+   			<version id="V_ACE_A">
+      			<arg>-pal_sa_sc</arg>
+   			</version>
+ 		</disc>
+
+ 		<disc name="USA Re-Make (NTSC 1991)" type="ace91" id="D_ACE91">
+   			<version id="V_ACE91"/>
+   			<version id="V_ACE_A3">
+      			<arg>-spaceace91</arg>
+   			</version>
+   			<version id="V_ACE_A2">
+      			<arg>-spaceace91</arg>
+   			</version>
+   			<version id="V_ACE_A">
+      			<arg>-spaceace91</arg>
+   			</version>
+ 		</disc>
+
+ 		<!-- for Star Blazer, see Galaxy Ranger, above  -->
+
+ 		<disc name="Super Don Quix-ote" type="sdq" id="D_SDQ">
+   			<version id="V_SDQ"/>
+   			<version id="V_SDQSHORT"/>
+   			<version id="V_SDQSHORTALT"/>
+ 		</disc>
+
+ 		<disc name="Arcade, Part 1" type="tq" id="D_TQ">
+   			<version id="V_TQ"/>
+   			<version id="V_TQALT"/>
+   			<version id="V_TQSWEAR"/>
+ 		</disc>
+
+ 		<disc name="Us vs Them" type="uvt" id="D_UVT">
+   			<version id="V_UVT"/>
+  		</disc>
+
+	</disclist>
+
+    <!-- DaphneLoaderPrefs.xml depends on the order of the serial ldp's... be very careful about changing the order! -->
+	<serial_ldp>
+		<ldp name="Sony LDP Series" driver="sony"/>
+		<ldp name="Pioneer (General)" driver="pioneer"/>
+		<ldp name="Pioneer LD-V6000" driver="v6000"/>
+		<ldp name="Hitachi VIP9500/9550" driver="hitachi"/>
+		<ldp name="Philips" driver="philips"/>
+	</serial_ldp>
+
+    <key_discgroup>
+        <compatible type="lair" />
+        <compatible type="lairle" />
+        <compatible type="laireuro" />
+        <compatible type="lairsc" />
+		<key_disc name="Dragon's Lair - DVD-ROM">
+			<key_file pathname="DLDVDROM/DLS01.VOB" length="26025984"  />
+			<key_file pathname="DLDVDROM/DLS01B.VOB" length="3031040"  />
+			<key_file pathname="DLDVDROM/DLS01D1.VOB" length="954368"  />
+			<key_file pathname="DLDVDROM/DLS01D2.VOB" length="1015808"  />
+			<key_file pathname="DLDVDROM/DLS01D3.VOB" length="2936832"  />
+			<key_file pathname="DLDVDROM/DLS02.VOB" length="16506880"  />
+			<key_file pathname="DLDVDROM/DLS02B.VOB" length="3090432"  />
+			<key_file pathname="DLDVDROM/DLS02D1.VOB" length="2050048"  />
+			<key_file pathname="DLDVDROM/DLS02D2.VOB" length="976896"  />
+			<key_file pathname="DLDVDROM/DLS02D3.VOB" length="1941504"  />
+			<key_file pathname="DLDVDROM/DLS02D4.VOB" length="954368"  />
+			<key_file pathname="DLDVDROM/DLS03.VOB" length="11001856"  />
+			<key_file pathname="DLDVDROM/DLS03B.VOB" length="2981888"  />
+			<key_file pathname="DLDVDROM/DLS03D1.VOB" length="2138112"  />
+			<key_file pathname="DLDVDROM/DLS04.VOB" length="12562432"  />
+			<key_file pathname="DLDVDROM/DLS04B.VOB" length="2826240"  />
+			<key_file pathname="DLDVDROM/DLS04D1.VOB" length="1923072"  />
+			<key_file pathname="DLDVDROM/DLS04D2.VOB" length="2746368"  />
+			<key_file pathname="DLDVDROM/DLS05.VOB" length="20772864"  />
+			<key_file pathname="DLDVDROM/DLS05B.VOB" length="2934784"  />
+			<key_file pathname="DLDVDROM/DLS05D1.VOB" length="835584"  />
+			<key_file pathname="DLDVDROM/DLS05D2.VOB" length="997376"  />
+			<key_file pathname="DLDVDROM/DLS05D3.VOB" length="985088"  />
+			<key_file pathname="DLDVDROM/DLS05D4.VOB" length="2824192"  />
+			<key_file pathname="DLDVDROM/DLS05D5.VOB" length="954368"  />
+			<key_file pathname="DLDVDROM/DLS05D6.VOB" length="1005568"  />
+			<key_file pathname="DLDVDROM/DLS05D7.VOB" length="2019328"  />
+			<key_file pathname="DLDVDROM/DLS06.VOB" length="13500416"  />
+			<key_file pathname="DLDVDROM/DLS06B.VOB" length="2963456"  />
+			<key_file pathname="DLDVDROM/DLS06D1.VOB" length="960512"  />
+			<key_file pathname="DLDVDROM/DLS06D2.VOB" length="950272"  />
+			<key_file pathname="DLDVDROM/DLS06D3.VOB" length="987136"  />
+			<key_file pathname="DLDVDROM/DLS07.VOB" length="11849728"  />
+			<key_file pathname="DLDVDROM/DLS07B.VOB" length="2959360"  />
+			<key_file pathname="DLDVDROM/DLS07D1.VOB" length="3164160"  />
+			<key_file pathname="DLDVDROM/DLS07D2.VOB" length="2043904"  />
+			<key_file pathname="DLDVDROM/DLS07D3.VOB" length="3899392"  />
+			<key_file pathname="DLDVDROM/DLS08.VOB" length="14020608"  />
+			<key_file pathname="DLDVDROM/DLS08B.VOB" length="3039232"  />
+			<key_file pathname="DLDVDROM/DLS08D1.VOB" length="997376"  />
+			<key_file pathname="DLDVDROM/DLS08D2.VOB" length="897024"  />
+			<key_file pathname="DLDVDROM/DLS08D3.VOB" length="2680832"  />
+			<key_file pathname="DLDVDROM/DLS09.VOB" length="21417984"  />
+			<key_file pathname="DLDVDROM/DLS09B.VOB" length="3035136"  />
+			<key_file pathname="DLDVDROM/DLS09D1.VOB" length="1003520"  />
+			<key_file pathname="DLDVDROM/DLS09D2.VOB" length="845824"  />
+			<key_file pathname="DLDVDROM/DLS09D3.VOB" length="993280"  />
+			<key_file pathname="DLDVDROM/DLS09D4.VOB" length="1798144"  />
+			<key_file pathname="DLDVDROM/DLS09D5.VOB" length="860160"  />
+			<key_file pathname="DLDVDROM/DLS09D6.VOB" length="2418688"  />
+			<key_file pathname="DLDVDROM/DLS10.VOB" length="20545536"  />
+			<key_file pathname="DLDVDROM/DLS10B.VOB" length="3033088"  />
+			<key_file pathname="DLDVDROM/DLS10D1.VOB" length="2113536"  />
+			<key_file pathname="DLDVDROM/DLS10D2.VOB" length="3110912"  />
+			<key_file pathname="DLDVDROM/DLS10D3.VOB" length="937984"  />
+			<key_file pathname="DLDVDROM/DLS11.VOB" length="10041344"  />
+			<key_file pathname="DLDVDROM/DLS11B.VOB" length="3209216"  />
+			<key_file pathname="DLDVDROM/DLS11D1.VOB" length="2193408"  />
+			<key_file pathname="DLDVDROM/DLS12.VOB" length="7288832"  />
+			<key_file pathname="DLDVDROM/DLS12D1.VOB" length="968704"  />
+			<key_file pathname="DLDVDROM/DLS12D2.VOB" length="2224128"  />
+			<key_file pathname="DLDVDROM/DLS13.VOB" length="13432832"  />
+			<key_file pathname="DLDVDROM/DLS13B.VOB" length="3147776"  />
+			<key_file pathname="DLDVDROM/DLS13D1.VOB" length="2285568"  />
+			<key_file pathname="DLDVDROM/DLS14.VOB" length="17688576"  />
+			<key_file pathname="DLDVDROM/DLS14B.VOB" length="2693120"  />
+			<key_file pathname="DLDVDROM/DLS14D1.VOB" length="1024000"  />
+			<key_file pathname="DLDVDROM/DLS14D2.VOB" length="2189312"  />
+			<key_file pathname="DLDVDROM/DLS14D3.VOB" length="976896"  />
+			<key_file pathname="DLDVDROM/DLS15.VOB" length="23046144"  />
+			<key_file pathname="DLDVDROM/DLS15B.VOB" length="3022848"  />
+			<key_file pathname="DLDVDROM/DLS15D1.VOB" length="1902592"  />
+			<key_file pathname="DLDVDROM/DLS15D2.VOB" length="1034240"  />
+			<key_file pathname="DLDVDROM/DLS16.VOB" length="16103424"  />
+			<key_file pathname="DLDVDROM/DLS16B.VOB" length="3102720"  />
+			<key_file pathname="DLDVDROM/DLS16D1.VOB" length="925696"  />
+			<key_file pathname="DLDVDROM/DLS16D2.VOB" length="858112"  />
+			<key_file pathname="DLDVDROM/DLS16D3.VOB" length="929792"  />
+			<key_file pathname="DLDVDROM/DLS16D4.VOB" length="2394112"  />
+			<key_file pathname="DLDVDROM/DLS17.VOB" length="12199936"  />
+			<key_file pathname="DLDVDROM/DLS17B.VOB" length="2879488"  />
+			<key_file pathname="DLDVDROM/DLS17D1.VOB" length="1816576"  />
+			<key_file pathname="DLDVDROM/DLS17D2.VOB" length="1005568"  />
+			<key_file pathname="DLDVDROM/DLS18.VOB" length="12457984"  />
+			<key_file pathname="DLDVDROM/DLS18B.VOB" length="2793472"  />
+			<key_file pathname="DLDVDROM/DLS18D1.VOB" length="1984512"  />
+			<key_file pathname="DLDVDROM/DLS18D2.VOB" length="2752512"  />
+			<key_file pathname="DLDVDROM/DLS19.VOB" length="19976192"  />
+			<key_file pathname="DLDVDROM/DLS19B.VOB" length="2969600"  />
+			<key_file pathname="DLDVDROM/DLS19D1.VOB" length="843776"  />
+			<key_file pathname="DLDVDROM/DLS19D2.VOB" length="1105920"  />
+			<key_file pathname="DLDVDROM/DLS19D3.VOB" length="1896448"  />
+			<key_file pathname="DLDVDROM/DLS19D4.VOB" length="2881536"  />
+			<key_file pathname="DLDVDROM/DLS19D5.VOB" length="958464"  />
+			<key_file pathname="DLDVDROM/DLS19D6.VOB" length="972800"  />
+			<key_file pathname="DLDVDROM/DLS19D7.VOB" length="2220032"  />
+			<key_file pathname="DLDVDROM/DLS1B.VOB" length="3031040"  />
+			<key_file pathname="DLDVDROM/DLS20.VOB" length="12812288"  />
+			<key_file pathname="DLDVDROM/DLS20B.VOB" length="2775040"  />
+			<key_file pathname="DLDVDROM/DLS20D1.VOB" length="927744"  />
+			<key_file pathname="DLDVDROM/DLS20D2.VOB" length="1003520"  />
+			<key_file pathname="DLDVDROM/DLS20D3.VOB" length="974848"  />
+			<key_file pathname="DLDVDROM/DLS21.VOB" length="17455104"  />
+			<key_file pathname="DLDVDROM/DLS21B.VOB" length="2598912"  />
+			<key_file pathname="DLDVDROM/DLS21D1.VOB" length="1968128"  />
+			<key_file pathname="DLDVDROM/DLS21P1.VOB" length="4481024"  />
+			<key_file pathname="DLDVDROM/DLS21P2.VOB" length="4073472"  />
+			<key_file pathname="DLDVDROM/DLS22.VOB" length="21577728"  />
+			<key_file pathname="DLDVDROM/DLS22B.VOB" length="3020800"  />
+			<key_file pathname="DLDVDROM/DLS22D1.VOB" length="1071104"  />
+			<key_file pathname="DLDVDROM/DLS22D2.VOB" length="856064"  />
+			<key_file pathname="DLDVDROM/DLS22D3.VOB" length="960512"  />
+			<key_file pathname="DLDVDROM/DLS22D4.VOB" length="1918976"  />
+			<key_file pathname="DLDVDROM/DLS22D5.VOB" length="878592"  />
+			<key_file pathname="DLDVDROM/DLS22D6.VOB" length="2447360"  />
+			<key_file pathname="DLDVDROM/DLS23.VOB" length="17852416"  />
+			<key_file pathname="DLDVDROM/DLS23B.VOB" length="2752512"  />
+			<key_file pathname="DLDVDROM/DLS23D1.VOB" length="1021952"  />
+			<key_file pathname="DLDVDROM/DLS23D2.VOB" length="2136064"  />
+			<key_file pathname="DLDVDROM/DLS23D3.VOB" length="1056768"  />
+			<key_file pathname="DLDVDROM/DLS24.VOB" length="30801920"  />
+			<key_file pathname="DLDVDROM/DLS24B.VOB" length="2789376"  />
+			<key_file pathname="DLDVDROM/DLS24D1.VOB" length="843776"  />
+			<key_file pathname="DLDVDROM/DLS24D2.VOB" length="2727936"  />
+			<key_file pathname="DLDVDROM/DLS25.VOB" length="5693440"  />
+			<key_file pathname="DLDVDROM/DLS25B.VOB" length="2891776"  />
+			<key_file pathname="DLDVDROM/DLS25D1.VOB" length="4026368"  />
+			<key_file pathname="DLDVDROM/DLS25D2.VOB" length="940032"  />
+			<key_file pathname="DLDVDROM/DLS26.VOB" length="17004544"  />
+			<key_file pathname="DLDVDROM/DLS26B.VOB" length="2981888"  />
+			<key_file pathname="DLDVDROM/DLS26D1.VOB" length="983040"  />
+			<key_file pathname="DLDVDROM/DLS26D2.VOB" length="927744"  />
+			<key_file pathname="DLDVDROM/DLS26D3.VOB" length="1044480"  />
+			<key_file pathname="DLDVDROM/DLS26D4.VOB" length="2318336"  />
+			<key_file pathname="DLDVDROM/DLS27.VOB" length="21125120"  />
+			<key_file pathname="DLDVDROM/DLS27B.VOB" length="3041280"  />
+			<key_file pathname="DLDVDROM/DLS27D1.VOB" length="2009088"  />
+			<key_file pathname="DLDVDROM/DLS27D2.VOB" length="2967552"  />
+			<key_file pathname="DLDVDROM/DLS27D3.VOB" length="929792"  />
+			<key_file pathname="DLDVDROM/DLS28.VOB" length="8384512"  />
+			<key_file pathname="DLDVDROM/DLS28B.VOB" length="2523136"  />
+			<key_file pathname="DLDVDROM/DLS28D1.VOB" length="2115584"  />
+			<key_file pathname="DLDVDROM/DLS28D2.VOB" length="950272"  />
+			<key_file pathname="DLDVDROM/DLS28D3.VOB" length="1046528"  />
+			<key_file pathname="DLDVDROM/DLS29.VOB" length="11563008"  />
+			<key_file pathname="DLDVDROM/DLS29B.VOB" length="3031040"  />
+			<key_file pathname="DLDVDROM/DLS29D1.VOB" length="2037760"  />
+			<key_file pathname="DLDVDROM/DLS29D2.VOB" length="1060864"  />
+			<key_file pathname="DLDVDROM/DLS29D3.VOB" length="974848"  />
+			<key_file pathname="DLDVDROM/DLS30.VOB" length="23027712"  />
+			<key_file pathname="DLDVDROM/DLS30B.VOB" length="3147776"  />
+			<key_file pathname="DLDVDROM/DLS30D1.VOB" length="1908736"  />
+			<key_file pathname="DLDVDROM/DLS30D2.VOB" length="1040384"  />
+			<key_file pathname="DLDVDROM/DLS31.VOB" length="18094080"  />
+			<key_file pathname="DLDVDROM/DLS31B.VOB" length="2521088"  />
+			<key_file pathname="DLDVDROM/DLS31D1.VOB" length="1941504"  />
+			<key_file pathname="DLDVDROM/DLS31P1.VOB" length="4073472"  />
+			<key_file pathname="DLDVDROM/DLS31P2.VOB" length="4481024"  />
+			<key_file pathname="DLDVDROM/DLS32.VOB" length="46333952"  />
+			<key_file pathname="DLDVDROM/DLS32B.VOB" length="2568192"  />
+			<key_file pathname="DLDVDROM/DLS32D1.VOB" length="837632"  />
+			<key_file pathname="DLDVDROM/DLS32D2.VOB" length="868352"  />
+			<key_file pathname="DLDVDROM/DLS32D3.VOB" length="864256"  />
+			<key_file pathname="DLDVDROM/DLS32D4.VOB" length="876544"  />
+			<key_file pathname="DLDVDROM/DLS32D5.VOB" length="1812480"  />
+			<key_file pathname="DLDVDROM/DLS32D6.VOB" length="1851392"  />
+			<key_file pathname="DLDVDROM/DLS32D7.VOB" length="2816000"  />
+			<key_file pathname="DLDVDROM/DLS33.VOB" length="29450240"  />
+			<key_file pathname="DLDVDROM/DLS33B.VOB" length="2861056"  />
+			<key_file pathname="DLDVDROM/DLS33D1.VOB" length="1009664"  />
+			<key_file pathname="DLDVDROM/DLS33D2.VOB" length="1058816"  />
+			<key_file pathname="DLDVDROM/DLS33D3.VOB" length="3985408"  />
+			<key_file pathname="DLDVDROM/DLS33D4.VOB" length="2056192"  />
+			<key_file pathname="DLDVDROM/DLS33D5.VOB" length="1167360"  />
+			<key_file pathname="DLDVDROM/DLS34.VOB" length="14600192"  />
+			<key_file pathname="DLDVDROM/DLS34B.VOB" length="2998272"  />
+			<key_file pathname="DLDVDROM/DLS34D1.VOB" length="970752"  />
+			<key_file pathname="DLDVDROM/DLS34D2.VOB" length="1914880"  />
+			<key_file pathname="DLDVDROM/DLS35.VOB" length="20353024"  />
+			<key_file pathname="DLDVDROM/DLS35B.VOB" length="3065856"  />
+			<key_file pathname="DLDVDROM/DLS35D1.VOB" length="980992"  />
+			<key_file pathname="DLDVDROM/DLS35D2.VOB" length="897024"  />
+			<key_file pathname="DLDVDROM/DLS36.VOB" length="12525568"  />
+			<key_file pathname="DLDVDROM/DLS36B.VOB" length="2971648"  />
+			<key_file pathname="DLDVDROM/DLS36D1.VOB" length="921600"  />
+			<key_file pathname="DLDVDROM/DLS36D2.VOB" length="937984"  />
+			<key_file pathname="DLDVDROM/DLS36D3.VOB" length="1089536"  />
+			<key_file pathname="DLDVDROM/DLS38.VOB" length="85571584"  />
+			<key_file pathname="DLDVDROM/DLS38B.VOB" length="2969600"  />
+			<key_file pathname="DLDVDROM/DLS38D1.VOB" length="1009664"  />
+			<key_file pathname="DLDVDROM/DLS38D2.VOB" length="2189312"  />
+			<key_file pathname="DLDVDROM/DLS38D3.VOB" length="987136"  />
+			<key_file pathname="DLDVDROM/DLS38D4.VOB" length="1030144"  />
+			<key_file pathname="DLDVDROM/DLS38D5.VOB" length="1998848"  />
+			<key_file pathname="DLDVDROM/DLS38D6.VOB" length="1007616"  />
+		</key_disc>
+		
+		<key_disc name="Dragon's Lair - DVD-Video">
+			<key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="16384"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="16384"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="32047104"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="65536"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="65536"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="462698496"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="57344"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="57344"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="478418944"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="26624"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="26624"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="531855360"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="7847936"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.VOB" length="145408"  />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="107583488"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="721770496"  />
+		</key_disc>
+		
+		<key_disc name="Dragon's Lair - DVD-Video - 20th Anniversary">
+			<key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="34816"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="34816"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="186632192"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="50292736"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="270370816"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="214099968"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="240207872"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="313538560"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="186015744"  />
+			<key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="236662784"  />
+			<key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="158474240"  />
+			<key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="226713600"  />
+			<key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="151631872"  />
+			<key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="737695744"  />
+			<key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="4751360"  />
+			<key_file pathname="VIDEO_TS/VTS_13_0.BUP" length="32768"  />
+			<key_file pathname="VIDEO_TS/VTS_13_0.IFO" length="32768"  />
+			<key_file pathname="VIDEO_TS/VTS_13_1.VOB" length="1073709056"  />
+			<key_file pathname="VIDEO_TS/VTS_13_2.VOB" length="164141056"  />
+			<key_file pathname="VIDEO_TS/VTS_14_0.BUP" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_14_0.IFO" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_14_1.VOB" length="973344768"  />
+			<key_file pathname="VIDEO_TS/VTS_15_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_15_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_15_1.VOB" length="3760128"  />
+			<key_file pathname="VIDEO_TS/VTS_16_0.BUP" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_16_0.IFO" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_16_1.VOB" length="731402240"  />
+			<key_file pathname="VIDEO_TS/VTS_17_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_17_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_17_1.VOB" length="2492416"  />
+			<key_file pathname="VIDEO_TS/VTS_18_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_18_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_18_1.VOB" length="112275456"  />
+			<key_file pathname="VIDEO_TS/VTS_19_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_19_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_19_1.VOB" length="1177600"  />
+			<key_file pathname="VIDEO_TS/VTS_20_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_20_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_20_1.VOB" length="47247360"  />
+			<key_file pathname="VIDEO_TS/VTS_21_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_21_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_21_1.VOB" length="740448256"  />
+			<key_file pathname="VIDEO_TS/VTS_22_0.BUP" length="22528"  />
+			<key_file pathname="VIDEO_TS/VTS_22_0.IFO" length="22528"  />
+			<key_file pathname="VIDEO_TS/VTS_22_1.VOB" length="1073709056"  />
+			<key_file pathname="VIDEO_TS/VTS_22_2.VOB" length="107180032"  />
+			<key_file pathname="VIDEO_TS/VTS_23_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_23_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_23_1.VOB" length="417792"  />
+		</key_disc>		
+		<key_disc name="Dragon's Lair - DVD-Video - PAL">
+		<key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="32047104"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.VOB" length="8192"  />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="531832832"  />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="7847936"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.VOB" length="141312"  />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="187725824"  />
+		</key_disc>
+		<key_disc name="Dragon's Lair - DVD-Video - PSW PAL">
+			<key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="28672" />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="28672" />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="51361792" />
+			<key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="33703936" />
+			<key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="275601408" />
+			<key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="218486784" />
+			<key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="245680128" />
+			<key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="255096832" />
+			<key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="189749248" />
+			<key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="241942528" />
+			<key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="161744896" />
+			<key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="230072320" />
+			<key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="14336" />
+			<key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="154824704" />
+			<key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="26624" />
+			<key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="26624" />
+			<key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="872828928" />
+			<key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="102400" />
+			<key_file pathname="VIDEO_TS/VTS_13_0.BUP" length="18432" />
+			<key_file pathname="VIDEO_TS/VTS_13_0.IFO" length="18432" />
+			<key_file pathname="VIDEO_TS/VTS_13_1.VOB" length="605904896" />
+			<key_file pathname="VIDEO_TS/VTS_14_0.BUP" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_14_0.IFO" length="12288" />
+			<key_file pathname="VIDEO_TS/VTS_14_1.VOB" length="10240" />
+			<key_file pathname="VIDEO_TS/VTS_15_0.BUP" length="18432" />
+			<key_file pathname="VIDEO_TS/VTS_15_0.IFO" length="18432" />
+			<key_file pathname="VIDEO_TS/VTS_15_1.VOB" length="1073709056" />
+			<key_file pathname="VIDEO_TS/VTS_15_2.VOB" length="29104128" />
+		</key_disc>
+		
+    </key_discgroup>
+
+	<key_discgroup>
+		<compatible type="lair2" />
+		<key_disc name="Dragon's Lair 2 - 20th Anniversary - DVD-Video">
+			<key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="24576"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="24576"  />
+			<key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="73052160"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="278343680"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="247910400"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="290211840"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="20480"  />
+			<key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="20480"  />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="304351232"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="309438464"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="20480"  />
+			<key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="20480"  />
+			<key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="312104960"  />
+			<key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="14336"  />
+			<key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="88178688"  />
+			<key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="106665984"  />
+			<key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="12288"  />
+			<key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="18774016"  />
+			<key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="16384"  />
+			<key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="721162240"  />
+			<key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="24576"  />
+			<key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="734597120"  />
+			<key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="18432"  />
+			<key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="605841408"  />
+		</key_disc>
+		
+		<key_disc name="Dragon's Lair 2 - DVD-Video">
+			<key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="383367168"  />
+			<key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="350089216"  />
+			<key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="402720768"  />
+			<key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="425773056"  />
+			<key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="438650880"  />
+			<key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="446273536"  />
+			<key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="165900288"  />
+			<key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="203683840"  />
+			<key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="18774016"  />
+			<key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="721162240"  />
+			<key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="605841408"  />
+		</key_disc>
+		
+		<key_disc name="Dragon's Lair 2 - DVD-ROM">
+			<key_file pathname="AUTORUN.INF" length="32"  />
+			<key_file pathname="DL2DVD/CONT0.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT1.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT2.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT3.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT4.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT5.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT6.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT7.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT8.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/CONT9.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/DL200.VOB" length="54927360"  />
+			<key_file pathname="DL2DVD/DL201.VOB" length="92209152"  />
+			<key_file pathname="DL2DVD/DL201D1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL201D10.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL201D11.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D13.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D14.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL201D15.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D16.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL201D17.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D18.VOB" length="2367488"  />
+			<key_file pathname="DL2DVD/DL201D2.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D3.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D5.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D7.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201D8.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201D9.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL201P1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL201P2.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL201P3.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL201P5.VOB" length="39276544"  />
+			<key_file pathname="DL2DVD/DL201P6.VOB" length="64313344"  />
+			<key_file pathname="DL2DVD/DL201P8.VOB" length="24180736"  />
+			<key_file pathname="DL2DVD/DL202.VOB" length="88674304"  />
+			<key_file pathname="DL2DVD/DL202D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL202D10.VOB" length="2367488"  />
+			<key_file pathname="DL2DVD/DL202D2.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL202D3.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL202D4.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL202D5.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL202D6.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL202D7.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL202D8.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL202D9.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL202P1.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL202P6.VOB" length="74315776"  />
+			<key_file pathname="DL2DVD/DL203.VOB" length="97017856"  />
+			<key_file pathname="DL2DVD/DL203D1.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL203D10.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL203D11.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL203D12.VOB" length="2476032"  />
+			<key_file pathname="DL2DVD/DL203D13.VOB" length="2367488"  />
+			<key_file pathname="DL2DVD/DL203D14.VOB" length="1953792"  />
+			<key_file pathname="DL2DVD/DL203D2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL203D3.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL203D4.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL203D5.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL203D6.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL203D7.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL203D8.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL203D9.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL203P1.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL203P6.VOB" length="53241856"  />
+			<key_file pathname="DL2DVD/DL204.VOB" length="96604160"  />
+			<key_file pathname="DL2DVD/DL204D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL204D10.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL204D11.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL204D12.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL204D13.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL204D14.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL204D15.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL204D2.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL204D3.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL204D4.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL204D5.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL204D6.VOB" length="3180544"  />
+			<key_file pathname="DL2DVD/DL204D7.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL204D8.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL204D9.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL204P1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL204P2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL204P6.VOB" length="65173504"  />
+			<key_file pathname="DL2DVD/DL204P7.VOB" length="45248512"  />
+			<key_file pathname="DL2DVD/DL205.VOB" length="103743488"  />
+			<key_file pathname="DL2DVD/DL205D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL205D10.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL205D11.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL205D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL205D13.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL205D14.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205D2.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205D3.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL205D4.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205D5.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL205D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL205D7.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205D8.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205D9.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205P1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL205P2.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL205P6.VOB" length="61079552"  />
+			<key_file pathname="DL2DVD/DL205P7.VOB" length="27334656"  />
+			<key_file pathname="DL2DVD/DL206.VOB" length="108105728"  />
+			<key_file pathname="DL2DVD/DL206D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D10.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL206D11.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL206D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D13.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL206D2.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL206D3.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL206D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL206D5.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D7.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D8.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206D9.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL206P1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206P2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL206P6.VOB" length="77840384"  />
+			<key_file pathname="DL2DVD/DL206P7.VOB" length="43642880"  />
+			<key_file pathname="DL2DVD/DL207.VOB" length="65974272"  />
+			<key_file pathname="DL2DVD/DL207D1.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL207D2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL207D3.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL207D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL207D5.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL207D6.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL207D7.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL208.VOB" length="93796352"  />
+			<key_file pathname="DL2DVD/DL208D1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL208D2.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL208D3.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL208D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL212.VOB" length="89042944"  />
+			<key_file pathname="DL2DVD/DL212D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL212D10.VOB" length="2363392"  />
+			<key_file pathname="DL2DVD/DL212D2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL212D3.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL212D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL212D5.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL212D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL212D7.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL212D8.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL212D9.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL212P1.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL212P6.VOB" length="74684416"  />
+			<key_file pathname="DL2DVD/DL213.VOB" length="97017856"  />
+			<key_file pathname="DL2DVD/DL213D1.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL213D10.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL213D11.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL213D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL213D13.VOB" length="2457600"  />
+			<key_file pathname="DL2DVD/DL213D14.VOB" length="2367488"  />
+			<key_file pathname="DL2DVD/DL213D2.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL213D3.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL213D4.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL213D5.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL213D6.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL213D7.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL213D8.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL213D9.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL213P1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL213P6.VOB" length="53237760"  />
+			<key_file pathname="DL2DVD/DL214.VOB" length="96630784"  />
+			<key_file pathname="DL2DVD/DL214D1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214D10.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214D11.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL214D12.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL214D13.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL214D14.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL214D15.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214D2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214D3.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214D4.VOB" length="2392064"  />
+			<key_file pathname="DL2DVD/DL214D5.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL214D6.VOB" length="3178496"  />
+			<key_file pathname="DL2DVD/DL214D7.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL214D8.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL214D9.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL214P1.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL214P2.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL214P6.VOB" length="65169408"  />
+			<key_file pathname="DL2DVD/DL214P7.VOB" length="45275136"  />
+			<key_file pathname="DL2DVD/DL215.VOB" length="103737344"  />
+			<key_file pathname="DL2DVD/DL215D1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL215D10.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL215D11.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215D13.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215D14.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL215D2.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL215D3.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL215D4.VOB" length="2392064"  />
+			<key_file pathname="DL2DVD/DL215D5.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215D7.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL215D8.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL215D9.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL215P1.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215P2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL215P6.VOB" length="61077504"  />
+			<key_file pathname="DL2DVD/DL215P7.VOB" length="27334656"  />
+			<key_file pathname="DL2DVD/DL216.VOB" length="108115968"  />
+			<key_file pathname="DL2DVD/DL216D1.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL216D10.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL216D11.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL216D12.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL216D13.VOB" length="2383872"  />
+			<key_file pathname="DL2DVD/DL216D2.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL216D3.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL216D4.VOB" length="2390016"  />
+			<key_file pathname="DL2DVD/DL216D5.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL216D6.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL216D7.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL216D8.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL216D9.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL216P1.VOB" length="2387968"  />
+			<key_file pathname="DL2DVD/DL216P2.VOB" length="2385920"  />
+			<key_file pathname="DL2DVD/DL216P6.VOB" length="77854720"  />
+			<key_file pathname="DL2DVD/DL216P7.VOB" length="43644928"  />
+			<key_file pathname="DL2DVD/DL2miss.VOB" length="3999744"  />
+			<key_file pathname="DL2DVD/DL2Moves.txt" length="42391"  />
+			<key_file pathname="DL2DVD/DLINTRO.VOB" length="51075072"  />
+			<key_file pathname="DL2DVD/FRKINTRO.VOB" length="66129920"  />
+			<key_file pathname="DL2DVD/GAMEOVER.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/HISTORY1.VOB" length="638597120"  />
+			<key_file pathname="DL2DVD/LIVES1.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/LIVES2.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/LIVES3.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/LIVES4.BMP" length="346680"  />
+			<key_file pathname="DL2DVD/SAINTRO.VOB" length="50386944"  />
+			<key_file pathname="DL2DVD.exe" length="48128"  />
+			<key_file pathname="DL2First.txt" length="2023"  />
+			<key_file pathname="DL2Help.txt" length="9813"  />
+			<key_file pathname="MFC42.DLL" length="941840"  />
+			<key_file pathname="MSVCRT.DLL" length="271632"  />
+			<key_file pathname="REGISTER.TXT" length="1129"  />
+		</key_disc>
+
+        <key_disc name="Dragon's Lair 2 - DVD-Video - PAL">
+            <key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="24576" />
+            <key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="24576" />
+            <key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="813056" />
+            <key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="16384" />
+            <key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="16384" />
+            <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="220561408" />
+            <key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="236783616" />
+            <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="18432"  />
+            <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="275597312" />
+            <key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="289200128" />
+            <key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="293666816" />
+            <key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="20480" />
+            <key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="20480" />
+            <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="298207232" />
+            <key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="14336" />
+            <key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="14336" />
+            <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="85925888" />
+            <key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="12288" />
+            <key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="12288" />
+            <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="101634048" />
+            <key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="12288" />
+            <key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="12288" />
+            <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="17653760" />
+            <key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="18432" />
+            <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="477106176" />
+            <key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="28672" />
+            <key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="28672" />
+            <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="734171136" />
+            <key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="20480" />
+            <key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="20480" />
+            <key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="791349248" />
+        </key_disc>
+
+	</key_discgroup>
+
+	  
+	  <key_discgroup>
+		  <compatible type="ace" />
+		  <compatible type="aceeuro" />
+		  <compatible type="acesc" />
+		  <compatible type="ace91" />
+		  <key_disc name="Space Ace - DVD-ROM">
+			  <key_file pathname="AUTORUN.INF" length="31" />
+			  <key_file pathname="Desktop DB" length="532480" />
+			  <key_file pathname="Desktop DF" length="2327330" />
+			  <key_file pathname="MFC42.DLL" length="941840" />
+			  <key_file pathname="MSVCRT.DLL" length="271632" />
+			  <key_file pathname="REGISTER.TXT" length="1111" />
+			  <key_file pathname="SADVD.exe" length="48640" />
+			  <key_file pathname="SADVDROM/CONT0.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT1.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT2.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT3.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT4.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT5.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT6.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT7.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT8.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/CONT9.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/DL2INTRO.VOB" length="55242752" />
+			  <key_file pathname="SADVDROM/DLINTRO.VOB" length="51075072" />
+			  <key_file pathname="SADVDROM/FRKINTRO.VOB" length="66129920" />
+			  <key_file pathname="SADVDROM/GAMEOVER.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/HISTORY1.VOB" length="51789824" />
+			  <key_file pathname="SADVDROM/HISTORY2.VOB" length="186445824" />
+			  <key_file pathname="SADVDROM/HISTORY3.VOB" length="59320320" />
+			  <key_file pathname="SADVDROM/HISTORY4.VOB" length="171927552" />
+			  <key_file pathname="SADVDROM/LIVES1.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/LIVES2.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/LIVES3.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/LIVES4.BMP" length="346680" />
+			  <key_file pathname="SADVDROM/SAMoves.txt" length="14780" />
+			  <key_file pathname="SADVDROM/SPA00.VOB" length="50386944" />
+			  <key_file pathname="SADVDROM/SPA01.VOB" length="56864768" />
+			  <key_file pathname="SADVDROM/SPA01B.VOB" length="2392064" />
+			  <key_file pathname="SADVDROM/SPA01D1.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA01D2.VOB" length="2543616" />
+			  <key_file pathname="SADVDROM/SPA01D3.VOB" length="3057664" />
+			  <key_file pathname="SADVDROM/SPA01D4.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA01D5.VOB" length="4642816" />
+			  <key_file pathname="SADVDROM/SPA01D6.VOB" length="2543616" />
+			  <key_file pathname="SADVDROM/SPA01P1.VOB" length="18710528" />
+			  <key_file pathname="SADVDROM/SPA02.VOB" length="40548352" />
+			  <key_file pathname="SADVDROM/SPA02B.VOB" length="2435072" />
+			  <key_file pathname="SADVDROM/SPA02D1.VOB" length="2078720" />
+			  <key_file pathname="SADVDROM/SPA02D2.VOB" length="2258944" />
+			  <key_file pathname="SADVDROM/SPA02D3.VOB" length="2256896" />
+			  <key_file pathname="SADVDROM/SPA02D4.VOB" length="2865152" />
+			  <key_file pathname="SADVDROM/SPA02D5.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA02P1.VOB" length="7792640" />
+			  <key_file pathname="SADVDROM/SPA03.VOB" length="40538112" />
+			  <key_file pathname="SADVDROM/SPA03B.VOB" length="2402304" />
+			  <key_file pathname="SADVDROM/SPA03D1.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA03D2.VOB" length="2271232" />
+			  <key_file pathname="SADVDROM/SPA03D3.VOB" length="2279424" />
+			  <key_file pathname="SADVDROM/SPA03D4.VOB" length="2875392" />
+			  <key_file pathname="SADVDROM/SPA03D5.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA03P1.VOB" length="7794688" />
+			  <key_file pathname="SADVDROM/SPA04.VOB" length="45115392" />
+			  <key_file pathname="SADVDROM/SPA04B.VOB" length="2420736" />
+			  <key_file pathname="SADVDROM/SPA04D1.VOB" length="4136960" />
+			  <key_file pathname="SADVDROM/SPA04D2.VOB" length="5400576" />
+			  <key_file pathname="SADVDROM/SPA04D3.VOB" length="2250752" />
+			  <key_file pathname="SADVDROM/SPA04P1.VOB" length="1918976" />
+			  <key_file pathname="SADVDROM/SPA04P2.VOB" length="17799168" />
+			  <key_file pathname="SADVDROM/SPA05.VOB" length="45127680" />
+			  <key_file pathname="SADVDROM/SPA05B.VOB" length="2437120" />
+			  <key_file pathname="SADVDROM/SPA05D1.VOB" length="4136960" />
+			  <key_file pathname="SADVDROM/SPA05D2.VOB" length="5404672" />
+			  <key_file pathname="SADVDROM/SPA05D3.VOB" length="2269184" />
+			  <key_file pathname="SADVDROM/SPA05P1.VOB" length="1921024" />
+			  <key_file pathname="SADVDROM/SPA05P2.VOB" length="17801216" />
+			  <key_file pathname="SADVDROM/SPA06.VOB" length="43728896" />
+			  <key_file pathname="SADVDROM/SPA06B.VOB" length="2433024" />
+			  <key_file pathname="SADVDROM/SPA06D1.VOB" length="3061760" />
+			  <key_file pathname="SADVDROM/SPA06D2.VOB" length="4167680" />
+			  <key_file pathname="SADVDROM/SPA06D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA06D4.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA06D5.VOB" length="1906688" />
+			  <key_file pathname="SADVDROM/SPA06D6.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA06P1.VOB" length="1277952" />
+			  <key_file pathname="SADVDROM/SPA06P2.VOB" length="12576768" />
+			  <key_file pathname="SADVDROM/SPA07.VOB" length="43710464" />
+			  <key_file pathname="SADVDROM/SPA07B.VOB" length="2428928" />
+			  <key_file pathname="SADVDROM/SPA07D1.VOB" length="3035136" />
+			  <key_file pathname="SADVDROM/SPA07D2.VOB" length="4134912" />
+			  <key_file pathname="SADVDROM/SPA07D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA07D4.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA07D5.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA07D6.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA07P1.VOB" length="1288192" />
+			  <key_file pathname="SADVDROM/SPA07P2.VOB" length="12554240" />
+			  <key_file pathname="SADVDROM/SPA08.VOB" length="38434816" />
+			  <key_file pathname="SADVDROM/SPA08B.VOB" length="2385920" />
+			  <key_file pathname="SADVDROM/SPA08D1.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA08D2.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA08D3.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA08D4.VOB" length="1593344" />
+			  <key_file pathname="SADVDROM/SPA08P1.VOB" length="13541376" />
+			  <key_file pathname="SADVDROM/SPA09.VOB" length="38438912" />
+			  <key_file pathname="SADVDROM/SPA09B.VOB" length="2430976" />
+			  <key_file pathname="SADVDROM/SPA09D1.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA09D2.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA09D3.VOB" length="2543616" />
+			  <key_file pathname="SADVDROM/SPA09D4.VOB" length="1591296" />
+			  <key_file pathname="SADVDROM/SPA09P1.VOB" length="13555712" />
+			  <key_file pathname="SADVDROM/SPA10.VOB" length="25098240" />
+			  <key_file pathname="SADVDROM/SPA10B.VOB" length="2447360" />
+			  <key_file pathname="SADVDROM/SPA10D1.VOB" length="4294656" />
+			  <key_file pathname="SADVDROM/SPA10D2.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA10D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA10D4.VOB" length="2703360" />
+			  <key_file pathname="SADVDROM/SPA10D5.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA10D6.VOB" length="2703360" />
+			  <key_file pathname="SADVDROM/SPA10D7.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA10D8.VOB" length="2547712" />
+			  <key_file pathname="SADVDROM/SPA10P1.VOB" length="11167744" />
+			  <key_file pathname="SADVDROM/SPA11.VOB" length="25092096" />
+			  <key_file pathname="SADVDROM/SPA11B.VOB" length="2445312" />
+			  <key_file pathname="SADVDROM/SPA11D1.VOB" length="4292608" />
+			  <key_file pathname="SADVDROM/SPA11D2.VOB" length="1908736" />
+			  <key_file pathname="SADVDROM/SPA11D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA11D4.VOB" length="2703360" />
+			  <key_file pathname="SADVDROM/SPA11D5.VOB" length="1908736" />
+			  <key_file pathname="SADVDROM/SPA11D6.VOB" length="2703360" />
+			  <key_file pathname="SADVDROM/SPA11D7.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA11D8.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA11P1.VOB" length="11171840" />
+			  <key_file pathname="SADVDROM/SPA12.VOB" length="32878592" />
+			  <key_file pathname="SADVDROM/SPA12B.VOB" length="2424832" />
+			  <key_file pathname="SADVDROM/SPA12D1.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA12D2.VOB" length="2080768" />
+			  <key_file pathname="SADVDROM/SPA12D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA12D4.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA12D5.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA12D6.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA12D7.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA13.VOB" length="32880640" />
+			  <key_file pathname="SADVDROM/SPA13B.VOB" length="2430976" />
+			  <key_file pathname="SADVDROM/SPA13D1.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA13D2.VOB" length="2070528" />
+			  <key_file pathname="SADVDROM/SPA13D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA13D4.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA13D5.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA13D6.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA13D7.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA14.VOB" length="28643328" />
+			  <key_file pathname="SADVDROM/SPA14B.VOB" length="2435072" />
+			  <key_file pathname="SADVDROM/SPA14D1.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA14D2.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA14D3.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA14D4.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA14P1.VOB" length="9056256" />
+			  <key_file pathname="SADVDROM/SPA15.VOB" length="28645376" />
+			  <key_file pathname="SADVDROM/SPA15B.VOB" length="2437120" />
+			  <key_file pathname="SADVDROM/SPA15D1.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA15D2.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA15D3.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA15D4.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA15P1.VOB" length="9056256" />
+			  <key_file pathname="SADVDROM/SPA16.VOB" length="21760000" />
+			  <key_file pathname="SADVDROM/SPA16B.VOB" length="2422784" />
+			  <key_file pathname="SADVDROM/SPA16D1.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA16D2.VOB" length="2275328" />
+			  <key_file pathname="SADVDROM/SPA16D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA16D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA16D5.VOB" length="1908736" />
+			  <key_file pathname="SADVDROM/SPA16D6.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA16P1.VOB" length="15284224" />
+			  <key_file pathname="SADVDROM/SPA17.VOB" length="21635072" />
+			  <key_file pathname="SADVDROM/SPA17B.VOB" length="2437120" />
+			  <key_file pathname="SADVDROM/SPA17D1.VOB" length="2080768" />
+			  <key_file pathname="SADVDROM/SPA17D2.VOB" length="2232320" />
+			  <key_file pathname="SADVDROM/SPA17D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA17D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA17D5.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA17D6.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA17P1.VOB" length="15290368" />
+			  <key_file pathname="SADVDROM/SPA18.VOB" length="37171200" />
+			  <key_file pathname="SADVDROM/SPA18B.VOB" length="2426880" />
+			  <key_file pathname="SADVDROM/SPA18D1.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA18D2.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA18D3.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA18D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA18D5.VOB" length="636928" />
+			  <key_file pathname="SADVDROM/SPA18D6.VOB" length="2387968" />
+			  <key_file pathname="SADVDROM/SPA18D7.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA18D8.VOB" length="2246656" />
+			  <key_file pathname="SADVDROM/SPA18D9.VOB" length="2398208" />
+			  <key_file pathname="SADVDROM/SPA18P1.VOB" length="7809024" />
+			  <key_file pathname="SADVDROM/SPA19.VOB" length="37171200" />
+			  <key_file pathname="SADVDROM/SPA19B.VOB" length="2426880" />
+			  <key_file pathname="SADVDROM/SPA19D1.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA19D2.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA19D3.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA19D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA19D5.VOB" length="651264" />
+			  <key_file pathname="SADVDROM/SPA19D6.VOB" length="2387968" />
+			  <key_file pathname="SADVDROM/SPA19D7.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA19D8.VOB" length="2263040" />
+			  <key_file pathname="SADVDROM/SPA19D9.VOB" length="2385920" />
+			  <key_file pathname="SADVDROM/SPA19P1.VOB" length="7792640" />
+			  <key_file pathname="SADVDROM/SPA20.VOB" length="61491200" />
+			  <key_file pathname="SADVDROM/SPA20B.VOB" length="2426880" />
+			  <key_file pathname="SADVDROM/SPA20D1.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA20D2.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA20D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20D5.VOB" length="1908736" />
+			  <key_file pathname="SADVDROM/SPA20D6.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20D7.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20D8.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20D9.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA20P1.VOB" length="8579072" />
+			  <key_file pathname="SADVDROM/SPA21.VOB" length="61480960" />
+			  <key_file pathname="SADVDROM/SPA21B.VOB" length="2433024" />
+			  <key_file pathname="SADVDROM/SPA21D1.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA21D2.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA21D3.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D4.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D5.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D6.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D7.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D8.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21D9.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA21P1.VOB" length="8581120" />
+			  <key_file pathname="SADVDROM/SPA22.VOB" length="57356288" />
+			  <key_file pathname="SADVDROM/SPA22B.VOB" length="2418688" />
+			  <key_file pathname="SADVDROM/SPA22D1.VOB" length="3053568" />
+			  <key_file pathname="SADVDROM/SPA22D10.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA22D11.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA22D2.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA22D3.VOB" length="1947648" />
+			  <key_file pathname="SADVDROM/SPA22D4.VOB" length="3045376" />
+			  <key_file pathname="SADVDROM/SPA22D5.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA22D6.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA22D7.VOB" length="1908736" />
+			  <key_file pathname="SADVDROM/SPA22D8.VOB" length="2545664" />
+			  <key_file pathname="SADVDROM/SPA22D9.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA22P1.VOB" length="14772224" />
+			  <key_file pathname="SADVDROM/SPA23.VOB" length="57372672" />
+			  <key_file pathname="SADVDROM/SPA23B.VOB" length="2437120" />
+			  <key_file pathname="SADVDROM/SPA23D1.VOB" length="3072000" />
+			  <key_file pathname="SADVDROM/SPA23D10.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA23D11.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA23D2.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA23D3.VOB" length="2068480" />
+			  <key_file pathname="SADVDROM/SPA23D4.VOB" length="3061760" />
+			  <key_file pathname="SADVDROM/SPA23D5.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA23D6.VOB" length="1935360" />
+			  <key_file pathname="SADVDROM/SPA23D7.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA23D8.VOB" length="2543616" />
+			  <key_file pathname="SADVDROM/SPA23D9.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA23P1.VOB" length="14671872" />
+			  <key_file pathname="SADVDROM/SPA24.VOB" length="104230912" />
+			  <key_file pathname="SADVDROM/SPA24B.VOB" length="2437120" />
+			  <key_file pathname="SADVDROM/SPA24D1.VOB" length="2080768" />
+			  <key_file pathname="SADVDROM/SPA24D10.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA24D11.VOB" length="2867200" />
+			  <key_file pathname="SADVDROM/SPA24D12.VOB" length="2547712" />
+			  <key_file pathname="SADVDROM/SPA24D2.VOB" length="2254848" />
+			  <key_file pathname="SADVDROM/SPA24D3.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA24D4.VOB" length="2543616" />
+			  <key_file pathname="SADVDROM/SPA24D5.VOB" length="2867200" />
+			  <key_file pathname="SADVDROM/SPA24D6.VOB" length="1910784" />
+			  <key_file pathname="SADVDROM/SPA24D7.VOB" length="4134912" />
+			  <key_file pathname="SADVDROM/SPA24D8.VOB" length="1751040" />
+			  <key_file pathname="SADVDROM/SPA24D9.VOB" length="1748992" />
+			  <key_file pathname="SADVDROM/SPA24P1.VOB" length="73058304" />
+			  <key_file pathname="SADVDROM/SPA24P2.VOB" length="62181376" />
+			  <key_file pathname="SAFirst.txt" length="2495" />
+			  <key_file pathname="SAHelp.txt" length="11260" />
+		  </key_disc>
+		  <key_disc name="Space Ace - DVD-Video">
+			  <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="1073709056" />
+			  <key_file pathname="VIDEO_TS/VTS_01_2.VOB" length="2373632" />
+			  <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="469829632" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="590082048" />
+			  <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="294404096" />
+			  <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="317356032" />
+			  <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="282892288" />
+			  <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="207462400" />
+			  <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="164917248" />
+			  <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="153460736" />
+			  <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="156747776" />
+			  <key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="187826176" />
+		  </key_disc>
+		  <key_disc name="Space Ace - DVD-Video - 20th Anniversary">
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="30720" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="30720" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="768350208" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="49152" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="49152" />
+			  <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="1073709056" />
+			  <key_file pathname="VIDEO_TS/VTS_01_2.VOB" length="7018496" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="469694464" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="590082048" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="165347328" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="317487104" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="282992640" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="207544320" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="164980736" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="153524224" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="156817408" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="187914240" />
+		  </key_disc>
+		  <key_disc name="Space Ace - DVD-Video - PAL">
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="30720" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="30720" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="700203008" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="49152" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="49152" />
+			  <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="1073709056" />
+			  <key_file pathname="VIDEO_TS/VTS_01_2.VOB" length="2179072" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="469813248" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="590082048" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="176128" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="294395904" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="18432" />
+			  <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="317339648" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="282875904" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="207446016" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="164900864" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="153444352" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="156731392" />
+			  <key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="187809792" />
+		  </key_disc>
+		  <key_disc name="Space Ace - DVD-Video - PSW PAL">
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="48859136" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="38912" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="38912" />
+			  <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="807604224" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="389036032" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="697772032" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="160196608" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="222126080" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="198836224" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="150007808" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="118972416" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="106600448" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="111929344" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="16384" />
+			  <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="136183808" />
+			  <key_file pathname="VIDEO_TS/VTS_12_0.BUP" length="26624" />
+			  <key_file pathname="VIDEO_TS/VTS_12_0.IFO" length="26624" />
+			  <key_file pathname="VIDEO_TS/VTS_12_1.VOB" length="937482240" />
+		  </key_disc>		  
+	  </key_discgroup>
+	  <key_discgroup>
+		  <compatible type="tq" />
+		  <key_disc name="Thayer's Quest 2005 DVD-Video">
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.BUP" length="36864" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.IFO" length="36864" />
+			  <key_file pathname="VIDEO_TS/VIDEO_TS.VOB" length="186527744" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.BUP" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_01_0.IFO" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_01_1.VOB" length="175970304" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_02_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_02_1.VOB" length="380590080" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_03_1.VOB" length="235868160" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_04_1.VOB" length="158201856" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_05_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_05_1.VOB" length="377341952" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_06_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_06_1.VOB" length="354113536" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_07_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_07_1.VOB" length="382945280" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.BUP" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_08_0.IFO" length="14336" />
+			  <key_file pathname="VIDEO_TS/VTS_08_1.VOB" length="478300160" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.BUP" length="24576" />
+			  <key_file pathname="VIDEO_TS/VTS_09_0.IFO" length="24576" />
+			  <key_file pathname="VIDEO_TS/VTS_09_1.VOB" length="1073709056" />
+			  <key_file pathname="VIDEO_TS/VTS_09_2.VOB" length="35893248" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.BUP" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_10_0.IFO" length="12288" />
+			  <key_file pathname="VIDEO_TS/VTS_10_1.VOB" length="38299648" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.BUP" length="20480" />
+			  <key_file pathname="VIDEO_TS/VTS_11_0.IFO" length="20480" />
+			  <key_file pathname="VIDEO_TS/VTS_11_1.VOB" length="595380224" />
+		  </key_disc>
+	  </key_discgroup>	  
+  </config_ver_2>
+</daphneloaderinfo>
