@@ -3,11 +3,14 @@
       {
          "ConfirmPowerOff":"false",
          "ApplyGameSettings":"true",
+		 "EnableDiscordPresence":"false",
          "RenderToMainWindow":"true",
          "StartFullscreen":"true",
-		 "Path":"../../bios/scph1001.bin",
-		 "RecursivePaths":"../../roms/psx",
-		 "CheckAtStartup":"false"
+		 "Renderer":"Vulkan",
+		 "ResolutionScale":"5",
+		 "DisableInterlacing":"true",
+		 "SearchDirectory":"../../bios/scph1001.bin",
+		 "RecursivePaths":"../../roms/psx"
       }
    ]
 }
