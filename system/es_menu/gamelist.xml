@@ -380,20 +380,6 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./mesen-s.menu</path>
-		<name>Mesen-S (Super NES)</name>
-		<desc>Configure Mesen-S (Super NES)</desc>
-		<image>./media/mesen-logo.png</image>
-		<developer>Unknown</developer>
-		<publisher>Unknown</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
 		<path>./supermodel.menu</path>
 		<name>Supermodel (MODEL 3)</name>
 		<desc>Configure Supermodel (MODEL 3)</desc>
@@ -423,11 +409,19 @@
 	</game>
 	<game>
 		<path>./winuae.menu</path>
-		<name>winuae</name>
-		<playcount>11</playcount>
-		<lastplayed>20201201T130401</lastplayed>
-		<gametime>1572</gametime>
+		<name>WinUAE (Amiga)</name>
+		<desc>Configure WinUAE (Amiga)</desc>
+		<image>./media/winuae-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>WinUAE Team</developer>
+		<publisher>WinUAE Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
 		<lang>en</lang>
+		<region>wr</region>
 	</game>
 	<game>
 		<path>./snes9x.menu</path>
@@ -471,6 +465,22 @@
 		<developer>Lexaloffle</developer>
 		<publisher>Lexaloffle</publisher>
 		<genre>Fantasy Console</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./zsnes-dos.menu</path>
+		<name>ZSNES</name>
+		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
+		<image>./media/zsnes-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>ZSNES Team</developer>
+		<publisher>ZSNES Team</publisher>
+		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
 		<gametime />
