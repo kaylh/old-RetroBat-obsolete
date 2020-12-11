@@ -3,9 +3,15 @@
       {
 		 "ConfirmStop":"False",
 		 "ISOPaths":"2",
+		 "RecursiveISOPaths":"True",
          "ISOPath0":".\\..\\..\\roms\\gamecube",
 		 "ISOPath1":".\\..\\..\\roms\\wii",
-         "Fullscreen":"True"
+         "Fullscreen":"True",
+		 "ConfirmStop":"True",
+		 "HideCursor":"True",
+		 "EnableCheats":"True",
+		 "KeepWindowOnTop":"True",
+		 "Fullscreen":"True"
       }
    ]
 }
