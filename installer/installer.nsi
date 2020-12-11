@@ -13,7 +13,7 @@ RequestExecutionLevel user
 Unicode true
 
 !define PRODUCT "RetroBat"
-!define PRODUCT_VERSION "4.0.0"
+!define PRODUCT_VERSION "4.0.0-BETA"
 !define VERSION "${PRODUCT_VERSION}"
 !define /date TIMESTAMP "%Y%m%d-%H%M%S"
 !define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
