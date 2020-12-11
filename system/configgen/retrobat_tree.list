@@ -75,5 +75,8 @@ system
 system\configgen
 system\download
 system\es_menu
+system\padtokey
+system\resources
+system\scripts
 system\shaders
 system\templates
