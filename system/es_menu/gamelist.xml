@@ -364,22 +364,6 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./duckstation.menu</path>
-		<name>Duckstation (PlayStation)</name>
-		<desc>Configure Duckstation Emulator (Triforce)</desc>
-		<image>./media/duckstation-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Duckstation Team</developer>
-		<publisher>Duckstation Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
 		<path>./supermodel.menu</path>
 		<name>Supermodel (MODEL 3)</name>
 		<desc>Configure Supermodel (MODEL 3)</desc>
@@ -424,6 +408,22 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./pico-8.menu</path>
+		<name>PICO-8</name>
+		<desc>Configure PICO-8</desc>
+		<image>./media/pico-8-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Lexaloffle</developer>
+		<publisher>Lexaloffle</publisher>
+		<genre>Fantasy Console</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./snes9x.menu</path>
 		<name>SNES9X (Super NES)</name>
 		<desc>Configure SNES9X (Super NES)</desc>
@@ -432,6 +432,22 @@
 		<releasedate />
 		<developer>SNES9X Team</developer>
 		<publisher>SNES9X Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./zsnes-dos.menu</path>
+		<name>ZSNES</name>
+		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
+		<image>./media/zsnes-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>ZSNES Team</developer>
+		<publisher>ZSNES Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
@@ -456,30 +472,14 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./pico-8.menu</path>
-		<name>PICO-8</name>
-		<desc>Configure PICO-8</desc>
-		<image>./media/pico-8-logo.png</image>
+		<path>./duckstation.menu</path>
+		<name>Duckstation (PlayStation)</name>
+		<desc>Configure Duckstation Emulator (Triforce)</desc>
+		<image>./media/duckstation-logo.png</image>
 		<rating>0</rating>
 		<releasedate></releasedate>
-		<developer>Lexaloffle</developer>
-		<publisher>Lexaloffle</publisher>
-		<genre>Fantasy Console</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./zsnes-dos.menu</path>
-		<name>ZSNES</name>
-		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
-		<image>./media/zsnes-logo.png</image>
-		<rating>0</rating>
-		<releasedate></releasedate>
-		<developer>ZSNES Team</developer>
-		<publisher>ZSNES Team</publisher>
+		<developer>Duckstation Team</developer>
+		<publisher>Duckstation Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
