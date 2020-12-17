@@ -22,8 +22,8 @@ Unicode true
 
 !define BASE_DIR ".."
 !define BASE_INSTALL_DIR "C:\$(^Name)\"
-!define DECORATIONS_DIR "$INSTDIR\decorations"
-!define DECORATIONS_BASE "${BASE_DIR}\decorations"
+!define DECORATIONS_DIR "$INSTDIR\system\decorations"
+!define DECORATIONS_BASE "${BASE_DIR}\system\decorations"
 !define EMULATIONSTATION_DIR "$INSTDIR\emulationstation"
 !define EMULATIONSTATION_BASE "${BASE_DIR}\emulationstation"
 !define EMULATORS_DIR "$INSTDIR\emulators"
