@@ -6,7 +6,8 @@
 		 "saves":".\\..\\saves",
 		 "screenshots":".\\..\\screenshots",
 		 "shaders":".\\..\\system\\shaders",
-		 "decorations":".\\..\\decorations"
+		 "decorations":".\\..\\decorations",
+		 "system.decorations":".\\..\\system\\decorations"
       }
    ]
 }
