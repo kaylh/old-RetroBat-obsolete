@@ -26,7 +26,6 @@ cps3
 daphne
 dos
 dreamcast
-fba
 fbneo
 fds
 fpinball
@@ -39,7 +38,6 @@ gb2players
 gba
 gbc
 gbc2players
-gemrb
 gx4000
 hbmame
 hikaru
@@ -61,6 +59,7 @@ msx2+
 mugen
 n3ds
 n64
+n64dd
 naomi
 naomi2
 nds
