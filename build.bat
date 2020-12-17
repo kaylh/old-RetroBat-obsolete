@@ -265,12 +265,12 @@ echo.
 echo :: CLONING DECORATIONS REPOSITORY ::
 echo.
 
-if exist "%current_path%\decorations\" (
-	cd "%current_path%\decorations"
+if exist "%current_path%\system\decorations\" (
+	cd "%current_path%\system\decorations"
 	git pull origin
 	cd "%current_path%"
 ) else (
-	git clone --depth 1 %decorations_git% "%current_path%\decorations"
+	git clone --depth 1 %decorations_git% "%current_path%\system\decorations"
 )
 
 goto download
