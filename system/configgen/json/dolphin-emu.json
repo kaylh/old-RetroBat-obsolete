@@ -7,7 +7,6 @@
          "ISOPath0":".\\..\\..\\roms\\gamecube",
 		 "ISOPath1":".\\..\\..\\roms\\wii",
          "Fullscreen":"True",
-		 "ConfirmStop":"True",
 		 "HideCursor":"True",
 		 "EnableCheats":"True",
 		 "KeepWindowOnTop":"True",
