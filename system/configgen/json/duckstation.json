@@ -8,9 +8,11 @@
          "StartFullscreen":"true",
 		 "Renderer":"Vulkan",
 		 "ResolutionScale":"5",
+		 "TrueColor":"false",
+		 "ScaledDithering":"true",
 		 "DisableInterlacing":"true",
-		 "SearchDirectory":"../../bios/scph1001.bin",
-		 "RecursivePaths":"../../roms/psx"
+		 "VSync":"true",
+		 "SearchDirectory":"./../../bios"
       }
    ]
 }
