@@ -54,7 +54,7 @@ emulators\redream
 emulators\retroarch
 emulators\retroarch\shaders
 emulators\rpcs3
-emulators\ryujin
+emulators\ryujinx
 emulators\simcoupe
 emulators\snes9x
 emulators\solarus
@@ -73,6 +73,7 @@ screenshots
 screenshots\winuae
 system
 system\configgen
+system\decorations
 system\download
 system\es_menu
 system\padtokey
