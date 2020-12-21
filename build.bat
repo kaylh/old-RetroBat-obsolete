@@ -514,7 +514,7 @@ if exist "%current_path%\*.log" del/q "%current_path%\*.log"
 if exist "%current_path%\emulators\retroarch\shaders\shaders_cg\" rd /s /q "%current_path%\emulators\retroarch\shaders\shaders_cg"
 
 if exist "%current_path%\.git\" rmdir /s /q "%current_path%\.git"
-if exist "%current_path%\decorations\.git\" rmdir /s /q "%current_path%\decorations\.git"  
+if exist "%current_path%\system\decorations\.git\" rmdir /s /q "%current_path%\system\decorations\.git"  
 if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
 
 if exist "%strip_path%\strip.exe" (
