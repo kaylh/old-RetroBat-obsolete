@@ -393,7 +393,7 @@ SectionEnd
 Section /o "Decorations" SectionDecorations
 SectionInstType ${SEC01} ${SEC02}
 
- SetOutPath "$INSTDIR"
+ SetOutPath "${DECORATIONS_DIR}"
  SetOverwrite ifnewer
  
  SetDetailsPrint textonly
