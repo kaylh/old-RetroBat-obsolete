@@ -137,7 +137,7 @@ FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "$\r$\n"
   FileWrite $4 "CheckForUpdate=0"
   FileWrite $4 "$\r$\n"
-  FileWrite $4 "ConfigMode=0"
+  FileWrite $4 "ResetConfig=0"
   FileWrite $4 "$\r$\n"
   FileWrite $4 "$\r$\n"
   FileWrite $4 "[SplashScreen]"
