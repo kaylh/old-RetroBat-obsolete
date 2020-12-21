@@ -222,9 +222,9 @@ echo  Once the work is done, you will not necessary get a full
 echo  working RetroBat, depending mostly on the cloned branch.
 echo  You can edit retro.bat and modify as your needs.
 echo +===========================================================+
-echo  (1) -- Full build (download and build)
+echo  (1) -- Download (get required files)
 echo.
-echo  (2) -- Installer compilation only (files exist)
+echo  (2) -- Installer compilation (files exist or download first)
 echo.
 echo  (Q) -- Quit this script (abort)
 echo +===========================================================+
@@ -532,7 +532,7 @@ if exist "%strip_path%\strip.exe" (
 
 timeout /t 1 >nul
 
-goto build
+goto menu_welcome
 
 :build
 
