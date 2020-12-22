@@ -1,22 +1,22 @@
 ## CURVATURE
 default:
   # shader affects retroarch shaders
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
   # scanline affect fba2x
   scanline: true
 # Nintendo
 snes:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 snes-msu:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 nes:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 n64:
-  shader: _custom-presets/enhanced-curvature
+  shader: crt/crt-geom
 satellaview:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 sufami:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
@@ -28,152 +28,152 @@ nds:
 3ds:
   shader: handheld/lcd-shader
 fds:
-  shader: _custom-presets/crt-geom
+  shader: crt/crt-geom
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-hyllian-3d
 wii:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-hyllian-3d
 # Sega
 dreamcast:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-hyllian-3d
 sg1000:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 mastersystem:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 megadrive:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 gamegear:
   shader: crt-guest-dr-venom-fast
 sega32x:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 segacd:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 saturn:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 # Arcade
 arcade:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 cps1:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 cps2:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 cps3:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 neogeo:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 neogeocd:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 mame:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 fba:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 naomi:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 atomiswave:
-  shader: _custom-presets/crt-geom-arcade
+  shader: crt/crt-geom
 #
 3do:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 ngp:
   shader: handheld/zfast-lcd
 ngpc:
   shader: handheld/zfast-lcd
 gw:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 vectrex:
   shader: retro/sharp-bilinear-scanlines
 lynx:
-  shader: crt-guest-dr-venom-fast
+  shader: crt/crt-guest-dr-venom-fast
 lutro:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 wswan:
   shader: handheld/zfast-lcd
 wswanc:
   shader: handheld/zfast-lcd
 pcengine:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 pcenginecd:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 supergrafx:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 atari800:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 atari2600:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 atari5200:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 atari7800:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 prboom:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 psx:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-hyllian-3d
 ps2:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-hyllian-3d
 psp:
   shader: handheld/lcd-grid-v2-psp-color
 colecovision:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 jaguar:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 lightgun:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 # Computers
 lutro:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 msx:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 msx1:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 msx2:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 msx2+:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amiga:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amiga1200:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amiga500:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amigacd32:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amigacdtv:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 c20:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 c64:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 c128:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 cave:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 dos:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 amstradcpc:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 atarist:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 zx81:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 zxspectrum:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 odyssey2:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 zx81:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 pcfx:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 x68000:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 o2em:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 scummvm:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 pc98:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 pcfx:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom
 thomson:
-  shader: _custom-presets/crt-geom-softcorners
+  shader: crt/crt-geom

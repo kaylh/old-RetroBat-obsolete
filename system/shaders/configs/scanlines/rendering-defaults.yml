@@ -1,22 +1,22 @@
 ## SCANLINES
 default:
   # shader affects retroarch shaders
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
   # scanline affect fba2x
   scanline: true
 # Nintendo
 snes:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 snes-msu:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 nes:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 n64:
   shader: interpolation/sharp-bilinear-scanlines
 satellaview:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 sufami:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 gba:
   shader: handheld/lcd-grid-v2
 gb:
@@ -28,7 +28,7 @@ nds:
 3ds:
   shader: handheld/lcd-shader
 fds:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
@@ -39,43 +39,43 @@ wii:
 dreamcast:
   shader: anti-aliasing/fxaa
 sg1000:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 mastersystem:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 megadrive:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 gamegear:
   shader: handheld/lcd-grid-v2
 sega32x:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 segacd:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 saturn:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 # Arcade
 arcade:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cps1:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cps2:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cps3:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 neogeo:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 neogeocd:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 mame:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 fba:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 naomi:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atomiswave:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 #
 3do:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 ngp:
   shader: handheld/lcd-grid-v2
 ngpc:
@@ -83,99 +83,99 @@ ngpc:
 gw:
   shader: handheld/lcd-grid-v2
 vectrex:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 lynx:
   shader: handheld/lcd-grid-v2
 lutro:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 wswan:
   shader: handheld/lcd-grid-v2
 wswanc:
   shader: handheld/lcd-grid-v2
 pcengine:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 pcenginecd:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 supergrafx:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atari800:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atari2600:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atari5200:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atari7800:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 prboom:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 psx:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 ps2:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 psp:
   shader: handheld/lcd-grid-v2
 colecovision:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 jaguar:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 lightgun:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 # Computers
 lutro:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 msx:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 msx1:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 msx2:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amiga:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amiga1200:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amiga500:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amigacd32:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amigacdtv:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 c20:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 c64:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 c128:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cave:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cps1:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 cps3:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 dos:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 amstradcpc:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 atarist:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 zx81:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 zxspectrum:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 odyssey2:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 zx81:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 pcfx:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 x68000:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 o2em:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 scummvm:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 pc98:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 pcfx:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines
 thomson:
-  shader: scanlines/scanlines-enhanced
+  shader: crt/GritsScanlines

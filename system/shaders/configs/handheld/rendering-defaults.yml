@@ -1,0 +1,35 @@
+## HANDHELD
+default:
+  # shader affects retroarch shaders
+  shader: crt/GritsScanlines
+  # scanline affect fba2x
+  scanline: true
+
+gba:
+  shader: handheld/lcd-grid-v2-gba-color
+gb:
+  shader: handheld/gameboy
+gbc:
+  shader: handheld/lcd-grid-v2-gbc-color
+nds:
+  shader: handheld/lcd-grid-v2-nds-color
+3ds:
+  shader: handheld/lcd-shader
+virtualboy:
+  shader: retro/sharp-bilinear-scanlines
+gamegear:
+  shader: crt/crt-guest-dr-venom-fast
+ngp:
+  shader: handheld/zfast-lcd
+ngpc:
+  shader: handheld/zfast-lcd
+gw:
+  shader: crt/crt-geom
+lynx:
+  shader: crt/crt-guest-dr-venom-fast
+wswan:
+  shader: handheld/zfast-lcd
+wswanc:
+  shader: handheld/zfast-lcd
+psp:
+  shader: handheld/lcd-grid-v2-psp-color
