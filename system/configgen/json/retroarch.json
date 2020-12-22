@@ -110,7 +110,8 @@
          "mupen64plus-txcachecompression":"True",
          "mupen64plus-txhiresfullalphachannel":"False",
          "mupen64plus-enableenhancedtexturestorage":"False",
-         "mupen64plus-enableenhancedhighresstorage":"False"
+         "mupen64plus-enableenhancedhighresstorage":"False",
+		 "parallel-n64-64dd-hardware":"enabled"
       }
    ]
 }
