@@ -337,7 +337,9 @@ REM Libretro cores download loop
 ::::crocods_libretro.dll
 ::::desmume2015_libretro.dll
 ::::desmume_libretro.dll
+::::dolphin_libretro.dll
 ::::dosbox_core_libretro.dll
+::::dosbox_pure_libretro.dll
 ::::duckstation_libretro.dll
 ::::fbalpha2012_cps1_libretro.dll
 ::::fbalpha2012_cps2_libretro.dll
