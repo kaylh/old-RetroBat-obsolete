@@ -4,6 +4,11 @@ default:
   shader: blurs/kawase_glow
   # scanline affect fba2x
   scanline: true
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled  
 # Nintendo
 snes:
   shader: blurs/kawase_glow

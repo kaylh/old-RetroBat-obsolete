@@ -1,2 +1,7 @@
 default:
   shader: ntsc/ntsc-256px
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled

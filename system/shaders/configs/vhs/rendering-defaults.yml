@@ -1,2 +1,7 @@
 default:
   shader: vhs/vhs
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled

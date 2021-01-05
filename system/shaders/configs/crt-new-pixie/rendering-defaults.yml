@@ -1,2 +1,7 @@
 default:
   shader: crt/newpixie-crt
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled
