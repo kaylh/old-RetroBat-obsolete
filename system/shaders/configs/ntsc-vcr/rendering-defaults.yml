@@ -1,2 +1,7 @@
 default:
   shader: vhs/ntsc-vcr
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled

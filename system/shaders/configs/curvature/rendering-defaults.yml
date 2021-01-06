@@ -4,6 +4,11 @@ default:
   shader: crt/crt-geom
   # scanline affect fba2x
   scanline: true
+# Reshader  
+model2:
+  shader: GeomCRT@CRTGeom.fx
+model3:
+  shader: GeomCRT@CRTGeom.fx
 # Nintendo
 snes:
   shader: crt/crt-geom

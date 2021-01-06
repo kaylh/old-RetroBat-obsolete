@@ -1,2 +1,7 @@
 default:
   shader: presets/scalefx-aa
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled

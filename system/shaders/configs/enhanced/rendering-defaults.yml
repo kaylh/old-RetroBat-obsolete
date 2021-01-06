@@ -4,6 +4,11 @@ default:
   shader: hqx/hq2x
   # scanline affect fba2x
   scanline: false
+# Reshader  
+model2:
+  shader: xHQ4X@HQ4X.fx
+model3:
+  shader: xHQ4X@HQ4X.fx
 # Nintendo
 snes:
   shader: hqx/hq2x

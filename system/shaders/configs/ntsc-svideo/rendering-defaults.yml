@@ -1,2 +1,7 @@
 default:
   shader: ntsc/ntsc-svideo
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled

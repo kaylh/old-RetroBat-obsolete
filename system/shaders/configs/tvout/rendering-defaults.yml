@@ -1,4 +1,7 @@
 default:
   shader: presets/tvout/tvout
-  
-
+# Reshader  
+model2:
+  shader: disabled
+model3:
+  shader: disabled
