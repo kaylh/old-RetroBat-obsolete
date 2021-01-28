@@ -5,6 +5,7 @@ amigacd32
 amigacdtv
 amstradcpc
 apple2
+apple2gs
 arcade
 atari2600
 atari5200
@@ -25,8 +26,10 @@ cps3
 daphne
 dos
 dreamcast
+easyrpg
 fbneo
 fds
+fmtowns
 fpinball
 gaelco
 gameandwatch
@@ -108,6 +111,7 @@ wiiu
 windows
 wswan
 wswanc
+x1
 x68000
 xbox
 xbox360
