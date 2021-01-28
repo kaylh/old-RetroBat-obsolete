@@ -230,7 +230,7 @@ echo  (Q) -- Quit this script (abort)
 echo +===========================================================+
 set/p user_answer="- Type your choice here (1,2,Q): "
 if "%user_answer%"=="1" goto clone_retrobat
-if "%user_answer%"=="2" goto clean
+if "%user_answer%"=="2" goto build
 if "%user_answer%"=="Q" goto exit
 if "%user_answer%"=="q" goto exit
 
@@ -341,6 +341,7 @@ REM Libretro cores download loop
 ::::dosbox_core_libretro.dll
 ::::dosbox_pure_libretro.dll
 ::::duckstation_libretro.dll
+::::easyrpg_libretro.dll
 ::::fbalpha2012_cps1_libretro.dll
 ::::fbalpha2012_cps2_libretro.dll
 ::::fbalpha2012_cps3_libretro.dll
@@ -415,6 +416,7 @@ REM Libretro cores download loop
 ::::stella_libretro.dll
 ::::tgbdual_libretro.dll
 ::::theodore_libretro.dll
+::::tic80_libretro.dll
 ::::tyrquake_libretro.dll
 ::::vbam_libretro.dll
 ::::vba_next_libretro.dll
@@ -425,10 +427,7 @@ REM Libretro cores download loop
 ::::vice_xplus4_libretro.dll
 ::::vice_xvic_libretro.dll
 ::::virtualjaguar_libretro.dll
-::::vitaquake2_libretro.dll
-::::vitaquake3_libretro.dll
-::::yabasanshiro_libretro.dll
-::::yabause_libretro.dll
+::::x1_libretro.dll
 
 echo.
 echo :: DOWNLOADING LIBRETRO CORES ::
