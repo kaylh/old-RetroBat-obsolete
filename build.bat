@@ -321,8 +321,8 @@ timeout /t 1 >nul
 
 REM Libretro cores download loop
 
-::::2048_libretro.dll
 ::::81_libretro.dll
+::::2048_libretro.dll
 ::::atari800_libretro.dll
 ::::blastem_libretro.dll
 ::::bluemsx_libretro.dll
@@ -331,7 +331,6 @@ REM Libretro cores download loop
 ::::bsnes_mercury_balanced_libretro.dll
 ::::bsnes_mercury_performance_libretro.dll
 ::::cap32_libretro.dll
-::::citra_canary_libretro.dll
 ::::citra_libretro.dll
 ::::craft_libretro.dll
 ::::crocods_libretro.dll
@@ -340,6 +339,7 @@ REM Libretro cores download loop
 ::::dolphin_libretro.dll
 ::::dosbox_core_libretro.dll
 ::::dosbox_pure_libretro.dll
+::::dosbox_svn_libretro.dll
 ::::duckstation_libretro.dll
 ::::easyrpg_libretro.dll
 ::::fbalpha2012_cps1_libretro.dll
@@ -349,7 +349,6 @@ REM Libretro cores download loop
 ::::fbalpha2012_neogeo_libretro.dll
 ::::fbneo_libretro.dll
 ::::fceumm_libretro.dll
-::::ffmpeg_libretro.dll
 ::::flycast_libretro.dll
 ::::fmsx_libretro.dll
 ::::freeintv_libretro.dll
@@ -363,10 +362,10 @@ REM Libretro cores download loop
 ::::gw_libretro.dll
 ::::handy_libretro.dll
 ::::hatari_libretro.dll
-::::higan_sfc_libretro.dll
 ::::kronos_libretro.dll
 ::::lutro_libretro.dll
 ::::mame2003_plus_libretro.dll
+::::mame2003_midway_libretro.dll
 ::::mame2016_libretro.dll
 ::::mame_libretro.dll
 ::::mednafen_gba_libretro.dll
@@ -376,7 +375,6 @@ REM Libretro cores download loop
 ::::mednafen_pce_libretro.dll
 ::::mednafen_pcfx_libretro.dll
 ::::mednafen_psx_hw_libretro.dll
-::::mednafen_psx_libretro.dll
 ::::mednafen_saturn_libretro.dll
 ::::mednafen_supafaust_libretro.dll
 ::::mednafen_supergrafx_libretro.dll
@@ -398,7 +396,6 @@ REM Libretro cores download loop
 ::::parallel_n64_libretro.dll
 ::::pcsx_rearmed_libretro.dll
 ::::picodrive_libretro.dll
-::::play_libretro.dll
 ::::pokemini_libretro.dll
 ::::ppsspp_libretro.dll
 ::::prboom_libretro.dll
@@ -436,8 +433,8 @@ echo.
 for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
 rem echo %%a
  cd "%wget_path%"
-rem wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
-wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
+wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+rem wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
  cd "%current_path%"
  timeout /t 1 >nul
