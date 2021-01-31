@@ -1,19 +1,22 @@
-RetroBat is a launcher and a set of tools to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
+RETROBAT
+A launcher and a set of tools to install and configure automatically EmulationStation frontend 
+with RetroArch and standalone emulators.
 
 Copyright (c) 2017-2019 Adrien Chalard "Kayl"
-Copyright (c) 2020 RetroBat Team
+Copyright (c) 2020-2021 RetroBat Team
 
-RetroBat is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, version 3 of the License.
+RetroBat is free and open source project. It should not be used for commercial purposes. 
+It is done by a team of enthusiasts in their free time mainly for fun.
+All the code written by RetroBat Team, unless covered by a licence from an upstream project, is given under the LGPL v3 licence.
+See https://www.gnu.org/licenses.
 
-The above copyright notice and this permission notice shall be included in all copies
-or substantial portions of the Software. 
+It is not allowed to sell RetroBat on a pre-installed machine or on any storage devices. 
+RetroBat includes softwares which cannot be associated with any commercial activities.
+Shipping RetroBat with additional proprietary and copyrighted content is illegal, strictly 
+forbidden and strongly discouraged by the RetroBat Team.
+Otherwise, you can start a new project off RetroBat sources if you follow the same conditions.
 
-RetroBat is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+Finally, the license which concerns the entire RetroBat Project as a work, in particular the 
+written or graphic content broadcast on its various media, is conditioned by the terms of 
+the CC BY-NC-SA 4.0 license.
+See https://creativecommons.org/licenses/by-nc-sa/4.0.
