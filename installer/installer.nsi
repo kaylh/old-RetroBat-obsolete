@@ -135,8 +135,6 @@ Function CreateIni
 FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
-  FileWrite $4 "CheckForUpdate=0"
-  FileWrite $4 "$\r$\n"
   FileWrite $4 "ResetConfig=0"
   FileWrite $4 "$\r$\n"
   FileWrite $4 "$\r$\n"
@@ -202,7 +200,7 @@ FunctionEnd
  
 InstType /COMPONENTSONLYONCUSTOM
 InstType "Full installation" SEC01
-InstType "Lite installation" SEC02
+InstType "Lite installation (no standalone emulators)" SEC02
 ;InstType "Update existing installation" SEC03
 ;InstType "Install DirectX Runtime" SEC04
 ;InstType "Install Visual C++" SEC05
@@ -222,7 +220,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  SectionIn RO
  SetOutPath "$INSTDIR"
- SetOverwrite ifnewer
+ SetOverwrite on
  
  SetDetailsPrint textonly
 	DetailPrint "Copying RetroBat main files..."
@@ -264,7 +262,7 @@ Section /o "EmulationStation" SectionES
 SectionInstType ${SEC01} ${SEC02}
 
  SetOutPath "${EMULATIONSTATION_DIR}"
- SetOverwrite ifnewer
+ SetOverwrite on
  
  SetDetailsPrint textonly
 	DetailPrint "Copying EmulationStation files..."
@@ -291,7 +289,7 @@ SectionInstType ${SEC01} ${SEC02}
  File /r "${EMULATIONSTATION_BASE}\resources"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation"
- SetOverwrite ifnewer
+ SetOverwrite on
 
  IfFileExists "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" 0 +2
  CopyFiles "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg.old"
@@ -312,13 +310,13 @@ SectionInstType ${SEC01} ${SEC02}
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_input.cfg"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\themes"
- SetOverwrite ifnewer
+ SetOverwrite on
 
  RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
  File /r /x "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon\.git\*.*" "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\video"
- SetOverwrite ifnewer
+ SetOverwrite on
 
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.mp4"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.m4v"
@@ -330,7 +328,7 @@ Section /o "RetroArch" SectionRetroArch
 SectionInstType ${SEC01} ${SEC02}
 
  SetOutPath "${EMULATORS_DIR}"
- SetOverwrite ifnewer
+ SetOverwrite on
  
  SetDetailsPrint textonly
 	DetailPrint "Copying RetroArch files..."
@@ -344,7 +342,7 @@ Section /o "Standalone emulators" SectionEmulators
 SectionInstType ${SEC01}
 
  SetOutPath "${EMULATORS_DIR}"
- SetOverwrite ifnewer
+ SetOverwrite on
  
  SetDetailsPrint textonly
 	DetailPrint "Copying emulators files..."
@@ -394,7 +392,7 @@ Section /o "Decorations" SectionDecorations
 SectionInstType ${SEC01} ${SEC02}
 
  SetOutPath "${DECORATIONS_DIR}"
- SetOverwrite ifnewer
+ SetOverwrite on
  
  SetDetailsPrint textonly
 	DetailPrint "Copying decorations files..."
