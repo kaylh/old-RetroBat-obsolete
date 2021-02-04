@@ -236,22 +236,6 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./retroarch.menu</path>
-		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
 		<path>./rpcs3.menu</path>
 		<name>RPCS3 (PlayStation 3)</name>
 		<desc>Configure RPCS3 (PlayStation 3)</desc>
@@ -456,14 +440,14 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./retroarch_angle.menu</path>
-		<name>RetroArch Angle (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
+		<path>./duckstation.menu</path>
+		<name>Duckstation (PlayStation)</name>
+		<desc>Configure Duckstation Emulator (PlayStation)</desc>
+		<image>./media/duckstation-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
+		<developer>Duckstation Team</developer>
+		<publisher>Duckstation Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
@@ -472,18 +456,34 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./duckstation.menu</path>
-		<name>Duckstation (PlayStation)</name>
-		<desc>Configure Duckstation Emulator (Triforce)</desc>
-		<image>./media/duckstation-logo.png</image>
+		<path>./retroarch.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20210203T113558</lastplayed>
+		<gametime>29</gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./retroarch_angle.menu</path>
+		<name>RetroArch Angle (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
 		<rating>0</rating>
 		<releasedate></releasedate>
-		<developer>Duckstation Team</developer>
-		<publisher>Duckstation Team</publisher>
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
+		<playcount>10</playcount>
+		<lastplayed>20210203T142352</lastplayed>
+		<gametime>59</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
