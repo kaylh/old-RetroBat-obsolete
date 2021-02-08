@@ -1,1 +1,2 @@
-retrobat.exe (31-01-2021): https://www.virustotal.com/gui/file/1e4f0242549d9149dff71165e593e771b68028c23f2a938773362c113d5f29f6/detection
+retrobat.exe (08-02-2021): https://www.virustotal.com/gui/file/de6f1e40de1b933cb8e12fe98b65cb7e52afc71a4f8498dc528f72438ba7d3ff/detection
+retrobat.dat (08-02-2021): https://www.virustotal.com/gui/file/03b54adfa1b4954689e3ac1f00d1a735c7af10afe608f82dd1848b42ef521393/detection
