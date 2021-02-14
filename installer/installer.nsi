@@ -37,9 +37,9 @@ Unicode true
 Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
 InstallDir "${BASE_INSTALL_DIR}"
-ShowInstDetails "show"
+ShowInstDetails "hide"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
-BrandingText "${PRODUCT_PUBLISHER}"
+BrandingText "(c) ${PRODUCT_PUBLISHER}"
 SpaceTexts none
 
 !define MUI_ABORTWARNING
@@ -81,7 +81,6 @@ SpaceTexts none
 !insertmacro MUI_LANGUAGE "English"
 
 Function StrStrip
-
 Exch $R0 #string
 Exch
 Exch $R1 #in string
@@ -109,20 +108,16 @@ Pop $R3
 Pop $R2
 Pop $R1
 Exch $R0
-
 FunctionEnd
 
-
 !macro StrStrip Str InStr OutVar
-
   Push '${InStr}'
   Push '${Str}'
   Call StrStrip
   Pop '${OutVar}'
-
 !macroend
 
-  !define StrStrip '!insertmacro StrStrip'
+!define StrStrip '!insertmacro StrStrip'
 
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
@@ -131,7 +126,6 @@ Function CreateVersionFile
 FunctionEnd
 
 Function CreateIni
-
 FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
@@ -172,12 +166,9 @@ FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 'DefaultVideoDriver="vulkan"'
   FileWrite $4 "$\r$\n"
   FileClose $4
-
 FunctionEnd
 
-
 !macro MUI_FINISHPAGE_SHORTCUT
- 
   !ifndef MUI_FINISHPAGE_NOREBOOTSUPPORT
     !define MUI_FINISHPAGE_NOREBOOTSUPPORT
     !ifdef MUI_FINISHPAGE_RUN
@@ -189,17 +180,12 @@ FunctionEnd
   !define MUI_PAGE_CUSTOMFUNCTION_SHOW DisableBackButton
  
   Function DisableCancelButton
- 
     EnableWindow $mui.Button.Cancel 0
- 
   FunctionEnd
  
   Function DisableBackButton
- 
     EnableWindow $mui.Button.Back 0
- 
   FunctionEnd
- 
 !macroend
  
 InstType /COMPONENTSONLYONCUSTOM
@@ -256,7 +242,7 @@ SectionInstType ${SEC01} ${SEC02}
  ExecWait "$INSTDIR\retrobat.exe /NOF #MakeTree"
  SetDetailsPrint listonly
  
- Call CreateVersionFile
+Call CreateVersionFile
 
 ;  SetOutPath "$TEMP"
 ;  SetOverwrite on
@@ -326,8 +312,9 @@ SectionInstType ${SEC01} ${SEC02}
 
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.mp4"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.m4v"
-
  
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\music\*.mp3"
+ File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\music\*.ogg"
 SectionEnd
 
 Section /o "RetroArch" SectionRetroArch
@@ -341,7 +328,6 @@ SectionInstType ${SEC01} ${SEC02}
  SetDetailsPrint listonly
  
  File /r /x "${EMULATORS_BASE}\retroarch\retroarch.cfg" /x "${EMULATORS_BASE}\retroarch\retroarch-core-options.cfg" "${EMULATORS_BASE}\retroarch"
- 
 SectionEnd
 
 Section /o "Standalone emulators" SectionEmulators
@@ -354,46 +340,45 @@ SectionInstType ${SEC01}
 	DetailPrint "Copying emulators files..."
  SetDetailsPrint listonly
  
- File /r /nonfatal /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
- File /r /nonfatal "${EMULATORS_BASE}\applewin"
- File /r /nonfatal "${EMULATORS_BASE}\citra"
- File /r /nonfatal "${EMULATORS_BASE}\daphne"
- File /r /nonfatal "${EMULATORS_BASE}\dosbox"
- File /r /nonfatal "${EMULATORS_BASE}\gsplus"
- File /r /nonfatal "${EMULATORS_BASE}\mednafen"
- File /r /nonfatal "${EMULATORS_BASE}\openbor"
- File /r /nonfatal "${EMULATORS_BASE}\rpcs3"
- File /r /nonfatal "${EMULATORS_BASE}\simcoupe"
- File /r /nonfatal "${EMULATORS_BASE}\solarus"
- File /r /nonfatal "${EMULATORS_BASE}\tsugaru"
- File /r /nonfatal "${EMULATORS_BASE}\fpinball"
- File /r /nonfatal "${EMULATORS_BASE}\mame"
- File /r /nonfatal "${EMULATORS_BASE}\pico8" 
- File /r /nonfatal "${EMULATORS_BASE}\ryujinx"
- File /r /nonfatal "${EMULATORS_BASE}\vpinball"
- File /r /nonfatal "${EMULATORS_BASE}\winuae"
- File /r /nonfatal "${EMULATORS_BASE}\yuzu"
- File /r /nonfatal /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
- File /r /nonfatal /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
- File /r /nonfatal /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
- File /r /nonfatal /x "${EMULATORS_BASE}\demul\Demul.ini" "${EMULATORS_BASE}\demul" 
- File /r /nonfatal /x "${EMULATORS_BASE}\dolphin-triforce\Dolphin.ini" "${EMULATORS_BASE}\dolphin-triforce" 
- File /r /nonfatal /x "${EMULATORS_BASE}\duckstation\settings.ini" "${EMULATORS_BASE}\duckstation" 
- File /r /nonfatal /x "${EMULATORS_BASE}\kega-fusion\Fusion.ini" "${EMULATORS_BASE}\kega-fusion"
- File /r /nonfatal /x "${EMULATORS_BASE}\m2emulator\Emulator.ini" "${EMULATORS_BASE}\m2emulator" 
- File /r /nonfatal /x "${EMULATORS_BASE}\mesen\settings.xml" "${EMULATORS_BASE}\mesen" 
- File /r /nonfatal /x "${EMULATORS_BASE}\mgba\config.ini" "${EMULATORS_BASE}\mgba" 
- File /r /nonfatal /x "${EMULATORS_BASE}\oricutron\oricutron.cfg" "${EMULATORS_BASE}\oricutron" 
- File /r /nonfatal /x "${EMULATORS_BASE}\pcsx2\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2" 
- File /r /nonfatal /x "${EMULATORS_BASE}\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini" "${EMULATORS_BASE}\ppsspp" 
- File /r /nonfatal /x "${EMULATORS_BASE}\project64\Config\Project64.cfg" "${EMULATORS_BASE}\project64" 
- File /r /nonfatal /x "${EMULATORS_BASE}\raine\config\raine32_sdl.cfg" "${EMULATORS_BASE}\raine" 
- File /r /nonfatal /x "${EMULATORS_BASE}\snes9x\snes9x.conf" "${EMULATORS_BASE}\snes9x" 
- File /r /nonfatal /x "${EMULATORS_BASE}\supermodel\Supermodel.ini" "${EMULATORS_BASE}\supermodel" 
- File /r /nonfatal /x "${EMULATORS_BASE}\xenia-canary\xenia-canary.config.toml" "${EMULATORS_BASE}\xenia-canary" 
-; File /r /nonfatal /x "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
- File /r /nonfatal /x "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
-
+ File /r /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
+ File /r "${EMULATORS_BASE}\applewin"
+ File /r "${EMULATORS_BASE}\citra"
+ File /r "${EMULATORS_BASE}\daphne"
+ File /r "${EMULATORS_BASE}\dosbox"
+ File /r "${EMULATORS_BASE}\gsplus"
+ File /r "${EMULATORS_BASE}\mednafen"
+ File /r "${EMULATORS_BASE}\openbor"
+ File /r "${EMULATORS_BASE}\rpcs3"
+ File /r "${EMULATORS_BASE}\simcoupe"
+ File /r "${EMULATORS_BASE}\solarus"
+ File /r "${EMULATORS_BASE}\tsugaru"
+ File /r "${EMULATORS_BASE}\fpinball"
+; File /r "${EMULATORS_BASE}\mame"
+; File /r "${EMULATORS_BASE}\pico8" 
+; File /r "${EMULATORS_BASE}\ryujinx"
+ File /r "${EMULATORS_BASE}\vpinball"
+ File /r "${EMULATORS_BASE}\winuae"
+ File /r "${EMULATORS_BASE}\yuzu"
+ File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
+ File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
+ File /r /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
+ File /r /x "${EMULATORS_BASE}\demul\Demul.ini" "${EMULATORS_BASE}\demul" 
+ File /r /x "${EMULATORS_BASE}\dolphin-triforce\Dolphin.ini" "${EMULATORS_BASE}\dolphin-triforce" 
+ File /r /x "${EMULATORS_BASE}\duckstation\settings.ini" "${EMULATORS_BASE}\duckstation" 
+ File /r /x "${EMULATORS_BASE}\kega-fusion\Fusion.ini" "${EMULATORS_BASE}\kega-fusion"
+ File /r /x "${EMULATORS_BASE}\m2emulator\Emulator.ini" "${EMULATORS_BASE}\m2emulator" 
+ File /r /x "${EMULATORS_BASE}\mesen\settings.xml" "${EMULATORS_BASE}\mesen" 
+ File /r /x "${EMULATORS_BASE}\mgba\config.ini" "${EMULATORS_BASE}\mgba" 
+ File /r /x "${EMULATORS_BASE}\oricutron\oricutron.cfg" "${EMULATORS_BASE}\oricutron" 
+ File /r /x "${EMULATORS_BASE}\pcsx2\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2" 
+ File /r /x "${EMULATORS_BASE}\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini" "${EMULATORS_BASE}\ppsspp" 
+ File /r /x "${EMULATORS_BASE}\project64\Config\Project64.cfg" "${EMULATORS_BASE}\project64" 
+ File /r /x "${EMULATORS_BASE}\raine\config\raine32_sdl.cfg" "${EMULATORS_BASE}\raine" 
+ File /r /x "${EMULATORS_BASE}\snes9x\snes9x.conf" "${EMULATORS_BASE}\snes9x" 
+ File /r /x "${EMULATORS_BASE}\supermodel\Supermodel.ini" "${EMULATORS_BASE}\supermodel" 
+ File /r /x "${EMULATORS_BASE}\xenia-canary\xenia-canary.config.toml" "${EMULATORS_BASE}\xenia-canary" 
+; File /r /x "${EMULATORS_BASE}\mesen-s\settings.xml" "${EMULATORS_BASE}\mesen-s" 
+ File /r /x "${EMULATORS_BASE}\redream\redream.cfg" "${EMULATORS_BASE}\redream" 
 SectionEnd
 
 Section /o "Decorations" SectionDecorations
@@ -406,10 +391,8 @@ SectionInstType ${SEC01} ${SEC02}
 	DetailPrint "Copying decorations files..."
  SetDetailsPrint listonly
  
- File /r /x "${DECORATIONS_BASE}\.git\*.*" "${DECORATIONS_BASE}"
- 
+ File /r "${DECORATIONS_BASE}"
 SectionEnd
-
 SectionGroupEnd
 
 ;Section "DirectX Runtime" SEC02
@@ -429,7 +412,7 @@ SectionInstType ${SEC01} ${SEC02}
 
  SectionIn RO
  
-  SetDetailsPrint textonly
+ SetDetailsPrint textonly
 	DetailPrint "Applying settings..."
  SetDetailsPrint listonly
 
@@ -451,7 +434,6 @@ SectionInstType ${SEC01} ${SEC02}
  ifFileExists "$INSTDIR\retrobat.ini" 0 +2
  Delete "$INSTDIR\retrobat.ini"
  Call CreateIni
- 
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
