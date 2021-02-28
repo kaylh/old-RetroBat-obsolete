@@ -17,6 +17,7 @@ f47264dd47fe30f73ab3c010015c155b bios/panafz1.bin
 Amiga:
 bb72565701b1b6faece07d68ea5da639 bios/CD32 Extended-ROM r40.60 (1993)(Commodore)(CD32).rom
 89da1838a24460e4b93f4f0c5d92d48d bios/CDTV Extended-ROM v1.0 (1991)(Commodore)(CDTV)[!].rom
+82A21C1890CAE844B3DF741F2762D48D bios/kick34005.A500
 85ad74194e87c08904327de1a9443b7a bios/Kickstart v1.2 r33.180 (1986)(Commodore)(A500-A1000-A2000)[!].rom
 68c9c0826f6c0ca20546d588ee77391c bios/Kickstart v1.2 rev 33.166 (1986)(Commodore)(A1000).rom
 192d6d950d0ed3df8040b788502831c2 bios/Kickstart v1.3 r34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV)[o].rom
