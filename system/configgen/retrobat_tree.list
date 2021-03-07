@@ -11,6 +11,7 @@ emulationstation\.emulationstation\scripts\game-start
 emulationstation\.emulationstation\scripts\reboot
 emulationstation\.emulationstation\scripts\shutdown
 emulationstation\.emulationstation\themes
+emulationstation\.emulationstation\themesettings
 emulationstation\.emulationstation\video
 emulationstation\resources
 emulators
@@ -34,6 +35,8 @@ emulators\dosbox
 emulators\duckstation
 emulators\fpinball
 emulators\kega-fusion
+emulators\mame
+emulators\mame\cfg
 emulators\mame\ini
 emulators\m2emulator
 emulators\mednafen
@@ -64,10 +67,7 @@ emulators\vpinball
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
-medias
-medias\records
-medias\records\config
-medias\records\output
+library
 roms
 saves
 screenshots
@@ -77,6 +77,8 @@ system\configgen
 system\decorations
 system\download
 system\es_menu
+system\modules
+system\modules\rb_launcher
 system\padtokey
 system\resources
 system\scripts
