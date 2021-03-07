@@ -1,9 +1,9 @@
 {
    "Fusion.ini_configmode_1":[
       {
-		"SMSUSABIOS"=".\\..\\..\\bios\\bios_U.sms",
-		"SMSJAPBIOS"=".\\..\\..\\bios\\bios_J.sms",
-		"SMSEURBIOS"=".\\..\\..\\bios\\bios_E.sms",
+		"SMSUSABIOS":".\\..\\..\\bios\\bios_U.sms",
+		"SMSJAPBIOS":".\\..\\..\\bios\\bios_J.sms",
+		"SMSEURBIOS":".\\..\\..\\bios\\bios_E.sms",
 		"GGBIOS":".\\..\\..\\bios\\bios.gg",
 		"SF7000IPL":".\\..\\..\\bios\\SF-7000 Initial Program Loader ROM (SF-7000).bin",
 		"SxMFiles":".\\..\\..\\emulators\\kega-fusion",
