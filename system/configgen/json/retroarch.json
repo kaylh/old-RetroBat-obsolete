@@ -103,6 +103,7 @@
 		 "kronos_videocoretype":"opengl_cs",
 		 "kronos_videoformattype":"auto",
 		 "kronos_wireframe_mode":"disabled",
+		 "mame_boot_from_cli":"enabled",
 		 "mupen64plus-169screensize":"640x480",
 		 "mupen64plus-43screensize":"1280x960",
          "mupen64plus-enabletexturecache":"True",
