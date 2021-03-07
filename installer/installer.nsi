@@ -129,9 +129,10 @@ Function CreateIni
 FileOpen $4 "$INSTDIR\retrobat.ini" w
   FileWrite $4 "[RetroBat]"
   FileWrite $4 "$\r$\n"
-  FileWrite $4 "ResetConfig=1"
+  FileWrite $4 "ResetConfig=0"
   FileWrite $4 "$\r$\n"
   FileWrite $4 "LanguageDetection=1"
+  FileWrite $4 "$\r$\n"
   FileWrite $4 "$\r$\n"
   FileWrite $4 "[SplashScreen]"
   FileWrite $4 "$\r$\n"
@@ -282,7 +283,6 @@ SectionInstType ${SEC01} ${SEC02}
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation"
  SetOverwrite on
-
  IfFileExists "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" 0 +2
  CopyFiles "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg" "${EMULATIONSTATION_DIR}\.emulationstation\*.cfg.old"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_features.cfg"
@@ -291,28 +291,25 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_settings.cfg"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\es_log.txt"
  Delete "${EMULATIONSTATION_DIR}\.emulationstation\*.bak"
-
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_features.cfg"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_padtokey.cfg"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_systems.cfg"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_settings.cfg"
- 
- SetOverwrite off
- 
+ SetOverwrite off 
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\es_input.cfg"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\themes"
  SetOverwrite on
-
  RMDir /r "${EMULATIONSTATION_DIR}\.emulationstation\themes\es-theme-carbon"
  File /r /x "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon\.git\*.*" "${EMULATIONSTATION_BASE}\.emulationstation\themes\es-theme-carbon"
 
  SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\video"
  SetOverwrite on
-
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.mp4"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\video\*.m4v"
  
+ SetOutPath "${EMULATIONSTATION_DIR}\.emulationstation\music"
+ SetOverwrite on 
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\music\*.mp3"
  File /nonfatal "${EMULATIONSTATION_BASE}\.emulationstation\music\*.ogg"
 SectionEnd
@@ -358,7 +355,7 @@ SectionInstType ${SEC01}
 ; File /r "${EMULATORS_BASE}\ryujinx"
  File /r "${EMULATORS_BASE}\vpinball"
  File /r "${EMULATORS_BASE}\winuae"
- File /r "${EMULATORS_BASE}\yuzu"
+; File /r "${EMULATORS_BASE}\yuzu"
  File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
  File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
  File /r /x "${EMULATORS_BASE}\demul-old\Demul.ini" "${EMULATORS_BASE}\demul-old"
@@ -384,7 +381,7 @@ SectionEnd
 Section /o "Decorations" SectionDecorations
 SectionInstType ${SEC01} ${SEC02}
 
- SetOutPath "${DECORATIONS_DIR}"
+ SetOutPath "$INSTDIR\system"
  SetOverwrite on
  
  SetDetailsPrint textonly
