@@ -83,3 +83,4 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 ## Support
 
 You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
+Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
