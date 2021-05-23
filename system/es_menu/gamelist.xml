@@ -268,22 +268,6 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./yuzu.menu</path>
-		<name>Yuzu (Switch)</name>
-		<desc>Configure Yuzu (Switch)</desc>
-		<image>./media/yuzu-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Yuzu Team</developer>
-		<publisher>Yuzu Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
 		<path>./daphne.menu</path>
 		<name>Daphne Loader (Laserdisc)</name>
 		<desc>Configure Daphne Loader (Laserdisc)</desc>
@@ -392,10 +376,10 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./pico-8.menu</path>
+		<path>./pico8.menu</path>
 		<name>PICO-8</name>
-		<desc>Configure PICO-8</desc>
-		<image>./media/pico-8-logo.png</image>
+		<desc>Configure PICO-8. This software is not provided by RetroBat. You can purchase it there: https://www.lexaloffle.com/pico-8.php</desc>
+		<image>./media/pico8-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Lexaloffle</developer>
@@ -416,22 +400,6 @@
 		<releasedate />
 		<developer>SNES9X Team</developer>
 		<publisher>SNES9X Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<game>
-		<path>./zsnes-dos.menu</path>
-		<name>ZSNES</name>
-		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
-		<image>./media/zsnes-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>ZSNES Team</developer>
-		<publisher>ZSNES Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
@@ -465,9 +433,9 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>2</playcount>
-		<lastplayed>20210203T113558</lastplayed>
-		<gametime>29</gametime>
+		<playcount />
+		<lastplayed />
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -477,13 +445,77 @@
 		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
 		<image>./media/retroarch-logo.png</image>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>10</playcount>
-		<lastplayed>20210203T142352</lastplayed>
-		<gametime>59</gametime>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./mame.menu</path>
+		<name>MAME (Multiple Arcade Machine Emulator)</name>
+		<desc>Configure MAME (Multiple Arcade Machine Emulator). This emulator is not provided by RetroBat, you need to download it there: https://www.mamedev.org/release.html</desc>
+		<image>./media/mame-logo.png</image>
+		<rating>0</rating>
+		<releasedate />
+		<developer>MAME Team</developer>
+		<publisher>MAME Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./ryujinx.menu</path>
+		<name>Ryujinx (Switch)</name>
+		<desc>Configure Ryujinx (Switch). This emulator is not provided by RetroBat, you need to download it there: https://ryujinx.org/download/</desc>
+		<image>./media/ryujinx-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Ryujinx Team</developer>
+		<publisher>Ryujinx Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20210523T093315</lastplayed>
+		<gametime></gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./yuzu.menu</path>
+		<name>Yuzu (Switch)</name>
+		<desc>Configure Yuzu (Switch). This emulator is not provided by RetroBat, you need to download it there: https://yuzu-emu.org/downloads/</desc>
+		<image>./media/yuzu-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Yuzu Team</developer>
+		<publisher>Yuzu Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20210523T093322</lastplayed>
+		<gametime></gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./zsnes-dos.menu</path>
+		<name>ZSNES</name>
+		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
+		<image>./media/zsnes-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>ZSNES Team</developer>
+		<publisher>ZSNES Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>1</playcount>
+		<lastplayed>20210523T093411</lastplayed>
+		<gametime>30</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
