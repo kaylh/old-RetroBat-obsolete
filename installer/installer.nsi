@@ -13,9 +13,10 @@ RequestExecutionLevel user
 Unicode true
 
 !define PRODUCT "RetroBat"
-!define PRODUCT_VERSION "4.0.0-BETA"
+!define PRODUCT_VERSION "4.0.1"
 !define VERSION "${PRODUCT_VERSION}"
-!define /date TIMESTAMP "%Y%m%d-%H%M%S"
+!define /date TIMESTAMP "%Y%m%d"
+;!define /date TIMESTAMP "%Y%m%d-%H%M%S"
 !define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
 !define PRODUCT_PUBLISHER "RetroBat Team"
 !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
@@ -121,7 +122,8 @@ FunctionEnd
 
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
- FileWrite $0 "${VERSION} ${TIMESTAMP2}"
+ FileWrite $0 "${VERSION}"
+ ;FileWrite $0 "${VERSION} ${TIMESTAMP2}"
  FileClose $0
 FunctionEnd
 
@@ -201,7 +203,8 @@ Function .onInit
 FunctionEnd
 
 Function CreateDesktopShortCut
- CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat-icon-purple.ico"
+ CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe"
+ ;CreateShortCut "$DESKTOP\RetroBat.lnk" "$INSTDIR\retrobat.exe" "" "$INSTDIR\system\resources\retrobat-icon-purple.ico"
 FunctionEnd
 
 SectionGroup "-RetroBat"
@@ -339,6 +342,7 @@ SectionInstType ${SEC01}
  
  File /r /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
  File /r "${EMULATORS_BASE}\applewin"
+ File /r "${EMULATORS_BASE}\arcadeflashweb"
  File /r "${EMULATORS_BASE}\citra"
  File /r "${EMULATORS_BASE}\daphne"
  File /r "${EMULATORS_BASE}\dosbox"
@@ -430,7 +434,7 @@ SectionInstType ${SEC01} ${SEC02}
  
  ifFileExists "$INSTDIR\retrobat.ini" 0 +2
  Delete "$INSTDIR\retrobat.ini"
- Call CreateIni
+ ;Call CreateIni
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
