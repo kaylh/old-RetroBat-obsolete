@@ -14,16 +14,16 @@ if not "%1"=="" (
 
 REM -- SET VARIABLES --
 
-set retroarch_version=stable/1.9.0
+set retroarch_version=stable/1.9.3
 set "current_file=%~nx0"
 set current_drive=%cd:~0,2%
 set "current_dir=%cd:~3%"
 set current_dir=%current_dir:"=%
 set "current_dir=%current_dir%"
 set "current_path=%current_drive%\%current_dir%"
-set build_dir=%current_path%
-set msys_dir=C:\msys64
-set bin_dir=%msys_dir%\usr\bin
+set "build_dir=%current_path%"
+set "msys_dir=C:\msys64"
+set "bin_dir=%msys_dir%\usr\bin"
 set emulationstation_url="https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip"
 set theme_url="https://github.com/fabricecaruso/es-theme-carbon/archive/master.zip"
 set launcher_url="https://github.com/fabricecaruso/batocera-ports/releases/download/continuous/batocera-ports.zip"
@@ -33,23 +33,22 @@ set retrobat_git="https://github.com/kaylh/RetroBat.git"
 set decorations_git="https://github.com/kaylh/batocera-bezel.git"
 set theme_branch=master
 set theme_git="https://github.com/kaylh/es-theme-carbon.git"
-set "buildtools_dir=%current_path%\..\retrobat-buildtools"
+set "buildtools_dir=%current_path%\retrobat-buildtools"
 set installer_source=installer.nsi
-set "installer_dir=%current_path%\installer"
+set "installer_dir=%current_path%"
+set "retrobat_dir=%current_path%\..\."
 set sevenzip_loglevel=0
 
 REM -- CHECK IF CURRENT PATH CONTAINS SPACES --
 
-if not "%CD%"=="%cd: =%" (
-	echo.
-    echo Current directory contains spaces in its path.
-    echo You need to rename the directory without spaces to launch this script.
-    echo.
-    timeout /t 5 >nul
-    goto exit
-)
-
-timeout /t 1 >nul
+rem if not "%CD%"=="%cd: =%" (
+rem 	echo.
+rem     echo Current directory contains spaces in its path.
+rem     echo You need to rename the directory without spaces to launch this script.
+rem    echo.
+rem     timeout /t 5 >nul
+rem     goto exit
+rem )
 
 echo *******************************
 echo  Running RetroBat Build Script
@@ -199,7 +198,7 @@ rem %sevenzip_path%"\7zg.exe -y x "%current_path%\nsis.zip" -o"%current_path%\to
 )
 
 if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
-if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
+if exist "%retrobat_dir%\system\download\*.*" del/q "%retrobat_dir%\system\download\*.*"
 
 timeout /t 1 >nul
 goto menu_welcome
@@ -249,12 +248,12 @@ echo.
 echo :: CLONING RETROBAT REPOSITORY ::
 echo.
 
-if exist "%current_path%\" (
-	cd "%current_path%"
+if exist "%retrobat_dir%\" (
+	cd "%retrobat_dir%"
 	git pull origin
-	cd "%current_path%"
+	cd "%retrobat_dir%"
 ) else (
-	git clone --depth 1 --branch "%retrobat_branch%" %retrobat_git% "%current_path%"
+	git clone --depth 1 --branch "%retrobat_branch%" %retrobat_git% "%retrobat_dir%"
 )
 
 goto clone_decorations
@@ -265,12 +264,12 @@ echo.
 echo :: CLONING DECORATIONS REPOSITORY ::
 echo.
 
-if exist "%current_path%\system\decorations\" (
-	cd "%current_path%\system\decorations"
+if exist "%retrobat_dir%\system\decorations\" (
+	cd "%retrobat_dir%\system\decorations"
 	git pull origin
-	cd "%current_path%"
+	cd "%retrobat_dir%"
 ) else (
-	git clone --depth 1 %decorations_git% "%current_path%\system\decorations"
+	git clone --depth 1 %decorations_git% "%retrobat_dir%\system\decorations"
 )
 
 goto download
@@ -278,44 +277,44 @@ goto download
 :download
 
 echo Creating RetroBat's folders...
-echo %current_path%
-"%current_path%"\retrobat.exe /NOF #MakeTree
+echo %retrobat_dir%
+"%retrobat_dir%"\retrobat.exe /NOF #MakeTree
 
 timeout /t 2 >nul
 echo.
 echo :: DOWNLOADING EMULATIONSTATION ::
 echo.
 cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" %emulationstation_url% -q --show-progress
-cd "%current_path%"
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%current_path%\system\download\emulationstation.zip""
+wget --no-check-certificate -P "%retrobat_dir%\system\download" %emulationstation_url% -q --show-progress
+cd "%retrobat_dir%"
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%retrobat_dir%\system\download\emulationstation.zip""
 ping 127.0.0.1 -n 4 >nul
 timeout /t 1 >nul
 echo.
 echo :: DOWNLOADING EMULATORLAUNCHER ::
 echo.
 cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" %launcher_url% -q --show-progress
-wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe -q --show-progress
-wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll -q --show-progress
-wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll -q --show-progress
-wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll -q --show-progress
-cd "%current_path%"
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %launcher_url% -OutFile "%current_path%\system\download\batocera-ports.zip""
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe" -OutFile "%current_path%\emulationstation\ILMerge.exe""
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.DirectInput.dll""
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll" -OutFile "%current_path%\emulationstation\SharpDX.dll""
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.XInput.dll""
+wget --no-check-certificate -P "%retrobat_dir%\system\download" %launcher_url% -q --show-progress
+wget --no-check-certificate -P "%retrobat_dir%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe -q --show-progress
+wget --no-check-certificate -P "%retrobat_dir%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll -q --show-progress
+wget --no-check-certificate -P "%retrobat_dir%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll -q --show-progress
+wget --no-check-certificate -P "%retrobat_dir%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll -q --show-progress
+cd "%retrobat_dir%"
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %launcher_url% -OutFile "%retrobat_dir%\system\download\batocera-ports.zip""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe" -OutFile "%retrobat_dir%\emulationstation\ILMerge.exe""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll" -OutFile "%retrobat_dir%\emulationstation\SharpDX.DirectInput.dll""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll" -OutFile "%retrobat_dir%\emulationstation\SharpDX.dll""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll" -OutFile "%retrobat_dir%\emulationstation\SharpDX.XInput.dll""
 timeout /t 1 >nul
 
-if exist "%current_path%\system\download\retroarch.7z" goto extract
+if exist "%retrobat_dir%\system\download\retroarch.7z" goto extract
 echo.
 echo :: DOWNLOADING RETROARCH ::
 echo.
 cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" %retroarch_url% -q --show-progress
-cd "%current_path%"
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%current_path%\system\download\retroarch.7z""
+wget --no-check-certificate -P "%retrobat_dir%\system\download" %retroarch_url% -q --show-progress
+cd "%retrobat_dir%"
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%retrobat_dir%\system\download\retroarch.7z""
 timeout /t 1 >nul
 
 
@@ -433,10 +432,10 @@ echo.
 for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
 rem echo %%a
  cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
-rem wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
- cd "%current_path%"
+wget --no-check-certificate -P "%retrobat_dir%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+rem wget --no-check-certificate -P "%retrobat_dir%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%retrobat_dir%\system\download\%%a.zip""
+ cd "%retrobat_dir%"
  timeout /t 1 >nul
 )
 
@@ -447,19 +446,19 @@ echo.
 echo :: EXTRACTING PACKAGES ::
 echo.
 echo Extracting EmulationStation...
-if exist "%current_path%\system\download\EmulationStation-Win32.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%current_path%\system\download\EmulationStation-Win32.zip" -o"%current_path%\emulationstation" -aoa
+if exist "%retrobat_dir%\system\download\EmulationStation-Win32.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%retrobat_dir%\system\download\EmulationStation-Win32.zip" -o"%retrobat_dir%\emulationstation" -aoa
 timeout /t 1 >nul
 echo Extracting Batocera Ports...
-if exist "%current_path%\system\download\batocera-ports.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%current_path%\system\download\batocera-ports.zip" -o"%current_path%\emulationstation" -aoa
+if exist "%retrobat_dir%\system\download\batocera-ports.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%retrobat_dir%\system\download\batocera-ports.zip" -o"%retrobat_dir%\emulationstation" -aoa
 timeout /t 1 >nul
 echo Extracting RetroArch...
-if exist "%current_path%\system\download\RetroArch.7z" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%current_path%\system\download\RetroArch.7z" -o"%current_path%\emulators\retroarch" -aoa
+if exist "%retrobat_dir%\system\download\RetroArch.7z" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%retrobat_dir%\system\download\RetroArch.7z" -o"%retrobat_dir%\emulators\retroarch" -aoa
 timeout /t 1 >nul
 echo Extracting Libretro cores...
-if exist "%current_path%\system\download\*.dll.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%current_path%\system\download\*.dll.zip" -o"%current_path%\emulators\retroarch\cores" -aoa
-if exist "%current_path%\system\templates\emulationstation\retrobat-intro.mp4" (
+if exist "%retrobat_dir%\system\download\*.dll.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%retrobat_dir%\system\download\*.dll.zip" -o"%retrobat_dir%\emulators\retroarch\cores" -aoa
+if exist "%retrobat_dir%\system\templates\emulationstation\retrobat-intro.mp4" (
 	echo Found: retrobat-intro.mp4
-	move/Y "%current_path%\system\templates\emulationstation\retrobat-intro.mp4" "%current_path%\emulationstation\.emulationstation\video"
+	move/Y "%retrobat_dir%\system\templates\emulationstation\retrobat-intro.mp4" "%retrobat_dir%\emulationstation\.emulationstation\video"
 )
 timeout /t 1 >nul
 
@@ -473,12 +472,12 @@ echo.
 echo :: CLONING DEFAULT THEME REPOSITORY ::
 echo.
 
-if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\" (
-	cd "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon"
+if exist "%retrobat_dir%\emulationstation\.emulationstation\themes\es-theme-carbon\" (
+	cd "%retrobat_dir%\emulationstation\.emulationstation\themes\es-theme-carbon"
 	git pull origin
-	cd %current_path%
+	cd %retrobat_dir%
 ) else (
-	git clone --depth 1 --branch "%theme_branch%" %theme_git% "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon"
+	git clone --depth 1 --branch "%theme_branch%" %theme_git% "%retrobat_dir%\emulationstation\.emulationstation\themes\es-theme-carbon"
 )
 
 goto clean
@@ -488,10 +487,10 @@ echo.
 echo :: SETTING CONFIGURATION ::
 echo.
 echo Copying templates files...
-%current_path%\retrobat.exe /NOF #GetConfigFiles
+%retrobat_dir%\retrobat.exe /NOF #GetConfigFiles
 echo Injecting presets...
-%current_path%\retrobat.exe /NOF #SetEmulationStationSettings
-%current_path%\retrobat.exe /NOF #SetEmulatorsSettings
+%retrobat_dir%\retrobat.exe /NOF #SetEmulationStationSettings
+%retrobat_dir%\retrobat.exe /NOF #SetEmulatorsSettings
 echo.
 echo Done.
 timeout /t 1 >nul
@@ -503,29 +502,29 @@ echo.
 echo :: CLEANING STEP ::
 echo.
 
-rem if exist "%current_path%\retrobat.ini" del/q "%current_path%\retrobat.ini"
-if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
-if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
+rem if exist "%retrobat_dir%\retrobat.ini" del/q "%retrobat_dir%\retrobat.ini"
+if exist "%retrobat_dir%\*.zip" del/q "%retrobat_dir%\*.zip"
+if exist "%retrobat_dir%\system\download\*.*" del/q "%retrobat_dir%\system\download\*.*"
 
-if exist "%current_path%\emulators\retroarch\retroarch_debug.exe" del/q "%current_path%\emulators\retroarch\retroarch_debug.exe"
-if exist "%current_path%\*.log" del/q "%current_path%\*.log"
-if exist "%current_path%\emulators\retroarch\shaders\shaders_cg\" rd /s /q "%current_path%\emulators\retroarch\shaders\shaders_cg"
+if exist "%retrobat_dir%\emulators\retroarch\retroarch_debug.exe" del/q "%retrobat_dir%\emulators\retroarch\retroarch_debug.exe"
+if exist "%retrobat_dir%\*.log" del/q "%retrobat_dir%\*.log"
+if exist "%retrobat_dir%\emulators\retroarch\shaders\shaders_cg\" rd /s /q "%retrobat_dir%\emulators\retroarch\shaders\shaders_cg"
 
-if exist "%current_path%\.git\" rmdir /s /q "%current_path%\.git"
-if exist "%current_path%\system\decorations\.git\" rmdir /s /q "%current_path%\system\decorations\.git"  
-if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
+if exist "%retrobat_dir%\.git\" rmdir /s /q "%retrobat_dir%\.git"
+if exist "%retrobat_dir%\system\decorations\.git\" rmdir /s /q "%retrobat_dir%\system\decorations\.git"  
+if exist "%retrobat_dir%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%retrobat_dir%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
 
 if exist "%strip_path%\strip.exe" (
  cd "%strip_path%"
- strip -s "%current_path%\emulators\retroarch\retroarch.exe"
- echo striping: "%current_path%\emulators\retroarch\retroarch.exe"
- strip -s "%current_path%\emulators\retroarch\retroarch_angle.exe"
- echo striping: "%current_path%\emulators\retroarch\retroarch_angle.exe"
- for /r "%current_path%\emulators\retroarch\cores" %%i in (*.dll) do (
+ strip -s "%retrobat_dir%\emulators\retroarch\retroarch.exe"
+ echo striping: "%retrobat_dir%\emulators\retroarch\retroarch.exe"
+ strip -s "%retrobat_dir%\emulators\retroarch\retroarch_angle.exe"
+ echo striping: "%retrobat_dir%\emulators\retroarch\retroarch_angle.exe"
+ for /r "%retrobat_dir%\emulators\retroarch\cores" %%i in (*.dll) do (
  strip -s %%i
  echo striping: %%i
  )
- cd "%current_path%"
+ cd "%retrobat_dir%"
 )
 
 timeout /t 1 >nul
@@ -538,17 +537,17 @@ echo.
 echo :: BUILDING RETROBAT INSTALLER ::
 echo.
 timeout /t 1 >nul
-cd %current_path%
+cd %retrobat_dir%
 if exist "%nsis_path%\makensis.exe" (
 	cd "%nsis_path%"
 	makensis.exe /V4 "%installer_dir%\%installer_source%"
-	cd %current_path%
+	cd %retrobat_dir%
 	echo.
 	echo Done.
 )
 timeout /t 1 >nul
 
-move/Y "%installer_dir%\*.exe" "%current_path%"
+move/Y "%installer_dir%\*.exe" "%retrobat_dir%"
 
 pause
 goto exit
