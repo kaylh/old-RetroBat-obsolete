@@ -1,0 +1,2 @@
+\pico8\pico8.exe
+-home .\..\..\emulators\pico8 -root_path .\..\..\roms\pico8 -desktop .\..\..\screenshots\pico8
