@@ -1,23 +1,34 @@
 @echo off
 
 REM PATH
-set "current_file=%~nx0"
-set current_drive=%cd:~0,2%
-set "current_dir=%cd:~3%"
-set "current_dir=%current_dir:"=%"
-set "current_dir=%current_dir%"
-set "current_path=%current_drive%\%current_dir%"
-set "update_dir=%current_path%"
-set "modules_dir=%current_path%\..\system\modules"
-set "download_dir=%current_path%\..\system\download"
+set current_file=%~nx0
+set current_drive="%cd:~0,2%"
+set current_dir="%cd:~3%"
+set current_drive=%current_drive:"=%
+set current_dir=%current_dir:"=%
+rem set "current_dir=%current_dir%"
+set current_path=%current_drive%\%current_dir%
+set update_dir=%current_path%
+set modules_dir=%current_path%\..\system\modules
+set download_dir=%current_path%\..\system\download
 REM END PATH
-
-set branch=stable
 
 set remote_version_file=remote_version.info
 set local_version_file=version.info
-set "remote_version_filepath=%modules_dir%\rb_updater"
-set "local_version_filepath=%current_path%"
+set remote_version_filepath=%modules_dir%\rb_updater
+set local_version_filepath=%current_path%
+
+:loop_cmdarray
+if not "%1"=="" (
+    if "%1"=="-branch" (
+        set branch=%2
+        shift
+    )
+    shift
+    goto :loop_cmdarray
+)
+
+if "%1"=="" set branch=stable
 
 if not exist "%modules_dir%\rb_updater\7za.exe" goto deps_error
 if not exist "%modules_dir%\rb_updater\wget.exe" goto deps_error
@@ -45,6 +56,9 @@ cd "%current_path%"
 cd "%local_version_filepath%"
 set/p rb_local_version=<%local_version_file%
 cd "%current_path%"
+
+echo %rb_remote_version%/%rb_local_version%
+pause
 
 if not "%rb_remote_version%"=="%rb_local_version%" (
 	set run_update=1
