@@ -44,7 +44,7 @@ cd "!local_version_filepath!"
 set/p rb_local_version=<!local_version_file!
 cd "!current_path!"
 
-set retrobat_version=!rb_local_version!
+set retrobat_version=!rb_remote_version!
 
 REM SWITCHS
 set enable_download=1
@@ -54,7 +54,7 @@ REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
 set update_theme_carbon=1
-set update_retrobat_decorations=1
+set update_retrobat_decorations=0
 set update_gamespack=0
 set update_emulationstation=1
 set update_es_settings=1
@@ -96,7 +96,7 @@ set update_raine=1
 set update_redream=1
 set update_retroarch=1
 set update_rpcs3=1
-set update_ryujinx=0
+set update_ryujinx=1
 set update_simcoupe=1
 set update_snes9x=1
 set update_solarus=1
@@ -106,55 +106,11 @@ set update_tsugaru=1
 set update_vpinball=1
 set update_winuae=1
 set update_xemu=0
+set update_xenia=0
 set update_xenia-canary=1
 set update_yuzu=0
 set update_libretro_cores=1
 REM END SWITCHS
-
-REM LISTLOOP
-::applewin
-::arcadeflashweb
-::cemu
-::citra
-::cxbx-reloaded
-::daphne
-::demul
-::demul-old
-::dolphin-emu
-::dolphin-triforce
-::dosbox
-::duckstation
-::fpinball
-::gsplus
-::kega-fusion
-::love
-::m2emulator
-::mame
-::mednafen
-::mesen
-::mgba
-::openbor
-::oricutron
-::pcsx2
-::pico8
-::ppsspp
-::project64
-::raine
-::redream
-::rpcs3
-::ryujinx
-::simcoupe
-::snes9x
-::solarus
-::supermodel
-::teknoparrot
-::tsugaru
-::vpinball
-::winuae
-::xemu
-::xenia-canary
-::yuzu
-REM END LISTLOOP
 
 :loop_cmdarray
 if not "%1"=="" (
@@ -191,7 +147,7 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 :install_packages
 
 set progress_current=0
-set progress_total=86
+set progress_total=4
 set progress_percent=0
 
 set download_retry=3
@@ -366,35 +322,6 @@ if "!update_libretro_cores!"=="1" if not exist "!emulator_dir!\retroarch\manual_
 	del/Q "!download_dir!\!package_file!"
 )
 
-REM EMULATORS UPDATE
-for /f "delims=:: tokens=*" %%a in ('findstr /b :: "%~f0"') do (
-	set package_file=%%a.7z
-	if "!update_%%a!"=="1" if not exist "!emulator_dir!\%%a\manual_update.txt" (
-	REM DOWNLOAD
-	set /A progress_current+=!update_%%a!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul	
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	REM EXTRACT
-	set /A progress_current+=!update_%%a!
-	if "!enable_extraction!"=="1" if not exist "!emulator_dir!\%%a\." md "!emulator_dir!\%%a" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulator_dir!\%%a" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!" >nul	
-	)
-)
-
 REM RETROBAT UPDATE
 set package_file=retrobat_main.7z
 if "!update_retrobat_main!"=="1" (
@@ -457,9 +384,11 @@ if "!update_retrobat_main!"=="1" (
 	
 	if exist "!current_path!\version.info" del/Q "!current_path!\version.info" >nul
 	if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
+	if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul
 	
 	echo !retrobat_version! >"!current_path!\version.info"
 	echo RETROBAT v!retrobat_version! >"!current_path!\about.info"
+	echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
 )
 
 REM V4BETA UPDATE
@@ -486,6 +415,35 @@ set /a progress_percent=100*!progress_current!/progress_total
 echo updating retrobat ^>^>^> !progress_percent!%%
 
 timeout /t 1 >nul
+
+REM EMULATORS UPDATE
+for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulators_names.list") do (
+	set package_file=%%x.7z
+	if "!update_%%x!"=="1" if not "%%x"=="retroarch" if not exist "!emulator_dir!\%%x\manual_update.txt" (
+	REM DOWNLOAD
+	set /A progress_current+=!update_%%x!
+	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul	
+	if not exist "!download_dir!\!package_file!" (
+		call :error
+		goto :eof
+	)
+	cls
+	set /a progress_percent=100*!progress_current!/progress_total
+	echo updating retrobat ^>^>^> !progress_percent!%%	
+	timeout /t 1 >nul
+	
+	REM EXTRACT
+	set /A progress_current+=!update_%%x!
+	if "!enable_extraction!"=="1" if not exist "!emulator_dir!\%%x\." md "!emulator_dir!\%%x" >nul
+	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulator_dir!\%%x" >nul	
+	cls
+	set /a progress_percent=100*!progress_current!/progress_total
+	echo updating retrobat ^>^>^> !progress_percent!%%	
+	timeout /t 1 >nul
+	
+	del/Q "!download_dir!\!package_file!" >nul	
+	)
+)
 
 if "!progress_percent!"=="100" (
 	call :exit
