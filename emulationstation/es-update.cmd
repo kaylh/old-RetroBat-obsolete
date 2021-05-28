@@ -53,62 +53,62 @@ set enable_extraction=1
 REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
-set update_theme_carbon=0
-set update_retrobat_decorations=0
+set update_theme_carbon=1
+set update_retrobat_decorations=1
 set update_gamespack=0
 set update_emulationstation=1
 set update_es_settings=1
 set update_es_systems=1
 set update_es_features=1
 set update_es_padtokey=1
-set update_emulatorlauncher=0
+set update_emulatorlauncher=1
 
 REM EMULATORS
-set update_applewin=0
-set update_arcadeflashweb=0
-set update_cemu=0
-set update_citra=0
-set update_cxbx-reloaded=0
-set update_daphne=0
-set update_demul=0
-set update_demul-old=0
-set update_dolphin-emu=0
-set update_dolphin-triforce=0
-set update_dosbox=0
-rem set update_dosbox_x=0
-set update_duckstation=0
-set update_fpinball=0
-set update_gsplus=0
-set update_kega-fusion=0
-set update_love=0
-set update_m2emulator=0
+set update_applewin=1
+set update_arcadeflashweb=1
+set update_cemu=1
+set update_citra=1
+set update_cxbx-reloaded=1
+set update_daphne=1
+set update_demul=1
+set update_demul-old=1
+set update_dolphin-emu=1
+set update_dolphin-triforce=1
+set update_dosbox=1
+rem set update_dosbox_x=1
+set update_duckstation=1
+set update_fpinball=1
+set update_gsplus=1
+set update_kega-fusion=1
+set update_love=1
+set update_m2emulator=1
 set update_mame=0
-set update_mednafen=0
-set update_mesen=0
-set update_mgba=0
-set update_openbor=0
-set update_oricutron=0
-set update_pcsx2=0
+set update_mednafen=1
+set update_mesen=1
+set update_mgba=1
+set update_openbor=1
+set update_oricutron=1
+set update_pcsx2=1
 set update_pico8=0
-set update_ppsspp=0
-set update_project64=0
-set update_raine=0
-set update_redream=0
-set update_retroarch=0
-set update_rpcs3=0
+set update_ppsspp=1
+set update_project64=1
+set update_raine=1
+set update_redream=1
+set update_retroarch=1
+set update_rpcs3=1
 set update_ryujinx=0
-set update_simcoupe=0
-set update_snes9x=0
-set update_solarus=0
-set update_supermodel=0
+set update_simcoupe=1
+set update_snes9x=1
+set update_solarus=1
+set update_supermodel=1
 set update_teknoparrot=0
-set update_tsugaru=0
-set update_vpinball=0
-set update_winuae=0
+set update_tsugaru=1
+set update_vpinball=1
+set update_winuae=1
 set update_xemu=0
-set update_xenia-canary=0
+set update_xenia-canary=1
 set update_yuzu=0
-set update_libretro_cores=0
+set update_libretro_cores=1
 REM END SWITCHS
 
 REM LISTLOOP
@@ -191,7 +191,7 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 :install_packages
 
 set progress_current=0
-set progress_total=4
+set progress_total=86
 set progress_percent=0
 
 set download_retry=3
@@ -480,7 +480,6 @@ for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\systems_
    if not exist "%retrobat_main_dir%\roms\%%x\." md "%retrobat_main_dir%\roms\%%x" >nul
    if not exist "%retrobat_main_dir%\saves\%%x\." md "%retrobat_main_dir%\saves\%%x" >nul
 )
-
 cls
 set /A progress_current+=1
 set /a progress_percent=100*!progress_current!/progress_total
@@ -496,9 +495,8 @@ if "!progress_percent!"=="100" (
 	goto :eof
 )
 
-endlocal
-
 :exit
+cls
 echo update done !
 timeout /t 1 >nul
 exit/b 0
@@ -508,6 +506,8 @@ cls
 echo update failed !
 timeout /t 1 >nul
 exit/b 1
+
+endlocal
 
 :extract_es
 cls
