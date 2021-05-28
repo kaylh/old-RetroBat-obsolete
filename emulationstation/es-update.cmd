@@ -54,7 +54,7 @@ REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
 set update_theme_carbon=1
-set update_retrobat_decorations=0
+set update_retrobat_decorations=1
 set update_gamespack=0
 set update_emulationstation=1
 set update_es_settings=1
@@ -82,7 +82,7 @@ set update_gsplus=1
 set update_kega-fusion=1
 set update_love=1
 set update_m2emulator=1
-set update_mame=0
+set update_mame=1
 set update_mednafen=1
 set update_mesen=1
 set update_mgba=1
@@ -147,7 +147,7 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 :install_packages
 
 set progress_current=0
-set progress_total=4
+set progress_total=86
 set progress_percent=0
 
 set download_retry=3
@@ -419,7 +419,7 @@ timeout /t 1 >nul
 REM EMULATORS UPDATE
 for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulators_names.list") do (
 	set package_file=%%x.7z
-	if "!update_%%x!"=="1" if not "%%x"=="retroarch" if not exist "!emulator_dir!\%%x\manual_update.txt" (
+	if not "%%x"=="retroarch" if "!update_%%x!"=="1" if not exist "!emulator_dir!\%%x\manual_update.txt" (
 	REM DOWNLOAD
 	set /A progress_current+=!update_%%x!
 	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul	
