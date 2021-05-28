@@ -53,15 +53,15 @@ set enable_extraction=1
 REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
-set update_theme_carbon=1
-set update_retrobat_decorations=1
+set update_theme_carbon=0
+set update_retrobat_decorations=0
 set update_gamespack=0
 set update_emulationstation=1
 set update_es_settings=1
 set update_es_systems=1
 set update_es_features=1
 set update_es_padtokey=1
-set update_emulatorlauncher=1
+set update_emulatorlauncher=0
 
 REM EMULATORS
 set update_applewin=1
@@ -82,7 +82,7 @@ set update_gsplus=1
 set update_kega-fusion=1
 set update_love=1
 set update_m2emulator=1
-set update_mame=1
+set update_mame=0
 set update_mednafen=1
 set update_mesen=1
 set update_mgba=1
@@ -96,7 +96,7 @@ set update_raine=1
 set update_redream=1
 set update_retroarch=1
 set update_rpcs3=1
-set update_ryujinx=1
+set update_ryujinx=0
 set update_simcoupe=1
 set update_snes9x=1
 set update_solarus=1
@@ -386,8 +386,8 @@ if "!update_retrobat_main!"=="1" (
 	if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
 	if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul
 	
-	echo !retrobat_version! >"!current_path!\version.info"
-	echo RETROBAT v!retrobat_version! >"!current_path!\about.info"
+	echo !retrobat_version! > "!current_path!\version.info"
+	echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
 	echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
 )
 
