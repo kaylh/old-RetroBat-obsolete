@@ -1,6 +1,11 @@
-RETROBAT
-A launcher and a set of tools to install and configure automatically EmulationStation frontend 
-with RetroArch and standalone emulators.
++=====================================+
+   ___     _           ___       _   
+  | _ \___| |_ _ _ ___| _ ) __ _| |_ 
+  |   / -_)  _| '_/ _ \ _ \/ _` |  _|
+  |_|_\___|\__|_| \___/___/\__,_|\__|
+
++=====================================+
+An emulation distro for Windows to install and configure automatically EmulationStation frontend with RetroArch and standalone emulators.
 
 Copyright (c) 2017-2019 Adrien Chalard "Kayl"
 Copyright (c) 2020-2021 RetroBat Team
@@ -12,11 +17,8 @@ See https://www.gnu.org/licenses.
 
 It is not allowed to sell RetroBat on a pre-installed machine or on any storage devices. 
 RetroBat includes softwares which cannot be associated with any commercial activities.
-Shipping RetroBat with additional proprietary and copyrighted content is illegal, strictly 
-forbidden and strongly discouraged by the RetroBat Team.
+Shipping RetroBat with additional proprietary and copyrighted content is illegal, strictly forbidden and strongly discouraged by the RetroBat Team.
 Otherwise, you can start a new project off RetroBat sources if you follow the same conditions.
 
-Finally, the license which concerns the entire RetroBat Project as a work, in particular the 
-written or graphic content broadcast on its various media, is conditioned by the terms of 
-the CC BY-NC-SA 4.0 license.
+Finally, the license which concerns the entire RetroBat Project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the CC BY-NC-SA 4.0 license.
 See https://creativecommons.org/licenses/by-nc-sa/4.0.
