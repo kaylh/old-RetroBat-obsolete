@@ -18,14 +18,14 @@ set local_version_file=version.info
 set remote_version_filepath=%modules_dir%\rb_updater
 set local_version_filepath=%current_path%
 
-:loop_cmdarray
+:loop_arg
 if not "%1"=="" (
     if "%1"=="-branch" (
         set branch=%2
         shift
     )
     shift
-    goto :loop_cmdarray
+    goto :loop_arg
 )
 
 if "%1"=="" set branch=stable
@@ -56,9 +56,6 @@ cd "%current_path%"
 cd "%local_version_filepath%"
 set/p rb_local_version=<%local_version_file%
 cd "%current_path%"
-
-echo %rb_remote_version%/%rb_local_version%
-pause
 
 if not "%rb_remote_version%"=="%rb_local_version%" (
 	set run_update=1
