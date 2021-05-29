@@ -362,11 +362,13 @@ if not exist "!download_dir!\!package_file!" (
 )
 
 :extract
-if "!debug!"=="1" echo !package_file!
-if "!debug!"=="1" echo !CD!
-if "!debug!"=="1" echo !current_path!
-if "!debug!"=="1" echo !extraction_dir!
-if "!debug!"=="1" echo !download_dir!\!package_file!
+if "!debug!"=="1" (
+	echo !package_file!
+	echo !CD!
+	echo !current_path!
+	echo !extraction_dir!
+	echo !download_dir!\!package_file!
+)
 if "!debug!"=="1" (
 	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!"
 ) else (
