@@ -6,8 +6,6 @@ echo updating retrobat ^>^>^> 0%%
 REM WINDOW TITLE
 title retrobat updater
 
-:set_variables
-
 REM PATH
 set current_file=%~nx0
 set current_drive="%cd:~0,2%"
@@ -19,31 +17,25 @@ set current_path=!current_drive!\!current_dir!
 set update_dir=!current_path!
 set modules_dir=!current_path!\..\system\modules
 set download_dir=!current_path!\..\system\download
-set extraction_dir=!current_path!\..\system\download\extract
 set retrobat_main_dir=!current_path!\..
 set emulationstation_dir=!current_path!
 set emulatorlauncher_dir=!emulationstation_dir!
 set default_theme_dir=!emulationstation_dir!\.emulationstation\themes
 set emulator_dir=!retrobat_main_dir!\emulators
 set decorations_dir=!retrobat_main_dir!\system\decorations
-
 REM END PATH
 
-rem set branch=stable
-
+REM SET VERSION
 set remote_version_file=remote_version.info
 set local_version_file=version.info
 set remote_version_filepath=!modules_dir!\rb_updater
 set local_version_filepath=!emulationstation_dir!
-
 cd "!remote_version_filepath!"
 set/p rb_remote_version=<!remote_version_file!
 cd "!current_path!"
-
 cd "!local_version_filepath!"
 set/p rb_local_version=<!local_version_file!
 cd "!current_path!"
-
 set retrobat_version=!rb_remote_version!
 
 REM SWITCHS
@@ -53,15 +45,19 @@ set enable_extraction=1
 REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
-set update_theme_carbon=0
-set update_retrobat_decorations=0
+set update_theme_carbon=1
+set update_retrobat_decorations=1
 set update_gamespack=0
 set update_emulationstation=1
+set update_emulatorlauncher=1
+set update_config=1
+set update_version=1
+
+set update_retrobat_ini=1
 set update_es_settings=1
 set update_es_systems=1
 set update_es_features=1
 set update_es_padtokey=1
-set update_emulatorlauncher=0
 
 REM EMULATORS
 set update_applewin=1
@@ -110,9 +106,13 @@ set update_xenia=0
 set update_xenia-canary=1
 set update_yuzu=0
 set update_libretro_cores=1
+
+set debug=0
+
 REM END SWITCHS
 
-:loop_cmdarray
+REM SET SCRIPT ARGUMENTS
+:loop_arg
 if not "%1"=="" (
     if "%1"=="-branch" (
         set branch=%2
@@ -123,7 +123,7 @@ if not "%1"=="" (
         shift
     )
 	shift	
-    goto :loop_cmdarray
+    goto :loop_arg
 )
 
 if "%extract_pkg%"=="es" (
@@ -133,8 +133,7 @@ if "%extract_pkg%"=="es" (
 
 if "%1"=="" set branch=stable
 
-:check_deps
-
+REM CHECK DEPS
 if not exist "!modules_dir!\rb_updater\7za.exe" (
 	call :error
 	goto :eof
@@ -144,12 +143,10 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 	goto :eof
 )
 
-:install_packages
-
+REM INSTALL PACKAGES
 set progress_current=0
-set progress_total=86
+set progress_total=87
 set progress_percent=0
-
 set download_retry=3
 
 REM CLEAN DOWNLOAD DIR
@@ -158,195 +155,151 @@ if exist "!download_dir!\*.zip" del/Q "!download_dir!\*.zip" >nul
 
 if not exist "!download_dir!\." md "!download_dir!" >nul
 
+REM RETROBAT UPDATE
+set package_file=retrobat_main.7z
+if "!update_retrobat_main!"=="1" (
+	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set /A progress_current+=!update_retrobat_main!
+	call :download
+	call :progress	
+	REM EXTRACT
+	set extraction_dir=!download_dir!\extract
+	set /A progress_current+=!update_retrobat_main!
+	if "!update_retrobat_ini!"=="1" if exist "!retrobat_main_dir!\retrobat.ini" del/Q "!retrobat_main_dir!\retrobat.ini" >nul
+	call :extract
+	xcopy /y "!download_dir!\extract" "!retrobat_main_dir!" /s /e >nul
+	rmdir /s /q "!download_dir!\extract" >nul
+	REM RECREATE RETROBAT TREE
+	for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\retrobat_tree.list") do (
+		if not exist "%retrobat_main_dir%\%%x\." md "%retrobat_main_dir%\%%x" >nul
+	)
+	for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\systems_names.list") do (
+		if not exist "%retrobat_main_dir%\roms\%%x\." md "%retrobat_main_dir%\roms\%%x" >nul
+		if not exist "%retrobat_main_dir%\saves\%%x\." md "%retrobat_main_dir%\saves\%%x" >nul
+	)
+	call :progress
+)
+
 REM EMULATIONSTATION UPDATE
 set package_file=emulationstation.zip
 if "!update_emulationstation!"=="1" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
 	set /A progress_current+=!update_emulationstation!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/!package_file! -q >nul	
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	REM EXTRACT
-rem	set /A progress_current+=!update_emulationstation!
-rem	if "!enable_extraction!"=="1" if not exist "%extraction_dir%\." md "%extraction_dir%" >nul
-rem	if "!enable_extraction!"=="1" if not exist "%extraction_dir%\emulationstation\." md "%extraction_dir%\emulationstation" >nul
-rem	if "!enable_extraction!"=="1" "%modules_dir%\rb_updater\7za.exe" -y x "%download_dir%\%package_name%" -aoa -o"%extraction_dir%\emulationstation" >nul	
-rem	cls
-rem	set /a progress_percent=100*!progress_current!/progress_total
-rem	echo updating retrobat ^>^>^> !progress_percent!%%	
-rem	timeout /t 1 >nul
-	
-rem	del/Q "%download_dir%\%package_file%" >nul
+	call :download
+	call :progress	
 )
 
 REM EMULATORLAUNCHER UPDATE
 set package_file=emulatorlauncher.zip
 if "!update_emulatorlauncher!"=="1" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
 	set /A progress_current+=!update_emulatorlauncher!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/!package_file! -q >nul	
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
+	call :download
+	call :progress	
 	REM EXTRACT
+	set extraction_dir=!emulationstation_dir!
 	set /A progress_current+=!update_emulatorlauncher!
-	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!" >nul
-	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\emulationstation\." md "!extraction_dir!\emulationstation" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulationstation_dir!" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!" >nul
+	call :extract
+	call :progress
 )
 
 REM CARBON THEME UPDATE
 set package_file=theme_carbon.zip
 if "!update_theme_carbon!"=="1" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
 	set /A progress_current+=!update_theme_carbon!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/!package_file! -q >nul
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%
-	timeout /t 1 >nul
-	
+	call :download
+	call :progress	
 	REM EXTRACT
+	set extraction_dir=!default_theme_dir!
 	set /A progress_current+=!update_theme_carbon!
-	if "!enable_extraction!"=="1" if not exist "!default_theme_dir!\." md "!default_theme_dir!" >nul
 	if "!enable_extraction!"=="1" if exist "!default_theme_dir!\es-theme-carbon_old\." rmdir /s /q "!default_theme_dir!\es-theme-carbon_old\" >nul
 	if "!enable_extraction!"=="1" if exist "!default_theme_dir!\es-theme-carbon\." move "!default_theme_dir!\es-theme-carbon" "!default_theme_dir!\es-theme-carbon_old"	 >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!default_theme_dir!" >nul
+	call :extract
 	if "!enable_extraction!"=="1" if exist "!default_theme_dir!\es-theme-carbon-master\." move "!default_theme_dir!\es-theme-carbon-master" "!default_theme_dir!\es-theme-carbon" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%
-	timeout /t 1 >nul	
-	
-	del/Q "!download_dir!\!package_file!" >nul
+	call :progress
 )
 
 REM DECORATIONS UPDATE
 set package_file=decorations.7z
 if "!update_retrobat_decorations!"=="1" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
 	set /A progress_current+=!update_retrobat_decorations!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/!package_file! -q >nul
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%
-	timeout /t 1 >nul
+	call :download
+	call :progress	
 	REM EXTRACT
+	set extraction_dir=!decorations_dir!
 	set /A progress_current+=!update_retrobat_decorations!
-	if "!enable_extraction!"=="1" if not exist "!decorations_dir!\." md "!decorations_dir!" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!decorations_dir!" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!" >nul
+	call :extract
+	call :progress
 )
 
 REM RETROARCH UPDATE
 set package_file=retroarch.7z
 if "!update_retroarch!"=="1" if not exist "!emulator_dir!\retroarch\manual_update.txt" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
 	set /A progress_current+=!update_retroarch!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
+	call :download
+	call :progress	
 	REM EXTRACT
+	set extraction_dir=!emulator_dir!\retroarch
 	set /A progress_current+=!update_retroarch!
-	if "!enable_extraction!"=="1" if not exist "!emulator_dir!\retroarch\." md "!emulator_dir!\retroarch" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulator_dir!\retroarch" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!"	
+	call :extract
+	call :progress	
 )
+
 REM LIBRETRO CORES UPDATE
 set package_file=libretro_cores.7z
 if "!update_libretro_cores!"=="1" if not exist "!emulator_dir!\retroarch\manual_update.txt" (
 	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
 	set /A progress_current+=!update_libretro_cores!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
+	call :download
+	call :progress	
 	REM EXTRACT
+	set extraction_dir=!emulator_dir!\retroarch\cores
 	set /A progress_current+=!update_libretro_cores!
-	if "!enable_extraction!"=="1" if not exist "!emulator_dir!\retroarch\cores\." md "!emulator_dir!\retroarch\cores" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulator_dir!\retroarch\cores" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!"
+	call :extract
+	call :progress
 )
 
-REM RETROBAT UPDATE
-set package_file=retrobat_main.7z
-if "!update_retrobat_main!"=="1" (
+REM EMULATORS UPDATE
+for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulators_names.list") do (
+	set package_file=%%x.7z
+	if not "%%x"=="retroarch" if "!update_%%x!"=="1" if not exist "!emulator_dir!\%%x\manual_update.txt" (
 	REM DOWNLOAD
-	set /A progress_current+=1
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/!package_file! -q >nul	
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
-	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
+	set /A progress_current+=!update_%%x!
+	call :download
+	call :progress		
 	REM EXTRACT
-	set /A progress_current+=1
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!retrobat_main_dir!" >nul
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!" >nul
-	
+	set extraction_dir=!emulator_dir!\%%x
+	set /A progress_current+=!update_%%x!
+	call :extract
+	call :progress	
+	)
+)
+
+REM UPDATE VERSION	
+if "!update_version!"=="1" (	
+	if exist "!current_path!\version.info" del/Q "!current_path!\version.info" >nul
+	if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
+	if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul	
+	echo !retrobat_version! > "!current_path!\version.info"
+	echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
+	echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
+	set /A progress_current+=!update_emulationstation!
+	call :progress
+)
+
+REM UPDATE CONFIG
+if "!update_config!"=="1" (
 	REM MOVE VIDEOS
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" "!current_path!\.emulationstation\video" >nul
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" "!current_path!\.emulationstation\video" >nul
@@ -378,73 +331,17 @@ if "!update_retrobat_main!"=="1" (
 		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" >nul
 	)
 	
-	REM COPY EMULATORS CONFIG
-	
-	REM SET VERSION
-	
-	if exist "!current_path!\version.info" del/Q "!current_path!\version.info" >nul
-	if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
-	if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul
-	
-	echo !retrobat_version! > "!current_path!\version.info"
-	echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
-	echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
-)
-
-REM V4BETA UPDATE
-if exist "!current_path!\..\system\es_menu\retroarch_angle.menu" (
+	if exist "!current_path!\..\system\es_menu\retroarch_angle.menu" (
 	copy/y "!current_path!\..\system\es_menu\retroarch_angle.menu" "!current_path!\..\system\es_menu\retroarch_angle.menu.old" >nul 
 	del/Q "!current_path!\..\system\es_menu\retroarch_angle.menu" >nul
-)
-
-if exist "!current_path!\..\emulators\retroarch\retroarch_angle.exe" del/Q "!current_path!\..\emulators\retroarch\retroarch_angle.exe" >nul
-
-if exist "!retrobat_main_dir!\retrobat.ini" del/Q "!retrobat_main_dir!\retrobat.ini" >nul
-
-REM RECREATE RETROBAT TREE
-for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\retrobat_tree.list") do (
-   if not exist "%retrobat_main_dir%\%%x\." md "%retrobat_main_dir%\%%x" >nul
-)
-for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\systems_names.list") do (
-   if not exist "%retrobat_main_dir%\roms\%%x\." md "%retrobat_main_dir%\roms\%%x" >nul
-   if not exist "%retrobat_main_dir%\saves\%%x\." md "%retrobat_main_dir%\saves\%%x" >nul
-)
-cls
-set /A progress_current+=1
-set /a progress_percent=100*!progress_current!/progress_total
-echo updating retrobat ^>^>^> !progress_percent!%%
-
-timeout /t 1 >nul
-
-REM EMULATORS UPDATE
-for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulators_names.list") do (
-	set package_file=%%x.7z
-	if not "%%x"=="retroarch" if "!update_%%x!"=="1" if not exist "!emulator_dir!\%%x\manual_update.txt" (
-	REM DOWNLOAD
-	set /A progress_current+=!update_%%x!
-	if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file! -q >nul	
-	if not exist "!download_dir!\!package_file!" (
-		call :error
-		goto :eof
 	)
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
+	if exist "!current_path!\..\emulators\retroarch\retroarch_angle.exe" del/Q "!current_path!\..\emulators\retroarch\retroarch_angle.exe" >nul
 	
-	REM EXTRACT
-	set /A progress_current+=!update_%%x!
-	if "!enable_extraction!"=="1" if not exist "!emulator_dir!\%%x\." md "!emulator_dir!\%%x" >nul
-	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!emulator_dir!\%%x" >nul	
-	cls
-	set /a progress_percent=100*!progress_current!/progress_total
-	echo updating retrobat ^>^>^> !progress_percent!%%	
-	timeout /t 1 >nul
-	
-	del/Q "!download_dir!\!package_file!" >nul	
-	)
+	set /A progress_current+=!update_config!
+	call :progress
 )
 
+REM CHECK PROGRESS
 if "!progress_percent!"=="100" (
 	call :exit
 	goto :eof
@@ -452,6 +349,49 @@ if "!progress_percent!"=="100" (
 	call :error
 	goto :eof
 )
+
+:download
+if "!debug!"=="1" echo !download_url!
+if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" !download_url! -q >nul	
+if "!debug!"=="1" pause
+if not exist "!download_dir!\!package_file!" (
+	call :error
+	goto :eof
+) else (
+	goto :eof
+)
+
+:extract
+if "!debug!"=="1" echo !package_file!
+if "!debug!"=="1" echo !CD!
+if "!debug!"=="1" echo !current_path!
+if "!debug!"=="1" echo !extraction_dir!
+if "!debug!"=="1" echo !download_dir!\!package_file!
+if "!debug!"=="1" (
+	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!"
+) else (
+	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!" >nul
+)
+if "!debug!"=="1" (
+	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!extraction_dir!"
+) else (
+	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!extraction_dir!" >nul
+)
+if "!debug!"=="1" (
+	del/Q "!download_dir!\!package_file!"
+) else (
+	del/Q "!download_dir!\!package_file!" >nul
+)
+if "!debug!"=="1" pause	
+goto :eof
+
+:progress
+if "!debug!"=="0" cls
+set /a progress_percent=100*!progress_current!/progress_total
+echo updating retrobat ^>^>^> !progress_percent!%%
+if "!debug!"=="1" pause
+timeout /t 1 >nul
+goto :eof	
 
 :exit
 cls
