@@ -307,7 +307,7 @@ if "!update_config!"=="1" (
 
 	REM COPY ES CONFIG
 	if "!update_es_settings!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" >nul
-	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_system.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_system.cfg.old" >nul
+	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" >nul
 	if "!update_es_features!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_features.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_features.cfg.old" >nul
 	if "!update_es_padtokey!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" >nul
 	
@@ -316,9 +316,9 @@ if "!update_config!"=="1" (
 		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_settings.cfg" "!emulationstation_dir!\.emulationstation\es_settings.cfg" >nul
 	)
 	
-	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_system.cfg" (
-		copy/y "!emulationstation_dir!\.emulationstation\es_system.cfg" "!emulationstation_dir!\.emulationstation\es_system.cfg.old" >nul
-		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_system.cfg" "!emulationstation_dir!\.emulationstation\es_system.cfg" >nul
+	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_systems.cfg" (
+		copy/y "!emulationstation_dir!\.emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" >nul
+		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg" >nul
 	)
 	
 	if "!update_es_features!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_features.cfg" (
