@@ -383,14 +383,14 @@ if "!debug!"=="1" (
 ) else (
 	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!extraction_dir!" >nul
 )
+if %ERRORLEVEL% NEQ 0 (
+	call :error
+	goto :eof
+)
 if "!debug!"=="1" (
 	del/Q "!download_dir!\!package_file!"
 ) else (
 	del/Q "!download_dir!\!package_file!" >nul
-)
-if %ERRORLEVEL% NEQ 0 (
-	call :error
-	goto :eof
 )
 if "!debug!"=="1" pause	
 goto :eof
