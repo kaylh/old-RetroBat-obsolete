@@ -108,10 +108,12 @@ set update_yuzu=0
 set update_libretro_cores=1
 
 set debug=0
+set branch=stable
 
 REM END SWITCHS
 
 REM SET SCRIPT ARGUMENTS
+
 :loop_arg
 if not "%1"=="" (
     if "%1"=="-branch" (
@@ -130,8 +132,6 @@ if "%extract_pkg%"=="es" (
 	call :extract_es
 	goto :eof
 )
-
-if "%1"=="" set branch=stable
 
 REM CHECK DEPS
 if not exist "!modules_dir!\rb_updater\7za.exe" (
@@ -353,6 +353,10 @@ if "!progress_percent!"=="100" (
 :download
 if "!debug!"=="1" echo !download_url!
 if "!enable_download!"=="1" "!modules_dir!\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t !download_retry! -P "!download_dir!" !download_url! -q >nul	
+if %ERRORLEVEL% NEQ 0 (
+	call :error
+	goto :eof
+)
 if "!debug!"=="1" pause
 if not exist "!download_dir!\!package_file!" (
 	call :error
@@ -384,6 +388,10 @@ if "!debug!"=="1" (
 ) else (
 	del/Q "!download_dir!\!package_file!" >nul
 )
+if %ERRORLEVEL% NEQ 0 (
+	call :error
+	goto :eof
+)
 if "!debug!"=="1" pause	
 goto :eof
 
@@ -392,20 +400,20 @@ if "!debug!"=="0" cls
 set /a progress_percent=100*!progress_current!/progress_total
 echo updating retrobat ^>^>^> !progress_percent!%%
 if "!debug!"=="1" pause
-timeout /t 1 >nul
+rem timeout /t 1 >nul
 goto :eof	
 
 :exit
 cls
 echo update done !
-timeout /t 1 >nul
-exit/b 0
+rem timeout /t 1 >nul
+exit 0
 
 :error
 cls
 echo update failed !
-timeout /t 1 >nul
-exit/b 1
+rem timeout /t 1 >nul
+exit 1
 
 endlocal
 
@@ -414,5 +422,5 @@ cls
 set package_file=emulationstation.zip
 "%CD%\system\modules\rb_updater\7za.exe" -y x "%CD%\system\download\%package_file%" -aoa -o"%CD%\emulationstation" >nul
 del/Q "%CD%\system\download\%package_file%" >nul
-timeout /t 3 >nul
+rem timeout /t 3 >nul
 exit

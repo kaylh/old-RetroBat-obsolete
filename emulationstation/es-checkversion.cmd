@@ -18,6 +18,8 @@ set local_version_file=version.info
 set remote_version_filepath=%modules_dir%\rb_updater
 set local_version_filepath=%current_path%
 
+set branch=stable
+
 :loop_arg
 if not "%1"=="" (
     if "%1"=="-branch" (
@@ -27,8 +29,6 @@ if not "%1"=="" (
     shift
     goto :loop_arg
 )
-
-if "%1"=="" set branch=stable
 
 if not exist "%modules_dir%\rb_updater\7za.exe" goto deps_error
 if not exist "%modules_dir%\rb_updater\wget.exe" goto deps_error
@@ -74,13 +74,13 @@ if "%run_update%"=="1" (
 :fetch_updater
 if exist "%current_path%\es-update.cmd" del/Q "%current_path%\es-update.cmd" 
 "%modules_dir%\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%current_path%" https://www.retrobat.ovh/repo/win64/%branch%/es-update.cmd -q 
-timeout /t 1 >nul
-exit/b 0
+rem timeout /t 1 >nul
+exit 0
 
 :no_update
 echo No update found !
-exit/b 1
+exit 1
 
 :deps_error
 echo Missing dependencies !
-exit/b 2
+exit 2
