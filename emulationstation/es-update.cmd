@@ -372,15 +372,10 @@ if "!debug!"=="1" (
 	echo !current_path!
 	echo !extraction_dir!
 	echo !download_dir!\!package_file!
-)
-if "!debug!"=="1" (
 	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!"
-) else (
-	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!" >nul
-)
-if "!debug!"=="1" (
 	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!extraction_dir!"
 ) else (
+	if "!enable_extraction!"=="1" if not exist "!extraction_dir!\." md "!extraction_dir!" >nul
 	if "!enable_extraction!"=="1" "!modules_dir!\rb_updater\7za.exe" -y x "!download_dir!\!package_file!" -aoa -o"!extraction_dir!" >nul
 )
 if %ERRORLEVEL% NEQ 0 (
