@@ -37,7 +37,7 @@ if not exist "%modules_dir%\rb_updater\wget.exe" goto deps_error
 if exist "%remote_version_filepath%\%remote_version_file%" del/Q "%remote_version_filepath%\%remote_version_file%" 
 
 if not exist "%remote_version_filepath%\%remote_version_file%" "%modules_dir%\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%remote_version_filepath%" https://www.retrobat.ovh/repo/win64/%branch%/%remote_version_file% -q 
-timeout /t 1 >nul
+rem timeout /t 1 >nul
 
 if not exist "%remote_version_filepath%\%remote_version_file%" (
 	call :deps_error
