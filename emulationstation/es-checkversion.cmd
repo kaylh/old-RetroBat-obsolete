@@ -74,6 +74,7 @@ if "%run_update%"=="1" (
 :fetch_updater
 if exist "%current_path%\es-update.cmd" del/Q "%current_path%\es-update.cmd" 
 "%modules_dir%\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%current_path%" https://www.retrobat.ovh/repo/win64/%branch%/es-update.cmd -q 
+echo %rb_remote_version%
 rem timeout /t 1 >nul
 exit 0
 
