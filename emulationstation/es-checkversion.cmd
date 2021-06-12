@@ -58,12 +58,6 @@ set/p rb_local_version=<%local_version_file%
 cd "%current_path%"
 
 if not "%rb_remote_version%"=="%rb_local_version%" (
-	set run_update=1
-) else (
-	set run_update=0
-)
-
-if "%run_update%"=="1" (
 	call :fetch_updater
 	goto :eof
 ) else (
