@@ -394,6 +394,7 @@ goto :eof
 cls
 echo update done !
 rem timeout /t 1 >nul
+if exist %download_dir%\emulationstation.zip echo %download_dir%\emulationstation.zip
 exit 0
 
 :error
