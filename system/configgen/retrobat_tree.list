@@ -2,6 +2,8 @@ bios
 bios\HdPacks
 bios\dc
 bios\quasi88
+bios\mame
+bios\mame\artwork
 bios\Mupen64plus
 bios\Mupen64plus\cache
 bios\Mupen64plus\dump
@@ -25,6 +27,7 @@ emulators\arcadeflashweb
 emulators\cemu
 emulators\citra
 emulators\citra\user
+emulators\citra\user\config
 emulators\cxbx-reloaded
 emulators\cxbx-reloaded\EmuDisk
 emulators\daphne
@@ -77,12 +80,14 @@ emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
 library
-medias
-medias\records
-medias\records\config
-medias\records\output
+library\records
+library\records\config
+library\records\output
 roms
 saves
+saves\psp
+saves\psp\PSP
+saves\psp\PSP\TEXTURES
 screenshots
 screenshots\winuae
 system
