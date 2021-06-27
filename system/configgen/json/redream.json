@@ -2,7 +2,9 @@
    "redream.cfg_configmode_1":[
       {
          "fullmode":"borderless fullscreen",
-         "gamedir":"./../../roms/dreamcast"
+         "gamedir":"./../../roms/dreamcast",
+		 "profile0":"name:030000005e040000dd02000000007801,type:controller,deadzone:12,crosshair:1,a:joy0,b:joy1,x:joy2,y:joy3,start:joy7,dpad_up:hat0,dpad_down:hat1,dpad_left:hat2,dpad_right:hat3,ljoy_up:-axis1,ljoy_down:+axis1,ljoy_left:-axis0,ljoy_right:+axis0,ltrig:axis2,rtrig:axis5,menu:escape,menu:joy10,lcd:f5",
+		 "port1":"dev:0,desc:auto,type:controller"
       }
    ]
 }
