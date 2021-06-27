@@ -7,22 +7,24 @@
 +=====================================+
 
 Official Website: https://www.retrobat.ovh
-Facebook Group: https://www.facebook.com/groups/retrobat
 FAQ & Forum: https://retrobat.forumgaming.fr/t135-faq-retrobat-wip (english) / https://retrobat.forumgaming.fr/t136-faq-retrobat-wip (french)
+Discord: https://discord.gg/sx6T4wUagR
+Facebook Group: https://www.facebook.com/groups/retrobat
+
 
 ++ Introduction ++
 
-RetroBat is designed to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
+RetroBat is a Windows software distro dedicated to emulation and retrogaming. It bundle EmulationStation and emulators together and provide advanced customisation.
 
-With it you will be quickly able to run games from a ROMs collection. You can save a lot of time you can keep to play !
+You will be able to quickly run games from a ROMs collection and save a lot of time to play !
 
-RetroBat can download and install all software you need to have a good retro gaming experience on your Windows PC.
+RetroBat give you all the softwares you need to have a good retrogaming experience on your Windows PC.
 
-RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
 ++ System requirements ++
 
--OS supported: Windows 10, Windows 8.1, Windows 7 SP3 (64 bit)
+-OS supported: Windows 10, Windows 8.1, Windows 7 SP1 (64 bit)
 -Processor: CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
 -Graphics: Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan
 
