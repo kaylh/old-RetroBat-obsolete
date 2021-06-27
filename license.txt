@@ -1,10 +1,6 @@
-+=====================================+
-   ___     _           ___       _   
-  | _ \___| |_ _ _ ___| _ ) __ _| |_ 
-  |   / -_)  _| '_/ _ \ _ \/ _` |  _|
-  |_|_\___|\__|_| \___/___/\__,_|\__|
-
-+=====================================+
++================+
+ RETROBAT LICENCE
++================+
 An emulation distro for Windows to install and configure automatically EmulationStation frontend with RetroArch and standalone emulators.
 
 Copyright (c) 2017-2019 Adrien Chalard "Kayl"
