@@ -337,6 +337,10 @@
 		<desc>Configure Supermodel (MODEL 3)</desc>
 		<image>./media/supermodel-logo.png</image>
 		<rating>0</rating>
+		<developer>Supermodel Team</developer>
+		<publisher>Supermodel Team</publisher>
+		<genre>Emulator</genre>
+		<releasedate />
 		<playcount />
 		<lastplayed />
 		<gametime />
@@ -350,8 +354,8 @@
 		<image>./media/cxbxr-logo.png</image>
 		<rating>0</rating>
 		<releasedate />
-		<developer>Citra Team</developer>
-		<publisher>Citra Team</publisher>
+		<developer>Xemu Team</developer>
+		<publisher>Xemu Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
@@ -439,7 +443,7 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
-	<game>
+	<!--<game>
 		<path>./retroarch_angle.menu</path>
 		<name>RetroArch Angle (Multi Cores Emulator)</name>
 		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
@@ -454,7 +458,7 @@
 		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
-	</game>
+	</game>-->
 	<game>
 		<path>./mame.menu</path>
 		<name>MAME (Multiple Arcade Machine Emulator)</name>
@@ -482,7 +486,23 @@
 		<publisher>Ryujinx Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
-		<lastplayed>20210523T093315</lastplayed>
+		<lastplayed />
+		<gametime></gametime>
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./xemu.menu</path>
+		<name>Xemu (Xbox, Chihiro)</name>
+		<desc>Configure Xemu (Xbox, Chihiro)</desc>
+		<image>./media/xemu-logo.png</image>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Xemu Team</developer>
+		<publisher>Xemu Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
 		<gametime></gametime>
 		<lang>en</lang>
 		<region>wr</region>
@@ -497,8 +517,8 @@
 		<developer>Yuzu Team</developer>
 		<publisher>Yuzu Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>1</playcount>
-		<lastplayed>20210523T093322</lastplayed>
+		<playcount />
+		<lastplayed />
 		<gametime></gametime>
 		<lang>en</lang>
 		<region>wr</region>
@@ -514,8 +534,8 @@
 		<publisher>ZSNES Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
-		<lastplayed>20210523T093411</lastplayed>
-		<gametime>30</gametime>
+		<lastplayed />
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
