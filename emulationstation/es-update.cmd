@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 cls
-echo updating retrobat ^>^>^> 0%%
+echo Preparing updater... ^>^>^> 0%%
 
 REM WINDOW TITLE
 title retrobat updater
@@ -45,6 +45,7 @@ set enable_extraction=1
 REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
+set update_retrobat_gui=1
 set update_theme_carbon=1
 set update_retrobat_decorations=1
 set update_gamespack=0
@@ -145,7 +146,7 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 
 REM INSTALL PACKAGES
 set progress_current=0
-set progress_total=87
+set progress_total=88
 set progress_percent=0
 set download_retry=3
 
@@ -157,6 +158,7 @@ if not exist "!download_dir!\." md "!download_dir!" >nul
 
 REM RETROBAT UPDATE
 set package_file=retrobat_main.7z
+set progress_text=Updating RetroBat main files
 if "!update_retrobat_main!"=="1" (
 	REM DOWNLOAD
 	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
@@ -178,6 +180,21 @@ if "!update_retrobat_main!"=="1" (
 		if not exist "%retrobat_main_dir%\roms\%%x\." md "%retrobat_main_dir%\roms\%%x" >nul
 		if not exist "%retrobat_main_dir%\saves\%%x\." md "%retrobat_main_dir%\saves\%%x" >nul
 	)
+	set progress_text=Updating RetroBat GUI
+	call :progress
+)
+
+REM RETROBAT GUI UPDATE
+set package_file=retrobat_gui.7z
+if "!update_retrobat_gui!"=="1" (
+	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set /A progress_current+=!update_retrobat_gui!
+	call :download
+	call :progress	
+	REM EXTRACT	
+	call :extract
+	set progress_text=Updating EmulationStation
 	call :progress
 )
 
@@ -188,22 +205,8 @@ if "!update_emulationstation!"=="1" (
 	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
 	set /A progress_current+=!update_emulationstation!
 	call :download
+	set progress_text=Updating carbon theme
 	call :progress	
-)
-
-REM EMULATORLAUNCHER UPDATE
-set package_file=emulatorlauncher.zip
-if "!update_emulatorlauncher!"=="1" (
-	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
-	set /A progress_current+=!update_emulatorlauncher!
-	call :download
-	call :progress	
-	REM EXTRACT
-	set extraction_dir=!emulationstation_dir!
-	set /A progress_current+=!update_emulatorlauncher!
-	call :extract
-	call :progress
 )
 
 REM CARBON THEME UPDATE
@@ -221,6 +224,23 @@ if "!update_theme_carbon!"=="1" (
 	if "!enable_extraction!"=="1" if exist "!default_theme_dir!\es-theme-carbon\." move "!default_theme_dir!\es-theme-carbon" "!default_theme_dir!\es-theme-carbon_old"	 >nul
 	call :extract
 	if "!enable_extraction!"=="1" if exist "!default_theme_dir!\es-theme-carbon-master\." move "!default_theme_dir!\es-theme-carbon-master" "!default_theme_dir!\es-theme-carbon" >nul	
+	set progress_text=Updating emulatorLauncher
+	call :progress
+)
+
+REM EMULATORLAUNCHER UPDATE
+set package_file=emulatorlauncher.zip
+if "!update_emulatorlauncher!"=="1" (
+	REM DOWNLOAD
+	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set /A progress_current+=!update_emulatorlauncher!
+	call :download
+	call :progress	
+	REM EXTRACT
+	set extraction_dir=!emulationstation_dir!
+	set /A progress_current+=!update_emulatorlauncher!
+	call :extract
+	set progress_text=Updating decorations
 	call :progress
 )
 
@@ -236,6 +256,7 @@ if "!update_retrobat_decorations!"=="1" (
 	set extraction_dir=!decorations_dir!
 	set /A progress_current+=!update_retrobat_decorations!
 	call :extract
+	set progress_text=Updating RetroArch
 	call :progress
 )
 
@@ -251,6 +272,7 @@ if "!update_retroarch!"=="1" if not exist "!emulator_dir!\retroarch\manual_updat
 	set extraction_dir=!emulator_dir!\retroarch
 	set /A progress_current+=!update_retroarch!
 	call :extract
+	set progress_text=Updating Libretro cores
 	call :progress	
 )
 
@@ -266,6 +288,7 @@ if "!update_libretro_cores!"=="1" if not exist "!emulator_dir!\retroarch\manual_
 	set extraction_dir=!emulator_dir!\retroarch\cores
 	set /A progress_current+=!update_libretro_cores!
 	call :extract
+		set progress_text=Updating emulators
 	call :progress
 )
 
@@ -286,20 +309,9 @@ for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulator
 	)
 )
 
-REM UPDATE VERSION	
-if "!update_version!"=="1" (	
-	if exist "!current_path!\version.info" del/Q "!current_path!\version.info" >nul
-	if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
-	if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul	
-	echo !retrobat_version! > "!current_path!\version.info"
-	echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
-	echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
-	set /A progress_current+=!update_emulationstation!
-	call :progress
-)
-
 REM UPDATE CONFIG
 if "!update_config!"=="1" (
+	set progress_text=Updating configuration
 	REM MOVE VIDEOS
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" "!current_path!\.emulationstation\video" >nul
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" "!current_path!\.emulationstation\video" >nul
@@ -343,6 +355,16 @@ if "!update_config!"=="1" (
 
 REM CHECK PROGRESS
 if "!progress_percent!"=="100" (
+	REM UPDATE VERSION	
+	if "!update_version!"=="1" (
+		if exist "!current_path!\version.info" del/Q "!current_path!\version.info" >nul
+		if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
+		if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul	
+		echo !retrobat_version! > "!current_path!\version.info"
+		echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
+		echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
+		set /A progress_current+=!update_emulationstation!
+	)
 	call :exit
 	goto :eof
 ) else (
@@ -385,7 +407,7 @@ goto :eof
 :progress
 if "!debug!"=="0" cls
 set /a progress_percent=100*!progress_current!/progress_total
-echo Updating RetroBat... ^>^>^> !progress_percent!%%
+echo !progress_text!... ^>^>^> !progress_percent!%%
 if "!debug!"=="1" pause
 rem timeout /t 1 >nul
 goto :eof	
@@ -394,7 +416,6 @@ goto :eof
 cls
 echo update done !
 rem timeout /t 1 >nul
-if exist %download_dir%\emulationstation.zip echo %download_dir%\emulationstation.zip
 exit 0
 
 :error
