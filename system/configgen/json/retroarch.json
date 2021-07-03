@@ -146,6 +146,7 @@
 		 "citra_use_libretro_save_path":"LibRetro Default",
          "dolphin_shader_compilation_mode":"sync",
          "dolphin_texture_cache_accuracy":"Safe",
+		 "virtualjaguar_bios":"enabled",
 		 "kronos_addon_cartridge":"4M_extended_ram",
 		 "kronos_force_downsampling":"enabled",
 		 "kronos_meshmode":"enabled",
