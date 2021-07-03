@@ -102,7 +102,7 @@ set update_teknoparrot=0
 set update_tsugaru=1
 set update_vpinball=1
 set update_winuae=1
-set update_xemu=0
+set update_xemu=1
 set update_xenia=0
 set update_xenia-canary=1
 set update_yuzu=0
@@ -146,7 +146,7 @@ if not exist "!modules_dir!\rb_updater\wget.exe" (
 
 REM INSTALL PACKAGES
 set progress_current=0
-set progress_total=88
+set progress_total=90
 set progress_percent=0
 set download_retry=3
 
@@ -199,7 +199,7 @@ if "!update_retrobat_gui!"=="1" (
 )
 
 REM EMULATIONSTATION UPDATE
-set package_file=emulationstation.zip
+set package_file=emulationstation.7z
 if "!update_emulationstation!"=="1" (
 	REM DOWNLOAD
 	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
@@ -229,7 +229,7 @@ if "!update_theme_carbon!"=="1" (
 )
 
 REM EMULATORLAUNCHER UPDATE
-set package_file=emulatorlauncher.zip
+set package_file=emulatorlauncher.7z
 if "!update_emulatorlauncher!"=="1" (
 	REM DOWNLOAD
 	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
