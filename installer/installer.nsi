@@ -22,7 +22,7 @@ Unicode true
 !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
 !define BASE_DIR ".."
-!define BASE_INSTALL_DIR "C:\$(^Name)\"
+!define BASE_INSTALL_DIR "$(^Name)"
 !define DECORATIONS_DIR "$INSTDIR\system\decorations"
 !define DECORATIONS_BASE "${BASE_DIR}\system\decorations"
 !define EMULATIONSTATION_DIR "$INSTDIR\emulationstation"
@@ -30,6 +30,8 @@ Unicode true
 !define EMULATORS_DIR "$INSTDIR\emulators"
 !define EMULATORS_BASE "${BASE_DIR}\emulators"
 !define DOWNLOAD_DIR "$INSTDIR\system\download"
+!define GAMEPACK_BASE "${BASE_DIR}\roms"
+!define GAMEPACK_DIR "$INSTDIR\roms"
 
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
@@ -37,7 +39,7 @@ Unicode true
 
 Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
-InstallDir "${BASE_INSTALL_DIR}"
+InstallDir "C:\${BASE_INSTALL_DIR}"
 ShowInstDetails "hide"
 ;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"
@@ -122,53 +124,9 @@ FunctionEnd
 
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
- FileWrite $0 "${VERSION}"
+ FileWrite $0 "${VERSION}-${TIMESTAMP}"
  ;FileWrite $0 "${VERSION} ${TIMESTAMP2}"
  FileClose $0
-FunctionEnd
-
-Function CreateIni
-FileOpen $4 "$INSTDIR\retrobat.ini" w
-  FileWrite $4 "[RetroBat]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "ResetConfig=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "LanguageDetection=1"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[SplashScreen]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "EnableIntro=1"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "RandomVideo=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "VideoDuration=6500"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'FilePath="default"'
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'FileName="retrobat-intro.mp4"'
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[EmulationStation]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "InterfaceMode=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "Fullscreen=1"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "WindowXSize=1280"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "WindowYSize=720"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "NoExitMenu=0"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 "[RetroArch]"
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'DefaultAudioDriver="xaudio"'
-  FileWrite $4 "$\r$\n"
-  FileWrite $4 'DefaultVideoDriver="vulkan"'
-  FileWrite $4 "$\r$\n"
-  FileClose $4
 FunctionEnd
 
 !macro MUI_FINISHPAGE_SHORTCUT
@@ -234,7 +192,8 @@ SectionInstType ${SEC01} ${SEC02}
  File "${BASE_DIR}\retrobat.dat"
  File "${BASE_DIR}\license.txt"
  File /nonfatal "${BASE_DIR}\readme.txt"
- File /nonfatal "${BASE_DIR}\*.dll" 
+ File /nonfatal "${BASE_DIR}\*.dll"
+ File "${BASE_DIR}\BatGui.exe" 
  File /r "${BASE_DIR}\system"
  File /r "${BASE_DIR}\bios"
 
@@ -359,6 +318,7 @@ SectionInstType ${SEC01}
 ; File /r "${EMULATORS_BASE}\ryujinx"
  File /r "${EMULATORS_BASE}\vpinball"
  File /r "${EMULATORS_BASE}\winuae"
+ File /r "${EMULATORS_BASE}\xemu"
 ; File /r "${EMULATORS_BASE}\yuzu"
  File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
  File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
@@ -393,6 +353,19 @@ SectionInstType ${SEC01} ${SEC02}
  SetDetailsPrint listonly
  
  File /r "${DECORATIONS_BASE}"
+SectionEnd
+
+Section /o "Games Pack" SectionGamepack
+SectionInstType ${SEC01} ${SEC02}
+
+ SetOutPath "$INSTDIR"
+ SetOverwrite on
+ 
+ SetDetailsPrint textonly
+	DetailPrint "Copying games files..."
+ SetDetailsPrint listonly
+ 
+ File /r "${GAMEPACK_BASE}"
 SectionEnd
 SectionGroupEnd
 
@@ -432,9 +405,12 @@ SectionInstType ${SEC01} ${SEC02}
  Delete "${DOWNLOAD_DIR}\*.zip"
  Delete "${DOWNLOAD_DIR}\*.*"
  
- ifFileExists "$INSTDIR\retrobat.ini" 0 +2
- Delete "$INSTDIR\retrobat.ini"
+ifFileExists "$INSTDIR\retrobat.ini" 0 +2
+Delete "$INSTDIR\retrobat.ini"
+File /r /x "${BASE_DIR}\system\templates\retrobat.ini" "$INSTDIR\retrobat.ini"
  ;Call CreateIni
+ifFileExists "$INSTDIR\system\templates\retrobat.ini" 0 +2
+Delete "$INSTDIR\system\templates\retrobat.ini"
 SectionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
@@ -444,4 +420,5 @@ SectionEnd
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Install compatible standalone emulators."
 ;!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Install main softwares and needed configuration files."
+!insertmacro MUI_DESCRIPTION_TEXT ${SectionGamepack} "Install a free games selection."
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
