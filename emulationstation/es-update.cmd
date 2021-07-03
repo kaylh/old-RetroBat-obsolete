@@ -199,7 +199,7 @@ if "!update_retrobat_gui!"=="1" (
 )
 
 REM EMULATIONSTATION UPDATE
-set package_file=emulationstation.7z
+set package_file=emulationstation.zip
 if "!update_emulationstation!"=="1" (
 	REM DOWNLOAD
 	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
@@ -316,6 +316,7 @@ if "!update_config!"=="1" (
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neon.mp4" "!current_path!\.emulationstation\video" >nul
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-neogeo.mp4" "!current_path!\.emulationstation\video" >nul
 	if exist "!current_path!\..\system\templates\emulationstation\retrobat-ps2.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-ps2.mp4" "!current_path!\.emulationstation\video" >nul
+	if exist "!current_path!\..\system\templates\emulationstation\retrobat-space.mp4" move/Y "!current_path!\..\system\templates\emulationstation\retrobat-space.mp4" "!current_path!\.emulationstation\video" >nul
 
 	REM COPY ES CONFIG
 	if "!update_es_settings!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" >nul
@@ -343,6 +344,7 @@ if "!update_config!"=="1" (
 		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" >nul
 	)
 	
+	if exist "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4" del/Q "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4"
 	if exist "!current_path!\..\system\es_menu\retroarch_angle.menu" (
 	copy/y "!current_path!\..\system\es_menu\retroarch_angle.menu" "!current_path!\..\system\es_menu\retroarch_angle.menu.old" >nul 
 	del/Q "!current_path!\..\system\es_menu\retroarch_angle.menu" >nul
@@ -363,7 +365,6 @@ if "!progress_percent!"=="100" (
 		echo !retrobat_version! > "!current_path!\version.info"
 		echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
 		echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
-		set /A progress_current+=!update_emulationstation!
 	)
 	call :exit
 	goto :eof
@@ -416,6 +417,7 @@ goto :eof
 cls
 echo update done !
 rem timeout /t 1 >nul
+if exist !download_dir!\emulationstation.zip echo !download_dir!\emulationstation.zip
 exit 0
 
 :error
