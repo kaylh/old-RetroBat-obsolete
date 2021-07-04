@@ -45,22 +45,25 @@ set enable_extraction=1
 REM UPDATE
 REM GLOBAL
 set update_retrobat_main=1
+set update_retrobat_ini=1
 set update_retrobat_gui=1
 set update_theme_carbon=1
 set update_retrobat_decorations=1
 set update_gamespack=0
 set update_emulationstation=1
 set update_emulatorlauncher=1
-set update_config=1
-set update_version=1
 
-set update_retrobat_ini=1
+set update_config=1
 set update_es_settings=1
 set update_es_systems=1
 set update_es_features=1
 set update_es_padtokey=1
+set update_version=1
 
 REM EMULATORS
+set update_retroarch=1
+set update_libretro_cores=1
+
 set update_applewin=1
 set update_arcadeflashweb=1
 set update_cemu=1
@@ -91,7 +94,6 @@ set update_ppsspp=1
 set update_project64=1
 set update_raine=1
 set update_redream=1
-set update_retroarch=1
 set update_rpcs3=1
 set update_ryujinx=0
 set update_simcoupe=1
@@ -106,7 +108,6 @@ set update_xemu=1
 set update_xenia=0
 set update_xenia-canary=1
 set update_yuzu=0
-set update_libretro_cores=1
 
 set debug=0
 set branch=stable
@@ -158,6 +159,8 @@ if not exist "!download_dir!\." md "!download_dir!" >nul
 
 REM RETROBAT UPDATE
 set package_file=retrobat_main.7z
+cls
+echo Updating RetroBat main files... ^>^>^> 0%%
 set progress_text=Updating RetroBat main files
 if "!update_retrobat_main!"=="1" (
 	REM DOWNLOAD
@@ -192,8 +195,12 @@ if "!update_retrobat_gui!"=="1" (
 	set /A progress_current+=!update_retrobat_gui!
 	call :download
 	call :progress	
-	REM EXTRACT	
+	REM EXTRACT
+	set extraction_dir=!download_dir!\extract
+	set /A progress_current+=!update_retrobat_gui!	
 	call :extract
+	xcopy /y "!download_dir!\extract" "!retrobat_main_dir!" /s /e >nul
+	rmdir /s /q "!download_dir!\extract" >nul
 	set progress_text=Updating EmulationStation
 	call :progress
 )
@@ -288,7 +295,7 @@ if "!update_libretro_cores!"=="1" if not exist "!emulator_dir!\retroarch\manual_
 	set extraction_dir=!emulator_dir!\retroarch\cores
 	set /A progress_current+=!update_libretro_cores!
 	call :extract
-		set progress_text=Updating emulators
+	set progress_text=Updating emulators
 	call :progress
 )
 
@@ -305,6 +312,7 @@ for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulator
 	set extraction_dir=!emulator_dir!\%%x
 	set /A progress_current+=!update_%%x!
 	call :extract
+	set progress_text=Updating emulators
 	call :progress	
 	)
 )
@@ -363,8 +371,8 @@ if "!progress_percent!"=="100" (
 		if exist "!current_path!\about.info" del/Q "!current_path!\about.info" >nul
 		if exist "!retrobat_main_dir!\system\version.info" del/Q "!retrobat_main_dir!\system\version.info" >nul	
 		echo !retrobat_version! > "!current_path!\version.info"
-		echo RETROBAT v!retrobat_version! > "!current_path!\about.info"
-		echo !retrobat_version! > "!retrobat_main_dir!\system\version.info"
+		echo RETROBAT> "!current_path!\about.info"
+		echo !retrobat_version!> "!retrobat_main_dir!\system\version.info"
 	)
 	call :exit
 	goto :eof
