@@ -352,12 +352,14 @@ if "!update_config!"=="1" (
 		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" >nul
 	)
 	
-	if exist "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4" del/Q "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4"
+	if exist "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4" del/Q "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4" >nul
 	if exist "!current_path!\..\system\es_menu\retroarch_angle.menu" (
 	copy /v /y "!current_path!\..\system\es_menu\retroarch_angle.menu" "!current_path!\..\system\es_menu\retroarch_angle.menu.old" >nul 
 	del/Q "!current_path!\..\system\es_menu\retroarch_angle.menu" >nul
 	)
 	if exist "!current_path!\..\emulators\retroarch\retroarch_angle.exe" del/Q "!current_path!\..\emulators\retroarch\retroarch_angle.exe" >nul
+	
+	if exist "!current_path!\..\system\templates\emulationstation\notice.pdf" copy /v /y "!current_path!\..\system\templates\emulationstation\notice.pdf" "!current_path!\..\emulationstation\.emulationstation\notice.pdf" >nul
 	
 	set /A progress_current+=!update_config!
 	call :progress
