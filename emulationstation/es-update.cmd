@@ -339,7 +339,7 @@ if "!update_config!"=="1" (
 	
 	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_systems.cfg" (
 		copy /v /y "!emulationstation_dir!\.emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" >nul
-		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg" >nul
+		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_systems_retrobat.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg" >nul
 	)
 	
 	if "!update_es_features!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_features.cfg" (
