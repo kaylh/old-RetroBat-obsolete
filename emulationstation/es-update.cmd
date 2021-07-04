@@ -173,7 +173,7 @@ if "!update_retrobat_main!"=="1" (
 	set /A progress_current+=!update_retrobat_main!
 	if "!update_retrobat_ini!"=="1" if exist "!retrobat_main_dir!\retrobat.ini" del/Q "!retrobat_main_dir!\retrobat.ini" >nul
 	call :extract
-	xcopy /y "!download_dir!\extract" "!retrobat_main_dir!" /s /e >nul
+	xcopy "!download_dir!\extract" "!retrobat_main_dir!" /s /e /y >nul
 	rmdir /s /q "!download_dir!\extract" >nul
 	REM RECREATE RETROBAT TREE
 	for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\retrobat_tree.list") do (
@@ -199,7 +199,7 @@ if "!update_retrobat_gui!"=="1" (
 	set extraction_dir=!download_dir!\extract
 	set /A progress_current+=!update_retrobat_gui!	
 	call :extract
-	xcopy /y "!download_dir!\extract" "!retrobat_main_dir!" /s /e >nul
+	xcopy "!download_dir!\extract" "!retrobat_main_dir!" /s /e /y >nul
 	rmdir /s /q "!download_dir!\extract" >nul
 	set progress_text=Updating EmulationStation
 	call :progress
@@ -333,28 +333,28 @@ if "!update_config!"=="1" (
 	if "!update_es_padtokey!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" del/Q "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" >nul
 	
 	if "!update_es_settings!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_settings.cfg" (
-		copy/y "!emulationstation_dir!\.emulationstation\es_settings.cfg" "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" >nul
-		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_settings.cfg" "!emulationstation_dir!\.emulationstation\es_settings.cfg" >nul
+		copy /v /y "!emulationstation_dir!\.emulationstation\es_settings.cfg" "!emulationstation_dir!\.emulationstation\es_settings.cfg.old" >nul
+		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_settings.cfg" "!emulationstation_dir!\.emulationstation\es_settings.cfg" >nul
 	)
 	
 	if "!update_es_systems!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_systems.cfg" (
-		copy/y "!emulationstation_dir!\.emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" >nul
-		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg" >nul
+		copy /v /y "!emulationstation_dir!\.emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg.old" >nul
+		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_systems.cfg" "!emulationstation_dir!\.emulationstation\es_systems.cfg" >nul
 	)
 	
 	if "!update_es_features!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_features.cfg" (
-		copy/y "!emulationstation_dir!\.emulationstation\es_features.cfg" "!emulationstation_dir!\.emulationstation\es_features.cfg.old" >nul
-		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_features.cfg" "!emulationstation_dir!\.emulationstation\es_features.cfg" >nul
+		copy /v /y "!emulationstation_dir!\.emulationstation\es_features.cfg" "!emulationstation_dir!\.emulationstation\es_features.cfg.old" >nul
+		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_features.cfg" "!emulationstation_dir!\.emulationstation\es_features.cfg" >nul
 	)
 	
 	if "!update_es_padtokey!"=="1" if exist "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" (
-		copy/y "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" >nul
-		copy/y "!emulationstation_dir!\..\system\templates\emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" >nul
+		copy /v /y "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg.old" >nul
+		copy /v /y "!emulationstation_dir!\..\system\templates\emulationstation\es_padtokey.cfg" "!emulationstation_dir!\.emulationstation\es_padtokey.cfg" >nul
 	)
 	
 	if exist "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4" del/Q "!current_path!\..\emulationstation\.emulationstation\video\retrobat-intro.mp4"
 	if exist "!current_path!\..\system\es_menu\retroarch_angle.menu" (
-	copy/y "!current_path!\..\system\es_menu\retroarch_angle.menu" "!current_path!\..\system\es_menu\retroarch_angle.menu.old" >nul 
+	copy /v /y "!current_path!\..\system\es_menu\retroarch_angle.menu" "!current_path!\..\system\es_menu\retroarch_angle.menu.old" >nul 
 	del/Q "!current_path!\..\system\es_menu\retroarch_angle.menu" >nul
 	)
 	if exist "!current_path!\..\emulators\retroarch\retroarch_angle.exe" del/Q "!current_path!\..\emulators\retroarch\retroarch_angle.exe" >nul
