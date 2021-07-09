@@ -110,9 +110,12 @@ set update_xenia-canary=1
 set update_yuzu=0
 
 set debug=0
+REM END SWITCHS
+
+set arch=win64
 set branch=stable
 
-REM END SWITCHS
+set source_url=https://www.retrobat.ovh/repo/!arch!
 
 REM SET SCRIPT ARGUMENTS
 
@@ -164,7 +167,7 @@ echo Updating RetroBat main files... ^>^>^> 0%%
 set progress_text=Updating RetroBat main files
 if "!update_retrobat_main!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_retrobat_main!
 	call :download
 	call :progress	
@@ -191,7 +194,7 @@ REM RETROBAT GUI UPDATE
 set package_file=retrobat_gui.7z
 if "!update_retrobat_gui!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_retrobat_gui!
 	call :download
 	call :progress	
@@ -209,7 +212,7 @@ REM EMULATIONSTATION UPDATE
 set package_file=emulationstation.zip
 if "!update_emulationstation!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_emulationstation!
 	call :download
 	set progress_text=Updating carbon theme
@@ -220,7 +223,7 @@ REM CARBON THEME UPDATE
 set package_file=theme_carbon.zip
 if "!update_theme_carbon!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_theme_carbon!
 	call :download
 	call :progress	
@@ -239,7 +242,7 @@ REM EMULATORLAUNCHER UPDATE
 set package_file=emulatorlauncher.7z
 if "!update_emulatorlauncher!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_emulatorlauncher!
 	call :download
 	call :progress	
@@ -255,7 +258,7 @@ REM DECORATIONS UPDATE
 set package_file=decorations.7z
 if "!update_retrobat_decorations!"=="1" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/!package_file!
+	set download_url=!source_url!/!branch!/!package_file!
 	set /A progress_current+=!update_retrobat_decorations!
 	call :download
 	call :progress	
@@ -271,7 +274,7 @@ REM RETROARCH UPDATE
 set package_file=retroarch.7z
 if "!update_retroarch!"=="1" if not exist "!emulator_dir!\retroarch\manual_update.txt" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
+	set download_url=!source_url!/!branch!/emulators/!package_file!
 	set /A progress_current+=!update_retroarch!
 	call :download
 	call :progress	
@@ -287,7 +290,7 @@ REM LIBRETRO CORES UPDATE
 set package_file=libretro_cores.7z
 if "!update_libretro_cores!"=="1" if not exist "!emulator_dir!\retroarch\manual_update.txt" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
+	set download_url=!source_url!/!branch!/emulators/!package_file!
 	set /A progress_current+=!update_libretro_cores!
 	call :download
 	call :progress	
@@ -304,7 +307,7 @@ for /f "usebackq delims=" %%x in ("%retrobat_main_dir%\system\configgen\emulator
 	set package_file=%%x.7z
 	if not "%%x"=="retroarch" if "!update_%%x!"=="1" if not exist "!emulator_dir!\%%x\manual_update.txt" (
 	REM DOWNLOAD
-	set download_url=https://www.retrobat.ovh/repo/win64/!branch!/emulators/!package_file!
+	set download_url=!source_url!/!branch!/emulators/!package_file!
 	set /A progress_current+=!update_%%x!
 	call :download
 	call :progress		
@@ -360,6 +363,13 @@ if "!update_config!"=="1" (
 	if exist "!current_path!\..\emulators\retroarch\retroarch_angle.exe" del/Q "!current_path!\..\emulators\retroarch\retroarch_angle.exe" >nul
 	
 	if exist "!current_path!\..\system\templates\emulationstation\notice.pdf" copy /v /y "!current_path!\..\system\templates\emulationstation\notice.pdf" "!current_path!\..\emulationstation\.emulationstation\notice.pdf" >nul
+	
+	if exist "!current_path!\..\emulators\supermodel\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Supermodel.ini"
+	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" if exist "!current_path!\..\emulators\supermodel\Config\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Config\Supermodel.ini"
+	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" copy /v /y "!current_path!\..\system\templates\supermodel\Supermodel.ini" "!current_path!\..\emulators\supermodel\Config\Supermodel.ini"
+	
+	if exist "%retrobat_main_dir%\roms\n64dd\." move/Y "%retrobat_main_dir%\roms\n64dd" "%retrobat_main_dir%\roms\64dd"
+	if exist "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" ren "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" "_64dd.svg"
 	
 	set /A progress_current+=!update_config!
 	call :progress
