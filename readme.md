@@ -33,6 +33,8 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Compiling
 
+ <img src="https://www.retrobat.ovh/img/under-construction.png" alt="under-construction" class="center">
+
 To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
 
 To build .nsi files you need the NullSoft Scriptable Install System.
