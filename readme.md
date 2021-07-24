@@ -16,13 +16,14 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 |   |   |
 |---|---|
-|**OS supported:**|Windows 10, Windows 8.1, Windows 7 SP1 (64 bit)|
+|**OS supported:**|Windows 10, Windows 8.1|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
 |**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)|
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)](https://aka.ms/vs/16/release/vc_redist.x86.exe)|
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
+|**Controllers:**|Xinput controllers hightly recommanded. Test your controller [HERE](https://gamepad-tester.com)|
 
 ## Supported machines
 
