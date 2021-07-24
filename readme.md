@@ -1,8 +1,8 @@
- <img src="https://www.retrobat.ovh/img/retrobat_logo.svg" width="585" height="188" alt="RetroBat-Logo" class="center"> 
+ <img src="https://www.retrobat.ovh/img/retrobat_logo.svg" alt="RetroBat-Logo" class="center"> 
 
 [Official Website](https://www.retrobat.ovh) | [Facebook Group](https://www.facebook.com/groups/retrobat)
 
- ## :page_with_curl: Description
+## Introduction
 
 RetroBat is designed to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
 
@@ -12,26 +12,26 @@ RetroBat can download and install all software you need to have a good retro gam
 
 RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
-## :gear: System requirements
+## System requirements
 
 |   |   |
 |---|---|
 |**OS supported:**|Windows 10, Windows 8.1|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
-|**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)|
+|**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/fr-fr/download/details.aspx?id=26999)|
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)](https://aka.ms/vs/16/release/vc_redist.x86.exe)|
 |   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
 |**Controllers:**|Xinput controllers hightly recommanded. Test your controller [HERE](https://gamepad-tester.com)|
 
-## :desktop_computer: Supported machines
+## Supported machines
 
 ![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
 **RetroBat will never provide ROMs or BIOS files.**
 
-## :dna: Compiling
+## Compiling
 
  <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
 
@@ -51,18 +51,18 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
 - Clone this github then run build.bat to launch the RetroBat's installer build routine.
 -->
-## :crown: RetroBat Team
+## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
 - Lorenzolamas - community management, assets, testing
 - Fabrice Caruso - programmer, theming
 
-## :purple_heart: Special Thanks
+## Special Thanks
 
 - Hel Mic - for his generous support and for his wonderful themes.
 - Batocera - for their wonderful retrogaming dedicated OS.
 
-## :black_nib: Licence
+## Licence
 
 RetroBat is free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
@@ -79,12 +79,12 @@ Otherwise, you can start a new project off RetroBat sources if you follow the sa
 Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0).
 
 
-## :beers: Credits
+## Credits
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 - RetroArch by Libretro Team.
 
-## :bulb: Support
+## Support
 
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
