@@ -33,8 +33,9 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Compiling
 
- <img src="https://www.retrobat.ovh/img/under-construction.png" alt="under-construction" class="center">
+ <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
 
+<!--
 To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
 
 To build .nsi files you need the NullSoft Scriptable Install System.
@@ -49,7 +50,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
 - Clone this github then run build.bat to launch the RetroBat's installer build routine.
-
+-->
 ## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
@@ -58,7 +59,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 
 ## Special Thanks
 
-- Hel Mic - for his generous support.
+- Hel Mic - for his generous support and for his wonderful themes.
 - Batocera - for their wonderful retrogaming dedicated OS.
 
 ## Licence
