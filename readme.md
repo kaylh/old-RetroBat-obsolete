@@ -55,7 +55,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
 - Lorenzolamas - community management, assets, testing
-- Fabrice Caruso - programmer, theming
+- Fabrice Caruso - lead developer, theming
 
 ## Special Thanks
 
