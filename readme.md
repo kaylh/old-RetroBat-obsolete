@@ -16,13 +16,14 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 |   |   |
 |---|---|
-|**OS supported:**|Windows 10, Windows 8.1, Windows 7 SP1 (64 bit)|
+|**OS supported:**|Windows 10, Windows 8.1|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
-|**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.microsoft.com/en-US/download/details.aspx?id=5555)|
-|   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)](https://aka.ms/vs/16/release/vc_redist.x86.exe)|
-|   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://aka.ms/vs/16/release/vc_redist.x64.exe)|
+|**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)|
+|   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)|
+|   |[Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)|
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
+|**Controllers:**|Xinput controllers hightly recommanded. Test your controller [HERE](https://gamepad-tester.com)|
 
 ## Supported machines
 
@@ -32,6 +33,9 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ## Compiling
 
+ <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
+
+<!--
 To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
 
 To build .nsi files you need the NullSoft Scriptable Install System.
@@ -46,16 +50,16 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
 - Clone this github then run build.bat to launch the RetroBat's installer build routine.
-
+-->
 ## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
 - Lorenzolamas - community management, assets, testing
-- Fabrice Caruso - programmer, theming
+- Fabrice Caruso - lead developer, theming
 
 ## Special Thanks
 
-- Hel Mic - for his generous support.
+- Hel Mic - for his generous support and for his wonderful themes.
 - Batocera - for their wonderful retrogaming dedicated OS.
 
 ## Licence
