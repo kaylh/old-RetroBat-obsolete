@@ -4,13 +4,11 @@
 
 ## Introduction
 
-RetroBat is designed to configure automatically EmulationStation frontend with RetroArch and standalone emulators.
+RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides fully configured EmulationStation frontend with all emulators needed to have the best retrogaming experience on your Windows personnal computer. It share the same EmulationStation with Batocera and EmuELEC, that means all the themes designed for this EmulationStation are compatible with the three distributions and all the improvements made on the interface are available for all the three of them.
 
-With it you will be quickly able to run games from a ROMs collection. You can save a lot of time you can keep to play !
+With it you will be quickly and easily able to run games from a ROMs collection. You can save a lot of time you can keep to play!
 
-RetroBat can download and install all software you need to have a good retro gaming experience on your Windows PC.
-
-RetroBat can run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
 ## System requirements
 
