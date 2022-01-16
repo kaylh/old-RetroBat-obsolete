@@ -16,7 +16,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 |   |   |
 |---|---|
-|**OS supported:**|Windows 10, Windows 8.1|
+|**OS supported:**|Windows 11, Windows 10, Windows 8.1|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
 |**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)|
@@ -29,7 +29,7 @@ RetroBat can run in Portable Mode. That means you can start it from HDD or from 
 
 ![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
-**RetroBat will never provide ROMs or BIOS files.**
+**RetroBat will never provide copyrighted/commercial ROMs or BIOS files.**
 
 ## Compiling
 
@@ -49,7 +49,7 @@ You can download [here](https://www.dropbox.com/sh/wp6ed3wlro9x7th/AADQFQCZNQlmh
 I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
-- Clone this github then run build.bat to launch the RetroBat's installer build routine.
+- Clone this github then run build.bat to launch the build routine.
 -->
 ## RetroBat Team
 
