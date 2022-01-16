@@ -5,6 +5,7 @@
 		<name>AppleWin (Apple II)</name>
 		<desc>Configure AppleWin Emulator (Apple II)</desc>
 		<image>./media/applewin-logo.png</image>
+		<marquee>./media/applewin-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>AppleWin Team</developer>
@@ -20,6 +21,7 @@
 		<name>Cemu (Wii U)</name>
 		<desc>Configure Cemu Emulator (Wii U)</desc>
 		<image>./media/cemu-logo.png</image>
+		<marquee>./media/cemu-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Cemu Team</developer>
@@ -36,6 +38,7 @@
 		<name>Citra (3DS)</name>
 		<desc>Configure Citra Emulator (Nintendo 3DS)</desc>
 		<image>./media/citra-logo.png</image>
+		<marquee>./media/citra-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Citra Team</developer>
@@ -52,6 +55,7 @@
 		<name>Demul Old DX11 Plugin (Gaelco)</name>
 		<desc>Configure Demul Old DX11 Plugin (Gaelco)</desc>
 		<image>./media/demulold-logo.png</image>
+		<marquee>./media/demulold-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Demul Team</developer>
@@ -68,6 +72,7 @@
 		<name>Dolphin (GameCube,Wii,WAD)</name>
 		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
 		<image>./media/dolphin-logo.png</image>
+		<marquee>./media/dolphin-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Dolphin Team</developer>
@@ -84,6 +89,7 @@
 		<name>DolphinWX (Triforce)</name>
 		<desc>Configure DolphinWX Emulator (Triforce)</desc>
 		<image>./media/dolphin-logo.png</image>
+		<marquee>./media/dolphin-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Dolphin Community</developer>
@@ -100,6 +106,7 @@
 		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
 		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
 		<image>./media/dosbox-logo.png</image>
+		<marquee>./media/dosbox-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>DOSBox Team</developer>
@@ -116,6 +123,7 @@
 		<name>M2Emulator - Multi CPU (SEGA MODEL 2)</name>
 		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
 		<image>./media/m2emulator-logo.png</image>
+		<marquee>./media/m2emulator-logo.png</marquee>
 		<developer>Nebula Team</developer>
 		<publisher>Nebula Team</publisher>
 		<genre>Emulator</genre>
@@ -130,6 +138,7 @@
 		<name>Mesen (FDS, NES)</name>
 		<desc>Configure Mesen (FDS, NES)</desc>
 		<image>./media/mesen-logo.png</image>
+		<marquee>./media/mesen-logo.png</marquee>
 		<developer>Unknown</developer>
 		<publisher>Unknown</publisher>
 		<genre>Emulator</genre>
@@ -144,6 +153,7 @@
 		<name>mGBA (GameBoy Advance)</name>
 		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
 		<image>./media/mgba-logo.png</image>
+		<marquee>./media/mgba-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>mGBA Team</developer>
@@ -160,6 +170,7 @@
 		<name>PCSX2 (PlayStation 2)</name>
 		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
 		<image>./media/pcsx2-logo.png</image>
+		<marquee>./media/pcsx2-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>PCSX2 Team</developer>
@@ -176,6 +187,7 @@
 		<name>PPSSPP (PSP, Homebrews)</name>
 		<desc>Configure PPSSPP Emulator (PSP, Homebrews)</desc>
 		<image>./media/ppsspp-logo.png</image>
+		<marquee>./media/ppsspp-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>PPSSPP Team</developer>
@@ -192,6 +204,7 @@
 		<name>Project 64 (Nintendo 64)</name>
 		<desc>Configure Project 64 (Nintendo 64)</desc>
 		<image>./media/project64-logo.png</image>
+		<marquee>./media/project64-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Project 64</developer>
@@ -208,6 +221,7 @@
 		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
 		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
 		<image>./media/raine-logo.png</image>
+		<marquee>./media/raine-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Raine</developer>
@@ -224,6 +238,7 @@
 		<name>Redream (Dreamcast)</name>
 		<desc>Configure Redream Emulator (Dreamcast)</desc>
 		<image>./media/redream-logo.png</image>
+		<marquee>./media/redream-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Redream</developer>
@@ -240,6 +255,7 @@
 		<name>RPCS3 (PlayStation 3)</name>
 		<desc>Configure RPCS3 (PlayStation 3)</desc>
 		<image>./media/rpcs3-logo.png</image>
+		<marquee>./media/rpcs3-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>RPCS3 Team</developer>
@@ -256,6 +272,7 @@
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Configure Xenia Canary (XBOX 360)</desc>
 		<image>./media/xenia-logo.png</image>
+		<marquee>./media/xenia-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Xenia Team</developer>
@@ -272,6 +289,7 @@
 		<name>Daphne Loader (Laserdisc)</name>
 		<desc>Configure Daphne Loader (Laserdisc)</desc>
 		<image>./media/daphne-logo.png</image>
+		<marquee>./media/daphne-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Unknown</developer>
@@ -288,6 +306,7 @@
 		<name>Future Pinball</name>
 		<desc>Configure Future Pinball</desc>
 		<image>./media/fpinball-logo.png</image>
+		<marquee>./media/fpinball-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Unknown</developer>
@@ -304,6 +323,7 @@
 		<name>Visual Pinball</name>
 		<desc>Configure Visual Pinball</desc>
 		<image>./media/vpinball-logo.png</image>
+		<marquee>./media/vpinball-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Unknown</developer>
@@ -320,6 +340,7 @@
 		<name>Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</name>
 		<desc>Configure Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</desc>
 		<image>./media/demul-logo.png</image>
+		<marquee>./media/demul-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Demul Team</developer>
@@ -336,6 +357,7 @@
 		<name>Supermodel (MODEL 3)</name>
 		<desc>Configure Supermodel (MODEL 3)</desc>
 		<image>./media/supermodel-logo.png</image>
+		<marquee>./media/supermodel-logo.png</marquee>
 		<rating>0</rating>
 		<developer>Supermodel Team</developer>
 		<publisher>Supermodel Team</publisher>
@@ -352,6 +374,7 @@
 		<name>CxBx Reloaded (XBOX, Chihiro)</name>
 		<desc>Configure CxBx Reloaded Emulator (XBOX, Chihiro)</desc>
 		<image>./media/cxbxr-logo.png</image>
+		<marquee>./media/cxbxr-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Xemu Team</developer>
@@ -368,6 +391,7 @@
 		<name>WinUAE (Amiga)</name>
 		<desc>Configure WinUAE (Amiga)</desc>
 		<image>./media/winuae-logo.png</image>
+		<marquee>./media/winuae-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>WinUAE Team</developer>
@@ -384,6 +408,7 @@
 		<name>PICO-8</name>
 		<desc>Configure PICO-8. This software is not provided by RetroBat. You can purchase it there: https://www.lexaloffle.com/pico-8.php</desc>
 		<image>./media/pico8-logo.png</image>
+		<marquee>./media/pico8-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Lexaloffle</developer>
@@ -400,6 +425,7 @@
 		<name>SNES9X (Super NES)</name>
 		<desc>Configure SNES9X (Super NES)</desc>
 		<image>./media/snes9x-logo.png</image>
+		<marquee>./media/snes9x-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>SNES9X Team</developer>
@@ -416,6 +442,7 @@
 		<name>Duckstation (PlayStation)</name>
 		<desc>Configure Duckstation Emulator (PlayStation)</desc>
 		<image>./media/duckstation-logo.png</image>
+		<marquee>./media/duckstation-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>Duckstation Team</developer>
@@ -428,42 +455,11 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./retroarch.menu</path>
-		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>
-	<!--<game>
-		<path>./retroarch_angle.menu</path>
-		<name>RetroArch Angle (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch Angle (Multi Cores Emulator)</desc>
-		<image>./media/retroarch-logo.png</image>
-		<rating>0</rating>
-		<releasedate />
-		<developer>Libretro Team</developer>
-		<publisher>Libretro Team</publisher>
-		<genre>Emulator</genre>
-		<playcount />
-		<lastplayed />
-		<gametime />
-		<lang>en</lang>
-		<region>wr</region>
-	</game>-->
-	<game>
 		<path>./mame.menu</path>
 		<name>MAME (Multiple Arcade Machine Emulator)</name>
 		<desc>Configure MAME (Multiple Arcade Machine Emulator). This emulator is not provided by RetroBat, you need to download it there: https://www.mamedev.org/release.html</desc>
 		<image>./media/mame-logo.png</image>
+		<marquee>./media/mame-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>MAME Team</developer>
@@ -480,14 +476,15 @@
 		<name>Ryujinx (Switch)</name>
 		<desc>Configure Ryujinx (Switch). This emulator is not provided by RetroBat, you need to download it there: https://ryujinx.org/download/</desc>
 		<image>./media/ryujinx-logo.png</image>
+		<marquee>./media/ryujinx-logo.png</marquee>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Ryujinx Team</developer>
 		<publisher>Ryujinx Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
 		<lastplayed />
-		<gametime></gametime>
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -496,14 +493,15 @@
 		<name>Xemu (Xbox, Chihiro)</name>
 		<desc>Configure Xemu (Xbox, Chihiro)</desc>
 		<image>./media/xemu-logo.png</image>
+		<marquee>./media/xemu-logo.png</marquee>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Xemu Team</developer>
 		<publisher>Xemu Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
-		<gametime></gametime>
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -512,14 +510,15 @@
 		<name>Yuzu (Switch)</name>
 		<desc>Configure Yuzu (Switch). This emulator is not provided by RetroBat, you need to download it there: https://yuzu-emu.org/downloads/</desc>
 		<image>./media/yuzu-logo.png</image>
+		<marquee>./media/yuzu-logo.png</marquee>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>Yuzu Team</developer>
 		<publisher>Yuzu Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
-		<gametime></gametime>
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -528,14 +527,32 @@
 		<name>ZSNES</name>
 		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
 		<image>./media/zsnes-logo.png</image>
+		<marquee>./media/zsnes-logo.png</marquee>
 		<rating>0</rating>
-		<releasedate></releasedate>
+		<releasedate />
 		<developer>ZSNES Team</developer>
 		<publisher>ZSNES Team</publisher>
 		<genre>Emulator</genre>
 		<playcount>1</playcount>
 		<lastplayed />
 		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./retroarch.menu</path>
+		<name>RetroArch (Multi Cores Emulator)</name>
+		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<image>./media/retroarch-logo.png</image>
+		<marquee>./media/retroarch-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Libretro Team</developer>
+		<publisher>Libretro Team</publisher>
+		<genre>Emulator</genre>
+		<playcount>2</playcount>
+		<lastplayed>20210710T122310</lastplayed>
+		<gametime>17</gametime>
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
