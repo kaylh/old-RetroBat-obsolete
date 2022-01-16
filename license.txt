@@ -1,10 +1,9 @@
-+================+
- RETROBAT LICENCE
-+================+
-An emulation distro for Windows to install and configure automatically EmulationStation frontend with RetroArch and standalone emulators.
+RETROBAT LICENCE
+
+RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation.
 
 Copyright (c) 2017-2019 Adrien Chalard "Kayl"
-Copyright (c) 2020-2021 RetroBat Team
+Copyright (c) 2020-2022 RetroBat Team
 
 RetroBat is free and open source project. It should not be used for commercial purposes. 
 It is done by a team of enthusiasts in their free time mainly for fun.
