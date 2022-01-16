@@ -29,7 +29,7 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 
 **RetroBat will never provide copyrighted/commercial ROMs or BIOS files.**
 
-## Compiling
+## Compilation Instructions
 
  <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
 
