@@ -60,7 +60,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - Hel Mic - for his generous support and for his wonderful themes.
 - Batocera - for their wonderful retrogaming dedicated Operating System.
 
-## 📃 Licence
+## ⚖ Licence
 
 RetroBat is free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
