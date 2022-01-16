@@ -14,7 +14,7 @@ if not "%1"=="" (
 
 REM -- SET VARIABLES --
 
-set retroarch_version=stable/1.9.0
+set retroarch_version=stable/1.9.13
 set "current_file=%~nx0"
 set current_drive=%cd:~0,2%
 set "current_dir=%cd:~3%"
@@ -26,7 +26,7 @@ set msys_dir=C:\msys64
 set bin_dir=%msys_dir%\usr\bin
 set emulationstation_url="https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip"
 set theme_url="https://github.com/fabricecaruso/es-theme-carbon/archive/master.zip"
-set launcher_url="https://github.com/fabricecaruso/batocera-ports/releases/download/continuous/batocera-ports.zip"
+set emulatorlauncher_url="https://github.com/fabricecaruso/batocera-ports/releases/download/continuous/batocera-ports.zip"
 set retroarch_url="https://buildbot.libretro.com/%retroarch_version%/windows/x86_64/RetroArch.7z"
 set retrobat_branch=master
 set retrobat_git="https://github.com/kaylh/RetroBat.git"
@@ -213,24 +213,21 @@ echo +===========================================================+
 echo  RETROBAT BUILD SCRIPT
 echo +===========================================================+
 echo  This script will help you to build RetroBat from its github
-echo  repository.  It will also download EmulationStation, 
-echo  RetroArch and almost all compatible emulators.
-echo  Then it will build the RetroBat installer with the
-echo  NullSoft Scriptable Install System.
-echo.
-echo  Once the work is done, you will not necessary get a full  
-echo  working RetroBat, depending mostly on the cloned branch.
-echo  You can edit retro.bat and modify as your needs.
+echo  repository. It will download all the required softwares and 
+echo  build the RetroBat installer with the NullSoft Scriptable 
+echo  Install System.
 echo +===========================================================+
-echo  (1) -- Download (get required files)
+echo  (D)ownload (get required files)
 echo.
-echo  (2) -- Installer compilation (files exist or download first)
+echo  (B)uild installer (if files exist or download first)
 echo.
-echo  (Q) -- Quit this script (abort)
+echo  (Q)uit this script (abort)
 echo +===========================================================+
 set/p user_answer="- Type your choice here (1,2,Q): "
-if "%user_answer%"=="1" goto clone_retrobat
-if "%user_answer%"=="2" goto build
+if "%user_answer%"=="D" goto clone_retrobat
+if "%user_answer%"=="d" goto clone_retrobat
+if "%user_answer%"=="B" goto build
+if "%user_answer%"=="b" goto build
 if "%user_answer%"=="Q" goto exit
 if "%user_answer%"=="q" goto exit
 
@@ -295,13 +292,13 @@ echo.
 echo :: DOWNLOADING EMULATORLAUNCHER ::
 echo.
 cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" %launcher_url% -q --show-progress
+wget --no-check-certificate -P "%current_path%\system\download" %emulatorlauncher_url% -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.XInput.dll -q --show-progress
 cd "%current_path%"
-rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %launcher_url% -OutFile "%current_path%\system\download\batocera-ports.zip""
+rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulatorlauncher_url% -OutFile "%current_path%\system\download\batocera-ports.zip""
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe" -OutFile "%current_path%\emulationstation\ILMerge.exe""
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.DirectInput.dll" -OutFile "%current_path%\emulationstation\SharpDX.DirectInput.dll""
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://github.com/fabricecaruso/batocera-ports/raw/master/SharpDX.dll" -OutFile "%current_path%\emulationstation\SharpDX.dll""
@@ -318,122 +315,15 @@ cd "%current_path%"
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%current_path%\system\download\retroarch.7z""
 timeout /t 1 >nul
 
-
-REM Libretro cores download loop
-
-::::81_libretro.dll
-::::2048_libretro.dll
-::::atari800_libretro.dll
-::::blastem_libretro.dll
-::::bluemsx_libretro.dll
-::::bsnes_libretro.dll
-::::bsnes_mercury_accuracy_libretro.dll
-::::bsnes_mercury_balanced_libretro.dll
-::::bsnes_mercury_performance_libretro.dll
-::::cap32_libretro.dll
-::::citra_libretro.dll
-::::craft_libretro.dll
-::::crocods_libretro.dll
-::::desmume2015_libretro.dll
-::::desmume_libretro.dll
-::::dolphin_libretro.dll
-::::dosbox_core_libretro.dll
-::::dosbox_pure_libretro.dll
-::::dosbox_svn_libretro.dll
-::::duckstation_libretro.dll
-::::easyrpg_libretro.dll
-::::fbalpha2012_cps1_libretro.dll
-::::fbalpha2012_cps2_libretro.dll
-::::fbalpha2012_cps3_libretro.dll
-::::fbalpha2012_libretro.dll
-::::fbalpha2012_neogeo_libretro.dll
-::::fbneo_libretro.dll
-::::fceumm_libretro.dll
-::::flycast_libretro.dll
-::::fmsx_libretro.dll
-::::freeintv_libretro.dll
-::::frodo_libretro.dll
-::::fuse_libretro.dll
-::::gambatte_libretro.dll
-::::gearboy_libretro.dll
-::::gearsystem_libretro.dll
-::::genesis_plus_gx_libretro.dll
-::::gpsp_libretro.dll
-::::gw_libretro.dll
-::::handy_libretro.dll
-::::hatari_libretro.dll
-::::kronos_libretro.dll
-::::lutro_libretro.dll
-::::mame2003_plus_libretro.dll
-::::mame2003_midway_libretro.dll
-::::mame2016_libretro.dll
-::::mame_libretro.dll
-::::mednafen_gba_libretro.dll
-::::mednafen_lynx_libretro.dll
-::::mednafen_ngp_libretro.dll
-::::mednafen_pce_fast_libretro.dll
-::::mednafen_pce_libretro.dll
-::::mednafen_pcfx_libretro.dll
-::::mednafen_psx_hw_libretro.dll
-::::mednafen_saturn_libretro.dll
-::::mednafen_supafaust_libretro.dll
-::::mednafen_supergrafx_libretro.dll
-::::mednafen_vb_libretro.dll
-::::mednafen_wswan_libretro.dll
-::::melonds_libretro.dll
-::::mesen-s_libretro.dll
-::::mesen_libretro.dll
-::::mgba_libretro.dll
-::::mrboom_libretro.dll
-::::mupen64plus_next_libretro.dll
-::::nekop2_libretro.dll
-::::neocd_libretro.dll
-::::nestopia_libretro.dll
-::::np2kai_libretro.dll
-::::nxengine_libretro.dll
-::::o2em_libretro.dll
-::::opera_libretro.dll
-::::parallel_n64_libretro.dll
-::::pcsx_rearmed_libretro.dll
-::::picodrive_libretro.dll
-::::pokemini_libretro.dll
-::::ppsspp_libretro.dll
-::::prboom_libretro.dll
-::::prosystem_libretro.dll
-::::puae_libretro.dll
-::::px68k_libretro.dll
-::::quasi88_libretro.dll
-::::quicknes_libretro.dll
-::::race_libretro.dll
-::::sameboy_libretro.dll
-::::scummvm_libretro.dll
-::::smsplus_libretro.dll
-::::snes9x_libretro.dll
-::::stella2014_libretro.dll
-::::stella_libretro.dll
-::::tgbdual_libretro.dll
-::::theodore_libretro.dll
-::::tic80_libretro.dll
-::::tyrquake_libretro.dll
-::::vbam_libretro.dll
-::::vba_next_libretro.dll
-::::vecx_libretro.dll
-::::vice_x128_libretro.dll
-::::vice_x64_libretro.dll
-::::vice_xpet_libretro.dll
-::::vice_xplus4_libretro.dll
-::::vice_xvic_libretro.dll
-::::virtualjaguar_libretro.dll
-::::x1_libretro.dll
-
 echo.
 echo :: DOWNLOADING LIBRETRO CORES ::
 echo.
 
-for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
+rem for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
+for /f "usebackq delims=" %%x in ("%current_path%\system\configgen\lrcores_names.list") do (
 rem echo %%a
- cd "%wget_path%"
-wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip -q --show-progress
+cd "%wget_path%"
+wget --no-check-certificate -P "%current_path%\system\download" https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%x_libretro.dll.zip -q --show-progress
 rem wget --no-check-certificate -P "%current_path%\system\download" https://www.retrobat.ovh/repo/v4/emulators/libretro_cores/x86_64/%%a.zip -q --show-progress
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://buildbot.libretro.com/nightly/windows/x86_64/latest/%%a.zip" -OutFile "%current_path%\system\download\%%a.zip""
  cd "%current_path%"
@@ -513,14 +403,20 @@ if exist "%current_path%\emulators\retroarch\shaders\shaders_cg\" rd /s /q "%cur
 
 if exist "%current_path%\.git\" rmdir /s /q "%current_path%\.git"
 if exist "%current_path%\system\decorations\.git\" rmdir /s /q "%current_path%\system\decorations\.git"  
-if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git" 
+if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git\" rmdir /s /q "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\.git"
+
+if exist "%current_path%\emulationstation\batocera-bluetooth.exe" del/q "%current_path%\emulationstation\batocera-bluetooth.exe"
+if exist "%current_path%\emulationstation\batocera-install.exe" del/q "%current_path%\emulationstation\batocera-install.exe"
+if exist "%current_path%\emulationstation\batocera-store.exe" del/q "%current_path%\emulationstation\batocera-store.exe" 
+if exist "%current_path%\emulationstation\batocera-wifi.exe" del/q "%current_path%\emulationstation\batocera-wifi.exe" 
+if exist "%current_path%\emulationstation\*.pdb" del/q "%current_path%\emulationstation\*.pdb"
 
 if exist "%strip_path%\strip.exe" (
  cd "%strip_path%"
  strip -s "%current_path%\emulators\retroarch\retroarch.exe"
  echo striping: "%current_path%\emulators\retroarch\retroarch.exe"
- strip -s "%current_path%\emulators\retroarch\retroarch_angle.exe"
- echo striping: "%current_path%\emulators\retroarch\retroarch_angle.exe"
+rem strip -s "%current_path%\emulators\retroarch\retroarch_angle.exe"
+rem echo striping: "%current_path%\emulators\retroarch\retroarch_angle.exe"
  for /r "%current_path%\emulators\retroarch\cores" %%i in (*.dll) do (
  strip -s %%i
  echo striping: %%i
