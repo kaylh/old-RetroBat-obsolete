@@ -11,26 +11,23 @@ FAQ & Forum: https://retrobat.forumgaming.fr/t135-faq-retrobat-wip (english) / h
 Discord: https://discord.gg/sx6T4wUagR
 Facebook Group: https://www.facebook.com/groups/retrobat
 
-
 ++ Introduction ++
 
-RetroBat is a Windows software distro dedicated to emulation and retrogaming. It bundle EmulationStation and emulators together and provide advanced customisation.
+RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides fully configured EmulationStation frontend with all emulators needed to have the best retrogaming experience on your Windows personnal computer. It share the same EmulationStation with Batocera and EmuELEC, that means all the themes designed for this EmulationStation are compatible with the three distributions and all the improvements made on the interface are available for all the three of them.
 
-You will be able to quickly run games from a ROMs collection and save a lot of time to play !
+With it you will be quickly and easily able to run games from a ROMs collection. You can save a lot of time you can keep to play!
 
-RetroBat give you all the softwares you need to have a good retrogaming experience on your Windows PC.
-
-RetroBat run in Portable Mode. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
 ++ System requirements ++
 
--OS supported: Windows 10, Windows 8.1, Windows 7 SP1 (64 bit)
+-OS supported: Windows 11, Windows 10, Windows 8.1.
 -Processor: CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.
 -Graphics: Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan
 
 ++ Dependancies ++
 
--Visual C++ 2010 Redistributable Packages (32 bit) https://www.microsoft.com/en-US/download/details.aspx?id=5555
--Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit) https://aka.ms/vs/16/release/vc_redist.x86.exe
--Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit) https://aka.ms/vs/16/release/vc_redist.x64.exe
--DirectX https://www.microsoft.com/download/details.aspx?id=35)
+-Visual C++ 2010 Redistributable Packages (32 bit) 
+-Visual C++ 2015, 2017 and 2019 Redistributable Packages (32 bit)
+-Visual C++ 2015, 2017 and 2019 Redistributable Packages (64 bit)
+-DirectX
