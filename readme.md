@@ -2,7 +2,7 @@
 
 [Official Website](https://www.retrobat.ovh) | [Facebook Group](https://www.facebook.com/groups/retrobat)
 
-##📌Presentation
+## 📌 Presentation
 
 RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides fully configured EmulationStation frontend with all emulators needed to have the best retrogaming experience on your Windows personnal computer. It share the same EmulationStation with Batocera and EmuELEC, that means all the themes designed for this EmulationStation are compatible with the three distributions and all the improvements made on the interface are available for all the three of them.
 
@@ -10,7 +10,7 @@ With it you will be quickly and easily able to run games from a ROMs collection.
 
 RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
 
-##💻System requirements
+## 💻 System requirements
 
 |   |   |
 |---|---|
@@ -23,13 +23,13 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
 |**Controllers:**|Xinput controllers hightly recommanded. Test your controller [HERE](https://gamepad-tester.com)|
 
-##🎮Supported machines
+## 🎮 Supported machines
 
 ![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
 **RetroBat will never provide copyrighted/commercial ROMs or BIOS files.**
 
-##🧰Compilation Instructions
+## 🧰 Compilation Instructions
 
  <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
 
@@ -49,18 +49,18 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - [Download and extract the retrobat-buildtools (which contain NSIS, wget and strip).](https://www.dropbox.com/s/52nyaowovzyz6jd/retrobat-buildtools.zip?dl=1)
 - Clone this github then run build.bat to launch the build routine.
 -->
-##🦇RetroBat Team
+## 🦇 RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
 - Lorenzolamas - community management, graphics, testing
 - Fabrice Caruso - lead developer, theming
 
-##🤘Special Thanks
+## 🤘 Special Thanks
 
 - Hel Mic - for his generous support and for his wonderful themes.
 - Batocera - for their wonderful retrogaming dedicated Operating System.
 
-##📃Licence
+## 📃 Licence
 
 RetroBat is free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
@@ -76,12 +76,12 @@ Otherwise, you can start a new project off RetroBat sources if you follow the sa
 
 Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0).
 
-##©Credits
+## © Credits
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 - RetroArch by Libretro Team.
 
-##💬Support
+## 💬 Support
 
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
