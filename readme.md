@@ -52,13 +52,13 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 ## RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, coder, testing
-- Lorenzolamas - community management, assets, testing
+- Lorenzolamas - community management, graphics, testing
 - Fabrice Caruso - lead developer, theming
 
 ## Special Thanks
 
 - Hel Mic - for his generous support and for his wonderful themes.
-- Batocera - for their wonderful retrogaming dedicated OS.
+- Batocera - for their wonderful retrogaming dedicated Operating System.
 
 ## Licence
 
@@ -75,7 +75,6 @@ Shipping RetroBat with additional proprietary and copyrighted content is illegal
 Otherwise, you can start a new project off RetroBat sources if you follow the same conditions.
 
 Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0).
-
 
 ## Credits
 
