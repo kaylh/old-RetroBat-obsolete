@@ -28,7 +28,7 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 
 **RetroBat will never provide copyrighted/commercial ROMs or BIOS files.**
 
-## 🧰 Compilation Instructions
+## 🧰 Build Instructions
 
 <img src="https://www.retrobat.ovh/img/under-construction.png" width="240" alt="under-construction" class="center">
 
@@ -50,7 +50,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 -->
 ## 🦇 RetroBat Team
 
-- Adrien Chalard "Kayl" - creator of the project, developper
+- Adrien Chalard "Kayl" - creator of the project, developer
 - Lorenzolamas - community management, graphics
 - Fabrice Caruso - lead developer, theme creation
 
@@ -84,7 +84,7 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 
 ## 💬 Social & Support
 
-- Official Website: https://www.retrobat.ovh
+- Official Website: https://www.retrobat.ovh/
 - Facebook Group: https://www.facebook.com/groups/retrobat/
-- You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr
+- You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
