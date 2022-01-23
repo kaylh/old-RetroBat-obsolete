@@ -1,6 +1,4 @@
- <img src="https://www.retrobat.ovh/img/retrobat_logo.svg" alt="RetroBat-Logo" class="center"> 
-
-[Official Website](https://www.retrobat.ovh) | [Facebook Group](https://www.facebook.com/groups/retrobat)
+<img src="https://www.retrobat.ovh/img/retrobat_logo.svg" width="600" alt="RetroBat-Logo" class="center">
 
 ## 📌 Presentation
 
@@ -8,13 +6,14 @@ RetroBat is a Windows softwares distribution dedicated to retrogaming and emulat
 
 With it you will be quickly and easily able to run games from a ROMs collection. You can save a lot of time you can keep to play!
 
-RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements.
+RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements. 
 
-## 💻 System requirements
+![Discord Shield](https://discordapp.com/api/guilds/748519802255179917/widget.png?style=banner2)
 
-|   |   |
-|---|---|
+## 💻 System Requirements
+
 |**OS supported:**|Windows 11, Windows 10, Windows 8.1|
+|---|---|
 |**Processor:**|CPU with SSE2 support. 3 GHz and Dual Core, not older than 2008 is highly recommended.|
 |**Graphics:**|Modern graphics card that supports Direct3D 11.1 / OpenGL 4.4 / Vulkan|
 |**Dependancies:**|[Visual C++ 2010 Redistributable Packages (32 bit)](https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/)|
@@ -23,7 +22,7 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 |   |[DirectX](https://www.microsoft.com/download/details.aspx?id=35)|
 |**Controllers:**|Xinput controllers hightly recommanded. Test your controller [HERE](https://gamepad-tester.com)|
 
-## 🎮 Supported machines
+## 🎮 Supported Machines
 
 ![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
 
@@ -31,7 +30,7 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 
 ## 🧰 Compilation Instructions
 
- <img src="https://www.retrobat.ovh/img/under-construction.png" width="374" height="172" alt="under-construction" class="center">
+<img src="https://www.retrobat.ovh/img/under-construction.png" width="240" alt="under-construction" class="center">
 
 <!--
 To read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
@@ -51,9 +50,9 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 -->
 ## 🦇 RetroBat Team
 
-- Adrien Chalard "Kayl" - creator of the project, coder, testing
-- Lorenzolamas - community management, graphics, testing
-- Fabrice Caruso - lead developer, theming
+- Adrien Chalard "Kayl" - creator of the project, developper
+- Lorenzolamas - community management, graphics
+- Fabrice Caruso - lead developer, theme creation
 
 ## 🤘 Special Thanks
 
@@ -62,11 +61,10 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 
 ## ⚖ Licence
 
-RetroBat is free and open source project. It should not be used for commercial purposes.
+RetroBat is a free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
 
-All the code written by RetroBat Team, unless covered by a licence from an upstream project, is given under the [LGPL v3 licence](
-http://www.gnu.org/licenses/lgpl-3.0.html).
+All the code written by the RetroBat Team, unless covered by a licence from an upstream project, is given under the [LGPL v3 licence](http://www.gnu.org/licenses/lgpl-3.0.html/).
 
 It is not allowed to sell RetroBat on a pre-installed machine or on any storage devices. RetroBat includes softwares which cannot be associated with any commercial activities.
 
@@ -74,14 +72,19 @@ Shipping RetroBat with additional proprietary and copyrighted content is illegal
 
 Otherwise, you can start a new project off RetroBat sources if you follow the same conditions.
 
-Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0).
+Finally, the license which concerns the entire RetroBat project as a work, in particular the written or graphic content broadcast on its various media, is conditioned by the terms of the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+|<img src="https://www.gnu.org/graphics/gplv3-127x51.png" width="140" alt="gpl3licence" class="center">|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Cc-by-nc-sa_euro_icon.svg/1280px-Cc-by-nc-sa_euro_icon.svg.png" width="140" alt="cclicence" class="center">|
+|---|---|
 
 ## © Credits
 
 - EmulationStation (C) 2014 Alec Lofquist, contributions from community.
 - RetroArch by Libretro Team.
 
-## 💬 Support
+## 💬 Social & Support
 
-- You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
+- Official Website: https://www.retrobat.ovh
+- Facebook Group: https://www.facebook.com/groups/retrobat/
+- You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
