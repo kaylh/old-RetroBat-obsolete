@@ -1,0 +1,194 @@
+## MEGA BEZEL
+default:
+  # shader affects retroarch shaders
+  shader: crt/crt-geom
+  # scanline affect fba2x
+  scanline: true
+# Reshader  
+model2:
+  shader: GeomCRT@CRTGeom.fx
+model3:
+  shader: GeomCRT@CRTGeom.fx
+daphne:
+  shader: GeomCRT@CRTGeom.fx
+solarus:
+  shader: GeomCRT@CRTGeom.fx
+# Nintendo
+snes:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Famicom/Super_Famicom_Alt-[ADV]-[Guest]-[Bezel]
+snes-msu:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Famicom/Super_Famicom_Alt-[ADV]-[Guest]-[Bezel]
+sgb:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Game_Boy/Super_Famicom_SGB-[ADV]-[Guest]-[Custom-Bezel_001]
+nes:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_NES/NES-[ADV]-[Guest]-[Bezel]
+n64:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_N64/N64-[ADV]-[Guest]-[Bezel]
+satellaview:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Famicom/Super_Famicom_Alt-[ADV]-[Guest]-[Bezel]
+sufami:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Famicom/Super_Famicom_Alt-[ADV]-[Guest]-[Bezel]
+gba:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_GBA/GBA-[ADV]-[LCD-GRID]
+gb:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Game_Boy/Gameboy-[ADV]-[LCD-GRID]
+gbc:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Game_Boy_Color/GBC-[ADV]-[LCD-GRID]
+nds:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_NDS/NDS-[ADV]-[Guest]
+3ds:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_3DS/3DS-[ADV]-[Guest]
+fds:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Famicom/Famicom-[ADV]-[Guest]-[Bezel]
+virtualboy:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Virtual_Boy/Virtual_Boy-[ADV]-[Guest]
+gamecube:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Gamecube/Gamecube-[ADV]-[Guest]-[Bezel]
+wii:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Wii/Wii-[ADV]-[Guest]
+# Sega
+dreamcast:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Dreamcast/Dreamcast-[ADV]-[Guest]-[Bezel]
+sg1000:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_SG-1000/SG-1000-[ADV]-[Guest]-[Bezel]
+mastersystem:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Master_System/SEGA_Master_System
+megadrive:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Genesis/Genesis_Alt-[ADV]-[Guest]-[Bezel]
+gamegear:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Game_Gear/Game_Gear-[ADV]-[LCD-GRID]
+sega32x:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_32X/SEGA32X_Alt-[ADV]-[Guest]-[Bezel]
+segacd:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_CD/SEGACD_Alt-[ADV]-[Guest]-[Bezel]
+saturn:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Saturn/Saturn-[ADV]-[Guest]-[Bezel]
+# Arcade
+arcade:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+cps1:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+cps2:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+cps3:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+neogeo:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Neo_Geo_AES/NeoGeo_AES-[ADV]-[Guest]-[Bezel]
+neogeocd:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Neo_Geo_CD/NeoGeo_CD-[ADV]-[Guest]-[Bezel]
+mame:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/MAME/MAME-[ADV]-[Guest][CABINET]
+fba:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/FB-Neo/FB-Neo-[ADV]-[Guest][CABINET]
+fbneo:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/FB-Neo/FB-Neo-[ADV]-[Guest][CABINET]
+naomi:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+atomiswave:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Arcade/Arcade-[ADV]-[Guest][CABINET]
+#
+3do:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Panasonic_3DO/3DO-[ADV]-[Guest]-[Bezel]
+ngp:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Neo_Geo_Pocket/NGP-[ADV]-[LCD-GRID]
+ngpc:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Neo_Geo_Pocket_Color/NGPC-[ADV]-[LCD-GRID]
+gw:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+vectrex:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+lynx:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_Lynx/Lynx-[ADV]-[LCD-GRID]
+lutro:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+wswan:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Bandai_WonderSwan/WonderSwan-[ADV]-[LCD-GRID]
+wswanc:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Bandai_WonderSwan_Color/WonderSwan_Color-[ADV]-[LCD-GRID]
+pcengine:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/NEC_PC_Engine/PC_Engine-[ADV]-[Guest]-[Bezel]
+pcenginecd:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/NEC_PC_Engine_CD/PC_Engine_CD-[ADV]-[Guest]-[Bezel]
+supergrafx:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/NEC_SuperGrafx/SuperGrafx_Alt-[ADV]-[Guest]-[Bezel]
+atari800:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_800/Atari_800-[ADV]-[Guest]-[Bezel]
+atari2600:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_2600/Atari_2600-[ADV]-[Guest]-[Bezel]
+atari5200:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_5200/Atari_5200-[ADV]-[Guest]-[Bezel]
+atari7800:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_7800/Atari_7800-[ADV]-[Guest]-[Bezel]
+prboom:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+psx:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SONY_Playstation/Playstation-[ADV]-[Guest]-[Bezel]
+ps2:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SONY_Playstation_2/Playstation2-[ADV]-[Guest]-[Bezel]
+psp:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Sony_PSP/PSP-[ADV]-[Guest]
+colecovision:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/ColecoVision/ColecoVision-[ADV]-[Guest]-[Bezel]
+jaguar:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_Jaguar/Jaguar-[ADV]-[Guest]-[Bezel]
+lightgun:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+cdi:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Philips_CD-i/CD-i-[ADV]-[Guest]-[Bezel]
+# Computers
+lutro:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+msx:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/MSX/MSX-[ADV]-[Guest]-[Bezel]
+msx1:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/MSX/MSX-[ADV]-[Guest]-[Bezel]
+msx2:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/MSX2/MSX2-[ADV]-[Guest]-[Bezel]
+msx2+:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/MSX2/MSX2-[ADV]-[Guest]-[Bezel]
+amiga:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
+amiga1200:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
+amiga500:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
+amigacd32:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+amigacdtv:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+c20:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Commodore_64C/64C-[ADV]-[Guest]-[Bezel]
+c64:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Commodore_64C/64C-[ADV]-[Guest]-[Bezel]
+c128:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Commodore_64C/64C-[ADV]-[Guest]-[Bezel]
+cave:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+dos:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/DOSBox/DOSBox-[ADV]-[Guest]-[Bezel]
+amstradcpc:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amstrad_CPC/CPC464-[ADV]-[Guest]-[Bezel]
+atarist:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_ST/Atari_ST-[ADV]-[Guest]-[Bezel]
+zx81:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/
+zxspectrum:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Sinclair_ZX_Spectrum/ZX_Spectrum-[ADV]-[Guest]-[Bezel]
+odyssey2:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Magnavox_Odyssey_2/Odyssey2-[ADV]-[Guest]-[Bezel]
+x68000:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Sharp_x68000/x68000-[ADV]-[Guest]-[Bezel]
+o2em:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Magnavox_Odyssey_2/Odyssey2-[ADV]-[Guest]-[Bezel]
+scummvm:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/ScummVM/ScummVM-[ADV]-[Guest]-[Bezel]
+pc98:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/NEC_PC-9801/PC-9801-[ADV]-[Guest]-[Bezel]
+pcfx:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/NEC_PC-FX/PC-FX-[ADV]-[Guest]-[Bezel]
+thomson:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Thomson_T08/T08-[ADV]-[Guest]-[Bezel]
+pico8:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/PICO-8/PICO-8-[ADV]-[LCD-GRID]
+x1:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Sharp_X1/X1-[ADV]-[Guest]-[Bezel]
