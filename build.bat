@@ -1,6 +1,8 @@
 @echo off
 REM -- SET PROGRAM NAME IN WINDOW TITLE --
-title retrobat build script
+set "name=RetroBat Builder"
+set version=1.0a
+title %name% %version%
 
 :set_variables
 REM -- RUNNING BUILD.BAT FOLLOWED BY A NAME IN COMMAND LINE WILL CREATE A FOLDER WITH THIS NAME INSTEAD OF DEFALT ONE --
@@ -11,7 +13,7 @@ if not "%1"=="" (
 )
 
 REM -- SET VARIABLES --
-set retroarch_version=stable/1.9.13
+set retroarch_version=stable/1.10.0
 set "current_file=%~nx0"
 set current_drive=%cd:~0,2%
 set "current_dir=%cd:~3%"
@@ -21,7 +23,7 @@ set "current_path=%current_drive%\%current_dir%"
 set build_dir=%current_path%
 set msys_dir=C:\msys64
 set bin_dir=%msys_dir%\usr\bin
-set emulationstation_url="https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-stable/EmulationStation-Win32.zip"
+set emulationstation_url="https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master/EmulationStation-Win32.zip"
 set theme_url="https://github.com/fabricecaruso/es-theme-carbon/archive/master.zip"
 set emulatorlauncher_url="https://github.com/fabricecaruso/batocera-ports/releases/download/continuous/batocera-ports.zip"
 set retroarch_url="https://buildbot.libretro.com/%retroarch_version%/windows/x86_64/RetroArch.7z"
@@ -37,26 +39,30 @@ set sevenzip_loglevel=0
 
 REM -- CHECK IF CURRENT PATH CONTAINS SPACES --
 if not "%CD%"=="%cd: =%" (
-	echo.
-    echo Current directory contains spaces in its path.
-    echo You need to rename the directory without spaces to launch this script.
-    echo.
+	cls
+	echo ***********************************************************************
+	echo  ERROR
+	echo ***********************************************************************
+    echo  Current directory contains spaces in its path.
+    echo  You need to rename the directory without spaces to launch this script.
+    echo ***********************************************************************
+	pause
     goto exit
 )
 
-REM -- STARTING RETROBAT BUILD SCRIPT --
 cls
-echo *********************************
-echo Starting RetroBat Build Script...
-echo *********************************
+echo ******************************
+echo  Starting %name% %version%...
+echo ******************************
 set git_bin=0
 set nsis_bin=0
 set sevenzip_bin=0
 set strip_bin=0
 set wget_bin=0
-echo.
-echo Checking dependancies...
-echo.
+
+echo ******************************
+echo  Checking dependancies...
+echo ******************************
 
 REM -- CHECK IF GIT IS PRESENT --
 if exist "%ProgramFiles%\Git\cmd\git.exe" (
@@ -151,18 +157,20 @@ if %nsis_bin% EQU 0 (
 
 REM -- IF DEPENDANCIES NOT EXIST THEN THIS WILL DOWNLOAD AND EXTRACT IT --
 if %nsis_bin% EQU 0 if %wget_bin% EQU 0 if %strip_bin% EQU 0 (
-	echo.
-	echo :: DOWNLOADING RETROBAT BUILDTOOLS ::
-	echo.
+	cls
+	echo ***************************************
+	echo  :: DOWNLOADING RETROBAT BUILDTOOLS ::
+	echo ***************************************
 	powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri "https://www.retrobat.ovh/repo/tools/retrobat-buildtools.zip" -OutFile "%current_path%\retrobat-buildtools.zip""
 	ping 127.0.0.1 -n 4 >nul
-	
+	echo + RetroBat build tools downloaded
 	cls
-	echo :: EXTRACTING RETROBAT BUILDTOOLS ::
-	echo.
+	echo **************************************
+	echo  :: EXTRACTING RETROBAT BUILDTOOLS ::
+	echo **************************************
 rem %sevenzip_path%"\7zg.exe -y x "%current_path%\nsis.zip" -o"%current_path%\tools\nsis" -aoa>nul
-	powershell -command "Expand-Archive -Force -LiteralPath "%current_path%\retrobat-buildtools.zip" -DestinationPath "%current_path%""
-	echo Done.
+	powershell -command "Expand-Archive -Force -LiteralPath "%current_path%\retrobat-buildtools.zip" -DestinationPath "%current_path%\..\.""
+	echo + RetroBat build tools extracted
 	
 	goto set_variables
 )
@@ -173,7 +181,7 @@ if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\downl
 REM -- DISPLAY WELCOME SCREEN WITH BUILD INFOS --
 cls
 echo +===========================================================+
-echo  RETROBAT BUILD SCRIPT
+echo  %name% %version%
 echo +===========================================================+
 echo  This script will download all the required softwares and 
 echo  build the RetroBat installer with the NullSoft 
@@ -199,9 +207,9 @@ if %git_bin% EQU 0 (
 	goto exit
 )
 cls
-echo **********************************
-echo :: CLONING RETROBAT REPOSITORY ::
-echo **********************************
+echo ***********************************
+echo  :: CLONING RETROBAT REPOSITORY ::
+echo ***********************************
 
 if exist "%current_path%\" (
 	cd "%current_path%"
@@ -213,9 +221,9 @@ if exist "%current_path%\" (
 goto clone_decorations
 
 :clone_decorations
-echo ************************************
-echo :: CLONING DECORATIONS REPOSITORY ::
-echo ************************************
+echo **************************************
+echo  :: CLONING DECORATIONS REPOSITORY ::
+echo **************************************
 
 if exist "%current_path%\system\decorations\" (
 	cd "%current_path%\system\decorations"
@@ -232,18 +240,18 @@ echo Creating RetroBat's folders...
 echo %current_path%
 "%current_path%"\retrobat.exe /NOF #MakeTree
 
-echo **********************************
-echo :: DOWNLOADING EMULATIONSTATION ::
-echo **********************************
+echo ************************************
+echo  :: DOWNLOADING EMULATIONSTATION ::
+echo ************************************
 cd "%wget_path%"
 wget --no-check-certificate -P "%current_path%\system\download" %emulationstation_url% -q --show-progress
 cd "%current_path%"
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %emulationstation_url% -OutFile "%current_path%\system\download\emulationstation.zip""
 rem ping 127.0.0.1 -n 4 >nul
 
-echo **********************************
-echo :: DOWNLOADING EMULATORLAUNCHER ::
-echo **********************************
+echo ************************************
+echo  :: DOWNLOADING EMULATORLAUNCHER ::
+echo ************************************
 cd "%wget_path%"
 wget --no-check-certificate -P "%current_path%\system\download" %emulatorlauncher_url% -q --show-progress
 wget --no-check-certificate -P "%current_path%\emulationstation" https://github.com/fabricecaruso/batocera-ports/raw/master/ILMerge.exe -q --show-progress
@@ -259,16 +267,16 @@ rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.Secu
 
 
 if exist "%current_path%\system\download\retroarch.7z" goto extract
-echo **********************************
-echo :: DOWNLOADING RETROARCH ::
-echo **********************************
+echo *****************************
+echo  :: DOWNLOADING RETROARCH ::
+echo *****************************
 cd "%wget_path%"
 wget --no-check-certificate -P "%current_path%\system\download" %retroarch_url% -q --show-progress
 cd "%current_path%"
 rem powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri %retroarch_url% -OutFile "%current_path%\system\download\retroarch.7z""
 
 echo **********************************
-echo :: DOWNLOADING LIBRETRO CORES ::
+echo  :: DOWNLOADING LIBRETRO CORES ::
 echo **********************************
 rem for /f "delims=:::: tokens=*" %%a in ('findstr /b :::: "%~f0"') do (
 for /f "usebackq delims=" %%x in ("%current_path%\system\configgen\lrcores_names.list") do (
@@ -283,9 +291,9 @@ cd "%current_path%"
 goto extract
 
 :extract
-echo **********************************
+echo **************************
 echo :: EXTRACTING PACKAGES ::
-echo **********************************
+echo **************************
 echo Extracting EmulationStation...
 if exist "%current_path%\system\download\EmulationStation-Win32.zip" "%sevenzip_path%"\%sevenzip_exe% -bb%sevenzip_loglevel% -y x "%current_path%\system\download\EmulationStation-Win32.zip" -o"%current_path%\emulationstation" -aoa
 
@@ -308,9 +316,9 @@ echo Done.
 goto clone_default_theme
 
 :clone_default_theme
-echo **********************************
-echo :: CLONING DEFAULT THEME REPOSITORY ::
-echo **********************************
+echo ****************************************
+echo  :: CLONING DEFAULT THEME REPOSITORY ::
+echo ****************************************
 
 if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon\" (
 	cd "%current_path%\emulationstation\.emulationstation\themes\es-theme-carbon"
@@ -322,25 +330,25 @@ if exist "%current_path%\emulationstation\.emulationstation\themes\es-theme-carb
 goto create_config
 
 :create_config
-echo **********************************
-echo :: SETTING CONFIGURATION ::
-echo **********************************
-echo Copying templates files...
+echo *****************************
+echo  :: SETTING CONFIGURATION ::
+echo *****************************
 %current_path%\retrobat.exe /NOF #GetConfigFiles
-echo Injecting presets...
+echo + Templates files copied
 %current_path%\retrobat.exe /NOF #SetEmulationStationSettings
+echo + EmulationStation configured
 %current_path%\retrobat.exe /NOF #SetEmulatorsSettings
-echo.
-echo Done.
+echo + Emulators configured
 goto clean
 
 :clean
-echo **********************************
-echo :: CLEANING STEP ::
-echo **********************************
+echo *********************
+echo  :: CLEANING STEP ::
+echo *********************
 rem if exist "%current_path%\retrobat.ini" del/q "%current_path%\retrobat.ini"
 if exist "%current_path%\*.zip" del/q "%current_path%\*.zip"
 if exist "%current_path%\system\download\*.*" del/q "%current_path%\system\download\*.*"
+echo + Download folder's content deleted
 
 if exist "%current_path%\emulators\retroarch\retroarch_debug.exe" del/q "%current_path%\emulators\retroarch\retroarch_debug.exe"
 if exist "%current_path%\*.log" del/q "%current_path%\*.log"
@@ -355,6 +363,7 @@ if exist "%current_path%\emulationstation\batocera-install.exe" del/q "%current_
 if exist "%current_path%\emulationstation\batocera-store.exe" del/q "%current_path%\emulationstation\batocera-store.exe" 
 if exist "%current_path%\emulationstation\batocera-wifi.exe" del/q "%current_path%\emulationstation\batocera-wifi.exe" 
 if exist "%current_path%\emulationstation\*.pdb" del/q "%current_path%\emulationstation\*.pdb"
+echo + Uneeded files deleted
 
 if exist "%strip_path%\strip.exe" (
  cd "%strip_path%"
@@ -371,19 +380,17 @@ rem echo striping: "%current_path%\emulators\retroarch\retroarch_angle.exe"
 goto menu_welcome
 
 :build
-echo **********************************
-echo :: BUILDING RETROBAT INSTALLER ::
-echo **********************************
+echo ***********************************
+echo  :: BUILDING RETROBAT INSTALLER ::
+echo ***********************************
 
 cd %current_path%
 if exist "%nsis_path%\makensis.exe" (
 	cd "%nsis_path%"
 	makensis.exe /V4 "%installer_dir%\%installer_source%"
 	cd %current_path%
-	echo.
-	echo Done.
 )
 move/Y "%installer_dir%\*.exe" "%current_path%"
-
+echo + RetroBat installer created
 pause
 exit
