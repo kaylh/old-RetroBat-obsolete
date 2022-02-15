@@ -53,6 +53,8 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 - Adrien Chalard "Kayl" - creator of the project, developer
 - Lorenzolamas - community management, graphics
 - Fabrice Caruso - lead developer, theme creation
+- GetUpOr - community, support
+- RetroBoy - community, support
 
 ## 🤘 Special Thanks
 
