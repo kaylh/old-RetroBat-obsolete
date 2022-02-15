@@ -364,13 +364,13 @@ if "!update_config!"=="1" (
 	
 	if exist "!current_path!\..\system\templates\emulationstation\notice.pdf" copy /v /y "!current_path!\..\system\templates\emulationstation\notice.pdf" "!current_path!\..\emulationstation\.emulationstation\notice.pdf" >nul
 	
-	if exist "!current_path!\..\emulators\supermodel\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Supermodel.ini"
-	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" if exist "!current_path!\..\emulators\supermodel\Config\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Config\Supermodel.ini"
-	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" copy /v /y "!current_path!\..\system\templates\supermodel\Supermodel.ini" "!current_path!\..\emulators\supermodel\Config\Supermodel.ini"
+	if exist "!current_path!\..\emulators\supermodel\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Supermodel.ini" >nul
+	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" if exist "!current_path!\..\emulators\supermodel\Config\Supermodel.ini" del/Q "!current_path!\..\emulators\supermodel\Config\Supermodel.ini" >nul
+	if exist "!current_path!\..\system\templates\supermodel\Supermodel.ini" copy /v /y "!current_path!\..\system\templates\supermodel\Supermodel.ini" "!current_path!\..\emulators\supermodel\Config\Supermodel.ini" >nul
 	
-	if exist "%retrobat_main_dir%\roms\n64dd\*.*" if exist "%retrobat_main_dir%\roms\64dd\." copy/Y "%retrobat_main_dir%\roms\n64dd\*.*" "%retrobat_main_dir%\roms\64dd"
+	if exist "%retrobat_main_dir%\roms\n64dd\*.*" if exist "%retrobat_main_dir%\roms\64dd\." copy/Y "%retrobat_main_dir%\roms\n64dd\*.*" "%retrobat_main_dir%\roms\64dd" >nul
 	if exist "%retrobat_main_dir%\roms\n64dd\." rd /S /Q "%retrobat_main_dir%\roms\n64dd"
-	if exist "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" ren "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" "_64dd.svg"
+	if exist "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" ren "!emulationstation_dir!\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" "_64dd.svg" >nul
 	
 	set /A progress_current+=!update_config!
 	call :progress
