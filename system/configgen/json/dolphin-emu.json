@@ -10,6 +10,8 @@
 		 "HideCursor":"True",
 		 "EnableCheats":"True",
 		 "KeepWindowOnTop":"True",
+		 "GFXBackend":"OGL",
+		 "UpdateTrack":"",
 		 "Fullscreen":"True"
       }
    ]
