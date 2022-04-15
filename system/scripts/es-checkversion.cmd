@@ -1,81 +1,104 @@
 @echo off
+setlocal EnableDelayedExpansion
 
-REM PATH
+:: ---- SET ROOT PATH ----
+
+cd ..
+
 set current_file=%~nx0
 set current_drive="%cd:~0,2%"
 set current_dir="%cd:~3%"
 set current_drive=%current_drive:"=%
 set current_dir=%current_dir:"=%
-rem set "current_dir=%current_dir%"
-set current_path=%current_drive%\%current_dir%
-set update_dir=%current_path%
-set modules_dir=%current_path%\..\system\modules
-set download_dir=%current_path%\..\system\download
-REM END PATH
+set current_path=!current_drive!\!current_dir!
 
-set remote_version_file=remote_version.info
-set local_version_file=version.info
-set remote_version_filepath=%modules_dir%\rb_updater
-set local_version_filepath=%current_path%
+set root_path=!current_path!
+
+:: ---- SET TEMPORARY FILE WHERE TO STORE INFOS ----
+
+set tmp_infos_file=!root_path!\emulationstation\rb_infos.tmp
+if exist "%tmp_infos_file%" del/Q "%tmp_infos_file%"
+
+:: ---- SCRIPT ARGUMENTS ----
 
 set branch=stable
 
 :loop_arg
+
 if not "%1"=="" (
+
     if "%1"=="-branch" (
+	
         set branch=%2
         shift
     )
+	
     shift
     goto :loop_arg
 )
 
-if not exist "%modules_dir%\rb_updater\7za.exe" goto deps_error
-if not exist "%modules_dir%\rb_updater\wget.exe" goto deps_error
+:: ---- MODULES VERIFICATION ----
 
-:check_remote_version
-if exist "%remote_version_filepath%\%remote_version_file%" del/Q "%remote_version_filepath%\%remote_version_file%" 
+if not exist "!root_path!\system\modules\rb_updater\*.*" (
 
-if not exist "%remote_version_filepath%\%remote_version_file%" "%modules_dir%\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%remote_version_filepath%" https://www.retrobat.ovh/repo/win64/%branch%/%remote_version_file% -q 
-rem timeout /t 1 >nul
-
-if not exist "%remote_version_filepath%\%remote_version_file%" (
-	call :deps_error
+	set exit_msg=error: missing rb_updater modules!
+	set exit_code=2
+	call :exit_door
 	goto :eof
 )
 
-if not exist "%local_version_filepath%\%local_version_file%" (
-	call :deps_error
-	goto :eof
-)
+:: ---- CALL SHARED VARIABLES SCRIPT ----
+
+if exist "!root_path!\system\scripts\shared-variables.cmd" (
+
+	cd "!root_path!\system\scripts"
+	call shared-variables.cmd
 	
-cd "%remote_version_filepath%"
-set/p rb_remote_version=<%remote_version_file%
-cd "%current_path%"
-
-cd "%local_version_filepath%"
-set/p rb_local_version=<%local_version_file%
-cd "%current_path%"
-
-if not "%rb_remote_version%"=="%rb_local_version%" (
-	call :fetch_updater
-	goto :eof
 ) else (
-	call :no_update
+
+	set exit_msg=error: missing rb_updater script!
+	set exit_code=2
+	call :exit_door
 	goto :eof
 )
 
-:fetch_updater
-if exist "%current_path%\es-update.cmd" del/Q "%current_path%\es-update.cmd" 
-"%modules_dir%\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%current_path%" https://www.retrobat.ovh/repo/win64/%branch%/es-update.cmd -q 
-echo %rb_remote_version%
-rem timeout /t 1 >nul
-exit 0
+:: ---- GET INFOS STORED IN TMP FILE ----
 
-:no_update
-echo No update found !
-exit 1
+if exist "%tmp_infos_file%" (
 
-:deps_error
-echo Missing dependencies !
-exit 2
+	for /f "delims=" %%x in ('type "%tmp_infos_file%"') do (set "%%x")
+	
+) else (
+
+	set exit_msg=error: missing rb_updater script!
+	set exit_code=2
+	call :exit_door
+	goto :eof
+)
+
+:: ---- GET LATEST UPDATER SCRIPT ----
+
+if not "%version_remote%"=="%version_local%" (
+
+	if exist "!root_path!\emulationstation\es-update.cmd" del/Q "!root_path!\emulationstation\es-update.cmd"
+	"!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%emulationstation_path%" %retrobat_url%/5.0.0/es-update.cmd -q
+	echo %version_remote%
+	exit 0
+	
+) else (
+
+	set exit_msg=no update found!
+	set exit_code=1
+	call :exit_door
+	goto :eof
+)
+
+:: ---- EXIT DOOR ----
+
+endlocal
+
+:exit_door
+
+cls
+echo %exit_msg%
+exit %exit_code%
