@@ -1,3 +1,12 @@
+goto:rem
+---------------------------------------
+shared-variables.cmd
+---------------------------------------
+This Batch script is originally created for RetroBat.
+It's not intended to run on its own but must be called by other scripts in order to share some common information required by them.
+---------------------------------------
+:rem
+
 :: ---- GENERAL INFOS ----
 set name=RetroBat
 echo name=%name%>> "%tmp_infos_file%"
