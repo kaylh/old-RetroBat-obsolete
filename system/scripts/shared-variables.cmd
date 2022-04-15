@@ -37,7 +37,7 @@ echo system_path=!root_path!\system>> "%tmp_infos_file%"
 set version_file_local=version.info
 set version_file_remote=remote_version.info
 
-if exist "!root_path!\system\rb_updater\%version_file_remote%" del/Q "!root_path!\system\rb_updater\%version_file_remote%" 
+if exist "!root_path!\system\modules\rb_updater\%version_file_remote%" del/Q "!root_path!\system\modules\rb_updater\%version_file_remote%" 
 
 if not exist "!root_path!\system\modules\rb_updater\%version_file_remote%" "!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "!root_path!\system\modules\rb_updater" https://www.retrobat.ovh/repo/%arch%/%branch%/%version_file_remote% -q >nul
 
@@ -51,19 +51,16 @@ echo version_local=%version_local%>> "%tmp_infos_file%"
 
 :: ---- URLS ----
 
-if "%script_type%" == "updater" (
-
-	echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
-	echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/tag/continuous>> "%tmp_infos_file%"
-	echo bios_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
-	echo decorations_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
-	echo default_theme_url=https://github.com/fabricecaruso/es-theme-carbon/archive/refs/heads>> "%tmp_infos_file%"
-	echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/tag/continuous-master>> "%tmp_infos_file%"
-	echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest>> "%tmp_infos_file%"
-	echo releases_url=https://www.retrobat.ovh/releases>> "%tmp_infos_file%"
-	echo retroarch_url=https://buildbot.libretro.com/%branch%/%retroarch_version%/windows/%archx%>> "%tmp_infos_file%"
-	echo retrobat_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
-)
+echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
+echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/tag/continuous>> "%tmp_infos_file%"
+echo bios_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
+echo decorations_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
+echo default_theme_url=https://github.com/fabricecaruso/es-theme-carbon/archive/refs/heads>> "%tmp_infos_file%"
+echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/tag/continuous-master>> "%tmp_infos_file%"
+echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest>> "%tmp_infos_file%"
+echo releases_url=https://www.retrobat.ovh/releases>> "%tmp_infos_file%"
+echo retroarch_url=https://buildbot.libretro.com/%branch%/%retroarch_version%/windows/%archx%>> "%tmp_infos_file%"
+echo retrobat_url=https://www.retrobat.ovh/repo/%arch%/%branch%>> "%tmp_infos_file%"
 
 :: ---- GO BACK TO PARENT SCRIPT ----
 
