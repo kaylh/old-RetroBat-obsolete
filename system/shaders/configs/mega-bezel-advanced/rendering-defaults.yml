@@ -19,7 +19,7 @@ snes:
 snes-msu:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Famicom/Super_Famicom_Alt-[ADV]-[Guest]-[Bezel]
 sgb:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Game_Boy/Super_Famicom_SGB-[ADV]-[Guest]-[Custom-Bezel_001]
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Super_Game_Boy/Super_Famicom_SGB-[ADV]-[Guest]-[Bezel]
 nes:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_NES/NES-[ADV]-[Guest]-[Bezel]
 n64:
@@ -45,14 +45,14 @@ virtualboy:
 gamecube:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Gamecube/Gamecube-[ADV]-[Guest]-[Bezel]
 wii:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Wii/Wii-[ADV]-[Guest]
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Nintendo_Wii/Wii_4x3-[Guest-Mini]
 # Sega
 dreamcast:
   shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Dreamcast/Dreamcast-[ADV]-[Guest]-[Bezel]
 sg1000:
   shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_SG-1000/SG-1000-[ADV]-[Guest]-[Bezel]
 mastersystem:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Master_System/SEGA_Master_System
+  shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Master_System/SMS-[ADV]-[Guest]-[Bezel]
 megadrive:
   shader: Duimon-Mega-Bezel/Presets/Advanced/SEGA_Genesis/Genesis_Alt-[ADV]-[Guest]-[Bezel]
 gamegear:
@@ -94,13 +94,13 @@ ngp:
 ngpc:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Neo_Geo_Pocket_Color/NGPC-[ADV]-[LCD-GRID]
 gw:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 vectrex:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 lynx:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_Lynx/Lynx-[ADV]-[LCD-GRID]
 lutro:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 wswan:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Bandai_WonderSwan/WonderSwan-[ADV]-[LCD-GRID]
 wswanc:
@@ -120,7 +120,7 @@ atari5200:
 atari7800:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_7800/Atari_7800-[ADV]-[Guest]-[Bezel]
 prboom:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: Duimon-Mega-Bezel/Presets/Advanced/PrBoom/PrBoom-[ADV]-[Guest]
 psx:
   shader: Duimon-Mega-Bezel/Presets/Advanced/SONY_Playstation/Playstation-[ADV]-[Guest]-[Bezel]
 ps2:
@@ -132,12 +132,12 @@ colecovision:
 jaguar:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_Jaguar/Jaguar-[ADV]-[Guest]-[Bezel]
 lightgun:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 cdi:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Philips_CD-i/CD-i-[ADV]-[Guest]-[Bezel]
 # Computers
 lutro:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 msx:
   shader: Duimon-Mega-Bezel/Presets/Advanced/MSX/MSX-[ADV]-[Guest]-[Bezel]
 msx1:
@@ -153,9 +153,9 @@ amiga1200:
 amiga500:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
 amigacd32:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
 amigacdtv:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amiga_A500_Plus/A500-[ADV]-[Guest]-[Bezel]
 c20:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Commodore_64C/64C-[ADV]-[Guest]-[Bezel]
 c64:
@@ -163,7 +163,7 @@ c64:
 c128:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Commodore_64C/64C-[ADV]-[Guest]-[Bezel]
 cave:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 dos:
   shader: Duimon-Mega-Bezel/Presets/Advanced/DOSBox/DOSBox-[ADV]-[Guest]-[Bezel]
 amstradcpc:
@@ -171,7 +171,7 @@ amstradcpc:
 atarist:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Atari_ST/Atari_ST-[ADV]-[Guest]-[Bezel]
 zx81:
-  shader: Duimon-Mega-Bezel/Presets/Advanced/
+  shader: 
 zxspectrum:
   shader: Duimon-Mega-Bezel/Presets/Advanced/Sinclair_ZX_Spectrum/ZX_Spectrum-[ADV]-[Guest]-[Bezel]
 odyssey2:
