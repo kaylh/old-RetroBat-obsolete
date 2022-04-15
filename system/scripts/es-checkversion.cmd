@@ -81,7 +81,7 @@ if exist "%tmp_infos_file%" (
 if not "%version_remote%"=="%version_local%" (
 
 	if exist "!root_path!\emulationstation\es-update.cmd" del/Q "!root_path!\emulationstation\es-update.cmd"
-	"!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%emulationstation_path%" %retrobat_url%/5.0.0/es-update.cmd -q
+	"!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%emulationstation_path%" %retrobat_url%/es-update.cmd -q
 	echo %version_remote%
 	exit 0
 	
