@@ -1,4 +1,17 @@
 @echo off
+
+goto:rem
+---------------------------------------
+es-checkversion.cmd
+---------------------------------------
+This Batch script is originally created for RetroBat and to be used by the Windows build of Batocera-EmulationStation.
+It exists in conjunction with other scripts to form an integrated update system within the EmulationStation interface.
+Its main task is to check the local version of RetroBat and compare it to the latest remote version available.
+If a new version is detected, it will download the lastest es-update.cmd script and ES will use it to perform the update routine.
+This script is supposed to be copied in the EmulationStation folder by the build.bat script in order to run properly.
+---------------------------------------
+:rem
+
 setlocal EnableDelayedExpansion
 
 :: ---- SET ROOT PATH ----
