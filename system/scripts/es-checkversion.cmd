@@ -14,6 +14,8 @@ This script is supposed to be copied in the EmulationStation folder by the build
 
 setlocal EnableDelayedExpansion
 
+set script_type=checkversion
+
 :: ---- SET ROOT PATH ----
 
 cd ..
@@ -55,7 +57,7 @@ if not "%1"=="" (
 if not exist "!root_path!\system\modules\rb_updater\*.*" (
 
 	set exit_msg=error: missing rb_updater modules!
-	set exit_code=2
+	set/p exit_code=2
 	call :exit_door
 	goto :eof
 )
@@ -70,7 +72,7 @@ if exist "!root_path!\system\scripts\shared-variables.cmd" (
 ) else (
 
 	set exit_msg=error: missing rb_updater script!
-	set exit_code=2
+	set/p exit_code=2
 	call :exit_door
 	goto :eof
 )
@@ -84,7 +86,7 @@ if exist "%tmp_infos_file%" (
 ) else (
 
 	set exit_msg=error: missing rb_updater script!
-	set exit_code=2
+	set/p exit_code=2
 	call :exit_door
 	goto :eof
 )
@@ -94,7 +96,7 @@ if exist "%tmp_infos_file%" (
 if not "%version_remote%"=="%version_local%" (
 
 	if exist "!root_path!\emulationstation\es-update.cmd" del/Q "!root_path!\emulationstation\es-update.cmd"
-	"!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%emulationstation_path%" %retrobat_url%/es-update.cmd -q
+	"!root_path!\system\modules\rb_updater\wget" --no-check-certificate wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%emulationstation_path%" %retrobat_url%/%version_local%/es-update.cmd -q
 	echo %version_remote%
 	exit 0
 	
@@ -108,10 +110,8 @@ if not "%version_remote%"=="%version_local%" (
 
 :: ---- EXIT DOOR ----
 
-endlocal
-
 :exit_door
 
 cls
 echo %exit_msg%
-exit %exit_code%
+exit !exit_code!
