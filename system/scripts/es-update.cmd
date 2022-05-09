@@ -234,9 +234,9 @@ if "!progress_percent!"=="100" (
 		if exist "%emulationstation_path%\about.info" del/Q "%emulationstation_path%\about.info" >nul
 		if exist "!root_path!\system\version.info" del/Q "!root_path!\system\version.info" >nul
 		
-		(echo %version_remote%)>"%emulationstation_path%\version.info"
-		(echo RETROBAT)>"%emulationstation_path%\about.info"
-		(echo %version_remote%)>"!root_path!\system\version.info"
+		(echo|set/p=%version_remote%)>"%emulationstation_path%\version.info"
+		(echo|set/p=RETROBAT)>"%emulationstation_path%\about.info"
+		(echo|set/p=%version_remote%)>"!root_path!\system\version.info"
 	)
 	
 	set exit_msg=update complete!
