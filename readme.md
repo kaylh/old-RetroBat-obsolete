@@ -66,7 +66,7 @@ I've written a script to facilitate retrobat packaging and compilation (WIP):
 RetroBat is a free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
 
-All the code written by the RetroBat Team, unless covered by a licence from an upstream project, is given under the [LGPL v3 licence](http://www.gnu.org/licenses/lgpl-3.0.html/).
+All the code written by the RetroBat Team, unless covered by a licence from an upstream project, is given under the [LGPL v3 licence](https://www.gnu.org/licenses/lgpl-3.0.html).
 
 It is not allowed to sell RetroBat on a pre-installed machine or on any storage devices. RetroBat includes softwares which cannot be associated with any commercial activities.
 
