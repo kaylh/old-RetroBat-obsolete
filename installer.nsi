@@ -13,7 +13,7 @@ RequestExecutionLevel user
 Unicode true
 
 !define PRODUCT "RetroBat"
-!define PRODUCT_VERSION "4.0.1"
+!define PRODUCT_VERSION "5.0.0"
 !define VERSION "${PRODUCT_VERSION}"
 !define /date TIMESTAMP "%Y%m%d"
 ;!define /date TIMESTAMP "%Y%m%d-%H%M%S"
@@ -21,7 +21,7 @@ Unicode true
 !define PRODUCT_PUBLISHER "RetroBat Team"
 !define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
 
-!define BASE_DIR ".."
+!define BASE_DIR "."
 !define BASE_INSTALL_DIR "$(^Name)"
 !define DECORATIONS_DIR "$INSTDIR\system\decorations"
 !define DECORATIONS_BASE "${BASE_DIR}\system\decorations"
@@ -41,7 +41,6 @@ Name "${PRODUCT}"
 OutFile "retrobat-v${VERSION}-${TIMESTAMP}-installer.exe"
 InstallDir "C:\${BASE_INSTALL_DIR}"
 ShowInstDetails "hide"
-;BrandingText "Copyright (c) 2020 ${PRODUCT_PUBLISHER}"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"
 SpaceTexts none
 
@@ -54,12 +53,12 @@ SpaceTexts none
 ;!define MUI_COMPONENTSPAGE_NODESC
 !define MUI_COMPONENTSPAGE_SMALLDESC
 !define MUI_HEADERIMAGE
-!define MUI_HEADERIMAGE_BITMAP "..\system\resources\retrobat_header.bmp"
+!define MUI_HEADERIMAGE_BITMAP ".\system\resources\retrobat_header.bmp"
 !define MUI_HEADERIMAGE_BITMAP_STRETCH "FitControl"
 !define MUI_HEADER_TRANSPARENT_TEXT
-!define MUI_ICON "..\system\resources\retrobat-icon-white.ico"
+!define MUI_ICON ".\system\resources\retrobat-icon-white.ico"
 ;!define MUI_TEXTCOLOR "FFFFFF"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "..\system\resources\retrobat_wizard.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP ".\system\resources\retrobat_wizard.bmp"
 
 !define MUI_COMPONENTSPAGE_TEXT_TOP "Choose the type of installation."
 !define MUI_COMPONENTSPAGE_TEXT_COMPLIST " "
@@ -72,7 +71,7 @@ SpaceTexts none
 !define MUI_FINISHPAGE_LINK_LOCATION "https://www.retrobat.ovh/"
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "..\license.txt"
+!insertmacro MUI_PAGE_LICENSE "license.txt"
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 
@@ -193,7 +192,7 @@ SectionInstType ${SEC01} ${SEC02}
  File "${BASE_DIR}\license.txt"
  File /nonfatal "${BASE_DIR}\readme.txt"
  File /nonfatal "${BASE_DIR}\*.dll"
- File "${BASE_DIR}\BatGui.exe" 
+ File /nonfatal "${BASE_DIR}\BatGui.exe" 
  File /r "${BASE_DIR}\system"
  File /r "${BASE_DIR}\bios"
 
@@ -299,26 +298,26 @@ SectionInstType ${SEC01}
 	DetailPrint "Copying emulators files..."
  SetDetailsPrint listonly
  
- File /r /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
- File /r "${EMULATORS_BASE}\applewin"
- File /r "${EMULATORS_BASE}\arcadeflashweb"
- File /r "${EMULATORS_BASE}\citra"
- File /r "${EMULATORS_BASE}\daphne"
- File /r "${EMULATORS_BASE}\dosbox"
- File /r "${EMULATORS_BASE}\gsplus"
- File /r "${EMULATORS_BASE}\mednafen"
- File /r "${EMULATORS_BASE}\openbor"
- File /r "${EMULATORS_BASE}\rpcs3"
- File /r "${EMULATORS_BASE}\simcoupe"
- File /r "${EMULATORS_BASE}\solarus"
- File /r "${EMULATORS_BASE}\tsugaru"
- File /r "${EMULATORS_BASE}\fpinball"
-; File /r "${EMULATORS_BASE}\mame"
-; File /r "${EMULATORS_BASE}\pico8" 
+ File /nonfatal /r /x "${EMULATORS_BASE}\dolphin-emu\Dolphin.ini" "${EMULATORS_BASE}\dolphin-emu"
+ File /nonfatal /r "${EMULATORS_BASE}\applewin"
+ File /nonfatal /r "${EMULATORS_BASE}\arcadeflashweb"
+ File /nonfatal /r "${EMULATORS_BASE}\citra"
+ File /nonfatal /r "${EMULATORS_BASE}\daphne"
+ File /nonfatal /r "${EMULATORS_BASE}\dosbox"
+ File /nonfatal /r "${EMULATORS_BASE}\gsplus"
+ File /nonfatal /r "${EMULATORS_BASE}\mednafen"
+ File /nonfatal /r "${EMULATORS_BASE}\openbor"
+ File /nonfatal /r "${EMULATORS_BASE}\rpcs3"
+ File /nonfatal /r "${EMULATORS_BASE}\simcoupe"
+ File /nonfatal /r "${EMULATORS_BASE}\solarus"
+ File /nonfatal /r "${EMULATORS_BASE}\tsugaru"
+ File /nonfatal /r "${EMULATORS_BASE}\fpinball"
+; File /nonfatal /r "${EMULATORS_BASE}\mame"
+; File /nonfatal /r "${EMULATORS_BASE}\pico8" 
 ; File /r "${EMULATORS_BASE}\ryujinx"
- File /r "${EMULATORS_BASE}\vpinball"
- File /r "${EMULATORS_BASE}\winuae"
- File /r "${EMULATORS_BASE}\xemu"
+ File /nonfatal /r "${EMULATORS_BASE}\vpinball"
+ File /nonfatal /r "${EMULATORS_BASE}\winuae"
+ File /nonfatal /r "${EMULATORS_BASE}\xemu"
 ; File /r "${EMULATORS_BASE}\yuzu"
  File /r /x "${EMULATORS_BASE}\cemu\settings.xml" "${EMULATORS_BASE}\cemu" 
  File /r /x "${EMULATORS_BASE}\cxbx-reloaded\settings.ini" "${EMULATORS_BASE}\cxbx-reloaded" 
@@ -331,7 +330,8 @@ SectionInstType ${SEC01}
  File /r /x "${EMULATORS_BASE}\mesen\settings.xml" "${EMULATORS_BASE}\mesen" 
  File /r /x "${EMULATORS_BASE}\mgba\config.ini" "${EMULATORS_BASE}\mgba" 
  File /r /x "${EMULATORS_BASE}\oricutron\oricutron.cfg" "${EMULATORS_BASE}\oricutron" 
- File /r /x "${EMULATORS_BASE}\pcsx2\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2" 
+ File /r /x "${EMULATORS_BASE}\pcsx2\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2"
+ File /nonfatal /r /x "${EMULATORS_BASE}\pcsx2-16\inis\PCSX2_ui.ini" "${EMULATORS_BASE}\pcsx2-16"
  File /r /x "${EMULATORS_BASE}\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini" "${EMULATORS_BASE}\ppsspp" 
  File /r /x "${EMULATORS_BASE}\project64\Config\Project64.cfg" "${EMULATORS_BASE}\project64" 
  File /r /x "${EMULATORS_BASE}\raine\config\raine32_sdl.cfg" "${EMULATORS_BASE}\raine" 
@@ -418,7 +418,6 @@ SectionEnd
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionES} "Install EmulationStation build for Windows."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "Install RetroArch and Libretro cores."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionEmulators} "Install compatible standalone emulators."
-;!insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroArch} "RetroArch v${RETROARCH_VERSION}."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionRetroBat} "Install main softwares and needed configuration files."
 !insertmacro MUI_DESCRIPTION_TEXT ${SectionGamepack} "Install a free games selection."
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
