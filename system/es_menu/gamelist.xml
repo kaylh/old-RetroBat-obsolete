@@ -166,6 +166,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./pcsx2-16.menu</path>
+		<name>PCSX2 (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<marquee>./media/pcsx2-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./pcsx2.menu</path>
 		<name>PCSX2 (PlayStation 2)</name>
 		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
@@ -457,7 +474,7 @@
 	<game>
 		<path>./mame.menu</path>
 		<name>MAME (Multiple Arcade Machine Emulator)</name>
-		<desc>Configure MAME (Multiple Arcade Machine Emulator). This emulator is not provided by RetroBat, you need to download it there: https://www.mamedev.org/release.html</desc>
+		<desc>Configure MAME (Multiple Arcade Machine Emulator).</desc>
 		<image>./media/mame-logo.png</image>
 		<marquee>./media/mame-logo.png</marquee>
 		<rating>0</rating>
@@ -474,7 +491,7 @@
 	<game>
 		<path>./ryujinx.menu</path>
 		<name>Ryujinx (Switch)</name>
-		<desc>Configure Ryujinx (Switch). This emulator is not provided by RetroBat, you need to download it there: https://ryujinx.org/download/</desc>
+		<desc>Configure Ryujinx (Switch).</desc>
 		<image>./media/ryujinx-logo.png</image>
 		<marquee>./media/ryujinx-logo.png</marquee>
 		<rating>0</rating>
@@ -508,7 +525,7 @@
 	<game>
 		<path>./yuzu.menu</path>
 		<name>Yuzu (Switch)</name>
-		<desc>Configure Yuzu (Switch). This emulator is not provided by RetroBat, you need to download it there: https://yuzu-emu.org/downloads/</desc>
+		<desc>Configure Yuzu (Switch).</desc>
 		<image>./media/yuzu-logo.png</image>
 		<marquee>./media/yuzu-logo.png</marquee>
 		<rating>0</rating>
