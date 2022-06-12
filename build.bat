@@ -18,17 +18,17 @@ set retrobat_branch=master
 set retroarch_version=1.10.3
 set zip_loglevel=0
 
+set get_batgui=0
+set get_batocera_ports=1
+set get_bios=1
 set get_decorations=1
 set get_default_theme=1
 set get_emulationstation=1
-set get_batocera_ports=1
-set get_roms=0
-set get_batgui=0
-set get_retrobat_binaries=1
-set get_mega_bezels=0
-set get_bios=1
-set get_retroarch=1
 set get_lrcores=1
+set get_mega_bezels=0
+set get_retroarch=1
+set get_retrobat_binaries=1
+set get_roms=0
 set get_wiimotegun=1
 
 set deps_list=(git makensis 7za strip wget)
@@ -54,6 +54,7 @@ echo  - (B)uild Setup only
 echo  - (Q)uit
 echo +===========================================================+
 choice /C DBQ /N /T 10 /D D /M "Please type your choice here: "
+echo +===========================================================+
 
 set user_choice=%ERRORLEVEL%
 
@@ -194,7 +195,7 @@ if !found_total! NEQ 0 (
 	
 		echo Downloading !package_file!
 		powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri !buildtools_url!/!package_file! -OutFile "!root_path!\!package_file!""
-		ping 127.0.0.1 -n 4
+		ping 127.0.0.1 -n 4 >nul
 	)
 )
 
@@ -246,7 +247,7 @@ for %%i in %download_list% do (
 		(set download_url=!%%i_url!)
 		(set destination_path=!%%i_path!)		
 
-		if "!package_name!"=="retrobat_binaries" (set package_file=!%%i_%branch%!.7z)
+		if "!package_name!"=="retrobat_binaries" (set package_file=%%i_%retrobat_branch%.7z)
 		if "!package_name!"=="emulationstation" (set package_file=EmulationStation-Win32.zip)
 		if "!package_name!"=="batocera_ports" (set package_file=batocera-ports.zip)
 		if "!package_name!"=="retroarch" (set package_file=RetroArch.7z)
@@ -255,7 +256,10 @@ for %%i in %download_list% do (
 		echo ***********************************************************
 		
 		call :download
-		call :extract					
+		call :extract
+
+		if exist "!%%i_path!\.git\." rmdir /s /q "!%%i_path!\.git"
+		if exist "!%%i_path!\.github\." rmdir /s /q "!%%i_path!\.github"		
 	)
 )
 
@@ -296,7 +300,7 @@ if "!package_name!"=="px68k" (
 	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
 )
 
-"%buildtools_path%\wget" --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%download_path%" !download_url!/!package_file!
+"%buildtools_path%\wget" --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%download_path%" !download_url!/!package_file! -q --show-progress
 
 if %ERRORLEVEL% NEQ 0 (
 
