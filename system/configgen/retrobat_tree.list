@@ -8,6 +8,9 @@ bios\dc
 bios\mame
 bios\mame\artwork
 bios\quasi88
+bios\raine
+bios\raine\artwork
+bios\raine\emudx
 decorations
 emulationstation
 emulationstation\.emulationstation
@@ -79,12 +82,14 @@ emulators\snes9x
 emulators\solarus
 emulators\steam
 emulators\supermodel
+emulators\supermodel\Config
 emulators\vpinball
 emulators\xemu
 emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
+emulators\zsnes
 library
 library\records
 library\records\config
