@@ -11,6 +11,7 @@ set the default configuration and build the setup.
 :rem
 
 set script_type=builder
+set retrobat_branch=master
 
 :: ---- BUILDER OPTION ----
 
@@ -23,7 +24,7 @@ set get_emulationstation=1
 set get_batocera_ports=1
 set get_roms=0
 set get_batgui=0
-set get_retrobat=1
+set get_retrobat_binaries=1
 set get_mega_bezels=0
 set get_bios=1
 set get_retroarch=1
@@ -32,7 +33,7 @@ set get_wiimotegun=1
 
 set deps_list=(git makensis 7za strip wget)
 set clone_list=(bios decorations default_theme)
-set download_list=(batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
+set download_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
 
 :: ---- GET STARTED ----
 
@@ -62,14 +63,16 @@ if %user_choice% EQU 1 (
 	call :set_config
 	call :build_setup
 	pause
-	exit
+	call :exit_door
+	goto :eof
 )
 
 if %user_choice% EQU 2 (
 
 	call :build_setup
 	pause
-	exit
+	call :exit_door
+	goto :eof
 )
 
 if %user_choice% EQU 3 (
@@ -145,6 +148,8 @@ goto :eof
 
 call :banner
 
+echo :: CHECKING BUILD DEPENDENCIES...
+
 (set/A found_total=0)
 (set package_file=retrobat-buildtools.zip)
 
@@ -208,12 +213,14 @@ goto :eof
 
 :get_packages
 
+echo :: GETTING REQUIRED PACKAGES...
+
 for %%i in %clone_list% do (
 
 	if "!get_%%i!"=="1" (	
 	
 		(set package_name=%%i)
-			
+		
 		if "!package_name!"=="bios" (set package_file=RetroBat-BIOS.git)
 		if "!package_name!"=="decorations" (set package_file=batocera-bezel.git)
 		if "!package_name!"=="default_theme" (set package_file=es-theme-carbon.git)
@@ -223,6 +230,9 @@ for %%i in %clone_list% do (
 		if exist "!%%i_path!" rmdir /s /q "!%%i_path!"			
 		md "!%%i_path!"
 		"!git_path!\git" clone --depth 1 !%%i_url!/!package_file! "!%%i_path!"
+		
+		if exist "!%%i_path!\.git\." rmdir /s /q "!%%i_path!\.git"
+		if exist "!%%i_path!\.github\." rmdir /s /q "!%%i_path!\.github"
 				
 	)
 )
@@ -236,6 +246,7 @@ for %%i in %download_list% do (
 		(set download_url=!%%i_url!)
 		(set destination_path=!%%i_path!)		
 
+		if "!package_name!"=="retrobat_binaries" (set package_file=!%%i_%branch%!.7z)
 		if "!package_name!"=="emulationstation" (set package_file=EmulationStation-Win32.zip)
 		if "!package_name!"=="batocera_ports" (set package_file=batocera-ports.zip)
 		if "!package_name!"=="retroarch" (set package_file=RetroArch.7z)
@@ -346,6 +357,8 @@ goto :eof
 
 :set_config
 
+echo :: SETTING CONFIG FILES...
+
 !root_path!\retrobat.exe /NOF #MakeTree
 !root_path!\retrobat.exe /NOF #GetConfigFiles
 !root_path!\retrobat.exe /NOF #SetEmulationStationSettings
@@ -356,6 +369,8 @@ goto :eof
 :: ---- BUILD RETROBAT SETUP ----
 
 :build_setup
+
+echo :: BUILDING RETROBAT SETUP...
 
 !buildtools_path!\nsis\makensis.exe /V4 "!root_path!\installer.nsi"
 
@@ -375,14 +390,7 @@ goto :eof
 
 :exit_door
 
-if not "!exit_code!"=="0" if exist "%download_path%\*.*" (
-
-	del/Q "%download_path%\*.*"
-	
-) else (
-
-	for %%a in ("%download_path%\*") do if /i not "%%~nxa"=="emulationstation.zip" del/Q "%%a"
-)
+if exist "!tmp_infos_file!" del/Q "!tmp_infos_file!"
 
 echo exit_code=!exit_code!
 exit !exit_code!
