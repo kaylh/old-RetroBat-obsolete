@@ -407,7 +407,7 @@ SectionInstType ${SEC01} ${SEC02}
  
 ifFileExists "$INSTDIR\retrobat.ini" 0 +2
 Delete "$INSTDIR\retrobat.ini"
-File /r /x "${BASE_DIR}\system\templates\retrobat.ini" "$INSTDIR\retrobat.ini"
+File /nonfatal /r /x "${BASE_DIR}\system\templates\retrobat.ini" "$INSTDIR\retrobat.ini"
  ;Call CreateIni
 ifFileExists "$INSTDIR\system\templates\retrobat.ini" 0 +2
 Delete "$INSTDIR\system\templates\retrobat.ini"
