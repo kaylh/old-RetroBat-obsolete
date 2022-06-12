@@ -1,0 +1,21 @@
+[general]
+show_welcome = false
+
+[general.updates]
+check = false
+
+[input.bindings]
+port1 = 'keyboard'
+
+[display.quality]
+surface_scale = 1
+
+[sys]
+mem_limit = '64'
+
+[sys.files]
+bootrom_path = '.\..\..\bios\mcpx_1.0.bin'
+flashrom_path = '.\..\..\bios\Complex_4627.bin'
+eeprom_path = '.\..\..\saves\xbox\eeprom.bin'
+hdd_path = '.\..\..\saves\xbox\xbox_hdd.qcow2'
+dvd_path = ''
