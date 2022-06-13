@@ -7,3 +7,6 @@
 [submodule "emulationstation\\.emulationstation\\themes\\es-theme-carbon"]
 	path = emulationstation\\.emulationstation\\themes\\es-theme-carbon
 	url = https://github.com/kaylh/es-theme-carbon.git
+[submodule "system/decorations"]
+	path = system/decorations
+	url = https://github.com/kaylh/batocera-bezel.git
