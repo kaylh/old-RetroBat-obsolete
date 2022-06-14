@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Unicode|Win32">
+      <Configuration>Debug Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Unicode|x64">
+      <Configuration>Debug Unicode</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Unicode|Win32">
+      <Configuration>Release Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Unicode|x64">
+      <Configuration>Release Unicode</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{A284C1EF-6CA9-4984-A25F-83B22C85A5EC}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>nsis7z</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>nsis7z</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>nsis7z</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>nsis7z</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>nsis7z</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>AssemblyAndMachineCode</AssemblerOutput>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>AssemblyAndMachineCode</AssemblerOutput>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;UNICODE;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>FastCall</CallingConvention>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\DebugU\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugU\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;UNICODE;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>FastCall</CallingConvention>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\DebugU\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugU\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_NO_CRYPTO;NDEBUG;UNICODE;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\ReleaseU\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\ReleaseU\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_NO_CRYPTO;NDEBUG;UNICODE;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\ReleaseU\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\ReleaseU\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>FastCall</CallingConvention>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>FastCall</CallingConvention>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\Alone.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Alone.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\C\7z.h" />
+    <ClInclude Include="..\..\..\..\C\7zAlloc.h" />
+    <ClInclude Include="..\..\..\..\C\7zBuf.h" />
+    <ClInclude Include="..\..\..\..\C\7zCrc.h" />
+    <ClInclude Include="..\..\..\..\C\7zFile.h" />
+    <ClInclude Include="..\..\..\..\C\7zTypes.h" />
+    <ClInclude Include="..\..\..\..\C\7zVersion.h" />
+    <ClInclude Include="..\..\..\..\C\Aes.h" />
+    <ClInclude Include="..\..\..\..\C\Alloc.h" />
+    <ClInclude Include="..\..\..\..\C\Bcj2.h" />
+    <ClInclude Include="..\..\..\..\C\Bra.h" />
+    <ClInclude Include="..\..\..\..\C\Compiler.h" />
+    <ClInclude Include="..\..\..\..\C\CpuArch.h" />
+    <ClInclude Include="..\..\..\..\C\Delta.h" />
+    <ClInclude Include="..\..\..\..\C\LzFind.h" />
+    <ClInclude Include="..\..\..\..\C\LzFindMt.h" />
+    <ClInclude Include="..\..\..\..\C\LzHash.h" />
+    <ClInclude Include="..\..\..\..\C\Lzma2Dec.h" />
+    <ClInclude Include="..\..\..\..\C\Lzma2DecMt.h" />
+    <ClInclude Include="..\..\..\..\C\Lzma2Enc.h" />
+    <ClInclude Include="..\..\..\..\C\Lzma86.h" />
+    <ClInclude Include="..\..\..\..\C\LzmaDec.h" />
+    <ClInclude Include="..\..\..\..\C\LzmaEnc.h" />
+    <ClInclude Include="..\..\..\..\C\LzmaLib.h" />
+    <ClInclude Include="..\..\..\..\C\MtCoder.h" />
+    <ClInclude Include="..\..\..\..\C\MtDec.h" />
+    <ClInclude Include="..\..\..\..\C\Ppmd.h" />
+    <ClInclude Include="..\..\..\..\C\Ppmd7.h" />
+    <ClInclude Include="..\..\..\..\C\Precomp.h" />
+    <ClInclude Include="..\..\..\..\C\RotateDefs.h" />
+    <ClInclude Include="..\..\..\..\C\Sha256.h" />
+    <ClInclude Include="..\..\..\..\C\Sort.h" />
+    <ClInclude Include="..\..\..\..\C\Threads.h" />
+    <ClInclude Include="..\..\..\..\C\Xz.h" />
+    <ClInclude Include="..\..\..\..\C\XzCrc64.h" />
+    <ClInclude Include="..\..\..\..\C\XzEnc.h" />
+    <ClInclude Include="..\..\..\Common\StdAfx.h" />
+    <ClInclude Include="..\..\..\Windows\COM.h" />
+    <ClInclude Include="..\..\..\Windows\CommonDialog.h" />
+    <ClInclude Include="..\..\..\Windows\ErrorMsg.h" />
+    <ClInclude Include="..\..\..\Windows\FileSystem.h" />
+    <ClInclude Include="..\..\..\Windows\NtCheck.h" />
+    <ClInclude Include="..\..\..\Windows\PropVariantConv.h" />
+    <ClInclude Include="..\..\..\Windows\Registry.h" />
+    <ClInclude Include="..\..\..\Windows\ResourceString.h" />
+    <ClInclude Include="..\..\..\Windows\SecurityUtils.h" />
+    <ClInclude Include="..\..\..\Windows\Shell.h" />
+    <ClInclude Include="..\..\..\Windows\StdAfx.h" />
+    <ClInclude Include="..\..\..\Windows\TimeUtils.h" />
+    <ClInclude Include="..\..\..\Windows\Window.h" />
+    <ClInclude Include="..\..\Archive\7z\7zCompressionMode.h" />
+    <ClInclude Include="..\..\Archive\7z\7zDecode.h" />
+    <ClInclude Include="..\..\Archive\7z\7zEncode.h" />
+    <ClInclude Include="..\..\Archive\7z\7zFolderInStream.h" />
+    <ClInclude Include="..\..\Archive\7z\7zHandler.h" />
+    <ClInclude Include="..\..\Archive\7z\7zHeader.h" />
+    <ClInclude Include="..\..\Archive\7z\7zIn.h" />
+    <ClInclude Include="..\..\Archive\7z\7zItem.h" />
+    <ClInclude Include="..\..\Archive\7z\7zOut.h" />
+    <ClInclude Include="..\..\Archive\7z\7zProperties.h" />
+    <ClInclude Include="..\..\Archive\7z\7zSpecStream.h" />
+    <ClInclude Include="..\..\Archive\7z\7zUpdate.h" />
+    <ClInclude Include="..\..\Archive\7z\StdAfx.h" />
+    <ClInclude Include="..\..\Archive\Common\CoderMixer2.h" />
+    <ClInclude Include="..\..\Archive\Common\DummyOutStream.h" />
+    <ClInclude Include="..\..\Archive\Common\HandlerOut.h" />
+    <ClInclude Include="..\..\Archive\Common\InStreamWithCRC.h" />
+    <ClInclude Include="..\..\Archive\Common\ItemNameUtils.h" />
+    <ClInclude Include="..\..\Archive\Common\MultiStream.h" />
+    <ClInclude Include="..\..\Archive\Common\OutStreamWithCRC.h" />
+    <ClInclude Include="..\..\Archive\Common\ParseProperties.h" />
+    <ClInclude Include="..\..\Archive\Common\StdAfx.h" />
+    <ClInclude Include="..\..\Common\CreateCoder.h" />
+    <ClInclude Include="..\..\Common\CWrappers.h" />
+    <ClInclude Include="..\..\Common\FilePathAutoRename.h" />
+    <ClInclude Include="..\..\Common\FileStreams.h" />
+    <ClInclude Include="..\..\Common\FilterCoder.h" />
+    <ClInclude Include="..\..\Common\InBuffer.h" />
+    <ClInclude Include="..\..\Common\InOutTempBuffer.h" />
+    <ClInclude Include="..\..\Common\LimitedStreams.h" />
+    <ClInclude Include="..\..\Common\LockedStream.h" />
+    <ClInclude Include="..\..\Common\MethodId.h" />
+    <ClInclude Include="..\..\Common\MethodProps.h" />
+    <ClInclude Include="..\..\Common\OffsetStream.h" />
+    <ClInclude Include="..\..\Common\OutBuffer.h" />
+    <ClInclude Include="..\..\Common\ProgressUtils.h" />
+    <ClInclude Include="..\..\Common\RegisterArc.h" />
+    <ClInclude Include="..\..\Common\RegisterCodec.h" />
+    <ClInclude Include="..\..\Common\StdAfx.h" />
+    <ClInclude Include="..\..\Common\StreamBinder.h" />
+    <ClInclude Include="..\..\Common\StreamObjects.h" />
+    <ClInclude Include="..\..\Common\StreamUtils.h" />
+    <ClInclude Include="..\..\Common\UniqBlocks.h" />
+    <ClInclude Include="..\..\Common\VirtThread.h" />
+    <ClInclude Include="..\..\Compress\Bcj2Coder.h" />
+    <ClInclude Include="..\..\Compress\BcjCoder.h" />
+    <ClInclude Include="..\..\Compress\BranchMisc.h" />
+    <ClInclude Include="..\..\Compress\CopyCoder.h" />
+    <ClInclude Include="..\..\Compress\Lzma2Decoder.h" />
+    <ClInclude Include="..\..\Compress\Lzma2Encoder.h" />
+    <ClInclude Include="..\..\Compress\LzmaDecoder.h" />
+    <ClInclude Include="..\..\Compress\LzmaEncoder.h" />
+    <ClInclude Include="..\..\Compress\XzDecoder.h" />
+    <ClInclude Include="..\..\Compress\XzEncoder.h" />
+    <ClInclude Include="..\..\UI\Common\ArchiveName.h" />
+    <ClInclude Include="..\..\UI\Common\DirItem.h" />
+    <ClInclude Include="..\..\UI\Common\ExitCode.h" />
+    <ClInclude Include="..\..\UI\Common\ExtractMode.h" />
+    <ClInclude Include="..\..\UI\Common\HashCalc.h" />
+    <ClInclude Include="..\..\UI\Common\IFileExtractCallback.h" />
+    <ClInclude Include="..\..\UI\Common\StdAfx.h" />
+    <ClInclude Include="..\..\UI\Common\ZipRegistry.h" />
+    <ClInclude Include="..\..\UI\Console\ConsoleClose.h" />
+    <ClInclude Include="..\..\UI\Console\OpenCallbackConsole.h" />
+    <ClInclude Include="..\..\UI\Console\PercentPrinter.h" />
+    <ClInclude Include="..\..\UI\Console\UserInputUtils.h" />
+    <ClInclude Include="..\..\UI\NSIS\ExtractCallbackConsole.h" />
+    <ClInclude Include="..\..\UI\NSIS\NSISBreak.h" />
+    <ClInclude Include="..\..\UI\NSIS\StdAfx.h" />
+    <ClInclude Include="..\..\UI\NSIS\UserInputUtils2.h" />
+    <ClInclude Include="api.h" />
+    <ClInclude Include="nsis_tchar.h" />
+    <ClInclude Include="pluginapi.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="..\..\..\Common\AutoPtr.h" />
+    <ClInclude Include="..\..\..\Common\CommandLineParser.h" />
+    <ClInclude Include="..\..\..\Common\ComTry.h" />
+    <ClInclude Include="..\..\..\Common\Defs.h" />
+    <ClInclude Include="..\..\..\Common\DynamicBuffer.h" />
+    <ClInclude Include="..\..\..\Common\IntToString.h" />
+    <ClInclude Include="..\..\..\Common\ListFileUtils.h" />
+    <ClInclude Include="..\..\..\Common\MyCom.h" />
+    <ClInclude Include="..\..\..\Common\MyException.h" />
+    <ClInclude Include="..\..\..\Common\MyGuidDef.h" />
+    <ClInclude Include="..\..\..\Common\MyInitGuid.h" />
+    <ClInclude Include="..\..\..\Common\MyString.h" />
+    <ClInclude Include="..\..\..\Common\MyUnknown.h" />
+    <ClInclude Include="..\..\..\Common\MyVector.h" />
+    <ClInclude Include="..\..\..\Common\NewHandler.h" />
+    <ClInclude Include="..\..\..\Common\StdInStream.h" />
+    <ClInclude Include="..\..\..\Common\StdOutStream.h" />
+    <ClInclude Include="..\..\..\Common\StringConvert.h" />
+    <ClInclude Include="..\..\..\Common\StringToInt.h" />
+    <ClInclude Include="..\..\..\Common\UTFConvert.h" />
+    <ClInclude Include="..\..\..\Common\Wildcard.h" />
+    <ClInclude Include="..\..\..\Windows\Defs.h" />
+    <ClInclude Include="..\..\..\Windows\DLL.h" />
+    <ClInclude Include="..\..\..\Windows\FileDir.h" />
+    <ClInclude Include="..\..\..\Windows\FileFind.h" />
+    <ClInclude Include="..\..\..\Windows\FileIO.h" />
+    <ClInclude Include="..\..\..\Windows\FileMapping.h" />
+    <ClInclude Include="..\..\..\Windows\FileName.h" />
+    <ClInclude Include="..\..\..\Windows\Handle.h" />
+    <ClInclude Include="..\..\..\Windows\MemoryLock.h" />
+    <ClInclude Include="..\..\..\Windows\PropVariant.h" />
+    <ClInclude Include="..\..\..\Windows\Synchronization.h" />
+    <ClInclude Include="..\..\..\Windows\System.h" />
+    <ClInclude Include="..\..\..\Windows\Thread.h" />
+    <ClInclude Include="..\..\UI\Common\ArchiveCommandLine.h" />
+    <ClInclude Include="..\..\UI\Common\ArchiveExtractCallback.h" />
+    <ClInclude Include="..\..\UI\Common\ArchiveOpenCallback.h" />
+    <ClInclude Include="..\..\UI\Common\Bench.h" />
+    <ClInclude Include="..\..\UI\Common\DefaultName.h" />
+    <ClInclude Include="..\..\UI\Common\EnumDirItems.h" />
+    <ClInclude Include="..\..\UI\Common\Extract.h" />
+    <ClInclude Include="..\..\UI\Common\ExtractingFilePath.h" />
+    <ClInclude Include="..\..\UI\Common\LoadCodecs.h" />
+    <ClInclude Include="..\..\UI\Common\OpenArchive.h" />
+    <ClInclude Include="..\..\UI\Common\Property.h" />
+    <ClInclude Include="..\..\UI\Common\PropIDUtils.h" />
+    <ClInclude Include="..\..\UI\Common\SetProperties.h" />
+    <ClInclude Include="..\..\UI\Common\SortUtils.h" />
+    <ClInclude Include="..\..\UI\Common\TempFiles.h" />
+    <ClInclude Include="..\..\UI\Common\Update.h" />
+    <ClInclude Include="..\..\UI\Common\UpdateAction.h" />
+    <ClInclude Include="..\..\UI\Common\UpdateCallback.h" />
+    <ClInclude Include="..\..\UI\Common\UpdatePair.h" />
+    <ClInclude Include="..\..\UI\Common\UpdateProduce.h" />
+    <ClInclude Include="..\..\ICoder.h" />
+    <ClInclude Include="..\..\IMyUnknown.h" />
+    <ClInclude Include="..\..\IPassword.h" />
+    <ClInclude Include="..\..\IProgress.h" />
+    <ClInclude Include="..\..\IStream.h" />
+    <ClInclude Include="..\..\PropID.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\C\7zAlloc.c" />
+    <ClCompile Include="..\..\..\..\C\7zArcIn.c" />
+    <ClCompile Include="..\..\..\..\C\7zBuf.c" />
+    <ClCompile Include="..\..\..\..\C\7zBuf2.c" />
+    <ClCompile Include="..\..\..\..\C\7zCrc.c" />
+    <ClCompile Include="..\..\..\..\C\7zCrcOpt.c" />
+    <ClCompile Include="..\..\..\..\C\7zDec.c" />
+    <ClCompile Include="..\..\..\..\C\7zFile.c" />
+    <ClCompile Include="..\..\..\..\C\7zStream.c" />
+    <ClCompile Include="..\..\..\..\C\Aes.c" />
+    <ClCompile Include="..\..\..\..\C\AesOpt.c" />
+    <ClCompile Include="..\..\..\..\C\Alloc.c" />
+    <ClCompile Include="..\..\..\..\C\Bcj2.c" />
+    <ClCompile Include="..\..\..\..\C\Bcj2Enc.c" />
+    <ClCompile Include="..\..\..\..\C\Bra.c" />
+    <ClCompile Include="..\..\..\..\C\Bra86.c" />
+    <ClCompile Include="..\..\..\..\C\BraIA64.c" />
+    <ClCompile Include="..\..\..\..\C\CpuArch.c" />
+    <ClCompile Include="..\..\..\..\C\Delta.c" />
+    <ClCompile Include="..\..\..\..\C\LzFind.c" />
+    <ClCompile Include="..\..\..\..\C\LzFindMt.c" />
+    <ClCompile Include="..\..\..\..\C\Lzma2Dec.c" />
+    <ClCompile Include="..\..\..\..\C\Lzma2DecMt.c" />
+    <ClCompile Include="..\..\..\..\C\Lzma2Enc.c" />
+    <ClCompile Include="..\..\..\..\C\Lzma86Dec.c" />
+    <ClCompile Include="..\..\..\..\C\Lzma86Enc.c" />
+    <ClCompile Include="..\..\..\..\C\LzmaDec.c" />
+    <ClCompile Include="..\..\..\..\C\LzmaEnc.c" />
+    <ClCompile Include="..\..\..\..\C\LzmaLib.c" />
+    <ClCompile Include="..\..\..\..\C\MtCoder.c" />
+    <ClCompile Include="..\..\..\..\C\MtDec.c" />
+    <ClCompile Include="..\..\..\..\C\Ppmd7.c" />
+    <ClCompile Include="..\..\..\..\C\Ppmd7Dec.c" />
+    <ClCompile Include="..\..\..\..\C\Ppmd7Enc.c" />
+    <ClCompile Include="..\..\..\..\C\Sha256.c" />
+    <ClCompile Include="..\..\..\..\C\Sort.c" />
+    <ClCompile Include="..\..\..\..\C\Threads.c" />
+    <ClCompile Include="..\..\..\..\C\Xz.c" />
+    <ClCompile Include="..\..\..\..\C\XzCrc64.c" />
+    <ClCompile Include="..\..\..\..\C\XzCrc64Opt.c" />
+    <ClCompile Include="..\..\..\..\C\XzDec.c" />
+    <ClCompile Include="..\..\..\..\C\XzEnc.c" />
+    <ClCompile Include="..\..\..\..\C\XzIn.c" />
+    <ClCompile Include="..\..\..\Windows\CommonDialog.cpp" />
+    <ClCompile Include="..\..\..\Windows\ErrorMsg.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileLink.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileMapping.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileSystem.cpp" />
+    <ClCompile Include="..\..\..\Windows\PropVariantConv.cpp" />
+    <ClCompile Include="..\..\..\Windows\Registry.cpp" />
+    <ClCompile Include="..\..\..\Windows\ResourceString.cpp" />
+    <ClCompile Include="..\..\..\Windows\SecurityUtils.cpp" />
+    <ClCompile Include="..\..\..\Windows\Shell.cpp" />
+    <ClCompile Include="..\..\..\Windows\TimeUtils.cpp" />
+    <ClCompile Include="..\..\..\Windows\Window.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zCompressionMode.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zDecode.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zEncode.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zExtract.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zFolderInStream.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zHandler.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zHandlerOut.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zHeader.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zIn.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zOut.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zProperties.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zRegister.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zSpecStream.cpp" />
+    <ClCompile Include="..\..\Archive\7z\7zUpdate.cpp" />
+    <ClCompile Include="..\..\Archive\7z\StdAfx.cpp" />
+    <ClCompile Include="..\..\Archive\Common\CoderMixer2.cpp" />
+    <ClCompile Include="..\..\Archive\Common\DummyOutStream.cpp" />
+    <ClCompile Include="..\..\Archive\Common\HandlerOut.cpp" />
+    <ClCompile Include="..\..\Archive\Common\InStreamWithCRC.cpp" />
+    <ClCompile Include="..\..\Archive\Common\ItemNameUtils.cpp" />
+    <ClCompile Include="..\..\Archive\Common\MultiStream.cpp" />
+    <ClCompile Include="..\..\Archive\Common\OutStreamWithCRC.cpp" />
+    <ClCompile Include="..\..\Archive\Common\ParseProperties.cpp" />
+    <ClCompile Include="..\..\Common\CreateCoder.cpp" />
+    <ClCompile Include="..\..\Common\CWrappers.cpp" />
+    <ClCompile Include="..\..\Common\FilePathAutoRename.cpp" />
+    <ClCompile Include="..\..\Common\FileStreams.cpp" />
+    <ClCompile Include="..\..\Common\FilterCoder.cpp" />
+    <ClCompile Include="..\..\Common\InBuffer.cpp" />
+    <ClCompile Include="..\..\Common\InOutTempBuffer.cpp" />
+    <ClCompile Include="..\..\Common\LimitedStreams.cpp" />
+    <ClCompile Include="..\..\Common\LockedStream.cpp" />
+    <ClCompile Include="..\..\Common\MethodId.cpp" />
+    <ClCompile Include="..\..\Common\MethodProps.cpp" />
+    <ClCompile Include="..\..\Common\OffsetStream.cpp" />
+    <ClCompile Include="..\..\Common\OutBuffer.cpp" />
+    <ClCompile Include="..\..\Common\ProgressUtils.cpp" />
+    <ClCompile Include="..\..\Common\PropId.cpp" />
+    <ClCompile Include="..\..\Common\StreamBinder.cpp" />
+    <ClCompile Include="..\..\Common\StreamObjects.cpp" />
+    <ClCompile Include="..\..\Common\StreamUtils.cpp" />
+    <ClCompile Include="..\..\Common\UniqBlocks.cpp" />
+    <ClCompile Include="..\..\Common\VirtThread.cpp" />
+    <ClCompile Include="..\..\Compress\Bcj2Coder.cpp" />
+    <ClCompile Include="..\..\Compress\Bcj2Register.cpp" />
+    <ClCompile Include="..\..\Compress\BcjCoder.cpp" />
+    <ClCompile Include="..\..\Compress\BcjRegister.cpp" />
+    <ClCompile Include="..\..\Compress\BranchMisc.cpp" />
+    <ClCompile Include="..\..\Compress\BranchRegister.cpp" />
+    <ClCompile Include="..\..\Compress\ByteSwap.cpp" />
+    <ClCompile Include="..\..\Compress\CopyCoder.cpp" />
+    <ClCompile Include="..\..\Compress\CopyRegister.cpp" />
+    <ClCompile Include="..\..\Compress\DeltaFilter.cpp" />
+    <ClCompile Include="..\..\Compress\Lzma2Decoder.cpp" />
+    <ClCompile Include="..\..\Compress\Lzma2Encoder.cpp" />
+    <ClCompile Include="..\..\Compress\Lzma2Register.cpp" />
+    <ClCompile Include="..\..\Compress\LzmaDecoder.cpp" />
+    <ClCompile Include="..\..\Compress\LzmaEncoder.cpp" />
+    <ClCompile Include="..\..\Compress\LzmaRegister.cpp" />
+    <ClCompile Include="..\..\Compress\XzDecoder.cpp" />
+    <ClCompile Include="..\..\Compress\XzEncoder.cpp" />
+    <ClCompile Include="..\..\UI\Common\ArchiveName.cpp" />
+    <ClCompile Include="..\..\UI\Common\HashCalc.cpp" />
+    <ClCompile Include="..\..\UI\Console\ConsoleClose.cpp" />
+    <ClCompile Include="..\..\UI\Console\OpenCallbackConsole.cpp" />
+    <ClCompile Include="..\..\UI\Console\PercentPrinter.cpp" />
+    <ClCompile Include="..\..\UI\Console\UserInputUtils.cpp" />
+    <ClCompile Include="..\..\UI\NSIS\ExtractCallbackConsole.cpp" />
+    <ClCompile Include="..\..\UI\NSIS\Main.cpp" />
+    <ClCompile Include="..\..\UI\NSIS\MainAr.cpp" />
+    <ClCompile Include="..\..\UI\NSIS\NSISBreak.cpp" />
+    <ClCompile Include="..\..\UI\NSIS\UserInputUtils2.cpp" />
+    <ClCompile Include="nsis7z.cpp" />
+    <ClCompile Include="pluginapi.cpp" />
+    <ClCompile Include="StdAfx2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">StdAfx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\CommandLineParser.cpp" />
+    <ClCompile Include="..\..\..\Common\CRC.cpp" />
+    <ClCompile Include="..\..\..\Common\IntToString.cpp" />
+    <ClCompile Include="..\..\..\Common\ListFileUtils.cpp" />
+    <ClCompile Include="..\..\..\Common\MyString.cpp" />
+    <ClCompile Include="..\..\..\Common\MyVector.cpp" />
+    <ClCompile Include="..\..\..\Common\NewHandler.cpp" />
+    <ClCompile Include="..\..\..\Common\StdInStream.cpp" />
+    <ClCompile Include="..\..\..\Common\StdOutStream.cpp" />
+    <ClCompile Include="..\..\..\Common\StringConvert.cpp" />
+    <ClCompile Include="..\..\..\Common\StringToInt.cpp" />
+    <ClCompile Include="..\..\..\Common\UTFConvert.cpp" />
+    <ClCompile Include="..\..\..\Common\Wildcard.cpp" />
+    <ClCompile Include="..\..\..\Windows\DLL.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileDir.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileFind.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileIO.cpp" />
+    <ClCompile Include="..\..\..\Windows\FileName.cpp" />
+    <ClCompile Include="..\..\..\Windows\MemoryLock.cpp" />
+    <ClCompile Include="..\..\..\Windows\PropVariant.cpp" />
+    <ClCompile Include="..\..\..\Windows\Synchronization.cpp" />
+    <ClCompile Include="..\..\..\Windows\System.cpp" />
+    <ClCompile Include="..\..\Archive\LzmaHandler.cpp" />
+    <ClCompile Include="..\..\Archive\SplitHandler.cpp" />
+    <ClCompile Include="..\..\Archive\XzHandler.cpp" />
+    <ClCompile Include="..\..\UI\Common\ArchiveCommandLine.cpp" />
+    <ClCompile Include="..\..\UI\Common\ArchiveExtractCallback.cpp" />
+    <ClCompile Include="..\..\UI\Common\ArchiveOpenCallback.cpp" />
+    <ClCompile Include="..\..\UI\Common\Bench.cpp" />
+    <ClCompile Include="..\..\UI\Common\DefaultName.cpp" />
+    <ClCompile Include="..\..\UI\Common\EnumDirItems.cpp" />
+    <ClCompile Include="..\..\UI\Common\Extract.cpp" />
+    <ClCompile Include="..\..\UI\Common\ExtractingFilePath.cpp" />
+    <ClCompile Include="..\..\UI\Common\LoadCodecs.cpp" />
+    <ClCompile Include="..\..\UI\Common\OpenArchive.cpp" />
+    <ClCompile Include="..\..\UI\Common\PropIDUtils.cpp" />
+    <ClCompile Include="..\..\UI\Common\SetProperties.cpp" />
+    <ClCompile Include="..\..\UI\Common\SortUtils.cpp" />
+    <ClCompile Include="..\..\UI\Common\TempFiles.cpp" />
+    <ClCompile Include="..\..\UI\Common\Update.cpp" />
+    <ClCompile Include="..\..\UI\Common\UpdateAction.cpp" />
+    <ClCompile Include="..\..\UI\Common\UpdateCallback.cpp" />
+    <ClCompile Include="..\..\UI\Common\UpdatePair.cpp" />
+    <ClCompile Include="..\..\UI\Common\UpdateProduce.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\..\C\7zVersion.rc" />
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

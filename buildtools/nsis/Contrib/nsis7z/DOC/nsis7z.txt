@@ -1,0 +1,138 @@
+NSIS 7z Extract Plugin.
+(c) brainsucker (Nik Medved), 2009.
+Updated by Marek Mizanin, 2011.
+Updated by Stuart Welch 2015-2016.
+Updated by Marek Mizanin, 2019.
+Uses 7-Zip source code, (C) 1999-2015 Igor Pavlov.
+
+Abstract.
+---------
+
+Nowadays NSIS has very good compression algorithms (including superb 
+lzma-solid), but neverless, dedicated archivers provide slightly better
+ratios. Moreover, if you have "pack of files" which is never changed itself, 
+but used in several different or frequent releases, it will be handy to pack
+it once with 7z, and then use like "merge-module", to save several bytes 
+and setup compilation time together (the last is most important, we get up to
+10x compilation time reduction for some of our setups using 60mb 7z-packed (240
+original) merge modules).
+
+History.
+--------
+
+Actually we are using this plugin as binary for around 4 years (it was first 
+compiled with something like 7z 4.05), but around 7z releases 4.30 it lost 
+compatibility with the newer archives (so we kept in secret place special 
+"old" 7z version to pack our merge-modules ;). And strangely, in several 
+weeks after initial compilation I've lost my hard-drive, so we got only
+this single "nsis7z.dll" file kept in our CVS for years. But due to 7z license
+that wasn't completely legal, and also some other people were asking me for 
+license details (to use this plugin in their products setups).
+
+Yesterday I've got some spare time, and decided to recreate original plugin,
+saving compatibility with old one, but adding some minor features, and 
+trying to preserve source-code compatibility with future 7z-releases (as much
+as I can).
+
+[Marek Mizanin] Because I need Unicode version of this plug-in I took the last
+7z sources - 7z921.tar.bz2 and make following changes so I was able to build it:
+- char replaced with TCHAR
+- added 	g_pluginExtra = extra; into funcname(HWND hwndParent, int string_size, \
+- added _T before "strings"
+- updated Nsis7z.vcproj, changed default to Unicode
+- files in NsisPluginSample changed to 2.46 Unicode NSIS
+- added modified WorkDir.cpp from 7z sources
+- comment out //#include "../../Compress/LZMA_Alone/LzmaBenchCon.h"
+- fixed void DoInitialize()
+- updated int DoExtract(LPTSTR archive, LPTSTR dir, bool overwrite, bool expath, ExtractProgressHandler epc)
+- updated License.txt from 7z921.tar.bz2
+- added _release_ANSI and _release_unicode directory with builded nsis7z.dll
+
+[Stuart Welch]
+15th July 2015
+* Updated to LZMA SDK 15.07 beta
+* Updated License.txt
+
+[Stuart Welch]
+11th March 2016
+* Updated to LZMA SDK 15.14
+
+[Marek Mizanin]
+23th March 2019
+* Updated to LZMA SDK 19.00
+- updated project file to VS 2017
+- added new files from SDK to project (Lzma2DecMt, MtDec, XzDecoder, XzEncoder
+- renamed UserInputsUtils.cpp to UserInputsUtils2.cpp because conflict (could somebody check if it is ok?)
+- renamed StdAfx.cpp to StdAfx2.cpp because conflict
+- added #include "../../../Common/Common.h" to solve build error
+- added #pragma warning(disable : 4996) to solve build error with 'GetVersionExW': was declared deprecated
+- changed version to 19.00
+
+
+Usage.
+------
+
+Simple. Look at example1.nsi.
+Details? Unpack you merge module as 7z archive to somewere on users harddrive,
+set target dir for archive contents with SetOutPath, and call plugin. Example:
+
+	File "ArchiveName.7z"
+	Nsis7z::Extract "ArchiveName.7z"
+	Delete "$OUTDIR/ArchiveName.7z"
+
+Usually I'm showing something like "Installing package..." with DetailsPrint 
+before this, and plugin will move progress bar during unpack operation, to keep
+user notified on setup progress.
+
+Plugin now has two additional commands:
+
+	Nsis7z::ExtractWithDetails "Test.7z" "Installing package %s..."
+
+Unpacks archive in details mode, with promt generated from second param, use
+ %s to insert unpack details like "10% (5 / 10 MB)"
+
+  	GetFunctionAddress $R9 CallbackTest
+  	Nsis7z::ExtractWithCallback "Test.7z" $R9
+
+Unpacks archive in callback mode - plugin will animate progress bar, you can do
+anything (like setting user prompt) in callback function.
+
+
+License.
+--------
+
+I know very little about open source world and associated laws, but AFAIK ;) I
+can compile, distribute and use this plugin under LGPL license (7z uses one) 
+as soon as source code for it is readily available. No problems here, all 
+regards and fame goes to Igor Pavlov, 7-zip author.
+
+You can download source code for this plugin at http://nsis.sf.net or 
+http://brains.by or ask me at any time to send it to you, if you got 
+distribution package without sources (brainsucker.na@gmail.com).
+
+Compiling.
+----------
+
+Sorry, but I have no time to recreate make files by hand, so only VS2008
+solution/project are included. To build plugin you need to unpack 7z464.tar.bz2 
+(or later, hopefully; you can retreive one from www.7-zip.org) somewhere, and 
+then unpack plugin source distribution to the same folder. Solution for plugin
+can be found at CPP\7zip\Bundles\Nsis7z subfolder (Nsis7z.sln). You should 
+compile it as ANSI version (NOT unicode, Release or Debug).
+
+I've tried to strip plugin as much as possible (still very big, 170 kb too much
+comparing to 30 kb ansi-C 7z unpacker provided by Igor Pavlov), so it should 
+support only 7Z unpacking, with LZMA, Deflate, BCJ2, etc. methods. Also it will
+only work at NT systems (95/98/ME - bad luck, sorry ;), according to source code
+and statements at comments.
+
+[Marek Mizanin]
+9.21
+First extract 7z921.tar.bz2 and then nsis7z_921 because WorkDir.cpp is modified.
+For ANSI version you should replace NsisPluginSample with files from 
+c:\Program Files\NSIS\Examples\Plugin\nsis
+
+19.00
+Extract nsis7z_19.00.7z, then extract C and CPP folders from lzma1900.7z to Contrib\nsis7z.
+Build Nsis7z.sln in VS 2017.
+[Marek Mizanin end]
