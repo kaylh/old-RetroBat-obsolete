@@ -63,22 +63,20 @@ if %user_choice% EQU 1 (
 	call :get_packages
 	call :set_config
 	call :build_setup
-	pause
 	call :exit_door
 	goto :eof
 )
 
 if %user_choice% EQU 2 (
 
+	call :set_config
 	call :build_setup
-	pause
 	call :exit_door
 	goto :eof
 )
 
 if %user_choice% EQU 3 (
 
-	(set exit_msg=Exit script by user's choice)
 	(set exit_code=0)
 	call :exit_door
 	goto :eof
@@ -118,7 +116,7 @@ if exist "!root_path!\system\scripts\shared-variables.cmd" (
 	
 ) else (
 
-	(set exit_code=1)
+	(set exit_code=2)
 	call :exit_door
 	goto :eof
 )
@@ -132,7 +130,7 @@ if exist "!tmp_infos_file!" (
 	
 ) else (
 
-	(set exit_code=1)
+	(set/A exit_code=2)
 	call :exit_door
 	goto :eof
 )
@@ -152,7 +150,6 @@ call :banner
 echo :: CHECKING BUILD DEPENDENCIES...
 
 (set/A found_total=0)
-(set package_file=retrobat-buildtools.zip)
 
 if "%archx%"=="x86_64" (set "git_path=%ProgramFiles%\Git\cmd") else (set "git_path=%ProgramFiles(x86)%\Git\cmd")
 
@@ -161,10 +158,10 @@ for %%i in %deps_list% do (
 	(set/A found_%%i=0)
 	(set/A found_total=!found_total!+1)
 	(set package_name=%%i)
-	(set buildtools_path=!root_path!\..\retrobat-buildtools)
+	(set buildtools_path=!root_path!\buildtools\msys)
 	
 	if "!package_name!"=="git" (set buildtools_path=!git_path!)
-	if "!package_name!"=="makensis" (set buildtools_path=!root_path!\..\retrobat-buildtools\nsis)
+	if "!package_name!"=="makensis" (set buildtools_path=!root_path!\buildtools\nsis)
 	
 	if exist "!buildtools_path!\!package_name!.exe" (
 	
@@ -175,38 +172,18 @@ for %%i in %deps_list% do (
 	
 		echo %%i: not found
 	)
-
-	if "!package_name!"=="git" if "!found_%%i!" EQU 0 (
 	
-		(set exit_code=1)
-		call :exit_door
-		goto :eof
-	)
-	
-	(set/A found_total=!found_total!-!found_%%i!)
+	(set/A found_total=!found_total!-!found_%%i!)		
 )
-timeout /t 3 >nul
-
-:: ---- DOWNLOAD AND EXTRACT BUILDTOOLS ----
 
 if !found_total! NEQ 0 (
-
-	if not exist "!root_path!\!package_file!" (
 	
-		echo Downloading !package_file!
-		powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 ; Invoke-WebRequest -Uri !buildtools_url!/!package_file! -OutFile "!root_path!\!package_file!""
-		ping 127.0.0.1 -n 4 >nul
-	)
+	(set/A exit_code=2)
+	call :exit_door
+	goto :eof
 )
-
-if exist "!root_path!\!package_file!" (
-
-	echo Extracting !package_file!
-	powershell -command "Expand-Archive -Force -LiteralPath "!root_path!\!package_file!" -DestinationPath "!root_path!\..\.""
-)
-
-if exist "!root_path!\*.zip" del/Q "!root_path!\*.zip"
-if exist "!root_path!\system\download\*.*" del/Q "!root_path!\system\download\*.*"
+	
+timeout /t 3 >nul
 
 goto :eof
 
@@ -216,26 +193,14 @@ goto :eof
 
 echo :: GETTING REQUIRED PACKAGES...
 
-for %%i in %clone_list% do (
+cd !root_path!
+git submodule update --init
 
-	if "!get_%%i!"=="1" (	
-	
-		(set package_name=%%i)
-		
-		if "!package_name!"=="bios" (set package_file=RetroBat-BIOS.git)
-		if "!package_name!"=="decorations" (set package_file=batocera-bezel.git)
-		if "!package_name!"=="default_theme" (set package_file=es-theme-carbon.git)
-		
-		echo ***********************************************************
+if %ERRORLEVEL% NEQ 0 (
 
-		if exist "!%%i_path!" rmdir /s /q "!%%i_path!"			
-		md "!%%i_path!"
-		"!git_path!\git" clone --depth 1 !%%i_url!/!package_file! "!%%i_path!"
-		
-		if exist "!%%i_path!\.git\." rmdir /s /q "!%%i_path!\.git"
-		if exist "!%%i_path!\.github\." rmdir /s /q "!%%i_path!\.github"
-				
-	)
+	(set/A exit_code=%ERRORLEVEL%)
+	call :exit_door
+	goto :eof
 )
 
 for %%i in %download_list% do (
@@ -256,10 +221,7 @@ for %%i in %download_list% do (
 		echo ***********************************************************
 		
 		call :download
-		call :extract
-
-		if exist "!%%i_path!\.git\." rmdir /s /q "!%%i_path!\.git"
-		if exist "!%%i_path!\.github\." rmdir /s /q "!%%i_path!\.github"		
+		call :extract		
 	)
 )
 
@@ -300,18 +262,18 @@ if "!package_name!"=="px68k" (
 	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
 )
 
-"%buildtools_path%\wget" --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%download_path%" !download_url!/!package_file! -q --show-progress
+"%buildtools_path%\wget" --continue --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%download_path%" !download_url!/!package_file! -q --show-progress
 
 if %ERRORLEVEL% NEQ 0 (
 
-	set exit_code=%ERRORLEVEL%
+	(set/A exit_code=%ERRORLEVEL%)
 	call :exit_door
 	goto :eof
 )
 
 if not exist "%download_path%\%package_file%" (
 
-	set exit_code=1
+	(set/A exit_code=2)
 	call :exit_door
 	goto :eof
 	
@@ -335,13 +297,13 @@ if "!package_name!"=="retroarch" (
 	
 	if "%archx%"=="x86_64" (
 				
-		xcopy "%extraction_path%\RetroArch-Win64" "%destination_path%" /s /e /v /y
+		xcopy "%extraction_path%\RetroArch-Win64" "%destination_path%\" /s /e /v /y
 		rmdir /s /q "%download_path%\extract\RetroArch-Win64"
 	)
 	
 	if "%archx%"=="x86" (
 	
-		xcopy "%extraction_path%\RetroArch" "%destination_path%" /s /e /v /y
+		xcopy "%extraction_path%\RetroArch" "%destination_path%\" /s /e /v /y
 		rmdir /s /q "%download_path%\extract\RetroArch"
 	)
 	
@@ -349,7 +311,7 @@ if "!package_name!"=="retroarch" (
 
 if "%true%"=="1" (
 
-	xcopy "%extraction_path%" "%destination_path%" /e /v /y
+	xcopy "%extraction_path%" "%destination_path%\" /e /v /y
 )
  
 rmdir /s /q "%download_path%\extract"
@@ -361,12 +323,36 @@ goto :eof
 
 :set_config
 
+echo :: COPYING FILES IN BUILD DIRECTORY...
+
+if not exist "!build_path!\." md "!build_path!"
+
+if not exist "!build_path!\*.exe" copy/Y "!root_path!\*.exe" "!build_path!\*.exe"
+if not exist "!build_path!\*.dat" copy/Y "!root_path!\*.dat" "!build_path!\*.dat"
+if not exist "!build_path!\*.txt" copy/Y "!root_path!\*.dat" "!build_path!\*.txt"
+
 echo :: SETTING CONFIG FILES...
 
-!root_path!\retrobat.exe /NOF #MakeTree
-!root_path!\retrobat.exe /NOF #GetConfigFiles
-!root_path!\retrobat.exe /NOF #SetEmulationStationSettings
-!root_path!\retrobat.exe /NOF #SetEmulatorsSettings
+if exist "!build_path!\retrobat.exe" (
+
+	"!build_path!\retrobat.exe" /NOF #MakeTree
+	"!build_path!\retrobat.exe" /NOF #GetConfigFiles
+	"!build_path!\retrobat.exe" /NOF #SetEmulationStationSettings
+	"!build_path!\retrobat.exe" /NOF #SetEmulatorsSettings
+	
+	if %ERRORLEVEL% NEQ 0 (
+		(set/A exit_code=%ERRORLEVEL%)
+		call :exit_door
+		goto :eof
+	)
+
+) else (
+
+	(set/A exit_code=2)
+	call :exit_door
+	goto :eof
+	
+)
 
 goto :eof
 
@@ -397,4 +383,5 @@ goto :eof
 if exist "!tmp_infos_file!" del/Q "!tmp_infos_file!"
 
 echo exit_code=!exit_code!
+pause
 exit !exit_code!
