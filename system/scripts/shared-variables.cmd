@@ -58,6 +58,7 @@ if not "%script_type%"=="builder" (
 (echo batgui_path=!root_path!)>> "%tmp_infos_file%"
 (echo batocera_ports_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
 (echo bios_path=!root_path!\bios)>> "%tmp_infos_file%"
+(echo build_path=!root_path!\build)>> "%tmp_infos_file%"
 (echo decorations_path=!root_path!\system\decorations)>> "%tmp_infos_file%"
 (echo default_theme_path=!root_path!\emulationstation\.emulationstation\themes\es-theme-carbon)>> "%tmp_infos_file%"
 (echo download_path=!root_path!\system\download)>> "%tmp_infos_file%"
@@ -99,15 +100,11 @@ if not "%script_type%"=="builder" (
 
 	(echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%)>> "%tmp_infos_file%"
 	(echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"
-	(echo bios_url=https://github.com/kaylh)>> "%tmp_infos_file%"
-	(echo decorations_url=https://github.com/kaylh)>> "%tmp_infos_file%"
-	(echo default_theme_url=https://github.com/fabricecaruso)>> "%tmp_infos_file%"
 	(echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master)>> "%tmp_infos_file%"
 	(echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest)>> "%tmp_infos_file%"
 	(echo mega_bezels_url=https://www.retrobat.ovh/repo/decorations)>> "%tmp_infos_file%"
 	(echo retroarch_url=https://buildbot.libretro.com/stable/%retroarch_version%/windows/%archx%)>> "%tmp_infos_file%"
 	(echo retrobat_binaries_url=https://www.retrobat.ovh/repo/tools)>> "%tmp_infos_file%"
-	(echo buildtools_url=https://www.retrobat.ovh/repo/tools)>> "%tmp_infos_file%"
 	(echo wiimotegun_url=https://github.com/fabricecaruso/WiimoteGun/releases/download/v1.0)>> "%tmp_infos_file%"
 
 )
