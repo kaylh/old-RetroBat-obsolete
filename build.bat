@@ -20,9 +20,6 @@ set zip_loglevel=0
 
 set get_batgui=0
 set get_batocera_ports=1
-set get_bios=1
-set get_decorations=1
-set get_default_theme=1
 set get_emulationstation=1
 set get_lrcores=1
 set get_mega_bezels=0
@@ -32,7 +29,6 @@ set get_roms=0
 set get_wiimotegun=1
 
 set deps_list=(git makensis 7za strip wget)
-set clone_list=(bios decorations default_theme)
 set download_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
 
 :: ---- GET STARTED ----
@@ -341,7 +337,7 @@ for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") 
 if exist "!build_path!\retrobat.exe" (
 
 rem	"!build_path!\retrobat.exe" /NOF #MakeTree
-rem	"!build_path!\retrobat.exe" /NOF #GetConfigFiles
+	"!build_path!\retrobat.exe" /NOF #GetConfigFiles
 	"!build_path!\retrobat.exe" /NOF #SetEmulationStationSettings
 	"!build_path!\retrobat.exe" /NOF #SetEmulatorsSettings
 	
