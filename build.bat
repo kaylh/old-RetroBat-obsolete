@@ -6,7 +6,7 @@ goto:rem
 build.bat
 ---------------------------------------
 This batch script is made to help download all the required software for RetroBat,
-set the default configuration and build the setup.
+to set the default configuration and to build the setup from sources.
 ---------------------------------------
 :rem
 
@@ -218,8 +218,6 @@ for %%i in %download_list% do (
 		if "!package_name!"=="retroarch" (set package_file=RetroArch.7z)
 		if "!package_name!"=="wiimotegun" (set package_file=WiimoteGun.zip)
 		
-		echo ***********************************************************
-		
 		call :download
 		call :extract		
 	)
@@ -233,8 +231,6 @@ if "%get_lrcores%"=="1" (
 		(set package_file=%%x_libretro.dll.zip)
 		(set download_url=%lrcores_url%/!package_file!)
 		(set destination_path=%lrcores_path%)
-		
-		echo ***********************************************************
 
 		call :download
 		call :extract	
@@ -246,6 +242,8 @@ goto :eof
 :: ---- DOWNLOAD PACKAGES ----
 
 :download
+
+echo *************************************************************
 
 if "!package_name!"=="4do" (
 
@@ -284,6 +282,8 @@ goto :eof
 
 :extract
 
+echo *************************************************************
+
 if not exist "%extraction_path%\." md "%extraction_path%"
 "%buildtools_path%\7za.exe" -y x "%download_path%\%package_file%" -aoa -o"%extraction_path%"
 
@@ -292,8 +292,6 @@ set true=1
 if "!package_name!"=="retroarch" (
 
 	set true=0
-	
-	if exist "%retroarch_path%\*.dll" del/Q "%retroarch_path%\*.dll"
 	
 	if "%archx%"=="x86_64" (
 				
@@ -325,18 +323,25 @@ goto :eof
 
 echo :: COPYING FILES IN BUILD DIRECTORY...
 
+cd "!root_path!"
+
 if not exist "!build_path!\." md "!build_path!"
 
-if not exist "!build_path!\*.exe" copy/Y "!root_path!\*.exe" "!build_path!\*.exe"
-if not exist "!build_path!\*.dat" copy/Y "!root_path!\*.dat" "!build_path!\*.dat"
-if not exist "!build_path!\*.txt" copy/Y "!root_path!\*.dat" "!build_path!\*.txt"
+for %%i in (bios emulationstation emulators roms system) do (xcopy "!root_path!\%%i" "!build_path!\%%i" /i /s /e /v /y)
+
+for %%i in (exe dat txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
 
 echo :: SETTING CONFIG FILES...
 
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\retrobat_tree.list") do (if not exist "!build_path!\%%x\." md "!build_path!\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.list") do (if not exist "!build_path!\emulators\%%x\." md "!build_path!\emulators\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") do (if not exist "!build_path!\roms\%%x\." md "!build_path!\roms\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") do (if not exist "!build_path!\saves\%%x\." md "!build_path!\saves\%%x")
+
 if exist "!build_path!\retrobat.exe" (
 
-	"!build_path!\retrobat.exe" /NOF #MakeTree
-	"!build_path!\retrobat.exe" /NOF #GetConfigFiles
+rem	"!build_path!\retrobat.exe" /NOF #MakeTree
+rem	"!build_path!\retrobat.exe" /NOF #GetConfigFiles
 	"!build_path!\retrobat.exe" /NOF #SetEmulationStationSettings
 	"!build_path!\retrobat.exe" /NOF #SetEmulatorsSettings
 	
@@ -354,6 +359,9 @@ if exist "!build_path!\retrobat.exe" (
 	
 )
 
+if exist "!system_path!\templates\emulationstation\*.mp4" xcopy /v /y "!system_path!\templates\emulationstation\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
+if exist "!system_path!\templates\emulationstation\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
+
 goto :eof
 
 :: ---- BUILD RETROBAT SETUP ----
@@ -362,7 +370,13 @@ goto :eof
 
 echo :: BUILDING RETROBAT SETUP...
 
-!buildtools_path!\nsis\makensis.exe /V4 "!root_path!\installer.nsi"
+!buildtools_path!\..\nsis\makensis.exe /V4 "!root_path!\installer.nsi"
+
+if %ERRORLEVEL% NEQ 0 (
+		(set/A exit_code=%ERRORLEVEL%)
+		call :exit_door
+		goto :eof
+	)
 
 goto :eof
 
@@ -380,8 +394,11 @@ goto :eof
 
 :exit_door
 
+echo :: EXITING...
+
 if exist "!tmp_infos_file!" del/Q "!tmp_infos_file!"
 
-echo exit_code=!exit_code!
+(echo %date% %time% [INFO] exit_code=!exit_code!)>> "!root_path!\build.log"
 pause
+rem timeout /t 15>nul
 exit !exit_code!
