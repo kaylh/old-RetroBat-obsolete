@@ -38,8 +38,8 @@ The batch script `build.bat` will download all the softwares required, set the c
 
 - Open CMD Windows Terminal and run the following commands to clone recursively the RetroBat git with its submodules and run build.bat to launch the build routine:
 ```
->git clone --recursive https://github.com/kaylh/RetroBat.git
->build.bat
+git clone --recursive https://github.com/kaylh/RetroBat.git
+build.bat
 ```
 - Once the build process is done, you will find the RetroBat Setup in the build directory.
 
