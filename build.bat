@@ -20,15 +20,20 @@ set zip_loglevel=0
 
 set get_batgui=0
 set get_batocera_ports=1
+set get_bios=1
+set get_decorations=1
+set get_default_theme=1
 set get_emulationstation=1
 set get_lrcores=1
 set get_mega_bezels=0
 set get_retroarch=1
 set get_retrobat_binaries=1
 set get_roms=0
+set get_system=1
 set get_wiimotegun=1
 
 set deps_list=(git makensis 7za strip wget)
+set submodules_list=(bios default_theme decorations system)
 set download_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
 
 :: ---- GET STARTED ----
@@ -65,7 +70,7 @@ if %user_choice% EQU 1 (
 
 if %user_choice% EQU 2 (
 
-	call :set_config
+rem	call :set_config
 	call :build_setup
 	call :exit_door
 	goto :eof
@@ -143,7 +148,10 @@ goto :eof
 
 call :banner
 
-echo :: CHECKING BUILD DEPENDENCIES...
+echo :: SETTING BUILD ENVIRONMENT...
+
+if not exist "!build_path!\." md "!build_path!"
+if not exist "!download_path!\." md "!download_path!"
 
 (set/A found_total=0)
 
@@ -197,6 +205,24 @@ if %ERRORLEVEL% NEQ 0 (
 	(set/A exit_code=%ERRORLEVEL%)
 	call :exit_door
 	goto :eof
+)
+
+for %%i in (txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
+
+for %%i in %submodules_list% do (
+
+	if "!get_%%i!"=="1" (
+	
+		(set package_name=%%i)
+		(set destination_path=!%%i_path!)
+	
+		if "!package_name!"=="bios" (set folder=bios)
+		if "!package_name!"=="default_theme" (set folder=emulationstation\.emulationstation\themes\es-theme-carbon)
+		if "!package_name!"=="decorations" (set folder=system\decorations)
+		if "!package_name!"=="system" (set folder=system)
+		
+		xcopy "!root_path!\!folder!" "!destination_path!\" /s /e /v /y		
+	)
 )
 
 for %%i in %download_list% do (
@@ -317,16 +343,6 @@ goto :eof
 
 :set_config
 
-echo :: COPYING FILES IN BUILD DIRECTORY...
-
-cd "!root_path!"
-
-if not exist "!build_path!\." md "!build_path!"
-
-for %%i in (bios emulationstation emulators roms system) do (xcopy "!root_path!\%%i" "!build_path!\%%i" /i /s /e /v /y)
-
-for %%i in (exe dat txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
-
 echo :: SETTING CONFIG FILES...
 
 for /f "usebackq delims=" %%x in ("%system_path%\configgen\retrobat_tree.list") do (if not exist "!build_path!\%%x\." md "!build_path!\%%x")
@@ -366,13 +382,21 @@ goto :eof
 
 echo :: BUILDING RETROBAT SETUP...
 
-!buildtools_path!\..\nsis\makensis.exe /V4 "!root_path!\installer.nsi"
+if not exist "!root_path!\*-installer.exe" (
 
-if %ERRORLEVEL% NEQ 0 (
+	"!buildtools_path!\..\nsis\makensis.exe" /V4 "!root_path!\installer.nsi"
+
+	if %ERRORLEVEL% NEQ 0 (
 		(set/A exit_code=%ERRORLEVEL%)
 		call :exit_door
 		goto :eof
 	)
+)
+
+echo !root_path!
+echo !build_path!
+
+if exist "!root_path!\*-installer.exe" move/Y "!build_path!"
 
 goto :eof
 
@@ -391,8 +415,6 @@ goto :eof
 :exit_door
 
 echo :: EXITING...
-
-if exist "!tmp_infos_file!" del/Q "!tmp_infos_file!"
 
 (echo %date% %time% [INFO] exit_code=!exit_code!)>> "!root_path!\build.log"
 pause
