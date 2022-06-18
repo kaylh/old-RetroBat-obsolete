@@ -56,7 +56,6 @@ echo  - (Q)uit
 echo +===========================================================+
 choice /C DBQ /N /T 10 /D D /M "Please type your choice here: "
 echo +===========================================================+
-
 set user_choice=%ERRORLEVEL%
 
 if %user_choice% EQU 1 (
@@ -70,7 +69,7 @@ if %user_choice% EQU 1 (
 
 if %user_choice% EQU 2 (
 
-rem	call :set_config
+	call :set_config
 	call :build_setup
 	call :exit_door
 	goto :eof
@@ -382,9 +381,9 @@ goto :eof
 
 echo :: BUILDING RETROBAT SETUP...
 
-if not exist "!root_path!\*-installer.exe" (
+if not exist "!root_path!\*-setup.exe" (
 
-	"!buildtools_path!\..\nsis\makensis.exe" /V4 "!root_path!\installer.nsi"
+	"!buildtools_path!\..\nsis\makensis.exe" /V4 "!root_path!\setup.nsi"
 
 	if %ERRORLEVEL% NEQ 0 (
 		(set/A exit_code=%ERRORLEVEL%)
@@ -393,10 +392,7 @@ if not exist "!root_path!\*-installer.exe" (
 	)
 )
 
-echo !root_path!
-echo !build_path!
-
-if exist "!root_path!\*-installer.exe" move/Y "!build_path!"
+if exist "!root_path!\*-setup.exe" move/Y "!root_path!\*-setup.exe" "!build_path!\"
 
 goto :eof
 
