@@ -412,7 +412,7 @@ goto :eof
 
 echo :: EXITING...
 
-(echo %date% %time% [INFO] exit_code=!exit_code!)>> "!root_path!\build.log"
+(echo %date% %time% [INFO] exit_code=!exit_code!)>> "!build_path!\build.log"
 pause
 rem timeout /t 15>nul
 exit !exit_code!
