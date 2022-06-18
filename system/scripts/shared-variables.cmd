@@ -39,12 +39,10 @@ if not "%script_type%"=="builder" (
 
 	if %ERRORLEVEL% NEQ 0 (
 
-		set exit_msg=error: connection failed!
 		set exit_code=%ERRORLEVEL%
 	
 		if exist "%download_path%\*.*" del/Q "%download_path%\*.*"
-
-		echo %exit_msg%
+		
 		exit !exit_code!	
 	)
 
@@ -55,29 +53,56 @@ if not "%script_type%"=="builder" (
 
 :: ---- RETROBAT PATHS ----
 
-(echo batgui_path=!root_path!)>> "%tmp_infos_file%"
-(echo batocera_ports_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
-(echo bios_path=!root_path!\bios)>> "%tmp_infos_file%"
+(set build_path=!root_path!\build)
 (echo build_path=!root_path!\build)>> "%tmp_infos_file%"
-(echo decorations_path=!root_path!\system\decorations)>> "%tmp_infos_file%"
-(echo default_theme_path=!root_path!\emulationstation\.emulationstation\themes\es-theme-carbon)>> "%tmp_infos_file%"
-(echo download_path=!root_path!\system\download)>> "%tmp_infos_file%"
-(echo emulationstation_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
-(echo emulators_path=!root_path!\emulators)>> "%tmp_infos_file%"
-(echo extraction_path=!root_path!\system\download\extract)>> "%tmp_infos_file%"
-(echo lrcores_path=!root_path!\emulators\retroarch\cores)>> "%tmp_infos_file%"
-(echo mega_bezels_path=!root_path!\emulators\retroarch\shaders\shaders_slang)>> "%tmp_infos_file%"
-(echo retroarch_path=!root_path!\emulators\retroarch)>> "%tmp_infos_file%"
-(echo retrobat_path=!root_path!)>> "%tmp_infos_file%"
-(echo retrobat_binaries_path=!root_path!)>> "%tmp_infos_file%"
-(echo roms_path=!root_path!\roms)>> "%tmp_infos_file%"
-(echo saves_path=!root_path!\saves)>> "%tmp_infos_file%"
-(echo shaders_path=!root_path!\system\shaders)>> "%tmp_infos_file%"
-(echo system_path=!root_path!\system)>> "%tmp_infos_file%"
-rem (echo buildtools_path=!root_path!\..\retrobat-buildtools)>> "%tmp_infos_file%"
-(echo wiimotegun_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
 if "%archx%"=="x86_64" (echo msys_path=%SystemDrive%\msys64)>> "%tmp_infos_file%"
 if "%archx%"=="x86" (echo msys_path=%SystemDrive%\msys)>> "%tmp_infos_file%"
+
+if not "%script_type%"=="builder" (
+
+	(echo batgui_path=!root_path!)>> "%tmp_infos_file%"
+	(echo batocera_ports_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
+	(echo bios_path=!root_path!\bios)>> "%tmp_infos_file%"
+	(echo decorations_path=!root_path!\system\decorations)>> "%tmp_infos_file%"
+	(echo default_theme_path=!root_path!\emulationstation\.emulationstation\themes\es-theme-carbon)>> "%tmp_infos_file%"
+	(echo download_path=!root_path!\system\download)>> "%tmp_infos_file%"
+	(echo emulationstation_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
+	(echo emulators_path=!root_path!\emulators)>> "%tmp_infos_file%"
+	(echo extraction_path=!root_path!\system\download\extract)>> "%tmp_infos_file%"
+	(echo lrcores_path=!root_path!\emulators\retroarch\cores)>> "%tmp_infos_file%"
+	(echo mega_bezels_path=!root_path!\emulators\retroarch\shaders\shaders_slang)>> "%tmp_infos_file%"
+	(echo retroarch_path=!root_path!\emulators\retroarch)>> "%tmp_infos_file%"
+	(echo retrobat_path=!root_path!)>> "%tmp_infos_file%"
+	(echo retrobat_binaries_path=!root_path!)>> "%tmp_infos_file%"
+	(echo roms_path=!root_path!\roms)>> "%tmp_infos_file%"
+	(echo saves_path=!root_path!\saves)>> "%tmp_infos_file%"
+	(echo shaders_path=!root_path!\system\shaders)>> "%tmp_infos_file%"
+	(echo system_path=!root_path!\system)>> "%tmp_infos_file%"
+	(echo wiimotegun_path=!root_path!\emulationstation)>> "%tmp_infos_file%"
+
+) else (
+
+	(echo batgui_path=!build_path!)>> "%tmp_infos_file%"
+	(echo batocera_ports_path=!build_path!\emulationstation)>> "%tmp_infos_file%"
+	(echo bios_path=!build_path!\bios)>> "%tmp_infos_file%"
+	(echo decorations_path=!build_path!\system\decorations)>> "%tmp_infos_file%"
+	(echo default_theme_path=!build_path!\emulationstation\.emulationstation\themes\es-theme-carbon)>> "%tmp_infos_file%"
+	(echo download_path=!build_path!\system\download)>> "%tmp_infos_file%"
+	(echo emulationstation_path=!build_path!\emulationstation)>> "%tmp_infos_file%"
+	(echo emulators_path=!build_path!\emulators)>> "%tmp_infos_file%"
+	(echo extraction_path=!build_path!\system\download\extract)>> "%tmp_infos_file%"
+	(echo lrcores_path=!build_path!\emulators\retroarch\cores)>> "%tmp_infos_file%"
+	(echo mega_bezels_path=!build_path!\emulators\retroarch\shaders\shaders_slang)>> "%tmp_infos_file%"
+	(echo retroarch_path=!build_path!\emulators\retroarch)>> "%tmp_infos_file%"
+	(echo retrobat_path=!build_path!)>> "%tmp_infos_file%"
+	(echo retrobat_binaries_path=!build_path!)>> "%tmp_infos_file%"
+	(echo roms_path=!build_path!\roms)>> "%tmp_infos_file%"
+	(echo saves_path=!build_path!\saves)>> "%tmp_infos_file%"
+	(echo shaders_path=!build_path!\system\shaders)>> "%tmp_infos_file%"
+	(echo system_path=!build_path!\system)>> "%tmp_infos_file%"
+	(echo wiimotegun_path=!build_path!\emulationstation)>> "%tmp_infos_file%"
+)
+	
 
 :: ---- URLS ----
 
