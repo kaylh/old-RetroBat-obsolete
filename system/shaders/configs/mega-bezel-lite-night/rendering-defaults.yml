@@ -168,6 +168,8 @@ dos:
   shader: Duimon-Mega-Bezel/Presets/Lite/DOSBox/DOSBox-[STD]-[Guest-Mini]-[Bezel]-[Night]
 amstradcpc:
   shader: Duimon-Mega-Bezel/Presets/Lite/Amstrad_CPC/CPC464-[STD]-[Guest-Mini]-[Bezel]-[Night]
+gx4000:
+  shader: Duimon-Mega-Bezel/Presets/Advanced/Amstrad_GX4000/Amstrad_GX4000-[STD]-[Guest-Mini]-[Bezel]-[Night]  
 atarist:
   shader: Duimon-Mega-Bezel/Presets/Lite/Atari_ST/Atari_ST-[STD]-[Guest-Mini]-[Bezel]-[Night]
 zx81:
