@@ -114,11 +114,11 @@ supergrafx:
 atari800:
   shader: Duimon-Mega-Bezel/Presets/Standard/Atari_800/Atari_800-[STD]-[Guest]-[Bezel]
 atari2600:
-  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_2600/Atari_2600-[STD]-[Guest]-[Bezel]
+  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_2600/2600-[STD]-[Guest]-[Bezel]
 atari5200:
-  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_5200/Atari_5200-[STD]-[Guest]-[Bezel]
+  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_5200/5200-[STD]-[Guest]-[Bezel]
 atari7800:
-  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_7800/Atari_7800-[STD]-[Guest]-[Bezel]
+  shader: Duimon-Mega-Bezel/Presets/Standard/Atari_7800/7800-[STD]-[Guest]-[Bezel]
 prboom:
   shader: Duimon-Mega-Bezel/Presets/Standard/PrBoom/PrBoom-[STD]-[Guest]
 psx:
