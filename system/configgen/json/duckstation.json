@@ -6,12 +6,13 @@
 		 "EnableDiscordPresence":"false",
          "RenderToMainWindow":"true",
          "StartFullscreen":"true",
-		 "Renderer":"Vulkan",
-		 "ResolutionScale":"5",
+		 "Renderer":"OpenGL",
+		 "ResolutionScale":"1",
 		 "TrueColor":"false",
 		 "ScaledDithering":"true",
 		 "DisableInterlacing":"true",
 		 "VSync":"true",
+		 "Directory":"./../../saves/psx/duckstation/memcards",
 		 "SearchDirectory":"./../../bios"
       }
    ]
