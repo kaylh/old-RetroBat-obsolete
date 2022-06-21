@@ -32,22 +32,16 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 
 <!--<img src="https://www.retrobat.ovh/img/under-construction.png" width="240" alt="under-construction" class="center">-->
 
-If you want to read and build retrobat.mfa sources file you need a legit copy of Fusion 2.5 developper.
-
-Why use proprietary development software like Clickteam Fusion 2.5? 
-
-*Until version 2.1, retrobat consisted mainly of a collection of batch and powershell scripts to facilitate the use and configuration of EmulationStation with RetroArch. I didn't originally have any training in software development, I used my few batch skills to start writing these scripts and learned to do it at the same time. As I don't know any other programming language, using Fusion 2.5 allowed me to quickly provide solutions to the evolutionary needs of RetroBat. I'm aware that using commercial software to read and compile the sources prevents those who don't own the software from accessing the sources of retrobat.mfa file. I specify that this constraint exists only for retrobat.mfa file and in fact retrobat.exe is a very small part now of the project, all other source files are editable with at least a good text editor such as notepad++* - Kayl
-
-I've written a script to facilitate RetroBat packaging and compilation (WIP). This script will download all the softwares required and the latest compiled RetroBat binaries, it will set all the config files and build the RetroBat setup from NSIS installer sources script.
+The batch script `build.bat` will download all the softwares required, set the config files and build the RetroBat Setup from `setup.nsi` sources script.
 
 - [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
 
-- Open CMD Windows Terminal and run this command to clone recursively the RetroBat git with its submodules:
-`git clone --recursive https://github.com/kaylh/RetroBat.git`
-
-- Run build.bat script located at the root of the git to launch the build routine. You need only to follow instructions.
-
-- Once the build process is done, you will find the RetroBat installer at the root of the cloned git.
+- Open CMD Windows Terminal and run the following commands to clone recursively the RetroBat git with its submodules and run build.bat to launch the build routine:
+```
+git clone --recursive https://github.com/kaylh/RetroBat.git
+build.bat
+```
+- Once the build process is done, you will find the RetroBat Setup in the build directory.
 
 ## 🦇 RetroBat Team
 
