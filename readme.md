@@ -8,8 +8,6 @@ With RetroBat you will be quickly able to run your games from a ROMs collection 
 
 RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements. 
 
-![Discord Shield](https://discordapp.com/api/guilds/748519802255179917/widget.png?style=banner2)
-
 ## 💻 System Requirements
 
 |**OS supported:**|Windows 11, Windows 10, Windows 8.1|
@@ -58,6 +56,8 @@ build.bat
 
 ## ⚖ Licence
 
+RetroBat (c) 2017-2022 Adrien Chalard "Kayl" & The RetroBat Team.
+
 RetroBat is a free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
 
@@ -76,8 +76,10 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 
 ## © Credits
 
-- EmulationStation (C) 2014 Alec Lofquist, contributions from community.
-- RetroArch by Libretro Team.
+- EmulationStation (C) 2014 Alec Lofquist, contributions from community (MIT Licence).
+- Carbon Theme (c) Fabrice Caruso (CC BY-NC-SA Licence). Originally based on the work of Eric Hettervik (Original Carbon Theme) and Nils Bonenberger (Simple Theme).
+- WiimoteGun (c) Fabrice Caruso (GPL3 Licence).
+- RetroArch by Libretro Team (GPL3 Licence).
 
 ## 💬 Social & Support
 
@@ -85,3 +87,4 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 - Facebook Group: https://www.facebook.com/groups/retrobat/
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
+![Discord Shield](https://discordapp.com/api/guilds/748519802255179917/widget.png?style=banner2)
