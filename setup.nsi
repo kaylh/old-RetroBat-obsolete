@@ -98,6 +98,8 @@ Section "install"
   File ${BASE_SOURCE}\license.txt
   File /r ${BASE_SOURCE}\*.*
   
+  Delete ${BASE_TARGET}\*.log
+  
   Call CreateVersionFile
   
 SectionEnd
