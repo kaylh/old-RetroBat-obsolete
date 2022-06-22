@@ -1,4 +1,13 @@
-<img src="https://www.retrobat.ovh/img/retrobat_logo.svg" width="600" alt="RetroBat-Logo" class="center">
+<h1 align="left">
+  <br>
+  <a href="https://www.retrobat.ovh/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
+</h1>
+<p align="left">
+  <a href="https://discord.com/invite/uyrZrKKDeR">
+      <img src="https://img.shields.io/discord/748519802255179917?color=blue&label=discord&logo=discord&logoColor=white&style=for-the-badge"
+           alt="Discord">
+    </a>
+</p>
 
 ## 📌 Presentation
 
@@ -7,6 +16,7 @@ RetroBat is a Windows softwares distribution dedicated to retrogaming and emulat
 With RetroBat you will be quickly able to run your games from a ROMs collection and save your time to play.
 
 RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements. 
+
 
 ## 💻 System Requirements
 
@@ -32,11 +42,13 @@ RetroBat is designed to be portable. That means you can start it from HDD or fro
 
 The batch script `build.bat` will download all the softwares required, set the config files and build the RetroBat Setup from `setup.nsi` sources script.
 
-- [Download and install Git for Windows (follow default setup settings).](https://gitforwindows.org/)
+- Download and install [Git for Windows](https://gitforwindows.org/) (follow default setup settings).
 
 - Open CMD Windows Terminal and run the following commands to clone recursively the RetroBat git with its submodules and run build.bat to launch the build routine:
 ```
 git clone --recursive https://github.com/kaylh/RetroBat.git
+```
+```
 build.bat
 ```
 - Once the build process is done, you will find the RetroBat Setup in the build directory.
@@ -87,4 +99,3 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 - Facebook Group: https://www.facebook.com/groups/retrobat/
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
-![Discord Shield](https://discordapp.com/api/guilds/748519802255179917/widget.png?style=banner2)
