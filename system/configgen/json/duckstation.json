@@ -8,6 +8,7 @@
          "StartFullscreen":"true",
 		 "Renderer":"OpenGL",
 		 "ResolutionScale":"1",
+		 "RecursivePaths":"./../../roms/psx",
 		 "TrueColor":"false",
 		 "ScaledDithering":"true",
 		 "DisableInterlacing":"true",
