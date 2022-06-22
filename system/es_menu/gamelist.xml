@@ -167,10 +167,10 @@
 	</game>
 	<game>
 		<path>./pcsx2-16.menu</path>
-		<name>PCSX2 (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
-		<image>./media/pcsx2-logo.png</image>
-		<marquee>./media/pcsx2-logo.png</marquee>
+		<name>PCSX2 (v1.6) (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (v1.6) (PlayStation 2)</desc>
+		<image>./media/pcsx2-16-logo.png</image>
+		<marquee>./media/pcsx2-16-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>PCSX2 Team</developer>
