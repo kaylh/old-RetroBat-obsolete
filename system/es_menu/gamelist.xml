@@ -184,8 +184,25 @@
 	</game>
 	<game>
 		<path>./pcsx2.menu</path>
-		<name>PCSX2 (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (PlayStation 2)</desc>
+		<name>PCSX2 (SSE4) (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (SSE4) (PlayStation 2)</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<marquee>./media/pcsx2-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./pcsx2-avx2.menu</path>
+		<name>PCSX2 (AVX2) (PlayStation 2)</name>
+		<desc>Configure PCSX2 Emulator (AVX2) (PlayStation 2)</desc>
 		<image>./media/pcsx2-logo.png</image>
 		<marquee>./media/pcsx2-logo.png</marquee>
 		<rating>0</rating>
