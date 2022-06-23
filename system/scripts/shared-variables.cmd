@@ -126,6 +126,7 @@ if not "%script_type%"=="builder" (
 	(echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%)>> "%tmp_infos_file%"
 	(echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"
 	(echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master)>> "%tmp_infos_file%"
+	(echo emulators_url=https://www.retrobat.ovh/repo/%arch%/%branch%/emulators)>> "%tmp_infos_file%"
 	(echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest)>> "%tmp_infos_file%"
 	(echo mega_bezels_url=https://www.retrobat.ovh/repo/decorations)>> "%tmp_infos_file%"
 	(echo retroarch_url=https://buildbot.libretro.com/stable/%retroarch_version%/windows/%archx%)>> "%tmp_infos_file%"

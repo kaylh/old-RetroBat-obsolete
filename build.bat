@@ -11,12 +11,12 @@ to set the default configuration and to build the setup from sources.
 :rem
 
 set script_type=builder
-set retrobat_branch=master
+set git_branch=master
+set branch=stable
 
 :: ---- BUILDER OPTION ----
 
 set retroarch_version=1.10.3
-set zip_loglevel=0
 
 set get_batgui=0
 set get_batocera_ports=1
@@ -24,17 +24,22 @@ set get_bios=1
 set get_decorations=1
 set get_default_theme=1
 set get_emulationstation=1
+set get_emulators=0
 set get_lrcores=1
-set get_mega_bezels=0
+set get_mega_bezels=1
 set get_retroarch=1
 set get_retrobat_binaries=1
 set get_roms=0
 set get_system=1
 set get_wiimotegun=1
 
+:: ---- LOOP LIST ----
+
 set deps_list=(git makensis 7za strip wget)
 set submodules_list=(bios default_theme decorations system)
-set download_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
+set packages_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
+set legacy_cores_list=(4do mame2016 px68k)
+set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia)
 
 :: ---- GET STARTED ----
 
@@ -50,11 +55,12 @@ echo  This script can help you to download all the required
 echo  softwares and build the RetroBat Setup with the NullSoft 
 echo  Scriptable Install System.
 echo +===========================================================+
-echo  - (D)ownload required softwares and build Setup
-echo  - (B)uild Setup only
-echo  - (Q)uit
+echo  (1) - Download, configure and build Setup
+echo  (2) - Download and configure only
+echo  (3) - Build Setup only
+echo  (Q) - Quit
 echo +===========================================================+
-choice /C DBQ /N /T 10 /D D /M "Please type your choice here: "
+choice /C 123Q /N /T 10 /D 1 /M "Please type your choice here: "
 echo +===========================================================+
 set user_choice=%ERRORLEVEL%
 
@@ -69,13 +75,20 @@ if %user_choice% EQU 1 (
 
 if %user_choice% EQU 2 (
 
+	call :get_packages
 	call :set_config
-	call :build_setup
 	call :exit_door
 	goto :eof
 )
 
 if %user_choice% EQU 3 (
+
+	call :build_setup
+	call :exit_door
+	goto :eof
+)
+
+if %user_choice% EQU 4 (
 
 	(set exit_code=0)
 	call :exit_door
@@ -206,7 +219,9 @@ if %ERRORLEVEL% NEQ 0 (
 	goto :eof
 )
 
-for %%i in (txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
+if "%get_retrobat_binaries%"=="1" (
+	for %%i in (txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
+)
 
 for %%i in %submodules_list% do (
 
@@ -224,16 +239,16 @@ for %%i in %submodules_list% do (
 	)
 )
 
-for %%i in %download_list% do (
+for %%i in %packages_list% do (
 
 	if "!get_%%i!"=="1" (
 		
 		(set package_name=%%i)
 		(set package_file=%%i.7z)
 		(set download_url=!%%i_url!)
-		(set destination_path=!%%i_path!)		
+		(set destination_path=!%%i_path!)
 
-		if "!package_name!"=="retrobat_binaries" (set package_file=%%i_%retrobat_branch%.7z)
+		if "!package_name!"=="retrobat_binaries" (set package_file=%%i_%git_branch%.7z)
 		if "!package_name!"=="emulationstation" (set package_file=EmulationStation-Win32.zip)
 		if "!package_name!"=="batocera_ports" (set package_file=batocera-ports.zip)
 		if "!package_name!"=="retroarch" (set package_file=RetroArch.7z)
@@ -258,6 +273,30 @@ if "%get_lrcores%"=="1" (
 	)
 )
 
+if "%get_emulators%"=="1" (
+
+	for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.list") do (
+
+		(set package_name=%%x)
+		(set package_file=%%x.7z)
+		(set download_url=!emulators_url!)
+		(set destination_path=!emulators_path!\%%x)
+		
+		set skip=0
+		
+		for %%i in %emulators_black_list% do (
+		
+			if "!package_name!"=="%%i" (set skip=1)
+		)
+		
+		if "!skip!"=="0" (
+
+			call :download
+			call :extract
+		)
+	)
+)
+
 goto :eof
 
 :: ---- DOWNLOAD PACKAGES ----
@@ -266,19 +305,10 @@ goto :eof
 
 echo *************************************************************
 
-if "!package_name!"=="4do" (
+for %%j in %legacy_cores_list% do (
 
-	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
-)
+	if "!package_name!"=="%%j" (set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores)
 
-if "!package_name!"=="mame2016" (
-
-	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
-)
-
-if "!package_name!"=="px68k" (
-
-	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
 )
 
 "%buildtools_path%\wget" --continue --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%download_path%" !download_url!/!package_file! -q --show-progress
@@ -391,8 +421,9 @@ if not exist "!root_path!\*-setup.exe" (
 		goto :eof
 	)
 )
-
-if exist "!root_path!\*-setup.exe" move/Y "!root_path!\*-setup.exe" "!build_path!\"
+timeout/t 3>nul
+ 
+if exist "!root_path!\*-setup.exe" move /Y "!root_path!\*-setup.exe" "!build_path!"
 
 goto :eof
 
