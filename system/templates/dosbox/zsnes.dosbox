@@ -254,7 +254,7 @@ cls
 set gameid=zsnes
 set gametitle="ZSNES Emulator"
 
-set rootdir=..\..\emulators\dosbox\%gameid%
+set rootdir=..\..\emulators\%gameid%
 set diskpath=..\..\roms
 #set cdpath=..\..\roms\dos\%gameid%\cdrom
 #set imgname=%gameid%
@@ -273,7 +273,7 @@ echo ********************************************
 mount c "%rootdir%" -freesize 1000
 mount d "%diskpath%" -freesize 1000
 #imgmount d "%rootdir%\%imgname%.%imgext%" -t iso -fs iso
-mount e "%guspath%" -freesize 1000
+#mount e "%guspath%" -freesize 1000
 
 c:
 cd %rootdir%

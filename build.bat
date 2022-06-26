@@ -400,8 +400,8 @@ rem	"!build_path!\retrobat.exe" /NOF #MakeTree
 	
 )
 
-if exist "!system_path!\templates\emulationstation\*.mp4" xcopy /v /y "!system_path!\templates\emulationstation\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
-if exist "!system_path!\templates\emulationstation\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
+if exist "!system_path!\templates\emulationstation\video\*.mp4" xcopy /v /y "!system_path!\templates\emulationstation\video\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
+if exist "!system_path!\templates\emulationstation\music\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\music\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
 
 goto :eof
 
