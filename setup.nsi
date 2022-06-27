@@ -90,6 +90,8 @@ Section "install"
  
 ;Add files
   SetOutPath "$INSTDIR"
+  
+  Delete ${BASE_SOURCE}\*.log
  
   File ${BASE_SOURCE}\${FILENAME}.exe
   File /nonfatal ${BASE_SOURCE}\${FILENAME}.ini
@@ -97,8 +99,6 @@ Section "install"
   File ${BASE_SOURCE}\readme.txt
   File ${BASE_SOURCE}\license.txt
   File /r ${BASE_SOURCE}\*.*
-  
-  Delete ${BASE_TARGET}\*.log
   
   Call CreateVersionFile
   
