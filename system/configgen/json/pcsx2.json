@@ -2,16 +2,27 @@
    "PCSX2_ui.ini_configmode_1":[
       {
 		"AskOnBoot":"disabled",
-		"UseDefaultBios":"disabled",
-		"Bios":".\\..\\..\\bios",
-		"UseDefaultSavestates":"disabled",
-		"UseDefaultMemoryCards":"disabled",
-		"Savestates":".\\..\\..\\saves\\ps2\\pcsx2",
-		"MemoryCards":".\\..\\..\\saves\\ps2\\pcsx2",
-		"UseDefaultSnapshots":"disabled",
-		"Snapshots":".\\..\\..\\screenshots\\pcsx2",
+		"Bios":".\\\\..\\\\..\\\\bios\\\\pcsx2\\\\bios",
+		"Cheats":".\\\\..\\\\..\\\\bios\\\\pcsx2\\\\cheats",
+		"CheatsWS":".\\\\..\\\\..\\\\bios\\\\pcsx2\\\\cheats_ws",
 		"IsFullscreen":"enabled",
 		"IsToggleFullscreenOnDoubleClick":"disabled",
+		"MemoryCards":".\\\\..\\\\..\\\\saves\\\\ps2\\\\pcsx2\\\\memcards",
+		"Savestates":".\\\\..\\\\..\\\\saves\\\\ps2\\\\pcsx2\\\\sstates",
+		"Snapshots":".\\\\..\\\\..\\\\screenshots\\\\pcsx2",
+		"Textures":".\\\\..\\\\..\\\\bios\\\\pcsx2\\\\textures",
+		"UseDefaultBios":"disabled",
+		"UseDefaultCheats":"disabled",
+		"UseDefaultCheatsWS":"disabled",
+		"UseDefaultMemoryCards":"disabled",
+		"UseDefaultSavestates":"disabled",
+		"UseDefaultSnapshots":"disabled",
+		"UseDefaultTextures":"disabled"
       }
-   ]
+   ],
+   "PCSX2_vm.ini_configmode_1":[
+      {
+		"EnableRecordingTools":"disabled"
+      }
+	]
 }
