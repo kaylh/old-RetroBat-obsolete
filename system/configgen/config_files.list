@@ -7,10 +7,6 @@
 \emulators\duckstation\settings.ini|duckstation.json|1S0Q
 \emulators\kega-fusion\Fusion.ini|kega-fusion.json|0S0Q
 \emulators\mgba\config.ini|mgba.json|0S0Q
-\emulators\pcsx2-16\inis\PCSX2_ui.ini|pcsx2-16.json|0S0Q
-\emulators\pcsx2-16\inis\PCSX2_vm.ini|pcsx2-16.json|0S0Q
-\emulators\pcsx2\inis\PCSX2_ui.ini|pcsx2.json|0S0Q
-\emulators\pcsx2\inis\PCSX2_vm.ini|pcsx2.json|0S0Q
 \emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini|ppsspp.json|1S0Q
 \emulators\raine\config\raine32_sdl.cfg|raine.json|1S0Q
 \emulators\redream\redream.cfg|redream.json|0S0Q
