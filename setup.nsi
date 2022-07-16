@@ -92,6 +92,8 @@ Section "install"
   SetOutPath "$INSTDIR"
   
   Delete ${BASE_SOURCE}\*.log
+  
+  SetOverwrite ifnewer
  
   File ${BASE_SOURCE}\${FILENAME}.exe
   File /nonfatal ${BASE_SOURCE}\${FILENAME}.ini
