@@ -34,7 +34,7 @@ RetroBat is portable. That means you can run it from any storage device as long 
 
 ## 🎮 Supported Machines
 
-![Supported Machines](https://www.retrobat.ovh/img/systems4.png)
+![Supported Machines](https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/marques.png)
 
 **RetroBat will never provide copyrighted/commercial ROMs or BIOS files.**
 
