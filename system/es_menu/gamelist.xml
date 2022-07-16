@@ -302,7 +302,7 @@
 		<region>wr</region>
 	</game>
 	<game>
-		<path>./xenia.menu</path>
+		<path>./xenia_canary.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Configure Xenia Canary (XBOX 360)</desc>
 		<image>./media/xenia-logo.png</image>
