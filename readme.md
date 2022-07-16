@@ -13,11 +13,11 @@
 
 ## 📌 Presentation
 
-RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides fully configured EmulationStation frontend with all emulators needed to have the best retrogaming experience on your Windows PC.
+RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides a fully configured EmulationStation frontend and advanced integration of many emulators with their options directly accessible from the interface menus. RetroBat is all you need to have the best retrogaming experience on your Windows PC !
 
 With RetroBat you will be quickly able to run your games from a ROMs collection and save your time to play.
 
-RetroBat is designed to be portable. That means you can start it from HDD or from any removable storage device, as long as you do it on a computer that meets the requirements. 
+RetroBat is portable. That means you can run it from any storage device as long as you do this on a computer that meets the requirements. 
 
 
 ## 💻 System Requirements
@@ -51,6 +51,7 @@ The batch script `build.bat` will download all the softwares required, set the c
 git clone --recursive https://github.com/kaylh/RetroBat.git
 ```
 ```
+cd RetroBat
 build.bat
 ```
 - Once the build process is done, you will find the RetroBat Setup in the build directory.
@@ -70,7 +71,7 @@ build.bat
 
 ## ⚖ Licence
 
-RetroBat (c) 2017-2022 Adrien Chalard "Kayl" & The RetroBat Team.
+RetroBat (c) 2017-2022 Adrien Chalard "Kayl" and The RetroBat Team.
 
 RetroBat is a free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
