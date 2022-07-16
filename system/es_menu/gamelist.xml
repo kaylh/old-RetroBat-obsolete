@@ -556,7 +556,7 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
-	<game>
+	<!--<game>
 		<path>./zsnes-dos.menu</path>
 		<name>ZSNES</name>
 		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
@@ -572,7 +572,7 @@
 		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
-	</game>
+	</game>-->
 	<game>
 		<path>./retroarch.menu</path>
 		<name>RetroArch (Multi Cores Emulator)</name>

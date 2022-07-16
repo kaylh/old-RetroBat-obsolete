@@ -94,7 +94,6 @@ emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
-emulators\zsnes
 library
 library\records
 library\records\config
