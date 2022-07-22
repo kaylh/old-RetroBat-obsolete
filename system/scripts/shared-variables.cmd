@@ -109,7 +109,7 @@ if not "%script_type%"=="builder" (
 if not "%script_type%"=="builder" (
 
 	(echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%)>> "%tmp_infos_file%"
-	(echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"
+	(echo batocera_ports_url=https://github.com/kaylh/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"
 	(echo bios_url=https://github.com/kaylh/RetroBat-BIOS/archive/refs/heads)>> "%tmp_infos_file%"
 	(echo decorations_url=https://github.com/kaylh/batocera-bezel.git)>> "%tmp_infos_file%"
 	(echo default_theme_url=https://github.com/fabricecaruso/es-theme-carbon/archive/refs/heads)>> "%tmp_infos_file%"
@@ -124,7 +124,7 @@ if not "%script_type%"=="builder" (
 ) else (
 
 	(echo batgui_url=https://www.retrobat.ovh/repo/%arch%/%branch%)>> "%tmp_infos_file%"
-	(echo batocera_ports_url=https://github.com/fabricecaruso/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"
+	(echo batocera_ports_url=https://github.com/kaylh/batocera-ports/releases/download/continuous)>> "%tmp_infos_file%"	
 	(echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master)>> "%tmp_infos_file%"
 	(echo emulators_url=https://www.retrobat.ovh/repo/%arch%/%branch%/emulators)>> "%tmp_infos_file%"
 	(echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest)>> "%tmp_infos_file%"
