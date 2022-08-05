@@ -421,9 +421,12 @@ if not exist "!root_path!\*-setup.exe" (
 		goto :eof
 	)
 )
-timeout/t 3>nul
+timeout/t 3 >nul
  
-if exist "!root_path!\*-setup.exe" move /Y "!root_path!\*-setup.exe" "!build_path!"
+if exist "!root_path!\*-setup.exe" (
+	move /Y "!root_path!\*-setup.exe" "!build_path!"
+	set/A exit_code=0
+)
 
 goto :eof
 
