@@ -1,1 +1,6 @@
 build/
+*.log
+*.ini
+*.bak
+*.exe
+butler_push.txt
