@@ -11,12 +11,13 @@ Unicode true
 
 !define PRODUCT "RetroBat"
 !define FILENAME "retrobat"
-!define PRODUCT_VERSION "5.0.0"
+;!define BRANCH "stable"
+;!define PRODUCT_VERSION "5.0.0"
 !define VERSION "${PRODUCT_VERSION}"
-!define /date TIMESTAMP "%Y%m%d"
-!define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
+;!define /date TIMESTAMP "%Y%m%d%H%M"
+;!define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
 !define PRODUCT_PUBLISHER "RetroBat Team"
-!define PRODUCT_WEB_SITE "https://www.retrobat.ovh/"
+!define PRODUCT_WEB_SITE "https://www.retrobat.org/"
 
 !define BASE_SOURCE ".\build"
 !define BASE_TARGET "$(^Name)"
@@ -27,7 +28,7 @@ Unicode true
 !include "LogicLib.nsh"
 
 Name "${PRODUCT}"
-OutFile "retrobat-v${VERSION}-${TIMESTAMP}-setup.exe"
+OutFile "${FILENAME}-v${RELEASE_VERSION}-setup.exe"
 InstallDir "C:\${BASE_TARGET}"
 ShowInstDetails "hide"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"
@@ -45,8 +46,8 @@ SpaceTexts none
 !define MUI_FINISHPAGE_SHOWREADME
 !define MUI_FINISHPAGE_SHOWREADME_TEXT "Create Desktop Shortcut"
 !define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateDesktopShortCut
-!define MUI_FINISHPAGE_LINK "Visit official RetroBat website: www.retrobat.ovh"
-!define MUI_FINISHPAGE_LINK_LOCATION "https://www.retrobat.ovh/"
+!define MUI_FINISHPAGE_LINK "Visit official ${PRODUCT} website: ${PRODUCT_WEB_SITE}"
+!define MUI_FINISHPAGE_LINK_LOCATION "${PRODUCT_WEB_SITE}"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "license.txt"
