@@ -10,12 +10,9 @@ to set the default configuration and to build the setup from sources.
 ---------------------------------------
 :rem
 
-set script_type=builder
-set git_branch=master
-set branch=stable
-
 :: ---- BUILDER OPTION ----
 
+set retrobat_version=5.0.0
 set retroarch_version=1.10.3
 
 set get_batgui=0
@@ -26,10 +23,9 @@ set get_default_theme=1
 set get_emulationstation=1
 set get_emulators=0
 set get_lrcores=1
-set get_mega_bezels=1
+set get_mega_bezels=0
 set get_retroarch=1
 set get_retrobat_binaries=1
-set get_roms=0
 set get_system=1
 set get_wiimotegun=1
 
@@ -42,6 +38,11 @@ set legacy_cores_list=(4do mame2016 px68k)
 set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia)
 
 :: ---- GET STARTED ----
+
+set script_type=builder
+set git_branch=master
+set branch=beta
+set release_version=null
 
 call :set_root
 call :set_install
@@ -58,9 +59,11 @@ echo +===========================================================+
 echo  (1) - Download, configure and build Setup
 echo  (2) - Download and configure only
 echo  (3) - Build Setup only
+if exist "!root_path!\butler_push.txt" echo  (4) - Butler push
 echo  (Q) - Quit
 echo +===========================================================+
-choice /C 123Q /N /T 10 /D 1 /M "Please type your choice here: "
+if not exist "!root_path!\butler_push.txt" choice /C 123Q /N /T 15 /D 1 /M "Please type your choice here: "
+if exist "!root_path!\butler_push.txt" choice /C 1234Q /N /T 15 /D 1 /M "Please type your choice here: "
 echo +===========================================================+
 set user_choice=%ERRORLEVEL%
 
@@ -88,7 +91,21 @@ if %user_choice% EQU 3 (
 	goto :eof
 )
 
-if %user_choice% EQU 4 (
+if not exist "!root_path!\butler_push.txt" if %user_choice% EQU 4 (
+
+	(set exit_code=0)
+	call :exit_door
+	goto :eof
+)
+
+if exist "!root_path!\butler_push.txt" if %user_choice% EQU 4 (
+
+	call :butler_push
+	call :exit_door
+	goto :eof
+)
+
+if exist "!root_path!\butler_push.txt" if %user_choice% EQU 5 (
 
 	(set exit_code=0)
 	call :exit_door
@@ -221,6 +238,7 @@ if %ERRORLEVEL% NEQ 0 (
 
 if "%get_retrobat_binaries%"=="1" (
 	for %%i in (txt) do (xcopy "!root_path!\*.%%i" "!build_path!" /v /y)
+	if exist "!build_path!\butler_push.txt" del/Q "!build_path!\butler_push.txt"
 )
 
 for %%i in %submodules_list% do (
@@ -400,8 +418,19 @@ rem	"!build_path!\retrobat.exe" /NOF #MakeTree
 	
 )
 
+if exist "!build_path!\retrobat.ini" del/Q "!build_path!\retrobat.ini"
+
 if exist "!system_path!\templates\emulationstation\video\*.mp4" xcopy /v /y "!system_path!\templates\emulationstation\video\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
 if exist "!system_path!\templates\emulationstation\music\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\music\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
+
+if not exist "!build_path!\system\version.info" (
+	(set timestamp=%date:~6,4%%date:~3,2%%date:~0,2%%time:~0,2%%time:~3,2%)
+	(set release_version=%retrobat_version%-!timestamp!-%branch%)
+	(echo|set/P=!release_version!)>> "!build_path!\system\version.info"
+	
+)
+
+echo build version is: !release_version!
 
 goto :eof
 
@@ -411,23 +440,53 @@ goto :eof
 
 echo :: BUILDING RETROBAT SETUP...
 
-if not exist "!root_path!\*-setup.exe" (
+if "%release_version%"=="null" (
 
-	"!buildtools_path!\..\nsis\makensis.exe" /V4 "!root_path!\setup.nsi"
-
-	if %ERRORLEVEL% NEQ 0 (
-		(set/A exit_code=%ERRORLEVEL%)
-		call :exit_door
+	if exist "!build_path!\system\version.info" (
+		set/P release_version=<"!build_path!\system\version.info"
+	) else (
+		(set/A exit_code=1)
 		goto :eof
+	)
+)
+
+rem	"!buildtools_path!\..\nsis\makensis.exe" /V4 "!root_path!\setup.nsi"
+
+"!buildtools_path!\..\nsis\makensis.exe" /V4 /DRELEASE_VERSION=%release_version%  "!root_path!\setup.nsi"
+
+if %ERRORLEVEL% NEQ 0 (
+	(set/A exit_code=%ERRORLEVEL%)
+	goto :eof
 	)
 )
 timeout/t 3 >nul
  
-if exist "!root_path!\*-setup.exe" (
-	move /Y "!root_path!\*-setup.exe" "!build_path!"
-	set/A exit_code=0
+if exist "!root_path!\%name%-v%release_version%-setup.exe" (move /Y "!root_path!\%name%-v%release_version%-setup.exe" "!build_path!")
+(set/A exit_code=%ERRORLEVEL%)
+goto :eof
+
+:: ---- BUTLER PUSH ----
+
+:butler_push
+
+echo :: BUTLER PUSHING...
+
+if "%release_version%"=="null" (
+
+	if exist "!build_path!\system\version.info" (
+		set/P release_version=<"!build_path!\system\version.info"
+	) else (
+		(set/A exit_code=1)
+		goto :eof
+	)
 )
 
+if exist "!build_path!\system\version.info" (
+	butler push "!build_path!\%name%-v%release_version%-setup.exe" retrobatofficial/retrobat:%arch%-%branch% --userversion-file "!build_path!\system\version.info"
+	butler push --ignore "!build_path!\%name%-v%release_version%-setup.exe" --ignore "!build_path!\*.log" --ignore "!build_path!\emulationstation\.emulationstation\es_settings.cfg" "!build_path!\" retrobatofficial/retrobat:%arch%-%branch% --userversion-file "!build_path!\system\version.info"
+)
+
+(set/A exit_code=%ERRORLEVEL%)
 goto :eof
 
 :: ---- BANNER ----
@@ -436,7 +495,7 @@ goto :eof
 
 cls
 echo +===========================================================+
-echo  !name! Builder Script
+echo  !name! builder script
 echo +===========================================================+
 goto :eof
 
@@ -446,7 +505,7 @@ goto :eof
 
 echo :: EXITING...
 
-(echo %date% %time% [INFO] exit_code=!exit_code!)>> "!build_path!\build.log"
+(echo %date% %time% [INFO] exit_code=!exit_code!)>> "!root_path!\build.log"
 pause
 rem timeout /t 15>nul
 exit !exit_code!
