@@ -33,9 +33,11 @@ emulationstation\.emulationstation\themesettings
 emulationstation\.emulationstation\video
 emulationstation\resources
 emulators
+emulators\3dsen
 emulators\applewin
 emulators\arcadeflashweb
 emulators\cemu
+emulators\cemu\mlc01
 emulators\citra
 emulators\citra\user
 emulators\citra\user\config
