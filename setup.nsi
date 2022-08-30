@@ -13,7 +13,7 @@ Unicode true
 !define FILENAME "retrobat"
 ;!define BRANCH "stable"
 ;!define PRODUCT_VERSION "5.0.0"
-!define VERSION "${PRODUCT_VERSION}"
+!define VERSION "${RELEASE_VERSION}"
 ;!define /date TIMESTAMP "%Y%m%d%H%M"
 ;!define /date TIMESTAMP2 "%Y/%m/%d %H:%M:%S"
 !define PRODUCT_PUBLISHER "RetroBat Team"
@@ -28,7 +28,7 @@ Unicode true
 !include "LogicLib.nsh"
 
 Name "${PRODUCT}"
-OutFile "${FILENAME}-v${RELEASE_VERSION}-setup.exe"
+OutFile "${FILENAME}-v${VERSION}-setup.exe"
 InstallDir "C:\${BASE_TARGET}"
 ShowInstDetails "hide"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"
@@ -55,13 +55,13 @@ SpaceTexts none
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
-
+/*
 Function CreateVersionFile
  FileOpen $0 "$INSTDIR\system\version.info" w
- FileWrite $0 "${VERSION}-${TIMESTAMP}"
+ FileWrite $0 "${VERSION}"
  FileClose $0
 FunctionEnd
-
+*/
 !macro MUI_FINISHPAGE_SHORTCUT
   !ifndef MUI_FINISHPAGE_NOREBOOTSUPPORT
     !define MUI_FINISHPAGE_NOREBOOTSUPPORT
@@ -103,6 +103,6 @@ Section "install"
   File ${BASE_SOURCE}\license.txt
   File /r ${BASE_SOURCE}\*.*
   
-  Call CreateVersionFile
+;  Call CreateVersionFile
   
 SectionEnd
