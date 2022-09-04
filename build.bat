@@ -424,7 +424,7 @@ if exist "!system_path!\templates\emulationstation\video\*.mp4" xcopy /v /y "!sy
 if exist "!system_path!\templates\emulationstation\music\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\music\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
 
 if not exist "!build_path!\system\version.info" (
-	(set timestamp=%date:~6,4%%date:~3,2%%date:~0,2%%time:~0,2%%time:~3,2%)
+	(set timestamp=%date:~6,4%%date:~3,2%%date:~0,2%)
 	(set release_version=%retrobat_version%-!timestamp!-%branch%)
 	(echo|set/P=!release_version!)>> "!build_path!\system\version.info"
 	
