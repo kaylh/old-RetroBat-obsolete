@@ -8,7 +8,7 @@ It's not intended to run on its own but must be called by other scripts in order
 :rem
 
 :: ---- GENERAL INFOS ----
-set name=RetroBat
+set name=retrobat
 (echo name=%name%)>> "%tmp_infos_file%"
 
 :: ---- PROCESSOR ARCHITECTURE INFO ----
@@ -70,7 +70,7 @@ if not "%script_type%"=="builder" (
 	(echo emulators_path=!root_path!\emulators)>> "%tmp_infos_file%"
 	(echo extraction_path=!root_path!\system\download\extract)>> "%tmp_infos_file%"
 	(echo lrcores_path=!root_path!\emulators\retroarch\cores)>> "%tmp_infos_file%"
-	(echo mega_bezels_path=!root_path!\emulators\retroarch\shaders\shaders_slang)>> "%tmp_infos_file%"
+	(echo mega_bezels_path=!root_path!)>> "%tmp_infos_file%"
 	(echo retroarch_path=!root_path!\emulators\retroarch)>> "%tmp_infos_file%"
 	(echo retrobat_path=!root_path!)>> "%tmp_infos_file%"
 	(echo retrobat_binaries_path=!root_path!)>> "%tmp_infos_file%"
@@ -92,7 +92,7 @@ if not "%script_type%"=="builder" (
 	(echo emulators_path=!build_path!\emulators)>> "%tmp_infos_file%"
 	(echo extraction_path=!build_path!\system\download\extract)>> "%tmp_infos_file%"
 	(echo lrcores_path=!build_path!\emulators\retroarch\cores)>> "%tmp_infos_file%"
-	(echo mega_bezels_path=!build_path!\emulators\retroarch\shaders\shaders_slang)>> "%tmp_infos_file%"
+	(echo mega_bezels_path=!build_path!)>> "%tmp_infos_file%"
 	(echo retroarch_path=!build_path!\emulators\retroarch)>> "%tmp_infos_file%"
 	(echo retrobat_path=!build_path!)>> "%tmp_infos_file%"
 	(echo retrobat_binaries_path=!build_path!)>> "%tmp_infos_file%"
@@ -115,7 +115,7 @@ if not "%script_type%"=="builder" (
 	(echo default_theme_url=https://github.com/fabricecaruso/es-theme-carbon/archive/refs/heads)>> "%tmp_infos_file%"
 	(echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master)>> "%tmp_infos_file%"
 	(echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest)>> "%tmp_infos_file%"
-	(echo mega_bezels_url=https://www.retrobat.ovh/repo/decorations)>> "%tmp_infos_file%"
+	(echo mega_bezels_url=https://www.retrobat.ovh/repo/medias)>> "%tmp_infos_file%"
 	(echo releases_url=https://www.retrobat.ovh/releases)>> "%tmp_infos_file%"
 	(echo retroarch_url=https://buildbot.libretro.com/stable/%retroarch_version%/windows/%archx%)>> "%tmp_infos_file%"
 	(echo retrobat_url=https://www.retrobat.ovh/repo/%arch%/%branch%)>> "%tmp_infos_file%"
@@ -128,7 +128,7 @@ if not "%script_type%"=="builder" (
 	(echo emulationstation_url=https://github.com/fabricecaruso/batocera-emulationstation/releases/download/continuous-master)>> "%tmp_infos_file%"
 	(echo emulators_url=https://www.retrobat.ovh/repo/%arch%/%branch%/emulators)>> "%tmp_infos_file%"
 	(echo lrcores_url=https://buildbot.libretro.com/nightly/windows/%archx%/latest)>> "%tmp_infos_file%"
-	(echo mega_bezels_url=https://www.retrobat.ovh/repo/decorations)>> "%tmp_infos_file%"
+	(echo mega_bezels_url=https://www.retrobat.ovh/repo/medias)>> "%tmp_infos_file%"
 	(echo retroarch_url=https://buildbot.libretro.com/stable/%retroarch_version%/windows/%archx%)>> "%tmp_infos_file%"
 	(echo retrobat_binaries_url=https://www.retrobat.ovh/repo/tools)>> "%tmp_infos_file%"
 	(echo wiimotegun_url=https://github.com/fabricecaruso/WiimoteGun/releases/download/v1.0)>> "%tmp_infos_file%"

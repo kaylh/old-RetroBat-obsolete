@@ -9,16 +9,13 @@
     </a>
 </p>
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X7DF7A0)
+RetroBat is a software distribution designed for emulation as the best way to play your game collection on your Windows computer. The provided EmulationStation interface is fully functional and highly customizable. You can launch all your games from it and search online for medias to pimp your collection.
 
-## 📌 Presentation
+RetroBat can download, update and configure all the best available emulators directly from its interface. You can discover or rediscover the best console, arcade or computer games released until today.
 
-RetroBat is a Windows softwares distribution dedicated to retrogaming and emulation. It provides a fully configured EmulationStation frontend and advanced integration of many emulators with their options directly accessible from the interface menus. RetroBat is all you need to have the best retrogaming experience on your Windows PC !
+No need to get lost in the options of a multitude of software, all the important options are accessible from the same unified interface.
 
-With RetroBat you will be quickly able to run your games from a ROMs collection and save your time to play.
-
-RetroBat is portable. That means you can run it from any storage device as long as you do this on a computer that meets the requirements. 
-
+With RetroBat, you will save lot of time that you can use to play!
 
 ## 💻 System Requirements
 
