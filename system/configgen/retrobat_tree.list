@@ -84,6 +84,7 @@ emulators\retroarch\shaders
 emulators\rpcs3
 emulators\ryujinx
 emulators\ryujinx\portable
+emulators\scummvm
 emulators\simcoupe
 emulators\snes9x
 emulators\solarus
