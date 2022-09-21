@@ -5,6 +5,7 @@ bios\Mupen64plus\cache
 bios\Mupen64plus\dump
 bios\Mupen64plus\hires_texture
 bios\dc
+bios\dc\textures
 bios\mame
 bios\mame\artwork
 bios\pcsx2
@@ -49,6 +50,10 @@ emulators\demul-old
 emulators\dolphin-emu
 emulators\dolphin-emu\User
 emulators\dolphin-emu\User\Config
+emulators\dolphin-emu\User\GC
+emulators\dolphin-emu\User\GC\EUR
+emulators\dolphin-emu\User\GC\JAP
+emulators\dolphin-emu\User\GC\USA
 emulators\dolphin-triforce
 emulators\dolphin-triforce\User
 emulators\dolphin-triforce\User\Config
@@ -103,6 +108,12 @@ library\records\config
 library\records\output
 roms
 saves
+saves\gamecube
+saves\gamecube\User
+saves\gamecube\User\GC
+saves\gamecube\User\GC\EUR
+saves\gamecube\User\GC\JAP
+saves\gamecube\User\GC\USA
 saves\ps2
 saves\ps2\pcsx2
 saves\ps2\pcsx2-16
