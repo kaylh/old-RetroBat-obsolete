@@ -34,6 +34,7 @@ redream
 retroarch
 rpcs3
 ryujinx
+scummvm
 simcoupe
 snes9x
 solarus
@@ -47,3 +48,4 @@ xemu
 xenia
 xenia-canary
 yuzu
+yuzu-early-access

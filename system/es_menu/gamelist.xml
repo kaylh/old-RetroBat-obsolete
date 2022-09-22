@@ -556,6 +556,24 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./yuzu-early-access.menu</path>
+		<name>Yuzu Early Access (Switch)</name>
+		<desc>Configure Yuzu Early Access (Switch).</desc>
+		<image>./media/yuzuEA-logo.png</image>
+		<marquee>./media/yuzuEA-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Yuzu Team</developer>
+		<publisher>Yuzu Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+
 	<!--<game>
 		<path>./zsnes-dos.menu</path>
 		<name>ZSNES</name>
