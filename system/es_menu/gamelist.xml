@@ -608,4 +608,37 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./tsugaru.menu</path>
+		<name>Tsugaru (FM TOWNS emulator)</name>
+		<desc>Configure Tsugaru</desc>
+		<image>./media/tsugaru.png</image>
+		<marquee>./media/tsugaru.png</marquee>
+		<rating>0</rating>
+		<releasedate></releasedate>
+		<developer>Captain Ys</developer>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./nosgba.menu</path>
+		<name>No$GBA</name>
+		<desc>Configure No$GBA</desc>
+		<image>./media/nosgba.png</image>
+		<marquee>./media/nosgba.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>NoGBA Team</developer>
+		<publisher>NoGBA Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
 </gameList>
