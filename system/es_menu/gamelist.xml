@@ -610,7 +610,7 @@
 	</game>
 	<game>
 		<path>./tsugaru.menu</path>
-		<name>Tsugaru (FM TOWNS emulator)</name>
+		<name>Tsugaru (FM Towns)</name>
 		<desc>Configure Tsugaru</desc>
 		<image>./media/tsugaru.png</image>
 		<marquee>./media/tsugaru.png</marquee>
@@ -626,7 +626,7 @@
 	</game>
 	<game>
 		<path>./nosgba.menu</path>
-		<name>No$GBA</name>
+		<name>No$GBA (GameBoy Advance)</name>
 		<desc>Configure No$GBA</desc>
 		<image>./media/nosgba.png</image>
 		<marquee>./media/nosgba.png</marquee>
