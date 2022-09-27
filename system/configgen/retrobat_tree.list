@@ -6,8 +6,10 @@ bios\Mupen64plus\dump
 bios\Mupen64plus\hires_texture
 bios\dc
 bios\dc\textures
+bios\fbneo
 bios\mame
 bios\mame\artwork
+bios\neocd
 bios\pcsx2
 bios\pcsx2\bios
 bios\pcsx2\cheats
