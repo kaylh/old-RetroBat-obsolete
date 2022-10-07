@@ -612,8 +612,8 @@
 		<path>./tsugaru.menu</path>
 		<name>Tsugaru (FM Towns)</name>
 		<desc>Configure Tsugaru</desc>
-		<image>./media/tsugaru.png</image>
-		<marquee>./media/tsugaru.png</marquee>
+		<image>./media/tsugaru-logo.png</image>
+		<marquee>./media/tsugaru-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate></releasedate>
 		<developer>Captain Ys</developer>
@@ -628,8 +628,8 @@
 		<path>./nosgba.menu</path>
 		<name>No$GBA (GameBoy Advance)</name>
 		<desc>Configure No$GBA</desc>
-		<image>./media/nosgba.png</image>
-		<marquee>./media/nosgba.png</marquee>
+		<image>./media/nosgba-logo.png</image>
+		<marquee>./media/nosgba-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>NoGBA Team</developer>
@@ -641,4 +641,22 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./teknoparrot.menu</path>
+		<name>TeknoParrot (Arcade)</name>
+		<desc>Configure TeknoParrot</desc>
+		<image>./media/teknoparrot-logo.png</image>
+		<marquee>./media/teknoparrot-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>TeknoGods</developer>
+		<publisher>TeknoGods</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+
 </gameList>
