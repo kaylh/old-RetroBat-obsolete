@@ -1,3 +1,4 @@
+@@ -1,102 +0,0 @@
 <h1 align="left">
   <br>
   <a href="https://www.retrobat.ovh/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
@@ -61,10 +62,11 @@ build.bat
 - GetUpOr - community, support
 - RetroBoy - community, support
 
-## 🤘 Special Thanks
+## 💟 Special Thanks
 
-- Hel Mic - for his generous support and for his wonderful themes.
-- Batocera - for their wonderful retrogaming dedicated Operating System.
+- [Hel Mic](https://github.com/lehcimcramtrebor/) - for his wonderful themes.
+- [Batocera](https://www.batocera.org/) - for their wonderful retrogaming dedicated Operating System.
+- [Gitbook](https://www.gitbook.com/) - for supporting our project.
 
 ## ⚖ Licence
 

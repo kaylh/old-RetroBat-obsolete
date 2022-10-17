@@ -88,7 +88,7 @@ FunctionEnd
 
 ;Installer Sections     
 Section "install"
- 
+/*
 ;Add files
   SetOutPath "$INSTDIR"
   
@@ -102,7 +102,24 @@ Section "install"
   File ${BASE_SOURCE}\readme.txt
   File ${BASE_SOURCE}\license.txt
   File /r ${BASE_SOURCE}\*.*
+*/
+  SetOverwrite ifnewer
+  SetOutPath "$INSTDIR"
+  File ${BASE_SOURCE}\${FILENAME}.exe
+  File ${BASE_SOURCE}\${FILENAME}.dat
+  File ${BASE_SOURCE}\readme.txt
+  File ${BASE_SOURCE}\license.txt
+  File /r /x ${BASE_SOURCE}\emulationstation\.emulationstation\es_settings.cfg /x ${BASE_SOURCE}\emulationstation\.emulationstation\es_input.cfg ${BASE_SOURCE}\*.*
   
+  SetOverwrite off
+  SetOutPath "$INSTDIR" 
+  File /nonfatal ${BASE_SOURCE}\${FILENAME}.ini
+
+  SetOverwrite off	
+  SetOutPath "$INSTDIR\emulationstation\.emulationstation"  
+  File ${BASE_SOURCE}\emulationstation\.emulationstation\es_settings.cfg
+  File ${BASE_SOURCE}\emulationstation\.emulationstation\es_input.cfg
+
 ;  Call CreateVersionFile
   
 SectionEnd

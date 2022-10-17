@@ -3,7 +3,7 @@
 	<game>
 		<path>./applewin.menu</path>
 		<name>AppleWin (Apple II)</name>
-		<desc>Configure AppleWin Emulator (Apple II)</desc>
+		<desc>Run AppleWin Emulator (Apple II).</desc>
 		<image>./media/applewin-logo.png</image>
 		<marquee>./media/applewin-logo.png</marquee>
 		<rating>0</rating>
@@ -19,7 +19,7 @@
 	<game>
 		<path>./cemu.menu</path>
 		<name>Cemu (Wii U)</name>
-		<desc>Configure Cemu Emulator (Wii U)</desc>
+		<desc>Run Cemu Emulator (Wii U).</desc>
 		<image>./media/cemu-logo.png</image>
 		<marquee>./media/cemu-logo.png</marquee>
 		<rating>0</rating>
@@ -36,7 +36,7 @@
 	<game>
 		<path>./citra.menu</path>
 		<name>Citra (3DS)</name>
-		<desc>Configure Citra Emulator (Nintendo 3DS)</desc>
+		<desc>Run Citra Emulator (Nintendo 3DS).</desc>
 		<image>./media/citra-logo.png</image>
 		<marquee>./media/citra-logo.png</marquee>
 		<rating>0</rating>
@@ -53,7 +53,7 @@
 	<game>
 		<path>./demul-old.menu</path>
 		<name>Demul Old DX11 Plugin (Gaelco)</name>
-		<desc>Configure Demul Old DX11 Plugin (Gaelco)</desc>
+		<desc>Run Demul Old DX11 Plugin (Gaelco).</desc>
 		<image>./media/demulold-logo.png</image>
 		<marquee>./media/demulold-logo.png</marquee>
 		<rating>0</rating>
@@ -70,7 +70,7 @@
 	<game>
 		<path>./dolphin-emu.menu</path>
 		<name>Dolphin (GameCube,Wii,WAD)</name>
-		<desc>Configure Dolphin Emulator (GameCube, Wii, WAD)</desc>
+		<desc>Run Dolphin Emulator (GameCube, Wii, WAD).</desc>
 		<image>./media/dolphin-logo.png</image>
 		<marquee>./media/dolphin-logo.png</marquee>
 		<rating>0</rating>
@@ -87,7 +87,7 @@
 	<game>
 		<path>./dolphin-triforce.menu</path>
 		<name>DolphinWX (Triforce)</name>
-		<desc>Configure DolphinWX Emulator (Triforce)</desc>
+		<desc>Run DolphinWX Emulator (Triforce).</desc>
 		<image>./media/dolphin-logo.png</image>
 		<marquee>./media/dolphin-logo.png</marquee>
 		<rating>0</rating>
@@ -104,7 +104,7 @@
 	<game>
 		<path>./dosbox.menu</path>
 		<name>DOSBox (MS-DOS, Windows 3.x, Windows 95)</name>
-		<desc>Configure DOSBox (MS-DOS, Windows 3.x, Windows 95)</desc>
+		<desc>Run DOSBox (MS-DOS, Windows 3.x, Windows 95).</desc>
 		<image>./media/dosbox-logo.png</image>
 		<marquee>./media/dosbox-logo.png</marquee>
 		<rating>0</rating>
@@ -120,8 +120,8 @@
 	</game>
 	<game>
 		<path>./m2emulator.menu</path>
-		<name>M2Emulator - Multi CPU (SEGA MODEL 2)</name>
-		<desc>Configure M2Emulator -Multi CPU (SEGA MODEL 2)</desc>
+		<name>M2Emulator (Model 2)</name>
+		<desc>Run M2Emulator (Model 2).</desc>
 		<image>./media/m2emulator-logo.png</image>
 		<marquee>./media/m2emulator-logo.png</marquee>
 		<developer>Nebula Team</developer>
@@ -136,7 +136,7 @@
 	<game>
 		<path>./mesen.menu</path>
 		<name>Mesen (FDS, NES)</name>
-		<desc>Configure Mesen (FDS, NES)</desc>
+		<desc>Run Mesen (FDS, NES).</desc>
 		<image>./media/mesen-logo.png</image>
 		<marquee>./media/mesen-logo.png</marquee>
 		<developer>Unknown</developer>
@@ -151,7 +151,7 @@
 	<game>
 		<path>./mgba.menu</path>
 		<name>mGBA (GameBoy Advance)</name>
-		<desc>Configure mGBA Emulator (GameBoy Advance)</desc>
+		<desc>Run mGBA Emulator (GameBoy Advance).</desc>
 		<image>./media/mgba-logo.png</image>
 		<marquee>./media/mgba-logo.png</marquee>
 		<rating>0</rating>
@@ -168,7 +168,7 @@
 	<game>
 		<path>./pcsx2-16.menu</path>
 		<name>PCSX2 (v1.6) (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (v1.6) (PlayStation 2)</desc>
+		<desc>Run PCSX2 Emulator (v1.6) (PlayStation 2).</desc>
 		<image>./media/pcsx2-16-logo.png</image>
 		<marquee>./media/pcsx2-16-logo.png</marquee>
 		<rating>0</rating>
@@ -185,7 +185,7 @@
 	<game>
 		<path>./pcsx2.menu</path>
 		<name>PCSX2 (SSE4) (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (SSE4) (PlayStation 2)</desc>
+		<desc>Run PCSX2 Emulator (SSE4) (PlayStation 2).</desc>
 		<image>./media/pcsx2-logo.png</image>
 		<marquee>./media/pcsx2-logo.png</marquee>
 		<rating>0</rating>
@@ -202,7 +202,7 @@
 	<game>
 		<path>./pcsx2-avx2.menu</path>
 		<name>PCSX2 (AVX2) (PlayStation 2)</name>
-		<desc>Configure PCSX2 Emulator (AVX2) (PlayStation 2)</desc>
+		<desc>Run PCSX2 Emulator (AVX2) (PlayStation 2).</desc>
 		<image>./media/pcsx2-logo.png</image>
 		<marquee>./media/pcsx2-logo.png</marquee>
 		<rating>0</rating>
@@ -219,7 +219,7 @@
 	<game>
 		<path>./ppsspp.menu</path>
 		<name>PPSSPP (PSP, Homebrews)</name>
-		<desc>Configure PPSSPP Emulator (PSP, Homebrews)</desc>
+		<desc>Run PPSSPP Emulator (PSP, Homebrews).</desc>
 		<image>./media/ppsspp-logo.png</image>
 		<marquee>./media/ppsspp-logo.png</marquee>
 		<rating>0</rating>
@@ -236,7 +236,7 @@
 	<game>
 		<path>./project64.menu</path>
 		<name>Project 64 (Nintendo 64)</name>
-		<desc>Configure Project 64 (Nintendo 64)</desc>
+		<desc>Run Project 64 (Nintendo 64). This software is not provided by RetroBat. You can download it here: https://www.pj64-emu.com/windows-downloads</desc>
 		<image>./media/project64-logo.png</image>
 		<marquee>./media/project64-logo.png</marquee>
 		<rating>0</rating>
@@ -253,7 +253,7 @@
 	<game>
 		<path>./raine.menu</path>
 		<name>Raine (Arcade, Neo Geo, Neo Geo CD)</name>
-		<desc>Configure Raine Emulator (Arcade, Neo Geo, Neo Geo CD)</desc>
+		<desc>Run Raine Emulator (Arcade, Neo Geo, Neo Geo CD).</desc>
 		<image>./media/raine-logo.png</image>
 		<marquee>./media/raine-logo.png</marquee>
 		<rating>0</rating>
@@ -270,7 +270,7 @@
 	<game>
 		<path>./redream.menu</path>
 		<name>Redream (Dreamcast)</name>
-		<desc>Configure Redream Emulator (Dreamcast)</desc>
+		<desc>Run Redream Emulator (Dreamcast).</desc>
 		<image>./media/redream-logo.png</image>
 		<marquee>./media/redream-logo.png</marquee>
 		<rating>0</rating>
@@ -287,7 +287,7 @@
 	<game>
 		<path>./rpcs3.menu</path>
 		<name>RPCS3 (PlayStation 3)</name>
-		<desc>Configure RPCS3 (PlayStation 3)</desc>
+		<desc>Run RPCS3 (PlayStation 3).</desc>
 		<image>./media/rpcs3-logo.png</image>
 		<marquee>./media/rpcs3-logo.png</marquee>
 		<rating>0</rating>
@@ -304,7 +304,7 @@
 	<game>
 		<path>./xenia_canary.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
-		<desc>Configure Xenia Canary (XBOX 360)</desc>
+		<desc>Run Xenia Canary (Xbox 360).</desc>
 		<image>./media/xenia-logo.png</image>
 		<marquee>./media/xenia-logo.png</marquee>
 		<rating>0</rating>
@@ -321,7 +321,7 @@
 	<game>
 		<path>./daphne.menu</path>
 		<name>Daphne Loader (Laserdisc)</name>
-		<desc>Configure Daphne Loader (Laserdisc)</desc>
+		<desc>Run Daphne Loader (Laserdisc).</desc>
 		<image>./media/daphne-logo.png</image>
 		<marquee>./media/daphne-logo.png</marquee>
 		<rating>0</rating>
@@ -338,7 +338,7 @@
 	<game>
 		<path>./fpinball.menu</path>
 		<name>Future Pinball</name>
-		<desc>Configure Future Pinball</desc>
+		<desc>Run Future Pinball.</desc>
 		<image>./media/fpinball-logo.png</image>
 		<marquee>./media/fpinball-logo.png</marquee>
 		<rating>0</rating>
@@ -355,7 +355,7 @@
 	<game>
 		<path>./vpinball.menu</path>
 		<name>Visual Pinball</name>
-		<desc>Configure Visual Pinball</desc>
+		<desc>Run Visual Pinball.</desc>
 		<image>./media/vpinball-logo.png</image>
 		<marquee>./media/vpinball-logo.png</marquee>
 		<rating>0</rating>
@@ -372,7 +372,7 @@
 	<game>
 		<path>./demul.menu</path>
 		<name>Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</name>
-		<desc>Configure Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru)</desc>
+		<desc>Run Demul (Dreamcast, Naomi 1 &amp; 2, Atomiswave, Hikaru).</desc>
 		<image>./media/demul-logo.png</image>
 		<marquee>./media/demul-logo.png</marquee>
 		<rating>0</rating>
@@ -389,7 +389,7 @@
 	<game>
 		<path>./supermodel.menu</path>
 		<name>Supermodel (MODEL 3)</name>
-		<desc>Configure Supermodel (MODEL 3)</desc>
+		<desc>Run Supermodel (Model 3).</desc>
 		<image>./media/supermodel-logo.png</image>
 		<marquee>./media/supermodel-logo.png</marquee>
 		<rating>0</rating>
@@ -406,7 +406,7 @@
 	<game>
 		<path>./cxbx-reloaded.menu</path>
 		<name>CxBx Reloaded (XBOX, Chihiro)</name>
-		<desc>Configure CxBx Reloaded Emulator (XBOX, Chihiro)</desc>
+		<desc>Run CxBx Reloaded Emulator (Xbox, Chihiro).</desc>
 		<image>./media/cxbxr-logo.png</image>
 		<marquee>./media/cxbxr-logo.png</marquee>
 		<rating>0</rating>
@@ -423,7 +423,7 @@
 	<game>
 		<path>./winuae.menu</path>
 		<name>WinUAE (Amiga)</name>
-		<desc>Configure WinUAE (Amiga)</desc>
+		<desc>Run WinUAE (Amiga).</desc>
 		<image>./media/winuae-logo.png</image>
 		<marquee>./media/winuae-logo.png</marquee>
 		<rating>0</rating>
@@ -440,7 +440,7 @@
 	<game>
 		<path>./pico8.menu</path>
 		<name>PICO-8</name>
-		<desc>Configure PICO-8. This software is not provided by RetroBat. You can purchase it there: https://www.lexaloffle.com/pico-8.php</desc>
+		<desc>Run PICO-8 (Fantasy Console). This software is not provided by RetroBat. You can purchase it there: https://www.lexaloffle.com/pico-8.php</desc>
 		<image>./media/pico8-logo.png</image>
 		<marquee>./media/pico8-logo.png</marquee>
 		<rating>0</rating>
@@ -457,7 +457,7 @@
 	<game>
 		<path>./snes9x.menu</path>
 		<name>SNES9X (Super NES)</name>
-		<desc>Configure SNES9X (Super NES)</desc>
+		<desc>Run SNES9X (Super NES).</desc>
 		<image>./media/snes9x-logo.png</image>
 		<marquee>./media/snes9x-logo.png</marquee>
 		<rating>0</rating>
@@ -474,7 +474,7 @@
 	<game>
 		<path>./duckstation.menu</path>
 		<name>Duckstation (PlayStation)</name>
-		<desc>Configure Duckstation Emulator (PlayStation)</desc>
+		<desc>Run Duckstation Emulator (PlayStation).</desc>
 		<image>./media/duckstation-logo.png</image>
 		<marquee>./media/duckstation-logo.png</marquee>
 		<rating>0</rating>
@@ -491,7 +491,7 @@
 	<game>
 		<path>./mame.menu</path>
 		<name>MAME (Multiple Arcade Machine Emulator)</name>
-		<desc>Configure MAME (Multiple Arcade Machine Emulator).</desc>
+		<desc>Run MAME (Multiple Arcade Machine Emulator).</desc>
 		<image>./media/mame-logo.png</image>
 		<marquee>./media/mame-logo.png</marquee>
 		<rating>0</rating>
@@ -508,7 +508,7 @@
 	<game>
 		<path>./ryujinx.menu</path>
 		<name>Ryujinx (Switch)</name>
-		<desc>Configure Ryujinx (Switch).</desc>
+		<desc>Run Ryujinx (Switch). This software is not provided by RetroBat. You can download it here: https://ryujinx.org/download</desc>
 		<image>./media/ryujinx-logo.png</image>
 		<marquee>./media/ryujinx-logo.png</marquee>
 		<rating>0</rating>
@@ -525,7 +525,7 @@
 	<game>
 		<path>./xemu.menu</path>
 		<name>Xemu (Xbox, Chihiro)</name>
-		<desc>Configure Xemu (Xbox, Chihiro)</desc>
+		<desc>Run Xemu (Xbox, Chihiro).</desc>
 		<image>./media/xemu-logo.png</image>
 		<marquee>./media/xemu-logo.png</marquee>
 		<rating>0</rating>
@@ -542,7 +542,7 @@
 	<game>
 		<path>./yuzu.menu</path>
 		<name>Yuzu (Switch)</name>
-		<desc>Configure Yuzu (Switch).</desc>
+		<desc>Run Yuzu (Switch). This software is not provided by RetroBat. You can download it here: https://yuzu-emu.org/downloads/</desc>
 		<image>./media/yuzu-logo.png</image>
 		<marquee>./media/yuzu-logo.png</marquee>
 		<rating>0</rating>
@@ -559,7 +559,7 @@
 	<game>
 		<path>./yuzu-early-access.menu</path>
 		<name>Yuzu Early Access (Switch)</name>
-		<desc>Configure Yuzu Early Access (Switch).</desc>
+		<desc>Run Yuzu Early Access (Switch). This software is not provided by RetroBat.</desc>
 		<image>./media/yuzuEA-logo.png</image>
 		<marquee>./media/yuzuEA-logo.png</marquee>
 		<rating>0</rating>
@@ -577,7 +577,7 @@
 	<!--<game>
 		<path>./zsnes-dos.menu</path>
 		<name>ZSNES</name>
-		<desc>An Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
+		<desc>A Super NES emulator pioneer running in DOSBox (for nostalgia and preservation).</desc>
 		<image>./media/zsnes-logo.png</image>
 		<marquee>./media/zsnes-logo.png</marquee>
 		<rating>0</rating>
@@ -594,7 +594,7 @@
 	<game>
 		<path>./retroarch.menu</path>
 		<name>RetroArch (Multi Cores Emulator)</name>
-		<desc>Configure RetroArch (Multi Cores Emulator)</desc>
+		<desc>Run RetroArch (Multi Cores Emulator).</desc>
 		<image>./media/retroarch-logo.png</image>
 		<marquee>./media/retroarch-logo.png</marquee>
 		<rating>0</rating>
@@ -611,9 +611,9 @@
 	<game>
 		<path>./tsugaru.menu</path>
 		<name>Tsugaru (FM Towns)</name>
-		<desc>Configure Tsugaru</desc>
-		<image>./media/tsugaru.png</image>
-		<marquee>./media/tsugaru.png</marquee>
+		<desc>Run Tsugaru (FM Towns).</desc>
+		<image>./media/tsugaru-logo.png</image>
+		<marquee>./media/tsugaru-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate></releasedate>
 		<developer>Captain Ys</developer>
@@ -626,10 +626,10 @@
 	</game>
 	<game>
 		<path>./nosgba.menu</path>
-		<name>No$GBA (GameBoy Advance)</name>
-		<desc>Configure No$GBA</desc>
-		<image>./media/nosgba.png</image>
-		<marquee>./media/nosgba.png</marquee>
+		<name>No$GBA (GameBoy Advance 2 Players)</name>
+		<desc>Run No$GBA (GameBoy Advance 2 Players).</desc>
+		<image>./media/nosgba-logo.png</image>
+		<marquee>./media/nosgba-logo.png</marquee>
 		<rating>0</rating>
 		<releasedate />
 		<developer>NoGBA Team</developer>
@@ -641,4 +641,22 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./teknoparrot.menu</path>
+		<name>TeknoParrot (Arcade)</name>
+		<desc>Run TeknoParrot (Arcade). This software is not provided by RetroBat. You can download it here: https://teknoparrot.com/Home/Download</desc>
+		<image>./media/teknoparrot-logo.png</image>
+		<marquee>./media/teknoparrot-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>TeknoGods</developer>
+		<publisher>TeknoGods</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+
 </gameList>

@@ -1,8 +1,11 @@
 {
    "ppsspp.ini_configmode_1":[
       {
-         "FirstRun":"False",
+		 "FileName0":" ",
+		 "RunCount":"0",
+		 "CheckForNewVersion":"False",
          "CurrentDirectory":"../../roms/psp/",
+         "FirstRun":"False",
          "Path0":"../../roms/psp"
       }
    ]
