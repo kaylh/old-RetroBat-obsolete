@@ -9,13 +9,13 @@ Hi there! We're happy that you'd like to contribute to the RetroBat Project. You
 
 The RetroBat Project is a consolidation of many other subproject. Here is the links of all the github repositories related directly or indirectly to RetroBat:
 
-https://github.com/kaylh/retrobat
-https://github.com/fabricecaruso/batocera-ports
-https://github.com/fabricecaruso/batocera-emulationstation
-https://github.com/fabricecaruso/es-theme-carbon
-https://github.com/kaylh/RetroBat-BIOS
-https://github.com/kaylh/batocera-bezel
-https://github.com/kaylh/RetroBat-Wiki
+- https://github.com/kaylh/retrobat
+- https://github.com/fabricecaruso/batocera-ports
+- https://github.com/fabricecaruso/batocera-emulationstation
+- https://github.com/fabricecaruso/es-theme-carbon
+- https://github.com/kaylh/RetroBat-BIOS
+- https://github.com/kaylh/batocera-bezel
+- https://github.com/kaylh/RetroBat-Wiki
 
 
 Please note that this project is released with a [Contributor Code of Conduct][code-of-conduct]. By participating in this project you agree to abide by its terms.
