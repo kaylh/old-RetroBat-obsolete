@@ -1,18 +1,25 @@
 @echo off
 mode 1000
 
-set "steamdir=C:\Program Files (x86)\Steam"
-set steamgameid=442120
-set steamkill=0
+set steam_path_default=C:\Program Files (x86)\Steam
+set "steam_path=%steam_path_default%"
+
+set game_id=442120
+set pinballfx3_bin=Pinball FX3.exe
+set game_bin=%pinballfx3_bin%
+
+set kill_steam=0
 set delay=14
-"%steamdir%\steam.exe" -nofriendsui -applaunch %steamgameid% -class -table_%1
+
+if exist "%CD%\steam.cfg" (for /f "delims=" %%x in (%CD%\steam.cfg) do (set "%%x"))
+"%steam_path%\steam.exe" -nofriendsui -applaunch %game_id% -class -table_%1
 call :timeout
 
 :steamwait
 call :tasklist
 set delay=3
-if %steamkill% == 1 if %exitcode% == 1 call :timeout & call :taskclose & goto end
-if %steamkill% == 0 if %exitcode% == 1 call :timeout & goto end
+if %kill_steam% == 1 if %exitcode% == 1 call :timeout & call :taskclose & goto end
+if %kill_steam% == 0 if %exitcode% == 1 call :timeout & goto end
 call :timeout
 goto steamwait
 
@@ -24,7 +31,7 @@ taskkill /f /im steam.exe /t >nul
 goto:eof
 
 :tasklist
-tasklist|findstr "Pinball FX3.exe" > nul
+tasklist|findstr "%game_bin%" > nul
 set exitcode=%errorlevel%
 goto:eof
 
