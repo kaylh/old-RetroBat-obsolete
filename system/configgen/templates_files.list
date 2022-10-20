@@ -1,5 +1,5 @@
 \system\resources\retrobat_logo.svg|\emulationstation\resources\splash_retrobat.svg
-\system\scripts\template-run-steam-games.cmd|\emulators\steam\pinballfx3.cmd
+\system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
 \system\templates\cemu\settings.xml|\emulators\cemu\settings.xml
 \system\templates\citra\qt-config.ini|\emulators\citra\user\config\qt-config.ini
 \system\templates\cxbx-reloaded\settings.ini|\emulators\cxbx-reloaded\settings.ini

@@ -57,10 +57,11 @@ build.bat
 ## 🦇 RetroBat Team
 
 - Adrien Chalard "Kayl" - creator of the project, developer
-- Lorenzolamas - community management, graphics
+- Lorenzolamas - community management, graphics (former active)
 - Fabrice Caruso - lead developer, theme creation
 - GetUpOr - community, support
 - RetroBoy - community, support
+- Tartifless - developer, documentation
 
 ## 💟 Special Thanks
 
