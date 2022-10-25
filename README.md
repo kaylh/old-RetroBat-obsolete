@@ -1,4 +1,3 @@
-@@ -1,102 +0,0 @@
 <h1 align="left">
   <br>
   <a href="https://www.retrobat.ovh/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
