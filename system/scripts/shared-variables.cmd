@@ -105,19 +105,21 @@ if exist "%root_path%\emulationstation\%version_file_local%" (
 	echo version_local=!version_local!>> "%tmp_infos_file%"
 )
 
-if not "%script_type%" == "builder" (
-	
+if not "%script_type%" == "builder" if not "%extract_pkg%" == "es" (
+
 	if exist "%root_path%\system\modules\rb_updater\%version_file_remote%" del/Q "%root_path%\system\modules\rb_updater\%version_file_remote%" >nul
+	if exist "%root_path%\system\modules\rb_updater\%version_file_remote%.*" del/Q "%root_path%\system\modules\rb_updater\%version_file_remote%.*" >nul
 	"%root_path%\system\modules\rb_updater\wget" --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -P "%root_path%\system\modules\rb_updater" %installroot_url%/repo/%arch%/%branch%/%version_local%/%version_file_remote% -q
 
 	if not exist "%root_path%\system\modules\rb_updater\%version_file_remote%" (
 	
-		set/A exit_code=2
+		(set exit_msg=error: missing version file)
+		(set/A exit_code=2)
 		goto :eof
 		
 	) else (
 	
-		set/A exit_code=0
+		(set/A exit_code=0)
 	)
 )
 
