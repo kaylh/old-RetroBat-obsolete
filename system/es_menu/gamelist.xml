@@ -319,6 +319,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./xenia.menu</path>
+		<name>Xenia (XBOX 360)</name>
+		<desc>Run Xenia (Xbox 360).</desc>
+		<image>./media/xenia-logo.png</image>
+		<marquee>./media/xenia-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Xenia Team</developer>
+		<publisher>Xenia Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./daphne.menu</path>
 		<name>Daphne Loader (Laserdisc)</name>
 		<desc>Run Daphne Loader (Laserdisc).</desc>
