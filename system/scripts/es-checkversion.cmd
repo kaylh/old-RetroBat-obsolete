@@ -16,7 +16,7 @@ setlocal EnableDelayedExpansion
 
 :: ---- SCRIPT ARGUMENTS ----
 
-set branch=beta
+set branch=stable
 
 :loop_arg
 
@@ -72,7 +72,7 @@ if %ERRORLEVEL% EQU 0 (
 ) else (
 
 	(set/A exit_code=1)
-	(set exit_msg=error: install not found)
+	(set exit_msg=install not found)
 	call :exit_door
 	goto :eof
 )
@@ -80,7 +80,7 @@ if %ERRORLEVEL% EQU 0 (
 if not "!root_path!" == "!install_path!\emulationstation" (
 
 	(set/A exit_code=1)
-	(set exit_msg=error: paths mismatch)
+	(set exit_msg=paths mismatch)
 	call :exit_door
 	goto :eof
 
@@ -115,7 +115,7 @@ for %%i in %modules_list% do (
 if !found_total! NEQ 0 (
 	
 	(set/A exit_code=2)
-	(set exit_msg=error: missing updater modules)
+	(set exit_msg=missing updater modules)
 	call :exit_door
 	goto :eof
 )
@@ -143,7 +143,7 @@ if exist "!root_path!\system\scripts\shared-variables.cmd" (
 ) else (
 
 	(set/A exit_code=2)
-	(set exit_msg=error: missing updater script)
+	(set exit_msg=missing updater script)
 	call :exit_door
 	goto :eof
 
@@ -158,7 +158,7 @@ if exist "%tmp_infos_file%" (
 ) else (
 
 	(set/A exit_code=2)
-	(set exit_msg=error: missing updater script)
+	(set exit_msg=missing updater script)
 	call :exit_door
 	goto :eof
 )
@@ -174,10 +174,8 @@ if not "%version_remote%"=="%version_local%" (
 	
 ) else (
 
-	set exit_msg=no update found!
-	set exit_code=1
-	call :exit_door
-	goto :eof
+	echo no update found
+	exit 1
 )
 
 :: ---- EXIT DOOR ----
@@ -185,5 +183,5 @@ if not "%version_remote%"=="%version_local%" (
 :exit_door
 
 cls
-(echo %exit_msg%)
+echo %exit_msg%
 exit !exit_code!

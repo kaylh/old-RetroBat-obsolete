@@ -1,4 +1,14 @@
 @echo off
+
+goto:rem
+---------------------------------------
+es-update.cmd
+---------------------------------------
+This Batch script is originally created for RetroBat and to be used by the Windows build of Batocera-EmulationStation.
+It exists in conjunction with other scripts to form an integrated update system within the EmulationStation interface.
+---------------------------------------
+:rem
+
 setlocal EnableDelayedExpansion
 cls
 echo preparing update... ^>^>^> 0%%
@@ -16,7 +26,7 @@ set enable_log=1
 
 :: ---- SCRIPT ARGUMENTS ----
 
-set branch=beta
+set branch=stable
 
 :loop_arg
 
@@ -273,7 +283,7 @@ echo !progress_text!... ^>^>^> !progress_percent!%%
 
 if exist "%CD%\exclude.txt" del/Q "%CD%\exclude.txt" >nul
 
-xcopy "%system_path%\configgen\exclude_emulators_files.lst" "%CD%\exclude.txt" /Y /-I >nul
+copy "%system_path%\configgen\exclude_emulators_files.lst" "%CD%\exclude.txt" /Y >nul
 
 for %%i in %folder_list% do (
 	
@@ -282,7 +292,7 @@ for %%i in %folder_list% do (
 	
 		if "%%i" == "emulators" (
 		
-			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y /exclude:exclude.txt >nul
+			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y /I /exclude:exclude.txt >nul
 			if %ERRORLEVEL% NEQ 0 (
 				set/A exit_code=%ERRORLEVEL%
 				call :exit_door
@@ -292,7 +302,7 @@ for %%i in %folder_list% do (
 			
 		) else (
 		
-			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y >nul
+			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y /I >nul
 			if %ERRORLEVEL% NEQ 0 (
 				set/A exit_code=%ERRORLEVEL%
 				call :exit_door
@@ -310,7 +320,7 @@ for %%i in %file_list% do (
 
 	if exist "%extraction_path%\*.%%i" (
 	
-		xcopy "%extraction_path%\*.%%i" "!root_path!" /e /v /y /-I >nul
+		xcopy "%extraction_path%\*.%%i" "!root_path!" /y >nul
 		if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! "%extraction_path%\*.%%i" to "!root_path!")>> "!root_path!\emulationstation\%log_file%")
 			
 	)
@@ -376,6 +386,7 @@ if not "!root_path!" == "!install_path!\emulationstation" (
 
 	(set root_path=!install_path!)
 	if %enable_log% EQU 1 ((echo %date% %time% [INFO] Root Path: "!root_path!")>> "!root_path!\emulationstation\%log_file%")
+	
 )
 
 goto :eof
@@ -454,7 +465,6 @@ if exist "%tmp_infos_file%" (
 )
 
 if %enable_log% EQU 1 (
-	
 	(echo %date% %time% [INFO] Current Version: %name%-%version_local%)>> "!root_path!\emulationstation\%log_file%"
 	(echo %date% %time% [INFO] Available Version: %name%-%version_remote%)>> "!root_path!\emulationstation\%log_file%"
 	(echo %date% %time% [INFO] Download Path: "!download_path!")>> "!root_path!\emulationstation\%log_file%"
@@ -468,7 +478,7 @@ title %name% updater script
 
 :: Kill the process listed in kill_process.list if they are running
 
-if not "%extract_pkg%" == "es" if exist "!root_path!\retrobat.exe" "!root_path!\retrobat.exe" #killProcess
+if exist "!root_path!\retrobat.exe" "!root_path!\retrobat.exe" #killProcess
 
 goto :eof
 
@@ -489,16 +499,16 @@ goto :eof
 set task=extract_es
 if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
 
-if exist "%system_path%\scripts\exclude.txt" (del/Q "%system_path%\scripts\exclude.txt")
+if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
 
-if not exist "%system_path%\configgen\exclude_emulationstation_files.lst" (
+if not exist "!system_path!\configgen\exclude_emulationstation_files.lst" (
 	(set/A exit_code=2)
 	(set exit_msg=updater script is missing)
 	call :exit_door
 	goto :eof
 )
 
-xcopy "%system_path%\configgen\exclude_emulationstation_files.lst" "%system_path%\scripts\exclude.txt" /Y /-I >nul
+copy "%system_path%\configgen\exclude_emulationstation_files.lst" "%system_path%\scripts\exclude.txt" /Y >nul
 
 if exist "%download_path%\%package_file%" (
 
@@ -512,7 +522,7 @@ if exist "%download_path%\%package_file%" (
 	)
 	if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%download_path%\%package_file%" to "!extraction_path!\emulationstation")>> "%root_path%\emulationstation\%log_file%")
 
-	xcopy "%extraction_path%\emulationstation" "!root_path!\emulationstation" /e /v /y /exclude:exclude.txt >nul
+	xcopy "%extraction_path%\emulationstation" "!root_path!\emulationstation" /e /v /y /I /exclude:exclude.txt >nul
 	set/A exit_code=%ERRORLEVEL%
 	if !exit_code! NEQ 0 (
 		(set exit_msg=failed to copy files)
@@ -526,8 +536,8 @@ if exist "%download_path%\%package_file%" (
 		(set exit_msg=update complete!)
 		if exist "!download_path!\!package_file!" del/Q "!download_path!\!package_file!" >nul
 		if exist "!download_path!\!package_file!.sha256.txt" del/Q "!download_path!\!package_file!.sha256.txt" >nul
-		if exist "!download_path!\!extraction_path!\." rmdir /s /q "!download_path!\!extraction_path!" >nul
-		if exist "!system_path!\scripts\exclude.txt" del/Q "!system_path!\scripts\exclude.txt"
+		if exist "!extraction_path!\" rd /S /Q "!extraction_path!" >nul
+		if exist "!system_path!\scripts\exclude.txt" del/Q "!system_path!\scripts\exclude.txt" >nul
 	)
 )
 
@@ -541,11 +551,12 @@ goto :eof
 
 if %progress_percent% EQU 100 (
 
-	if exist "%APPDATA%\RetroBat\user.info" del/Q "%APPDATA%\RetroBat\user.info" >nul
-	if exist "%APPDATA%\RetroBat\user.key" del/Q "%APPDATA%\RetroBat\user.key" >nul
 	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
+	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
+	if "!version_local!" == "4.0.2-20210710-testing" if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	if "!version_local!" == "4.0.2-20210710" if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
 	(set/A exit_code=0)
-	(set exit_msg=update done)
+	(set exit_msg=update done!)
 	cls
 	(echo !exit_msg!)
 )

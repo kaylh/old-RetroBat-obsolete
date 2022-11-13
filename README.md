@@ -9,13 +9,13 @@
     </a>
 </p>
 
-RetroBat is a software distribution designed for emulation as the best way to play your game collection on your Windows computer. The provided EmulationStation interface is fully functional and highly customizable. You can launch all your games from it and search online for medias to pimp your collection.
+RetroBat is designed to automatically configure, EmulationStation’s frontend interface with RetroArch and other stand alone emulators.
 
-RetroBat can download, update and configure all the best available emulators directly from its interface. You can discover or rediscover the best console, arcade or computer games released until today.
+With it you will be able to quickly run games from many compatible ROM collections. This saves hours of configuration and installation time, leaving you free to play your favourite retro games.
 
-No need to get lost in the options of a multitude of software, all the important options are accessible from the same unified interface.
+RetroBat automatically downloads and installs all the relevant software needed to have the best retro gaming experience on your Windows PC.
 
-With RetroBat, you will save lot of time that you can use to play!
+RetroBat can also run in Portable Mode. This means you can play games from an external hard drive or from any removable storage device, as long as the computer meets the minimum requirements.
 
 ## 💻 System Requirements
 
