@@ -92,6 +92,7 @@ emulators\redream
 emulators\retroarch
 emulators\retroarch\shaders
 emulators\rpcs3
+emulators\rpcs3\GuiConfigs
 emulators\ryujinx
 emulators\ryujinx\portable
 emulators\scummvm
