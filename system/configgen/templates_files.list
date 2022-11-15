@@ -88,3 +88,5 @@
 \system\templates\supermodel\opengl32.dll|\emulators\supermodel\opengl32.dll
 \system\templates\winuae\winuae.ini|\emulators\winuae\winuae.ini
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
+\system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
+\system\templates\xenia-canary\xenia-canary.config.toml|\emulators\xenia-canary\xenia-canary.config.toml
