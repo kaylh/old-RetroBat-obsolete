@@ -217,6 +217,40 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./pcsx2qt.menu</path>
+		<name>PCSX2 QT (SSE4) (PlayStation 2)</name>
+		<desc>Run PCSX2 Emulator QT (SSE4) (PlayStation 2).</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<marquee>./media/pcsx2-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./pcsx2qt-avx2.menu</path>
+		<name>PCSX2 QT (AVX2) (PlayStation 2)</name>
+		<desc>Run PCSX2 Emulator QT (AVX2) (PlayStation 2).</desc>
+		<image>./media/pcsx2-logo.png</image>
+		<marquee>./media/pcsx2-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>PCSX2 Team</developer>
+		<publisher>PCSX2 Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./ppsspp.menu</path>
 		<name>PPSSPP (PSP, Homebrews)</name>
 		<desc>Run PPSSPP Emulator (PSP, Homebrews).</desc>
@@ -668,6 +702,23 @@
 		<releasedate />
 		<developer>TeknoGods</developer>
 		<publisher>TeknoGods</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./vita3k.menu</path>
+		<name>Vita 3K (PS Vita)</name>
+		<desc>Run Vita 3K Emulator (PS Vita).</desc>
+		<image>./media/vita3k-logo.png</image>
+		<marquee>./media/vita3k-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Vita3K Team</developer>
+		<publisher>Vita3K Team</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
