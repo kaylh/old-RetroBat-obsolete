@@ -13,7 +13,7 @@ set name=retrobat
 
 :: ---- PROCESSOR ARCHITECTURE INFO ----
 
-Reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > nul && set archx=x86 || set archx=x86_64
+Reg Query "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" | find /i "AMD64" > nul && (set archx=x86_64) || (set archx=x86)
 
 if "%archx%"=="x86_64" (set arch=win64)
 if "%archx%"=="x86" (set arch=win32)
