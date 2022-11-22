@@ -61,7 +61,7 @@ if "%extract_pkg%"=="es" (
 	call :set_modules
 	call :set_install
 	
-	set package_file=!name!-v!version_local!.!archive_format!
+	set package_file=!name!-v!version_remote!.!archive_format!
 	
 	call :extract_es
 	call :exit_door
@@ -229,6 +229,22 @@ if exist "!download_path!\!package_file!" (
 	set destination_path=!root_path!
 	if not exist "!extraction_path!\." md "!extraction_path!"
 	
+	if "!version_local!" == "4.0.2-20210710" (
+	
+		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
+		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
+		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
+		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+	)
+	
+	if "!version_local!" == "4.0.2-20210710-testing" (
+	
+		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
+		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
+		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
+		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+	)
+	
 	for %%i in %folder_list% do (
 	
 		"%system_path%\modules\rb_updater\7za.exe" -y x "!download_path!\!package_file!" -aoa -o"!extraction_path!" "%%i\*" >nul
@@ -310,6 +326,11 @@ for %%i in %folder_list% do (
 			)
 			if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%extraction_path%\%%i" to "!root_path!\%%i")>> "!root_path!\emulationstation\%log_file%")
 		)
+	)
+	
+	for /f "usebackq delims=" %%x in ("%system_path%\configgen\exclude_emulators_files.lst") do (
+	
+		if not exist "%emulators_path%\%%x" copy "%extraction_path%\emulators\%%x" "%emulators_path%\%%x" /Y >nul
 	)
 	
 	(set/A task_count+=1)
@@ -501,7 +522,7 @@ if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emula
 
 if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
 
-if not exist "!system_path!\configgen\exclude_emulationstation_files.lst" (
+if not exist "%system_path%\configgen\exclude_emulationstation_files.lst" (
 	(set/A exit_code=2)
 	(set exit_msg=updater script is missing)
 	call :exit_door
@@ -553,8 +574,12 @@ if %progress_percent% EQU 100 (
 
 	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
 	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
-	if "!version_local!" == "4.0.2-20210710-testing" if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
-	if "!version_local!" == "4.0.2-20210710" if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	if "!version_local!" == "4.0.2-20210710-testing" (
+		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	)
+	if "!version_local!" == "4.0.2-20210710" (
+		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	)
 	(set/A exit_code=0)
 	(set exit_msg=update done!)
 	cls

@@ -693,6 +693,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./3dsen.menu</path>
+		<name>3DSen (nes 3D emulator)</name>
+		<desc>Run 3DSen (nes 3D).</desc>
+		<image>./media/3dsen-logo.png</image>
+		<marquee>./media/3dsen-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Geod Studio</developer>
+		<publisher>Geod Studio</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./teknoparrot.menu</path>
 		<name>TeknoParrot (Arcade)</name>
 		<desc>Run TeknoParrot (Arcade). This software is not provided by RetroBat. You can download it here: https://teknoparrot.com/Home/Download</desc>
