@@ -2,6 +2,7 @@ Core:
   PPU Decoder: Recompiler (LLVM)
   PPU Threads: 2
   PPU Debug: false
+  PPU Calling History: false
   Save LLVM logs: false
   Use LLVM CPU: ""
   Max LLVM Compile Threads: 0
@@ -10,8 +11,8 @@ Core:
   Thread Scheduler Mode: Operating System
   Set DAZ and FTZ: false
   SPU Decoder: Recompiler (LLVM)
-  Lower SPU thread priority: false
-  SPU GETLLAR polling detection: false
+  SPU Reservation Busy Waiting Percentage: 0
+  SPU GETLLAR Busy Waiting Percentage: 100
   SPU Debug: false
   MFC Debug: false
   Preferred SPU Threads: 0
@@ -21,20 +22,30 @@ Core:
   SPU Block Size: Safe
   Accurate GETLLAR: false
   Accurate SPU DMA: false
+  Accurate SPU Reservations: true
   Accurate Cache Line Stores: false
   Accurate RSX reservation access: false
+  RSX FIFO Accuracy: Fast
   SPU Verification: true
   SPU Cache: true
   SPU Profiler: false
+  MFC Commands Shuffling Limit: 0
+  MFC Commands Timeout: 0
+  MFC Commands Shuffling In Steps: false
   Enable TSX: Disabled
   Accurate xfloat: false
   Approximate xfloat: true
-  LLVM Accurate DFMA: true
-  PPU LLVM Java Mode Handling: true
+  Relaxed xfloat: true
   Accurate PPU 128-byte Reservation Op Max Length: 0
-  PPU LLVM Accurate Vector NaN values: false
   Stub PPU Traps: 0
   Full Width AVX-512: false
+  PPU LLVM Java Mode Handling: true
+  Use Accurate DFMA: true
+  PPU Set Saturation Bit: false
+  PPU Accurate Non-Java Mode: false
+  PPU Fixup Vector NaN Values: false
+  PPU Accurate Vector NaN Values: false
+  PPU Set FPCC Bits: false
   Debug Console Mode: false
   Hook static functions: false
   Libraries Control:
@@ -45,39 +56,15 @@ Core:
   TSX Transaction First Limit: 800
   TSX Transaction Second Limit: 2000
   Clocks scale: 100
-  Sleep Timers Accuracy: Usleep Only
-  Performance Report Threshold: 500
-  Enable Performance Report: false
-  PPU Calling History: false
-  SPU Reservation Busy Waiting Percentage: 0
-  SPU GETLLAR Busy Waiting Percentage: 100
-  Accurate SPU Reservations: true
-  RSX FIFO Accuracy: Fast
-  MFC Commands Shuffling Limit: 0
-  MFC Commands Timeout: 0
-  MFC Commands Shuffling In Steps: false
-  Relaxed xfloat: true
-  Use Accurate DFMA: true
-  PPU Set Saturation Bit: false
-  PPU Accurate Non-Java Mode: false
-  PPU Fixup Vector NaN Values: false
-  PPU Accurate Vector NaN Values: false
-  PPU Set FPCC Bits: false
   SPU Wake-Up Delay: 0
   SPU Wake-Up Delay Thread Mask: 63
   Max CPU Preempt Count: 0
   Allow RSX CPU Preemptions: true
+  Sleep Timers Accuracy: Usleep Only
+  Performance Report Threshold: 500
+  Enable Performance Report: false
   Assume External Debugger: false
 VFS:
-  $(EmulatorDir): ""
-  /dev_hdd0/: $(EmulatorDir)dev_hdd0/
-  /dev_hdd1/: $(EmulatorDir)dev_hdd1/
-  /dev_flash/: $(EmulatorDir)dev_flash/
-  /dev_flash2/: $(EmulatorDir)dev_flash2/
-  /dev_flash3/: $(EmulatorDir)dev_flash3/
-  /dev_usb000/: $(EmulatorDir)dev_usb000/
-  /dev_bdvd/: ""
-  /app_home/: ""
   Enable /host_root/: false
   Initialize Directories: true
   Limit disk cache size: false
@@ -88,8 +75,10 @@ Video:
   Resolution: 1280x720
   Aspect ratio: 16:9
   Frame limit: Auto
+  Second Frame Limit: 0.000000
   MSAA: Auto
   Shader Mode: Async Shader Recompiler
+  Shader Precision: High
   Write Color Buffers: false
   Write Depth Buffer: false
   Read Color Buffers: false
@@ -104,6 +93,7 @@ Video:
   Force High Precision Z buffer: false
   Strict Rendering Mode: false
   Disable ZCull Occlusion Queries: false
+  Disable Video Output: false
   Disable Vertex Cache: false
   Disable FIFO Reordering: false
   Enable Frame Skip: false
@@ -112,31 +102,34 @@ Video:
   Disable Vulkan Memory Allocator: false
   Use full RGB output range: true
   Strict Texture Flushing: false
-  Disable native float16 support: false
   Multithreaded RSX: false
   Relaxed ZCULL Sync: false
   Enable 3D: false
   Debug Program Analyser: false
+  Accurate ZCULL stats: true
   Consecutive Frames To Draw: 1
   Consecutive Frames To Skip: 1
   Resolution Scale: 100
   Anisotropic Filter Override: 0
-  Texture LOD Bias Addend: 0
+  Texture LOD Bias Addend: 0.000000
   Minimum Scalable Dimension: 16
   Shader Compiler Threads: 0
   Driver Recovery Timeout: 1000000
   Driver Wake-Up Delay: 1
   Vblank Rate: 60
+  Vblank NTSC Fixup: false
   DECR memory layout: false
+  Allow Host GPU Labels: false
+  Disable MSL Fast Math: false
   Vulkan:
     Adapter: NVIDIA GeForce RTX 3080
     Force FIFO present mode: false
     Force primitive restart flag: false
-    Force Disable Exclusive Fullscreen Mode: false
+    Exclusive Fullscreen Mode: Automatic
     Asynchronous Texture Streaming 2: false
-    Asynchronous Queue Scheduler: Device
     Enable FidelityFX Super Resolution Upscaling: false
     FidelityFX CAS Sharpening Intensity: 50
+    Asynchronous Queue Scheduler: Safe
   Performance Overlay:
     Enabled: false
     Enable Framerate Graph: false
@@ -166,47 +159,41 @@ Video:
     Allow custom background: true
     Darkening effect strength: 30
     Blur effect strength: 0
-  Disable Video Output: false
-  Accurate ZCULL stats: true
-  Vblank NTSC Fixup: false
-  Allow Host GPU Labels: false
-  Disable MSL Fast Math: false
-  Software VkSemaphore: false
 Audio:
-  Renderer: XAudio2
+  Renderer: Cubeb
+  Audio Provider: CellAudio
+  RSXAudio Avport: HDMI 0
   Dump to file: false
   Convert to 16 bit: false
-  Audio Channels: Downmix to Stereo
-  Start Threshold: 1
+  Audio Format: Stereo
+  Audio Formats: 0
+  Audio Device: "@@@default@@@"
   Master Volume: 100
   Enable Buffering: true
   Desired Audio Buffer Duration: 100
-  Sampling Period Multiplier: 100
   Enable Time Stretching: false
+  Disable Sampling Skip: false
   Time Stretching Threshold: 75
   Microphone Type: "Null"
   Microphone Devices: "@@@@@@@@@@@@"
-  Audio Provider: CellAudio
-  RSXAudio Avport: HDMI 0
-  Audio Format: Downmix to Stereo
-  Audio Formats: 0
-  Audio Device: "@@@default@@@"
   Music Handler: Qt
 Input/Output:
   Keyboard: "Null"
   Mouse: Basic
   Camera: "Null"
   Camera type: Unknown
-  Move: "Null"
-  Buzz emulated controller: "Null"
   Camera flip: None
   Camera ID: Default
+  Move: "Null"
+  Buzz emulated controller: "Null"
+  Turntable emulated controller: "Null"
+  GHLtar emulated controller: "Null"
   Pad handler mode: Single-threaded
   Pad handler sleep (microseconds): 1000
   Background input enabled: true
   Show move cursor: false
 System:
-  License Area: SCEA
+  License Area: SCEH
   Language: English (US)
   Keyboard Type: English keyboard (US standard)
   Enter button assignment: Enter with cross
@@ -219,6 +206,11 @@ Net:
   DNS address: 8.8.8.8
   IP swap list: ""
   PSN status: Disconnected
+Savestate:
+  Start Paused: false
+  Suspend Emulation Savestate Mode: false
+  Inspection Mode Savestates: false
+  Save Disc Game Data: false
 Miscellaneous:
   Automatically start games after boot: true
   Exit RPCS3 when process finishes: true
@@ -231,8 +223,3 @@ Miscellaneous:
   Silence All Logs: false
   Window Title Format: "FPS: %F | %R | %V | %T [%t]"
 Log: {}
-Savestate:
-  Start Paused: false
-  Suspend Emulation Savestate Mode: true
-  Inspection Mode Savestates: false
-  Save Disc Game Data: false
