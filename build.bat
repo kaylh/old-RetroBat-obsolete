@@ -20,7 +20,7 @@ set get_batocera_ports=1
 set get_bios=1
 set get_decorations=1
 set get_default_theme=1
-set get_emulationstation=0
+set get_emulationstation=1
 set get_emulators=0
 set get_lrcores=1
 set get_mega_bezels=0
@@ -519,7 +519,7 @@ echo :: CREATING ARCHIVE...
 call :check_version
 
 set package_file=%name%-v%release_version%.%archive_format%
-set exclude_list=(exclude.lst hash_list.txt %name%-v%release_version%-setup.exe %name%-v%release_version%-setup.exe.sha256 %name%-v%release_version%.%archive_format%)
+set exclude_list=(exclude.lst hash_list.txt %name%-v%release_version%-setup.exe %name%-v%release_version%-setup.exe.sha256.txt %name%-v%release_version%.%archive_format% %name%-v%release_version%.%archive_format%.sha256.txt)
 
 if not exist "!build_path!\%package_file%" (
 

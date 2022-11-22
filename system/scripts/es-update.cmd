@@ -1,48 +1,28 @@
 @echo off
-setlocal EnableDelayedExpansion
 
+goto:rem
+---------------------------------------
+es-update.cmd
+---------------------------------------
+This Batch script is originally created for RetroBat and to be used by the Windows build of Batocera-EmulationStation.
+It exists in conjunction with other scripts to form an integrated update system within the EmulationStation interface.
+---------------------------------------
+:rem
+
+setlocal EnableDelayedExpansion
+cls
 echo preparing update... ^>^>^> 0%%
 
 set script_type=updater
-set retroarch_version=1.10.3
 
 :: ---- DEBUG SWITCHES ----
 
 set enable_download=1
 set enable_extraction=1
-
-:: ---- UPDATER SWITCHES ----
-
-set update_decorations=1
-set update_default_theme=1
-set update_emulationstation=1
-set update_batocera_ports=1
-set update_games=0
-set update_batgui=0
-set update_retrobat=1
-set update_mega_bezels=0
-set update_bios=1
-
-set update_retroarch=1
-set update_lrcores=1
-
-set update_config=1
-set update_es_settings=0
-set update_es_systems=1
-set update_es_features=1
-set update_es_padtokey=1
-set update_version=1
-
 set download_retry=3
-
-:: ---- PERCENTAGE PROGRESSION ----
-
-:: The emulationstation package doesn't count for progress_total as it will be downloaded but not extracted.
-:: The libretro cores only counts for one for progress_total because we don't want to count all the cores. 
-
-set progress_current=0
-set progress_total=15
-set progress_percent=0
+set archive_format=zip
+set log_file=es-update.log
+set enable_log=1
 
 :: ---- SCRIPT ARGUMENTS ----
 
@@ -68,197 +48,315 @@ if not "%1"=="" (
     goto :loop_arg
 )
 
+:: ---- GET STARTED ----
+
+set/A progress_percent=0
+
+set folder_list=(bios decorations emulators library roms saves screenshots system)
+set file_list=(exe dat txt)
+set modules_list=(7za wget)
+
 if "%extract_pkg%"=="es" (
+	call :set_root
+	call :set_modules
+	call :set_install
+	
+	set package_file=!name!-v!version_remote!.!archive_format!
+	
 	call :extract_es
+	call :exit_door
 	goto :eof
 )
 
-:: ---- GET STARTED ----
+set/A task_computing=1
+if %task_computing% EQU 1 (
 
-call :set_root
-call :set_install
-call :set_updater
+	if "%enable_download%" == "1" (call :download)
+	call :check_hash
+	if "%enable_extraction%" == "1" (call :extract)
+	call :files_copy
+)
 
-:: ---- UPDATE PACKAGES LOOP ----
+if !task_total! GTR 0 ((set/A task_computing=0))
 
-set packages_list=(retrobat batgui bios emulationstation default_theme batocera_ports decorations mega_bezels retroarch)
+if %task_computing% EQU 0 (
 
-for %%i in %packages_list% do (
+	call :set_root
+	call :set_modules
+	call :set_install
 
-	if "!update_%%i!"=="1" (
-		
-		(set package_name=%%i)
-		(set package_file=%%i.7z)
-		(set progress_text=updating !package_name!)
-		(set download_url=!%%i_url!)
-		(set destination_path=!%%i_path!)		
+	set package_file=!name!-v!version_remote!.!archive_format!
+	set download_url=!archive_url!
 
-		if "!package_name!"=="emulationstation" (
-		
-			set package_file=EmulationStation-Win32.zip
-			
-			if "!enable_download!"=="1" (
-			
-				call :download
+	if "%enable_download%" == "1" (call :download)
+	call :check_hash
+	if "%enable_extraction%" == "1" (call :extract)
+	call :files_copy
+	call :exit_door
+	goto :eof
+)
+
+if %task_computing% GTR 0 (
+
+	(set exit_msg=fatal error)
+	(set/A exit_code=4)
+	call :exit_door
+	goto :eof
+
+)
+
+:: ---- LABELS ----
+
+:: ---- DOWNLOAD ----
+
+:download
+
+if %task_computing% EQU 1 (
+	(set/A task_total+=1)
+	goto :eof
+)
+
+set task=download
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
+(set progress_text=downloading update)
+cls
+echo !progress_text!... ^>^>^> !progress_percent!%%
+
+if not exist "!download_path!\." md "!download_path!"
+	
+"%system_path%\modules\rb_updater\wget" --continue --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t %download_retry% -P "%download_path%" %download_url%/%package_file% -q >nul
+"%system_path%\modules\rb_updater\wget" --continue --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t %download_retry% -P "!download_path!" %download_url%/%package_file%.sha256.txt -q >nul
+
+if not exist "!download_path!\!package_file!.sha256.txt" (
+
+	(set/A exit_code=2)
+	(set exit_msg=hash file not found)
+	call :exit_door
+	goto :eof	
+)
+
+if not exist "!download_path!\!package_file!" (
+
+	(set/A exit_code=2)
+	(set exit_msg=update archive not found)
+	call :exit_door
+	goto :eof	
+)
+
+(set/A task_count+=1)
+call :progress
+
+goto :eof
+
+:: ---- CHECK HASH ----
+
+:check_hash
+
+if %task_computing% EQU 1 (
+	(set/A task_total+=1)
+	goto :eof
+)
+
+set task=check_hash
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
+set trusted_hash=0
+set file_hash=0
+(set progress_text=verifying update)
+cls
+echo !progress_text!... ^>^>^> !progress_percent!%%
+
+if exist "!download_path!\!package_file!.sha256.txt" (
+	(set/P trusted_hash=<"!download_path!\!package_file!.sha256.txt")
+	if %enable_log% EQU 1 ((echo %date% %time% [INFO] trusted_hash: !trusted_hash!)>> "!root_path!\emulationstation\%log_file%")
+)
+
+if not "%trusted_hash%" == "0" (
+
+	if exist "!download_path!\!package_file!" (
+
+		set "firstline=1"
+		for /f "skip=1 delims=" %%i in ('certutil -hashfile "!download_path!\!package_file!" SHA256') do (
+			if [!firstline!]==[1] (
+				(set file_hash=%%i)
+				if %enable_log% EQU 1 ((echo %date% %time% [INFO] file_hash: !file_hash!)>> "!root_path!\emulationstation\%log_file%")
+				set "firstline=0"
 			)
+		)
+	)
+)
+
+if not "%trusted_hash%" == "%file_hash%" (
+
+	(set/A exit_code=2)
+	(set exit_msg=corrupted update archive)
+	call :exit_door
+	goto :eof
+)
+
+(set/A task_count+=1)
+call :progress
+
+goto :eof
+
+:: ---- EXTRACTION ----
+
+:extract
+
+if %task_computing% EQU 1 (
+	for %%i in %folder_list% do (
+	
+		(set/A task_total+=1)
+	)
+	
+	for %%i in %file_list% do (
+	
+		(set/A task_total+=1)
+	)
+	
+	goto :eof
+)
+
+set task=extract
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
+if exist "!download_path!\!package_file!" (
+
+	(set progress_text=extracting update)
+	cls
+	echo !progress_text!... ^>^>^> !progress_percent!%%
+	set destination_path=!root_path!
+	if not exist "!extraction_path!\." md "!extraction_path!"
+	
+	if "!version_local!" == "4.0.2-20210710" (
+	
+		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
+		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
+		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
+		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+	)
+	
+	if "!version_local!" == "4.0.2-20210710-testing" (
+	
+		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
+		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
+		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
+		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+	)
+	
+	for %%i in %folder_list% do (
+	
+		"%system_path%\modules\rb_updater\7za.exe" -y x "!download_path!\!package_file!" -aoa -o"!extraction_path!" "%%i\*" >nul
+		if %enable_log% EQU 1 ((echo %date% %time% [INFO] !label! "%%i" from "!download_path!\!package_file!" to "!extraction_path!")>> "!root_path!\emulationstation\%log_file%")		
+		(set/A task_count+=1)
+		call :progress
+	)
+	
+	for %%i in %file_list% do (
+	
+		"%system_path%\modules\rb_updater\7za.exe" -y x "!download_path!\!package_file!" -aoa -o"!extraction_path!" "*.%%i" >nul
+		if %enable_log% EQU 1 ((echo %date% %time% [INFO] !label! "*.%%i" from "!download_path!\!package_file!" to "!extraction_path!")>> "!root_path!\emulationstation\%log_file%")	
+		(set/A task_count+=1)
+		call :progress
+	)
+)
+
+(set/A exit_code=2)
+goto :eof
+
+:: ---- FILES COPY ----
+
+:files_copy
+
+if %task_computing% EQU 1 (
+	for %%i in %folder_list% do (
+	
+		(set/A task_total+=1)
+	)
+	
+	for %%i in %file_list% do (
+	
+		(set/A task_total+=1)
+	)
+	
+	goto :eof	
+)
+
+set task=files_copy
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
+if not exist "!system_path!\configgen\exclude_emulators_files.lst" (
+	(set/A exit_code=2)
+	(set exit_msg=updater script is missing)
+	call :exit_door
+	goto :eof
+)
+
+(set progress_text=updating files)
+cls
+echo !progress_text!... ^>^>^> !progress_percent!%%
+
+if exist "%CD%\exclude.txt" del/Q "%CD%\exclude.txt" >nul
+
+copy "%system_path%\configgen\exclude_emulators_files.lst" "%CD%\exclude.txt" /Y >nul
+
+for %%i in %folder_list% do (
+	
+	if not exist "%extraction_path%\%%i\." md "%extraction_path%\%%i" >nul
+	if exist "%extraction_path%\%%i\." (
+	
+		if "%%i" == "emulators" (
+		
+			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y /I /exclude:exclude.txt >nul
+			if %ERRORLEVEL% NEQ 0 (
+				set/A exit_code=%ERRORLEVEL%
+				call :exit_door
+				goto :eof
+			)
+			if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%extraction_path%\%%i" to "!root_path!\%%i")>> "!root_path!\emulationstation\%log_file%")
 			
 		) else (
 		
-			if "!package_name!"=="default_theme" (set package_file=master.zip)
-			if "!package_name!"=="batocera_ports" (set package_file=batocera-ports.zip)
-			if "!package_name!"=="bios" (set package_file=main.zip)
-			if "!package_name!"=="retroarch" (set package_file=RetroArch.7z)
-			
-			if "!enable_download!"=="1" (
-			
-				call :download
-				set /A progress_current+=!update_%%i!
-				call :progress
-			)			
-			
-			if "!enable_extraction!"=="1" (
-				
-				call :extract
-				set /A progress_current+=!update_%%i!
-				call :progress
-			)				
-		)		
-	)
-)
-
-:: ---- UPDATE LIBRETRO CORES LOOP ----
-
-if "%update_lrcores%"=="1" (
-
-	for /f "usebackq delims=" %%x in ("%system_path%\configgen\lrcores_names.list") do (
-
-		(set package_name=%%x)
-		(set package_file=%%x_libretro.dll.zip)
-		(set progress_text=updating %%x_libretro)
-		(set download_url=%lrcores_url%/!package_file!)
-		(set destination_path=%lrcores_path%)
-
-		if "%enable_download%"=="1" call :download
-		if "%enable_extraction%"=="1" call :extract	
-	)
-	
-	set /A progress_current+=%update_lrcores%
-	call :progress	
-)
-
-:: ---- UPDATE CONFIG ----
-
-if "%update_config%"=="1" (
-
-	for /f "usebackq delims=|" %%f in (`dir /b "%root_path%\system\templates\emulationstation\*.mp4"`) do (
-	
-		move/Y %%f "%emulationstation_path%\.emulationstation\video" >nul
-	)
-
-	if "%update_es_settings%"=="1" (
-		
-		if exist "%emulationstation_path%\.emulationstation\es_settings.cfg.old" del/Q "%emulationstation_path%\.emulationstation\es_settings.cfg.old" >nul		
-		
-		if exist "%emulationstation_path%\.emulationstation\es_settings.cfg" (
-		
-			copy /v /y "%emulationstation_path%\.emulationstation\es_settings.cfg" "%emulationstation_path%\.emulationstation\es_settings.cfg.old" >nul
-			copy /v /y "%emulationstation_path%\..\system\templates\emulationstation\es_settings.cfg" "%emulationstation_path%\.emulationstation\es_settings.cfg" >nul
+			xcopy "%extraction_path%\%%i" "!root_path!\%%i" /e /v /y /I >nul
+			if %ERRORLEVEL% NEQ 0 (
+				set/A exit_code=%ERRORLEVEL%
+				call :exit_door
+				goto :eof
+			)
+			if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%extraction_path%\%%i" to "!root_path!\%%i")>> "!root_path!\emulationstation\%log_file%")
 		)
 	)
 	
-	if "%update_es_systems%"=="1" (
-		
-		if exist "%emulationstation_path%\.emulationstation\es_systems.cfg.old" del/Q "%emulationstation_path%\.emulationstation\es_systems.cfg.old" >nul
+	for /f "usebackq delims=" %%x in ("%system_path%\configgen\exclude_emulators_files.lst") do (
 	
-		if exist "%emulationstation_path%\.emulationstation\es_systems.cfg" (
-			
-			copy /v /y "%emulationstation_path%\.emulationstation\es_systems.cfg" "%emulationstation_path%\.emulationstation\es_systems.cfg.old" >nul
-			copy /v /y "%emulationstation_path%\..\system\templates\emulationstation\es_systems_retrobat.cfg" "%emulationstation_path%\.emulationstation\es_systems.cfg" >nul
-		)
+		if not exist "%emulators_path%\%%x" copy "%extraction_path%\emulators\%%x" "%emulators_path%\%%x" /Y >nul
 	)
 	
-	if "%update_es_features%"=="1" (
-		
-		if exist "%emulationstation_path%\.emulationstation\es_features.cfg.old" del/Q "%emulationstation_path%\.emulationstation\es_features.cfg.old" >nul
-	
-		if exist "%emulationstation_path%\.emulationstation\es_features.cfg" (
-		
-			copy /v /y "%emulationstation_path%\.emulationstation\es_features.cfg" "%emulationstation_path%\.emulationstation\es_features.cfg.old" >nul
-			copy /v /y "%emulationstation_path%\..\system\templates\emulationstation\es_features.cfg" "%emulationstation_path%\.emulationstation\es_features.cfg" >nul
-		)
-	)
-	
-	if "%update_es_padtokey%"=="1" (
-		
-		if exist "%emulationstation_path%\.emulationstation\es_padtokey.cfg.old" del/Q "%emulationstation_path%\.emulationstation\es_padtokey.cfg.old" >nul
-	
-		if exist "%emulationstation_path%\.emulationstation\es_padtokey.cfg" (
-		
-			copy /v /y "%emulationstation_path%\.emulationstation\es_padtokey.cfg" "%emulationstation_path%\.emulationstation\es_padtokey.cfg.old" >nul
-			copy /v /y "%emulationstation_path%\..\system\templates\emulationstation\es_padtokey.cfg" "%emulationstation_path%\.emulationstation\es_padtokey.cfg" >nul
-		)
-	)
-	
-	if exist "%root_path%\emulationstation\.emulationstation\video\retrobat-intro.mp4" del/Q "%root_path%\emulationstation\.emulationstation\video\retrobat-intro.mp4" >nul
-	
-	if exist "%root_path%\system\es_menu\retroarch_angle.menu" (
-	
-		copy /v /y "%root_path%\system\es_menu\retroarch_angle.menu" "%root_path%\system\es_menu\retroarch_angle.menu.old" >nul 
-		del/Q "%root_path%\system\es_menu\retroarch_angle.menu" >nul
-	)
-	
-	if exist "%root_path%\emulators\retroarch\retroarch_angle.exe" del/Q "%root_path%\emulators\retroarch\retroarch_angle.exe" >nul
-	
-	if exist "%root_path%\system\templates\emulationstation\notice.pdf" copy /v /y "%root_path%\system\templates\emulationstation\notice.pdf" "%root_path%\emulationstation\.emulationstation\notice.pdf" >nul
-	
-	rem if exist "%root_path%\emulators\supermodel\Supermodel.ini" del/Q "%root_path%\emulators\supermodel\Supermodel.ini" >nul
-	rem if exist "%root_path%\system\templates\supermodel\Supermodel.ini" if exist "%root_path%\emulators\supermodel\Config\Supermodel.ini" del/Q "%root_path%\emulators\supermodel\Config\Supermodel.ini" >nul
-	if not exist "%root_path%\emulators\supermodel\Config\Supermodel.ini" if exist "%root_path%\system\templates\supermodel\Supermodel.ini" copy /v /y "%root_path%\system\templates\supermodel\Supermodel.ini" "%root_path%\emulators\supermodel\Config\Supermodel.ini" >nul
-	
-	if exist "%root_path%\roms\n64dd\*.*" if exist "%root_path%\roms\64dd\." copy/Y "%root_path%\roms\n64dd\*.*" "%root_path%\roms\64dd" >nul
-	if exist "%root_path%\roms\n64dd\." rd /S /Q "%root_path%\roms\n64dd"
-	rem if exist "%emulationstation_path%\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" ren "%emulationstation_path%\.emulationstation\themes\es-theme-carbon\art\logos\64dd.svg" "_64dd.svg" >nul
-	
-	set progress_text=updating configuration
-	set /A progress_current+=%update_config%
+	(set/A task_count+=1)
 	call :progress
 )
 
-:: ---- CHECK IF COMPLETE ----
+for %%i in %file_list% do (
 
-if "!progress_percent!"=="100" (
+	if exist "%extraction_path%\*.%%i" (
 	
-	if "!update_version!"=="1" (
-	
-		if exist "%emulationstation_path%\version.info" del/Q "%emulationstation_path%\version.info" >nul
-		if exist "%emulationstation_path%\about.info" del/Q "%emulationstation_path%\about.info" >nul
-		if exist "!root_path!\system\version.info" del/Q "!root_path!\system\version.info" >nul
-		
-		(echo|set/p=%version_remote%)>"%emulationstation_path%\version.info"
-		(echo|set/p=RETROBAT)>"%emulationstation_path%\about.info"
-		(echo|set/p=%version_remote%)>"!root_path!\system\version.info"
+		xcopy "%extraction_path%\*.%%i" "!root_path!" /y >nul
+		if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! "%extraction_path%\*.%%i" to "!root_path!")>> "!root_path!\emulationstation\%log_file%")
+			
 	)
 	
-	set exit_msg=update complete!
-	set exit_code=0
-	call :exit_door
-	goto :eof
-	
-) else (
-
-	set exit_msg=error: update failed!
-	set exit_code=1
-	call :exit_door
-	goto :eof
+	(set/A task_count+=1)
+	call :progress
 )
 
-:: ---- FUNCTIONS ----
+goto :eof
 
 :: ---- SET ROOT PATH ----
 
 :set_root
 
-cd ..
+set task=set_root
 
 set current_file=%~nx0
 set current_drive="%cd:~0,2%"
@@ -266,8 +364,82 @@ set current_dir="%cd:~3%"
 set current_drive=%current_drive:"=%
 set current_dir=%current_dir:"=%
 set current_path=!current_drive!\!current_dir!
-
 set root_path=!current_path!
+
+set "reg_path=HKCU\Software\RetroBat"
+set "reg_key=LatestKnownInstallPath"
+
+reg query "HKCU\Software\RetroBat" /v "%reg_key%" >nul 2>&1
+
+if %ERRORLEVEL% EQU 0 (
+
+	for /f "tokens=2* skip=2" %%a in ('reg query %reg_path% /v %reg_key%') do (
+		
+		set install_path=%%b
+		set install_path=!install_path:~0,-1!
+	)
+
+) else (
+
+	(set/A exit_code=3)
+	(set exit_msg=can't found install path)
+	call :exit_door
+	goto :eof
+)
+
+if %enable_log% EQU 1 (
+
+	if not "%extract_pkg%" == "es" if not "%log_file%" == "" if exist "%CD%\%log_file%" del/Q "%CD%\%log_file%" >nul
+	(echo %date% %time% [START] Run: !current_file!)>> "%CD%\%log_file%"
+	(echo %date% %time% [LABEL] :!task!)>> "%CD%\%log_file%"
+	(echo %date% %time% [INFO] Current Path: "!current_path!")>> "%CD%\%log_file%"
+	(echo %date% %time% [INFO] Install Path: "!install_path!")>> "%CD%\%log_file%"
+)
+
+if not "!root_path!" == "!install_path!\emulationstation" (
+
+	(set/A exit_code=3)
+	(set exit_msg=install path mismatch)
+	call :exit_door
+	goto :eof
+
+) else (
+
+	(set root_path=!install_path!)
+	if %enable_log% EQU 1 ((echo %date% %time% [INFO] Root Path: "!root_path!")>> "!root_path!\emulationstation\%log_file%")
+	
+)
+
+goto :eof
+
+:: ---- SET MODULES ----
+
+:set_modules
+
+set task=set_modules
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
+(set/A found_total=0)
+
+for %%i in %modules_list% do (
+
+	(set/A found_%%i=0)
+	(set/A found_total=!found_total!+1)
+	(set package_name=%%i)
+	(set modules_path=!root_path!\system\modules\rb_updater)
+	
+	if exist "!modules_path!\!package_name!.exe" ((set/A found_%%i=!found_%%i!+1))
+	
+	(set/A found_total=!found_total!-!found_%%i!)		
+)
+
+if !found_total! NEQ 0 (
+	
+	(set/A exit_code=2)
+	(set exit_msg=updater modules are missing)
+	call :exit_door
+	goto :eof
+)
 
 goto :eof
 
@@ -275,10 +447,13 @@ goto :eof
 
 :set_install
 
+set task=set_install
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
+
 :: ---- SET TMP FILE ----
 
 set "tmp_infos_file=!root_path!\emulationstation\rb_infos.tmp"
-if exist "%tmp_infos_file%" del/Q "%tmp_infos_file%"
+if not "%tmp_infos_file%" == "" if exist "%tmp_infos_file%" del/Q "%tmp_infos_file%" >nul
 
 :: ---- CALL SHARED VARIABLES SCRIPT ----
 
@@ -289,7 +464,8 @@ if exist "!root_path!\system\scripts\shared-variables.cmd" (
 	
 ) else (
 
-	set error_msg=missing rb_updater script!
+	(set/A exit_code=2)
+	(set exit_msg=updater script is missing)
 	call :exit_door
 	goto :eof
 
@@ -303,129 +479,27 @@ if exist "%tmp_infos_file%" (
 	
 ) else (
 
-	set error_msg=missing rb_updater script!
-	set exit_code=2
+	(set/A exit_code=2)
+	(set exit_msg=updater script is missing)
 	call :exit_door
 	goto :eof
+)
+
+if %enable_log% EQU 1 (
+	(echo %date% %time% [INFO] Current Version: %name%-%version_local%)>> "!root_path!\emulationstation\%log_file%"
+	(echo %date% %time% [INFO] Available Version: %name%-%version_remote%)>> "!root_path!\emulationstation\%log_file%"
+	(echo %date% %time% [INFO] Download Path: "!download_path!")>> "!root_path!\emulationstation\%log_file%"
 )
 
 :: ---- WINDOW TITLE ----
 
-title %name% Updater Script
+title %name% updater script
 
-goto :eof
+:: ---- KILL PROCESS ----
 
-:: ---- MODULES VERIFICATION ----
+:: Kill the process listed in kill_process.list if they are running
 
-:set_updater
-
-if not exist "%system_path%\modules\rb_updater\*.*" (
-
-	set error_msg=missing rb_updater modules!
-	set exit_code=2
-	call :exit_door
-	goto :eof
-)
-
-goto :eof
-
-:: ---- DOWNLOAD PACKAGES ----
-
-:download
-
-if "!package_name!"=="mame2016" (
-
-	set download_url=https://www.retrobat.ovh/repo/%arch%/legacy/lrcores
-)
-
-"%system_path%\modules\rb_updater\wget" --no-check-certificate --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t %download_retry% -P "%download_path%" !download_url!/!package_file! -q >nul
-
-if "!package_name!"=="emulationstation" (
-		
-	set package_file=emulationstation.zip
-	
-	if exist "%download_path%\EmulationStation-Win32.zip" (
-	
-		cd "%download_path%"
-		ren "EmulationStation-Win32.zip" "!package_file!"
-		cd "%root_path%"
-	)
-)
-
-if not exist "%download_path%\%package_file%" (
-
-	set exit_msg=error: package not found!
-	set exit_code=1
-	call :exit_door
-	goto :eof
-	
-) else (
-
-	goto :eof
-)
-
-:: ---- EXTRACT PACKAGES ----
-
-:extract
-
-if not exist "%extraction_path%\." md "%extraction_path%" >nul
-"%system_path%\modules\rb_updater\7za.exe" -y x "%download_path%\%package_file%" -aoa -o"%extraction_path%" >nul
-
-set true=1
-
-if "!package_name!"=="bios" (
-	
-	set true=0
-	xcopy "%extraction_path%\RetroBat-BIOS-main" "%destination_path%" /e /v /y >nul
-)
-
-if "!package_name!"=="default_theme" (
-	
-	set true=0
-	xcopy "%extraction_path%\es-theme-carbon-master" "%destination_path%\es-theme-carbon" /e /v /y >nul
-)
-
-if "!package_name!"=="retroarch" (
-
-	set true=0
-	
-	if exist "%retroarch_path%\*.dll" del/Q "%retroarch_path%\*.dll"
-	
-	if "%archx%"=="x86_64" (
-				
-		xcopy "%extraction_path%\RetroArch-Win64" "%destination_path%" /e /v /y >nul
-		rmdir /s /q "%download_path%\extract\RetroArch-Win64" >nul
-	)
-	
-	if "%archx%"=="x86" (
-	
-		xcopy "%extraction_path%\RetroArch" "%destination_path%" /e /v /y >nul
-		rmdir /s /q "%download_path%\extract\RetroArch" >nul
-	)
-	
-) 
-
-if "%true%"=="1" (
-
-	xcopy "%extraction_path%" "%destination_path%" /e /v /y >nul
-)
-
-if "!package_name!"=="retrobat" (
-		
-	for /f "usebackq delims=" %%x in ("%system_path%\configgen\retrobat_tree.list") do (
-			
-		if not exist "%root_path%\%%x\." md "%root_path%\%%x" >nul
-	)
-			
-	for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") do (
-			
-		if not exist "%root_path%\roms\%%x\." md "%root_path%\roms\%%x" >nul
-		if not exist "%root_path%\saves\%%x\." md "%root_path%\saves\%%x" >nul
-	)
-)	
- 
-rmdir /s /q "%download_path%\extract" >nul
-del/Q "%download_path%\%package_file%" >nul
+if exist "!root_path!\retrobat.exe" "!root_path!\retrobat.exe" #killProcess
 
 goto :eof
 
@@ -433,26 +507,99 @@ goto :eof
 
 :progress
 
-set /a progress_percent=100*!progress_current!/progress_total
+cls
+set/A progress_percent=100*!task_count!/task_total
 echo !progress_text!... ^>^>^> !progress_percent!%%
 
 goto :eof
 
-:: ---- EXTRACT EMULATIONSTATION ----
+:: ---- EXTRACT ES ----
 
 :extract_es
 
-set package_file=emulationstation.zip
-"%CD%\system\modules\rb_updater\7za.exe" -y x "%CD%\system\download\%package_file%" -aoa -o"%CD%\emulationstation" >nul
-del/Q "%CD%\system\download\%package_file%" >nul
+set task=extract_es
+if %enable_log% EQU 1 ((echo %date% %time% [LABEL] :!task!)>> "!root_path!\emulationstation\%log_file%")
 
-exit
+if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
+
+if not exist "%system_path%\configgen\exclude_emulationstation_files.lst" (
+	(set/A exit_code=2)
+	(set exit_msg=updater script is missing)
+	call :exit_door
+	goto :eof
+)
+
+copy "%system_path%\configgen\exclude_emulationstation_files.lst" "%system_path%\scripts\exclude.txt" /Y >nul
+
+if exist "%download_path%\%package_file%" (
+
+	if not exist "!extraction_path!\emulationstation\." md "!extraction_path!\emulationstation" >nul
+	"%system_path%\modules\rb_updater\7za.exe" -y x "!download_path!\!package_file!" -aoa -o"!extraction_path!" "emulationstation\*" >nul
+	set/A exit_code=%ERRORLEVEL%
+	if !exit_code! NEQ 0 (
+		(set exit_msg=failed to extract files)
+		call :exit_door
+		goto :eof
+	)
+	if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%download_path%\%package_file%" to "!extraction_path!\emulationstation")>> "%root_path%\emulationstation\%log_file%")
+
+	xcopy "%extraction_path%\emulationstation" "!root_path!\emulationstation" /e /v /y /I /exclude:exclude.txt >nul
+	set/A exit_code=%ERRORLEVEL%
+	if !exit_code! NEQ 0 (
+		(set exit_msg=failed to copy files)
+		call :exit_door
+		goto :eof
+	)
+	if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%extraction_path%\emulationstation" to "%root_path%\emulationstation")>> "%root_path%\emulationstation\%log_file%")
+
+	if !exit_code! EQU 0 (
+	
+		(set exit_msg=update complete!)
+		if exist "!download_path!\!package_file!" del/Q "!download_path!\!package_file!" >nul
+		if exist "!download_path!\!package_file!.sha256.txt" del/Q "!download_path!\!package_file!.sha256.txt" >nul
+		if exist "!extraction_path!\" rd /S /Q "!extraction_path!" >nul
+		if exist "!system_path!\scripts\exclude.txt" del/Q "!system_path!\scripts\exclude.txt" >nul
+	)
+)
+
+goto :eof
 
 :: ---- EXIT ----
 
 :exit_door
 
-::if exist "%emulationstation_path%\rb_updater.log" del/Q "%emulationstation_path%\rb_updater.log" >nul
-::(echo %exit_msg%)>> "%emulationstation_path%\rb_updater.log"
-::(echo exit_code=!exit_code!)>> "%emulationstation_path%\rb_updater.log"
+(echo %exit_msg%)
+
+if %progress_percent% EQU 100 (
+
+	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
+	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
+	if "!version_local!" == "4.0.2-20210710-testing" (
+		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	)
+	if "!version_local!" == "4.0.2-20210710" (
+		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
+	)
+	(set/A exit_code=0)
+	(set exit_msg=update done!)
+	cls
+	(echo !exit_msg!)
+)
+
+if %enable_log% EQU 1 (
+
+	if "!task!" == "set_root" if !exit_code! EQU 1 (
+	
+		(echo %date% %time% [INFO] !exit_msg!)>> "%CD%\%log_file%"
+		(echo %date% %time% [END] !exit_code!)>> "%CD%\%log_file%"
+	
+	) 
+	
+	if not "!task!" == "set_root" (
+	
+		(echo %date% %time% [INFO] !exit_msg!)>> "!root_path!\emulationstation\%log_file%"
+		(echo %date% %time% [END] !exit_code!)>> "!root_path!\emulationstation\%log_file%"	
+	)
+)
+
 exit !exit_code!
