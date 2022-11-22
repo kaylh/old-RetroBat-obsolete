@@ -1,4 +1,5 @@
 build/
+patch/
 *.log
 retrobat.ini
 *.bak
