@@ -101,7 +101,7 @@ Unicode true
 
 Name "${PRODUCT}"
 OutFile "retrobat-v5-updater-patch.exe"
-InstallDir "C:\${BASE_TARGET}"
+InstallDir "C:\${BASE_TARGET}\"
 InstallDirRegKey HKCU "${PRODUCT_DIR_REGKEY}" "LatestKnownInstallPath"
 ShowInstDetails "hide"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"

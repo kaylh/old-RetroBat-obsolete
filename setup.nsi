@@ -29,7 +29,7 @@ Unicode true
 
 Name "${PRODUCT}"
 OutFile "${FILENAME}-v${VERSION}-setup.exe"
-InstallDir "C:\${BASE_TARGET}"
+InstallDir "C:\${BASE_TARGET}\"
 ShowInstDetails "hide"
 BrandingText "(c) ${PRODUCT_PUBLISHER}"
 SpaceTexts none
