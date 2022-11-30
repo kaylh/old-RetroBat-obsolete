@@ -50,7 +50,7 @@ set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia)
 set script_type=builder
 set user_choice=0
 set git_branch=master
-set branch=beta
+set branch=stable
 set release_version=null
 set log_file=build.log
 set exit_timeout=0
@@ -466,7 +466,13 @@ if exist "!system_path!\templates\emulationstation\music\*.ogg" xcopy /v /y "!sy
 if not exist "!build_path!\system\version.info" (
 
 	(set timestamp=%date:~6,4%%date:~3,2%%date:~0,2%)
-	(set release_version=%retrobat_version%-!timestamp!-%branch%-%arch%)
+	
+	if "%branch%" == "stable" (
+		(set release_version=%retrobat_version%-%branch%-%arch%)
+	) else (
+		(set release_version=%retrobat_version%-!timestamp!-%branch%-%arch%)
+	)
+	
 	(echo|set/P=!release_version!)> "!build_path!\system\version.info"	
 )
 
