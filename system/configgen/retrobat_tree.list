@@ -80,6 +80,8 @@ emulators\pcsx2
 emulators\pcsx2-16
 emulators\pcsx2-16\inis
 emulators\pcsx2\inis
+emulators\pcsx2qt
+emulators\pcsx2qt\inis
 emulators\ppsspp
 emulators\ppsspp\memstick
 emulators\ppsspp\memstick\PSP
@@ -102,6 +104,7 @@ emulators\solarus
 emulators\steam
 emulators\supermodel
 emulators\supermodel\Config
+emulators\vita3k
 emulators\vpinball
 emulators\xemu
 emulators\xenia
