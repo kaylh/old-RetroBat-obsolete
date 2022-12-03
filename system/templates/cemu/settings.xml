@@ -53,11 +53,11 @@
         <device>00000000000000000000000000000000</device>
         <VSync>0</VSync>
         <GX2DrawdoneSync>true</GX2DrawdoneSync>
-        <PrecompiledShaders>0</PrecompiledShaders>
-        <vertex_cache_accuary>0</vertex_cache_accuary>
         <UpscaleFilter>1</UpscaleFilter>
         <DownscaleFilter>0</DownscaleFilter>
         <FullscreenScaling>0</FullscreenScaling>
+        <AsyncCompile>false</AsyncCompile>
+        <vkAccurateBarriers>true</vkAccurateBarriers>
         <Overlay>
             <Position>0</Position>
             <TextColor>4294967295</TextColor>
