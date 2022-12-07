@@ -302,6 +302,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./scummvm.menu</path>
+		<name>ScummVM</name>
+		<desc>Run ScummVM.</desc>
+		<image>./media/scummvm.png</image>
+		<marquee>./media/scummvm.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>ScummVM Team</developer>
+		<publisher>ScummVM Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./xenia_canary.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Run Xenia Canary (Xbox 360).</desc>
