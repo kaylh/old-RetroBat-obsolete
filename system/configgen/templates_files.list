@@ -87,6 +87,8 @@
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
 \system\templates\supermodel\Supermodel.ini|\emulators\supermodel\Config\Supermodel.ini
 \system\templates\supermodel\opengl32.dll|\emulators\supermodel\opengl32.dll
+\system\templates\vita3k\config.yml|\emulators\vita3k\config.yml
+\system\templates\vita3k\user.xml|emulators\vita3k\ux0\user\00\user.xml
 \system\templates\winuae\winuae.ini|\emulators\winuae\winuae.ini
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml

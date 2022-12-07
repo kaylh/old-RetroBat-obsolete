@@ -709,5 +709,22 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./vita3k.menu</path>
+		<name>Vita 3K (PS Vita)</name>
+		<desc>Run Vita 3K Emulator (PS Vita).</desc>
+		<image>./media/vita3k-logo.png</image>
+		<marquee>./media/vita3k-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Vita3K Team</developer>
+		<publisher>Vita3K Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
 
 </gameList>

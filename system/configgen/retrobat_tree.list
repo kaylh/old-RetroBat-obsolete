@@ -103,6 +103,8 @@ emulators\solarus
 emulators\steam
 emulators\supermodel
 emulators\supermodel\Config
+emulators\vita3k
+emulators\vita3k\ux0\user\00
 emulators\vpinball
 emulators\xemu
 emulators\xenia
