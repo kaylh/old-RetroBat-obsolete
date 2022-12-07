@@ -101,3 +101,4 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 - Facebook Group: https://www.facebook.com/groups/retrobat/
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
+- <a class="twitter-timeline" href="https://twitter.com/RetroBat_Off?ref_src=twsrc%5Etfw">Tweets by RetroBat_Off</a>
