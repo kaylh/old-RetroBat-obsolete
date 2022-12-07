@@ -13,6 +13,7 @@ bios\neocd
 bios\pcsx2
 bios\pcsx2\bios
 bios\pcsx2\cheats
+bios\pcsx2\cheats_ni
 bios\pcsx2\cheats_ws
 bios\pcsx2\textures
 bios\quasi88
@@ -127,6 +128,7 @@ saves\ps2\pcsx2
 saves\ps2\pcsx2-16
 saves\ps2\pcsx2-16\memcards
 saves\ps2\pcsx2-16\sstates
+saves\ps2\pcsx2\covers
 saves\ps2\pcsx2\memcards
 saves\ps2\pcsx2\sstates
 saves\psp

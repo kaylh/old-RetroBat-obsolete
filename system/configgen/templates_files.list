@@ -60,6 +60,7 @@
 \system\templates\pcsx2\inis\DEV9Hosts.ini|\emulators\pcsx2\inis\DEV9Hosts.ini
 \system\templates\pcsx2\inis\GS.ini|\emulators\pcsx2\inis\GS.ini
 \system\templates\pcsx2\inis\PAD.ini|\emulators\pcsx2\inis\PAD.ini
+\system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
 \system\templates\pcsx2\inis\PCSX2_ui.ini|\emulators\pcsx2\inis\PCSX2_ui.ini
 \system\templates\pcsx2\inis\PCSX2_vm.ini|\emulators\pcsx2\inis\PCSX2_vm.ini
 \system\templates\pcsx2\inis\SPU2.ini|\emulators\pcsx2\inis\SPU2.ini
