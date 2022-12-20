@@ -93,3 +93,5 @@
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
 \system\templates\xenia-canary\xenia-canary.config.toml|\emulators\xenia-canary\xenia-canary.config.toml
+\system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
+\system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
