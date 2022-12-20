@@ -92,6 +92,8 @@
 \system\templates\winuae\winuae.ini|\emulators\winuae\winuae.ini
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
+\system\templates\xenia\gamecontrollerdb.txt|\emulators\xenia\gamecontrollerdb.txt
 \system\templates\xenia-canary\xenia-canary.config.toml|\emulators\xenia-canary\xenia-canary.config.toml
+\system\templates\xenia-canary\gamecontrollerdb.txt|\emulators\xenia-canary\gamecontrollerdb.txt
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
