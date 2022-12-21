@@ -9,7 +9,7 @@
     </a>
 </p>
 
-RetroBat is designed to automatically configure, EmulationStation’s frontend interface with RetroArch and other stand alone emulators.
+RetroBat is designed to automatically configure EmulationStation’s frontend interface with RetroArch and other stand alone emulators.
 
 With it you will be able to quickly run games from many compatible ROM collections. This saves hours of configuration and installation time, leaving you free to play your favourite retro games.
 

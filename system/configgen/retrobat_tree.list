@@ -42,6 +42,8 @@ emulators
 emulators\3dsen
 emulators\applewin
 emulators\arcadeflashweb
+emulators\bigpemu
+emulators\bigpemu\userdata
 emulators\cemu
 emulators\cemu\mlc01
 emulators\citra
