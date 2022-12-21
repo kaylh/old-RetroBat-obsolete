@@ -17,6 +17,22 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./bigpemu.menu</path>
+		<name>BigPEmu (Jaguar)</name>
+		<desc>Run BigPEmu Emulator (Jaguar).</desc>
+		<image>./media/bigpemu-logo.png</image>
+		<marquee>./media/bigpemu-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Rich Whitehouse</developer>
+		<publisher>Rich Whitehouse</publisher>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./cemu.menu</path>
 		<name>Cemu (Wii U)</name>
 		<desc>Run Cemu Emulator (Wii U).</desc>
