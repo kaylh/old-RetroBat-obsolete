@@ -1,5 +1,6 @@
 \system\resources\retrobat_logo.svg|\emulationstation\resources\splash_retrobat.svg
 \system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
+\system\templates\bigpemu\userdata\BigPEmuConfig.bigpcfg|\emulators\bigpemu\userdata\BigPEmuConfig.bigpcfg
 \system\templates\cemu\settings.xml|\emulators\cemu\settings.xml
 \system\templates\citra\qt-config.ini|\emulators\citra\user\config\qt-config.ini
 \system\templates\cxbx-reloaded\settings.ini|\emulators\cxbx-reloaded\settings.ini
@@ -60,6 +61,7 @@
 \system\templates\pcsx2\inis\DEV9Hosts.ini|\emulators\pcsx2\inis\DEV9Hosts.ini
 \system\templates\pcsx2\inis\GS.ini|\emulators\pcsx2\inis\GS.ini
 \system\templates\pcsx2\inis\PAD.ini|\emulators\pcsx2\inis\PAD.ini
+\system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
 \system\templates\pcsx2\inis\PCSX2_ui.ini|\emulators\pcsx2\inis\PCSX2_ui.ini
 \system\templates\pcsx2\inis\PCSX2_vm.ini|\emulators\pcsx2\inis\PCSX2_vm.ini
 \system\templates\pcsx2\inis\SPU2.ini|\emulators\pcsx2\inis\SPU2.ini
@@ -86,7 +88,13 @@
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
 \system\templates\supermodel\Supermodel.ini|\emulators\supermodel\Config\Supermodel.ini
 \system\templates\supermodel\opengl32.dll|\emulators\supermodel\opengl32.dll
+\system\templates\vita3k\config.yml|\emulators\vita3k\config.yml
+\system\templates\vita3k\user.xml|emulators\vita3k\ux0\user\00\user.xml
 \system\templates\winuae\winuae.ini|\emulators\winuae\winuae.ini
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
+\system\templates\xenia\gamecontrollerdb.txt|\emulators\xenia\gamecontrollerdb.txt
 \system\templates\xenia-canary\xenia-canary.config.toml|\emulators\xenia-canary\xenia-canary.config.toml
+\system\templates\xenia-canary\gamecontrollerdb.txt|\emulators\xenia-canary\gamecontrollerdb.txt
+\system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
+\system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
