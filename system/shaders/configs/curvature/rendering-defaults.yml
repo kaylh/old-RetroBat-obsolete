@@ -6,9 +6,9 @@ default:
   scanline: true
 # Reshader  
 model2:
-  shader: GeomCRT@CRTGeom.fx
+  model2: GeomCRT@CRTGeom.fx
 model3:
-  shader: GeomCRT@CRTGeom.fx
+  supermodel: GeomCRT@CRTGeom.fx
 # Nintendo
 snes:
   shader: crt/crt-geom
@@ -43,6 +43,7 @@ wii:
 # Sega
 dreamcast:
   shader: crt/crt-hyllian-3d
+  demul: GeomCRT@CRTGeom.fx
 sg1000:
   shader: crt/crt-geom
 mastersystem:
@@ -76,8 +77,10 @@ fba:
   shader: crt/crt-geom
 naomi:
   shader: crt/crt-geom
+  demul: GeomCRT@CRTGeom.fx
 atomiswave:
   shader: crt/crt-geom
+  demul: GeomCRT@CRTGeom.fx
 #
 3do:
   shader: crt/crt-geom

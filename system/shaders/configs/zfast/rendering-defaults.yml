@@ -3,9 +3,9 @@ default:
   shader: crt/zfast-crt
 # Reshader  
 model2:
-  shader: EasymodeCRT@CRTEasymode.fx
+  model2: EasymodeCRT@CRTEasymode.fx
 model3:
-  shader: EasymodeCRT@CRTEasymode.fx
+  supermodel: EasymodeCRT@CRTEasymode.fx
 # Retroarch
 gba:
   shader: handheld/zfast-lcd
@@ -29,4 +29,12 @@ wswan:
   shader: handheld/zfast-lcd
 wswanc:
   shader: handheld/zfast-lcd
-  
+dreamcast:
+  shader: crt/zfast-crt
+  demul: EasymodeCRT@CRTEasymode.fx
+naomi:
+  shader: crt/zfast-crt
+  demul: EasymodeCRT@CRTEasymode.fx
+atomiswave:
+  shader: crt/zfast-crt
+  demul: EasymodeCRT@CRTEasymode.fx  
