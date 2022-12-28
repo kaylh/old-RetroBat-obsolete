@@ -14,6 +14,8 @@ daphne:
   daphne: ScanlinesAbs@scanlines-abs.fx
 oricatmos:
   oricutron: ScanlinesAbs@scanlines-abs.fx
+apple2gs:
+  gsplus: ScanlinesAbs@scanlines-abs.fx
 # Nintendo
 snes:
   shader: crt/GritsScanlines
