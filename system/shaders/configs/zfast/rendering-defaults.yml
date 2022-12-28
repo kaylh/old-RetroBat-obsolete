@@ -9,6 +9,8 @@ model3:
 daphne:
   hypseus: EasymodeCRT@CRTEasymode.fx
   daphne: EasymodeCRT@CRTEasymode.fx
+oricatmos:
+  oricutron: EasymodeCRT@CRTEasymode.fx
 # Retroarch
 gba:
   shader: handheld/zfast-lcd

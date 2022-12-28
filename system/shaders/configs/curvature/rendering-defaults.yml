@@ -12,6 +12,8 @@ model3:
 daphne:
   hypseus: GeomCRT@CRTGeom.fx
   daphne: GeomCRT@CRTGeom.fx  
+oricatmos:
+  oricutron: GeomCRT@CRTGeom.fx
 # Nintendo
 snes:
   shader: crt/crt-geom

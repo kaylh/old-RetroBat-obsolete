@@ -12,6 +12,8 @@ model3:
 daphne:
   hypseus: ScanlinesAbs@scanlines-abs.fx
   daphne: ScanlinesAbs@scanlines-abs.fx
+oricatmos:
+  oricutron: ScanlinesAbs@scanlines-abs.fx
 # Nintendo
 snes:
   shader: crt/GritsScanlines

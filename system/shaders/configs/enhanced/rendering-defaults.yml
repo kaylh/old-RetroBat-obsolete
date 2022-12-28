@@ -12,6 +12,8 @@ model3:
 daphne:
   hypseus: xHQ4X@HQ4X.fx
   daphne: xHQ4X@HQ4X.fx
+oricatmos:
+  oricutron: xHQ4X@HQ4X.fx
 # Nintendo
 snes:
   shader: hqx/hq2x
