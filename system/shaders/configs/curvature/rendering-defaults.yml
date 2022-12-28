@@ -9,6 +9,9 @@ model2:
   model2: GeomCRT@CRTGeom.fx
 model3:
   supermodel: GeomCRT@CRTGeom.fx
+daphne:
+  hypseus: GeomCRT@CRTGeom.fx
+  daphne: GeomCRT@CRTGeom.fx  
 # Nintendo
 snes:
   shader: crt/crt-geom

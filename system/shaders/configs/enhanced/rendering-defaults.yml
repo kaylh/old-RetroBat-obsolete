@@ -9,6 +9,9 @@ model2:
   model2: xHQ4X@HQ4X.fx
 model3:
   supermodel: xHQ4X@HQ4X.fx
+daphne:
+  hypseus: xHQ4X@HQ4X.fx
+  daphne: xHQ4X@HQ4X.fx
 # Nintendo
 snes:
   shader: hqx/hq2x

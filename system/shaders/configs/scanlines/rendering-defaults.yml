@@ -9,6 +9,9 @@ model2:
   model2: ScanlinesAbs@scanlines-abs.fx
 model3:
   supermodel: ScanlinesAbs@scanlines-abs.fx
+daphne:
+  hypseus: ScanlinesAbs@scanlines-abs.fx
+  daphne: ScanlinesAbs@scanlines-abs.fx
 # Nintendo
 snes:
   shader: crt/GritsScanlines
