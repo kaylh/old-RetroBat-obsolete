@@ -6,9 +6,16 @@ default:
   scanline: false
 # Reshader  
 model2:
-  shader: xHQ4X@HQ4X.fx
+  model2: xHQ4X@HQ4X.fx
 model3:
-  shader: xHQ4X@HQ4X.fx
+  supermodel: xHQ4X@HQ4X.fx
+daphne:
+  hypseus: xHQ4X@HQ4X.fx
+  daphne: xHQ4X@HQ4X.fx
+oricatmos:
+  oricutron: xHQ4X@HQ4X.fx
+apple2gs:
+  gsplus: xHQ4X@HQ4X.fx  
 # Nintendo
 snes:
   shader: hqx/hq2x
@@ -43,6 +50,7 @@ wii:
 # Sega
 dreamcast:
   shader: anti-aliasing/enhanced-fxaa-tvout
+  demul: xHQ4X@HQ4X.fx
 sg1000:
   shader: hqx/hq2x
 mastersystem:
@@ -68,8 +76,10 @@ fba:
   shader: hqx/hq2x
 naomi:
   shader: anti-aliasing/fxaa
+  demul: xHQ4X@HQ4X.fx
 atomiswave:
   shader: hqx/hq2x
+  demul: xHQ4X@HQ4X.fx
 #
 3do:
   shader: hqx/hq2x

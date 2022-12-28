@@ -6,9 +6,16 @@ default:
   scanline: true
 # Reshader  
 model2:
-  shader: ScanlinesAbs@scanlines-abs.fx
+  model2: ScanlinesAbs@scanlines-abs.fx
 model3:
-  shader: ScanlinesAbs@scanlines-abs.fx  
+  supermodel: ScanlinesAbs@scanlines-abs.fx
+daphne:
+  hypseus: ScanlinesAbs@scanlines-abs.fx
+  daphne: ScanlinesAbs@scanlines-abs.fx
+oricatmos:
+  oricutron: ScanlinesAbs@scanlines-abs.fx
+apple2gs:
+  gsplus: ScanlinesAbs@scanlines-abs.fx
 # Nintendo
 snes:
   shader: crt/GritsScanlines
@@ -43,6 +50,7 @@ wii:
 # Sega
 dreamcast:
   shader: anti-aliasing/fxaa
+  demul: ScanlinesAbs@scanlines-abs.fx
 sg1000:
   shader: crt/GritsScanlines
 mastersystem:
@@ -76,8 +84,10 @@ fba:
   shader: crt/GritsScanlines
 naomi:
   shader: crt/GritsScanlines
+  demul: ScanlinesAbs@scanlines-abs.fx
 atomiswave:
   shader: crt/GritsScanlines
+  demul: ScanlinesAbs@scanlines-abs.fx
 #
 3do:
   shader: crt/GritsScanlines
