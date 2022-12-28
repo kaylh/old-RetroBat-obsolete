@@ -83,6 +83,7 @@
 \system\templates\roms\ps3\example-to-edit.m3u.txt|\roms\ps3\example-to-edit.m3u.txt
 \system\templates\roms\wiiu\example-to-edit.m3u.txt|\roms\wiiu\example-to-edit.m3u.txt
 \system\templates\ryujinx\portable\Config.json|\emulators\ryujinx\portable\Config.json
+\system\templates\scummvm\scummvm.ini|\emulators\scummvm\scummvm.ini
 \system\templates\snes9x\snes9x.conf|\emulators\snes9x\snes9x.conf
 \system\templates\supermodel\ReShade.ini|\emulators\supermodel\ReShade.ini
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
