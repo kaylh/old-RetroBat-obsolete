@@ -623,7 +623,6 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
-
 	<!--<game>
 		<path>./zsnes-dos.menu</path>
 		<name>ZSNES</name>
@@ -652,9 +651,9 @@
 		<developer>Libretro Team</developer>
 		<publisher>Libretro Team</publisher>
 		<genre>Emulator</genre>
-		<playcount>2</playcount>
-		<lastplayed>20210710T122310</lastplayed>
-		<gametime>17</gametime>
+		<playcount />
+		<lastplayed />
+		<gametime />
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
@@ -742,5 +741,4 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
-
 </gameList>
