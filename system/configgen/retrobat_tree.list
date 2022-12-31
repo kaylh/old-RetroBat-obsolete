@@ -117,8 +117,10 @@ emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
+emulators\yuzu\user\config
 emulators\yuzu-early-access
 emulators\yuzu-early-access\user
+emulators\yuzu-early-access\user\config
 library
 library\records
 library\records\config
