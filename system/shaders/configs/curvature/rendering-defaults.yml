@@ -133,6 +133,7 @@ colecovision:
   shader: crt/crt-geom
 jaguar:
   shader: crt/crt-geom
+  bigpemu: GeomCRT@CRTGeom.fx
 lightgun:
   shader: crt/crt-geom
 # Computers

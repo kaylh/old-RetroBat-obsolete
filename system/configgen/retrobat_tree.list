@@ -97,6 +97,9 @@ emulators\redream
 emulators\retroarch
 emulators\retroarch\shaders
 emulators\rpcs3
+emulators\rpcs3\dev_hdd0
+emulators\rpcs3\dev_hdd0\disc
+emulators\rpcs3\dev_hdd0\game
 emulators\rpcs3\GuiConfigs
 emulators\ryujinx
 emulators\ryujinx\portable
@@ -117,8 +120,10 @@ emulators\xenia
 emulators\xenia-canary
 emulators\yuzu
 emulators\yuzu\user
+emulators\yuzu\user\config
 emulators\yuzu-early-access
 emulators\yuzu-early-access\user
+emulators\yuzu-early-access\user\config
 library
 library\records
 library\records\config

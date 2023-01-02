@@ -133,6 +133,7 @@ colecovision:
   shader: crt/GritsScanlines
 jaguar:
   shader: crt/GritsScanlines
+  bigpemu: ScanlinesAbs@scanlines-abs.fx
 lightgun:
   shader: crt/GritsScanlines
 # Computers

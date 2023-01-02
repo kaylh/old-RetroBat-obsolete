@@ -13,6 +13,8 @@ oricatmos:
   oricutron: EasymodeCRT@CRTEasymode.fx
 apple2gs:
   gsplus: EasymodeCRT@CRTEasymode.fx
+jaguar:
+  bigpemu: EasymodeCRT@CRTEasymode.fx
 # Retroarch
 gba:
   shader: handheld/zfast-lcd
