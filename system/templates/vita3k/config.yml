@@ -33,7 +33,7 @@ background-alpha: 0.300000012
 log-level: 0
 cpu-backend: Dynarmic
 cpu-opt: true
-pref-path: ""
+pref-path: ./
 discord-rich-presence: true
 wait-for-debugger: false
 color-surface-debug: false
@@ -65,7 +65,7 @@ keyboard-rightstick-right: 15
 keyboard-rightstick-up: 12
 keyboard-rightstick-down: 14
 keyboard-button-psbutton: 19
-user-id: Retrobat
+user-id: 00
 user-auto-connect: true
 dump-textures: false
 show-welcome: false
