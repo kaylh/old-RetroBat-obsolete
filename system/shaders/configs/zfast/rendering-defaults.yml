@@ -15,6 +15,9 @@ apple2gs:
   gsplus: EasymodeCRT@CRTEasymode.fx
 jaguar:
   bigpemu: EasymodeCRT@CRTEasymode.fx
+  phoenix: EasymodeCRT@CRTEasymode.fx
+3do:
+  phoenix: EasymodeCRT@CRTEasymode.fx
 # Retroarch
 gba:
   shader: handheld/zfast-lcd

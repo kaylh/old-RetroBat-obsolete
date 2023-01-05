@@ -91,6 +91,7 @@ atomiswave:
 #
 3do:
   shader: crt/GritsScanlines
+  phoenix: ScanlinesAbs@scanlines-abs.fx
 ngp:
   shader: handheld/lcd-grid-v2
 ngpc:
@@ -134,6 +135,7 @@ colecovision:
 jaguar:
   shader: crt/GritsScanlines
   bigpemu: ScanlinesAbs@scanlines-abs.fx
+  phoenix: ScanlinesAbs@scanlines-abs.fx
 lightgun:
   shader: crt/GritsScanlines
 # Computers

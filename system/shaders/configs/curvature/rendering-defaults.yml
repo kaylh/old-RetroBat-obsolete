@@ -91,6 +91,7 @@ atomiswave:
 #
 3do:
   shader: crt/crt-geom
+  phoenix: GeomCRT@CRTGeom.fx
 ngp:
   shader: handheld/zfast-lcd
 ngpc:
@@ -134,6 +135,7 @@ colecovision:
 jaguar:
   shader: crt/crt-geom
   bigpemu: GeomCRT@CRTGeom.fx
+  phoenix: GeomCRT@CRTGeom.fx
 lightgun:
   shader: crt/crt-geom
 # Computers
