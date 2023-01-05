@@ -58,13 +58,7 @@
 \system\templates\pcsx2-16\inis\SPU2-X.ini|\emulators\pcsx2-16\inis\SPU2-X.ini
 \system\templates\pcsx2-16\inis\USBnull.ini|\emulators\pcsx2-16\inis\USBnull.ini
 \system\templates\pcsx2-16\portable.ini|\emulators\pcsx2-16\portable.ini
-\system\templates\pcsx2\inis\DEV9Hosts.ini|\emulators\pcsx2\inis\DEV9Hosts.ini
-\system\templates\pcsx2\inis\GS.ini|\emulators\pcsx2\inis\GS.ini
-\system\templates\pcsx2\inis\PAD.ini|\emulators\pcsx2\inis\PAD.ini
 \system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
-\system\templates\pcsx2\inis\PCSX2_ui.ini|\emulators\pcsx2\inis\PCSX2_ui.ini
-\system\templates\pcsx2\inis\PCSX2_vm.ini|\emulators\pcsx2\inis\PCSX2_vm.ini
-\system\templates\pcsx2\inis\SPU2.ini|\emulators\pcsx2\inis\SPU2.ini
 \system\templates\pcsx2\portable.ini|\emulators\pcsx2\portable.ini
 \system\templates\ppsspp\ppsspp.ini|\emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini
 \system\templates\project64\Project64.cfg|\emulators\project64\Config\Project64.cfg
