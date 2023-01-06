@@ -14,7 +14,11 @@ gba:
   shader: handheld/lcd-grid-v2
 gb:
   shader: handheld/lcd-grid-v2
+gb2players:
+  shader: handheld/lcd-grid-v2
 gbc:
+  shader: handheld/lcd-grid-v2
+gbc2players:
   shader: handheld/lcd-grid-v2
 nds:
   shader: handheld/lcd-grid-v2-nds-color

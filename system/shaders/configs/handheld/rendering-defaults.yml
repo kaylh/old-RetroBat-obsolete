@@ -13,7 +13,11 @@ gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
   shader: handheld/gameboy
+gb2players:
+  shader: handheld/gameboy
 gbc:
+  shader: handheld/lcd-grid-v2-gbc-color
+gbc2players:
   shader: handheld/lcd-grid-v2-gbc-color
 nds:
   shader: handheld/lcd-grid-v2-nds-color

@@ -4,6 +4,7 @@ default:
   shader: hqx/hq2x
   # scanline affect fba2x
   scanline: false
+# Nintendo
 snes:
   shader: hqx/hq2x
 snes-msu:
@@ -16,7 +17,11 @@ gba:
   shader: handheld/psp-color
 gb:
   shader: handheld/psp-color
+gb2players:
+  shader: handheld/psp-color
 gbc:
+  shader: handheld/psp-color
+gbc2players:
   shader: handheld/psp-color
 fds:
   shader: handheld/psp-color

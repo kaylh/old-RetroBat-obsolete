@@ -1,6 +1,6 @@
 <h1 align="left">
   <br>
-  <a href="https://www.retrobat.ovh/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
+  <a href="https://www.retrobat.org/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
 </h1>
 <p align="left">
   <a href="https://discord.com/invite/uyrZrKKDeR">
@@ -70,7 +70,7 @@ build.bat
 
 ## ⚖ Licence
 
-RetroBat (c) 2017-2022 Adrien Chalard "Kayl" and The RetroBat Team.
+RetroBat (c) 2017-2023 Adrien Chalard "Kayl" and The RetroBat Team.
 
 RetroBat is a free and open source project. It should not be used for commercial purposes.
 It is done by a team of enthusiasts in their free time mainly for fun.
@@ -97,8 +97,9 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 
 ## 💬 Social & Support
 
-- Official Website: https://www.retrobat.ovh/
+- Official Website: https://www.retrobat.org/
 - Facebook Group: https://www.facebook.com/groups/retrobat/
+- Wiki: https://wiki.retrobat.org/
 - You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
 - Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
 - <a class="twitter-timeline" href="https://twitter.com/RetroBat_Off?ref_src=twsrc%5Etfw">Tweets by RetroBat_Off</a>

@@ -33,7 +33,11 @@ gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
   shader: handheld/gameboy
+gb2players:
+  shader: handheld/gameboy
 gbc:
+  shader: handheld/lcd-grid-v2-gbc-color
+gbc2players:
   shader: handheld/lcd-grid-v2-gbc-color
 nds:
   shader: handheld/lcd-grid-v2-nds-color
@@ -83,6 +87,7 @@ atomiswave:
 #
 3do:
   shader: hqx/hq2x
+  phoenix: xHQ4X@HQ4X.fx
 ngp:
   shader: handheld/gameboy
 ngpc:
@@ -125,7 +130,8 @@ colecovision:
   shader: hqx/hq2x
 jaguar:
   shader: hqx/hq2x
-  oricutron: xHQ4X@HQ4X.fx
+  bigpemu: xHQ4X@HQ4X.fx
+  phoenix: xHQ4X@HQ4X.fx
 lightgun:
   shader: hqx/hq2x
 # Computers

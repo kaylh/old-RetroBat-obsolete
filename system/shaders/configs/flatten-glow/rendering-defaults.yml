@@ -26,7 +26,11 @@ gba:
   shader: handheld/simpletex_lcd+gba-color
 gb:
   shader: handheld/simpletex_lcd
+gb2players:
+  shader: handheld/simpletex_lcd
 gbc:
+  shader: handheld/simpletex_lcd+gbc-color
+gbc2players:
   shader: handheld/simpletex_lcd+gbc-color
 3ds:
   shader: handheld/simpletex_lcd_darker

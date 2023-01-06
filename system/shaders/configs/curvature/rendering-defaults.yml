@@ -15,7 +15,7 @@ daphne:
 oricatmos:
   oricutron: GeomCRT@CRTGeom.fx
 apple2gs:
-  gsplus: GeomCRT@CRTGeom.fx 
+  gsplus: GeomCRT@CRTGeom.fx
 # Nintendo
 snes:
   shader: crt/crt-geom
@@ -33,7 +33,11 @@ gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
   shader: handheld/gameboy
+gb2players:
+  shader: handheld/gameboy
 gbc:
+  shader: handheld/lcd-grid-v2-gbc-color
+gbc2players:
   shader: handheld/lcd-grid-v2-gbc-color
 nds:
   shader: handheld/lcd-grid-v2-nds-color
@@ -91,6 +95,7 @@ atomiswave:
 #
 3do:
   shader: crt/crt-geom
+  phoenix: GeomCRT@CRTGeom.fx
 ngp:
   shader: handheld/zfast-lcd
 ngpc:
@@ -134,6 +139,7 @@ colecovision:
 jaguar:
   shader: crt/crt-geom
   bigpemu: GeomCRT@CRTGeom.fx
+  phoenix: GeomCRT@CRTGeom.fx
 lightgun:
   shader: crt/crt-geom
 # Computers
