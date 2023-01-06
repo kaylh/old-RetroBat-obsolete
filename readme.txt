@@ -6,8 +6,9 @@
 
 +=====================================+
 
-Official Website: https://www.retrobat.ovh
+Official Website: https://www.retrobat.org
 FAQ & Forum: https://retrobat.forumgaming.fr/t135-faq-retrobat-wip (english) / https://retrobat.forumgaming.fr/t136-faq-retrobat-wip (french)
+Wiki: https://wiki.retrobat.org/
 Discord: https://discord.gg/sx6T4wUagR
 Facebook Group: https://www.facebook.com/groups/retrobat
 
