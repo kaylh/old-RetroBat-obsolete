@@ -30,6 +30,8 @@ gb2players:
   shader: handheld/bevel
 gbc:
   shader: handheld/bevel
+gbc2players:
+  shader: handheld/bevel
 3ds:
   shader: reshade/nds
 nds:

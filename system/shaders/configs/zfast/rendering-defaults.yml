@@ -27,6 +27,8 @@ gb2players:
   shader: handheld/zfast-lcd
 gbc:
   shader: handheld/zfast-lcd
+gbc2players:
+  shader: handheld/zfast-lcd
 3ds:
   shader: handheld/zfast-lcd
 nds:

@@ -37,6 +37,8 @@ gb2players:
   shader: handheld/lcd-grid-v2
 gbc:
   shader: handheld/lcd-grid-v2
+gbc2players:
+  shader: handheld/lcd-grid-v2
 nds:
   shader: handheld/lcd-grid-v2-nds-color
 3ds:
