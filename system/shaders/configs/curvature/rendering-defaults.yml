@@ -15,7 +15,7 @@ daphne:
 oricatmos:
   oricutron: GeomCRT@CRTGeom.fx
 apple2gs:
-  gsplus: GeomCRT@CRTGeom.fx 
+  gsplus: GeomCRT@CRTGeom.fx
 # Nintendo
 snes:
   shader: crt/crt-geom
@@ -32,6 +32,8 @@ sufami:
 gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
+  shader: handheld/gameboy
+gb2players:
   shader: handheld/gameboy
 gbc:
   shader: handheld/lcd-grid-v2-gbc-color

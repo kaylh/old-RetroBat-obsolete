@@ -23,6 +23,8 @@ gba:
   shader: handheld/zfast-lcd
 gb:
   shader: handheld/zfast-lcd
+gb2players:
+  shader: handheld/zfast-lcd
 gbc:
   shader: handheld/zfast-lcd
 3ds:

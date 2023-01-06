@@ -16,6 +16,8 @@ gba:
   shader: handheld/psp-color
 gb:
   shader: handheld/psp-color
+gb2players:
+  shader: handheld/psp-color
 gbc:
   shader: handheld/psp-color
 fds:
