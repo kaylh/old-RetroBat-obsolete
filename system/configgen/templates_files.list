@@ -1,5 +1,4 @@
 \system\resources\retrobat_logo.svg|\emulationstation\resources\splash_retrobat.svg
-\system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
 \system\templates\bigpemu\userdata\BigPEmuConfig.bigpcfg|\emulators\bigpemu\userdata\BigPEmuConfig.bigpcfg
 \system\templates\cemu\settings.xml|\emulators\cemu\settings.xml
 \system\templates\citra\qt-config.ini|\emulators\citra\user\config\qt-config.ini
@@ -35,8 +34,8 @@
 \system\templates\infos\portable.txt|\emulators\dolphin-triforce\portable.txt
 \system\templates\infos\portable.txt|\emulators\duckstation\portable.txt
 \system\templates\infos\portable.txt|\emulators\mgba\portable.ini
-\system\templates\infos\portable.txt|\emulators\xenia\portable.txt
 \system\templates\infos\portable.txt|\emulators\xenia-canary\portable.txt
+\system\templates\infos\portable.txt|\emulators\xenia\portable.txt
 \system\templates\kega-fusion\Fusion.ini|\emulators\kega-fusion\Fusion.ini
 \system\templates\m2emulator\CFG.zip|\emulators\m2emulator\CFG
 \system\templates\m2emulator\Emulator.ini|\emulators\m2emulator\Emulator.ini
@@ -67,8 +66,6 @@
 \system\templates\retroarch\custom-shaders-presets.zip|\emulators\retroarch\shaders
 \system\templates\retroarch\retroarch-core-options.cfg|\emulators\retroarch\retroarch-core-options.cfg
 \system\templates\retroarch\retroarch.cfg|\emulators\retroarch\retroarch.cfg
-\system\templates\rpcs3\config.yml|\emulators\rpcs3\config.yml
-\system\templates\rpcs3\GuiConfigs\CurrentSettings.ini|\emulators\rpcs3\GuiConfigs\CurrentSettings.ini
 \system\templates\roms\ports\craft.libretro|\roms\ports\2048.libretro
 \system\templates\roms\ports\craft.libretro|\roms\ports\craft.libretro
 \system\templates\roms\ports\craft.libretro|\roms\ports\mrboom.libretro
@@ -76,9 +73,12 @@
 \system\templates\roms\ports\images.zip|\roms\ports
 \system\templates\roms\ps3\example-to-edit.m3u.txt|\roms\ps3\example-to-edit.m3u.txt
 \system\templates\roms\wiiu\example-to-edit.m3u.txt|\roms\wiiu\example-to-edit.m3u.txt
+\system\templates\rpcs3\GuiConfigs\CurrentSettings.ini|\emulators\rpcs3\GuiConfigs\CurrentSettings.ini
+\system\templates\rpcs3\config.yml|\emulators\rpcs3\config.yml
 \system\templates\ryujinx\portable\Config.json|\emulators\ryujinx\portable\Config.json
 \system\templates\scummvm\scummvm.ini|\emulators\scummvm\scummvm.ini
 \system\templates\snes9x\snes9x.conf|\emulators\snes9x\snes9x.conf
+\system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
 \system\templates\supermodel\ReShade.ini|\emulators\supermodel\ReShade.ini
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
 \system\templates\supermodel\Supermodel.ini|\emulators\supermodel\Config\Supermodel.ini
@@ -87,9 +87,9 @@
 \system\templates\vita3k\user.xml|\emulators\vita3k\ux0\user\00\user.xml
 \system\templates\winuae\winuae.ini|\emulators\winuae\winuae.ini
 \system\templates\xemu\xemu.toml|\emulators\xemu\xemu.toml
-\system\templates\xenia\gamecontrollerdb.txt|\emulators\xenia\gamecontrollerdb.txt
-\system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
 \system\templates\xenia-canary\gamecontrollerdb.txt|\emulators\xenia-canary\gamecontrollerdb.txt
 \system\templates\xenia-canary\xenia-canary.config.toml|\emulators\xenia-canary\xenia-canary.config.toml
-\system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
+\system\templates\xenia\gamecontrollerdb.txt|\emulators\xenia\gamecontrollerdb.txt
+\system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
+\system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini

@@ -12,7 +12,7 @@ to set the default configuration and to build the setup from sources.
 
 :: ---- BUILDER OPTION ----
 
-set retrobat_version=5.0.0
+set retrobat_version=5.1.0
 set retroarch_version=1.10.3
 
 set get_batgui=0
@@ -22,9 +22,9 @@ set get_decorations=1
 set get_default_theme=1
 set get_emulationstation=1
 set get_emulators=0
-set get_lrcores=1
+set get_lrcores=0
 set get_mega_bezels=0
-set get_retroarch=1
+set get_retroarch=0
 set get_retrobat_binaries=1
 set get_system=1
 set get_wiimotegun=1
@@ -385,7 +385,7 @@ for %%i in %packages_list% do (
 
 if "%get_lrcores%"=="1" (
 
-	for /f "usebackq delims=" %%x in ("%system_path%\configgen\lrcores_names.list") do (
+	for /f "usebackq delims=" %%x in ("%system_path%\configgen\lrcores_names.lst") do (
 
 		(set package_name=%%x)
 		(set package_file=%%x_libretro.dll.zip)
@@ -400,7 +400,7 @@ if "%get_lrcores%"=="1" (
 
 if "%get_emulators%"=="1" (
 
-	for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.list") do (
+	for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.lst") do (
 
 		(set package_name=%%x)
 		(set package_file=%%x.7z)
@@ -434,10 +434,10 @@ set task=set_config
 
 echo :: SETTING CONFIG FILES...
 
-for /f "usebackq delims=" %%x in ("%system_path%\configgen\retrobat_tree.list") do (if not exist "!build_path!\%%x\." md "!build_path!\%%x")
-for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.list") do (if not exist "!build_path!\emulators\%%x\." md "!build_path!\emulators\%%x")
-for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") do (if not exist "!build_path!\roms\%%x\." md "!build_path!\roms\%%x")
-for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.list") do (if not exist "!build_path!\saves\%%x\." md "!build_path!\saves\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\retrobat_tree.lst") do (if not exist "!build_path!\%%x\." md "!build_path!\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\emulators_names.lst") do (if not exist "!build_path!\emulators\%%x\." md "!build_path!\emulators\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.lst") do (if not exist "!build_path!\roms\%%x\." md "!build_path!\roms\%%x")
+for /f "usebackq delims=" %%x in ("%system_path%\configgen\systems_names.lst") do (if not exist "!build_path!\saves\%%x\." md "!build_path!\saves\%%x")
 
 if exist "!build_path!\retrobat.exe" (
 
@@ -460,8 +460,8 @@ if exist "!build_path!\retrobat.exe" (
 
 if exist "!build_path!\retrobat.ini" del/Q "!build_path!\retrobat.ini"
 
-if exist "!system_path!\templates\emulationstation\video\*.mp4" xcopy /v /y "!system_path!\templates\emulationstation\video\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
-if exist "!system_path!\templates\emulationstation\music\*.ogg" xcopy /v /y "!system_path!\templates\emulationstation\music\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
+if exist "!system_path!\resources\emulationstation\video\*.mp4" xcopy /v /y "!system_path!\resources\emulationstation\video\*.mp4" "!build_path!\emulationstation\.emulationstation\video"
+if exist "!system_path!\resources\emulationstation\music\*.ogg" xcopy /v /y "!system_path!\resources\emulationstation\music\*.ogg" "!build_path!\emulationstation\.emulationstation\music"
 
 if not exist "!build_path!\system\version.info" (
 
