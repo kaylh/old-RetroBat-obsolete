@@ -10,6 +10,7 @@
 		<releasedate />
 		<developer>AppleWin Team</developer>
 		<publisher>AppleWin Team</publisher>
+		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
 		<gametime />
@@ -26,6 +27,7 @@
 		<releasedate />
 		<developer>Rich Whitehouse</developer>
 		<publisher>Rich Whitehouse</publisher>
+		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />
 		<gametime />
@@ -490,7 +492,7 @@
 	<game>
 		<path>./pico8.menu</path>
 		<name>PICO-8</name>
-		<desc>Run PICO-8 (Fantasy Console). This software is not provided by RetroBat. You can purchase it there: https://www.lexaloffle.com/pico-8.php</desc>
+		<desc>Run PICO-8 (Fantasy Console). This software is not provided by RetroBat. You can purchase it there: https://lexaloffle.itch.io/pico-8/</desc>
 		<image>./media/pico8-logo.png</image>
 		<marquee>./media/pico8-logo.png</marquee>
 		<rating>0</rating>
@@ -692,8 +694,8 @@
 	</game>
 	<game>
 		<path>./3dsen.menu</path>
-		<name>3DSen (nes 3D emulator)</name>
-		<desc>Run 3DSen (nes 3D).</desc>
+		<name>3DSen (NES 3D)</name>
+		<desc>Run 3DSen (nes 3D). This software is not provided by RetroBat. You can purshase it here: https://geod.itch.io/3dsenpc/</desc>
 		<image>./media/3dsen-logo.png</image>
 		<marquee>./media/3dsen-logo.png</marquee>
 		<rating>0</rating>
