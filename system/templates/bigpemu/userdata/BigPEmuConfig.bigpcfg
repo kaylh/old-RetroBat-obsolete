@@ -26,7 +26,7 @@
             "ForceJGD": 0
         },
         "Video": {
-            "Display": "\\\\.\\DISPLAY49",
+            "Display": "",
             "DisplayWidth": 800,
             "DisplayHeight": 600,
             "DisplayBitDepth": 32,
