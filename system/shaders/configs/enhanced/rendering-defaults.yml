@@ -6,16 +6,16 @@ default:
   scanline: false
 # Reshader  
 model2:
-  model2: xHQ4X@HQ4X.fx
+  model2: HQ4X@HQ4X.fx
 model3:
-  supermodel: xHQ4X@HQ4X.fx
+  supermodel: HQ4X@HQ4X.fx
 daphne:
-  hypseus: xHQ4X@HQ4X.fx
-  daphne: xHQ4X@HQ4X.fx
+  hypseus: HQ4X@HQ4X.fx
+  daphne: HQ4X@HQ4X.fx
 oricatmos:
-  oricutron: xHQ4X@HQ4X.fx
+  oricutron: HQ4X@HQ4X.fx
 apple2gs:
-  gsplus: xHQ4X@HQ4X.fx  
+  gsplus: HQ4X@HQ4X.fx  
 # Nintendo
 snes:
   shader: hqx/hq2x
@@ -54,7 +54,7 @@ wii:
 # Sega
 dreamcast:
   shader: anti-aliasing/enhanced-fxaa-tvout
-  demul: xHQ4X@HQ4X.fx
+  demul: HQ4X@HQ4X.fx
 sg1000:
   shader: hqx/hq2x
 mastersystem:
@@ -80,14 +80,14 @@ fba:
   shader: hqx/hq2x
 naomi:
   shader: anti-aliasing/fxaa
-  demul: xHQ4X@HQ4X.fx
+  demul: HQ4X@HQ4X.fx
 atomiswave:
   shader: hqx/hq2x
-  demul: xHQ4X@HQ4X.fx
+  demul: HQ4X@HQ4X.fx
 #
 3do:
   shader: hqx/hq2x
-  phoenix: xHQ4X@HQ4X.fx
+  phoenix: HQ4X@HQ4X.fx
 ngp:
   shader: handheld/gameboy
 ngpc:
@@ -130,8 +130,8 @@ colecovision:
   shader: hqx/hq2x
 jaguar:
   shader: hqx/hq2x
-  bigpemu: xHQ4X@HQ4X.fx
-  phoenix: xHQ4X@HQ4X.fx
+  bigpemu: HQ4X@HQ4X.fx
+  phoenix: HQ4X@HQ4X.fx
 lightgun:
   shader: hqx/hq2x
 # Computers
