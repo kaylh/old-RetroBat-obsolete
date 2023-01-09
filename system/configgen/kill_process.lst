@@ -29,6 +29,7 @@ batocera-padsinfo.exe
 batocera-retroachievements-info.exe
 batocera-store.exe
 batocera-systems.exe
+BigPEmu.exe
 citra-qt.exe
 citra-room.exe
 citra.exe
@@ -55,6 +56,8 @@ mame64.exe
 mednafen.exe
 oricutron.exe
 pcsx2.exe
+pcsx2-qtx64-avx2.exe
+pcsx2-qtx64.exe
 pcsx2x64-avx2.exe
 pcsx2x64.exe
 raine.exe
@@ -67,6 +70,7 @@ snes9x.exe
 solarus-launcher.exe
 solarus-run.exe
 supermodel.exe
+Vita3K.exe
 vpinballx.exe
 wget.exe
 winuae.exe
