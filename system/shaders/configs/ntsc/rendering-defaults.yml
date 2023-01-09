@@ -2,6 +2,24 @@ default:
   shader: ntsc/ntsc
 # Reshader  
 model2:
-  shader: disabled
+  model2: NTSC_MAME@ntsc.fx
 model3:
-  shader: disabled  
+  supermodel: NTSC_MAME@ntsc.fx
+daphne:
+  hypseus: NTSC_MAME@ntsc.fx
+  daphne: NTSC_MAME@ntsc.fx
+oricatmos:
+  oricutron: NTSC_MAME@ntsc.fx
+apple2gs:
+  gsplus: NTSC_MAME@ntsc.fx
+dreamcast:
+  demul: NTSC_MAME@ntsc.fx
+naomi:
+  demul: NTSC_MAME@ntsc.fx
+atomiswave:
+  demul: NTSC_MAME@ntsc.fx
+3do:
+  phoenix: NTSC_MAME@ntsc.fx
+jaguar:
+  bigpemu: NTSC_MAME@ntsc.fx
+  phoenix: NTSC_MAME@ntsc.fx

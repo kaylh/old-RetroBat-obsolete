@@ -2,6 +2,24 @@ default:
   shader: crt/newpixie-crt
 # Reshader  
 model2:
-  shader: disabled
+  model2: CRTNewPixie@CRT-NewPixie.fx
 model3:
-  shader: disabled
+  supermodel: CRTNewPixie@CRT-NewPixie.fx
+daphne:
+  hypseus: CRTNewPixie@CRT-NewPixie.fx
+  daphne: CRTNewPixie@CRT-NewPixie.fx  
+oricatmos:
+  oricutron: CRTNewPixie@CRT-NewPixie.fx
+apple2gs:
+  gsplus: CRTNewPixie@CRT-NewPixie.fx
+dreamcast:
+  demul: CRTNewPixie@CRT-NewPixie.fx
+naomi:
+  demul: CRTNewPixie@CRT-NewPixie.fx
+atomiswave:
+  demul: CRTNewPixie@CRT-NewPixie.fx
+3do:
+  phoenix: CRTNewPixie@CRT-NewPixie.fx
+jaguar:
+  bigpemu: CRTNewPixie@CRT-NewPixie.fx
+  phoenix: CRTNewPixie@CRT-NewPixie.fx
