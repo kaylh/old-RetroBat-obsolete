@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root Platform="3DO">
+    <Settings current="3">
+        <Global>
+            <Platform-3DO>
+                <Input hide-cursor="" />
+                <Options>
+                    <Item index="Render" value="" />
+                    <Item index="Video Mode" value="" />
+                    <Item index="Low Accuracy" value="" />
+                    <Item index="Post CCB" value="" />
+                    <Item index="ARM Scale" value="" />
+                    <Item index="Multy Task DSP" value="" />
+                    <Item index="Multy Task CEL" value="" />
+                    <Item index="CD-ROM Speed" value="" />
+                    <Item index="CEL Rate" value="" />
+                </Options>
+            </Platform-3DO>
+            <Platform-Jaguar>
+                <Input hide-cursor="" />
+                <Options>
+                    <Item index="ThreadedDSP" value="false" />
+                    <Item index="ThreadedGPU" value="false" />
+                </Options>
+            </Platform-Jaguar>
+        </Global>
+        <Video keep-aspect="true" vsynk="true" exback="false" borders="false" screen-shader="0" texture-filter="0" texture-script="0" fbo-scale="1" texture-scale="1" screen-shader-proc="" texture-script-proc="" />
+        <Audio swap-chennels="false" volume="100" />
+        <Others key-frame="1" no-autosave="false" />
+    </Settings>
+    <Library>
+        <Platform-3DO>
+            <CD-ROM expanded="false" attach="" />
+            <BIOS expanded="false" attach="" />
+            <FONT-ROM expanded="false" attach="" />
+            <FMV-ROM expanded="false" attach="" />
+            <NVRAM expanded="false" attach="" />
+            <Machine-Save-States expanded="false" />
+            <Records expanded="false" />
+        </Platform-3DO>
+		<Platform-Jaguar>
+            <CARTRIDGE expanded="false" attach="" />
+            <BIOS expanded="false" attach="" />
+            <Machine-Save-States expanded="false" />
+            <Records expanded="false" />
+        </Platform-Jaguar>
+    </Library>
+    <Window>
+        <MainGeometry>01d9d0cb00010000fffffff8fffffff8000007870000040f000002880000014b000005070000032a000000000200</MainGeometry>
+        <MainState>000000ff00000000fd0000000200000000000001000000039ffc0200000001fb0000001000660069006c0065002d006c00690062010000003e0000039f0000005e00ffffff000000010000000000000000fc0200000001fb00000010007400610073006b002d006c006900620000000000ffffffff0000005e00ffffff000006390000039f00000004000000040000000800000008fc000000020000000000000001000000180070006c006100740066006f0072006d002d0062006100720300000000ffffffff0000000000000000000000020000000200000010006d00610069006e002d0062006100720100000000ffffffff00000000000000000000001200700072006f006d006f002d0062006100720100000202ffffffff0000000000000000</MainState>
+    </Window>
+    <Audio Mute="false" />
+    <Debug Prof="false" ProfExtra="false" />
+</root>

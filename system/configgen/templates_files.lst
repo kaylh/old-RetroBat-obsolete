@@ -61,6 +61,7 @@
 \system\templates\pcsx2-16\portable.ini|\emulators\pcsx2-16\portable.ini
 \system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
 \system\templates\pcsx2\portable.ini|\emulators\pcsx2\portable.ini
+\system\templates\phoenix\phoenix.config.xml|\emulators\phoenix\phoenix.config.xml
 \system\templates\ppsspp\ppsspp.ini|\emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini
 \system\templates\project64\Project64.cfg|\emulators\project64\Config\Project64.cfg
 \system\templates\raine\raine32_sdl.cfg|\emulators\raine\config\raine32_sdl.cfg

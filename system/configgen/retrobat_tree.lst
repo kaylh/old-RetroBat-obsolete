@@ -96,6 +96,7 @@ emulators\pcsx2
 emulators\pcsx2-16
 emulators\pcsx2-16\inis
 emulators\pcsx2\inis
+emulators\phoenix
 emulators\ppsspp
 emulators\ppsspp\memstick
 emulators\ppsspp\memstick\PSP
