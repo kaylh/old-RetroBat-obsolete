@@ -58,6 +58,7 @@
 \system\templates\pcsx2-16\inis\PCSX2_vm.ini|\emulators\pcsx2-16\inis\PCSX2_vm.ini
 \system\templates\pcsx2-16\inis\SPU2-X.ini|\emulators\pcsx2-16\inis\SPU2-X.ini
 \system\templates\pcsx2-16\inis\USBnull.ini|\emulators\pcsx2-16\inis\USBnull.ini
+\system\templates\pcsx2-16\Plugins\nuvee_ps2_usb.dll|\emulators\pcsx2-16\Plugins\nuvee_ps2_usb.dll
 \system\templates\pcsx2-16\portable.ini|\emulators\pcsx2-16\portable.ini
 \system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
 \system\templates\pcsx2\portable.ini|\emulators\pcsx2\portable.ini
