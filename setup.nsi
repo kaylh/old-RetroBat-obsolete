@@ -23,6 +23,13 @@ Unicode true
 !define BASE_TARGET "$(^Name)"
 !define RESOURCES_PATH "${BASE_SOURCE}\system\resources"
 
+!define SETUP_VERSION "5.1.0.0"
+VIProductVersion "${SETUP_VERSION}"
+VIFileVersion "${SETUP_VERSION}"
+VIAddVersionKey "FileVersion" "${SETUP_VERSION}"
+VIAddVersionKey "LegalCopyright" "RetroBat Team"
+VIAddVersionKey "FileDescription" "This program extracts and copies all major components of RetroBat to the chosen destination."
+
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
 !include "LogicLib.nsh"

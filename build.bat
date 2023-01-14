@@ -59,14 +59,14 @@ set exit_timeout=0
 
 if not "%1"=="" (
 
-    if "%1"=="-config" (
-	
-        set custom_config=%2
-        shift
-    )
-	
-	shift	
-    goto :loop_arg
+	if "%1"=="-config" (
+
+		set custom_config=%2
+		shift
+	)
+
+	shift
+	goto :loop_arg
 )
 
 call :set_root
