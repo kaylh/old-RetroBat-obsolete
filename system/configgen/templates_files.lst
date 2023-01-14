@@ -14,8 +14,11 @@
 \system\templates\dolphin-triforce\Dolphin.ini|\emulators\dolphin-triforce\User\Config\Dolphin.ini
 \system\templates\dolphin-triforce\GCPadNew.ini|\emulators\dolphin-triforce\User\Config\GCPadNew.ini
 \system\templates\dolphin-triforce\GFX.ini|\emulators\dolphin-triforce\User\Config\GFX.ini
+\system\templates\dolphin-triforce\GFZE01.ini|\emulators\dolphin-triforce\User\GameSettings\GFZE01.ini
+\system\templates\dolphin-triforce\GGPE01.ini|\emulators\dolphin-triforce\User\GameSettings\GGPE01.ini
 \system\templates\dolphin-triforce\GGPE02.ini|\emulators\dolphin-triforce\User\GameSettings\GGPE02.ini
 \system\templates\dolphin-triforce\GGPE02.ini|\emulators\dolphin-triforce\User\GameSettings\RELSAB.ini
+\system\templates\dolphin-triforce\GVSJ8P.ini|\emulators\dolphin-triforce\User\GameSettings\GVSJ8P.ini
 \system\templates\dolphin\Dolphin.ini|\emulators\dolphin-emu\User\Config\Dolphin.ini
 \system\templates\dolphin\GCPadNew.ini|\emulators\dolphin-emu\User\Config\GCPadNew.ini
 \system\templates\dolphin\Hotkeys.ini|\emulators\dolphin-emu\User\Config\Hotkeys.ini
@@ -55,9 +58,11 @@
 \system\templates\pcsx2-16\inis\PCSX2_vm.ini|\emulators\pcsx2-16\inis\PCSX2_vm.ini
 \system\templates\pcsx2-16\inis\SPU2-X.ini|\emulators\pcsx2-16\inis\SPU2-X.ini
 \system\templates\pcsx2-16\inis\USBnull.ini|\emulators\pcsx2-16\inis\USBnull.ini
+\system\templates\pcsx2-16\Plugins\nuvee_ps2_usb.dll|\emulators\pcsx2-16\Plugins\nuvee_ps2_usb.dll
 \system\templates\pcsx2-16\portable.ini|\emulators\pcsx2-16\portable.ini
 \system\templates\pcsx2\inis\PCSX2.ini|\emulators\pcsx2\inis\PCSX2.ini
 \system\templates\pcsx2\portable.ini|\emulators\pcsx2\portable.ini
+\system\templates\phoenix\phoenix.config.xml|\emulators\phoenix\phoenix.config.xml
 \system\templates\ppsspp\ppsspp.ini|\emulators\ppsspp\memstick\PSP\SYSTEM\ppsspp.ini
 \system\templates\project64\Project64.cfg|\emulators\project64\Config\Project64.cfg
 \system\templates\raine\raine32_sdl.cfg|\emulators\raine\config\raine32_sdl.cfg

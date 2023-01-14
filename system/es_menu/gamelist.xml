@@ -472,6 +472,23 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+    <game>
+		<path>./phoenix.menu</path>
+		<name>Phoenix (3DO & jaguar emulator)</name>
+		<desc>Run Phoenix  (3DO & jaguar Emulator).</desc>
+		<image>./media/phoenix.png</image>
+		<marquee>./media/phoenix.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Altmer</developer>
+		<publisher>Altmer</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
 	<game>
 		<path>./supermodel.menu</path>
 		<name>Supermodel (MODEL 3)</name>
