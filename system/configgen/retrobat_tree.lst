@@ -11,15 +11,15 @@ bios\fba\samples
 bios\fbneo
 bios\fbneo\samples
 bios\mame
-bios\mame\artwork
-bios\mame\samples
 bios\mame2003
-bios\mame2003\samples
 bios\mame2003-plus
 bios\mame2003-plus\samples
+bios\mame2003\samples
 bios\mame2010
 bios\mame2010\artwork
 bios\mame2010\samples
+bios\mame\artwork
+bios\mame\samples
 bios\neocd
 bios\pcsx2
 bios\pcsx2\bios
@@ -94,6 +94,7 @@ emulators\openbor
 emulators\oricutron
 emulators\pcsx2
 emulators\pcsx2-16
+emulators\pcsx2-16\Plugins
 emulators\pcsx2-16\inis
 emulators\pcsx2\inis
 emulators\phoenix
