@@ -337,6 +337,40 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./scummvm_libretro.menu</path>
+		<name>ScummVM Libretro</name>
+		<desc>Run ScummVM Libretro.</desc>
+		<image>./media/scummvm_libretro-logo.png</image>
+		<marquee>./media/scummvm_libretro-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>ScummVM Team</developer>
+		<publisher>ScummVM Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./dosbox_pure_libretro.menu</path>
+		<name>DOSBox Pure Libretro (MS-DOS)</name>
+		<desc>Run DOSBox Pure Libretro.</desc>
+		<image>./media/dosbox_pure_libretro-logo.png</image>
+		<marquee>./media/dosbox_pure-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>DOSBox Pure Team</developer>
+		<publisher>DOSBox Pure Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./xenia_canary.menu</path>
 		<name>Xenia Canary (XBOX 360)</name>
 		<desc>Run Xenia Canary (Xbox 360).</desc>
