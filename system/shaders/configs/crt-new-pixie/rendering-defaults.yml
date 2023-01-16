@@ -10,6 +10,8 @@ daphne:
   daphne: CRTNewPixie@CRT-NewPixie.fx  
 oricatmos:
   oricutron: CRTNewPixie@CRT-NewPixie.fx
+apple2:
+  applewin: CRTNewPixie@CRT-NewPixie.fx
 apple2gs:
   gsplus: CRTNewPixie@CRT-NewPixie.fx
 dreamcast:
