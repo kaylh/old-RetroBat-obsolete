@@ -10,6 +10,8 @@ daphne:
   daphne: NTSC_RetroArch@NTSC_RetroArch.fx
 oricatmos:
   oricutron: NTSC_RetroArch@NTSC_RetroArch.fx
+apple2:
+  applewin: NTSC_RetroArch@NTSC_RetroArch.fx
 apple2gs:
   gsplus: NTSC_RetroArch@NTSC_RetroArch.fx
 dreamcast:

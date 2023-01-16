@@ -12,6 +12,8 @@ oricatmos:
   oricutron: NTSC_MAME@ntsc.fx
 apple2gs:
   gsplus: NTSC_MAME@ntsc.fx
+apple2:
+  applewin: NTSC_MAME@ntsc.fx
 dreamcast:
   demul: NTSC_MAME@ntsc.fx
 naomi:
