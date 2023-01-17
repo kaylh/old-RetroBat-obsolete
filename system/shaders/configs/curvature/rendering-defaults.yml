@@ -1,36 +1,22 @@
 ## CURVATURE
 default:
-  # shader affects retroarch shaders
+  # libretro
   shader: crt/crt-geom
-  # scanline affect fba2x
-  scanline: true
-# Reshader  
-model2:
+  # emulators using reshader 
+  mednafen: GeomCRT@CRTGeom.fx
   model2: GeomCRT@CRTGeom.fx
-model3:
   supermodel: GeomCRT@CRTGeom.fx
-daphne:
   hypseus: GeomCRT@CRTGeom.fx
   daphne: GeomCRT@CRTGeom.fx  
-oricatmos:
   oricutron: GeomCRT@CRTGeom.fx
-apple2:
   applewin: GeomCRT@CRTGeom.fx
-apple2gs:
   gsplus: GeomCRT@CRTGeom.fx
-# Nintendo
-snes:
-  shader: crt/crt-geom
-snes-msu:
-  shader: crt/crt-geom
-nes:
-  shader: crt/crt-geom
-n64:
-  shader: crt/crt-geom
-satellaview:
-  shader: crt/crt-geom
-sufami:
-  shader: crt/crt-geom
+  scummvm: GeomCRT@CRTGeom.fx
+  simcoupe: GeomCRT@CRTGeom.fx
+  demul: GeomCRT@CRTGeom.fx
+  bigpemu: GeomCRT@CRTGeom.fx
+  phoenix: GeomCRT@CRTGeom.fx
+# per system overrides  
 gba:
   shader: handheld/lcd-grid-v2-gba-color
 gb:
@@ -45,159 +31,31 @@ nds:
   shader: handheld/lcd-grid-v2-nds-color
 3ds:
   shader: handheld/lcd-shader
-fds:
-  shader: crt/crt-geom
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
   shader: crt/crt-hyllian-3d
 wii:
   shader: crt/crt-hyllian-3d
-# Sega
 dreamcast:
   shader: crt/crt-hyllian-3d
-  demul: GeomCRT@CRTGeom.fx
-sg1000:
-  shader: crt/crt-geom
-mastersystem:
-  shader: crt/crt-geom
-megadrive:
-  shader: crt/crt-geom
 gamegear:
   shader: crt-guest-dr-venom-fast
-sega32x:
-  shader: crt/crt-geom
-segacd:
-  shader: crt/crt-geom
-saturn:
-  shader: crt/crt-geom
-# Arcade
-arcade:
-  shader: crt/crt-geom
-cps1:
-  shader: crt/crt-geom
-cps2:
-  shader: crt/crt-geom
-cps3:
-  shader: crt/crt-geom
-neogeo:
-  shader: crt/crt-geom
-neogeocd:
-  shader: crt/crt-geom
-mame:
-  shader: crt/crt-geom
-fba:
-  shader: crt/crt-geom
-naomi:
-  shader: crt/crt-geom
-  demul: GeomCRT@CRTGeom.fx
-atomiswave:
-  shader: crt/crt-geom
-  demul: GeomCRT@CRTGeom.fx
-#
-3do:
-  shader: crt/crt-geom
-  phoenix: GeomCRT@CRTGeom.fx
 ngp:
   shader: handheld/zfast-lcd
 ngpc:
   shader: handheld/zfast-lcd
-gw:
-  shader: crt/crt-geom
 vectrex:
   shader: retro/sharp-bilinear-scanlines
 lynx:
   shader: crt/crt-guest-dr-venom-fast
-lutro:
-  shader: crt/crt-geom
 wswan:
   shader: handheld/zfast-lcd
 wswanc:
   shader: handheld/zfast-lcd
-pcengine:
-  shader: crt/crt-geom
-pcenginecd:
-  shader: crt/crt-geom
-supergrafx:
-  shader: crt/crt-geom
-atari800:
-  shader: crt/crt-geom
-atari2600:
-  shader: crt/crt-geom
-atari5200:
-  shader: crt/crt-geom
-atari7800:
-  shader: crt/crt-geom
-prboom:
-  shader: crt/crt-geom
 psx:
   shader: crt/crt-hyllian-3d
 ps2:
   shader: crt/crt-hyllian-3d
 psp:
   shader: handheld/lcd-grid-v2-psp-color
-colecovision:
-  shader: crt/crt-geom
-jaguar:
-  shader: crt/crt-geom
-  bigpemu: GeomCRT@CRTGeom.fx
-  phoenix: GeomCRT@CRTGeom.fx
-lightgun:
-  shader: crt/crt-geom
-# Computers
-lutro:
-  shader: crt/crt-geom
-msx:
-  shader: crt/crt-geom
-msx1:
-  shader: crt/crt-geom
-msx2:
-  shader: crt/crt-geom
-msx2+:
-  shader: crt/crt-geom
-amiga:
-  shader: crt/crt-geom
-amiga1200:
-  shader: crt/crt-geom
-amiga500:
-  shader: crt/crt-geom
-amigacd32:
-  shader: crt/crt-geom
-amigacdtv:
-  shader: crt/crt-geom
-c20:
-  shader: crt/crt-geom
-c64:
-  shader: crt/crt-geom
-c128:
-  shader: crt/crt-geom
-cave:
-  shader: crt/crt-geom
-dos:
-  shader: crt/crt-geom
-amstradcpc:
-  shader: crt/crt-geom
-atarist:
-  shader: crt/crt-geom
-zx81:
-  shader: crt/crt-geom
-zxspectrum:
-  shader: crt/crt-geom
-odyssey2:
-  shader: crt/crt-geom
-zx81:
-  shader: crt/crt-geom
-pcfx:
-  shader: crt/crt-geom
-x68000:
-  shader: crt/crt-geom
-o2em:
-  shader: crt/crt-geom
-scummvm:
-  shader: crt/crt-geom
-pc98:
-  shader: crt/crt-geom
-pcfx:
-  shader: crt/crt-geom
-thomson:
-  shader: crt/crt-geom
