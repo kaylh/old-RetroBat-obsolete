@@ -1,27 +1,19 @@
+## CRT-NEW-PIXIE
 default:
+  # libretro
   shader: crt/newpixie-crt
-# Reshader  
-model2:
+  # emulators using reshader 
+  mednafen: CRTNewPixie@CRT-NewPixie.fx
   model2: CRTNewPixie@CRT-NewPixie.fx
-model3:
   supermodel: CRTNewPixie@CRT-NewPixie.fx
-daphne:
   hypseus: CRTNewPixie@CRT-NewPixie.fx
   daphne: CRTNewPixie@CRT-NewPixie.fx  
-oricatmos:
   oricutron: CRTNewPixie@CRT-NewPixie.fx
-apple2:
   applewin: CRTNewPixie@CRT-NewPixie.fx
-apple2gs:
   gsplus: CRTNewPixie@CRT-NewPixie.fx
-dreamcast:
+  scummvm: CRTNewPixie@CRT-NewPixie.fx  
+  simcoupe: CRTNewPixie@CRT-NewPixie.fx
   demul: CRTNewPixie@CRT-NewPixie.fx
-naomi:
-  demul: CRTNewPixie@CRT-NewPixie.fx
-atomiswave:
-  demul: CRTNewPixie@CRT-NewPixie.fx
-3do:
   phoenix: CRTNewPixie@CRT-NewPixie.fx
-jaguar:
   bigpemu: CRTNewPixie@CRT-NewPixie.fx
-  phoenix: CRTNewPixie@CRT-NewPixie.fx
+

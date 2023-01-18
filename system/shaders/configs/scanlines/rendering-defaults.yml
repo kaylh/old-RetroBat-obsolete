@@ -1,36 +1,23 @@
 ## SCANLINES
 default:
-  # shader affects retroarch shaders
+  # libretro
   shader: crt/GritsScanlines
-  # scanline affect fba2x
-  scanline: true
-# Reshader  
-model2:
+  # emulators using reshader 
   model2: ScanlinesAbs@scanlines-abs.fx
-model3:
   supermodel: ScanlinesAbs@scanlines-abs.fx
-daphne:
   hypseus: ScanlinesAbs@scanlines-abs.fx
   daphne: ScanlinesAbs@scanlines-abs.fx
-oricatmos:
   oricutron: ScanlinesAbs@scanlines-abs.fx
-apple2:
   applewin: ScanlinesAbs@scanlines-abs.fx
-apple2gs:
   gsplus: ScanlinesAbs@scanlines-abs.fx
-# Nintendo
-snes:
-  shader: crt/GritsScanlines
-snes-msu:
-  shader: crt/GritsScanlines
-nes:
-  shader: crt/GritsScanlines
+  mednafen: ScanlinesAbs@scanlines-abs.fx
+  scummvm: ScanlinesAbs@scanlines-abs.fx
+  simcoupe: ScanlinesAbs@scanlines-abs.fx 
+  demul: ScanlinesAbs@scanlines-abs.fx
+  phoenix: ScanlinesAbs@scanlines-abs.fx
+  bigpemu: ScanlinesAbs@scanlines-abs.fx
 n64:
   shader: interpolation/sharp-bilinear-scanlines
-satellaview:
-  shader: crt/GritsScanlines
-sufami:
-  shader: crt/GritsScanlines
 gba:
   shader: handheld/lcd-grid-v2
 gb:
@@ -45,161 +32,27 @@ nds:
   shader: handheld/lcd-grid-v2-nds-color
 3ds:
   shader: handheld/lcd-shader
-fds:
-  shader: crt/GritsScanlines
 virtualboy:
   shader: retro/sharp-bilinear-scanlines
 gc:
   shader: anti-aliasing/fxaa
 wii:
   shader: anti-aliasing/fxaa
-# Sega
 dreamcast:
   shader: anti-aliasing/fxaa
-  demul: ScanlinesAbs@scanlines-abs.fx
-sg1000:
-  shader: crt/GritsScanlines
-mastersystem:
-  shader: crt/GritsScanlines
-megadrive:
-  shader: crt/GritsScanlines
 gamegear:
   shader: handheld/lcd-grid-v2
-sega32x:
-  shader: crt/GritsScanlines
-segacd:
-  shader: crt/GritsScanlines
-saturn:
-  shader: crt/GritsScanlines
-# Arcade
-arcade:
-  shader: crt/GritsScanlines
-cps1:
-  shader: crt/GritsScanlines
-cps2:
-  shader: crt/GritsScanlines
-cps3:
-  shader: crt/GritsScanlines
-neogeo:
-  shader: crt/GritsScanlines
-neogeocd:
-  shader: crt/GritsScanlines
-mame:
-  shader: crt/GritsScanlines
-fba:
-  shader: crt/GritsScanlines
-naomi:
-  shader: crt/GritsScanlines
-  demul: ScanlinesAbs@scanlines-abs.fx
-atomiswave:
-  shader: crt/GritsScanlines
-  demul: ScanlinesAbs@scanlines-abs.fx
-#
-3do:
-  shader: crt/GritsScanlines
-  phoenix: ScanlinesAbs@scanlines-abs.fx
 ngp:
   shader: handheld/lcd-grid-v2
 ngpc:
   shader: handheld/lcd-grid-v2
 gw:
   shader: handheld/lcd-grid-v2
-vectrex:
-  shader: crt/GritsScanlines
 lynx:
   shader: handheld/lcd-grid-v2
-lutro:
-  shader: crt/GritsScanlines
 wswan:
   shader: handheld/lcd-grid-v2
 wswanc:
   shader: handheld/lcd-grid-v2
-pcengine:
-  shader: crt/GritsScanlines
-pcenginecd:
-  shader: crt/GritsScanlines
-supergrafx:
-  shader: crt/GritsScanlines
-atari800:
-  shader: crt/GritsScanlines
-atari2600:
-  shader: crt/GritsScanlines
-atari5200:
-  shader: crt/GritsScanlines
-atari7800:
-  shader: crt/GritsScanlines
-prboom:
-  shader: crt/GritsScanlines
-psx:
-  shader: crt/GritsScanlines
-ps2:
-  shader: crt/GritsScanlines
 psp:
   shader: handheld/lcd-grid-v2
-colecovision:
-  shader: crt/GritsScanlines
-jaguar:
-  shader: crt/GritsScanlines
-  bigpemu: ScanlinesAbs@scanlines-abs.fx
-  phoenix: ScanlinesAbs@scanlines-abs.fx
-lightgun:
-  shader: crt/GritsScanlines
-# Computers
-lutro:
-  shader: crt/GritsScanlines
-msx:
-  shader: crt/GritsScanlines
-msx1:
-  shader: crt/GritsScanlines
-msx2:
-  shader: crt/GritsScanlines
-amiga:
-  shader: crt/GritsScanlines
-amiga1200:
-  shader: crt/GritsScanlines
-amiga500:
-  shader: crt/GritsScanlines
-amigacd32:
-  shader: crt/GritsScanlines
-amigacdtv:
-  shader: crt/GritsScanlines
-c20:
-  shader: crt/GritsScanlines
-c64:
-  shader: crt/GritsScanlines
-c128:
-  shader: crt/GritsScanlines
-cave:
-  shader: crt/GritsScanlines
-cps1:
-  shader: crt/GritsScanlines
-cps3:
-  shader: crt/GritsScanlines
-dos:
-  shader: crt/GritsScanlines
-amstradcpc:
-  shader: crt/GritsScanlines
-atarist:
-  shader: crt/GritsScanlines
-zx81:
-  shader: crt/GritsScanlines
-zxspectrum:
-  shader: crt/GritsScanlines
-odyssey2:
-  shader: crt/GritsScanlines
-zx81:
-  shader: crt/GritsScanlines
-pcfx:
-  shader: crt/GritsScanlines
-x68000:
-  shader: crt/GritsScanlines
-o2em:
-  shader: crt/GritsScanlines
-scummvm:
-  shader: crt/GritsScanlines
-pc98:
-  shader: crt/GritsScanlines
-pcfx:
-  shader: crt/GritsScanlines
-thomson:
-  shader: crt/GritsScanlines
