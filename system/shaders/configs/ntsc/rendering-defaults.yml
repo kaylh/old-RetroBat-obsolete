@@ -1,27 +1,18 @@
+## NTSC
 default:
+  # libretro
   shader: ntsc/ntsc
-# Reshader  
-model2:
+  # emulators using reshader 
   model2: NTSC_MAME@ntsc.fx
-model3:
   supermodel: NTSC_MAME@ntsc.fx
-daphne:
   hypseus: NTSC_MAME@ntsc.fx
   daphne: NTSC_MAME@ntsc.fx
-oricatmos:
   oricutron: NTSC_MAME@ntsc.fx
-apple2gs:
-  gsplus: NTSC_MAME@ntsc.fx
-apple2:
   applewin: NTSC_MAME@ntsc.fx
-dreamcast:
+  gsplus: NTSC_MAME@ntsc.fx
+  scummvm: NTSC_MAME@ntsc.fx
+  simcoupe: NTSC_MAME@ntsc.fx
   demul: NTSC_MAME@ntsc.fx
-naomi:
-  demul: NTSC_MAME@ntsc.fx
-atomiswave:
-  demul: NTSC_MAME@ntsc.fx
-3do:
   phoenix: NTSC_MAME@ntsc.fx
-jaguar:
   bigpemu: NTSC_MAME@ntsc.fx
-  phoenix: NTSC_MAME@ntsc.fx
+  mednafen: NTSC_MAME@ntsc.fx
