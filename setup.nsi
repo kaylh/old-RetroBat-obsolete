@@ -38,7 +38,7 @@ VIFileVersion "${SETUP_VERSION}"
 !include "FileFunc.nsh"
 !include "LogicLib.nsh"
 
-Name "${PRODUCT} ${VERSION}"
+Name "${PRODUCT}"
 OutFile "${FILENAME}-v${VERSION}-setup.exe"
 InstallDir "C:\${BASE_TARGET}\"
 ShowInstDetails "hide"
