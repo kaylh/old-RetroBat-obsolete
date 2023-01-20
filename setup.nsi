@@ -24,21 +24,25 @@ Unicode true
 !define RESOURCES_PATH "${BASE_SOURCE}\system\resources"
 
 !define SETUP_VERSION "5.1.0.0"
-VIProductVersion "${SETUP_VERSION}"
-VIFileVersion "${SETUP_VERSION}"
+
+VIAddVersionKey "ProductName" "${PRODUCT}"
+VIAddVersionKey "CompanyName" "${PRODUCT}"
 VIAddVersionKey "FileVersion" "${SETUP_VERSION}"
 VIAddVersionKey "LegalCopyright" "RetroBat Team"
 VIAddVersionKey "FileDescription" "This program extracts and copies all major components of RetroBat to the chosen destination."
+
+VIProductVersion "${SETUP_VERSION}"
+VIFileVersion "${SETUP_VERSION}"
 
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
 !include "LogicLib.nsh"
 
-Name "${PRODUCT}"
+Name "${PRODUCT} ${VERSION}"
 OutFile "${FILENAME}-v${VERSION}-setup.exe"
 InstallDir "C:\${BASE_TARGET}\"
 ShowInstDetails "hide"
-BrandingText "(c) ${PRODUCT_PUBLISHER}"
+BrandingText "${PRODUCT} ${VERSION} (c) ${PRODUCT_PUBLISHER}"
 SpaceTexts none
 
 !define MUI_ABORTWARNING
