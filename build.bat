@@ -16,18 +16,18 @@ set retrobat_version=5.1.0
 set retroarch_version=1.10.3
 
 set get_batgui=0
-set get_batocera_ports=1
-set get_bios=1
-set get_decorations=1
-set get_default_theme=1
-set get_emulationstation=1
-set get_emulators=0
+set get_batocera_ports=0
+set get_bios=0
+set get_decorations=0
+set get_default_theme=0
+set get_emulationstation=0
+set get_emulators=1
 set get_lrcores=0
 set get_mega_bezels=0
 set get_retroarch=0
 set get_retrobat_binaries=1
 set get_system=1
-set get_wiimotegun=1
+set get_wiimotegun=0
 
 :: ---- ARCHIVE OPTIONS ----
 
@@ -43,7 +43,7 @@ set deps_list=(git makensis 7za strip wget)
 set submodules_list=(bios default_theme decorations system)
 set packages_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
 set legacy_cores_list=(4do imageviewer mame2014 mame2016 px68k)
-set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia)
+set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia yuzu yuzu-early-access)
 
 :: ---- GET STARTED ----
 
@@ -404,7 +404,7 @@ if "%get_emulators%"=="1" (
 
 		(set package_name=%%x)
 		(set package_file=%%x.7z)
-		(set download_url=!emulators_url!)
+		(set download_url=%emulators_url%)
 		(set destination_path=!emulators_path!\%%x)
 		
 		set skip=0
