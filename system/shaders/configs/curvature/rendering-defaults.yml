@@ -4,7 +4,7 @@ default:
   shader: crt/crt-geom
   # emulators using reshader 
   mednafen: GeomCRT@CRTGeom.fx
-  model2: GeomCRT@CRTGeom.fx
+  m2emulator: GeomCRT@CRTGeom.fx
   supermodel: GeomCRT@CRTGeom.fx
   hypseus: GeomCRT@CRTGeom.fx
   daphne: GeomCRT@CRTGeom.fx  
