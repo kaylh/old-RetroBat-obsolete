@@ -43,7 +43,7 @@ set deps_list=(git makensis 7za strip wget)
 set submodules_list=(bios default_theme decorations system)
 set packages_list=(retrobat_binaries batgui emulationstation batocera_ports mega_bezels retroarch roms wiimotegun)
 set legacy_cores_list=(4do imageviewer mame2014 mame2016 px68k)
-set emulators_black_list=(pico8 retroarch ryujinx steam teknoparrot xenia yuzu yuzu-early-access)
+set emulators_black_list=(3dsen pico8 retroarch ryujinx steam teknoparrot yuzu yuzu-early-access)
 
 :: ---- GET STARTED ----
 
