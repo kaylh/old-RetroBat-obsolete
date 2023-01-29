@@ -3,7 +3,7 @@ default:
   # libretro
   shader: ntsc/mame-ntsc
   # emulators using reshader 
-  model2: NTSC_RetroArch@NTSC_RetroArch.fx
+  m2emulator: NTSC_RetroArch@NTSC_RetroArch.fx
   supermodel: NTSC_RetroArch@NTSC_RetroArch.fx
   hypseus: NTSC_RetroArch@NTSC_RetroArch.fx
   daphne: NTSC_RetroArch@NTSC_RetroArch.fx

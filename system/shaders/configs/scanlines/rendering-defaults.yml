@@ -3,7 +3,7 @@ default:
   # libretro
   shader: crt/GritsScanlines
   # emulators using reshader 
-  model2: ScanlinesAbs@scanlines-abs.fx
+  m2emulator: ScanlinesAbs@scanlines-abs.fx
   supermodel: ScanlinesAbs@scanlines-abs.fx
   hypseus: ScanlinesAbs@scanlines-abs.fx
   daphne: ScanlinesAbs@scanlines-abs.fx
