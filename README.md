@@ -3,7 +3,7 @@
   <a href="https://www.retrobat.org/"><img src="https://raw.githubusercontent.com/kaylh/RetroBat/master/system/resources/retrobat_logo.svg" alt="retrobat" width="500"></a>
 </h1>
 <p align="left">
-  <a href="https://discord.com/invite/uyrZrKKDeR">
+  <a href="https://discord.gg/k8mg99cY6F">
       <img src="https://img.shields.io/discord/748519802255179917?color=blue&label=discord&logo=discord&logoColor=white&style=for-the-badge"
            alt="Discord">
     </a>
@@ -98,8 +98,8 @@ Finally, the license which concerns the entire RetroBat project as a work, in pa
 ## 💬 Social & Support
 
 - Official Website: https://www.retrobat.org/
-- Facebook Group: https://www.facebook.com/groups/retrobat/
+- Facebook Group: https://social.retrobat.org/facebook
 - Wiki: https://wiki.retrobat.org/
-- You need help ? You found a bug ? Please visit RetroBat Forum: https://retrobat.forumgaming.fr/
-- Join us on our Discord server: https://discord.com/invite/uyrZrKKDeR
+- You need help ? You found a bug ? Please visit RetroBat Forum: https://social.retrobat.org/forum
+- Join us on our Discord server: https://social.retrobat.org/discord
 - <a class="twitter-timeline" href="https://twitter.com/RetroBat_Off?ref_src=twsrc%5Etfw">Tweets by RetroBat_Off</a>
