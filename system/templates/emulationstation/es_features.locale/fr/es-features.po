@@ -759,7 +759,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "VERTICAL SYNC"
-msgstr ""
+msgstr "SYNCHRONISATION VERTICALE"
 
 msgctxt "game_options"
 msgid "no"
@@ -1183,7 +1183,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "EMULATION"
-msgstr ""
+msgstr "ÉMULATION"
 
 msgctxt "game_options"
 msgid "Improve data transfert of emulated SIO port."
@@ -1227,7 +1227,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "VISUAL RENDERING"
-msgstr ""
+msgstr "RENDU VISUEL"
 
 msgctxt "game_options"
 msgid "NATIVE (400x240)"
@@ -1239,27 +1239,27 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Force the region of the system."
-msgstr ""
+msgstr "Définir la région du système."
 
 msgctxt "game_options"
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "AUSTRALIE"
 
 msgctxt "game_options"
 msgid "CHINA"
-msgstr ""
+msgstr "CHINE"
 
 msgctxt "game_options"
 msgid "EUROPE"
-msgstr ""
+msgstr "EUROPE"
 
 msgctxt "game_options"
 msgid "JAPAN"
-msgstr ""
+msgstr "JAPON"
 
 msgctxt "game_options"
 msgid "KOREA"
-msgstr ""
+msgstr "CORÉE"
 
 msgctxt "game_options"
 msgid "TAIWAN"
@@ -1267,15 +1267,75 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "SHOW MOUSE POINTER"
-msgstr ""
+msgstr "AFFICHER LE POINTEUR DE LA SOURIS"
 
 msgctxt "game_options"
 msgid "Show the mouse pointer on the emulated touchscreen."
-msgstr ""
+msgstr "Afficher le pointeur de la souris sur l'écran tactile émulé."
 
 msgctxt "game_options"
 msgid "CONTROLS"
+msgstr "CONTRÔLES"
+
+msgctxt "game_options"
+msgid "PLAYER 1 CONTROLLER TYPE"
+msgstr "TYPE DE CONTÔLEUR DU JOUEUR 1"
+
+msgctxt "game_options"
+msgid "PRO CONTROLLER"
 msgstr ""
+
+msgctxt "game_options"
+msgid "DUAL JOYCON"
+msgstr "DOUBLE JOYCON"
+
+msgctxt "game_options"
+msgid "LEFT JOYCON"
+msgstr "JOYCON GAUCHE"
+
+msgctxt "game_options"
+msgid "RIGHT JOYCON"
+msgstr "JOYCON DROITE"
+
+msgctxt "game_options"
+msgid "HANDHELD"
+msgstr "MODE PORTABLE"
+
+msgctxt "game_options"
+msgid "GAMECUBE"
+msgstr ""
+
+msgctxt "game_options"
+msgid "PLAYER 2 CONTROLLER TYPE"
+msgstr "TYPE DE CONTÔLEUR DU JOUEUR 2"
+
+msgctxt "game_options"
+msgid "PLAYER 3 CONTROLLER TYPE"
+msgstr "TYPE DE CONTÔLEUR DU JOUEUR 3"
+
+msgctxt "game_options"
+msgid "PLAYER 4 CONTROLLER TYPE"
+msgstr "TYPE DE CONTÔLEUR DU JOUEUR 4"
+
+msgctxt "game_options"
+msgid "Sets the player controller type"
+msgstr "Définir le type de manette pour le joueur."
+
+msgctxt "game_options"
+msgid "ENABLE MOTION"
+msgstr "ACTIVER MOTION CONTROL"
+
+msgctxt "game_options"
+msgid "Can only be used if the controller is compatible with motion control."
+msgstr "N'est possible que si le contrôleur est compatible."
+
+msgctxt "game_options"
+msgid "INVERT A/B and X/Y BUTTONS"
+msgstr "INTERVERTIR LES BOUTONS A/B ET X/Y"
+
+msgctxt "game_options"
+msgid "Invert face buttons for XBOX controllers."
+msgstr "Permet d'intervertir les boutons pour les contrôleurs XBOX."
 
 msgctxt "game_options"
 msgid "Choose if the mouse input is active or not."
@@ -2575,7 +2635,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ANTI ALIASING"
-msgstr ""
+msgstr "ANTICRÉNELAGE"
 
 msgctxt "game_options"
 msgid "Set Multi-Sampled Anti Aliasing level for rendered content (Vulkan only)."
@@ -3247,7 +3307,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "DRIVERS"
-msgstr ""
+msgstr "PILOTES"
 
 msgctxt "game_options"
 msgid "OPENGL CS"
@@ -3867,7 +3927,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Set Anti Aliasing for rendered content."
-msgstr ""
+msgstr "Définir le niveau d'anticrénelage."
 
 msgctxt "game_options"
 msgid "LINEAR FILTERING"
@@ -4255,7 +4315,27 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Improve fidelity of 3D models at the cost of increased performance requirements."
-msgstr ""
+msgstr "Améliore la fidélité des modèles 3D, augmente la consommation de ressources."
+
+msgctxt "game_options"
+msgid "CPU ACCURACY"
+msgstr "PRÉCISION CPU"
+
+msgctxt "game_options"
+msgid "Leave AUTO as default except the game requires specific setting."
+msgstr "Laisser AUTO sauf si une valeur différente est requise pour le jeu."
+
+msgctxt "game_options"
+msgid "ACCURATE"
+msgstr "PRÉCIS"
+
+msgctxt "game_options"
+msgid "UNSAFE"
+msgstr "INSTABLE"
+
+msgctxt "game_options"
+msgid "PARANOID"
+msgstr "PARANOIAQUE"
 
 msgctxt "game_options"
 msgid "FXAA"
@@ -4263,23 +4343,23 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "SCALING FILTER"
-msgstr ""
+msgstr "FILTRE DE MISE A l'ÉCHELLE"
 
 msgctxt "game_options"
 msgid "Set scaling filter for rendered content."
-msgstr ""
+msgstr "Definir le filtre de mise à l'échelle pour le rendu."
 
 msgctxt "game_options"
 msgid "Bicubic"
-msgstr ""
+msgstr "Bicubique"
 
 msgctxt "game_options"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussien"
 
 msgctxt "game_options"
 msgid "ScaleForce"
-msgstr ""
+msgstr "Scaleforce"
 
 msgctxt "game_options"
 msgid "AMD's FidelityFX Super Resolution"
