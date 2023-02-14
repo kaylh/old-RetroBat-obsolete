@@ -22,7 +22,7 @@
   "system_time_zone": "UTC",
   "system_time_offset": 0,
   "docked_mode": true,
-  "enable_discord_integration": true,
+  "enable_discord_integration": false,
   "check_updates_on_start": false,
   "show_confirm_exit": false,
   "hide_cursor_on_idle": false,
