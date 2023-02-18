@@ -399,7 +399,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "REVERB"
-msgstr ""
+msgstr "RIVERBERO"
 
 msgctxt "game_options"
 msgid "TREMOLO"
@@ -1787,7 +1787,7 @@ msgstr "SCARICA TEXTURE"
 
 msgctxt "game_options"
 msgid "Dump textures to 'bios\\dc\texdump'."
-msgstr "Scarica le texture in 'bios\\dc\\texdump'"
+msgstr "Scarica le texture in 'bios\\dc\\texdump'."
 
 msgctxt "game_options"
 msgid "DSP EMULATION"
@@ -1967,15 +1967,15 @@ msgstr "Abilita il chip FM del Master System."
 
 msgctxt "game_options"
 msgid "LCD GHOSTING FILTER"
-msgstr ""
+msgstr "FILTRO GHOSITING LCD"
 
 msgctxt "game_options"
 msgid "Mimics the display characteristics of the Game Gear and Nomad LCD panels."
-msgstr ""
+msgstr "Imita le caratteristiche di visualizzazione dei pannelli LCD del Game Gear e del Nomad."
 
 msgctxt "game_options"
 msgid "Better simulate the characteristic sound of a Megadrive/Genesis 1."
-msgstr ""
+msgstr "Simula meglio il suono caratteristico di un Megadrive/Genesis 1."
 
 msgctxt "game_options"
 msgid "MEGADRIVE/GENESIS FM"
@@ -1983,7 +1983,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Select method used to emulate the FM synthetiser."
-msgstr ""
+msgstr "Seleziona il metodo utilizzato per emulare il sintetizzatore FM."
 
 msgctxt "game_options"
 msgid "MAME (YM2612)"
@@ -2011,7 +2011,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Specifies wich add-on to use for audio CD playback with patched MD games."
-msgstr ""
+msgstr "Specifica quale componente aggiuntivo utilizzare per la riproduzione di CD audio con giochi MD patchati."
 
 msgctxt "game_options"
 msgid "Mega CD"
@@ -2023,11 +2023,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "CARTRIDGE LOCK-ON"
-msgstr ""
+msgstr "CARTUCCIA LOCK-ON "
 
 msgctxt "game_options"
 msgid "This option specifies which lock-on cartridge to emulate."
-msgstr ""
+msgstr "Questa opzione specifica quale cartuccia lock-on emulare."
 
 msgctxt "game_options"
 msgid "GAME GENIE"
@@ -2043,11 +2043,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "WIDESCREEN - EXTRA COLUMNS TO DRAW"
-msgstr ""
+msgstr "WIDESCREEN - COLONNE EXTRA DA DISEGNARE"
 
 msgctxt "game_options"
 msgid "Set the amount of extra columns to draw for widescreen."
-msgstr ""
+msgstr "Imposta la quantità di colonne extra da disegnare per il widescreen."
 
 msgctxt "game_options"
 msgid "10 (DEFAULT)"
@@ -2055,7 +2055,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Choose the core-provided aspect ratio. RetroArch's aspect ratio must be set to Core provided in the Video settings."
-msgstr ""
+msgstr "Sceglie il rapporto di aspetto fornito dal core. Il rapporto di aspetto di RetroArch deve essere impostato su Core nelle impostazioni Video."
 
 msgctxt "game_options"
 msgid "PAR"
@@ -2067,19 +2067,19 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "SHOW OVERSCAN"
-msgstr ""
+msgstr "MOSTRA OVERSCAN"
 
 msgctxt "game_options"
 msgid "Crop out the potentially random glitchy video output that would have been hidden by the bezel around the edge of a standard-definition television screen."
-msgstr ""
+msgstr "Ritaglia l'output video potenzialmente anomalo che sarebbe stato nascosto dalla cornice attorno al bordo di uno schermo televisivo a definizione standard."
 
 msgctxt "game_options"
 msgid "RENDERER"
-msgstr ""
+msgstr "RENDERIZZATORE"
 
 msgctxt "game_options"
 msgid "Specify the video rendering method. Accurate is the more precise but is slower, good and fast are faster but can fail for some games."
-msgstr ""
+msgstr "Specifica il metodo di rendering video. Accurate è il più preciso ma è più lento, Good e Fast sono più veloci ma possono fallire con alcuni giochi."
 
 msgctxt "game_options"
 msgid "ACCURATE"
