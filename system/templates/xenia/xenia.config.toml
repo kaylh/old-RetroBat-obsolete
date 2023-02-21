@@ -232,7 +232,7 @@ vsync = true                                      	# Enable VSYNC.
 
 [General]
 debug = false                                     	# Allow debugging and retain debug information.
-discord = true                                    	# Enable Discord rich presence
+discord = false                                    	# Enable Discord rich presence
 enable_console = false                            	# Open a console window with the main window
 launch_module = ""                                	# Executable to launch from the .iso or the package instead of default.xex or the module specified by the game. Leave blank to launch the default module.
 time_scalar = 1.0                                 	# Scalar used to speed or slow time (1x, 2x, 1/2x, etc).

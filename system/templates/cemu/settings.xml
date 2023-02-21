@@ -5,7 +5,7 @@
     <mlc_path></mlc_path>
     <permanent_storage>true</permanent_storage>
     <language>0</language>
-    <use_discord_presence>true</use_discord_presence>
+    <use_discord_presence>false</use_discord_presence>
     <fullscreen_menubar>false</fullscreen_menubar>
     <check_update>false</check_update>
     <save_screenshot>true</save_screenshot>

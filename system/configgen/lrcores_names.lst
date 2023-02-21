@@ -6,6 +6,7 @@ atari800
 bluemsx
 bsnes
 bsnes_hd_beta
+cannonball
 cap32
 citra
 craft
@@ -15,6 +16,7 @@ desmume2015
 dolphin
 dosbox_pure
 easyrpg
+emuscv
 fbalpha
 fbalpha2012
 fbalpha2012_cps1
@@ -102,8 +104,10 @@ vba_next
 vecx
 vice_x128
 vice_x64
+vice_x64sc
 vice_xpet
 vice_xplus4
 vice_xvic
 virtualjaguar
+wasm4
 x1
