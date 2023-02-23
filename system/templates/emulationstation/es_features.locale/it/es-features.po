@@ -2359,7 +2359,7 @@ msgstr "I valori più alti offrono un migliore rapporto segnale/rumore e la cons
 
 msgctxt "game_options"
 msgid "ADPCM PRECISION"
-msgstr "PRECISIONE ADPCM "
+msgstr "PRECISIONE ADPCM"
 
 msgctxt "game_options"
 msgid "Full precision of 12-bit for the MCM5205 ADPCM can reduce whining noise during ADPCM playback."
@@ -2899,39 +2899,39 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Allow gamma dither."
-msgstr ""
+msgstr "Abilita il gamma dither."
 
 msgctxt "game_options"
 msgid "DIVOT FILTER"
-msgstr ""
+msgstr "FILTRO DIVOT"
 
 msgctxt "game_options"
 msgid "Cleans up stray black pixels."
-msgstr ""
+msgstr "Ripulisce i pixel neri residui."
 
 msgctxt "game_options"
 msgid "NATIVE TEXTURE LOD"
-msgstr ""
+msgstr "TEXTURE LOD NATIVA"
 
 msgctxt "game_options"
 msgid "Use native texture LOD computation when upscaling."
-msgstr ""
+msgstr "Utilizza il sistema di calcolo LOD nativo della texture quando si esegue l'upscaling."
 
 msgctxt "game_options"
 msgid "Crop pixels around edge of screen."
-msgstr ""
+msgstr "Ritaglia i pixel intorno al bordo dello schermo."
 
 msgctxt "game_options"
 msgid "Use interpreter for best compatibility."
-msgstr ""
+msgstr "Utilizzare l'interprete per ottenere la migliore compatibilità."
 
 msgctxt "game_options"
 msgid "pure interpreter"
-msgstr ""
+msgstr "interprete puro"
 
 msgctxt "game_options"
 msgid "cached interpreter"
-msgstr ""
+msgstr "interprete con cache"
 
 msgctxt "game_options"
 msgid "dynarec"
@@ -2939,11 +2939,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "PERFORMANCE MODE"
-msgstr ""
+msgstr "MODALITÀ PERFORMANCE"
 
 msgctxt "game_options"
 msgid "Improve performance at the cost of accuracy and input lag."
-msgstr ""
+msgstr "Migliora le prestazioni a scapito della precisione e del ritardo di input."
 
 msgctxt "game_options"
 msgid "CONTROLLER PAK (P1)"
@@ -2951,11 +2951,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "MEMORY"
-msgstr ""
+msgstr "MEMORIA"
 
 msgctxt "game_options"
 msgid "TRANSFER"
-msgstr ""
+msgstr "TRASFERISCI"
 
 msgctxt "game_options"
 msgid "CONTROLLER PAK (P2)"
@@ -2971,7 +2971,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Select the IPL BIOS to run a game depending on its region. Needs 'IPL_JAP.n64', 'IPL_USA.n64' and 'IPL_DEV.n64' in bios\\Mupen64plus folder."
-msgstr ""
+msgstr "Seleziona il BIOS IPL per eseguire un gioco a seconda della regione. Necessita di 'IPL_JAP.n64', 'IPL_USA.n64' e 'IPL_DEV.n64' nella cartella bios\\Mupen64plus."
 
 msgctxt "game_options"
 msgid "DEVKIT"
@@ -2979,23 +2979,23 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Remove the n pixel borders at the top and bottom of the screen."
-msgstr ""
+msgstr "Rimuove i bordi di n pixel nella parte superiore e inferiore dello schermo."
 
 msgctxt "game_options"
 msgid "8 PIXELS"
-msgstr ""
+msgstr "8 PIXEL"
 
 msgctxt "game_options"
 msgid "12 PIXELS"
-msgstr ""
+msgstr "12 PIXEL"
 
 msgctxt "game_options"
 msgid "16 PIXELS"
-msgstr ""
+msgstr "16 PIXEL"
 
 msgctxt "game_options"
 msgid "Apply a video filter to mimic various TV signals."
-msgstr ""
+msgstr "Applicare un filtro video per simulare vari segnali televisivi."
 
 msgctxt "game_options"
 msgid "RF"
@@ -3003,7 +3003,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Required for certain games that use hi-res mode to produce transparency effects."
-msgstr ""
+msgstr "Necessario per alcuni giochi che utilizzano la modalità ad alta risoluzione per produrre effetti di trasparenza."
 
 msgctxt "game_options"
 msgid "MERGE"
@@ -3015,11 +3015,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "AUDIO INTERPOLATION"
-msgstr ""
+msgstr "INTERPOLAZIONE AUDIO"
 
 msgctxt "game_options"
 msgid "Apply an audio filter. 'Gaussian' reproduce the bass-heavy sound of the original hardware."
-msgstr ""
+msgstr "Applicare un filtro audio. 'Gaussiano' riproduce il suono dei bassi dell'hardware originale."
 
 msgctxt "game_options"
 msgid "GAUSSIAN"
@@ -3043,7 +3043,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Can improve framerate or cause timing error."
-msgstr ""
+msgstr "Può migliorare il framerate o causare errori di temporizzazione."
 
 msgctxt "game_options"
 msgid "BLOCK INVALID VRAM ACCESS"
@@ -3051,7 +3051,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Some homebrew or roms hacks need this option to be disabled."
-msgstr ""
+msgstr "Per alcuni hack homebrew o rom è necessario disattivare questa opzione."
 
 msgctxt "game_options"
 msgid "mouse"
@@ -3067,7 +3067,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Crops the borders to show or hide border graphics."
-msgstr ""
+msgstr "Ritaglia i bordi per mostrare o nascondere la grafica dei bordi."
 
 msgctxt "game_options"
 msgid "SMALL"
@@ -3151,7 +3151,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Zooms in to hide black borders. Borders are different per game."
-msgstr ""
+msgstr "Ingrandisce per nascondere i bordi neri. I bordi sono diversi per ogni gioco."
 
 msgctxt "game_options"
 msgid "None"
