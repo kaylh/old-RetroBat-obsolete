@@ -351,7 +351,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "CHIPTUNE ENHANCE"
-msgstr ""
+msgstr "MIGLIORA CHIPTUNE"
 
 msgctxt "game_options"
 msgid "CHORUS"
@@ -1207,7 +1207,7 @@ msgstr "Provider per l'emulazione Adlib. DEFAULT ha una buona qualità e bassi r
 
 msgctxt "game_options"
 msgid "HIGH QUALITY NUKED OPL3"
-msgstr ""
+msgstr "OPL3 NUKED DI ALTA QUALITÀ"
 
 msgctxt "game_options"
 msgid "SOUNDBLASTER FM MODE"
@@ -4043,7 +4043,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "PC Speaker"
-msgstr ""
+msgstr "Speaker PC"
 
 msgctxt "game_options"
 msgid "IBM PCjr"
@@ -4055,7 +4055,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "No Sound"
-msgstr ""
+msgstr "Nessun suono"
 
 msgctxt "game_options"
 msgid "MIXED ADLIB/MIDI"
@@ -4131,7 +4131,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Enhanced Apple //e"
-msgstr ""
+msgstr "Apple //e migliorato"
 
 msgctxt "game_options"
 msgid "SCREEN TYPE"
@@ -5043,7 +5043,7 @@ msgstr "MODALITÀ BIGPICTURE"
 
 msgctxt "game_options"
 msgid "FPU NEGATIVE DIVIDE"
-msgstr ""
+msgstr "DIVISIONE NEGATIVA FPU"
 
 msgctxt "game_options"
 msgid "For Gundam Games."
@@ -5247,19 +5247,19 @@ msgstr "ARROTONDA SPRITE (HACK)"
 
 msgctxt "game_options"
 msgid "ALIGN SPRITE (HACK)"
-msgstr ""
+msgstr "ALLINEA SPRITE (HACK)"
 
 msgctxt "game_options"
 msgid "MERGE SPRITE (HACK)"
-msgstr ""
+msgstr "FUSIONE SPRITE (HACK)"
 
 msgctxt "game_options"
 msgid "SAFE FEATURES (HACK)"
-msgstr ""
+msgstr "FUNZIONI DI SICUREZZA (HACK)"
 
 msgctxt "game_options"
 msgid "CRC LEVEL (HACK)"
-msgstr ""
+msgstr "LIVELLO CRC (HACK)"
 
 msgctxt "game_options"
 msgid "OPENGL (HARDWARE)"
@@ -5279,23 +5279,23 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ALLOW 8 BIT TEXTURES"
-msgstr ""
+msgstr "PERMETTI TEXTURE 8 BIT"
 
 msgctxt "game_options"
 msgid "When disabled the CPU will convert directly the texture to 32 bit. Basically a trade off GPU/CPU."
-msgstr ""
+msgstr "Quando è disattivata, la CPU converte direttamente la texture a 32 bit. In pratica un compromesso GPU/CPU."
 
 msgctxt "game_options"
 msgid "SPEED HACKS"
-msgstr ""
+msgstr "HACK DI VELOCITÀ"
 
 msgctxt "game_options"
 msgid "Significantly improves performances for CPU with 3+ cores."
-msgstr ""
+msgstr "Migliora significativamente le prestazioni delle CPU con più di 3 core."
 
 msgctxt "game_options"
 msgid "Enable monitoring."
-msgstr ""
+msgstr "Abilita il monitoraggio."
 
 msgctxt "game_options"
 msgid "1:1"
@@ -5303,15 +5303,15 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "FRAME SKIP"
-msgstr ""
+msgstr "SALTA FRAME"
 
 msgctxt "game_options"
 msgid "CRT INTERLACED"
-msgstr ""
+msgstr "CRT INTERLACCIATO"
 
 msgctxt "game_options"
 msgid "CURVATURE"
-msgstr ""
+msgstr "CURVATURA"
 
 msgctxt "game_options"
 msgid "HQ 2X"
@@ -5319,11 +5319,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "INTEGER SCALE"
-msgstr ""
+msgstr "SCALA DI INTERI"
 
 msgctxt "game_options"
 msgid "PHOSPHORE"
-msgstr ""
+msgstr "FOSFORO"
 
 msgctxt "game_options"
 msgid "PIXELLATE SCANLINE"
@@ -5335,11 +5335,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "SCALE 2X"
-msgstr ""
+msgstr "SCALA 2X"
 
 msgctxt "game_options"
 msgid "SCALE 4X"
-msgstr ""
+msgstr "SCALA 4X"
 
 msgctxt "game_options"
 msgid "SCANLINE 3X"
@@ -5351,15 +5351,15 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Fit to the original ratio of the game."
-msgstr ""
+msgstr "Adatta al rapporto originale del gioco."
 
 msgctxt "game_options"
 msgid "GLOBAL"
-msgstr ""
+msgstr "GLOBALE"
 
 msgctxt "game_options"
 msgid "GAME SPECIFIC"
-msgstr ""
+msgstr "SPECIFICO DEL GIOCO"
 
 msgctxt "game_options"
 msgid "UNIVERSE BIOS V4.0"
@@ -5395,59 +5395,59 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "CD MUSIC VOLUME"
-msgstr ""
+msgstr "VOLUME MUSICA CD"
 
 msgctxt "game_options"
 msgid "Ajusts the volume of the music track."
-msgstr ""
+msgstr "Regola il volume del brano musicale."
 
 msgctxt "game_options"
 msgid "MUTE"
-msgstr ""
+msgstr "MUTO"
 
 msgctxt "game_options"
 msgid "CD SFX VOLUME"
-msgstr ""
+msgstr "VOLUME EFFETTI CD"
 
 msgctxt "game_options"
 msgid "Ajusts the volume of the sound effects."
-msgstr ""
+msgstr "Regola il volume degli effetti sonori."
 
 msgctxt "game_options"
 msgid "IMPROVE CD LOADING SPEED"
-msgstr ""
+msgstr "MIGLIORA VELOCITÀ CARICAMENTO CD"
 
 msgctxt "game_options"
 msgid "stretch"
-msgstr ""
+msgstr "estendi"
 
 msgctxt "game_options"
 msgid "1280x720 (Recommended)"
-msgstr ""
+msgstr "1280x720 (Raccomandata)"
 
 msgctxt "game_options"
 msgid "Leave this on 16:9 unless you have a 4:3 monitor."
-msgstr ""
+msgstr "Lasciare questa opzione su 16:9, a meno che non si disponga di un monitor 4:3."
 
 msgctxt "game_options"
 msgid "FRAMELIMIT"
-msgstr ""
+msgstr "LIMITE FRAME"
 
 msgctxt "game_options"
 msgid "Only use framelimiter if a game runs too fast without it. Some games may crash if the framerate is too high. If that happens, set value to anything other than Off."
-msgstr ""
+msgstr "Usare il framelimiter solo se il gioco gira troppo velocemente senza di esso. Alcuni giochi possono bloccarsi se il framerate è troppo alto. In tal caso, impostare un valore diverso da Off."
 
 msgctxt "game_options"
 msgid "INFINITE"
-msgstr ""
+msgstr "INFINITO"
 
 msgctxt "game_options"
 msgid "Emulates PS3 multisampling layout. Can fix some visual artifacts in some games."
-msgstr ""
+msgstr "Emula il layout di multicampionamento della PS3. Può correggere alcuni artefatti visivi in alcuni giochi."
 
 msgctxt "game_options"
 msgid "SHADER MODE"
-msgstr ""
+msgstr "MODALITÀ SHADER"
 
 msgctxt "game_options"
 msgid "LEGACY (SINGLE THREADED)"
@@ -5459,71 +5459,71 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ASYNC WITH INTERPRETER"
-msgstr ""
+msgstr "ASYNC CON INTERPRETE"
 
 msgctxt "game_options"
 msgid "SHADER INTERPRETER ONLY"
-msgstr ""
+msgstr "SOLO INTERPRETE SHADER"
 
 msgctxt "game_options"
 msgid "SHADER QUALITY"
-msgstr ""
+msgstr "QUALITÀ SHADER"
 
 msgctxt "game_options"
 msgid "Low shader quality can improve performance but cause glitches."
-msgstr ""
+msgstr "Una bassa qualità degli shader può migliorare le prestazioni, ma causare problemi di funzionamento."
 
 msgctxt "game_options"
 msgid "LOW"
-msgstr ""
+msgstr "BASSA"
 
 msgctxt "game_options"
 msgid "ZCULL ACCURACY"
-msgstr ""
+msgstr "ACCURATEZZA ZCULL"
 
 msgctxt "game_options"
 msgid "Precise is the most accurate and relaxed can increase performance but break some games."
-msgstr ""
+msgstr "'Preciso' è il più accurato, 'rilassato' può aumentare le prestazioni ma compromettere alcuni giochi."
 
 msgctxt "game_options"
 msgid "PRECISE"
-msgstr ""
+msgstr "PRECISO"
 
 msgctxt "game_options"
 msgid "APPROXIMATE"
-msgstr ""
+msgstr "APPROSSIMATO"
 
 msgctxt "game_options"
 msgid "RELAXED"
-msgstr ""
+msgstr "RILASSATO"
 
 msgctxt "game_options"
 msgid "WRITE COLOR BUFFERS"
-msgstr ""
+msgstr "SCRIVI BUFFER COLORE"
 
 msgctxt "game_options"
 msgid "Enable this option if you get missing graphics or broken lighting ingame."
-msgstr ""
+msgstr "Attivate questa opzione se la grafica è mancante o l'illuminazione non funziona."
 
 msgctxt "game_options"
 msgid "WRITE DEPTH BUFFERS"
-msgstr ""
+msgstr "SCRIVI BUFFER PROFONDITÀ"
 
 msgctxt "game_options"
 msgid "Writes depth buffer values to vm memory. Default off."
-msgstr ""
+msgstr "Scrive i valori del buffer di profondità nella memoria della vm. Predefinito off."
 
 msgctxt "game_options"
 msgid "READ COLOR BUFFERS"
-msgstr ""
+msgstr "LEGGI BUFFER COLORE"
 
 msgctxt "game_options"
 msgid "Initializes render target memory using vm memory. Default off."
-msgstr ""
+msgstr "Inizializza la memoria di destinazione del rendering usando la memoria della vm. Predefinito off."
 
 msgctxt "game_options"
 msgid "READ DEPTH BUFFERS"
-msgstr ""
+msgstr "LEGGI BUFFER PROFONDITÀ"
 
 msgctxt "game_options"
 msgid "VSYNC"
@@ -5531,7 +5531,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "By having this off you might obtain a higher frame rate at the cost of tearing artifacts in the game."
-msgstr ""
+msgstr "Disattivando questa opzione, si potrebbe ottenere una velocità di frame superiore al costo di artefatti di tearing nel gioco."
 
 msgctxt "game_options"
 msgid "SCREEN SYNC"
@@ -5539,63 +5539,63 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ANISOTROPIC FILTER"
-msgstr ""
+msgstr "FILTRO ANISOTROPICO"
 
 msgctxt "game_options"
 msgid "Modern GPUs can handle this setting fine, even at 16x. Keep this on Auto if you want to use the original settings used by a real PS3."
-msgstr ""
+msgstr "Le moderne GPU sono in grado di gestire bene questa impostazione, anche a 16x. Mantenere questa impostazione su Auto se si vogliono usare le impostazioni originali utilizzate da una vera PS3."
 
 msgctxt "game_options"
 msgid "STRETCH TO DISPLAY AREA"
-msgstr ""
+msgstr "ESTENDI ALL'AREA DI DISPLAY"
 
 msgctxt "game_options"
 msgid "Overrides the aspect ratio and stretches the image to the full display area. Useful for games that have an ultrawide (21:9 or 32:9) patch available."
-msgstr ""
+msgstr "Sovrascrive il rapporto d'aspetto e allunga l'immagine all'intera area di visualizzazione. Utile per i giochi che hanno una patch ultrawide (21:9 o 32:9) disponibile."
 
 msgctxt "game_options"
 msgid "STRICT RENDERING MODE"
-msgstr ""
+msgstr "MODALITÀ RENDERING RIGOROSA"
 
 msgctxt "game_options"
 msgid "Enforces strict compliance to the API specification. Might result in degraded performance in some games. Can resolve rare cases of missing graphics and flickering."
-msgstr ""
+msgstr "Impone una stretta conformità alle specifiche API. Potrebbe comportare un peggioramento delle prestazioni in alcuni giochi. Può risolvere rari casi di grafica mancante e sfarfallio."
 
 msgctxt "game_options"
 msgid "DISABLE VERTEX CACHE"
-msgstr ""
+msgstr "DISABILITA CACHE VERTICI"
 
 msgctxt "game_options"
 msgid "Disables the vertex cache. Might resolve missing or flickering graphics output. May degrade performance."
-msgstr ""
+msgstr "Disattiva la cache dei vertici. Potrebbe risolvere il problema dell'output grafico mancante o tremolante. Può peggiorare le prestazioni."
 
 msgctxt "game_options"
 msgid "MULTITHREADED RSX"
-msgstr ""
+msgstr "RSX MULTITHREADED"
 
 msgctxt "game_options"
 msgid "May improve performance for some high-core processors. May cause slowdown in some situations due to the extra worker thread load."
-msgstr ""
+msgstr "Può migliorare le prestazioni per alcuni processori high-core. Può causare un rallentamento in alcune situazioni a causa del carico supplementare dei worker thread ."
 
 msgctxt "game_options"
 msgid "ENABLE 3D"
-msgstr ""
+msgstr "ABILITA 3D"
 
 msgctxt "game_options"
 msgid "Enables 3D stereo rendering."
-msgstr ""
+msgstr "Abilita il rendering stereo 3D."
 
 msgctxt "game_options"
 msgid "FSR UPSCALING"
-msgstr ""
+msgstr "UPSCALING FSR"
 
 msgctxt "game_options"
 msgid "Enable AMD FidelityFX upscaling, only works with VULKAN and an AMD graphics card."
-msgstr ""
+msgstr "Abilita l'upscaling AMD FidelityFX, funziona solo con VULKAN e una scheda grafica AMD."
 
 msgctxt "game_options"
 msgid "ASYNCHRONOUS TEXTURE STREAMING"
-msgstr ""
+msgstr "STREAMING TEXTURE ASINCRONO"
 
 msgctxt "game_options"
 msgid "SURROUND 5.1"
@@ -5607,11 +5607,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Choose which graphics API library to use. Vulkan is better, when supported."
-msgstr ""
+msgstr "Sceglie la libreria API grafica da utilizzare. Vulkan è migliore, se supportata."
 
 msgctxt "game_options"
 msgid "XAudio2 is the best alternative."
-msgstr ""
+msgstr "XAudio2 è l'alternativa migliore."
 
 msgctxt "game_options"
 msgid "SOUTHEAST ASIA"
@@ -5623,75 +5623,75 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "LLVM is fastest, use the Interpreter settings if there are issues."
-msgstr ""
+msgstr "LLVM è il più veloce, utilizzare le impostazioni dell'interprete in caso di problematiche."
 
 msgctxt "game_options"
 msgid "LLVM Recompiler"
-msgstr ""
+msgstr "Ricompilatore LLVM"
 
 msgctxt "game_options"
 msgid "Interpreter (static)"
-msgstr ""
+msgstr "Interprete (statico)"
 
 msgctxt "game_options"
 msgid "Interpreter (dynamic)"
-msgstr ""
+msgstr "Interprete (dinamico)"
 
 msgctxt "game_options"
 msgid "PPU LVM PRECOMPILATION"
-msgstr ""
+msgstr "PRECOMPILAZIONE PPU LVM"
 
 msgctxt "game_options"
 msgid "If disabled, these modules will only be compiled when needed. Depending on the game, this might interrupt the gameplay unexpectedly and possibly frequently."
-msgstr ""
+msgstr "Se disattivati, questi moduli verranno compilati solo quando necessari. A seconda del gioco, questo potrebbe interrompere il gameplay inaspettatamente e spesso."
 
 msgctxt "game_options"
 msgid "SPU DECODER"
-msgstr ""
+msgstr "DECODER SPU"
 
 msgctxt "game_options"
 msgid "LLVM is the fastest option with very good compatibility. If you experience issues, use the ASMJIT Recompiler."
-msgstr ""
+msgstr "LLVM è l'opzione più veloce con un'ottima compatibilità. In caso di problematiche, utilizzare il ricompilatore ASMJIT."
 
 msgctxt "game_options"
 msgid "ASMJIT Recompiler"
-msgstr ""
+msgstr "Ricompilatore ASMJIT"
 
 msgctxt "game_options"
 msgid "LOWER SPU THREAD PRIORITY"
-msgstr ""
+msgstr "PRIORITÀ THREAD SPU PIÙ BASSA"
 
 msgctxt "game_options"
 msgid "Runs SPU threads with lower priority than PPU threads. Default off"
-msgstr ""
+msgstr "Esegue i thread SPU con priorità inferiore a quella dei thread PPU. Predefinito off"
 
 msgctxt "game_options"
 msgid "PREFERRED SPU THREADS"
-msgstr ""
+msgstr "SPU THREAD PREFERITI"
 
 msgctxt "game_options"
 msgid "Some SPU stages are sensitive to race conditions and allowing a limited number at a time helps alleviate performance stalls. Setting this to a smaller value might improve performance and reduce stuttering in some games."
-msgstr ""
+msgstr "Alcuni stage SPU sono sensibili alle condizioni di gara e consentirne un numero limitato alla volta aiuta ad attenuare gli stalli di prestazione. L'impostazione di un valore inferiore può migliorare le prestazioni e ridurre lo stuttering in alcuni giochi."
 
 msgctxt "game_options"
 msgid "ENABLE SPU LOOP DETECTION"
-msgstr ""
+msgstr "ABILITA IL RILEVAMENTO DEL LOOP SPU"
 
 msgctxt "game_options"
 msgid "Try to detect loop conditions in SPU kernels and use them as scheduling hints. Default off"
-msgstr ""
+msgstr "Cerca di rilevare le condizioni di loop nei kernel SPU e di usarle come suggerimenti per la programmazione. Predefinito off"
 
 msgctxt "game_options"
 msgid "SPU BLOCK SIZE"
-msgstr ""
+msgstr "DIMENSIONE BLOCCO SPU"
 
 msgctxt "game_options"
 msgid "This option controls the SPU analyser, particularly the size of compiled units.Use the safe mode for maximum compatibility."
-msgstr ""
+msgstr "Questa opzione controlla l'analizzatore SPU, in particolare la dimensione delle unità compilate. Utilizzare la modalità sicura per ottenere la massima compatibilità."
 
 msgctxt "game_options"
 msgid "SAFE"
-msgstr ""
+msgstr "SICURO"
 
 msgctxt "game_options"
 msgid "MEGA"
@@ -5703,19 +5703,19 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ACCURATE RSX RESERVATION ACCESS"
-msgstr ""
+msgstr "ACCESSO ACCURATO ALLA PRENOTAZIONE RSX"
 
 msgctxt "game_options"
 msgid "Improves stability in some games but reduces performance."
-msgstr ""
+msgstr "Migliora la stabilità in alcuni giochi, ma riduce le prestazioni."
 
 msgctxt "game_options"
 msgid "ACCURATE XFLOAT"
-msgstr ""
+msgstr "XFLOAT ACCURATO"
 
 msgctxt "game_options"
 msgid "Higher accuracy fixes bugs in some games at cost of performance. Only used if SPU decoder is set to Dynamic or LLVM."
-msgstr ""
+msgstr "Una maggiore precisione risolve i bug di alcuni giochi a scapito delle prestazioni. Utilizzato solo se il decodificatore SPU è impostato su Dynamic o LLVM."
 
 msgctxt "game_options"
 msgid "FULL WIDTH AVX-512"
@@ -5723,99 +5723,99 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Enables the use of code with full width AVX-512.Only available with CPUs that support AVX-512."
-msgstr ""
+msgstr "Consente l'uso di codice con AVX-512 a larghezza piena. Disponibile solo con CPU che supportano AVX-512."
 
 msgctxt "game_options"
 msgid "ACCURATE PPU VECTOR NAN"
-msgstr ""
+msgstr "PPU VECTOR NAN ACCURATO"
 
 msgctxt "game_options"
 msgid "Respect Non-Java Mode bit values for vector ops in PPU backends. If unsure, do not modify this setting. Default off."
-msgstr ""
+msgstr "Rispetta i valori dei bit della modalità Non-Java per le operazioni vettoriali nei backend PPU. Se non si è sicuri, non modificare questa impostazione. Predefinito off."
 
 msgctxt "game_options"
 msgid "START GAME IN FULLSCREEN"
-msgstr ""
+msgstr "INIZIA GIOCO A PIENO SCHERMO"
 
 msgctxt "game_options"
 msgid "Start game in fullscreen, default yes."
-msgstr ""
+msgstr "Avvia il gioco a schermo intero, per impostazione predefinita sì."
 
 msgctxt "game_options"
 msgid "Native (720p/1080p)"
-msgstr ""
+msgstr "Nativo (720p/1080p)"
 
 msgctxt "game_options"
 msgid "GRAPHICS BACKEND MULTITHREADING"
-msgstr ""
+msgstr "MULTITHREADING BACKEND GRAFICO"
 
 msgctxt "game_options"
 msgid "Executes Graphics backend on second thread, improves performance, reduces stutter and speeds up shader compilation."
-msgstr ""
+msgstr "Esegue il backend grafico su un secondo thread, migliorando le prestazioni, riducendo lo stutter e accelerando la compilazione degli shader."
 
 msgctxt "game_options"
 msgid "SHADER CACHE"
-msgstr ""
+msgstr "CACHE SHADER"
 
 msgctxt "game_options"
 msgid "Reduces stuttering by enabling shader cache."
-msgstr ""
+msgstr "Riduce lo stuttering attivando la cache degli shader."
 
 msgctxt "game_options"
 msgid "TEXTURE RECOMPRESSION"
-msgstr ""
+msgstr "RICOMPRESSIONE TEXTURE"
 
 msgctxt "game_options"
 msgid "Reduces VRAM usage at the cost of quality, may increase stuttering."
-msgstr ""
+msgstr "Riduce l'uso della VRAM a scapito della qualità, può aumentare lo stuttering."
 
 msgctxt "game_options"
 msgid "ENABLE PPTC"
-msgstr ""
+msgstr "ABILITA PPTC"
 
 msgctxt "game_options"
 msgid "Reduces stuttering and speeds up boot after first boot."
-msgstr ""
+msgstr "Riduce lo stuttering e velocizza l'avvio dopo il primo boot."
 
 msgctxt "game_options"
 msgid "FS INTEGRITY CHECKS"
-msgstr ""
+msgstr "CONTROLLI DI INTEGRITÀ FS"
 
 msgctxt "game_options"
 msgid "Checks for corrupt files when booting a game."
-msgstr ""
+msgstr "Controlla la presenza di file corrotti all'avvio di un gioco."
 
 msgctxt "game_options"
 msgid "MEMORY MANAGER MODE"
-msgstr ""
+msgstr "MODALITÀ GESTORE MEMORIA"
 
 msgctxt "game_options"
 msgid "Greatly affects CPU performance."
-msgstr ""
+msgstr "Influenza notevolmente le prestazioni della CPU."
 
 msgctxt "game_options"
 msgid "HOST (fast)"
-msgstr ""
+msgstr "HOST (veloce)"
 
 msgctxt "game_options"
 msgid "HOST UNCHECKED (fastest)"
-msgstr ""
+msgstr "HOST UNCHECKED (più veloce)"
 
 msgctxt "game_options"
 msgid "EXPAND DRAM"
-msgstr ""
+msgstr "ESPANDI DRAM"
 
 msgctxt "game_options"
 msgid "Increase DRAM size from 4GB to 6GB, only needed for 4K or hires texture packs."
-msgstr ""
+msgstr "Aumenta la dimensione della DRAM da 4GB a 6GB, necessaria solo per i pacchetti di texture 4K o hires."
 
 msgctxt "game_options"
 msgid "IGNORE MISSING SERVICES"
-msgstr ""
+msgstr "IGNORA SERVIZI MANCANTI"
 
 msgctxt "game_options"
 msgid "Ignore Horizon OS Services, can solve crashes on some games."
-msgstr ""
+msgstr "Ignora i servizi di Horizon OS, può risolvere i crash di alcuni giochi."
 
 msgctxt "game_options"
 msgid "OPENAL"
@@ -5827,7 +5827,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "MOTION CONTROL"
-msgstr ""
+msgstr "CONTROLLO DEL MOVIMENTO"
 
 msgctxt "game_options"
 msgid "SCALER"
@@ -5867,15 +5867,15 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Enable widescreen may cause rendering issues"
-msgstr ""
+msgstr "L'attivazione del widescreen può causare problematiche di rendering."
 
 msgctxt "game_options"
 msgid "NEW 3D ENGINE"
-msgstr ""
+msgstr "NUOVO MOTORE 3D"
 
 msgctxt "game_options"
 msgid "Default is ON, setting to OFF might fix compatibility for older GPU."
-msgstr ""
+msgstr "L'impostazione predefinita è ON, se impostata su OFF potrebbe risolvere la compatibilità con le GPU più vecchie."
 
 msgctxt "game_options"
 msgid "QUAD RENDERING"
@@ -5883,7 +5883,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Enable proper quad rendering. For higher end systems."
-msgstr ""
+msgstr "Abilita il corretto quad rendering. Per i sistemi di fascia alta."
 
 msgctxt "game_options"
 msgid "THROTTLE"
@@ -5891,23 +5891,23 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Default is ON, use this setting to remove the 60hz limit, might break games"
-msgstr ""
+msgstr "L'impostazione predefinita è ON, utilizzare questa impostazione per rimuovere il limite dei 60 Hz, che potrebbe compromettere i giochi."
 
 msgctxt "game_options"
 msgid "CROSSHAIRS"
-msgstr ""
+msgstr "MIRINO"
 
 msgctxt "game_options"
 msgid "Enable crosshairs in shooting games"
-msgstr ""
+msgstr "Abilita il mirino nei giochi di shooting."
 
 msgctxt "game_options"
 msgid "P1 only"
-msgstr ""
+msgstr "Solo P1"
 
 msgctxt "game_options"
 msgid "P2 only"
-msgstr ""
+msgstr "Solo P2"
 
 msgctxt "game_options"
 msgid "P1 & P2"
@@ -5915,19 +5915,19 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ENABLE FORCE FEEDBACK"
-msgstr ""
+msgstr "ABILITA FORCE FEEDBACK"
 
 msgctxt "game_options"
 msgid "Enable force feedback for supported controllers"
-msgstr ""
+msgstr "Abilita il force feedback per i controller supportati."
 
 msgctxt "game_options"
 msgid "ENABLE BACKGLASS"
-msgstr ""
+msgstr "ABILITA BACKGLASS"
 
 msgctxt "game_options"
 msgid "NATIVE (960x544)"
-msgstr ""
+msgstr "NATIVO (960x544)"
 
 msgctxt "game_options"
 msgid "7X- (6720x3808)"
@@ -5935,55 +5935,55 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Enhance the image quality of the surfaces."
-msgstr ""
+msgstr "Migliora la qualità delle immagini delle superfici."
 
 msgctxt "game_options"
 msgid "Pre-coompile shader cache at game startup, leave ON for less stuttering in game."
-msgstr ""
+msgstr "Precompila la cache degli shader all'avvio del gioco, lasciare attivo per ridurre lo stuttering nel gioco."
 
 msgctxt "game_options"
 msgid "TEXTURE CACHE"
-msgstr ""
+msgstr "CACHE TEXTURE"
 
 msgctxt "game_options"
 msgid "Select NO to disable texture cache."
-msgstr ""
+msgstr "Selezionare NO per disabilitare la cache delle texture."
 
 msgctxt "game_options"
 msgid "CPU OPTIMIZATIONS"
-msgstr ""
+msgstr "OTTIMIZZAZIONI CPU"
 
 msgctxt "game_options"
 msgid "Leave this ON by default to enable CPU JIT Optimizations."
-msgstr ""
+msgstr "Lasciare ON per impostazione predefinita per abilitare le ottimizzazioni JIT della CPU."
 
 msgctxt "game_options"
 msgid "Display an overlay with performance statistics."
-msgstr ""
+msgstr "Mostra un overlay con le statistiche sulle prestazioni."
 
 msgctxt "game_options"
 msgid "MODULES SOURCE"
-msgstr ""
+msgstr "SORGENTE MODULI"
 
 msgctxt "game_options"
 msgid "Define how modules should be managed."
-msgstr ""
+msgstr "Definisce il modo in cui i moduli devono essere gestiti."
 
 msgctxt "game_options"
 msgid "MODULES"
-msgstr ""
+msgstr "MODULI"
 
 msgctxt "game_options"
 msgid "EMULATOR UI (AUTO)"
-msgstr ""
+msgstr "UI EMULATORE (AUTO)"
 
 msgctxt "game_options"
 msgid "EMULATOR UI (MANUAL)"
-msgstr ""
+msgstr "UI EMULATORE (MANUALE)"
 
 msgctxt "game_options"
 msgid "FRONTEND UI (MANUAL)"
-msgstr ""
+msgstr "UI FRONTEND (MANUALE)"
 
 msgctxt "game_options"
 msgid "libhttp"
@@ -5991,7 +5991,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Required to fix Tales of Hearts R, only valid if modules are managed from Retrobat."
-msgstr ""
+msgstr "Richiesto per correggere Tales of Hearts R, valido solo se i moduli sono gestiti da Retrobat."
 
 msgctxt "game_options"
 msgid "libscemp4"
@@ -5999,23 +5999,23 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Required to fix Street Fighter vs Tekken, only valid if modules are managed from Retrobat."
-msgstr ""
+msgstr "Richiesto per correggere Street Fighter vs Tekken, valido solo se i moduli sono gestiti da Retrobat."
 
 msgctxt "game_options"
 msgid "CYCLE EXACT"
-msgstr ""
+msgstr "CICLO ESATTO"
 
 msgctxt "game_options"
 msgid "Increase accuracy, can fix some issues of sound and speed."
-msgstr ""
+msgstr "Aumenta la precisione, può risolvere alcune problematiche relative al suono e alla velocità."
 
 msgctxt "game_options"
 msgid "center"
-msgstr ""
+msgstr "centro"
 
 msgctxt "game_options"
 msgid "The maximum RAM memory available for the system."
-msgstr ""
+msgstr "Memoria RAM massima disponibile per il sistema."
 
 msgctxt "game_options"
 msgid "128MB"
@@ -6023,7 +6023,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Allow game that support different resolutions to be rendered in specific resolution."
-msgstr ""
+msgstr "Consente ai giochi che supportano risoluzioni diverse di essere renderizzati con una risoluzione specifica."
 
 msgctxt "game_options"
 msgid "1280x720 (default)"
@@ -6031,11 +6031,11 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "RENDER TARGET PATH"
-msgstr ""
+msgstr "PERCORSO TARGET DI RENDERING"
 
 msgctxt "game_options"
 msgid "Render target emulation path to use. rtv/fbo offers better performance, rov/fsi highest accuracy."
-msgstr ""
+msgstr "Percorso di emulazione del target di rendering da utilizzare. rtv/fbo offre prestazioni migliori, rov/fsi la massima precisione."
 
 msgctxt "game_options"
 msgid "RTV/FBO"
@@ -6047,15 +6047,15 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "ALLOW INVALID FETCH"
-msgstr ""
+msgstr "CONSENTI L'ACQUISIZIONE DI DATI NON VALIDI"
 
 msgctxt "game_options"
 msgid "Allow texture and vertex fetch constants with invalid type, can be used to bypass fetch errors in certain games."
-msgstr ""
+msgstr "Consente le costanti di fetch di texture e vertex con tipo non valido; può essere usato per aggirare gli errori di fetch in alcuni giochi."
 
 msgctxt "game_options"
 msgid "Post-processing anti-aliasing effect to apply to the image output of the game."
-msgstr ""
+msgstr "Effetto di post-elaborazione anti-aliasing da applicare all'immagine in uscita dal gioco."
 
 msgctxt "game_options"
 msgid "FXAA"
@@ -6063,7 +6063,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "FXAA EXTREME"
-msgstr ""
+msgstr "FXAA ESTREMO"
 
 msgctxt "game_options"
 msgid "VRR"
@@ -6071,7 +6071,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Allow using variable refresh rate on displays supporting it. On displays not supporting VRR, screen tearing may occur in certain cases."
-msgstr ""
+msgstr "Consente l'uso della frequenza di aggiornamento variabile sugli schermi che la supportano. Sui display che non supportano il VRR, in alcuni casi si può verificare lo screen tearing."
 
 msgctxt "game_options"
 msgid "LICENCE MASK"
@@ -6079,35 +6079,35 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Set license mask for activated content (ALL LICENCES is Generally a bad idea, could lead to undefined behavior)."
-msgstr ""
+msgstr "Imposta la maschera di licenza per i contenuti attivati (TUTTE LE LICENZE è generalmente una cattiva idea, potrebbe portare a un comportamento non definito)."
 
 msgctxt "game_options"
 msgid "NO LICENCES"
-msgstr ""
+msgstr "NESSUNA LICENZA"
 
 msgctxt "game_options"
 msgid "FIRST LICENCE ENABLED"
-msgstr ""
+msgstr "PRIMA LICENZA ABILITATA"
 
 msgctxt "game_options"
 msgid "ALL LICENCES ENABLED"
-msgstr ""
+msgstr "TUTTE LE LICENZE ABILITATE"
 
 msgctxt "game_options"
 msgid "MOUNT CACHE"
-msgstr ""
+msgstr "MONTA CACHE"
 
 msgctxt "game_options"
 msgid "Enable cache mount"
-msgstr ""
+msgstr "Abilita il montaggio della cache."
 
 msgctxt "game_options"
 msgid "REFRESH MEMORY PAGES STATE"
-msgstr ""
+msgstr "AGGIORNA STATO PAGINE DI MEMORIA"
 
 msgctxt "game_options"
 msgid "Refresh state of memory pages to enable gpu written data. (Use for 'Team Ninja' Games to fix missing character models)."
-msgstr ""
+msgstr "Aggiorna lo stato delle pagine di memoria per abilitare i dati scritti dalla gpu. (Da usare per i giochi 'Team Ninja' per correggere i modelli dei personaggi mancanti)."
 
 msgctxt "game_options"
 msgid "SCRIBBLE HEAP"
@@ -6115,15 +6115,15 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Scribble 0xCD into all allocated heap memory."
-msgstr ""
+msgstr "Scrive 0xCD in tutta la memoria heap allocata."
 
 msgctxt "game_options"
 msgid "PROTECT ZERO"
-msgstr ""
+msgstr "PROTEGGI ZERO"
 
 msgctxt "game_options"
 msgid "Protect the zero page from reads and writes."
-msgstr ""
+msgstr "Protegge la pagina zero da letture e scritture."
 
 msgctxt "game_options"
 msgid "DIRECT3D12"
@@ -6135,63 +6135,63 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "CONTROLLER TYPE"
-msgstr ""
+msgstr "TIPO DI CONTROLLI"
 
 msgctxt "game_options"
 msgid "Use winkey for keyboard, xinput if you have a XBOX controller, sdl for other type of controllers."
-msgstr ""
+msgstr "Utilizzare winkey per la tastiera, xinput se si dispone di un controller XBOX, sdl per altri tipi di controller."
 
 msgctxt "game_options"
 msgid "ANY"
-msgstr ""
+msgstr "QUALSIASI"
 
 msgctxt "game_options"
 msgid "KEYBOARD"
-msgstr ""
+msgstr "TASTIERA"
 
 msgctxt "game_options"
 msgid "XBOX CONTROLLER"
-msgstr ""
+msgstr "CONTROLLER XBOX"
 
 msgctxt "game_options"
 msgid "OTHER"
-msgstr ""
+msgstr "ALTRO"
 
 msgctxt "game_options"
 msgid "Improve fidelity of 3D models at the cost of increased performance requirements."
-msgstr ""
+msgstr "Migliora la fedeltà dei modelli 3D a costo di aumentare le prestazioni richieste."
 
 msgctxt "game_options"
 msgid "CPU ACCURACY"
-msgstr ""
+msgstr "PRECISIONE CPU"
 
 msgctxt "game_options"
 msgid "Leave AUTO as default except the game requires specific setting."
-msgstr ""
+msgstr "Lasciare AUTO come impostazione predefinita, a meno che il gioco non richieda un'impostazione specifica."
 
 msgctxt "game_options"
 msgid "UNSAFE"
-msgstr ""
+msgstr "NON SICURA"
 
 msgctxt "game_options"
 msgid "PARANOID"
-msgstr ""
+msgstr "PARANOIDE"
 
 msgctxt "game_options"
 msgid "SCALING FILTER"
-msgstr ""
+msgstr "FILTRO SCALING"
 
 msgctxt "game_options"
 msgid "Set scaling filter for rendered content."
-msgstr ""
+msgstr "Imposta il filtro di scaling per il contenuto renderizzato."
 
 msgctxt "game_options"
 msgid "Bicubic"
-msgstr ""
+msgstr "Bicubico"
 
 msgctxt "game_options"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussiano"
 
 msgctxt "game_options"
 msgid "ScaleForce"
@@ -6203,7 +6203,7 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "Sets the player controller type"
-msgstr ""
+msgstr "Imposta il tipo di controlli del giocatore."
 
 msgctxt "game_options"
 msgid "PRO CONTROLLER"
@@ -6211,19 +6211,19 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "DUAL JOYCON"
-msgstr ""
+msgstr "ENTRAMBI I JOYCON"
 
 msgctxt "game_options"
 msgid "LEFT JOYCON"
-msgstr ""
+msgstr "JOYCON SINISTRO"
 
 msgctxt "game_options"
 msgid "RIGHT JOYCON"
-msgstr ""
+msgstr "JOYCON DESTRO"
 
 msgctxt "game_options"
 msgid "HANDHELD"
-msgstr ""
+msgstr "PORTATILE"
 
 msgctxt "game_options"
 msgid "GAMECUBE"
@@ -6231,8 +6231,8 @@ msgstr ""
 
 msgctxt "game_options"
 msgid "PLAYER 3 CONTROLLER TYPE"
-msgstr ""
+msgstr "TIPO DI CONTROLLI GIOCATORE 3"
 
 msgctxt "game_options"
 msgid "PLAYER 4 CONTROLLER TYPE"
-msgstr ""
+msgstr "TIPO DI CONTROLLI GIOCATORE 4"
