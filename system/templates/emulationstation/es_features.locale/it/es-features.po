@@ -4311,7 +4311,7 @@ msgstr "ABILITA MOVIMENTO"
 
 msgctxt "game_options"
 msgid "Can only be used if the controller is compatible with motion control."
-msgstr "Può essere utilizzato solo se il controllore è compatibile con il controllo del movimento."
+msgstr "Può essere utilizzato solo se il controller è compatibile con il controllo del movimento."
 
 msgctxt "game_options"
 msgid "INVERT A AND B"
