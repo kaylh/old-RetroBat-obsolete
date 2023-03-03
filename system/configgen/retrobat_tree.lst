@@ -147,9 +147,9 @@ emulators\yuzu-early-access\user\config
 emulators\yuzu\user
 emulators\yuzu\user\config
 library
-library\records
-library\records\config
-library\records\output
+records
+records\config
+records\output
 roms
 saves
 saves\amiga
