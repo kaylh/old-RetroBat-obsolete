@@ -4,7 +4,7 @@ default:
   shader: hqx/hq2x
   # emulators using reshader 
   mednafen: HQ4X@HQ4X.fx
-  model2: HQ4X@HQ4X.fx
+  m2emulator: HQ4X@HQ4X.fx
   supermodel: HQ4X@HQ4X.fx
   hypseus: HQ4X@HQ4X.fx
   daphne: HQ4X@HQ4X.fx

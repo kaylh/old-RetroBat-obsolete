@@ -4,7 +4,7 @@ default:
   shader: crt/newpixie-crt
   # emulators using reshader 
   mednafen: CRTNewPixie@CRT-NewPixie.fx
-  model2: CRTNewPixie@CRT-NewPixie.fx
+  m2emulator: CRTNewPixie@CRT-NewPixie.fx
   supermodel: CRTNewPixie@CRT-NewPixie.fx
   hypseus: CRTNewPixie@CRT-NewPixie.fx
   daphne: CRTNewPixie@CRT-NewPixie.fx  
