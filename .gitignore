@@ -6,5 +6,4 @@ retrobat.ini
 *.exe
 butler_push.txt
 *.001
-butler.exe
-*-setup.exe
+system/templates/emulationstation/es_features.locale/it/es-features.mo
