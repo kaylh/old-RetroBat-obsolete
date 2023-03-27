@@ -32,9 +32,6 @@ bios\Mupen64plus\hires_texture
 bios\neocd
 bios\pcsx2
 bios\pcsx2\bios
-bios\pcsx2\cheats
-bios\pcsx2\cheats_ni
-bios\pcsx2\cheats_ws
 bios\pcsx2\textures
 bios\quasi88
 bios\raine
@@ -42,6 +39,12 @@ bios\raine\artwork
 bios\raine\emudx
 bios\same_cdi
 bios\same_cdi\bios
+cheats
+cheats\pcsx2
+cheats\pcsx2\cheats
+cheats\pcsx2\cheats_ni
+cheats\pcsx2\cheats_ws
+cheats\retroarch
 decorations
 emulationstation
 emulationstation\.emulationstation
