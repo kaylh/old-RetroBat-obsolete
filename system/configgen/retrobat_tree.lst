@@ -10,6 +10,11 @@ bios\fbneo
 bios\fbneo\samples
 bios\HdPacks
 bios\mame
+bios\mame\artwork
+bios\mame\cfg
+bios\mame\hash
+bios\mame\ini
+bios\mame\samples
 bios\mame2003
 bios\mame2003-plus
 bios\mame2003-plus\samples
@@ -167,8 +172,11 @@ saves\gamecube\User\GC\USA
 saves\gba
 saves\gba\mgba
 saves\mame
+saves\mame\artwork
 saves\mame\ctrlr
 saves\mame\game_artwork
+saves\mame\nvram
+saves\mame\states
 saves\mastersystem
 saves\mastersystem\kega-fusion
 saves\megadrive
