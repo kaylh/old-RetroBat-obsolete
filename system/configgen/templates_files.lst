@@ -46,6 +46,7 @@
 \system\templates\m2emulator\ReShadePreset.ini|\emulators\m2emulator\ReShadePreset.ini
 \system\templates\m2emulator\d3d9.dll|\emulators\m2emulator\d3d9.dll
 \system\templates\mame\fmtownsux.ini|\emulators\mame\ini\fmtownsux.ini
+\system\templates\mame\ctrlr\ds4_ds5.cfg|\saves\mame\ctrlr\ds4_ds5.cfg
 \system\templates\mesen\settings.xml|\emulators\mesen\settings.xml
 \system\templates\mgba\config.ini|\emulators\mgba\config.ini
 \system\templates\nosgba\NO$GBA.INI|\emulators\nosgba\NO$GBA.INI

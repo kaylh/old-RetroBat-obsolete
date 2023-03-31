@@ -10,6 +10,11 @@ bios\fbneo
 bios\fbneo\samples
 bios\HdPacks
 bios\mame
+bios\mame\artwork
+bios\mame\cfg
+bios\mame\hash
+bios\mame\ini
+bios\mame\samples
 bios\mame2003
 bios\mame2003-plus
 bios\mame2003-plus\samples
@@ -32,9 +37,6 @@ bios\Mupen64plus\hires_texture
 bios\neocd
 bios\pcsx2
 bios\pcsx2\bios
-bios\pcsx2\cheats
-bios\pcsx2\cheats_ni
-bios\pcsx2\cheats_ws
 bios\pcsx2\textures
 bios\quasi88
 bios\raine
@@ -42,6 +44,13 @@ bios\raine\artwork
 bios\raine\emudx
 bios\same_cdi
 bios\same_cdi\bios
+cheats
+cheats\mame
+cheats\pcsx2
+cheats\pcsx2\cheats
+cheats\pcsx2\cheats_ni
+cheats\pcsx2\cheats_ws
+cheats\retroarch
 decorations
 emulationstation
 emulationstation\.emulationstation
@@ -162,6 +171,11 @@ saves\gamecube\User\GC\JAP
 saves\gamecube\User\GC\USA
 saves\gba
 saves\gba\mgba
+saves\mame
+saves\mame\artwork
+saves\mame\ctrlr
+saves\mame\nvram
+saves\mame\states
 saves\mastersystem
 saves\mastersystem\kega-fusion
 saves\megadrive
