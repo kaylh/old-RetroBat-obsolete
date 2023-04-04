@@ -218,6 +218,7 @@ system\modules\rb_launcher
 system\modules\rb_updater
 system\padtokey
 system\resources
+system\retroachievementsounds
 system\scripts
 system\shaders
 system\templates
