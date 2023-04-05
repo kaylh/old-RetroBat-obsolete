@@ -208,6 +208,8 @@ screenshots\citra
 screenshots\pcsx2
 screenshots\winuae
 screenshots\yuzu
+sounds
+sounds\retroachievements
 system
 system\configgen
 system\decorations
@@ -218,7 +220,6 @@ system\modules\rb_launcher
 system\modules\rb_updater
 system\padtokey
 system\resources
-system\retroachievementsounds
 system\scripts
 system\shaders
 system\templates
