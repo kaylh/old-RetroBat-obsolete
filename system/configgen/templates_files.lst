@@ -68,6 +68,7 @@
 \system\templates\project64\Project64.cfg|\emulators\project64\Config\Project64.cfg
 \system\templates\raine\raine32_sdl.cfg|\emulators\raine\config\raine32_sdl.cfg
 \system\templates\redream\redream.cfg|\emulators\redream\redream.cfg
+\system\templates\retroarch\assets\sounds\retroachievements\retroarch_standard.ogg|\sounds\retroachievements\retroarch_standard.ogg
 \system\templates\retroarch\custom-shaders-presets.zip|\emulators\retroarch\shaders
 \system\templates\retroarch\retroarch-core-options.cfg|\emulators\retroarch\retroarch-core-options.cfg
 \system\templates\retroarch\retroarch.cfg|\emulators\retroarch\retroarch.cfg
