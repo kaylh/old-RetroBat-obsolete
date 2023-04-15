@@ -45,6 +45,7 @@ bios\raine\emudx
 bios\same_cdi
 bios\same_cdi\bios
 cheats
+cheats\duckstation
 cheats\mame
 cheats\pcsx2
 cheats\pcsx2\cheats
@@ -196,6 +197,7 @@ saves\psp\PSP\TEXTURES
 saves\psx
 saves\psx\duckstation
 saves\psx\duckstation\memcards
+saves\psx\duckstation\sstates
 saves\saturn
 saves\saturn\kronos
 saves\segacd
@@ -206,6 +208,7 @@ saves\yuzu
 saves\yuzu\sdmc
 screenshots
 screenshots\citra
+screenshots\duckstation
 screenshots\pcsx2
 screenshots\winuae
 screenshots\yuzu
