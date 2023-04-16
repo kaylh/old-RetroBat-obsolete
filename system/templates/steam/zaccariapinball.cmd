@@ -1,8 +1,7 @@
 @echo off
 mode 1000
 
-set steam_path_default=C:\Program Files (x86)\Steam
-set "steam_path=%steam_path_default%"
+FOR /F "tokens=2* skip=2" %%a in ('reg query "HKLM\SOFTWARE\WOW6432Node\Valve\Steam" /v "InstallPath"') DO SET "steam_path=%%b"
 
 set game_id=444930
 set zaccaria_bin=ZaccariaPinball.exe
