@@ -13,6 +13,7 @@ default:
   scummvm: NTSC_RetroArch@NTSC_RetroArch.fx
   simcoupe: NTSC_RetroArch@NTSC_RetroArch.fx
   demul: NTSC_RetroArch@NTSC_RetroArch.fx
+  demul-old: NTSC_RetroArch@NTSC_RetroArch.fx
   phoenix: NTSC_RetroArch@NTSC_RetroArch.fx
   bigpemu: NTSC_RetroArch@NTSC_RetroArch.fx
   mednafen: NTSC_RetroArch@NTSC_RetroArch.fx

@@ -13,6 +13,7 @@ default:
   scummvm: NTSC_MAME@ntsc.fx
   simcoupe: NTSC_MAME@ntsc.fx
   demul: NTSC_MAME@ntsc.fx
+  demul-old: NTSC_MAME@ntsc.fx
   phoenix: NTSC_MAME@ntsc.fx
   bigpemu: NTSC_MAME@ntsc.fx
   mednafen: NTSC_MAME@ntsc.fx

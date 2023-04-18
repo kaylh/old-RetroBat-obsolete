@@ -15,7 +15,9 @@ default:
   simcoupe: EasymodeCRT@CRTEasymode.fx
   bigpemu: EasymodeCRT@CRTEasymode.fx
   phoenix: EasymodeCRT@CRTEasymode.fx
-  bigpemu: EasymodeCRT@CRTEasymode.fx  
+  bigpemu: EasymodeCRT@CRTEasymode.fx
+  demul: EasymodeCRT@CRTEasymode.fx
+  demul-old: EasymodeCRT@CRTEasymode.fx
 # per system overrides  
 gba:
   shader: handheld/zfast-lcd
