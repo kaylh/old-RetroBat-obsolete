@@ -35,6 +35,7 @@ bios\Mupen64plus\cache
 bios\Mupen64plus\dump
 bios\Mupen64plus\hires_texture
 bios\neocd
+bios\openmsx
 bios\pcsx2
 bios\pcsx2\bios
 bios\pcsx2\textures
