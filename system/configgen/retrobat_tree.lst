@@ -206,8 +206,11 @@ saves\segacd
 saves\segacd\kega-fusion
 saves\snes
 saves\snes\snes9x
-saves\yuzu
-saves\yuzu\sdmc
+saves\switch
+saves\switch\dump
+saves\switch\load
+saves\switch\nand
+saves\switch\sdmc
 screenshots
 screenshots\citra
 screenshots\duckstation
