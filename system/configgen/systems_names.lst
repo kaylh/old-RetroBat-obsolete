@@ -63,6 +63,7 @@ gba2players
 gbc
 gbc2players
 gmaster
+gp32
 gx4000
 hbmame
 hikaru
@@ -83,6 +84,7 @@ model3
 msx1
 msx2
 msx2+
+msxturbor
 mugen
 n64
 n64dd
@@ -156,5 +158,6 @@ x68000
 xbox
 xbox360
 xegs
+zaccariapinball
 zx81
 zxspectrum

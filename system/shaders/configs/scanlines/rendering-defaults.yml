@@ -16,6 +16,8 @@ default:
   demul: ScanlinesAbs@scanlines-abs.fx
   phoenix: ScanlinesAbs@scanlines-abs.fx
   bigpemu: ScanlinesAbs@scanlines-abs.fx
+  demul: ScanlinesAbs@scanlines-abs.fx
+  demul-old: ScanlinesAbs@scanlines-abs.fx
 n64:
   shader: interpolation/sharp-bilinear-scanlines
 gba:

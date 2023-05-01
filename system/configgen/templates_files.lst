@@ -46,7 +46,10 @@
 \system\templates\m2emulator\ReShadePreset.ini|\emulators\m2emulator\ReShadePreset.ini
 \system\templates\m2emulator\d3d9.dll|\emulators\m2emulator\d3d9.dll
 \system\templates\mame\fmtownsux.ini|\emulators\mame\ini\fmtownsux.ini
+\system\templates\mame\blank.fmtowns|\saves\mame\fmtowns\blank.fmtowns
 \system\templates\mame\ctrlr\ds4_ds5.cfg|\saves\mame\ctrlr\ds4_ds5.cfg
+\system\templates\mame\ctrlr\switch_pro.cfg|\saves\mame\ctrlr\switch_pro.cfg
+\system\templates\mame\ctrlr\xinput.cfg|\saves\mame\ctrlr\xinput.cfg
 \system\templates\mesen\settings.xml|\emulators\mesen\settings.xml
 \system\templates\mgba\config.ini|\emulators\mgba\config.ini
 \system\templates\nosgba\NO$GBA.INI|\emulators\nosgba\NO$GBA.INI
@@ -85,6 +88,7 @@
 \system\templates\scummvm\scummvm.ini|\emulators\scummvm\scummvm.ini
 \system\templates\snes9x\snes9x.conf|\emulators\snes9x\snes9x.conf
 \system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
+\system\templates\steam\zaccariapinball.cmd|\emulators\steam\zaccariapinball.cmd
 \system\templates\supermodel\ReShade.ini|\emulators\supermodel\ReShade.ini
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
 \system\templates\supermodel\Supermodel.ini|\emulators\supermodel\Config\Supermodel.ini

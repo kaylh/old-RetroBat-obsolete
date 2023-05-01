@@ -15,7 +15,9 @@ default:
   simcoupe: HQ4X@HQ4X.fx  
   demul: HQ4X@HQ4X.fx
   phoenix: HQ4X@HQ4X.fx
-  bigpemu: HQ4X@HQ4X.fx  
+  bigpemu: HQ4X@HQ4X.fx
+  demul: HQ4X@HQ4X.fx
+  demul-old: HQ4X@HQ4X.fx
 # per system overrides  
 n64:
   shader: anti-aliasing/fxaa
