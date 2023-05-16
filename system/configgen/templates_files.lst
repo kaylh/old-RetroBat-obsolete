@@ -52,6 +52,8 @@
 \system\templates\mame\ctrlr\xinput.cfg|\saves\mame\ctrlr\xinput.cfg
 \system\templates\mesen\settings.xml|\emulators\mesen\settings.xml
 \system\templates\mgba\config.ini|\emulators\mgba\config.ini
+\system\templates\mupen64\Config\GLideN64.ini|\emulators\mupen64\Config\GLideN64.ini
+\system\templates\mupen64\Config\mupen64plus.cfg|\emulators\mupen64\Config\mupen64plus.cfg
 \system\templates\nosgba\NO$GBA.INI|\emulators\nosgba\NO$GBA.INI
 \system\templates\oricutron\oricutron.cfg|\emulators\oricutron\oricutron.cfg
 \system\templates\pcsx2-16\inis\Dev9null.ini|\emulators\pcsx2-16\inis\Dev9null.ini
