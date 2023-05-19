@@ -81,6 +81,9 @@ emulators\cemu\mlc01
 emulators\citra
 emulators\citra\user
 emulators\citra\user\config
+emulators\citra-canary
+emulators\citra-canary\user
+emulators\citra-canary\user\config
 emulators\cxbx-reloaded
 emulators\cxbx-reloaded\EmuDisk
 emulators\daphne

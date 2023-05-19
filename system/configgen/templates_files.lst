@@ -5,6 +5,7 @@
 \system\templates\bigpemu\userdata\BigPEmuConfig.bigpcfg|\emulators\bigpemu\userdata\BigPEmuConfig.bigpcfg
 \system\templates\cemu\settings.xml|\emulators\cemu\settings.xml
 \system\templates\citra\qt-config.ini|\emulators\citra\user\config\qt-config.ini
+\system\templates\citra-canary\qt-config.ini|\emulators\citra-canary\user\config\qt-config.ini
 \system\templates\cxbx-reloaded\settings.ini|\emulators\cxbx-reloaded\settings.ini
 \system\templates\daphne\config.xml|\emulators\daphne\config.xml
 \system\templates\demul-old\Demul.ini|\emulators\demul-old\Demul.ini
