@@ -17,3 +17,6 @@ default:
   phoenix: NTSC_MAME@ntsc.fx
   bigpemu: NTSC_MAME@ntsc.fx
   mednafen: NTSC_MAME@ntsc.fx
+  solarus: NTSC_MAME@ntsc.fx
+  redream: NTSC_MAME@ntsc.fx
+  raine: NTSC_MAME@ntsc.fx

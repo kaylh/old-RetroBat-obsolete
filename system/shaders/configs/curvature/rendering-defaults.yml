@@ -17,6 +17,9 @@ default:
   demul-old: GeomCRT@CRTGeom.fx
   bigpemu: GeomCRT@CRTGeom.fx
   phoenix: GeomCRT@CRTGeom.fx
+  solarus: GeomCRT@CRTGeom.fx
+  redream: GeomCRT@CRTGeom.fx
+  raine: GeomCRT@CRTGeom.fx
 # per system overrides  
 gba:
   shader: handheld/lcd-grid-v2-gba-color
@@ -40,6 +43,7 @@ wii:
   shader: crt/crt-hyllian-3d
 dreamcast:
   shader: crt/crt-hyllian-3d
+  redream: GeomCRT@CRTGeom.fx
 gamegear:
   shader: crt-guest-dr-venom-fast
 ngp:

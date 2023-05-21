@@ -18,6 +18,9 @@ default:
   bigpemu: ScanlinesAbs@scanlines-abs.fx
   demul: ScanlinesAbs@scanlines-abs.fx
   demul-old: ScanlinesAbs@scanlines-abs.fx
+  solarus: ScanlinesAbs@scanlines-abs.fx
+  redream: ScanlinesAbs@scanlines-abs.fx
+  raine: ScanlinesAbs@scanlines-abs.fx
 n64:
   shader: interpolation/sharp-bilinear-scanlines
 gba:
@@ -42,6 +45,7 @@ wii:
   shader: anti-aliasing/fxaa
 dreamcast:
   shader: anti-aliasing/fxaa
+  redream: ScanlinesAbs@scanlines-abs.fx
 gamegear:
   shader: handheld/lcd-grid-v2
 ngp:
