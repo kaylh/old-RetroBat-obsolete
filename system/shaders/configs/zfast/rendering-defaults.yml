@@ -18,6 +18,9 @@ default:
   bigpemu: EasymodeCRT@CRTEasymode.fx
   demul: EasymodeCRT@CRTEasymode.fx
   demul-old: EasymodeCRT@CRTEasymode.fx
+  solarus: EasymodeCRT@CRTEasymode.fx
+  redream: EasymodeCRT@CRTEasymode.fx
+  raine: EasymodeCRT@CRTEasymode.fx
 # per system overrides  
 gba:
   shader: handheld/zfast-lcd

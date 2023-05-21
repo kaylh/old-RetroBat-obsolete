@@ -17,3 +17,6 @@ default:
   phoenix: NTSC_RetroArch@NTSC_RetroArch.fx
   bigpemu: NTSC_RetroArch@NTSC_RetroArch.fx
   mednafen: NTSC_RetroArch@NTSC_RetroArch.fx
+  solarus: NTSC_RetroArch@NTSC_RetroArch.fx
+  redream: NTSC_RetroArch@NTSC_RetroArch.fx
+  raine: NTSC_RetroArch@NTSC_RetroArch.fx
