@@ -354,6 +354,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./ssf.menu</path>
+		<name>SSF (Saturn emulator)</name>
+		<desc>Run SSF (Saturn).</desc>
+		<image>./media/ssf-logo.png</image>
+		<marquee>./media/ssf-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Shima</developer>
+		<publisher>Shima</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./dosbox_pure_libretro.menu</path>
 		<name>DOSBox Pure Libretro (MS-DOS)</name>
 		<desc>Run DOSBox Pure Libretro.</desc>
@@ -787,6 +804,40 @@
 		<releasedate />
 		<developer>Vita3K Team</developer>
 		<publisher>Vita3K Team</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./zinc.menu</path>
+		<name>Zinc</name>
+		<desc>Run Zinc FE.</desc>
+		<image>./media/zinc-logo.png</image>
+		<marquee>./media/zinc-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Duddie/Tratax</developer>
+		<publisher>Duddie/Tratax</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./mupen64.menu</path>
+		<name>Mupen64 Plus</name>
+		<desc>Run Rosalie's Mupen GUI.</desc>
+		<image>./media/rmg-logo.png</image>
+		<marquee>./media/rmg-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Rosalie Wanders</developer>
+		<publisher>Rosalie Wanders</publisher>
 		<genre>Emulator</genre>
 		<playcount />
 		<lastplayed />

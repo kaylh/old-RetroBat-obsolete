@@ -87,6 +87,7 @@
 \system\templates\ryujinx\portable\Config.json|\emulators\ryujinx\portable\Config.json
 \system\templates\scummvm\scummvm.ini|\emulators\scummvm\scummvm.ini
 \system\templates\snes9x\snes9x.conf|\emulators\snes9x\snes9x.conf
+\system\templates\ssf\SSF.ini|\emulators\ssf\SSF.ini
 \system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
 \system\templates\steam\zaccariapinball.cmd|\emulators\steam\zaccariapinball.cmd
 \system\templates\supermodel\ReShade.ini|\emulators\supermodel\ReShade.ini
@@ -103,3 +104,5 @@
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
+\system\templates\zinc\renderer.cfg|\emulators\zinc\renderer.cfg
+\system\templates\zinc\zinc.cfg|\emulators\zinc\zinc.cfg
