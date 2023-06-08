@@ -354,6 +354,23 @@
 		<region>wr</region>
 	</game>
 	<game>
+		<path>./ssf.menu</path>
+		<name>SSF (Saturn emulator)</name>
+		<desc>Run SSF (Saturn).</desc>
+		<image>./media/ssf-logo.png</image>
+		<marquee>./media/ssf-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Shima</developer>
+		<publisher>Shima</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
 		<path>./dosbox_pure_libretro.menu</path>
 		<name>DOSBox Pure Libretro (MS-DOS)</name>
 		<desc>Run DOSBox Pure Libretro.</desc>
