@@ -103,3 +103,5 @@
 \system\templates\xenia\xenia.config.toml|\emulators\xenia\xenia.config.toml
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu-early-access\user\config\qt-config.ini
 \system\templates\yuzu\qt-config.ini|\emulators\yuzu\user\config\qt-config.ini
+\system\templates\zinc\renderer.cfg|\emulators\zinc\renderer.cfg
+\system\templates\zinc\zinc.cfg|\emulators\zinc\zinc.cfg

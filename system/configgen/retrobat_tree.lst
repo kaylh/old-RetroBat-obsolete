@@ -163,6 +163,7 @@ emulators\yuzu-early-access\user
 emulators\yuzu-early-access\user\config
 emulators\yuzu\user
 emulators\yuzu\user\config
+emulators\zinc
 library
 records
 records\config
