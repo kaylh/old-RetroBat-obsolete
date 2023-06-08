@@ -794,4 +794,38 @@
 		<lang>en</lang>
 		<region>wr</region>
 	</game>
+	<game>
+		<path>./zinc.menu</path>
+		<name>Zinc</name>
+		<desc>Run Zinc FE.</desc>
+		<image>./media/zinc-logo.png</image>
+		<marquee>./media/zinc-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Duddie/Tratax</developer>
+		<publisher>Duddie/Tratax</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
+	<game>
+		<path>./mupen64.menu</path>
+		<name>Mupen64 Plus</name>
+		<desc>Run Rosalie's Mupen GUI.</desc>
+		<image>./media/rmg-logo.png</image>
+		<marquee>./media/rmg-logo.png</marquee>
+		<rating>0</rating>
+		<releasedate />
+		<developer>Rosalie Wanders</developer>
+		<publisher>Rosalie Wanders</publisher>
+		<genre>Emulator</genre>
+		<playcount />
+		<lastplayed />
+		<gametime />
+		<lang>en</lang>
+		<region>wr</region>
+	</game>
 </gameList>
