@@ -343,7 +343,7 @@ mappings_file = "gamecontrollerdb.txt"            	# Filename of a database with
 
 [Storage]
 cache_root = ""                                   	# Root path for files used to speed up certain parts of the emulator or the game. These files may be persistent, but they can be deleted without major side effects such as progress loss. If empty, the cache folder under the storage root, or, if available, the cache directory preferred for the OS, will be used.
-content_root = ""                                 	# Root path for guest content storage (saves, etc.), or empty to use the content folder under the storage root.
+content_root = "../../saves/xbox360/xenia"          # Root path for guest content storage (saves, etc.), or empty to use the content folder under the storage root.
 mount_cache = false                               	# Enable cache mount
 mount_scratch = false                             	# Enable scratch mount
 storage_root = ""                                 	# Root path for persistent internal data storage (config, etc.), or empty to use the path preferred for the OS, such as the documents folder, or the emulator executable directory if portable.txt is present in it.
