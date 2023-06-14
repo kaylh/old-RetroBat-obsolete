@@ -1,8 +1,7 @@
 @echo off
 mode 1000
 
-set steam_path_default=C:\Program Files (x86)\Steam
-set "steam_path=%steam_path_default%"
+FOR /F "tokens=2* skip=2" %%a in ('reg query "HKLM\SOFTWARE\WOW6432Node\Valve\Steam" /v "InstallPath"') DO SET "steam_path=%%b"
 
 set game_id=442120
 set pinballfx3_bin=Pinball FX3.exe
@@ -12,7 +11,7 @@ set kill_steam=0
 set delay=14
 
 if exist "%CD%\steam.cfg" (for /f "delims=" %%x in (%CD%\steam.cfg) do (set "%%x"))
-"%steam_path%\steam.exe" -nofriendsui -applaunch %game_id% -class -table_%1
+"%steam_path%\steam.exe" -nofriendsui -applaunch %game_id% %2 %3 %4 %1
 call :timeout
 
 :steamwait
