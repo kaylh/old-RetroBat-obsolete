@@ -89,7 +89,6 @@
 \system\templates\snes9x\snes9x.conf|\emulators\snes9x\snes9x.conf
 \system\templates\ssf\SSF.ini|\emulators\ssf\SSF.ini
 \system\templates\steam\pinballfx3.cmd|\emulators\steam\pinballfx3.cmd
-\system\templates\steam\zaccariapinball.cmd|\emulators\steam\zaccariapinball.cmd
 \system\templates\supermodel\ReShade.ini|\emulators\supermodel\ReShade.ini
 \system\templates\supermodel\ReShadePreset.ini|\emulators\supermodel\ReShadePreset.ini
 \system\templates\supermodel\Supermodel.ini|\emulators\supermodel\Config\Supermodel.ini
