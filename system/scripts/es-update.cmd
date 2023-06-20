@@ -52,7 +52,7 @@ if not "%1"=="" (
 
 set/A progress_percent=0
 
-set folder_list=(bios decorations emulators library roms saves screenshots system)
+set folder_list=(bios cheats decorations emulators library records roms saves screenshots sounds system)
 set file_list=(exe dat txt)
 set modules_list=(7za wget)
 
@@ -229,20 +229,66 @@ if exist "!download_path!\!package_file!" (
 	set destination_path=!root_path!
 	if not exist "!extraction_path!\." md "!extraction_path!"
 	
-	if "!version_local!" == "4.0.2-20210710" (
+	if "!version_local!" == "5.0.0-stable-win64" (
 	
-		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
-		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
-		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
-		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+		if exist "%emulators_path%\pcsx2\pcsx2x64.exe" ren "%emulators_path%\pcsx2" pcsx2-wxwidget-obsolete >nul
+		
+		if exist "%system_path%\configgen\*.list" del/Q "%system_path%\configgen\*.list"
+		
+		for %%i in (DEV9Hosts.ini GS.ini PAD.ini PCSX2_ui.ini PCSX2_vm.ini SPU2.ini) do (
+	
+		if exist "%system_path%\templates\pcsx2\inis\%%i" del/Q "%system_path%\templates\pcsx2\inis\%%i" >nul
+		)
 	)
 	
-	if "!version_local!" == "4.0.2-20210710-testing" (
+	if "!version_local!" == "5.0.0-stable-win64" (
 	
-		if exist "%emulators_path%\pcsx2\pcsx2.exe" ren "%emulators_path%\pcsx2" pcsx2-16 >nul
-		if exist "%root_path%\BatGui.exe" del/Q "%root_path%\BatGui.exe" >nul
-		if exist "%system_path%\modules\rb_gui\*.dll" del/Q "%system_path%\modules\rb_gui\*.*" >nul
-		if exist "%system_path%\modules\rb_gui\images\*.png" del/Q "%system_path%\modules\rb_gui\images\*.png" >nul
+		if exist "%emulators_path%\pcsx2\pcsx2x64.exe" ren "%emulators_path%\pcsx2" pcsx2-wxwidget-obsolete >nul
+		
+		if exist "%system_path%\configgen\*.list" del/Q "%system_path%\configgen\*.list"
+		
+		for %%i in (DEV9Hosts.ini GS.ini PAD.ini PCSX2_ui.ini PCSX2_vm.ini SPU2.ini) do (
+	
+		if exist "%system_path%\templates\pcsx2\inis\%%i" del/Q "%system_path%\templates\pcsx2\inis\%%i" >nul
+		)
+	)
+	
+	for %%i in (es-checkversion-test.exe es-update-test.exe) do (
+		
+		if exist "%emulationstation_path%\%%i" del/Q "%emulationstation_path%\%%i"
+	)
+	
+	if "!version_local!" == "5.0.0-stable-win64" (
+	
+		if exist "%emulationstation_path%\.emulationstation\es_input.cfg" (
+			copy "%emulationstation_path%\.emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg.old" /Y >nul
+			del/Q "%emulationstation_path%\.emulationstation\es_input.cfg" >nul
+			copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+		)
+		
+		if exist "%emulators_path%\duckstation\duckstation-*.exe" ren "%emulators_path%\duckstation" duckstation-old >nul
+	)
+	
+	if "!version_local!" == "5.1.1-stable-win64" (
+		
+		if exist "%emulationstation_path%\.emulationstation\es_input.cfg" (
+			copy "%emulationstation_path%\.emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg.old" /Y >nul
+			del/Q "%emulationstation_path%\.emulationstation\es_input.cfg" >nul
+			copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+		)
+		
+		if exist "%emulators_path%\duckstation\duckstation-*.exe" ren "%emulators_path%\duckstation" duckstation-old >nul
+	)
+	
+	if "!version_local!" == "5.2.0-stable-win64" (
+		
+		if exist "%emulationstation_path%\.emulationstation\es_input.cfg" (
+			copy "%emulationstation_path%\.emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg.old" /Y >nul
+			del/Q "%emulationstation_path%\.emulationstation\es_input.cfg" >nul
+			copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+		)
+		
+		if exist "%emulators_path%\duckstation\duckstation-*.exe" ren "%emulators_path%\duckstation" duckstation-old >nul
 	)
 	
 	for %%i in %folder_list% do (
@@ -550,6 +596,22 @@ if exist "%download_path%\%package_file%" (
 		call :exit_door
 		goto :eof
 	)
+	
+	if "!version_local!" == "5.0.0-stable-win64" (
+	
+		copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+	)
+	
+	if "!version_local!" == "5.1.1-stable-win64" (
+	
+		copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+	)
+	
+	if "!version_local!" == "5.2.0-stable-win64" (
+	
+		copy "%system_path%\templates\emulationstation\es_input.cfg" "%emulationstation_path%\.emulationstation\es_input.cfg" /Y >nul
+	)
+	
 	if %enable_log% EQU 1 ((echo %date% %time% [INFO] !task! from "%extraction_path%\emulationstation" to "%root_path%\emulationstation")>> "%root_path%\emulationstation\%log_file%")
 
 	if !exit_code! EQU 0 (
@@ -574,12 +636,12 @@ if %progress_percent% EQU 100 (
 
 	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
 	if exist "%system_path%\scripts\exclude.txt" del/Q "%system_path%\scripts\exclude.txt" >nul
-	if "!version_local!" == "4.0.2-20210710-testing" (
-		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
-	)
-	if "!version_local!" == "4.0.2-20210710" (
-		if exist "%root_path%\retrobat.ini" del/Q "%root_path%\retrobat.ini" >nul
-	)
+	
+	if exist "%system_path%\templates\emulationstation\es_features.cfg" del/Q "%system_path%\templates\emulationstation\es_features.cfg" >nul
+	if exist "%emulationstation_path%\.emulationstation\es_features.cfg" copy/Y "%emulationstation_path%\.emulationstation\es_features.cfg" "%system_path%\templates\emulationstation\es_features.cfg.default" >nul
+	
+	curl -X POST http://127.0.0.1:1234/messagebox -H "Content-Type: text/plain" -d "You need to close EmulationStation now and restart RetroBat to finish the update process. Open the menu and choose 'QUIT' or press ALT+F4, then run retrobat.exe."
+	
 	(set/A exit_code=0)
 	(set exit_msg=update done!)
 	cls
