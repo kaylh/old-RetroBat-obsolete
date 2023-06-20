@@ -133,6 +133,28 @@ set task=set_install
 set "tmp_infos_file=!root_path!\emulationstation\rb_infos.tmp"
 if not "%tmp_infos_file%" == "" if exist "%tmp_infos_file%" del/Q "%tmp_infos_file%" >nul
 
+:: ---- PING TEST ----
+
+set "reg_key=InstallRootUrl"
+reg query "HKCU\Software\RetroBat" /v "%reg_key%" >nul 2>&1
+if %ERRORLEVEL% EQU 0 (
+
+	for /f "tokens=2* skip=2" %%a in ('reg query %reg_path% /v %reg_key%') do (
+		
+		set "installrooturl=%reg_key%"
+	)
+
+) else (
+
+	(set/A exit_code=1)
+	(set exit_msg=install not found)
+	call :exit_door
+	goto :eof
+)
+
+ping %installroot_url% >nul
+if %ERRORLEVEL% NEQ 0 (exit 1)
+
 :: ---- CALL SHARED VARIABLES SCRIPT ----
 
 if exist "!root_path!\system\scripts\shared-variables.cmd" (
